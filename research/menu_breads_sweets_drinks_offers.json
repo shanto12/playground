@@ -1,0 +1,475 @@
+{
+  "_meta": {
+    "restaurant": "Curry District, 11851 FM 423 Ste 200, Little Elm TX 75068",
+    "researchedOn": "2026-10-04",
+    "method": "WebSearch snippets only. Every direct page fetch (currydistrict.net, allmenus, res-menu, wheree, singleplatform, menupix, sirved, zmenu, doordash, ubereats, restaurantguru, web.archive.org) was blocked by the egress proxy, and the session WebSearch budget (200) ran out after about 20 targeted queries. Nothing below was read from a live menu page. All values are second-hand aggregator snippets (AI-summarised search results).",
+    "confidenceKey": "high = >=2 independent sources agree on item and price (none reached this bar for prices); medium = item corroborated by >=2 sources or one aggregator price consistent with an anchor value, price may still vary by platform; low = single unattributed snippet or conflicting prices. price:null means unknown or conflicting; the values actually seen are in priceNote.",
+    "extraKeys": "priceNote (string) was added to items; it is not part of the minimal schema and can be ignored by consumers that only need name/description/price/diet/spice/tags/confidence/sources."
+  },
+  "categories": [
+    {
+      "name": "Breads",
+      "items": [
+        {
+          "name": "Garlic Naan",
+          "description": "Tandoor-baked naan topped with garlic.",
+          "price": 3.49,
+          "priceNote": "$3.49 on the allmenus listing and in the earlier sighting passed in by the orchestrator. One other unattributed snippet showed $3.75, probably a delivery-app or other-platform price. Treat $3.49 as the base menu price.",
+          "diet": "veg",
+          "spice": null,
+          "tags": ["popular", "tandoor", "generic-description"],
+          "confidence": "medium",
+          "sources": [
+            "https://www.allmenus.com/tx/little-elm/815011-curry-district/menu/ (search snippet, page fetch blocked)",
+            "https://www.doordash.com/store/curry-district-little-elm-900790/ (item listed, price not seen)",
+            "https://www.menupix.com/texas/restaurants/31934626/Curry-District-Little-Elm-TX (named as a popular item)"
+          ]
+        },
+        {
+          "name": "Butter Naan",
+          "description": "Tandoor-baked white-flour naan brushed with butter.",
+          "price": 2.79,
+          "priceNote": "$2.79 on the allmenus listing (single price source). One other unattributed snippet showed $2.99.",
+          "diet": "veg",
+          "spice": null,
+          "tags": ["tandoor", "generic-description"],
+          "confidence": "medium",
+          "sources": [
+            "https://www.allmenus.com/tx/little-elm/815011-curry-district/menu/ (search snippet)",
+            "https://www.doordash.com/store/curry-district-little-elm-900790/ (item listed, price not seen)"
+          ]
+        },
+        {
+          "name": "Plain Naan",
+          "description": "Classic tandoor-baked naan.",
+          "price": 1.99,
+          "priceNote": "$1.99 on the allmenus listing (single price source). One other unattributed snippet showed $2.49.",
+          "diet": "veg",
+          "spice": null,
+          "tags": ["tandoor", "generic-description"],
+          "confidence": "medium",
+          "sources": [
+            "https://www.allmenus.com/tx/little-elm/815011-curry-district/menu/ (search snippet)"
+          ]
+        },
+        {
+          "name": "Roti / Chapati (2 pc)",
+          "description": "Two whole-wheat flatbreads.",
+          "price": 1.99,
+          "priceNote": "$1.99 for 2 pieces on the allmenus listing only.",
+          "diet": "veg",
+          "spice": null,
+          "tags": ["generic-description"],
+          "confidence": "low",
+          "sources": [
+            "https://www.allmenus.com/tx/little-elm/815011-curry-district/menu/ (search snippet)"
+          ]
+        },
+        {
+          "name": "Bullet Naan",
+          "description": "",
+          "price": null,
+          "priceNote": "Seen once at $3.75 in an unattributed snippet that may belong to a different restaurant's bread page (the same results included other restaurants). Not confirmed on any Curry District page. Do not publish.",
+          "diet": "unknown",
+          "spice": null,
+          "tags": ["unverified"],
+          "confidence": "low",
+          "sources": ["Unattributed WebSearch snippet, query 'Curry District Little Elm breads naan roti kulcha paratha price'"]
+        },
+        {
+          "name": "Paratha (2 pc)",
+          "description": "",
+          "price": null,
+          "priceNote": "Seen once at $4.99 in the same unattributed snippet as Bullet Naan. Not confirmed. Do not publish.",
+          "diet": "unknown",
+          "spice": null,
+          "tags": ["unverified"],
+          "confidence": "low",
+          "sources": ["Unattributed WebSearch snippet, query 'Curry District Little Elm breads naan roti kulcha paratha price'"]
+        }
+      ]
+    },
+    {
+      "name": "Rice",
+      "items": [
+        {
+          "name": "Plain Rice (Basmati)",
+          "description": "Steamed basmati rice.",
+          "price": 1.99,
+          "priceNote": "Single snippet shown as US$1.99, likely from a delivery-app page. Curries are described as served with white rice (currydistrict.net category summary).",
+          "diet": "veg",
+          "spice": null,
+          "tags": ["side", "generic-description"],
+          "confidence": "low",
+          "sources": [
+            "WebSearch snippet, query 'Curry District Little Elm rice biryani pulao jeera rice basmati price menu' (results: doordash, trycaviar, singleplatform, allmenus, restaurantguru, res-menu, restaurantji)"
+          ]
+        },
+        {
+          "name": "Fried Rice (Indo-Chinese section)",
+          "description": "Indo-Chinese style fried rice. Variants and prices were not found.",
+          "price": null,
+          "diet": "unknown",
+          "spice": null,
+          "tags": ["indo-chinese", "variants-unknown"],
+          "confidence": "medium",
+          "sources": [
+            "https://currydistrict.net/menu.html (category summary: Indo-Chinese dishes like Fried Rice and Hakka Noodles)"
+          ]
+        },
+        {
+          "name": "Chicken Dum Biryani - Family Pack",
+          "description": "Family-size chicken dum biryani. The weekend family pack includes a free appetizer and dessert, chef's choice.",
+          "price": 47.79,
+          "priceNote": "$47.79 on one listing, likely a delivery-app price; the in-store price may differ.",
+          "diet": "nonveg",
+          "spice": null,
+          "tags": ["family-pack", "weekend", "free-appetizer-and-dessert"],
+          "confidence": "low",
+          "sources": [
+            "https://www.doordash.com/store/curry-district-little-elm-900790/ (search snippet)",
+            "https://currydistrict.net/menu.html (family packs with free appetizer and dessert confirmed; no prices seen)"
+          ]
+        },
+        {
+          "name": "Chicken 65 Biryani - Family Pack",
+          "description": "Family-size Chicken 65 biryani. The weekend family pack includes a free appetizer and dessert, chef's choice.",
+          "price": 47.79,
+          "priceNote": "$47.79 on one listing, likely a delivery-app price.",
+          "diet": "nonveg",
+          "spice": null,
+          "tags": ["family-pack", "weekend", "free-appetizer-and-dessert"],
+          "confidence": "low",
+          "sources": [
+            "https://www.doordash.com/store/curry-district-little-elm-900790/ (search snippet)",
+            "https://currydistrict.net/menu.html (family packs confirmed; no prices seen)"
+          ]
+        },
+        {
+          "name": "Chicken 65 Pulav - Family Pack",
+          "description": "Family-size Chicken 65 pulav. The weekend family pack includes a free appetizer and dessert, chef's choice.",
+          "price": 42.99,
+          "priceNote": "$42.99 on one listing, likely a delivery-app price.",
+          "diet": "nonveg",
+          "spice": null,
+          "tags": ["family-pack", "weekend", "free-appetizer-and-dessert"],
+          "confidence": "low",
+          "sources": [
+            "https://www.doordash.com/store/curry-district-little-elm-900790/ (search snippet)",
+            "https://currydistrict.net/menu.html (family packs confirmed; no prices seen)"
+          ]
+        },
+        {
+          "name": "Vegetable Dum Biryani",
+          "description": "Dum-style vegetable biryani.",
+          "price": null,
+          "priceNote": "$9.99 seen in one snippet. This looks low for 2026 and may be stale or from another location. Biryani and pulav pricing belongs to the mains research and is included here only for cross-reference.",
+          "diet": "veg",
+          "spice": null,
+          "tags": ["biryani", "cross-reference", "generic-description"],
+          "confidence": "low",
+          "sources": ["WebSearch snippet, query 'Curry District Little Elm rice biryani pulao ...' (page not individually attributable)"]
+        },
+        {
+          "name": "Chicken Dum Biryani",
+          "description": "Dum-style chicken biryani.",
+          "price": null,
+          "priceNote": "$10.99 seen in one snippet, probably stale or from another location. Family pack is $47.79 on a delivery listing.",
+          "diet": "nonveg",
+          "spice": null,
+          "tags": ["biryani", "cross-reference", "generic-description"],
+          "confidence": "low",
+          "sources": ["WebSearch snippet, query 'Curry District Little Elm rice biryani pulao ...' (page not individually attributable)"]
+        },
+        {
+          "name": "Paneer Biryani",
+          "description": "Biryani with paneer.",
+          "price": null,
+          "priceNote": "$10.99 seen in one snippet, probably stale.",
+          "diet": "veg",
+          "spice": null,
+          "tags": ["biryani", "cross-reference", "generic-description"],
+          "confidence": "low",
+          "sources": ["WebSearch snippet, query 'Curry District Little Elm rice biryani pulao ...' (page not individually attributable)"]
+        },
+        {
+          "name": "Shrimp Biryani",
+          "description": "Biryani with shrimp.",
+          "price": null,
+          "priceNote": "$14.99 seen in one snippet, probably stale.",
+          "diet": "nonveg",
+          "spice": null,
+          "tags": ["biryani", "cross-reference", "generic-description"],
+          "confidence": "low",
+          "sources": ["WebSearch snippet, query 'Curry District Little Elm rice biryani pulao ...' (page not individually attributable)"]
+        },
+        {
+          "name": "Chicken 65 Biryani",
+          "description": "Biryani topped with Chicken 65.",
+          "price": null,
+          "priceNote": "$17.76 seen in one snippet (odd figure, probably a delivery-app price). Family pack is $47.79.",
+          "diet": "nonveg",
+          "spice": null,
+          "tags": ["biryani", "cross-reference", "generic-description"],
+          "confidence": "low",
+          "sources": ["WebSearch snippet, query 'Curry District Little Elm rice biryani pulao ...' (page not individually attributable)"]
+        },
+        {
+          "name": "Boneless Chicken Biryani",
+          "description": "Biryani with boneless chicken.",
+          "price": null,
+          "priceNote": "$17.76 seen in one snippet (delivery-app style price).",
+          "diet": "nonveg",
+          "spice": null,
+          "tags": ["biryani", "cross-reference", "generic-description"],
+          "confidence": "low",
+          "sources": ["WebSearch snippet, query 'Curry District Little Elm rice biryani pulao ...' (page not individually attributable)"]
+        },
+        {
+          "name": "Goat Biryani",
+          "description": "Biryani with goat.",
+          "price": null,
+          "priceNote": "Named in Wheree menu and review text; no price seen.",
+          "diet": "nonveg",
+          "spice": null,
+          "tags": ["biryani", "cross-reference", "generic-description"],
+          "confidence": "medium",
+          "sources": ["https://curry-district.wheree.com/menu (search snippet)"]
+        },
+        {
+          "name": "Chicken Fry Pulav",
+          "description": "Pulav with fried chicken.",
+          "price": null,
+          "priceNote": "$10.99 seen in one snippet, probably stale.",
+          "diet": "nonveg",
+          "spice": null,
+          "tags": ["pulav", "cross-reference", "generic-description"],
+          "confidence": "low",
+          "sources": ["WebSearch snippet, query 'Curry District Little Elm rice biryani pulao ...' (page not individually attributable)"]
+        },
+        {
+          "name": "Shrimp Pulav",
+          "description": "Pulav with shrimp.",
+          "price": null,
+          "priceNote": "$15.99 seen in one snippet, probably stale.",
+          "diet": "nonveg",
+          "spice": null,
+          "tags": ["pulav", "cross-reference", "generic-description"],
+          "confidence": "low",
+          "sources": ["WebSearch snippet, query 'Curry District Little Elm rice biryani pulao ...' (page not individually attributable)"]
+        },
+        {
+          "name": "Gongura Mutton Pulav",
+          "description": "Pulav with mutton and gongura (sorrel leaves).",
+          "price": null,
+          "priceNote": "Named in Wheree menu and review text; no price seen.",
+          "diet": "nonveg",
+          "spice": null,
+          "tags": ["pulav", "andhra-style", "cross-reference", "generic-description"],
+          "confidence": "medium",
+          "sources": ["https://curry-district.wheree.com/menu (search snippet)"]
+        }
+      ]
+    },
+    {
+      "name": "Desserts",
+      "items": [
+        {
+          "name": "Gulab Jamun",
+          "description": "Soft milk-solid dumplings in sugar syrup.",
+          "price": null,
+          "priceNote": "Two conflicting lists were seen: '3 Piece Gulab Jamun' at $2.99 and 'Gulab Jamun' at $4.99. Which is current is unknown; one may be stale, a different platform, or a different location. A guest review snippet calls it tasty.",
+          "diet": "veg",
+          "spice": null,
+          "tags": ["sweet", "generic-description"],
+          "confidence": "medium",
+          "sources": [
+            "WebSearch snippet, query 'Curry District Little Elm menu desserts gulab jamun kheer' (results: doordash, trycaviar, allmenus, ubereats, restaurantguru, menupix, sirved, res-menu; page not individually attributable)",
+            "https://restaurantguru.com/Curry-District-Little-Elm (guest opinion mention)"
+          ]
+        },
+        {
+          "name": "Rasmalai",
+          "description": "Soft cheese dumplings in chilled, sweetened, cardamom-scented milk.",
+          "price": null,
+          "priceNote": "Two conflicting lists: '3 Piece Rasmalai' $3.99 vs 'Rasamalai' $4.99.",
+          "diet": "veg",
+          "spice": null,
+          "tags": ["sweet", "generic-description"],
+          "confidence": "medium",
+          "sources": ["WebSearch snippet, query 'Curry District Little Elm menu desserts gulab jamun kheer' (page not individually attributable)"]
+        },
+        {
+          "name": "Carrot Halwa (Gajar Halwa)",
+          "description": "Slow-cooked carrot pudding.",
+          "price": null,
+          "priceNote": "Two conflicting lists: 'Carrot Halwa' $2.99 vs 'Gajar (Carrot) Halwa' $4.99.",
+          "diet": "veg",
+          "spice": null,
+          "tags": ["sweet", "generic-description"],
+          "confidence": "medium",
+          "sources": ["WebSearch snippet, query 'Curry District Little Elm menu desserts gulab jamun kheer' (page not individually attributable)"]
+        },
+        {
+          "name": "Rice Kheer",
+          "description": "Creamy rice pudding.",
+          "price": null,
+          "priceNote": "$2.99 on one list only.",
+          "diet": "veg",
+          "spice": null,
+          "tags": ["sweet", "generic-description"],
+          "confidence": "low",
+          "sources": ["WebSearch snippet, query 'Curry District Little Elm menu desserts gulab jamun kheer' (page not individually attributable)"]
+        },
+        {
+          "name": "Ice Cream",
+          "description": "",
+          "price": null,
+          "priceNote": "$2.99 on one list only. Flavours not found.",
+          "diet": "unknown",
+          "spice": null,
+          "tags": ["sweet", "flavours-unknown"],
+          "confidence": "low",
+          "sources": ["WebSearch snippet, query 'Curry District Little Elm menu desserts gulab jamun kheer' (page not individually attributable)"]
+        },
+        {
+          "name": "Rabidi Jamun",
+          "description": "Gulab jamun served with rabri (thickened sweet milk). Description inferred from the dish name; the restaurant's wording was not found.",
+          "price": null,
+          "priceNote": "$4.99 on one list only.",
+          "diet": "veg",
+          "spice": null,
+          "tags": ["sweet", "generic-description"],
+          "confidence": "low",
+          "sources": ["WebSearch snippet, query 'Curry District Little Elm menu desserts gulab jamun kheer' (page not individually attributable)"]
+        },
+        {
+          "name": "Kala Jamun",
+          "description": "Dark, deep-fried milk dumplings in syrup (kala jamun). Description inferred from the dish name.",
+          "price": null,
+          "priceNote": "$5.99 on one list only.",
+          "diet": "veg",
+          "spice": null,
+          "tags": ["sweet", "generic-description"],
+          "confidence": "low",
+          "sources": ["WebSearch snippet, query 'Curry District Little Elm menu desserts gulab jamun kheer' (page not individually attributable)"]
+        },
+        {
+          "name": "Apricot Delight",
+          "description": "",
+          "price": null,
+          "priceNote": "$5.99 on one list only. Ingredients not found; may contain cream or custard.",
+          "diet": "unknown",
+          "spice": null,
+          "tags": ["sweet", "ingredients-unknown"],
+          "confidence": "low",
+          "sources": ["WebSearch snippet, query 'Curry District Little Elm menu desserts gulab jamun kheer' (page not individually attributable)"]
+        }
+      ]
+    },
+    {
+      "name": "Beverages",
+      "items": [
+        {
+          "name": "Mango Lassi",
+          "description": "Creamy yogurt blended with ripe mango. Sweet and tangy. The DoorDash-style listing adds milk, sugar and a hint of cardamom.",
+          "price": null,
+          "priceNote": "Three prices seen: $2.99 (a drinks list that also had Sweet Lassi at $2.99), $3.99 (a listing with the 'creamy yogurt blended with ripe mangoes' copy) and $4.99. Platform and date unknown. Reviewers and Wheree highlight it as a crowd favourite.",
+          "diet": "veg",
+          "spice": null,
+          "tags": ["lassi", "popular", "cold"],
+          "confidence": "medium",
+          "sources": [
+            "https://www.doordash.com/store/curry-district-little-elm-900790/ (item listed)",
+            "https://curry-district.wheree.com/menu (mentioned as crowd-favourite)",
+            "https://www.allmenus.com/tx/little-elm/815011-curry-district/menu/ (search results, not individually attributable)",
+            "https://www.ubereats.com/store/curry-district/uWXzS9FzRBqEC8dXe5241w (search results, not individually attributable)"
+          ]
+        },
+        {
+          "name": "Sweet Lassi",
+          "description": "Sweetened yogurt drink.",
+          "price": null,
+          "priceNote": "$2.99 on one list, the same list that also showed Mango Lassi at $2.99, which other listings contradict.",
+          "diet": "veg",
+          "spice": null,
+          "tags": ["lassi", "cold", "generic-description"],
+          "confidence": "low",
+          "sources": ["WebSearch snippet, query 'Curry District Little Elm menu \"Mango Lassi\" \"Sweet Lassi\" \"Salt Lassi\" price' (page not individually attributable)"]
+        },
+        {
+          "name": "Mango Milkshake",
+          "description": "Mango milkshake.",
+          "price": null,
+          "diet": "veg",
+          "spice": null,
+          "tags": ["shake", "cold", "generic-description"],
+          "confidence": "low",
+          "sources": ["WebSearch snippet, query 'Curry District Little Elm menu \"Mango Lassi\" ...' (drinks list, page not individually attributable)"]
+        },
+        {
+          "name": "Chikku Shake",
+          "description": "Chikoo (sapota) milkshake. Spelled 'Chikku' in the source.",
+          "price": null,
+          "diet": "veg",
+          "spice": null,
+          "tags": ["shake", "cold", "generic-description"],
+          "confidence": "low",
+          "sources": ["WebSearch snippet, query 'Curry District Little Elm menu \"Mango Lassi\" ...' (drinks list, page not individually attributable)"]
+        },
+        {
+          "name": "Sitaphai Shake",
+          "description": "Custard-apple (sitaphal) milkshake. Spelled 'Sitaphai' in the source; the spelling needs checking against the real menu.",
+          "price": null,
+          "diet": "veg",
+          "spice": null,
+          "tags": ["shake", "cold", "generic-description", "spelling-unverified"],
+          "confidence": "low",
+          "sources": ["WebSearch snippet, query 'Curry District Little Elm menu \"Mango Lassi\" ...' (drinks list, page not individually attributable)"]
+        },
+        {
+          "name": "Badam Milk",
+          "description": "Almond-flavoured milk.",
+          "price": null,
+          "diet": "veg",
+          "spice": null,
+          "tags": ["milk", "generic-description"],
+          "confidence": "low",
+          "sources": ["WebSearch snippet, query 'Curry District Little Elm menu \"Mango Lassi\" ...' (drinks list, page not individually attributable)"]
+        },
+        {
+          "name": "Butter Milk",
+          "description": "Spiced buttermilk.",
+          "price": null,
+          "diet": "veg",
+          "spice": null,
+          "tags": ["cooler", "generic-description"],
+          "confidence": "low",
+          "sources": ["WebSearch snippet, query 'Curry District Little Elm menu \"Mango Lassi\" ...' (drinks list, page not individually attributable)"]
+        },
+        {
+          "name": "Tea / Chai",
+          "description": "Hot Indian tea listed under Hot Beverages. Other hot drinks (for example coffee) were not confirmed.",
+          "price": null,
+          "diet": "veg",
+          "spice": null,
+          "tags": ["hot-beverage", "chai"],
+          "confidence": "medium",
+          "sources": [
+            "https://currydistrict.net/menu.html (category summary: Drinks and Hot Beverages sections)",
+            "WebSearch snippet, query 'Curry District Little Elm mango lassi chai' (Tea/Chai listed under hot beverages)"
+          ]
+        }
+      ]
+    }
+  ],
+  "offers": {
+    "lunch": "No lunch buffet found in any snippet. DoorDash shows a 'Lunch Box' menu section; contents and price are not known. DoorDash also lists a 'Biryani's Combo Offer' marked Tuesday and Wednesday only. Meltivers (a third-party promotions page) lists a 'Wednesday Special Offer: Any 3 Biryanis $25.99'; it was seen in one snippet and the price was not cross-checked. Lunch service hours in data/business.json are 11:00 AM to 2:30 PM (3:00 PM Fri to Sun), not verified. No thali or lunch-combo pricing was found.",
+    "catering": "The official site has a catering page (currydistrict.net/catering.html); its content could not be read. Sulekha describes outdoor catering for special occasions plus pre-booked advance platters for large groups, customised to the client's taste, for baby showers, corporate events, surprise parties, housewarmings and birthdays. No party-tray sizes or prices were found. Sulekha gives (469) 200-5944 as the contact number. The family packs (see Rice) and the Weekend Family Pack are the only priced group-size items found.",
+    "happyHour": "Weekdays 4 to 7 PM, per the Atly listing (same as data/business.json). What is discounted was NOT found. Caution: dinner service in business.json resumes at 4:30 PM, so a 4 PM start looks inconsistent; treat the window as unverified. One snippet also says you can bring your own beer on weekends (unverified, low confidence). Do not show any happy-hour discount or alcohol claim.",
+    "kids": "No kids menu found.",
+    "delivery": "Delivery and pickup: Uber Eats, DoorDash (with a Caviar mirror and a legacy Postmates link) and Clover online ordering (curry-district-little-elm.cloveronline.com). The official site has a 'Door Delivery' page (currydistrict.net/doordelivery.html) that could not be read. Minimum order, delivery fee and service fee were not found. Delivery-app prices appear to run higher than the aggregator menu prices (for example Garlic Naan $3.49 vs $3.75), but this is an inference. Gift cards are listed on Giftly (a third-party gift-card page).",
+    "other": "Weekend Family Pack: weekend family-size biryani and pulav packs come with a free appetizer and dessert, chef's choice (official site: 'family pack options that include free appetizer and dessert'). DoorDash prices seen: Chicken 65 Biryani $47.79, Chicken Dum Biryani $47.79, Chicken 65 Pulav $42.99. The breakfast menu (Idly, Vada, Dosa, Puri) and the Indo-Chinese section are on the official site; not researched here. Possible sister location: the Instagram and Facebook handles say 'CurryDistrictFrisco', so some aggregator data (especially the conflicting dessert and lassi prices) may come from another location or an older menu."
+  },
+  "notes": "Method limits: WebFetch was blocked for every menu site, and the WebSearch budget ran out, so no price reached 'high'. All figures are AI-summarised search snippets, and the source page for several lists could not be pinned down (marked 'not individually attributable'). Biggest open questions: (1) current dessert prices ($2.99-$3.99 list vs $4.99-$5.99 list); (2) current lassi price ($2.99 / $3.99 / $4.99); (3) whether bread prices differ in-store vs delivery ($3.49 vs $3.75 Garlic Naan); (4) Bullet Naan and Paratha may belong to another restaurant's page; (5) happy-hour discounts, lunch box contents, catering price list, kids menu and fees were not found; (6) no soda, bottled-drink, salt lassi, rose lassi or cold-coffee evidence was found, so none were invented. Diet labels are inferred from the dish type, not stated by the restaurant, and ice cream, Apricot Delight, Bullet Naan and Paratha are marked unknown. Do not make halal, vegan or gluten-free claims. Descriptions tagged 'generic-description' are generic dish definitions, not the restaurant's own copy. An unattributed snippet claimed 'extra roti $1.00 add-on'; it came from results that included other restaurants, so it is excluded. For design mockups use the null prices as placeholders or omit prices, and add anything unresolved to docs/OPEN_QUESTIONS.md. Uber Eats lists the address as '11851 U.S. Army Sgt Enrique Mondragon Memorial Hwy', which appears to be the renamed FM 423. Suggested next step: call the restaurant or get the owners to send the current menu PDF to settle prices. Phone numbers seen: (469) 200-5944, (469) 200-5856, (972) 787-1320."
+}

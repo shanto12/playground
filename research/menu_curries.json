@@ -1,0 +1,375 @@
+{
+  "categories": [
+    {
+      "name": "Veg Curries",
+      "items": [
+        {
+          "name": "Dal Thadaka",
+          "description": "Served with white rice.",
+          "price": 12.99,
+          "diet": "veg",
+          "spice": null,
+          "tags": [],
+          "confidence": "high",
+          "sources": ["https://currydistrict.net/menu.html", "https://www.doordash.com/store/curry-district-little-elm-900790/"]
+        },
+        {
+          "name": "Dal Makhani",
+          "description": "Served with white rice.",
+          "price": 13.99,
+          "diet": "veg",
+          "spice": null,
+          "tags": [],
+          "confidence": "high",
+          "sources": ["https://currydistrict.net/menu.html", "https://www.doordash.com/store/curry-district-little-elm-900790/"]
+        },
+        {
+          "name": "Channa Masala",
+          "description": "Served with white rice.",
+          "price": 12.99,
+          "diet": "veg",
+          "spice": null,
+          "tags": [],
+          "confidence": "high",
+          "sources": ["https://currydistrict.net/menu.html", "https://www.doordash.com/store/curry-district-little-elm-900790/"]
+        },
+        {
+          "name": "Palak Paneer",
+          "description": "Served with white rice.",
+          "price": 14.99,
+          "diet": "veg",
+          "spice": null,
+          "tags": [],
+          "confidence": "high",
+          "sources": ["https://currydistrict.net/menu.html", "https://www.doordash.com/store/curry-district-little-elm-900790/", "https://www.trycaviar.com/store/curry-district-little-elm-900790/"]
+        },
+        {
+          "name": "Paneer Tikka Masala",
+          "description": "Served with white rice.",
+          "price": 14.99,
+          "diet": "veg",
+          "spice": null,
+          "tags": [],
+          "confidence": "high",
+          "sources": ["https://currydistrict.net/menu.html", "https://www.trycaviar.com/store/curry-district-little-elm-900790/"]
+        },
+        {
+          "name": "Paneer Butter Masala",
+          "description": "Served with white rice.",
+          "price": 14.99,
+          "diet": "veg",
+          "spice": null,
+          "tags": [],
+          "confidence": "high",
+          "sources": ["https://currydistrict.net/menu.html", "https://www.trycaviar.com/store/curry-district-little-elm-900790/"]
+        },
+        {
+          "name": "Shahi Paneer",
+          "description": "Served with white rice.",
+          "price": 14.99,
+          "diet": "veg",
+          "spice": null,
+          "tags": [],
+          "confidence": "medium",
+          "sources": ["https://currydistrict.net/menu.html", "https://www.trycaviar.com/store/curry-district-little-elm-900790/"]
+        },
+        {
+          "name": "Kadai Paneer",
+          "description": "Served with white rice.",
+          "price": 14.99,
+          "diet": "veg",
+          "spice": null,
+          "tags": [],
+          "confidence": "medium",
+          "sources": ["https://www.trycaviar.com/store/curry-district-little-elm-900790/"]
+        },
+        {
+          "name": "Malai Paneer",
+          "description": "Served with white rice.",
+          "price": 14.99,
+          "diet": "veg",
+          "spice": null,
+          "tags": [],
+          "confidence": "medium",
+          "sources": ["https://www.trycaviar.com/store/curry-district-little-elm-900790/"]
+        },
+        {
+          "name": "Paneer Phool Makhna",
+          "description": "Served with white rice.",
+          "price": 14.99,
+          "diet": "veg",
+          "spice": null,
+          "tags": [],
+          "confidence": "medium",
+          "sources": ["https://currydistrict.net/menu.html"]
+        },
+        {
+          "name": "Phool Makhna",
+          "description": "Served with white rice.",
+          "price": 13.99,
+          "diet": "veg",
+          "spice": null,
+          "tags": [],
+          "confidence": "medium",
+          "sources": ["https://currydistrict.net/menu.html"]
+        },
+        {
+          "name": "Kadai Veggie",
+          "description": "Served with white rice.",
+          "price": 12.99,
+          "diet": "veg",
+          "spice": null,
+          "tags": [],
+          "confidence": "medium",
+          "sources": ["https://currydistrict.net/menu.html"]
+        },
+        {
+          "name": "Aloo Gobi Masala",
+          "description": "Served with white rice.",
+          "price": 12.99,
+          "diet": "veg",
+          "spice": null,
+          "tags": [],
+          "confidence": "medium",
+          "sources": ["https://currydistrict.net/menu.html", "http://places.singleplatform.com/curry-district/menu"]
+        },
+        {
+          "name": "Paneer Korma",
+          "description": "",
+          "price": null,
+          "diet": "veg",
+          "spice": null,
+          "tags": [],
+          "confidence": "low",
+          "sources": ["https://www.trycaviar.com/store/curry-district-little-elm-900790/"]
+        },
+        {
+          "name": "Malai Kofta",
+          "description": "",
+          "price": null,
+          "diet": "veg",
+          "spice": null,
+          "tags": ["single-source"],
+          "confidence": "low",
+          "sources": ["https://curry-district.wheree.com/menu"]
+        },
+        {
+          "name": "Afghani Paneer Curry",
+          "description": "",
+          "price": null,
+          "diet": "veg",
+          "spice": null,
+          "tags": ["single-source"],
+          "confidence": "low",
+          "sources": ["http://places.singleplatform.com/curry-district/menu"]
+        }
+      ]
+    },
+    {
+      "name": "Non-Veg Curries",
+      "items": [
+        {
+          "name": "Butter Chicken",
+          "description": "",
+          "price": 13.99,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": ["popular"],
+          "confidence": "medium",
+          "sources": ["https://www.menupix.com/texas/restaurants/31934626/Curry-District-Little-Elm-TX", "https://www.allmenus.com/tx/little-elm/815011-curry-district/menu/", "https://www.doordash.com/store/curry-district-little-elm-900790/"]
+        },
+        {
+          "name": "Chicken Tikka Masala",
+          "description": "",
+          "price": 13.99,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": ["popular"],
+          "confidence": "medium",
+          "sources": ["https://www.menupix.com/texas/restaurants/31934626/Curry-District-Little-Elm-TX", "https://www.allmenus.com/tx/little-elm/815011-curry-district/menu/", "https://www.doordash.com/store/curry-district-little-elm-900790/"]
+        },
+        {
+          "name": "Chicken Vindaloo",
+          "description": "",
+          "price": 12.99,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": ["popular"],
+          "confidence": "medium",
+          "sources": ["https://www.trycaviar.com/store/curry-district-little-elm-900790/", "https://www.allmenus.com/tx/little-elm/815011-curry-district/menu/"]
+        },
+        {
+          "name": "Kadai Chicken",
+          "description": "",
+          "price": 12.99,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [],
+          "confidence": "medium",
+          "sources": ["https://www.trycaviar.com/store/curry-district-little-elm-900790/", "https://www.allmenus.com/tx/little-elm/815011-curry-district/menu/"]
+        },
+        {
+          "name": "Chicken Curry",
+          "description": "",
+          "price": null,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [],
+          "confidence": "medium",
+          "sources": ["https://www.allmenus.com/tx/little-elm/815011-curry-district/menu/", "http://places.singleplatform.com/curry-district/menu"]
+        },
+        {
+          "name": "Chettinad Chicken",
+          "description": "",
+          "price": null,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": ["single-source"],
+          "confidence": "low",
+          "sources": ["https://www.allmenus.com/tx/little-elm/815011-curry-district/menu/"]
+        },
+        {
+          "name": "Saag Chicken",
+          "description": "",
+          "price": null,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": ["single-source"],
+          "confidence": "low",
+          "sources": ["https://www.allmenus.com/tx/little-elm/815011-curry-district/menu/"]
+        },
+        {
+          "name": "Afghani Chicken Curry",
+          "description": "",
+          "price": null,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": ["single-source"],
+          "confidence": "low",
+          "sources": ["http://places.singleplatform.com/curry-district/menu"]
+        },
+        {
+          "name": "Goat Curry",
+          "description": "",
+          "price": 16.99,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [],
+          "confidence": "medium",
+          "sources": ["https://www.menupix.com/menudirectory/menu.php?id=31934626&type=6", "https://www.allmenus.com/tx/little-elm/815011-curry-district/menu/"]
+        },
+        {
+          "name": "Andhra Goat Curry",
+          "description": "",
+          "price": 16.99,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [],
+          "confidence": "medium",
+          "sources": ["https://www.menupix.com/menudirectory/menu.php?id=31934626&type=6"]
+        },
+        {
+          "name": "Kadai Goat",
+          "description": "",
+          "price": 16.99,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [],
+          "confidence": "medium",
+          "sources": ["https://www.menupix.com/menudirectory/menu.php?id=31934626&type=6"]
+        },
+        {
+          "name": "Goat Vindaloo",
+          "description": "",
+          "price": 16.99,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [],
+          "confidence": "medium",
+          "sources": ["https://www.menupix.com/menudirectory/menu.php?id=31934626&type=6"]
+        },
+        {
+          "name": "Goat Kurma",
+          "description": "",
+          "price": null,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": ["single-source"],
+          "confidence": "low",
+          "sources": ["https://www.menupix.com/menudirectory/menu.php?id=31934626&type=6"]
+        },
+        {
+          "name": "Goat Chettinad",
+          "description": "",
+          "price": null,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": ["single-source"],
+          "confidence": "low",
+          "sources": ["https://www.menupix.com/menudirectory/menu.php?id=31934626&type=6"]
+        },
+        {
+          "name": "Rogan Goat Curry",
+          "description": "",
+          "price": null,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": ["single-source"],
+          "confidence": "low",
+          "sources": ["https://www.menupix.com/menudirectory/menu.php?id=31934626&type=6"]
+        },
+        {
+          "name": "Lamb Curry",
+          "description": "",
+          "price": 16.99,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [],
+          "confidence": "medium",
+          "sources": ["https://www.menupix.com/menudirectory/menu.php?id=31934626&type=6"]
+        },
+        {
+          "name": "Andhra Lamb Curry",
+          "description": "",
+          "price": 16.99,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [],
+          "confidence": "medium",
+          "sources": ["https://www.menupix.com/menudirectory/menu.php?id=31934626&type=6"]
+        },
+        {
+          "name": "Lamb Kurma",
+          "description": "",
+          "price": 16.99,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [],
+          "confidence": "medium",
+          "sources": ["https://www.menupix.com/menudirectory/menu.php?id=31934626&type=6"]
+        },
+        {
+          "name": "Lamb Vindaloo",
+          "description": "",
+          "price": 16.99,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [],
+          "confidence": "medium",
+          "sources": ["https://www.menupix.com/menudirectory/menu.php?id=31934626&type=6"]
+        },
+        {
+          "name": "Kadai Lamb",
+          "description": "",
+          "price": 16.99,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [],
+          "confidence": "medium",
+          "sources": ["https://www.menupix.com/menudirectory/menu.php?id=31934626&type=6"]
+        }
+      ]
+    }
+  ],
+  "notes": "METHOD LIMITS: every aggregator/official page fetch (allmenus, res-menu, singleplatform, gotoeat, menupix, sirved, doordash) returned EGRESS_BLOCKED, and the shared WebSearch budget (200) ran out after ~12 of my queries. All data comes from WebSearch result summaries, not page reads; the summarizer did not attribute individual prices to specific pages, so for corroborating sources the listed URLs are the result pages returned by the query that surfaced the figure (attribution within the set is unresolved). Raise CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION to finish. CONFIDENCE KEY: high = same price in the official-site-restricted search AND at least one other unrestricted retrieval, no conflict (6 items: Dal Thadaka, Dal Makhani, Channa Masala, Palak Paneer, Paneer Tikka Masala, Paneer Butter Masala); medium = price from a single retrieval, or name seen in 2+ sources with price conflicting/unknown; low = single-source name only. Per rule 5 treat only 'high' prices as verified; show no price for medium/low unless the owner confirms. PRICE CONFLICTS: Butter Chicken / Chicken Tikka Masala show three values: $11.49 (allmenus, likely older snapshot; goat there $13.49), $13.99 (menupix + 'popular items' snippets) and $16.67 (DoorDash/Caviar, consistent with roughly 19% delivery-platform markup over $13.99). Do NOT use DoorDash/Caviar prices for the in-house menu. SinglePlatform snippet showed yet another tier (Channa Masala $11.98, Aloo Gobi $11.48, Chicken Curry $13.48, Chicken Tikka Masala $14.48, Afghani Chicken Curry $16.99, Afghani Paneer Curry $15.99) that looks stale/unreliable; Afghani items appear only there. Chicken Vindaloo and Kadai Chicken $12.99 came from one mixed-source retrieval. Goat/lamb $16.99 also single retrieval (Rogan Goat Curry, Goat Kurma, Goat Chettinad listed without prices). Wording note: restaurant spells 'Dal Thadaka' and 'Phool Makhna'; one aggregator spelled 'Panner Korma'. SERVING INFO (official site, single retrieval): Veg Curries are served with white rice; naan add-ons Plain $1.00, Butter $1.25, Garlic $1.99, Bullet $2.49. Older allmenus text says non-veg curries come with plain naan or white rice (unconfirmed for current menu). Ordering listing mentions selectable spice (Mild/Medium/Spicy) so spice is null for every item. GAPS: (1) no item descriptions found anywhere, so description is blank except the sourced 'Served with white rice.' line; menu copy must be written as our own and not attributed to the restaurant. (2) No shrimp/fish/egg/seafood curries found (Tandoori Fish exists but belongs to Tandoori). (3) Veg list is explicitly incomplete ('and several other options'); likely missing e.g. saag/mixed-veg/bhindi/mushroom/baingan items, which we cannot confirm. (4) Malai Kofta category unconfirmed (named only in a wheree summary). (5) Official-site chicken curry prices were never read directly. (6) 'popular' tag on Butter Chicken, Chicken Tikka Masala, Chicken Vindaloo comes from data/business.json popularDishes plus DoorDash most-ordered (Butter Chicken, Chicken Tikka Masala). Recommend asking the owners for a current menu PDF/photo to close all gaps."
+}

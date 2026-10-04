@@ -1,0 +1,28 @@
+{
+  "_note": "Seed facts from public search snippets (Oct 2026). Research agents must verify/complete and set verified:true per field. Anything unverified is shown in UI only if flagged in docs/OPEN_QUESTIONS.md.",
+  "name": "Curry District",
+  "category": "Indian restaurant — curries, biryani & pulao, tandoori/kababs, Indo-Chinese, breads, desserts",
+  "address": { "line1": "11851 FM 423, Suite 200", "city": "Little Elm", "state": "TX", "zip": "75068", "verified": true },
+  "phone": { "candidates": ["(972) 787-1320", "(469) 200-5944", "(469) 200-5856"], "chosen": null, "verified": false },
+  "hours": {
+    "Mon-Thu": "11:00 AM – 2:30 PM, 4:30 PM – 10:00 PM",
+    "Fri-Sat": "11:00 AM – 3:00 PM, 4:30 PM – 10:30 PM",
+    "Sun": "11:00 AM – 3:00 PM, 4:30 PM – 10:00 PM",
+    "happyHour": "Weekdays 4–7 PM",
+    "verified": false
+  },
+  "links": {
+    "officialSite": "https://currydistrict.net/",
+    "orderOnline": "https://curry-district-little-elm.cloveronline.com/",
+    "instagram": "https://www.instagram.com/currydistrictfrisco/",
+    "uberEats": "https://www.ubereats.com/store/curry-district/uWXzS9FzRBqEC8dXe5241w",
+    "yelp": "https://www.yelp.com/biz/curry-district-little-elm",
+    "tripadvisor": "https://www.tripadvisor.com/Restaurant_Review-g56175-d25509526-Reviews-Curry_District-Little_Elm_Texas.html",
+    "verified": false
+  },
+  "ratings": { "google": 4.2, "facebook": 4.8, "yelp": { "stars": 4.0, "count": 120 }, "verified": false },
+  "popularDishes": ["Butter Chicken", "Chicken Tikka Masala", "Chicken Vindaloo", "Garlic Naan", "Tandoori Chicken", "Chicken Tikka Kabab"],
+  "tagline_existing": "A traditional food house bringing a variety of high-quality Indian dishes specialized for our local community.",
+  "serviceModes": ["dine-in", "takeout", "delivery (Uber Eats / Postmates)", "online ordering (Clover)"],
+  "conceptDisclaimer": "Independent design concept prepared as a proposal — not the official Curry District website or brand material."
+}

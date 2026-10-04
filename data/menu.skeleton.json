@@ -1,0 +1,1360 @@
+{
+ "_note": "Skeleton merged from research/menu_*.json. Prices are NOT displayed on concept sites (showPrices=false): sources conflict by 25-35%. Names come from public listing snippets and are unverified against the live menu. Next step: copywriter fills desc/desc_bazaar/desc_royal/spice/art.",
+ "meta": {
+  "showPrices": false,
+  "zones": [
+   {
+    "id": "starters",
+    "name": "Starters Square",
+    "tagline": "Crispy, fiery and made for sharing"
+   },
+   {
+    "id": "tandoor",
+    "name": "Tandoor Quarter",
+    "tagline": "Charred, smoky, straight from the clay oven"
+   },
+   {
+    "id": "curry",
+    "name": "Curry Quarter",
+    "tagline": "Slow-simmered gravies, from creamy to Andhra-fiery"
+   },
+   {
+    "id": "biryani",
+    "name": "Biryani Boulevard",
+    "tagline": "Dum biryanis and pulavs, layered and sealed"
+   },
+   {
+    "id": "indochinese",
+    "name": "Indo-Chinese Alley",
+    "tagline": "Wok-tossed street-food favourites"
+   },
+   {
+    "id": "bread",
+    "name": "Bread Bazaar",
+    "tagline": "Hot from the tandoor"
+   },
+   {
+    "id": "sweets",
+    "name": "Sweet Street",
+    "tagline": "Something sweet to finish"
+   },
+   {
+    "id": "chai",
+    "name": "Chai & Coolers",
+    "tagline": "Lassi, shakes and a proper cup of chai"
+   }
+  ]
+ },
+ "items": [
+  {
+   "id": "gobi-65",
+   "name": "Gobi 65",
+   "zone": "starters",
+   "diet": "veg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "Spiced, crisp-fried cauliflower in the 65 style.",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "gobi-manchurian",
+   "name": "Gobi Manchurian",
+   "zone": "indochinese",
+   "diet": "veg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "Cauliflower florets tossed in an Indo-Chinese Manchurian-style sauce.",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "chilli-gobi",
+   "name": "Chilli Gobi",
+   "zone": "starters",
+   "diet": "veg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "Cauliflower tossed in a spicy chilli sauce (Indo-Chinese style).",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "chilli-paneer",
+   "name": "Chilli Paneer",
+   "zone": "indochinese",
+   "diet": "veg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "Paneer cubes tossed in a spicy chilli sauce with peppers and onions (Indo-Chinese style).",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "veggie-spring-rolls",
+   "name": "Veggie Spring Rolls",
+   "zone": "starters",
+   "diet": "veg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "Crisp rolls filled with shredded vegetables.",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "baby-corn-manchurian",
+   "name": "Baby Corn Manchurian",
+   "zone": "starters",
+   "diet": "veg",
+   "spice": null,
+   "tags": [
+    "fried"
+   ],
+   "desc_src": "Crispy baby corn tossed in a tangy, spicy sauce with bell peppers and onions, garnished with spring onions.",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "chicken-65",
+   "name": "Chicken 65",
+   "zone": "starters",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "Bold and zesty fried chicken; choice of spicy, medium or mild heat.",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "chilli-chicken",
+   "name": "Chilli Chicken",
+   "zone": "indochinese",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "Chicken tossed in a spicy chilli sauce with peppers and onions (Indo-Chinese style).",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "chicken-555",
+   "name": "Chicken 555",
+   "zone": "starters",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "Spiced fried chicken starter, a house variation on the 65 style.",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "karampodi-chicken",
+   "name": "Karampodi Chicken",
+   "zone": "starters",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "Chicken coated in karampodi, a South Indian dry spice-and-lentil powder.",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "kodi-vepudu",
+   "name": "Kodi Vepudu",
+   "zone": "starters",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "Andhra-style dry chicken fry (kodi vepudu is Telugu for chicken fry).",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "goat-pepper-fry",
+   "name": "Goat Pepper Fry",
+   "zone": "starters",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "Bone-in goat pepper fry.",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "ginger-fish",
+   "name": "Ginger Fish",
+   "zone": "starters",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "Fried fish tossed with ginger in an Indo-Chinese style sauce.",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "apollo-fish",
+   "name": "Apollo Fish",
+   "zone": "starters",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "Spicy fried fish starter in the Andhra/Hyderabadi style.",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "chilli-shrimp",
+   "name": "Chilli Shrimp",
+   "zone": "starters",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "Shrimp tossed in a spicy chilli sauce (Indo-Chinese style).",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "veg-samosa",
+   "name": "Veg Samosa (3 pcs)",
+   "zone": "starters",
+   "diet": "veg",
+   "spice": null,
+   "tags": [
+    "fried"
+   ],
+   "desc_src": "Crispy pastry filled with spiced potatoes and peas, served in a set of three.",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "pakora",
+   "name": "Pakora",
+   "zone": "starters",
+   "diet": null,
+   "spice": null,
+   "tags": [],
+   "desc_src": "Gram-flour vegetable fritters. Exact variety not confirmed.",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "tomato-soup",
+   "name": "Tomato Soup",
+   "zone": "starters",
+   "diet": "veg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "Classic tomato soup.",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "hot-sour-soup",
+   "name": "Hot & Sour Soup",
+   "zone": "starters",
+   "diet": null,
+   "spice": null,
+   "tags": [],
+   "desc_src": "Indo-Chinese style hot and sour soup. Veg or non-veg base not confirmed.",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "goat-paya-soup",
+   "name": "Goat Paya Soup",
+   "zone": "starters",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "Slow-simmered goat trotter (paya) soup.",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "veg-biryani",
+   "name": "Veg Biryani",
+   "zone": "biryani",
+   "diet": "veg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "gongura-veg-biryani",
+   "name": "Gongura Veg Biryani",
+   "zone": "biryani",
+   "diet": "veg",
+   "spice": null,
+   "tags": [
+    "gongura"
+   ],
+   "desc_src": "",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "paneer-biryani",
+   "name": "Paneer Biryani",
+   "zone": "biryani",
+   "diet": "veg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "Biryani with paneer.",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "egg-biryani",
+   "name": "Egg Biryani",
+   "zone": "biryani",
+   "diet": "egg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "chicken-dum-biryani",
+   "name": "Chicken Dum Biryani",
+   "zone": "biryani",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "Dum-style chicken biryani.",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "boneless-chicken-biryani",
+   "name": "Boneless Chicken Biryani",
+   "zone": "biryani",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "Biryani with boneless chicken.",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "chicken-65-biryani",
+   "name": "Chicken 65 Biryani",
+   "zone": "biryani",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [
+    "popular"
+   ],
+   "desc_src": "Offered in hot, medium or mild",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "goat-dum-biryani",
+   "name": "Goat Dum Biryani (Weekend)",
+   "zone": "biryani",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [
+    "weekend-only",
+    "signature"
+   ],
+   "desc_src": "Weekend special",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "shrimp-biryani",
+   "name": "Shrimp Biryani",
+   "zone": "biryani",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "Biryani with shrimp.",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "chicken-fry-pulav",
+   "name": "Chicken Fry Pulav",
+   "zone": "biryani",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "Pulav with fried chicken.",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "goat-fry-pulav",
+   "name": "Goat Fry Pulav",
+   "zone": "biryani",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "rajugaari-kodi-pulav",
+   "name": "Rajugaari Kodi Pulav",
+   "zone": "biryani",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "gongura-mutton-pulav",
+   "name": "Gongura Mutton Pulav",
+   "zone": "biryani",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [
+    "gongura",
+    "signature"
+   ],
+   "desc_src": "Pulav with mutton and gongura (sorrel leaves).",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "tandoori-chicken",
+   "name": "Tandoori Chicken",
+   "zone": "tandoor",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [
+    "popular"
+   ],
+   "desc_src": "6 pcs",
+   "price": 14.99,
+   "price_confidence": "high"
+  },
+  {
+   "id": "chicken-tikka-kabab",
+   "name": "Chicken Tikka Kabab",
+   "zone": "tandoor",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [
+    "popular"
+   ],
+   "desc_src": "Boneless, 7 pcs",
+   "price": 14.99,
+   "price_confidence": "high"
+  },
+  {
+   "id": "malai-chicken-kabab",
+   "name": "Malai Chicken Kabab",
+   "zone": "tandoor",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "Boneless, 7 pcs",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "paneer-tikka-kabab",
+   "name": "Paneer Tikka Kabab",
+   "zone": "tandoor",
+   "diet": "veg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "7 pcs",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "malai-paneer-kabab",
+   "name": "Malai Paneer Kabab",
+   "zone": "tandoor",
+   "diet": "veg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "7 pcs",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "lamb-seekh-kabab",
+   "name": "Lamb Seekh Kabab",
+   "zone": "tandoor",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "8 pcs on older listing",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "lamb-chop-kabab",
+   "name": "Lamb Chop Kabab",
+   "zone": "tandoor",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "6 pcs on older listing",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "veg-hakka-noodles",
+   "name": "Veg Hakka Noodles",
+   "zone": "indochinese",
+   "diet": "veg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "chicken-noodles",
+   "name": "Chicken Noodles",
+   "zone": "indochinese",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "veg-fried-rice",
+   "name": "Veg Fried Rice",
+   "zone": "indochinese",
+   "diet": "veg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "chicken-fried-rice",
+   "name": "Chicken Fried Rice",
+   "zone": "indochinese",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "chicken-manchurian",
+   "name": "Chicken Manchurian",
+   "zone": "indochinese",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "dal-thadaka",
+   "name": "Dal Thadaka",
+   "zone": "curry",
+   "diet": "veg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "Served with white rice.",
+   "price": 12.99,
+   "price_confidence": "high"
+  },
+  {
+   "id": "dal-makhani",
+   "name": "Dal Makhani",
+   "zone": "curry",
+   "diet": "veg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "Served with white rice.",
+   "price": 13.99,
+   "price_confidence": "high"
+  },
+  {
+   "id": "channa-masala",
+   "name": "Channa Masala",
+   "zone": "curry",
+   "diet": "veg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "Served with white rice.",
+   "price": 12.99,
+   "price_confidence": "high"
+  },
+  {
+   "id": "palak-paneer",
+   "name": "Palak Paneer",
+   "zone": "curry",
+   "diet": "veg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "Served with white rice.",
+   "price": 14.99,
+   "price_confidence": "high"
+  },
+  {
+   "id": "paneer-tikka-masala",
+   "name": "Paneer Tikka Masala",
+   "zone": "curry",
+   "diet": "veg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "Served with white rice.",
+   "price": 14.99,
+   "price_confidence": "high"
+  },
+  {
+   "id": "paneer-butter-masala",
+   "name": "Paneer Butter Masala",
+   "zone": "curry",
+   "diet": "veg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "Served with white rice.",
+   "price": 14.99,
+   "price_confidence": "high"
+  },
+  {
+   "id": "shahi-paneer",
+   "name": "Shahi Paneer",
+   "zone": "curry",
+   "diet": "veg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "Served with white rice.",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "kadai-paneer",
+   "name": "Kadai Paneer",
+   "zone": "curry",
+   "diet": "veg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "Served with white rice.",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "malai-paneer",
+   "name": "Malai Paneer",
+   "zone": "curry",
+   "diet": "veg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "Served with white rice.",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "paneer-phool-makhna",
+   "name": "Paneer Phool Makhna",
+   "zone": "curry",
+   "diet": "veg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "Served with white rice.",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "phool-makhna",
+   "name": "Phool Makhna",
+   "zone": "curry",
+   "diet": "veg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "Served with white rice.",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "kadai-veggie",
+   "name": "Kadai Veggie",
+   "zone": "curry",
+   "diet": "veg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "Served with white rice.",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "aloo-gobi-masala",
+   "name": "Aloo Gobi Masala",
+   "zone": "curry",
+   "diet": "veg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "Served with white rice.",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "paneer-korma",
+   "name": "Paneer Korma",
+   "zone": "curry",
+   "diet": "veg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "malai-kofta",
+   "name": "Malai Kofta",
+   "zone": "curry",
+   "diet": "veg",
+   "spice": null,
+   "tags": [
+    "single-source"
+   ],
+   "desc_src": "",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "afghani-paneer-curry",
+   "name": "Afghani Paneer Curry",
+   "zone": "curry",
+   "diet": "veg",
+   "spice": null,
+   "tags": [
+    "single-source"
+   ],
+   "desc_src": "",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "butter-chicken",
+   "name": "Butter Chicken",
+   "zone": "curry",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [
+    "popular"
+   ],
+   "desc_src": "",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "chicken-tikka-masala",
+   "name": "Chicken Tikka Masala",
+   "zone": "curry",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [
+    "popular"
+   ],
+   "desc_src": "",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "chicken-vindaloo",
+   "name": "Chicken Vindaloo",
+   "zone": "curry",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [
+    "popular"
+   ],
+   "desc_src": "",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "kadai-chicken",
+   "name": "Kadai Chicken",
+   "zone": "curry",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "chicken-curry",
+   "name": "Chicken Curry",
+   "zone": "curry",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "chettinad-chicken",
+   "name": "Chettinad Chicken",
+   "zone": "curry",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [
+    "single-source"
+   ],
+   "desc_src": "",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "saag-chicken",
+   "name": "Saag Chicken",
+   "zone": "curry",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [
+    "single-source"
+   ],
+   "desc_src": "",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "afghani-chicken-curry",
+   "name": "Afghani Chicken Curry",
+   "zone": "curry",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [
+    "single-source"
+   ],
+   "desc_src": "",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "goat-curry",
+   "name": "Goat Curry",
+   "zone": "curry",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "andhra-goat-curry",
+   "name": "Andhra Goat Curry",
+   "zone": "curry",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "kadai-goat",
+   "name": "Kadai Goat",
+   "zone": "curry",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "goat-vindaloo",
+   "name": "Goat Vindaloo",
+   "zone": "curry",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "goat-kurma",
+   "name": "Goat Kurma",
+   "zone": "curry",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [
+    "single-source"
+   ],
+   "desc_src": "",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "goat-chettinad",
+   "name": "Goat Chettinad",
+   "zone": "curry",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [
+    "single-source"
+   ],
+   "desc_src": "",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "rogan-goat-curry",
+   "name": "Rogan Goat Curry",
+   "zone": "curry",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [
+    "single-source"
+   ],
+   "desc_src": "",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "lamb-curry",
+   "name": "Lamb Curry",
+   "zone": "curry",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "andhra-lamb-curry",
+   "name": "Andhra Lamb Curry",
+   "zone": "curry",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "lamb-kurma",
+   "name": "Lamb Kurma",
+   "zone": "curry",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "lamb-vindaloo",
+   "name": "Lamb Vindaloo",
+   "zone": "curry",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "kadai-lamb",
+   "name": "Kadai Lamb",
+   "zone": "curry",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [],
+   "desc_src": "",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "garlic-naan",
+   "name": "Garlic Naan",
+   "zone": "bread",
+   "diet": "veg",
+   "spice": null,
+   "tags": [
+    "popular",
+    "tandoor",
+    "generic-description"
+   ],
+   "desc_src": "Tandoor-baked naan topped with garlic.",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "butter-naan",
+   "name": "Butter Naan",
+   "zone": "bread",
+   "diet": "veg",
+   "spice": null,
+   "tags": [
+    "tandoor",
+    "generic-description"
+   ],
+   "desc_src": "Tandoor-baked white-flour naan brushed with butter.",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "plain-naan",
+   "name": "Plain Naan",
+   "zone": "bread",
+   "diet": "veg",
+   "spice": null,
+   "tags": [
+    "tandoor",
+    "generic-description"
+   ],
+   "desc_src": "Classic tandoor-baked naan.",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "roti-chapati",
+   "name": "Roti · Chapati (2 pc)",
+   "zone": "bread",
+   "diet": "veg",
+   "spice": null,
+   "tags": [
+    "generic-description"
+   ],
+   "desc_src": "Two whole-wheat flatbreads.",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "bullet-naan",
+   "name": "Bullet Naan",
+   "zone": "bread",
+   "diet": null,
+   "spice": null,
+   "tags": [
+    "unverified"
+   ],
+   "desc_src": "",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "paratha",
+   "name": "Paratha (2 pc)",
+   "zone": "bread",
+   "diet": null,
+   "spice": null,
+   "tags": [
+    "unverified"
+   ],
+   "desc_src": "",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "plain-rice",
+   "name": "Plain Rice (Basmati)",
+   "zone": "biryani",
+   "diet": "veg",
+   "spice": null,
+   "tags": [
+    "side",
+    "generic-description"
+   ],
+   "desc_src": "Steamed basmati rice.",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "vegetable-dum-biryani",
+   "name": "Vegetable Dum Biryani",
+   "zone": "biryani",
+   "diet": "veg",
+   "spice": null,
+   "tags": [
+    "biryani",
+    "cross-reference",
+    "generic-description"
+   ],
+   "desc_src": "Dum-style vegetable biryani.",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "goat-biryani",
+   "name": "Goat Biryani",
+   "zone": "biryani",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [
+    "biryani",
+    "cross-reference",
+    "generic-description"
+   ],
+   "desc_src": "Biryani with goat.",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "shrimp-pulav",
+   "name": "Shrimp Pulav",
+   "zone": "biryani",
+   "diet": "nonveg",
+   "spice": null,
+   "tags": [
+    "pulav",
+    "cross-reference",
+    "generic-description"
+   ],
+   "desc_src": "Pulav with shrimp.",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "gulab-jamun",
+   "name": "Gulab Jamun",
+   "zone": "sweets",
+   "diet": "veg",
+   "spice": null,
+   "tags": [
+    "sweet",
+    "generic-description"
+   ],
+   "desc_src": "Soft milk-solid dumplings in sugar syrup.",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "rasmalai",
+   "name": "Rasmalai",
+   "zone": "sweets",
+   "diet": "veg",
+   "spice": null,
+   "tags": [
+    "sweet",
+    "generic-description"
+   ],
+   "desc_src": "Soft cheese dumplings in chilled, sweetened, cardamom-scented milk.",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "carrot-halwa",
+   "name": "Carrot Halwa (Gajar Halwa)",
+   "zone": "sweets",
+   "diet": "veg",
+   "spice": null,
+   "tags": [
+    "sweet",
+    "generic-description"
+   ],
+   "desc_src": "Slow-cooked carrot pudding.",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "rice-kheer",
+   "name": "Rice Kheer",
+   "zone": "sweets",
+   "diet": "veg",
+   "spice": null,
+   "tags": [
+    "sweet",
+    "generic-description"
+   ],
+   "desc_src": "Creamy rice pudding.",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "ice-cream",
+   "name": "Ice Cream",
+   "zone": "sweets",
+   "diet": null,
+   "spice": null,
+   "tags": [
+    "sweet",
+    "flavours-unknown"
+   ],
+   "desc_src": "",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "rabidi-jamun",
+   "name": "Rabidi Jamun",
+   "zone": "sweets",
+   "diet": "veg",
+   "spice": null,
+   "tags": [
+    "sweet",
+    "generic-description"
+   ],
+   "desc_src": "Gulab jamun served with rabri (thickened sweet milk). Description inferred from the dish name; the restaurant's wording was not found.",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "kala-jamun",
+   "name": "Kala Jamun",
+   "zone": "sweets",
+   "diet": "veg",
+   "spice": null,
+   "tags": [
+    "sweet",
+    "generic-description"
+   ],
+   "desc_src": "Dark, deep-fried milk dumplings in syrup (kala jamun). Description inferred from the dish name.",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "apricot-delight",
+   "name": "Apricot Delight",
+   "zone": "sweets",
+   "diet": null,
+   "spice": null,
+   "tags": [
+    "sweet",
+    "ingredients-unknown"
+   ],
+   "desc_src": "",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "mango-lassi",
+   "name": "Mango Lassi",
+   "zone": "chai",
+   "diet": "veg",
+   "spice": null,
+   "tags": [
+    "lassi",
+    "popular",
+    "cold"
+   ],
+   "desc_src": "Creamy yogurt blended with ripe mango. Sweet and tangy. The DoorDash-style listing adds milk, sugar and a hint of cardamom.",
+   "price": null,
+   "price_confidence": "medium"
+  },
+  {
+   "id": "sweet-lassi",
+   "name": "Sweet Lassi",
+   "zone": "chai",
+   "diet": "veg",
+   "spice": null,
+   "tags": [
+    "lassi",
+    "cold",
+    "generic-description"
+   ],
+   "desc_src": "Sweetened yogurt drink.",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "mango-milkshake",
+   "name": "Mango Milkshake",
+   "zone": "chai",
+   "diet": "veg",
+   "spice": null,
+   "tags": [
+    "shake",
+    "cold",
+    "generic-description"
+   ],
+   "desc_src": "Mango milkshake.",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "chikku-shake",
+   "name": "Chikku Shake",
+   "zone": "chai",
+   "diet": "veg",
+   "spice": null,
+   "tags": [
+    "shake",
+    "cold",
+    "generic-description"
+   ],
+   "desc_src": "Chikoo (sapota) milkshake. Spelled 'Chikku' in the source.",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "sitaphai-shake",
+   "name": "Sitaphai Shake",
+   "zone": "chai",
+   "diet": "veg",
+   "spice": null,
+   "tags": [
+    "shake",
+    "cold",
+    "generic-description",
+    "spelling-unverified"
+   ],
+   "desc_src": "Custard-apple (sitaphal) milkshake. Spelled 'Sitaphai' in the source; the spelling needs checking against the real menu.",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "badam-milk",
+   "name": "Badam Milk",
+   "zone": "chai",
+   "diet": "veg",
+   "spice": null,
+   "tags": [
+    "milk",
+    "generic-description"
+   ],
+   "desc_src": "Almond-flavoured milk.",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "butter-milk",
+   "name": "Butter Milk",
+   "zone": "chai",
+   "diet": "veg",
+   "spice": null,
+   "tags": [
+    "cooler",
+    "generic-description"
+   ],
+   "desc_src": "Spiced buttermilk.",
+   "price": null,
+   "price_confidence": "low"
+  },
+  {
+   "id": "tea-chai",
+   "name": "Tea · Chai",
+   "zone": "chai",
+   "diet": "veg",
+   "spice": null,
+   "tags": [
+    "hot-beverage",
+    "chai"
+   ],
+   "desc_src": "Hot Indian tea listed under Hot Beverages. Other hot drinks (for example coffee) were not confirmed.",
+   "price": null,
+   "price_confidence": "medium"
+  }
+ ],
+ "offers_raw": {
+  "lunch": "No lunch buffet found in any snippet. DoorDash shows a 'Lunch Box' menu section; contents and price are not known. DoorDash also lists a 'Biryani's Combo Offer' marked Tuesday and Wednesday only. Meltivers (a third-party promotions page) lists a 'Wednesday Special Offer: Any 3 Biryanis $25.99'; it was seen in one snippet and the price was not cross-checked. Lunch service hours in data/business.json are 11:00 AM to 2:30 PM (3:00 PM Fri to Sun), not verified. No thali or lunch-combo pricing was found.",
+  "catering": "The official site has a catering page (currydistrict.net/catering.html); its content could not be read. Sulekha describes outdoor catering for special occasions plus pre-booked advance platters for large groups, customised to the client's taste, for baby showers, corporate events, surprise parties, housewarmings and birthdays. No party-tray sizes or prices were found. Sulekha gives (469) 200-5944 as the contact number. The family packs (see Rice) and the Weekend Family Pack are the only priced group-size items found.",
+  "happyHour": "Weekdays 4 to 7 PM, per the Atly listing (same as data/business.json). What is discounted was NOT found. Caution: dinner service in business.json resumes at 4:30 PM, so a 4 PM start looks inconsistent; treat the window as unverified. One snippet also says you can bring your own beer on weekends (unverified, low confidence). Do not show any happy-hour discount or alcohol claim.",
+  "kids": "No kids menu found.",
+  "delivery": "Delivery and pickup: Uber Eats, DoorDash (with a Caviar mirror and a legacy Postmates link) and Clover online ordering (curry-district-little-elm.cloveronline.com). The official site has a 'Door Delivery' page (currydistrict.net/doordelivery.html) that could not be read. Minimum order, delivery fee and service fee were not found. Delivery-app prices appear to run higher than the aggregator menu prices (for example Garlic Naan $3.49 vs $3.75), but this is an inference. Gift cards are listed on Giftly (a third-party gift-card page).",
+  "other": "Weekend Family Pack: weekend family-size biryani and pulav packs come with a free appetizer and dessert, chef's choice (official site: 'family pack options that include free appetizer and dessert'). DoorDash prices seen: Chicken 65 Biryani $47.79, Chicken Dum Biryani $47.79, Chicken 65 Pulav $42.99. The breakfast menu (Idly, Vada, Dosa, Puri) and the Indo-Chinese section are on the official site; not researched here. Possible sister location: the Instagram and Facebook handles say 'CurryDistrictFrisco', so some aggregator data (especially the conflicting dessert and lassi prices) may come from another location or an older menu."
+ }
+}

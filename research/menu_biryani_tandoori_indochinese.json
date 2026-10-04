@@ -1,0 +1,402 @@
+{
+  "categories": [
+    {
+      "name": "Biryani's & Pulavs",
+      "items": [
+        {
+          "name": "Veg Biryani",
+          "description": "",
+          "price": 13.99,
+          "diet": "veg",
+          "spice": null,
+          "tags": [],
+          "confidence": "medium",
+          "sources": [
+            "https://currydistrict.net/menu.html",
+            "https://www.doordash.com/store/curry-district-little-elm-900790/"
+          ]
+        },
+        {
+          "name": "Gongura Veg Biryani",
+          "description": "",
+          "price": 14.99,
+          "diet": "veg",
+          "spice": null,
+          "tags": [
+            "gongura"
+          ],
+          "confidence": "medium",
+          "sources": [
+            "https://currydistrict.net/menu.html",
+            "https://www.doordash.com/store/curry-district-little-elm-900790/"
+          ]
+        },
+        {
+          "name": "Paneer Biryani",
+          "description": "",
+          "price": 14.99,
+          "diet": "veg",
+          "spice": null,
+          "tags": [],
+          "confidence": "medium",
+          "sources": [
+            "https://currydistrict.net/menu.html",
+            "https://www.doordash.com/store/curry-district-little-elm-900790/"
+          ]
+        },
+        {
+          "name": "Egg Biryani",
+          "description": "",
+          "price": 12.99,
+          "diet": "egg",
+          "spice": null,
+          "tags": [],
+          "confidence": "medium",
+          "sources": [
+            "https://www.doordash.com/store/curry-district-little-elm-900790/"
+          ]
+        },
+        {
+          "name": "Chicken Dum Biryani",
+          "description": "",
+          "price": 14.99,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [],
+          "confidence": "medium",
+          "sources": [
+            "https://www.doordash.com/store/curry-district-little-elm-900790/"
+          ]
+        },
+        {
+          "name": "Boneless Chicken Biryani",
+          "description": "",
+          "price": 15.99,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [],
+          "confidence": "medium",
+          "sources": [
+            "https://www.doordash.com/store/curry-district-little-elm-900790/"
+          ]
+        },
+        {
+          "name": "Chicken 65 Biryani",
+          "description": "Offered in hot, medium or mild",
+          "price": 15.99,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [
+            "popular"
+          ],
+          "confidence": "medium",
+          "sources": [
+            "https://www.doordash.com/store/curry-district-little-elm-900790/",
+            "https://currydistrict.net/menu.html"
+          ]
+        },
+        {
+          "name": "Goat Dum Biryani (Weekend)",
+          "description": "Weekend special",
+          "price": 16.99,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [
+            "weekend-only",
+            "signature"
+          ],
+          "confidence": "medium",
+          "sources": [
+            "https://www.doordash.com/store/curry-district-little-elm-900790/"
+          ]
+        },
+        {
+          "name": "Shrimp Biryani",
+          "description": "",
+          "price": 16.99,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [],
+          "confidence": "medium",
+          "sources": [
+            "https://www.doordash.com/store/curry-district-little-elm-900790/"
+          ]
+        },
+        {
+          "name": "Chicken Fry Pulav",
+          "description": "",
+          "price": null,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [],
+          "confidence": "low",
+          "sources": [
+            "https://curry-district.wheree.com/menu",
+            "https://www.menupix.com/texas/restaurants/31934626/Curry-District-Little-Elm-TX",
+            "https://www.allmenus.com/tx/little-elm/815011-curry-district/menu/"
+          ]
+        },
+        {
+          "name": "Goat Fry Pulav",
+          "description": "",
+          "price": null,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [],
+          "confidence": "low",
+          "sources": [
+            "https://curry-district.wheree.com/menu",
+            "https://www.menupix.com/texas/restaurants/31934626/Curry-District-Little-Elm-TX",
+            "https://www.allmenus.com/tx/little-elm/815011-curry-district/menu/"
+          ]
+        },
+        {
+          "name": "Rajugaari Kodi Pulav",
+          "description": "",
+          "price": null,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [],
+          "confidence": "low",
+          "sources": [
+            "https://curry-district.wheree.com/menu",
+            "https://www.menupix.com/texas/restaurants/31934626/Curry-District-Little-Elm-TX",
+            "https://www.allmenus.com/tx/little-elm/815011-curry-district/menu/"
+          ]
+        },
+        {
+          "name": "Gongura Mutton Pulav",
+          "description": "",
+          "price": null,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [
+            "gongura",
+            "signature"
+          ],
+          "confidence": "low",
+          "sources": [
+            "https://curry-district.wheree.com/menu",
+            "https://www.menupix.com/texas/restaurants/31934626/Curry-District-Little-Elm-TX"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tandoori & Kababs",
+      "items": [
+        {
+          "name": "Tandoori Chicken",
+          "description": "6 pcs",
+          "price": 14.99,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [
+            "popular"
+          ],
+          "confidence": "high",
+          "sources": [
+            "https://www.doordash.com/store/curry-district-little-elm-900790/",
+            "https://currydistrict.net/menu.html"
+          ]
+        },
+        {
+          "name": "Chicken Tikka Kabab",
+          "description": "Boneless, 7 pcs",
+          "price": 14.99,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [
+            "popular"
+          ],
+          "confidence": "high",
+          "sources": [
+            "https://www.doordash.com/store/curry-district-little-elm-900790/",
+            "https://currydistrict.net/menu.html"
+          ]
+        },
+        {
+          "name": "Malai Chicken Kabab",
+          "description": "Boneless, 7 pcs",
+          "price": 14.99,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [],
+          "confidence": "medium",
+          "sources": [
+            "https://www.doordash.com/store/curry-district-little-elm-900790/",
+            "https://currydistrict.net/menu.html"
+          ]
+        },
+        {
+          "name": "Paneer Tikka Kabab",
+          "description": "7 pcs",
+          "price": 14.99,
+          "diet": "veg",
+          "spice": null,
+          "tags": [],
+          "confidence": "medium",
+          "sources": [
+            "https://www.doordash.com/store/curry-district-little-elm-900790/",
+            "https://currydistrict.net/menu.html"
+          ]
+        },
+        {
+          "name": "Malai Paneer Kabab",
+          "description": "7 pcs",
+          "price": 14.99,
+          "diet": "veg",
+          "spice": null,
+          "tags": [],
+          "confidence": "medium",
+          "sources": [
+            "https://www.doordash.com/store/curry-district-little-elm-900790/",
+            "https://currydistrict.net/menu.html"
+          ]
+        },
+        {
+          "name": "Lamb Seekh Kabab",
+          "description": "8 pcs on older listing",
+          "price": null,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [],
+          "confidence": "low",
+          "sources": [
+            "https://www.allmenus.com/tx/little-elm/815011-curry-district/menu/",
+            "https://www.menupix.com/texas/restaurants/31934626/Curry-District-Little-Elm-TX",
+            "http://places.singleplatform.com/curry-district/menu"
+          ]
+        },
+        {
+          "name": "Lamb Chop Kabab",
+          "description": "6 pcs on older listing",
+          "price": null,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [],
+          "confidence": "low",
+          "sources": [
+            "https://www.allmenus.com/tx/little-elm/815011-curry-district/menu/",
+            "https://www.menupix.com/texas/restaurants/31934626/Curry-District-Little-Elm-TX",
+            "http://places.singleplatform.com/curry-district/menu"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Indo-Chinese",
+      "items": [
+        {
+          "name": "Veg Hakka Noodles",
+          "description": "",
+          "price": 11.99,
+          "diet": "veg",
+          "spice": null,
+          "tags": [],
+          "confidence": "medium",
+          "sources": [
+            "https://postmates.com/store/curry-district/uWXzS9FzRBqEC8dXe5241w",
+            "http://places.singleplatform.com/curry-district/menu",
+            "https://www.menupix.com/texas/restaurants/31934626/Curry-District-Little-Elm-TX"
+          ]
+        },
+        {
+          "name": "Chicken Noodles",
+          "description": "",
+          "price": 12.99,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [],
+          "confidence": "medium",
+          "sources": [
+            "https://postmates.com/store/curry-district/uWXzS9FzRBqEC8dXe5241w",
+            "http://places.singleplatform.com/curry-district/menu",
+            "https://www.menupix.com/texas/restaurants/31934626/Curry-District-Little-Elm-TX"
+          ]
+        },
+        {
+          "name": "Veg Fried Rice",
+          "description": "",
+          "price": 11.99,
+          "diet": "veg",
+          "spice": null,
+          "tags": [],
+          "confidence": "medium",
+          "sources": [
+            "https://www.doordash.com/store/curry-district-little-elm-900790/",
+            "http://places.singleplatform.com/curry-district/menu"
+          ]
+        },
+        {
+          "name": "Chicken Fried Rice",
+          "description": "",
+          "price": 13.99,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [],
+          "confidence": "medium",
+          "sources": [
+            "https://www.doordash.com/store/curry-district-little-elm-900790/",
+            "http://places.singleplatform.com/curry-district/menu"
+          ]
+        },
+        {
+          "name": "Gobi Manchurian",
+          "description": "",
+          "price": 11.99,
+          "diet": "veg",
+          "spice": null,
+          "tags": [],
+          "confidence": "medium",
+          "sources": [
+            "https://www.doordash.com/store/curry-district-little-elm-900790/",
+            "http://places.singleplatform.com/curry-district/menu"
+          ]
+        },
+        {
+          "name": "Chilli Paneer",
+          "description": "",
+          "price": 13.99,
+          "diet": "veg",
+          "spice": null,
+          "tags": [],
+          "confidence": "medium",
+          "sources": [
+            "https://www.doordash.com/store/curry-district-little-elm-900790/",
+            "http://places.singleplatform.com/curry-district/menu"
+          ]
+        },
+        {
+          "name": "Chilli Chicken",
+          "description": "",
+          "price": 12.99,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [],
+          "confidence": "medium",
+          "sources": [
+            "https://postmates.com/store/curry-district/uWXzS9FzRBqEC8dXe5241w",
+            "http://places.singleplatform.com/curry-district/menu",
+            "https://www.menupix.com/texas/restaurants/31934626/Curry-District-Little-Elm-TX"
+          ]
+        },
+        {
+          "name": "Chicken Manchurian",
+          "description": "",
+          "price": 12.99,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [],
+          "confidence": "medium",
+          "sources": [
+            "https://postmates.com/store/curry-district/uWXzS9FzRBqEC8dXe5241w",
+            "http://places.singleplatform.com/curry-district/menu",
+            "https://www.menupix.com/texas/restaurants/31934626/Curry-District-Little-Elm-TX"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "METHOD/LIMITS: Direct fetch of every aggregator/official/delivery URL was blocked by the egress proxy (EGRESS_BLOCKED) and the session WebSearch budget (200/200) ran out after 8 successful searches. Everything here comes from search-result snippets summarised by the search tool; it does not say which page each price came from, so 'sources' lists the pages the relevant search returned, not a confirmed per-price citation. CONFIDENCE: only Tandoori Chicken (6 pcs) $14.99 and Chicken Tikka Kabab $14.99 are 'high' (several snippets plus the orchestrator's own earlier sighting agree). All other prices are 'medium' (one snippet, internally consistent with the same price tier) and should NOT be shown to the owners as verified. Items with null price had only stale-tier prices or none. No descriptions were retrievable, so descriptions are left empty except piece counts/spice options seen in snippets; any marketing copy added later is self-written and must be flagged low. PRICE TIERS SEEN (conflicting): (a) older aggregator tier, likely allmenus/menupix/res-menu/wheree: Vegetable Dum Biryani 9.99, Egg Biryani 9.99, Chicken Dum Biryani 10.99 (one source said 12.49), Paneer Biryani 10.99, Chicken Fry Pulav 10.99, Boneless Chicken Biryani 11.99, Rajugaari Kodi Pulav 13.99, Goat Fry Pulav 14.49, Shrimp Biryani 14.99, Goat Dum Biryani (Weekend) 15.79; Tandoori Chicken 6pc 11.99, Chicken Tikka 8pc 11.99, Paneer Tikka 8pc 12.49, Malai Chicken 8pc 12.99, Lamb Seekh 8pc 15.99, Lamb Chop 6pc 19.99; Veg Fried Rice 9.99, Chicken Fried Rice 10.99, Gobi Manchurian 8.99, Chilli Paneer 8.49, Chilli Chicken 8.49. (b) current tier used in the items above, DoorDash/official-menu style. (c) Uber Eats shows higher still, e.g. Boneless Chicken Biryani and Chicken 65 Biryani both 17.76. Delivery-app prices are probably marked up over in-store prices, so confirm with the restaurant before printing any price. GAPS: A Chicken 65 Biryani at $48.99 (with hot/medium/mild options) appeared in one snippet, probably a family-pack size; the menu has a 'Biryani and Pulav Family Packs' section and a 'Handi Biryani' section whose items and prices were not found. The full section list seen: Soups, Veg and Non-Veg Appetizers, Kababs/Tandoor, Veg and Non-Veg Curries, Biryanis, Pulavs, Handi Biryani, Biryani and Pulav Family Packs, Indo-Chinese, Snacks, Chaat Corner, Indian Breads, Desserts, Drinks, Hot Beverages. The Indo-Chinese section reportedly has more noodle and fried-rice variants (other proteins) that were not itemised. Veg Biryani was named 'Vegetable Dum Biryani' on the older listing. Lamb Seekh/Lamb Chop appear only on the older listing and may no longer be on the menu. Spice levels (0-4) are null because no source gave them. Diet for Rajugaari Kodi Pulav (kodi = chicken) and Gongura Mutton Pulav (mutton) is inferred from the names. 'Chicken Tikka Kabab' was 8 pcs on the older listing and 7 pcs on the current one."
+}

@@ -1,0 +1,131 @@
+{
+  "_note": "Best-verified values as of 2026-10-04 from WebSearch result text only (direct fetches blocked; search budget exhausted). Mirrors data/business.json keys. 'status' is verified (verbatim in result title/URL), likely (repeated in result summaries) or unverified. Result summaries are model-written, so 'likely' is not certain. See research/presence_audit.md.",
+  "name": {
+    "value": "Curry District",
+    "status": "verified",
+    "evidence": ["Yelp title 'CURRY DISTRICT ... Little Elm'", "currydistrict.net page titles 'Curry District'"]
+  },
+  "category": {
+    "value": "Indian restaurant (Telugu/Andhra and Hyderabad-leaning plus North Indian tandoor and Indo-Chinese): biryani and pulao, curries, kababs, Indo-Chinese starters, breads. Dine-in, takeout, catering.",
+    "status": "likely",
+    "evidence": [
+      "Menu items in summaries: Goat Biryani, Gongura Mutton Pullav, Karampodi Chicken, Chicken 555, Gobi Manchurian, Chilli Paneer, Butter Chicken, Vindaloo, Tandoori Fish (Wheree/Zmenu/Allmenus summaries)",
+      "Catering page: 'vegetarian and non-vegetarian North Indian and South Indian cuisine'",
+      "Cuisine regions are inferred from dish names, not stated by the owner",
+      "DoorDash/Restaurant Guru summaries add 'American, Asian' tags (category drift)"
+    ]
+  },
+  "address": {
+    "line1": "11851 FM 423, Suite 200",
+    "city": "Little Elm",
+    "state": "TX",
+    "zip": "75068",
+    "status": "verified",
+    "evidence": [
+      "Yelp title: '11851 FM-423, Little Elm, Texas'",
+      "currydistrict.net contact/doordelivery summary: '11851 FM-423, Suite #200, Little Elm, Texas'",
+      "Variants seen: 'FM 423 #200' (Nextdoor/Wheree), 'FM423' with no suite (Allmenus)",
+      "'Frisco' appears only in handles and site copy"
+    ]
+  },
+  "phone": {
+    "candidates": ["(972) 787-1320", "(469) 200-5944", "(469) 200-5856"],
+    "chosen": "(469) 200-5856",
+    "secondary": "(469) 200-5944",
+    "retire": "(972) 787-1320",
+    "status": "likely",
+    "evidence": [
+      "(469) 200-5856: site doordelivery summary 'info@currydistrict.net or +1 469-200-5856'; catering/Sulekha-style listing '(469) 200-5856'; listed first in most aggregator summaries ('+1 469-200-5856 or +1 469-200-5944')",
+      "(469) 200-5944: surfaced as a second line, tied to the Uber Eats listing in one summary",
+      "(972) 787-1320: verbatim only in the Allmenus (Grubhub-family) page title; no result links it to the website, Yelp or Google, so it is a probable legacy or Grubhub-provisioned number",
+      "Not confirmed against the Google or Yelp phone fields (not visible)"
+    ],
+    "action": "Owner to confirm by calling all three before any print or publication."
+  },
+  "hours": {
+    "Mon-Thu": "11:00 AM – 2:30 PM, 4:30 PM – 10:00 PM",
+    "Fri-Sat": "11:00 AM – 3:00 PM, 4:30 PM – 10:30 PM",
+    "Sun": "11:00 AM – 3:00 PM, 4:30 PM – 10:00 PM",
+    "happyHour": null,
+    "status": "likely",
+    "evidence": [
+      "Identical three-block schedule in multiple aggregator summaries (website, Wheree, Zmenu-style)",
+      "Nextdoor summary simplifies to 'Mon-Sun 11-2:30 and 4:30-10' (minor mismatch)",
+      "Happy hour '4-7 PM weekdays' appeared in no result, so it is unverified and omitted"
+    ]
+  },
+  "links": {
+    "officialSite": "https://currydistrict.net/",
+    "orderOnline": "https://curry-district-little-elm.cloveronline.com/",
+    "orderOnlineAlt": "https://currydistrict.gotoeat.net/",
+    "instagram": "https://www.instagram.com/currydistrictfrisco/",
+    "facebook": "https://www.facebook.com/CurryDistrictFrisco/",
+    "uberEats": "https://www.ubereats.com/store/curry-district/uWXzS9FzRBqEC8dXe5241w",
+    "doorDash": "https://www.doordash.com/en-CA/store/curry-district-little-elm-900790/",
+    "yelp": "https://www.yelp.com/biz/curry-district-little-elm",
+    "tripadvisor": "https://www.tripadvisor.com/Restaurant_Review-g56175-d25509526-Reviews-Curry_District-Little_Elm_Texas.html",
+    "restaurantji": "https://www.restaurantji.com/tx/little-elm/curry-district-/",
+    "atly": "https://www.atly.com/location/CurryDistrict",
+    "websitePages": ["/about.html", "/menu.html", "/catering.html", "/doordelivery.html", "/contact.html"],
+    "status": "verified",
+    "evidence": [
+      "All URLs appeared in WebSearch result lists",
+      "Instagram handle never surfaced; it is inferred from the Facebook vanity URL (instagram status: unverified)",
+      "Postmates uses the same ID as Uber Eats; Caviar uses the same ID as DoorDash"
+    ]
+  },
+  "ratings": {
+    "google": 4.2,
+    "googleCountApprox": 1021,
+    "facebook": { "stars": 4.8, "count": 14, "followers": 1164 },
+    "yelp": { "stars": 4.0, "count": 120 },
+    "restaurantji": { "stars": 4.5, "count": 479 },
+    "uberEats": { "stars": 4.5, "count": "2000+" },
+    "tripadvisor": { "count": 0 },
+    "status": "likely",
+    "evidence": [
+      "Yelp: verbatim title '45 Photos & 120 Reviews' (verified)",
+      "Restaurantji: title 'Reviews (479), Photos (52)'",
+      "Restaurant Guru: 4.2 stars, 1,021 reviews, a site that usually mirrors Google (inferred); a separate summary says 'Google users granted 4.2'",
+      "Facebook: 4.8 rests on only 14 ratings, so treat it as a weak signal",
+      "Tripadvisor listing shows 0 reviews"
+    ]
+  },
+  "popularDishes": {
+    "value": ["Butter Chicken", "Chicken Tikka Masala", "Chicken Vindaloo", "Garlic Naan", "Tandoori Chicken", "Chicken Tikka Kabab", "Goat Biryani", "Gongura Mutton Pulav", "Karampodi Chicken", "Chicken 65", "Gobi Manchurian"],
+    "status": "likely",
+    "evidence": ["Review summaries praise Butter Chicken, biryanis, karam podi chicken", "Menu summaries (Wheree/Zmenu/Allmenus)"]
+  },
+  "tagline_existing": {
+    "value": "A traditional food house bringing a variety of high quality Indian dishes specialized for our local community.",
+    "status": "verified",
+    "evidence": ["currydistrict.net home snippet", "Two other conflicting blurbs exist: 'shared dining / small plates' and 'flavoursome international recipes' (brand inconsistency)"]
+  },
+  "serviceModes": {
+    "value": ["dine-in (self-service/counter style)", "takeout", "online ordering (Clover)", "delivery (Uber Eats, DoorDash, Grubhub, Postmates)", "catering (pre-booked platters and outdoor catering)", "gift cards (Giftly)"],
+    "status": "likely",
+    "evidence": ["Yelp summary 'self service restaurant'", "Site catering and doordelivery pages", "Giftly listing"]
+  },
+  "extraFacts": {
+    "email": { "value": ["currydistrict@gmail.com", "info@currydistrict.net"], "status": "likely", "evidence": ["Two emails in different summaries (inconsistent)"] },
+    "byob": { "value": "BYOB listed; 'bring your own beer on weekends'", "status": "likely", "evidence": ["Yelp-derived summaries"], "note": "No alcohol licence found; do not advertise alcohol." },
+    "parking": { "value": "ample parking", "status": "likely", "evidence": ["Aggregator summaries"] },
+    "halal": { "value": null, "status": "unverified", "evidence": ["No result states halal for Curry District. Make no halal claim."] },
+    "buffet": { "value": null, "status": "unverified", "evidence": ["No buffet evidence found."] },
+    "seatingCapacity": { "value": null, "status": "unverified", "evidence": ["Not found."] },
+    "secondLocation": { "value": false, "status": "likely", "evidence": ["Only 11851 FM 423 appears; 'Frisco' is a handle or marketing label.", "Desi District Little Elm (1630 FM 423, Frisco, (469) 895-5733) is a different restaurant, a name-confusion risk with unknown relation"] },
+    "openingDate": { "value": "by ~May 2023", "status": "unverified", "evidence": ["Snapchat place UUID decodes to 2023-05-01 (inferred)", "Nextdoor Neighborhood Favorite 2023 and 2024"] },
+    "owner_chef_story": { "value": null, "status": "unverified", "evidence": ["about.html not retrievable"] },
+    "nextdoorBadge": { "value": "Neighborhood Favorite 2023 and 2024", "status": "likely", "evidence": ["Nextdoor summary"] },
+    "menuPricesSeen": { "value": "Allmenus snapshot, undated: Chicken Dum Biryani $10.99, Butter Chicken $11.49, Goat Curry $13.49, Chicken 65 $8.49", "status": "unverified", "evidence": ["Third-party aggregator, probably stale; do not use per AGENT_RULES 5"] }
+  },
+  "scorecard": {
+    "websiteVisualAppeal": { "score": 3, "confidence": "low-medium", "inferred": true },
+    "mobileUX": { "score": 4, "confidence": "low", "inferred": true },
+    "photoQuality": { "score": 4, "confidence": "low", "inferred": true },
+    "brandConsistency": { "score": 3, "confidence": "medium", "inferred": true },
+    "socialActivity": { "score": 3, "confidence": "low-medium", "inferred": true },
+    "gbpCompleteness": { "score": 6, "confidence": "low", "inferred": true }
+  },
+  "conceptDisclaimer": "Independent design concept prepared as a proposal — not the official Curry District website or brand material."
+}

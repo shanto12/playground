@@ -1,0 +1,278 @@
+{
+  "categories": [
+    {
+      "name": "Veg Appetizers",
+      "items": [
+        {
+          "name": "Gobi 65",
+          "description": "Spiced, crisp-fried cauliflower in the 65 style.",
+          "price": 11.99,
+          "diet": "veg",
+          "spice": null,
+          "tags": [],
+          "confidence": "low",
+          "sources": [
+            "https://www.allmenus.com/tx/little-elm/815011-curry-district/menu/",
+            "https://www.doordash.com/store/curry-district-little-elm-900790/"
+          ]
+        },
+        {
+          "name": "Gobi Manchurian",
+          "description": "Cauliflower florets tossed in an Indo-Chinese Manchurian-style sauce.",
+          "price": 11.99,
+          "diet": "veg",
+          "spice": null,
+          "tags": [],
+          "confidence": "low",
+          "sources": [
+            "https://www.allmenus.com/tx/little-elm/815011-curry-district/menu/",
+            "https://www.doordash.com/store/curry-district-little-elm-900790/"
+          ]
+        },
+        {
+          "name": "Chilli Gobi",
+          "description": "Cauliflower tossed in a spicy chilli sauce (Indo-Chinese style).",
+          "price": 11.99,
+          "diet": "veg",
+          "spice": null,
+          "tags": [],
+          "confidence": "low",
+          "sources": [
+            "https://www.allmenus.com/tx/little-elm/815011-curry-district/menu/",
+            "https://www.doordash.com/store/curry-district-little-elm-900790/"
+          ]
+        },
+        {
+          "name": "Chilli Paneer",
+          "description": "Paneer cubes tossed in a spicy chilli sauce with peppers and onions (Indo-Chinese style).",
+          "price": 13.99,
+          "diet": "veg",
+          "spice": null,
+          "tags": [],
+          "confidence": "low",
+          "sources": [
+            "https://www.allmenus.com/tx/little-elm/815011-curry-district/menu/",
+            "https://www.doordash.com/store/curry-district-little-elm-900790/"
+          ]
+        },
+        {
+          "name": "Veggie Spring Rolls",
+          "description": "Crisp rolls filled with shredded vegetables.",
+          "price": null,
+          "diet": "veg",
+          "spice": null,
+          "tags": [],
+          "confidence": "low",
+          "sources": [
+            "https://www.allmenus.com/tx/little-elm/815011-curry-district/menu/"
+          ]
+        },
+        {
+          "name": "Baby Corn Manchurian",
+          "description": "Crispy baby corn tossed in a tangy, spicy sauce with bell peppers and onions, garnished with spring onions.",
+          "price": 11.99,
+          "diet": "veg",
+          "spice": null,
+          "tags": ["fried"],
+          "confidence": "medium",
+          "sources": [
+            "https://www.doordash.com/store/curry-district-little-elm-900790/",
+            "https://www.ubereats.com/store/curry-district/uWXzS9FzRBqEC8dXe5241w"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Non-Veg Appetizers",
+      "items": [
+        {
+          "name": "Chicken 65",
+          "description": "Bold and zesty fried chicken; choice of spicy, medium or mild heat.",
+          "price": 12.99,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [],
+          "confidence": "medium",
+          "sources": [
+            "https://www.doordash.com/store/curry-district-little-elm-900790/",
+            "https://www.allmenus.com/tx/little-elm/815011-curry-district/menu/",
+            "https://currydistrict.net/menu.html"
+          ]
+        },
+        {
+          "name": "Chilli Chicken",
+          "description": "Chicken tossed in a spicy chilli sauce with peppers and onions (Indo-Chinese style).",
+          "price": null,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [],
+          "confidence": "low",
+          "sources": [
+            "https://www.allmenus.com/tx/little-elm/815011-curry-district/menu/",
+            "https://currydistrict.net/menu.html"
+          ]
+        },
+        {
+          "name": "Chicken 555",
+          "description": "Spiced fried chicken starter, a house variation on the 65 style.",
+          "price": null,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [],
+          "confidence": "low",
+          "sources": [
+            "https://www.allmenus.com/tx/little-elm/815011-curry-district/menu/"
+          ]
+        },
+        {
+          "name": "Karampodi Chicken",
+          "description": "Chicken coated in karampodi, a South Indian dry spice-and-lentil powder.",
+          "price": null,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [],
+          "confidence": "low",
+          "sources": [
+            "https://www.allmenus.com/tx/little-elm/815011-curry-district/menu/"
+          ]
+        },
+        {
+          "name": "Kodi Vepudu",
+          "description": "Andhra-style dry chicken fry (kodi vepudu is Telugu for chicken fry).",
+          "price": null,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [],
+          "confidence": "low",
+          "sources": [
+            "https://www.allmenus.com/tx/little-elm/815011-curry-district/menu/"
+          ]
+        },
+        {
+          "name": "Goat Pepper Fry",
+          "description": "Bone-in goat pepper fry.",
+          "price": null,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [],
+          "confidence": "low",
+          "sources": [
+            "https://www.allmenus.com/tx/little-elm/815011-curry-district/menu/"
+          ]
+        },
+        {
+          "name": "Ginger Fish",
+          "description": "Fried fish tossed with ginger in an Indo-Chinese style sauce.",
+          "price": 12.99,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [],
+          "confidence": "low",
+          "sources": [
+            "https://www.doordash.com/store/curry-district-little-elm-900790/",
+            "https://www.allmenus.com/tx/little-elm/815011-curry-district/menu/"
+          ]
+        },
+        {
+          "name": "Apollo Fish",
+          "description": "Spicy fried fish starter in the Andhra/Hyderabadi style.",
+          "price": 12.99,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [],
+          "confidence": "low",
+          "sources": [
+            "https://www.doordash.com/store/curry-district-little-elm-900790/",
+            "https://www.allmenus.com/tx/little-elm/815011-curry-district/menu/"
+          ]
+        },
+        {
+          "name": "Chilli Shrimp",
+          "description": "Shrimp tossed in a spicy chilli sauce (Indo-Chinese style).",
+          "price": 15.99,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [],
+          "confidence": "low",
+          "sources": [
+            "https://www.doordash.com/store/curry-district-little-elm-900790/",
+            "https://www.allmenus.com/tx/little-elm/815011-curry-district/menu/"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Snacks",
+      "items": [
+        {
+          "name": "Veg Samosa (3 pcs)",
+          "description": "Crispy pastry filled with spiced potatoes and peas, served in a set of three.",
+          "price": 5.49,
+          "diet": "veg",
+          "spice": null,
+          "tags": ["fried"],
+          "confidence": "medium",
+          "sources": [
+            "https://www.doordash.com/store/curry-district-little-elm-900790/",
+            "https://curry-district.wheree.com/menu",
+            "https://currydistrict.net/menu.html"
+          ]
+        },
+        {
+          "name": "Pakora",
+          "description": "Gram-flour vegetable fritters. Exact variety not confirmed.",
+          "price": null,
+          "diet": "unknown",
+          "spice": null,
+          "tags": [],
+          "confidence": "low",
+          "sources": [
+            "https://currydistrict.net/menu.html"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Soups",
+      "items": [
+        {
+          "name": "Tomato Soup",
+          "description": "Classic tomato soup.",
+          "price": 7.99,
+          "diet": "veg",
+          "spice": null,
+          "tags": [],
+          "confidence": "low",
+          "sources": [
+            "https://currydistrict.net/menu.html"
+          ]
+        },
+        {
+          "name": "Hot & Sour Soup",
+          "description": "Indo-Chinese style hot and sour soup. Veg or non-veg base not confirmed.",
+          "price": null,
+          "diet": "unknown",
+          "spice": null,
+          "tags": [],
+          "confidence": "low",
+          "sources": [
+            "https://currydistrict.net/menu.html"
+          ]
+        },
+        {
+          "name": "Goat Paya Soup",
+          "description": "Slow-simmered goat trotter (paya) soup.",
+          "price": null,
+          "diet": "nonveg",
+          "spice": null,
+          "tags": [],
+          "confidence": "low",
+          "sources": [
+            "https://currydistrict.net/menu.html"
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "METHOD LIMITS: every direct fetch (allmenus, res-menu, wheree, singleplatform, menupix, doordash, ubereats, cloveronline, currydistrict.net) returned EGRESS_BLOCKED. The shared WebSearch budget (200/200) ran out after ~15 queries by this agent, so follow-up searches were impossible. All data comes from WebSearch summaries, which do not attribute each price to a specific page; 'sources' lists the result URLs returned by the query that surfaced the item, not a page-level check. No price is verified to the 'two attributed sources' standard, so NO item is marked high. Treat every price as unverified (rule 5) unless the owners confirm.\n\nPRICE CONFLICTS (three snapshots seen). Old tier (likely stale allmenus): Gobi 65 8.49, Gobi Manchurian 8.99, Chili Gobi 7.49, Chilli Paneer 8.49, Veggie Spring Rolls 5.99, Chicken 65 8.49, Chilli Chicken 8.49, Chicken 555 8.99, Karampodi Chicken 8.49, Kodi Vepudu 10.49, Goat Pepper Fry 11.99 (bone-in), Ginger Fish 9.49, Apollo Fish 9.49, Chilli Shrimp 12.99. Middle tier (wheree/menupix style snapshot): Veg Samosa 5.99, Gobi 65 9.99, Chicken 65 10.99. Current tier (used in the price field): Gobi 65 11.99, Gobi Manchurian 11.99, Chilli Gobi 11.99, Chilli Paneer 13.99, Baby Corn Manchurian 11.99, Chicken 65 12.99 (seen in two separate searches), Ginger Fish 12.99, Apollo Fish 12.99, Chilli Shrimp 15.99, Veg Samosa 3 pcs 5.49. Why current: DoorDash lists Veg Samosa (3 Pcs) at 6.11 and Chicken Tikka Masala at 16.67, about 11% above 5.49 and 14.99, so DoorDash tracks the current tier and the middle and old tiers look stale. DoorDash/Uber prices carry a markup over dine-in prices, so confirm which price the owners want shown. Items with only old-tier prices (Veggie Spring Rolls, Chilli Chicken, Chicken 555, Karampodi Chicken, Kodi Vepudu, Goat Pepper Fry) are set to null on purpose.\n\nTOMATO SOUP: 7.99 came from one summary with unclear date and attribution (low). Soup names (tomato, hot & sour, goat paya) come from a summary of the official site menu page; veg/non-veg for hot & sour not confirmed.\n\nCOVERAGE GAPS: no salads, chaat, pani puri, papdi chaat, bhel or other street-food items were found for Curry District. Chaat prices that surfaced (Samosa Chaat 7.99, Papdi Chaat 6.99, Pani Puri 6.99) belong to a different Little Elm restaurant, Desi District, and were deliberately excluded. Pakora is name-only (official-site summary), with no variety or price found. Spice levels are not published anywhere seen (Chicken 65 offers spicy/medium/mild), so spice is null for all items. No gluten-free, popular or tandoor claims were found, so tags are minimal. The 'fried' tag is used only where the source said 'crispy'. Descriptions marked confidence low are written by me from standard dish knowledge, not from restaurant wording. Where wording is from a source (Baby Corn Manchurian, Veg Samosa, Chicken 65 partial, Goat Pepper Fry 'bone-in') it is lightly paraphrased.\n\nCATEGORY UNCERTAINTY: DoorDash/Uber menu sections are Veg Appetizers, Non-Veg Appetizers, Snacks, Indo-Chinese, Tandoori/Kababs and others. Baby Corn Manchurian and the fish/shrimp items could sit in Indo-Chinese or appetizers; the summaries placed them with appetizers. Veg Samosa is filed under Snacks (official site and DoorDash); wheree lists it under appetizers. Chicken tikka and other kababs belong to Tandoori/Kababs, outside this scope. 'Chili Gobi' (old) and 'Chilli Gobi' (current) are the same item. The weekend special Thalapakatti, combos and family packs are out of scope.\n\nRECOMMENDED FOLLOW-UP: have the owners send the current printed or Clover menu, or re-run this research with more search budget and a source that actually renders (an image of the menu or the Clover ordering page)."
+}

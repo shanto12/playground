@@ -1,0 +1,87 @@
+/* Curry District — shared design tokens for the two brand directions.
+   Usage: <html data-theme="bazaar"> or <html data-theme="royal">.
+   Every semantic token exists in BOTH themes so any template can be re-skinned by flipping data-theme.
+   Fonts: link brand/fonts/fonts.css (self-hosted woff2) — copy the fonts folder into whatever you publish. */
+
+:root {
+  --radius-s: 8px; --radius-m: 16px; --radius-l: 28px; --radius-pill: 999px;
+  --ease-out: cubic-bezier(.22,1,.36,1);
+  --ease-spring: cubic-bezier(.34,1.56,.64,1);
+  --gutter: 16px;
+}
+
+/* ───────── Direction A · BAZAAR — loud, joyful, truck-art & Jaipur block-print energy ───────── */
+:root, [data-theme="bazaar"] {
+  /* raw palette */
+  --bz-ink:      #1D1147;  /* deep indigo — text & dark surfaces   */
+  --bz-cream:    #FFF4DC;  /* warm paper                            */
+  --bz-marigold: #FFB000;  /* genda-phool yellow-orange             */
+  --bz-saffron:  #FF6A13;  /* saffron / tandoor orange              */
+  --bz-rani:     #E4147E;  /* rani pink (magenta)                   */
+  --bz-chili:    #D62839;  /* chili red                             */
+  --bz-peacock:  #00A8A0;  /* peacock teal                          */
+  --bz-cilantro: #3FA34D;  /* cilantro green                        */
+  --bz-sky:      #7B5CFF;  /* electric violet accent (sparingly)    */
+  /* semantic */
+  --c-bg:        var(--bz-cream);
+  --c-surface:   #FFFFFF;
+  --c-surface-2: #FFE7B8;
+  --c-dark:      var(--bz-ink);
+  --c-text:      var(--bz-ink);
+  --c-text-inv:  var(--bz-cream);
+  --c-muted:     #5B4F85;
+  --c-primary:   var(--bz-saffron);
+  --c-secondary: var(--bz-rani);
+  --c-tertiary:  var(--bz-peacock);
+  --c-quaternary:var(--bz-marigold);
+  --c-pop:       var(--bz-chili);
+  --c-good:      var(--bz-cilantro);
+  --grad-hero:   linear-gradient(135deg, #FFB000 0%, #FF6A13 45%, #E4147E 100%);
+  --grad-night:  linear-gradient(160deg, #1D1147 0%, #3A1B7A 55%, #E4147E 130%);
+  --shadow-pop:  6px 6px 0 var(--bz-ink);          /* hard offset "sticker" shadow */
+  --stroke:      3px solid var(--bz-ink);
+  --font-display:'Bowlby One', 'Arial Black', system-ui, sans-serif;
+  --font-body:   'DM Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-accent: 'Caveat', 'Comic Sans MS', cursive;
+  --display-case: uppercase; --display-tracking: .01em; --display-leading: .98;
+}
+
+/* ───────── Direction B · ROYAL — jewel-toned, premium, saffron-gold foil on midnight ───────── */
+[data-theme="royal"] {
+  --ry-ink:      #160B26;  /* midnight aubergine                    */
+  --ry-plum:     #4B1D52;
+  --ry-emerald:  #0F4D3F;  /* deep emerald                          */
+  --ry-peacock:  #117C86;
+  --ry-ruby:     #A3173F;
+  --ry-gold:     #E9A63A;  /* saffron gold                          */
+  --ry-gold-lt:  #F7D98A;
+  --ry-gold-dk:  #B7791F;
+  --ry-ivory:    #FBF3E4;
+  --ry-blush:    #F4C9BB;
+  --c-bg:        var(--ry-ivory);
+  --c-surface:   #FFFFFF;
+  --c-surface-2: #F3E4C8;
+  --c-dark:      var(--ry-ink);
+  --c-text:      var(--ry-ink);
+  --c-text-inv:  var(--ry-ivory);
+  --c-muted:     #6B5A73;
+  --c-primary:   var(--ry-gold);
+  --c-secondary: var(--ry-ruby);
+  --c-tertiary:  var(--ry-emerald);
+  --c-quaternary:var(--ry-peacock);
+  --c-pop:       var(--ry-blush);
+  --c-good:      var(--ry-emerald);
+  --grad-hero:   linear-gradient(160deg, #160B26 0%, #4B1D52 50%, #0F4D3F 120%);
+  --grad-night:  linear-gradient(160deg, #160B26 0%, #2A1240 60%, #0F4D3F 130%);
+  --grad-foil:   linear-gradient(135deg, #B7791F 0%, #F7D98A 38%, #E9A63A 58%, #B7791F 100%);
+  --shadow-pop:  0 18px 40px -18px rgba(22,11,38,.55);
+  --stroke:      1px solid rgba(183,121,31,.55);
+  --font-display:'Fraunces', 'Playfair Display', Georgia, serif;
+  --font-body:   'Hanken Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-accent: 'Fraunces', Georgia, serif;   /* use italic 400/600 for accent lines */
+  --display-case: none; --display-tracking: -.01em; --display-leading: 1.02;
+}
+
+/* helpers every template may use */
+.foil-text { background: var(--grad-foil, var(--grad-hero)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; scroll-behavior: auto !important; } }
