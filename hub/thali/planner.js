@@ -80,7 +80,7 @@
       if (!cur[0].role) cur[0].role = 'fire';
       if (cur.length > 1 && !cur[cur.length - 1].role) cur[cur.length - 1].role = 'cooler';
     }
-    add('rice', ['biryani'], { tie: 'nonveg' });
+    add('rice', ['biryani'], { tie: 'nonveg', fixedTie: true });
     var nB = g >= 4 ? 2 : 1; for (i = 1; i <= nB; i++) add('bread-' + i, ['bread']);
     add('sweet', ['sweets']);
     var nD = g >= 5 ? 2 : 1; for (i = 1; i <= nD; i++) add('drink-' + i, ['chai']);
@@ -124,7 +124,7 @@
       if (target != null) s -= it.spice < target ? 0.15 * (target - it.spice) : 0.35 * (it.spice - target);
       if (slot.role === 'fire' && it.spice >= 3) s += 0.4;
       if (st.diet === 'mixed') {
-        var want = ctx.veg === ctx.nonveg ? slot.tie : (ctx.veg < ctx.nonveg ? 'veg' : 'nonveg');
+        var want = (slot.fixedTie || ctx.veg === ctx.nonveg) ? slot.tie : (ctx.veg < ctx.nonveg ? 'veg' : 'nonveg');
         if ((it.diet === 'veg' ? 'veg' : 'nonveg') === want) s += 2.0;
       }
       if (st.diet === 'nonveg' && it.diet === 'nonveg') s += 2.5;
@@ -463,8 +463,8 @@
     var center = lines.filter(function (l) { return l.item.zone === 'biryani'; })[0] || null;
     var ring = lines.filter(function (l) { return l !== center; }), n = Math.max(ring.length, 1);
     var s = 22, R = 34;
-    for (var k = 0; k < 5; k++) { s = Math.min(n <= 6 ? 21 : 23, 0.86 * 2 * Math.PI * R / n); R = 44 - s / 2 - 1.5; }
-    var cs = Math.min(33, (R - s / 2) * 2 - 5);
+    for (var k = 0; k < 5; k++) { s = Math.min(n <= 6 ? 20 : 21, 0.78 * 2 * Math.PI * R / n); R = 44 - s / 2 - 1; }
+    var cs = Math.min(27, (R - s / 2) * 2 - 9);
     var pos = {};
     if (center) pos[center.slotId] = { x: 50, y: 50, s: cs, c: true };
     ring.forEach(function (l, i) {

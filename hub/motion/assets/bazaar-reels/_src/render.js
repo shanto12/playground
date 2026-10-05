@@ -56,7 +56,7 @@ const JOBS = [
   J('menu-board-curry-biryani', 'board', 1920, 1080, 8, { board: 1 }, 1.6),
   J('menu-board-sweets-chai', 'board', 1920, 1080, 8, { board: 2 }, 1.6),
   J('sticker-bowl-steam', 'sticker', 1080, 1080, 4, { kind: 'bowl', bg: '#00A8A0' }, 1.0),
-  J('sticker-spinning-chili', 'sticker', 1080, 1080, 4, { kind: 'chili', bg: '#FFB000' }, 0.6),
+  J('sticker-spinning-chili', 'sticker', 1080, 1080, 4, { kind: 'chili', bg: '#FFB000' }, 1.45),
   J('sticker-bouncing-naan', 'sticker', 1080, 1080, 4, { kind: 'naan', bg: '#E4147E' }, 1.45),
   J('sticker-district-stamp', 'sticker', 1080, 1080, 4, { kind: 'stamp', bg: '#1D1147' }, 1.4)
 ];
@@ -135,18 +135,20 @@ async function captureFrames(browser, job, A, dir, transparent) {
 
 function encode(job, dir) {
   const out = `${OUT}/${job.id}.mp4`;
-  let crf = 22;
+  let crf = 24;
   for (;;) {
-    sh('nice', ['-n', '10', 'ffmpeg', '-y', '-loglevel', 'error', '-framerate', String(FPS), '-i', `${dir}/%05d.png`, '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-crf', String(crf), '-preset', 'medium', '-threads', '2', '-movflags', '+faststart', out]);
+    sh('nice', ['-n', '10', 'ffmpeg', '-y', '-loglevel', 'error', '-framerate', String(FPS), '-i', `${dir}/%05d.png`, '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-crf', String(crf), '-preset', 'slow', '-tune', 'animation', '-threads', '2', '-movflags', '+faststart', out]);
     const sz = fs.statSync(out).size;
     console.log(`  encoded ${path.basename(out)} crf ${crf}: ${(sz / 1048576).toFixed(2)} MB`);
-    if (sz <= 2.9 * 1048576 || crf >= 32) break;
-    crf += 2;
+    if (sz <= 2.9 * 1048576 || crf >= 34) break;
+    crf += sz > 4 * 1048576 ? 3 : 2;
   }
   // poster (full size) + thumb (540 wide) from the chosen poster frame
   const pf = `${dir}/${String(Math.min(Math.round(job.poster * FPS), Math.round(job.dur * FPS) - 1)).padStart(5, '0')}.png`;
-  sh('ffmpeg', ['-y', '-loglevel', 'error', '-i', pf, '-q:v', '3', `${OUT}/${job.id}-poster.jpg`]);
-  sh('ffmpeg', ['-y', '-loglevel', 'error', '-i', pf, '-vf', 'scale=540:-2:flags=lanczos', '-q:v', '4', `${OUT}/${job.id}-thumb.jpg`]);
+  // poster + thumb, each kept ≤ 100 KB
+  const jpg = (out, vf) => { for (let q = 3; q <= 20; q++) { sh('ffmpeg', ['-y', '-loglevel', 'error', '-i', pf, '-vf', vf, '-q:v', String(q), out]); if (fs.statSync(out).size <= 98 * 1024) break; } };
+  jpg(`${OUT}/${job.id}-poster.jpg`, job.w > job.h ? 'scale=1280:-2:flags=lanczos' : 'scale=720:-2:flags=lanczos');
+  jpg(`${OUT}/${job.id}-thumb.jpg`, job.w > job.h ? 'scale=640:-2:flags=lanczos' : 'scale=400:-2:flags=lanczos');
 }
 
 function encodeAlpha(job, dir) {
@@ -184,7 +186,7 @@ if (require.main === module) (async () => {
         await captureFrames(browser, j, A, dir);
         encode(j, dir);
         fs.rmSync(dir, { recursive: true, force: true });
-        if (j.scene === 'sticker') {
+        if (j.scene === 'sticker' && process.env.ALPHA) {
           const adir = `${SCRATCH}/frames-${j.id}-alpha`;
           await captureFrames(browser, j, A, adir, true);
           encodeAlpha(j, adir);

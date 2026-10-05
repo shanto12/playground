@@ -113,7 +113,7 @@
 .planner[data-theme="royal"] .pl-steps [aria-current="step"]{color:#FBF3E4;background:rgba(233,166,58,.12);box-shadow:inset 0 0 0 1px rgba(233,166,58,.5)}
 .planner[data-theme="royal"] .pl-steps [aria-current="step"] .pl-steps__n{background:linear-gradient(135deg,#F7D98A,#E9A63A);color:#160B26;box-shadow:none}
 .planner[data-theme="royal"] .pl-steps .is-done .pl-steps__n{background:rgba(233,166,58,.25)}
-@media (max-width:370px){.pl-steps__l{font-size:.75rem}.pl-steps button{gap:5px;padding:4px 2px}}
+@media (max-width:440px){.pl-steps{gap:2px}.pl-steps__l{font-size:.75rem}.pl-steps button{gap:5px;padding:4px 3px}.pl-steps__n{width:24px;height:24px}}
 
 /* ───────── Stage: steps 1–3 share one grid cell (no layout jump) ───────── */
 .pl-stage{display:grid;grid-template-columns:minmax(0,1fr)}

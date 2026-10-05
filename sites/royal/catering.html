@@ -29,6 +29,7 @@
 <link rel="preload" href="fonts/hanken-grotesk.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/motion.css">
 <link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/pages.css">
 <script>(function(h){h.className+=' js m-js';try{if(localStorage.getItem('cd-royal-concept-dismissed')==='1')h.className+=' concept-dismissed'}catch(e){}setTimeout(function(){if(!window.Motion)h.classList.remove('m-js')},3000)})(document.documentElement);</script>
 </head>
 <body id="top">
@@ -77,22 +78,190 @@
 </div>
 
 <main id="main">
-<!-- STUB: placeholder page from the Royal shell. A sibling agent replaces this whole file. -->
-<section class="page-hero">
+<section class="page-hero pg-hero" aria-labelledby="cat-title">
+  <div class="pg-embers" data-particles="embers" data-density=".45" aria-hidden="true"></div>
   <div class="wrap wrap--narrow">
     <p class="eyebrow eyebrow--lozenge">Catering &amp; party trays</p>
     <span class="ornament" aria-hidden="true"></span>
-    <h1 class="page-hero__title">Let us cater <span class="foil">the celebration</span></h1>
-    <p class="page-hero__lede">Birthdays, baby showers, housewarmings and office gatherings all feel better when the host gets to sit down.</p>
+    <h1 class="page-hero__title" id="cat-title">Celebrations, served <span class="foil foil--sweep">with ceremony</span></h1>
+    <p class="page-hero__lede">Birthdays, baby showers, housewarmings and office gatherings all feel better when the host gets to sit down. Share the occasion with us, and we will shape a menu around your guests, their tastes and their spice levels.</p>
+    <div class="btn-row pg-hero__ctas" data-bar-sentinel>
+      <a class="btn btn--foil" href="#plan"><svg class="icon" viewBox="0 0 64 64" aria-hidden="true"><use href="img/icons/sprite.svg#icon-calendar-mono"/></svg>Plan your event</a>
+      <a class="btn btn--line" href="tel:+14692005856" data-cd-href="tel"><svg class="icon" viewBox="0 0 64 64" aria-hidden="true"><use href="img/icons/sprite.svg#icon-phone-mono"/></svg>Call to plan</a>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="pg-arcade" data-stagger="180">
+      <div class="arch arch--emerald arch--glow"><div class="arch__glass"><img class="arch__art" src="img/dishes/samosa-chutney.svg" alt="Illustration of samosas with two chutneys" width="800" height="800" decoding="async"></div></div>
+      <div class="arch arch--ruby arch--glow"><div class="arch__glass"><img class="arch__art arch__art--wide" src="img/dishes/thali.svg" alt="Illustration of a festive brass platter with small bowls, rice and bread" width="800" height="800" decoding="async" fetchpriority="high"></div></div>
+      <div class="arch arch--plum arch--glow"><div class="arch__glass"><img class="arch__art" src="img/dishes/biryani.svg" alt="Illustration of biryani in a copper handi" width="800" height="800" decoding="async"></div></div>
+    </div>
+  </div>
+  <div class="pg-sill" aria-hidden="true"></div>
+</section>
+
+<!-- ═════════ I · The menu of the occasion ═════════ -->
+<section class="room room--ivory room--fade" id="occasion-menu" aria-labelledby="bill-title">
+  <div class="wrap">
+    <header class="chapter-head" data-reveal>
+      <p class="chapter-head__num">Chapter <b>I</b></p>
+      <span class="ornament" aria-hidden="true"></span>
+      <h2 class="chapter-head__title" id="bill-title">A menu of <span class="foil">the occasion</span></h2>
+      <p class="chapter-head__lede">Eight courses from our everyday menu, laid out like a bill of fare. Choose a few favorites from each, and we will shape them into trays for your table.</p>
+    </header>
+    <div class="pg-bill" data-reveal="fade">
+      <div class="pg-bill__head">
+        <p class="pg-bill__kicker">Served with ceremony</p>
+        <p class="pg-bill__title">The Curry District table</p>
+        <span class="ornament" aria-hidden="true"></span>
+      </div>
+      <ol class="pg-courses" data-stagger="90">
+        <li class="pg-course"><span class="pg-course__num" aria-hidden="true">I</span><h3 class="pg-course__name">Starters Square</h3><p class="pg-course__tag">Small plates, bold beginnings.</p><ul class="pg-course__dishes" aria-label="Starters Square dishes"><li>Veg Samosa</li><li>Pakora</li><li>Gobi 65</li><li>Chicken 65</li><li>Karampodi Chicken</li></ul></li>
+        <li class="pg-course"><span class="pg-course__num" aria-hidden="true">II</span><h3 class="pg-course__name">Tandoor Quarter</h3><p class="pg-course__tag">Fire-kissed and smoke-scented, straight from the clay oven.</p><ul class="pg-course__dishes" aria-label="Tandoor Quarter dishes"><li>Tandoori Chicken</li><li>Chicken Tikka Kabab</li><li>Malai Chicken Kabab</li><li>Paneer Tikka Kabab</li></ul></li>
+        <li class="pg-course"><span class="pg-course__num" aria-hidden="true">III</span><h3 class="pg-course__name">Curry Quarter</h3><p class="pg-course__tag">Slow-simmered gravies, from silken to fierce.</p><ul class="pg-course__dishes" aria-label="Curry Quarter dishes"><li>Butter Chicken</li><li>Chicken Tikka Masala</li><li>Paneer Butter Masala</li><li>Dal Makhani</li><li>Channa Masala</li></ul></li>
+        <li class="pg-course"><span class="pg-course__num" aria-hidden="true">IV</span><h3 class="pg-course__name">Biryani Boulevard</h3><p class="pg-course__tag">Layered, sealed and slow-steamed with whole spice.</p><ul class="pg-course__dishes" aria-label="Biryani Boulevard dishes"><li>Chicken Dum Biryani</li><li>Chicken 65 Biryani</li><li>Veg Biryani</li><li>Gongura Mutton Pulav</li></ul></li>
+        <li class="pg-course"><span class="pg-course__num" aria-hidden="true">V</span><h3 class="pg-course__name">Indo-Chinese Alley</h3><p class="pg-course__tag">Where wok fire meets Indian spice.</p><ul class="pg-course__dishes" aria-label="Indo-Chinese Alley dishes"><li>Gobi Manchurian</li><li>Chilli Paneer</li><li>Chilli Chicken</li><li>Veg Hakka Noodles</li></ul></li>
+        <li class="pg-course"><span class="pg-course__num" aria-hidden="true">VI</span><h3 class="pg-course__name">Bread Bazaar</h3><p class="pg-course__tag">Blistered, buttered and made for tearing.</p><ul class="pg-course__dishes" aria-label="Bread Bazaar dishes"><li>Garlic Naan</li><li>Butter Naan</li><li>Plain Naan</li></ul></li>
+        <li class="pg-course"><span class="pg-course__num" aria-hidden="true">VII</span><h3 class="pg-course__name">Sweet Street</h3><p class="pg-course__tag">A soft, sweet finale.</p><ul class="pg-course__dishes" aria-label="Sweet Street dishes"><li>Gulab Jamun</li><li>Rasmalai</li><li>Carrot Halwa</li></ul></li>
+        <li class="pg-course"><span class="pg-course__num" aria-hidden="true">VIII</span><h3 class="pg-course__name">Chai &amp; Coolers</h3><p class="pg-course__tag">Cool lassis, creamy shakes and a slow cup of chai.</p><ul class="pg-course__dishes" aria-label="Chai &amp; Coolers dishes"><li>Mango Lassi</li><li>Sweet Lassi</li><li>Chai</li></ul></li>
+      </ol>
+      <p class="fine pg-bill__foot">Dish names only. Tray sizes, quantities and pricing are confirmed with you when we plan, and which dishes travel best is part of that conversation.</p>
+    </div>
   </div>
 </section>
-<section class="room room--ivory coming">
-  <div class="wrap wrap--narrow" data-reveal>
-    <img class="coming__mark" src="img/logo/colourways/emblem--ivory.svg" alt="" width="120" height="157">
-    <p class="lede">This chapter is still coming together: the catering planner is being laid out.</p>
-    <div class="btn-row btn-row--center" style="margin-top:1.75rem">
-      <a class="btn btn--foil" href="https://curry-district-little-elm.cloveronline.com/" data-cd-href="order" target="_blank" rel="noopener">Order online</a>
-      <a class="btn btn--line" href="index.html">Return to the home page</a>
+
+<!-- ═════════ II · How it works ═════════ -->
+<section class="room room--plum room--inlay room--valance" id="how" aria-labelledby="how-title">
+  <div class="wrap">
+    <header class="chapter-head" data-reveal>
+      <p class="chapter-head__num">Chapter <b>II</b></p>
+      <span class="ornament" aria-hidden="true"></span>
+      <h2 class="chapter-head__title" id="how-title">How it <span class="foil">works</span></h2>
+      <p class="chapter-head__lede">Three unhurried steps, from the first hello to the last tray.</p>
+    </header>
+    <ol class="pg-steps" data-stagger="160">
+      <li class="pg-step"><span class="pg-step__num" aria-hidden="true">I</span><svg class="pg-step__icon" viewBox="0 0 64 64" aria-hidden="true"><use href="img/icons/sprite.svg#icon-calendar"/></svg><h3>Tell us the occasion</h3><p>Send the inquiry below or call us with your date, a rough guest count and the kind of gathering you have in mind.</p></li>
+      <li class="pg-step"><span class="pg-step__num" aria-hidden="true">II</span><svg class="pg-step__icon" viewBox="0 0 64 64" aria-hidden="true"><use href="img/icons/sprite.svg#icon-thali-plate"/></svg><h3>Shape the menu together</h3><p>One personal conversation to balance vegetarian and non-vegetarian dishes and set spice levels, from mild to Andhra-style fire.</p></li>
+      <li class="pg-step"><span class="pg-step__num" aria-hidden="true">III</span><svg class="pg-step__icon" viewBox="0 0 64 64" aria-hidden="true"><use href="img/icons/sprite.svg#icon-party-tray"/></svg><h3>Pick up, or let us cater</h3><p>Collect pre-booked platters from our kitchen on FM 423, or ask about outdoor catering for larger occasions.</p></li>
+    </ol>
+    <p class="fine center pg-note">Catering is arranged in advance. Please call us to discuss your date and menu.</p>
+  </div>
+</section>
+
+<!-- ═════════ III · Occasions ═════════ -->
+<section class="room room--blush room--inlay room--valance" id="occasions" aria-labelledby="occ-title">
+  <div class="wrap">
+    <header class="chapter-head" data-reveal>
+      <p class="chapter-head__num">Chapter <b>III</b></p>
+      <span class="ornament" aria-hidden="true"></span>
+      <h2 class="chapter-head__title" id="occ-title">Made for <span class="foil">gathering</span></h2>
+      <p class="chapter-head__lede">Whatever brings everyone together, we will help you feed it well.</p>
+    </header>
+    <ul class="pg-tiles" data-stagger="120">
+      <li class="pg-tile"><span class="pg-medal" aria-hidden="true"><svg class="" viewBox="0 0 64 64" aria-hidden="true"><use href="img/icons/sprite.svg#icon-spoon-fork"/></svg></span><h3>Office lunches</h3><p>A spread for the team, with vegetarian and non-vegetarian dishes side by side and the spice kept friendly.</p></li>
+      <li class="pg-tile"><span class="pg-medal" aria-hidden="true"><svg class="" viewBox="0 0 64 64" aria-hidden="true"><use href="img/icons/sprite.svg#icon-gulab-jamun"/></svg></span><h3>Birthdays</h3><p>From a first birthday to a milestone dinner: a table of favorites, and something sweet to finish.</p></li>
+      <li class="pg-tile"><span class="pg-medal" aria-hidden="true"><svg class="" viewBox="0 0 64 64" aria-hidden="true"><use href="img/icons/sprite.svg#icon-biryani-pot-handi"/></svg></span><h3>Housewarmings</h3><p>Welcome everyone into the new place with biryani, warm naan and a curry or two to pass around.</p></li>
+      <li class="pg-tile"><span class="pg-medal" aria-hidden="true"><svg class="" viewBox="0 0 64 64" aria-hidden="true"><use href="img/icons/sprite.svg#icon-party-tray"/></svg></span><h3>Community events</h3><p>Gatherings and get-togethers of all kinds. Tell us your headcount and we will help plan the spread.</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ═════════ IV · Inquiry ═════════ -->
+<section class="room room--emerald room--inlay room--valance room--has-layer" id="plan" aria-labelledby="plan-title">
+  <div class="room__pattern" data-parallax=".16" aria-hidden="true"></div>
+  <div class="wrap pg-plan">
+    <div>
+      <header class="chapter-head chapter-head--left" data-reveal>
+      <p class="chapter-head__num">Chapter <b>IV</b></p>
+      <span class="ornament ornament--left" aria-hidden="true"></span>
+      <h2 class="chapter-head__title" id="plan-title">Begin <span class="foil">the plans</span></h2>
+      <p class="chapter-head__lede">Tell us a little about your celebration. We will come back to you to talk through the menu, timing and details.</p>
+    </header>
+      <div data-reveal>
+        <p class="eyebrow">What to expect</p>
+        <ul class="check-list">
+          <li>Vegetarian and non-vegetarian dishes, planned so every guest is looked after.</li>
+          <li>Spice levels set with you, from mild to Andhra-style fire.</li>
+          <li>Pre-booked platters for pickup, or outdoor catering for larger occasions.</li>
+          <li>One personal conversation to plan the menu, timing and details.</li>
+        </ul>
+        <div class="card card--dark card--inset pg-call">
+          <p class="pg-call__k">Rather talk it through?</p>
+          <p class="pg-call__num"><a href="tel:+14692005856" data-cd-href="tel"><span data-cd="phone">(469) 200-5856</span></a></p>
+          <a class="btn btn--foil btn--block" href="tel:+14692005856" data-cd-href="tel"><svg class="icon" viewBox="0 0 64 64" aria-hidden="true"><use href="img/icons/sprite.svg#icon-phone-mono"/></svg>Call to plan your event</a>
+          <p class="fine">Catering is arranged in advance. Please call us to discuss your date and menu.</p>
+        </div>
+      </div>
+    </div>
+    <div class="card card--inset pg-form-card" data-reveal>
+      <form class="pg-form" name="catering" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field" data-pg-form aria-labelledby="form-title" aria-describedby="form-note">
+        <input type="hidden" name="form-name" value="catering">
+        <p class="pg-hp" aria-hidden="true"><label>Leave this field empty <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <div class="pg-form__top"><h3 class="pg-form__title" id="form-title">Catering inquiry</h3><span class="pg-tag">Concept form</span></div>
+        <p class="pg-form__lede" id="form-note">Every field is needed unless it is marked optional. This form is part of a design concept; to book catering today, please call the restaurant.</p>
+        <div class="pg-alert" data-pg-alert role="alert" tabindex="-1" hidden></div>
+        <div class="pg-field">
+          <label for="f-name">Your name</label>
+          <input class="pg-input" id="f-name" name="name" type="text" autocomplete="name" required data-err="e-name" aria-describedby="e-name">
+          <p class="pg-err" id="e-name"></p>
+        </div>
+        <div class="pg-grid2">
+          <div class="pg-field">
+            <label for="f-email">Email</label>
+            <input class="pg-input" id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required data-err="e-email" aria-describedby="e-email">
+            <p class="pg-err" id="e-email"></p>
+          </div>
+          <div class="pg-field">
+            <label for="f-phone">Phone <small>(optional)</small></label>
+            <input class="pg-input" id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" data-err="e-phone" aria-describedby="h-phone e-phone">
+            <p class="pg-hint" id="h-phone">So we can call about the details.</p>
+            <p class="pg-err" id="e-phone"></p>
+          </div>
+        </div>
+        <div class="pg-grid2">
+          <div class="pg-field">
+            <label for="f-date">Event date</label>
+            <input class="pg-input" id="f-date" name="event_date" type="date" required data-err="e-date" aria-describedby="e-date">
+            <p class="pg-err" id="e-date"></p>
+          </div>
+          <div class="pg-field">
+            <label for="f-guests">Approx. guests</label>
+            <input class="pg-input" id="f-guests" name="guests" type="number" min="1" max="5000" step="1" inputmode="numeric" required data-err="e-guests" aria-describedby="e-guests">
+            <p class="pg-err" id="e-guests"></p>
+          </div>
+        </div>
+        <div class="pg-field">
+          <label for="f-msg">Tell us about the occasion <small>(optional)</small></label>
+          <textarea class="pg-input" id="f-msg" name="message" rows="5" data-err="e-msg" aria-describedby="e-msg" placeholder="Type of event, favorite dishes, vegetarian guests, spice levels…"></textarea>
+          <p class="pg-err" id="e-msg"></p>
+        </div>
+        <button class="btn btn--foil btn--block pg-form__submit" type="submit" data-pg-submit><svg class="icon" viewBox="0 0 64 64" aria-hidden="true"><use href="img/icons/sprite.svg#icon-calendar-mono"/></svg>Send the inquiry</button>
+        <p class="pg-form__fine">Prefer to talk? Call <a href="tel:+14692005856" data-cd-href="tel"><span data-cd="phone">(469) 200-5856</span></a>.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════ V · FAQ ═════════ -->
+<section class="room room--ivory room--fade" id="faq" aria-labelledby="faq-title">
+  <div class="wrap">
+    <header class="chapter-head" data-reveal>
+      <p class="chapter-head__num">Chapter <b>V</b></p>
+      <span class="ornament" aria-hidden="true"></span>
+      <h2 class="chapter-head__title" id="faq-title">Questions, <span class="foil">answered</span></h2>
+      <p class="chapter-head__lede">And if yours is not here, we would love to hear it on the phone.</p>
+    </header>
+    <div class="pg-faq" data-reveal>
+      <details><summary><span>Can you cater our event?</span><span class="pg-faq__icon" aria-hidden="true"></span></summary><div class="pg-faq__a"><p>With pleasure. We prepare pre-booked platters and offer outdoor catering for celebrations and gatherings. Call us to plan the menu and the details.</p></div></details>
+      <details><summary><span>Is there a good choice for vegetarians?</span><span class="pg-faq__icon" aria-hidden="true"></span></summary><div class="pg-faq__a"><p>A generous one: paneer curries, dal, vegetable biryani, Gobi Manchurian, Chilli Paneer and more. Our menu offers vegetarian and non-vegetarian dishes side by side.</p></div></details>
+      <details><summary><span>How spicy is the food?</span><span class="pg-faq__icon" aria-hidden="true"></span></summary><div class="pg-faq__a"><p>Spice levels are set with you, from mild to Andhra-style fire. Some guests find that even Mild carries a little warmth, so tell us about your crowd.</p></div></details>
+      <details><summary><span>Is your food halal?</span><span class="pg-faq__icon" aria-hidden="true"></span></summary><div class="pg-faq__a"><p>Please call us to confirm. It matters, and we would like to answer you personally rather than guess here.</p><p class="pg-flag">Please call to confirm</p></div></details>
+      <details><summary><span>Can you seat a large party?</span><span class="pg-faq__icon" aria-hidden="true"></span></summary><div class="pg-faq__a"><p>Please call us to confirm before you arrive, so we can plan properly for your group.</p><p class="pg-flag">Please call to confirm</p></div></details>
+      <details><summary><span>Do you offer takeout and delivery?</span><span class="pg-faq__icon" aria-hidden="true"></span></summary><div class="pg-faq__a"><p>Yes. Order online for pickup directly from us, or choose delivery through Uber Eats, DoorDash or Grubhub. Dining in is relaxed and counter-service.</p></div></details>
+    </div>
+    <div class="btn-row btn-row--center pg-faq-foot" data-reveal>
+      <a class="btn btn--ruby" href="tel:+14692005856" data-cd-href="tel"><svg class="icon" viewBox="0 0 64 64" aria-hidden="true"><use href="img/icons/sprite.svg#icon-phone-mono"/></svg>Call <span data-cd="phone">(469) 200-5856</span></a>
+      <a class="btn btn--line" href="menu.html">Browse the full menu</a>
     </div>
   </div>
 </section>
@@ -162,5 +331,6 @@
 <script src="js/config.js"></script>
 <script src="js/motion.min.js" data-manual></script>
 <script src="js/site.js"></script>
+<script src="js/pages.js"></script>
 </body>
 </html>

@@ -157,7 +157,7 @@
         // dish: drop + squash on landing
         const land = 0.2;
         let dy = 0, dsx = 1, dsy = 1;
-        if (u < land) { const v = seg(u, 0.02, land); dy = lerp(-340, 0, E.inQuad(v)); dsx = 0.88; dsy = 1.14; }
+        if (u < land) { const v = seg(u, 0.02, land); dy = lerp(-200, 0, E.inQuad(v)); dsx = 0.88; dsy = 1.14; }
         else { const v = u - land; dsy = K(v, [[0, 0.82], [0.08, 1.07, E.outQuad], [0.18, 0.98], [0.3, 1]]); dsx = K(v, [[0, 1.16], [0.08, 0.96, E.outQuad], [0.18, 1.01], [0.3, 1]]); }
         const exit = seg(u, 0.86, 1.05);
         s.dish.el.style.transformOrigin = '50% 75%';
