@@ -30,11 +30,13 @@
 <link rel="preload" href="assets/fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="vendor/motion.css">
 <link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/pages.css">
 
 <script>(function(h){try{if(localStorage.getItem('cd-bz-banner-off')==='1')h.classList.add('banner-off')}catch(e){}try{if(sessionStorage.getItem('m-curtain'))h.classList.add('m-arrive')}catch(e){}h.classList.add('m-js');setTimeout(function(){if(!window.Motion)h.classList.remove('m-js','m-arrive')},3000)})(document.documentElement);</script>
 <script src="js/config.js" defer></script>
 <script src="vendor/motion.min.js" defer data-manual></script>
 <script src="js/site.js" defer></script>
+<script src="js/pages.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to the food</a>
@@ -63,17 +65,196 @@
   </div>
 </div>
 <main id="main">
-<section class="sec sec--cream">
-  <div class="wrap stub">
-    <p class="kicker">Welcome to the District</p>
-    <h1 class="h-hero">Our story</h1>
-    <p class="lead"><span lang="hi-Latn">Swaad</span> means taste, and it’s the whole point here. Andhra-style fire, tandoor smoke, dum biryani steam and wok-tossed Indo-Chinese crunch, all cooked for our Little Elm neighbors. One kitchen, four big flavor moods, zero boring plates.</p>
-    <p class="chip chip--marigold"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-clock-mono"></use></svg>This page is coming together: the street crew is still painting the signs.</p>
-    <div class="btn-row">
-      <a class="btn btn--primary" href="https://curry-district-little-elm.cloveronline.com/" data-cfg-href="order" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-shopping-bag-mono"></use></svg>Order pickup</a>
-      <a class="btn btn--cream" href="index.html">Back to the District</a>
+<section class="pg-hero pg-hero--ink" aria-labelledby="pg-title">
+  <div class="wrap pg-hero__in">
+    <div class="pg-hero__copy">
+      <p class="pg-hero__kicker"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-heart-mono"></use></svg>Our story · FM 423</p>
+      <h1 class="pg-hero__title" id="pg-title"><span class="pg-hero__t1">The food, the fire,</span> <span class="pg-hero__t2 ">the District</span></h1>
+      <p class="pg-hero__tag">One kitchen, four big flavour moods.</p>
+      <p class="pg-hero__lead">Curry District is a whole neighborhood of flavor on FM 423 in Little Elm, and the menu is your map. Here’s the lay of the land.</p>
+      <div class="pg-hero__ctas"><a class="btn btn--marigold" href="menu.html" data-press><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-menu-book-mono"></use></svg>See the menu</a><a class="btn btn--cream" href="visit.html" data-press><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-map-pin-mono"></use></svg>Find us</a></div>
+      
     </div>
-    
+    <div class="pg-hero__art" aria-hidden="true" data-reveal="pop">
+      <div class="pg-stk pg-stk--a" style="--stk-bg: var(--bz-pink-lt)"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/art/static/butter-chicken.svg"><img src="assets/art/butter-chicken.svg" width="800" height="800" decoding="async" alt=""></picture></div>
+      <div class="pg-stk pg-stk--b" style="--stk-bg: var(--bz-teal-lt)"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/art/static/chilli-chicken.svg"><img src="assets/art/chilli-chicken.svg" width="800" height="800" decoding="async" alt=""></picture></div>
+      <div class="pg-stk pg-stk--c" style="--stk-bg: var(--bz-mari-lt)"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/art/static/biryani.svg"><img src="assets/art/biryani.svg" width="800" height="800" decoding="async" alt=""></picture></div>
+      <p class="pg-seal"><span class="m-wobble">Tell us<br>your heat</span></p>
+    </div>
+  </div>
+</section>
+<section class="marquee marquee--saffron" aria-label="Flavour moods">
+  <div class="marquee__track" data-marquee="42"><span class="marquee__item">Andhra-style fire <svg class="marquee__sep" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5C13 8 16 11 22.5 12 16 13 13 16 12 22.5 11 16 8 13 1.5 12 8 11 11 8 12 1.5Z" fill="currentColor" stroke="#1D1147" stroke-width="1.6" stroke-linejoin="round"/></svg></span><span class="marquee__item">Tandoor smoke <svg class="marquee__sep" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5C13 8 16 11 22.5 12 16 13 13 16 12 22.5 11 16 8 13 1.5 12 8 11 11 8 12 1.5Z" fill="currentColor" stroke="#1D1147" stroke-width="1.6" stroke-linejoin="round"/></svg></span><span class="marquee__item">Dum biryani steam <svg class="marquee__sep" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5C13 8 16 11 22.5 12 16 13 13 16 12 22.5 11 16 8 13 1.5 12 8 11 11 8 12 1.5Z" fill="currentColor" stroke="#1D1147" stroke-width="1.6" stroke-linejoin="round"/></svg></span><span class="marquee__item">Wok-tossed crunch <svg class="marquee__sep" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5C13 8 16 11 22.5 12 16 13 13 16 12 22.5 11 16 8 13 1.5 12 8 11 11 8 12 1.5Z" fill="currentColor" stroke="#1D1147" stroke-width="1.6" stroke-linejoin="round"/></svg></span><span class="marquee__item">Butter Chicken <svg class="marquee__sep" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5C13 8 16 11 22.5 12 16 13 13 16 12 22.5 11 16 8 13 1.5 12 8 11 11 8 12 1.5Z" fill="currentColor" stroke="#1D1147" stroke-width="1.6" stroke-linejoin="round"/></svg></span><span class="marquee__item">Garlic naan <svg class="marquee__sep" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5C13 8 16 11 22.5 12 16 13 13 16 12 22.5 11 16 8 13 1.5 12 8 11 11 8 12 1.5Z" fill="currentColor" stroke="#1D1147" stroke-width="1.6" stroke-linejoin="round"/></svg></span></div>
+  <button class="marquee__toggle" type="button" data-marquee-toggle aria-pressed="false" aria-label="Pause the ticker">
+    <svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 2h3.5v12H3zM9.5 2H13v12H9.5z" fill="currentColor"/></svg>
+    <svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2l10 6-10 6z" fill="currentColor"/></svg></button>
+</section>
+<section class="sec sec--cream edge-scallop" aria-labelledby="lineup-title">
+  <div class="wrap">
+    <div class="sec__head" data-reveal><p class="kicker">The menu is your map</p><h2 class="h2" id="lineup-title">Four streets, one kitchen</h2><p>Andhra-style fire, North Indian tandoor classics, dum biryani and Indo-Chinese street favourites, all cooked on FM 423. Pick a street and start walking.</p></div>
+    <ol class="pg-chapters" role="list">
+      <li class="pg-chapter">
+        <div class="pg-chapter__art" style="--ch-bg: var(--bz-chili)" data-reveal="zoom"><span class="pg-chapter__no" aria-hidden="true">01</span><div class="art-tile" style="--art-bg: var(--bz-chili)" aria-hidden="true"><span class="art-tile__word">Andhra<br>fire</span></div><span class="pg-chapter__chilis" aria-hidden="true"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-chili-4"></use></svg><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-chili-4"></use></svg><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-chili-4"></use></svg></span></div>
+        <div class="pg-chapter__body" data-reveal>
+          <p class="pg-sign">Street 01 <b>·</b> Andhra-style fire</p>
+          <h3 class="pg-chapter__title">Bring the heat</h3>
+          <p>Head down one street for Andhra-style fire: Karampodi Chicken with a serious chili-powder kick and Gongura Mutton Pulav, tangy and bold.</p>
+          <ul class="chip-row" role="list" aria-label="Andhra-style fire dishes on the menu"><li><a class="chip" href="menu.html#dish-karampodi-chicken">Karampodi Chicken</a></li><li><a class="chip" href="menu.html#dish-gongura-mutton-pulav">Gongura Mutton Pulav</a></li><li><a class="chip" href="menu.html#dish-andhra-goat-curry">Andhra Goat Curry</a></li></ul>
+          <p class="small-print">Heads-up from guests: even Mild can have a kick. Tell us your heat level.</p>
+        </div>
+      </li>
+      <li class="pg-chapter">
+        <div class="pg-chapter__art" style="--ch-bg: var(--bz-pink-lt)" data-reveal="zoom"><span class="pg-chapter__no" aria-hidden="true">02</span><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/art/static/tandoori-platter.svg"><img src="assets/art/tandoori-platter.svg" width="800" height="800" loading="lazy" decoding="async" alt="Illustration of a sizzling tandoori platter with lemon and onions"></picture></div>
+        <div class="pg-chapter__body" data-reveal>
+          <p class="pg-sign">Street 02 <b>·</b> Tandoor Quarter</p>
+          <h3 class="pg-chapter__title">Glowing hot</h3>
+          <p>Turn the corner for North Indian tandoor classics, glowing hot: Tandoori Chicken, Chicken Tikka Kabab and garlic naan that vanishes faster than you can say <span lang="hi-Latn">‘bas, ek aur’</span> (okay, just one more).</p>
+          <ul class="chip-row" role="list" aria-label="Tandoor Quarter dishes on the menu"><li><a class="chip" href="menu.html#dish-tandoori-chicken">Tandoori Chicken</a></li><li><a class="chip" href="menu.html#dish-chicken-tikka-kabab">Chicken Tikka Kabab</a></li><li><a class="chip" href="menu.html#dish-garlic-naan">Garlic Naan</a></li></ul>
+          
+        </div>
+      </li>
+      <li class="pg-chapter">
+        <div class="pg-chapter__art" style="--ch-bg: var(--bz-mari-lt)" data-reveal="zoom"><span class="pg-chapter__no" aria-hidden="true">03</span><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/art/static/biryani.svg"><img src="assets/art/biryani.svg" width="800" height="800" loading="lazy" decoding="async" alt="Illustration of dum biryani heaped in a copper handi"></picture></div>
+        <div class="pg-chapter__body" data-reveal>
+          <p class="pg-sign">Street 03 <b>·</b> Biryani Boulevard</p>
+          <h3 class="pg-chapter__title">Layered, sealed, steaming</h3>
+          <p>Biryani Boulevard is home to our dum biryani, layered, sealed and steaming.</p><p class="pg-chapter__hand">Lift the lid. Inhale. Repeat.</p>
+          <ul class="chip-row" role="list" aria-label="Biryani Boulevard dishes on the menu"><li><a class="chip" href="menu.html#dish-chicken-dum-biryani">Chicken Dum Biryani</a></li><li><a class="chip" href="menu.html#dish-goat-dum-biryani">Goat Dum Biryani</a></li><li><a class="chip" href="menu.html#dish-veg-biryani">Veg Biryani</a></li></ul>
+          
+        </div>
+      </li>
+      <li class="pg-chapter">
+        <div class="pg-chapter__art" style="--ch-bg: #C9BCFF" data-reveal="zoom"><span class="pg-chapter__no" aria-hidden="true">04</span><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/art/static/chilli-chicken.svg"><img src="assets/art/chilli-chicken.svg" width="800" height="800" loading="lazy" decoding="async" alt="Illustration of wok-tossed chilli chicken with peppers"></picture></div>
+        <div class="pg-chapter__body" data-reveal>
+          <p class="pg-sign">Street 04 <b>·</b> Indo-Chinese Alley</p>
+          <h3 class="pg-chapter__title">Wok-tossed swagger</h3>
+          <p>Down Indo-Chinese Alley, Gobi Manchurian and Chilli Paneer bring the wok-tossed street-food swagger.</p>
+          <ul class="chip-row" role="list" aria-label="Indo-Chinese Alley dishes on the menu"><li><a class="chip" href="menu.html#dish-gobi-manchurian">Gobi Manchurian</a></li><li><a class="chip" href="menu.html#dish-chilli-paneer">Chilli Paneer</a></li><li><a class="chip" href="menu.html#dish-chilli-chicken">Chilli Chicken</a></li></ul>
+          
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+<div class="pattern-band pattern-band--garland pg-band" aria-hidden="true"></div>
+<section class="sec sec--rani pg-zip" aria-labelledby="zip-title">
+  <div class="wrap pg-zip__in">
+    <div class="pg-postage" aria-hidden="true" data-reveal="zoom"><div class="pg-postage__art"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/art/static/butter-chicken.svg"><img src="assets/art/butter-chicken.svg" width="800" height="800" loading="lazy" decoding="async" alt=""></picture></div><span class="pg-postage__zip">Little Elm · TX 75068</span></div>
+    <div data-reveal>
+      <p class="kicker">And the big one</p>
+      <h2 class="h2" id="zip-title">Butter Chicken?</h2>
+      <p class="lead">It basically has its own zip code.</p>
+      <p>Bring the family after practice, grab pickup on the way home or let us feed the whole party. Tell us your heat level. We’ll handle the <span lang="hi-Latn">swaad</span> (the taste).</p>
+      <div class="btn-row on-dark"><a class="btn btn--marigold" href="https://curry-district-little-elm.cloveronline.com/" data-cfg-href="order" target="_blank" rel="noopener" data-press><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-shopping-bag-mono"></use></svg>Order pickup<span class="visually-hidden"> online (opens Clover in a new tab)</span></a><a class="btn btn--cream" href="catering.html" data-press><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-party-tray-mono"></use></svg>Plan my party</a></div>
+    </div>
+  </div>
+</section>
+<section class="sec sec--marigold edge-zigzag" aria-labelledby="words-title">
+  <div class="wrap">
+    <div class="sec__head sec__head--center" data-reveal><p class="kicker">Say it like a regular</p><h2 class="h2" id="words-title">Kitchen words</h2><p>Six words you’ll spot on the District menu, and what they mean on your plate.</p></div>
+    <ul class="pg-words" role="list" data-stagger="pop 80">
+      <li><article class="pg-word" style="--w-hl: var(--bz-mari-lt)">
+        <svg class="pg-word__ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-biryani-pot-handi"></use></svg>
+        <h3 class="pg-word__term"><span>Dum</span></h3>
+        <p class="pg-word__pos">cooking method</p>
+        <p class="pg-word__def">Slow cooking in a sealed pot. The lid goes on tight, so rice, meat and spices steam gently in their own aromas. It’s how dum biryani gets its layers.</p>
+        <div class="pg-word__try"><p>Taste it in</p><ul class="chip-row" role="list"><li><a class="chip chip--marigold" href="menu.html#dish-chicken-dum-biryani">Chicken Dum Biryani</a></li></ul></div>
+      </article></li>
+      <li><article class="pg-word" style="--w-hl: var(--bz-pink-lt)">
+        <svg class="pg-word__ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-tandoor-oven"></use></svg>
+        <h3 class="pg-word__term"><span>Tandoor</span></h3>
+        <p class="pg-word__pos">the clay oven</p>
+        <p class="pg-word__def">A clay oven fired to blistering heat. Marinated meats char on skewers inside, and naan is slapped onto the hot inner wall to puff and blister.</p>
+        <div class="pg-word__try"><p>Taste it in</p><ul class="chip-row" role="list"><li><a class="chip chip--marigold" href="menu.html#dish-tandoori-chicken">Tandoori Chicken</a></li><li><a class="chip chip--marigold" href="menu.html#dish-garlic-naan">Garlic Naan</a></li></ul></div>
+      </article></li>
+      <li><article class="pg-word" style="--w-hl: var(--bz-teal-lt)">
+        <svg class="pg-word__ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-curry-bowl"></use></svg>
+        <h3 class="pg-word__term"><span>Tadka</span></h3>
+        <p class="pg-word__pos">the finishing sizzle</p>
+        <p class="pg-word__def">Tempering: whole spices, garlic or chillies sizzled in hot oil or ghee, then poured over a dish to finish it. That last-second crackle wakes up a dal.</p>
+        <div class="pg-word__try"><p>Taste it in</p><ul class="chip-row" role="list"><li><a class="chip chip--marigold" href="menu.html#dish-dal-thadaka">Dal Thadaka</a></li></ul></div>
+      </article></li>
+      <li><article class="pg-word" style="--w-hl: var(--bz-mari-lt)">
+        <svg class="pg-word__ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-thali-plate"></use></svg>
+        <h3 class="pg-word__term"><span>Masala</span></h3>
+        <p class="pg-word__pos">spice mix</p>
+        <p class="pg-word__def">Simply, a blend of spices, whole or ground. On a menu it also means a dish cooked in a spiced sauce, like tikka masala.</p>
+        <div class="pg-word__try"><p>Taste it in</p><ul class="chip-row" role="list"><li><a class="chip chip--marigold" href="menu.html#dish-chicken-tikka-masala">Chicken Tikka Masala</a></li><li><a class="chip chip--marigold" href="menu.html#dish-channa-masala">Channa Masala</a></li></ul></div>
+      </article></li>
+      <li><article class="pg-word" style="--w-hl: var(--bz-teal-lt)">
+        <svg class="pg-word__ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-cilantro"></use></svg>
+        <h3 class="pg-word__term"><span>Gongura</span></h3>
+        <p class="pg-word__pos">sorrel leaves</p>
+        <p class="pg-word__def">Sorrel leaves with a bright, sour tang, a favourite in Andhra-style cooking. They bring a lip-puckering zing to rice and meat dishes.</p>
+        <div class="pg-word__try"><p>Taste it in</p><ul class="chip-row" role="list"><li><a class="chip chip--marigold" href="menu.html#dish-gongura-mutton-pulav">Gongura Mutton Pulav</a></li><li><a class="chip chip--marigold" href="menu.html#dish-gongura-veg-biryani">Gongura Veg Biryani</a></li></ul></div>
+      </article></li>
+      <li><article class="pg-word" style="--w-hl: var(--bz-pink-lt)">
+        <svg class="pg-word__ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-chili-4"></use></svg>
+        <h3 class="pg-word__term"><span>Karampodi</span></h3>
+        <p class="pg-word__pos">spice powder</p>
+        <p class="pg-word__def">Karam means chilli heat and podi means powder: a coarse, fiery spice powder built on dried red chillies. Tossed over chicken, it’s pure Andhra-style fire.</p>
+        <div class="pg-word__try"><p>Taste it in</p><ul class="chip-row" role="list"><li><a class="chip chip--marigold" href="menu.html#dish-karampodi-chicken">Karampodi Chicken</a></li></ul></div>
+      </article></li>
+    </ul>
+    <p class="small-print pg-fine pg-fine--center">Simple kitchen definitions to help you order. Recipes vary from kitchen to kitchen, so ask us how we make it.</p>
+  </div>
+</section>
+<section class="sec sec--peacock edge-scallop" aria-labelledby="proof-title">
+  <div class="wrap">
+    <div class="sec__head" data-reveal><p class="kicker">Word on the street</p><h2 class="h2" id="proof-title">Guests keep coming back</h2><p>Ratings as listed publicly in October 2026, plus the themes that come up again and again.</p></div>
+    <ul class="ratings" role="list" data-stagger="pop 90">
+      <li><a class="rating" href="https://www.google.com/maps/search/?api=1&amp;query=Curry+District+11851+FM+423+Suite+200+Little+Elm+TX+75068" data-cfg-href="googleSearch" target="_blank" rel="noopener">
+        <span class="rating__platform">Google</span><span class="rating__approx">about</span>
+        <span class="rating__score" data-count="4.2">4.2</span><span class="visually-hidden"> out of 5, approximately</span>
+        <span class="stars" style="--pct:84%" aria-hidden="true"><span class="stars__row stars__row--dim"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star-mono"></use></svg><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star-mono"></use></svg><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star-mono"></use></svg><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star-mono"></use></svg><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star-mono"></use></svg></span><span class="stars__row stars__row--on"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star"></use></svg><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star"></use></svg><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star"></use></svg><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star"></use></svg><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star"></use></svg></span></span>
+        <span class="rating__count">about 1,000 reviews</span><span class="rating__label">as listed publicly, Oct 2026</span><span class="visually-hidden"> (opens in a new tab)</span></a></li>
+      <li><a class="rating" href="https://www.ubereats.com/store/curry-district/uWXzS9FzRBqEC8dXe5241w" data-cfg-href="uberEats" target="_blank" rel="noopener">
+        <span class="rating__platform">Uber Eats</span><span class="rating__approx">about</span>
+        <span class="rating__score" data-count="4.5">4.5</span><span class="visually-hidden"> out of 5, approximately</span>
+        <span class="stars" style="--pct:90%" aria-hidden="true"><span class="stars__row stars__row--dim"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star-mono"></use></svg><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star-mono"></use></svg><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star-mono"></use></svg><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star-mono"></use></svg><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star-mono"></use></svg></span><span class="stars__row stars__row--on"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star"></use></svg><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star"></use></svg><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star"></use></svg><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star"></use></svg><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star"></use></svg></span></span>
+        <span class="rating__count">2,000+ ratings</span><span class="rating__label">as listed publicly, Oct 2026</span><span class="visually-hidden"> (opens in a new tab)</span></a></li>
+      <li><a class="rating" href="https://www.restaurantji.com/tx/little-elm/curry-district-/" data-cfg-href="restaurantji" target="_blank" rel="noopener">
+        <span class="rating__platform">Restaurantji</span><span class="rating__approx"></span>
+        <span class="rating__score" data-count="4.5">4.5</span><span class="visually-hidden"> out of 5</span>
+        <span class="stars" style="--pct:90%" aria-hidden="true"><span class="stars__row stars__row--dim"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star-mono"></use></svg><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star-mono"></use></svg><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star-mono"></use></svg><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star-mono"></use></svg><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star-mono"></use></svg></span><span class="stars__row stars__row--on"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star"></use></svg><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star"></use></svg><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star"></use></svg><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star"></use></svg><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star"></use></svg></span></span>
+        <span class="rating__count">479 reviews</span><span class="rating__label">as listed publicly, Oct 2026</span><span class="visually-hidden"> (opens in a new tab)</span></a></li>
+      <li><a class="rating" href="https://www.yelp.com/biz/curry-district-little-elm" data-cfg-href="yelp" target="_blank" rel="noopener">
+        <span class="rating__platform">Yelp</span><span class="rating__approx"></span>
+        <span class="rating__score" data-count="4.0">4.0</span><span class="visually-hidden"> out of 5</span>
+        <span class="stars" style="--pct:80%" aria-hidden="true"><span class="stars__row stars__row--dim"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star-mono"></use></svg><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star-mono"></use></svg><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star-mono"></use></svg><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star-mono"></use></svg><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star-mono"></use></svg></span><span class="stars__row stars__row--on"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star"></use></svg><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star"></use></svg><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star"></use></svg><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star"></use></svg><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-star"></use></svg></span></span>
+        <span class="rating__count">120 reviews</span><span class="rating__label">as listed publicly, Oct 2026</span><span class="visually-hidden"> (opens in a new tab)</span></a></li>
+    </ul>
+    <div class="pg-themes-head" data-reveal>
+      <h3 class="h3">What guests keep coming back for</h3>
+      <p>The gist from public reviews: paraphrased, never invented.</p>
+    </div>
+    <ul class="pg-themes" role="list" data-stagger="pop 60">
+      <li><article class="pg-theme"><div class="pg-theme__top"><h4 class="pg-theme__label">Biryani &amp; pulav</h4><span class="pg-theme__tag">Theme</span></div><p>The biryani and pulav, by a mile, with extra love for the family-size pulav packs: big flavor, big portions, good value.</p></article></li>
+      <li><article class="pg-theme"><div class="pg-theme__top"><h4 class="pg-theme__label">Butter Chicken</h4><span class="pg-theme__tag">Theme</span></div><p>Butter Chicken: creamy, rich and a delivery-app go-to.</p></article></li>
+      <li><article class="pg-theme"><div class="pg-theme__top"><h4 class="pg-theme__label">Garlic naan</h4><span class="pg-theme__tag">Theme</span></div><p>Garlic naan, ordered alongside just about every curry.</p></article></li>
+      <li><article class="pg-theme"><div class="pg-theme__top"><h4 class="pg-theme__label">Portions &amp; value</h4><span class="pg-theme__tag">Theme</span></div><p>Generous portions that feel like real value.</p></article></li>
+      <li><article class="pg-theme"><div class="pg-theme__top"><h4 class="pg-theme__label">Friendly team</h4><span class="pg-theme__tag">Theme</span></div><p>A friendly, accommodating team that’s happy to recommend a dish.</p></article></li>
+      <li><article class="pg-theme"><div class="pg-theme__top"><h4 class="pg-theme__label">Spice your way</h4><span class="pg-theme__tag">Theme</span></div><p>Spice cooked to the level you ask for. Heads-up: some guests say even Mild has a kick.</p></article></li>
+      <li><article class="pg-theme"><div class="pg-theme__top"><h4 class="pg-theme__label">Tandoor favorites</h4><span class="pg-theme__tag">Theme</span></div><p>Tandoor favorites like chicken tikka kebab (it brings the heat) and tandoori chicken.</p></article></li>
+      <li><article class="pg-theme"><div class="pg-theme__top"><h4 class="pg-theme__label">Clean, cozy room</h4><span class="pg-theme__tag">Theme</span></div><p>A clean, cozy room with Indian music in the background.</p></article></li>
+    </ul>
+    <p class="small-print pg-fine">Themes are paraphrased from public review summaries. They are not direct quotes. Ratings as listed publicly in Oct 2026; they change over time, so check each platform for the latest. The Google figure is approximate.</p>
+  </div>
+</section>
+<section class="sec sec--cream edge-zigzag" aria-labelledby="owner-title">
+  <div class="wrap wrap--narrow">
+    <div class="pg-owner" data-reveal>
+      <p class="pg-owner__flag"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-quote-mono"></use></svg>Sample copy — to be replaced with your real story</p>
+      <p class="kicker">From our kitchen to yours</p>
+      <h2 class="h2" id="owner-title">The people behind the pots</h2>
+      <div class="pg-owner__body">
+        <p>Hi, neighbours! We’re <span class="pg-slot">[owner names]</span>, the family behind Curry District.</p>
+        <p>Our recipes come from <span class="pg-slot">[where the dishes come from: a home kitchen, a city, a well-thumbed notebook]</span>. The first dish we ever got just right was <span class="pg-slot">[signature dish]</span>, and it’s still the one we cook for our own family.</p>
+        <p>We opened on FM 423 in <span class="pg-slot">[year]</span> because <span class="pg-slot">[why Little Elm, why then]</span>. <span class="pg-slot">[Who is in the kitchen today, and the one thing you want every guest to feel when they walk in.]</span></p>
+      </div>
+      <p class="pg-owner__sign">— <span class="pg-slot">[your names]</span></p>
+      <p class="small-print pg-owner__note">Sample copy for the design proposal. Every highlighted slot is a placeholder for the owners’ own words; nothing in this block is a fact about Curry District yet.</p>
+    </div>
   </div>
 </section>
 </main>

@@ -1,0 +1,423 @@
+{
+  "helper": "cups",
+  "items": [
+    {
+      "id": "cups-chai-cup-hero-bazaar",
+      "title": "Chai cup, sleeve & lid · A · Bazaar",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/cups/chai-cup-hero-bazaar.png",
+      "thumb": "assets/cups/chai-cup-hero-bazaar-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "Kulhad-clay print + “Chai-lo!” sticker sleeve makes a takeaway cup look like a street-stall moment.",
+      "tags": [
+        "drinks",
+        "chai",
+        "cup",
+        "sleeve",
+        "lid"
+      ],
+      "download": "assets/cups/chai-cup-bazaar.svg"
+    },
+    {
+      "id": "cups-chai-cup-hero-royal",
+      "title": "Chai cup, sleeve & lid · B · Royal",
+      "direction": "royal",
+      "type": "image",
+      "src": "assets/cups/chai-cup-hero-royal.png",
+      "thumb": "assets/cups/chai-cup-hero-royal-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "Terracotta kulhad body under an emerald, gold-arched sleeve: takeaway chai that feels like dine-in.",
+      "tags": [
+        "drinks",
+        "chai",
+        "cup",
+        "sleeve",
+        "lid"
+      ],
+      "download": "assets/cups/chai-cup-royal.svg"
+    },
+    {
+      "id": "cups-lassi-cup-hero-bazaar",
+      "title": "Mango lassi cup + straw flag · A · Bazaar",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/cups/lassi-cup-hero-bazaar.png",
+      "thumb": "assets/cups/lassi-cup-hero-bazaar-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "Clear cup shows the mango gold; the teal wrap and “Thanda!” flag are pure Bazaar fun.",
+      "tags": [
+        "drinks",
+        "lassi",
+        "cold cup",
+        "straw flag"
+      ],
+      "download": "assets/cups/lassi-cup-bazaar.svg"
+    },
+    {
+      "id": "cups-lassi-cup-hero-royal",
+      "title": "Mango lassi cup + straw flag · B · Royal",
+      "direction": "royal",
+      "type": "image",
+      "src": "assets/cups/lassi-cup-hero-royal.png",
+      "thumb": "assets/cups/lassi-cup-hero-royal-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "Ivory peacock-eye band and a “Sip slowly.” flag keep the cold drink premium.",
+      "tags": [
+        "drinks",
+        "lassi",
+        "cold cup",
+        "straw flag"
+      ],
+      "download": "assets/cups/lassi-cup-royal.svg"
+    },
+    {
+      "id": "cups-party-trays-hero-bazaar",
+      "title": "Party trays: board lids + zone labels · A · Bazaar",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/cups/party-trays-hero-bazaar.png",
+      "thumb": "assets/cups/party-trays-hero-bazaar-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "Printed lids stack like a parade; the zone-coloured label says what, how many and how hot at a glance.",
+      "tags": [
+        "catering",
+        "party tray",
+        "labels",
+        "zones"
+      ],
+      "download": "assets/cups/party-tray-bazaar.svg"
+    },
+    {
+      "id": "cups-party-trays-hero-royal",
+      "title": "Party trays: board lids + zone labels · B · Royal",
+      "direction": "royal",
+      "type": "image",
+      "src": "assets/cups/party-trays-hero-royal.png",
+      "thumb": "assets/cups/party-trays-hero-royal-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "Midnight-and-gold lids turn foil pans into a celebration spread, labels colour-coded by menu district.",
+      "tags": [
+        "catering",
+        "party tray",
+        "labels",
+        "zones"
+      ],
+      "download": "assets/cups/party-tray-royal.svg"
+    },
+    {
+      "id": "cups-district-lunchbox-hero-bazaar",
+      "title": "District Lunchbox · A · Bazaar",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/cups/district-lunchbox-hero-bazaar.png",
+      "thumb": "assets/cups/district-lunchbox-hero-bazaar-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "A sleeve with a “which dish is which?” key ends the office-lunch guessing game.",
+      "tags": [
+        "catering",
+        "corporate",
+        "lunchbox",
+        "legend"
+      ],
+      "download": "assets/cups/district-lunchbox-bazaar.svg"
+    },
+    {
+      "id": "cups-district-lunchbox-hero-royal",
+      "title": "District Lunchbox · B · Royal",
+      "direction": "royal",
+      "type": "image",
+      "src": "assets/cups/district-lunchbox-hero-royal.png",
+      "thumb": "assets/cups/district-lunchbox-hero-royal-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "Emerald sleeve, ivory legend card: corporate lunches that look considered.",
+      "tags": [
+        "catering",
+        "corporate",
+        "lunchbox",
+        "legend"
+      ],
+      "download": "assets/cups/district-lunchbox-royal.svg"
+    },
+    {
+      "id": "cups-box-lunch-carton-hero-bazaar",
+      "title": "Box-lunch carton with handle · A · Bazaar",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/cups/box-lunch-carton-hero-bazaar.png",
+      "thumb": "assets/cups/box-lunch-carton-hero-bazaar-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "Truck-art carton with a write-in end panel — easy to carry, easy to sort.",
+      "tags": [
+        "catering",
+        "carton",
+        "box lunch"
+      ],
+      "download": "assets/cups/box-lunch-carton-bazaar.svg"
+    },
+    {
+      "id": "cups-box-lunch-carton-hero-royal",
+      "title": "Box-lunch carton with handle · B · Royal",
+      "direction": "royal",
+      "type": "image",
+      "src": "assets/cups/box-lunch-carton-hero-royal.png",
+      "thumb": "assets/cups/box-lunch-carton-hero-royal-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "Damask-and-arch carton with a write-in card: a lunch worth carrying.",
+      "tags": [
+        "catering",
+        "carton",
+        "box lunch"
+      ],
+      "download": "assets/cups/box-lunch-carton-royal.svg"
+    },
+    {
+      "id": "cups-party-table-flatlay-bazaar",
+      "title": "Party-table flat-lay · A · Bazaar",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/cups/party-table-flatlay-bazaar.png",
+      "thumb": "assets/cups/party-table-flatlay-bazaar-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "The whole family on one table: trays, labels, chai, lassi, sauces and napkins all speak Bazaar.",
+      "tags": [
+        "catering",
+        "flat-lay",
+        "system"
+      ],
+      "download": "assets/cups/party-tray-bazaar.svg"
+    },
+    {
+      "id": "cups-party-table-flatlay-royal",
+      "title": "Party-table flat-lay · B · Royal",
+      "direction": "royal",
+      "type": "image",
+      "src": "assets/cups/party-table-flatlay-royal.png",
+      "thumb": "assets/cups/party-table-flatlay-royal-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "One jewel-toned spread — lids, labels, cups and stickers read as a single premium system.",
+      "tags": [
+        "catering",
+        "flat-lay",
+        "system"
+      ],
+      "download": "assets/cups/party-tray-royal.svg"
+    },
+    {
+      "id": "cups-dieline-chai-sleeve-bazaar",
+      "title": "Chai sleeve dieline · A · Bazaar",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/cups/dieline-chai-sleeve-bazaar.png",
+      "thumb": "assets/cups/dieline-chai-sleeve-bazaar-thumb.jpg",
+      "w": 1600,
+      "h": 911,
+      "caption": "Print-ready layout with bleed, safe zone and glue flap — indicative, confirm with supplier.",
+      "tags": [
+        "dieline",
+        "print",
+        "chai"
+      ],
+      "download": "assets/cups/dieline-chai-sleeve-bazaar.svg"
+    },
+    {
+      "id": "cups-dieline-chai-sleeve-royal",
+      "title": "Chai sleeve dieline · B · Royal",
+      "direction": "royal",
+      "type": "image",
+      "src": "assets/cups/dieline-chai-sleeve-royal.png",
+      "thumb": "assets/cups/dieline-chai-sleeve-royal-thumb.jpg",
+      "w": 1600,
+      "h": 911,
+      "caption": "Print-ready layout with bleed, safe zone and glue flap — indicative, confirm with supplier.",
+      "tags": [
+        "dieline",
+        "print",
+        "chai"
+      ],
+      "download": "assets/cups/dieline-chai-sleeve-royal.svg"
+    },
+    {
+      "id": "cups-dieline-lunchbox-sleeve-bazaar",
+      "title": "Lunchbox sleeve dieline · A · Bazaar",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/cups/dieline-lunchbox-sleeve-bazaar.png",
+      "thumb": "assets/cups/dieline-lunchbox-sleeve-bazaar-thumb.jpg",
+      "w": 1600,
+      "h": 2521,
+      "caption": "Four scored panels around a 9×6 in box, glue flap unprinted — indicative, confirm with supplier.",
+      "tags": [
+        "dieline",
+        "print",
+        "lunchbox"
+      ],
+      "download": "assets/cups/dieline-lunchbox-sleeve-bazaar.svg"
+    },
+    {
+      "id": "cups-dieline-lunchbox-sleeve-royal",
+      "title": "Lunchbox sleeve dieline · B · Royal",
+      "direction": "royal",
+      "type": "image",
+      "src": "assets/cups/dieline-lunchbox-sleeve-royal.png",
+      "thumb": "assets/cups/dieline-lunchbox-sleeve-royal-thumb.jpg",
+      "w": 1600,
+      "h": 2521,
+      "caption": "Four scored panels around a 9×6 in box, glue flap unprinted — indicative, confirm with supplier.",
+      "tags": [
+        "dieline",
+        "print",
+        "lunchbox"
+      ],
+      "download": "assets/cups/dieline-lunchbox-sleeve-royal.svg"
+    },
+    {
+      "id": "cups-dieline-tray-label-bazaar",
+      "title": "Party-tray label dieline · A · Bazaar",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/cups/dieline-tray-label-bazaar.png",
+      "thumb": "assets/cups/dieline-tray-label-bazaar-thumb.jpg",
+      "w": 1600,
+      "h": 970,
+      "caption": "6×4 in roll label with zone colour key; only the band colour changes per district.",
+      "tags": [
+        "dieline",
+        "print",
+        "labels"
+      ],
+      "download": "assets/cups/dieline-tray-label-bazaar.svg"
+    },
+    {
+      "id": "cups-dieline-tray-label-royal",
+      "title": "Party-tray label dieline · B · Royal",
+      "direction": "royal",
+      "type": "image",
+      "src": "assets/cups/dieline-tray-label-royal.png",
+      "thumb": "assets/cups/dieline-tray-label-royal-thumb.jpg",
+      "w": 1600,
+      "h": 970,
+      "caption": "6×4 in roll label with zone colour key; only the band colour changes per district.",
+      "tags": [
+        "dieline",
+        "print",
+        "labels"
+      ],
+      "download": "assets/cups/dieline-tray-label-royal.svg"
+    },
+    {
+      "id": "cups-sauce-cups-bazaar",
+      "title": "Sauce & chutney cup stickers · A · Bazaar",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/cups/sauce-cups-bazaar.png",
+      "thumb": "assets/cups/sauce-cups-bazaar-thumb.jpg",
+      "w": 1600,
+      "h": 762,
+      "caption": "Scalloped lid stickers for 2 oz and 4 oz cups, plus a write-in “DIP” for everything else.",
+      "tags": [
+        "drinks",
+        "sauce",
+        "stickers"
+      ],
+      "download": "assets/cups/sauce-cups-bazaar.svg"
+    },
+    {
+      "id": "cups-sauce-cups-royal",
+      "title": "Sauce & chutney cup stickers · B · Royal",
+      "direction": "royal",
+      "type": "image",
+      "src": "assets/cups/sauce-cups-royal.png",
+      "thumb": "assets/cups/sauce-cups-royal-thumb.jpg",
+      "w": 1600,
+      "h": 762,
+      "caption": "Gold-rope medallions for 2 oz and 4 oz lids, with a write-in chutney sticker.",
+      "tags": [
+        "drinks",
+        "sauce",
+        "stickers"
+      ],
+      "download": "assets/cups/sauce-cups-royal.svg"
+    },
+    {
+      "id": "cups-tray-tent-bazaar",
+      "title": "Buffet tray tent cards · A · Bazaar",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/cups/tray-tent-bazaar.png",
+      "thumb": "assets/cups/tray-tent-bazaar-thumb.jpg",
+      "w": 1600,
+      "h": 990,
+      "caption": "Zone-coloured tent per tray: dish, serves, diet and spice — written in seconds.",
+      "tags": [
+        "catering",
+        "tent card",
+        "buffet"
+      ],
+      "download": "assets/cups/tray-tent-bazaar.svg"
+    },
+    {
+      "id": "cups-tray-tent-royal",
+      "title": "Buffet tray tent cards · B · Royal",
+      "direction": "royal",
+      "type": "image",
+      "src": "assets/cups/tray-tent-royal.png",
+      "thumb": "assets/cups/tray-tent-royal-thumb.jpg",
+      "w": 1600,
+      "h": 990,
+      "caption": "Ivory tents with jewel zone bands so a buffet reads like a menu.",
+      "tags": [
+        "catering",
+        "tent card",
+        "buffet"
+      ],
+      "download": "assets/cups/tray-tent-royal.svg"
+    },
+    {
+      "id": "cups-van-magnet-bazaar",
+      "title": "Catering car magnet · A · Bazaar",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/cups/van-magnet-bazaar.png",
+      "thumb": "assets/cups/van-magnet-bazaar-thumb.jpg",
+      "w": 1600,
+      "h": 921,
+      "caption": "“Biryani on board!” turns any delivery car into a rolling billboard.",
+      "tags": [
+        "catering",
+        "vehicle",
+        "magnet"
+      ],
+      "download": "assets/cups/van-magnet-bazaar.svg"
+    },
+    {
+      "id": "cups-van-magnet-royal",
+      "title": "Catering car magnet · B · Royal",
+      "direction": "royal",
+      "type": "image",
+      "src": "assets/cups/van-magnet-royal.png",
+      "thumb": "assets/cups/van-magnet-royal-thumb.jpg",
+      "w": 1600,
+      "h": 921,
+      "caption": "Midnight-and-gold door magnet: celebrations, catered, on the move.",
+      "tags": [
+        "catering",
+        "vehicle",
+        "magnet"
+      ],
+      "download": "assets/cups/van-magnet-royal.svg"
+    }
+  ]
+}

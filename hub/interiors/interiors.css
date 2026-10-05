@@ -154,6 +154,10 @@
 @media (min-width:900px){.plan{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:36px;align-items:start}}
 
 .ix-filter{margin-bottom:14px}
+.ix-more{margin-top:14px}
+.ix-table:not([data-collapsed]) ~ .ix-more{display:none}
+@media (max-width:899px){.ix-table[data-collapsed] tbody tr:nth-child(n+7){display:none}}
+@media (min-width:900px){.ix-more{display:none}}
 /* price table: cards on phones, a real table from 900px up */
 .ix-table{width:100%;border-collapse:collapse;display:block}
 .ix-table thead{display:none}

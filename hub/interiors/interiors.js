@@ -78,10 +78,12 @@
   /* ───── 06 · price-table filter ───── */
   function initTable() {
     var chips = $$('[data-gf]'); if (!chips.length) return;
-    var rows = $$('.ix-table tbody tr');
+    var rows = $$('.ix-table tbody tr'), table = $('.ix-table'), more = $('[data-table-more]');
+    if (more) more.addEventListener('click', function () { table.removeAttribute('data-collapsed'); });
     chips.forEach(function (c) {
       c.addEventListener('click', function () {
         var g = c.getAttribute('data-gf');
+        if (g !== 'all') table.removeAttribute('data-collapsed');
         chips.forEach(function (x) { x.setAttribute('aria-pressed', String(x === c)); });
         rows.forEach(function (r) { r.hidden = !(g === 'all' || r.getAttribute('data-g') === g); });
       });
@@ -126,10 +128,11 @@
         .then(function (r) { if (!r.ok) throw new Error('missing'); return r.json(); })
         .then(function (m) {
           var items = ((m && m.items) || []).filter(function (i) { return i && i.src; });
+          var shown = items.filter(function (i) { return !(i.tags || []).some(function (t) { return t === 'production' || t === 'notes'; }); });
           if (!items.length) throw new Error('empty');
           if (!rendered && window.Hub && Hub.renderGallery) {
             rendered = true;
-            Hub.renderGallery(grid, pick(items, 8));
+            Hub.renderGallery(grid, pick(shown, 8));
           }
           coming.hidden = true; grid.hidden = false; more.hidden = false;
           var a = $('a', more); if (a) a.textContent = 'See all ' + items.length + ' in the full gallery';

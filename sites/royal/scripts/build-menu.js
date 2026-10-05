@@ -43,7 +43,7 @@ const ART_JEWEL = {
 };
 const WIDE_ART = new Set(['tandoori-platter', 'thali', 'butter-chicken', 'chilli-chicken']);
 const TILE_JEWELS = ['ruby', 'emerald', 'plum', 'peacock', 'midnight'];
-const TILE_PATTERNS = ['01-jali-lattice-midnight', '02-mehrab-trellis-midnight', '06-star-tile-midnight'];
+const TILE_PATTERNS = 3; /* .tile-p0…p2 in css/menu.css (jali lattice · mehrab trellis · star tile) */
 /* spice level → sprite chili (0 = none; the "District Hot" five-gem chili for 4) */
 const CHILI = { 1: 'chili-1', 2: 'chili-2', 3: 'chili-3', 4: 'chili-5' };
 const DIET_ICON = { veg: `${SPRITE}#icon-veg-mark`, nonveg: `${SPRITE}#icon-nonveg-mark`, egg: '#m-egg' };
@@ -66,8 +66,7 @@ function windowHtml(item, idx) {
   }
   const z = ZONE[item.zone];
   const jewel = TILE_JEWELS[(TILE_JEWELS.indexOf(z.jewel) + idx) % TILE_JEWELS.length];
-  const pat = TILE_PATTERNS[idx % TILE_PATTERNS.length];
-  return `<div class="dish__win arch arch--${jewel} arch--tile" style="--arch-pattern:url(img/patterns/${pat}.svg)"><div class="arch__glass">` +
+  return `<div class="dish__win arch arch--${jewel} arch--tile tile-p${idx % TILE_PATTERNS}"><div class="arch__glass">` +
     `<svg class="dish__icon" viewBox="0 0 64 64" aria-hidden="true"><use href="${SPRITE}#icon-${z.icon}"/></svg>` +
     `</div></div>`;
 }
@@ -155,7 +154,7 @@ const ld = {
   '@context': 'https://schema.org',
   '@type': 'Menu',
   name: 'Curry District menu',
-  description: meta.disclaimer,
+  description: 'Design concept of the Curry District menu (Little Elm, TX), built from public listings; dishes and spice levels to be confirmed with the restaurant.',
   url: 'https://curry-district-royal.netlify.app/menu.html',
   inLanguage: 'en-US',
   hasMenuSection: zones.map((z) => ({

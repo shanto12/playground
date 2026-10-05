@@ -1,0 +1,221 @@
+{
+  "helper": "cups-art",
+  "units": "mm",
+  "note": "Unrolled UV-ready faces: u runs around the cup (u = 0.5 faces the viewer, seam at u = 0/1), v runs down the slant height (v = 1 at the top edge). Frustum sizes are the surface the face covers.",
+  "faces": [
+    {
+      "id": "chai-cup-wrap-bazaar",
+      "file": "art/chai-cup-wrap-bazaar.svg",
+      "direction": "bazaar",
+      "kind": "frustum-wrap",
+      "face": {
+        "w": 235.62,
+        "h": 111.02
+      },
+      "frustum": {
+        "topDiameter": 90,
+        "bottomDiameter": 60,
+        "height": 110,
+        "coversFromTop": 0,
+        "coversToTop": 110
+      },
+      "object": "12 oz hot paper cup",
+      "sector": {
+        "outerRadius": 333.05,
+        "innerRadius": 222.04,
+        "angleDeg": 48.64
+      }
+    },
+    {
+      "id": "chai-sleeve-bazaar",
+      "file": "art/chai-sleeve-bazaar.svg",
+      "direction": "bazaar",
+      "kind": "frustum-wrap",
+      "face": {
+        "w": 235.7,
+        "h": 62.73
+      },
+      "frustum": {
+        "topDiameter": 83.5,
+        "bottomDiameter": 66.55,
+        "height": 62.15,
+        "coversFromTop": 29.7,
+        "coversToTop": 91.85
+      },
+      "object": "sleeve on the 12 oz cup",
+      "sector": {
+        "outerRadius": 309,
+        "innerRadius": 246.27,
+        "angleDeg": 48.64
+      }
+    },
+    {
+      "id": "lassi-band-bazaar",
+      "file": "art/lassi-band-bazaar.svg",
+      "direction": "bazaar",
+      "kind": "frustum-wrap",
+      "face": {
+        "w": 245.92,
+        "h": 58.32
+      },
+      "frustum": {
+        "topDiameter": 87.4,
+        "bottomDiameter": 69.16,
+        "height": 57.6,
+        "coversFromTop": 36,
+        "coversToTop": 93.6
+      },
+      "object": "16 oz clear PET cup Ø98/60 × 120"
+    },
+    {
+      "id": "lunchbox-sleeve-bazaar",
+      "file": "art/lunchbox-sleeve-bazaar.svg",
+      "direction": "bazaar",
+      "kind": "band-strip",
+      "face": {
+        "w": 108,
+        "h": 431.9
+      },
+      "box": {
+        "length": 228.6,
+        "depth": 152.4,
+        "height": 57.2
+      },
+      "panels": {
+        "glue": {
+          "y": 0,
+          "h": 12.7,
+          "rotated180": false
+        },
+        "back": {
+          "y": 12.7,
+          "h": 57.2,
+          "rotated180": true
+        },
+        "top": {
+          "y": 69.9,
+          "h": 152.4,
+          "rotated180": false
+        },
+        "front": {
+          "y": 222.3,
+          "h": 57.2,
+          "rotated180": false
+        },
+        "bottom": {
+          "y": 279.5,
+          "h": 152.4,
+          "rotated180": false
+        }
+      },
+      "wraps": "around the 6 in depth, centred on the 9 in length; top panel reads from the front edge"
+    },
+    {
+      "id": "chai-cup-wrap-royal",
+      "file": "art/chai-cup-wrap-royal.svg",
+      "direction": "royal",
+      "kind": "frustum-wrap",
+      "face": {
+        "w": 235.62,
+        "h": 111.02
+      },
+      "frustum": {
+        "topDiameter": 90,
+        "bottomDiameter": 60,
+        "height": 110,
+        "coversFromTop": 0,
+        "coversToTop": 110
+      },
+      "object": "12 oz hot paper cup",
+      "sector": {
+        "outerRadius": 333.05,
+        "innerRadius": 222.04,
+        "angleDeg": 48.64
+      }
+    },
+    {
+      "id": "chai-sleeve-royal",
+      "file": "art/chai-sleeve-royal.svg",
+      "direction": "royal",
+      "kind": "frustum-wrap",
+      "face": {
+        "w": 235.7,
+        "h": 62.73
+      },
+      "frustum": {
+        "topDiameter": 83.5,
+        "bottomDiameter": 66.55,
+        "height": 62.15,
+        "coversFromTop": 29.7,
+        "coversToTop": 91.85
+      },
+      "object": "sleeve on the 12 oz cup",
+      "sector": {
+        "outerRadius": 309,
+        "innerRadius": 246.27,
+        "angleDeg": 48.64
+      }
+    },
+    {
+      "id": "lassi-band-royal",
+      "file": "art/lassi-band-royal.svg",
+      "direction": "royal",
+      "kind": "frustum-wrap",
+      "face": {
+        "w": 245.92,
+        "h": 58.32
+      },
+      "frustum": {
+        "topDiameter": 87.4,
+        "bottomDiameter": 69.16,
+        "height": 57.6,
+        "coversFromTop": 36,
+        "coversToTop": 93.6
+      },
+      "object": "16 oz clear PET cup Ø98/60 × 120"
+    },
+    {
+      "id": "lunchbox-sleeve-royal",
+      "file": "art/lunchbox-sleeve-royal.svg",
+      "direction": "royal",
+      "kind": "band-strip",
+      "face": {
+        "w": 108,
+        "h": 431.9
+      },
+      "box": {
+        "length": 228.6,
+        "depth": 152.4,
+        "height": 57.2
+      },
+      "panels": {
+        "glue": {
+          "y": 0,
+          "h": 12.7,
+          "rotated180": false
+        },
+        "back": {
+          "y": 12.7,
+          "h": 57.2,
+          "rotated180": true
+        },
+        "top": {
+          "y": 69.9,
+          "h": 152.4,
+          "rotated180": false
+        },
+        "front": {
+          "y": 222.3,
+          "h": 57.2,
+          "rotated180": false
+        },
+        "bottom": {
+          "y": 279.5,
+          "h": 152.4,
+          "rotated180": false
+        }
+      },
+      "wraps": "around the 6 in depth, centred on the 9 in length; top panel reads from the front edge"
+    }
+  ]
+}

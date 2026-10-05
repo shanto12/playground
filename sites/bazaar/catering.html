@@ -30,11 +30,13 @@
 <link rel="preload" href="assets/fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="vendor/motion.css">
 <link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/pages.css">
 
 <script>(function(h){try{if(localStorage.getItem('cd-bz-banner-off')==='1')h.classList.add('banner-off')}catch(e){}try{if(sessionStorage.getItem('m-curtain'))h.classList.add('m-arrive')}catch(e){}h.classList.add('m-js');setTimeout(function(){if(!window.Motion)h.classList.remove('m-js','m-arrive')},3000)})(document.documentElement);</script>
 <script src="js/config.js" defer></script>
 <script src="vendor/motion.min.js" defer data-manual></script>
 <script src="js/site.js" defer></script>
+<script src="js/pages.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to the food</a>
@@ -63,17 +65,175 @@
   </div>
 </div>
 <main id="main">
-<section class="sec sec--cream">
-  <div class="wrap stub">
-    <p class="kicker">Party at yours?</p>
-    <h1 class="h-hero">Feed the whole crew</h1>
-    <p class="lead">Birthday, baby shower, housewarming, office lunch or cricket watch party: if a crowd is coming, Curry District can cater it. Tell us the occasion and how hot your crew likes it, and we’ll plan a spread of crowd-pleasers.</p>
-    <p class="chip chip--marigold"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-clock-mono"></use></svg>This page is coming together: the street crew is still painting the signs.</p>
-    <div class="btn-row">
-      <a class="btn btn--primary" href="https://curry-district-little-elm.cloveronline.com/" data-cfg-href="order" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-shopping-bag-mono"></use></svg>Order pickup</a>
-      <a class="btn btn--cream" href="index.html">Back to the District</a>
+<section class="pg-hero pg-hero--saffron" aria-labelledby="pg-title">
+  <div class="wrap pg-hero__in">
+    <div class="pg-hero__copy">
+      <p class="pg-hero__kicker"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-party-tray-mono"></use></svg>Catering · Little Elm, TX</p>
+      <h1 class="pg-hero__title" id="pg-title"><span class="pg-hero__t1">Party trays,</span> <span class="pg-hero__t2 text-sticker">District style</span></h1>
+      <p class="pg-hero__tag">Your party. Our platters.</p>
+      <p class="pg-hero__lead">Birthday, baby shower, housewarming, office lunch or cricket watch party: if a crowd is coming, Curry District can cater it. Tell us the occasion and how hot your crew likes it, and we’ll plan a spread of crowd-pleasers.</p>
+      <div class="pg-hero__ctas"><a class="btn btn--ink" href="#inquiry" data-press><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-calendar-mono"></use></svg>Plan my party</a><a class="btn btn--cream" href="tel:+14692005856" data-cfg-href="tel" data-press><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-phone-mono"></use></svg>Call us</a></div>
+      <p class="small-print pg-hero__fine">Catering is planned in advance. Call us to talk dates, menu and details.</p>
     </div>
-    
+    <div class="pg-hero__art" aria-hidden="true" data-reveal="pop">
+      <div class="pg-stk pg-stk--a" style="--stk-bg: var(--bz-teal-lt)"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/art/static/thali.svg"><img src="assets/art/thali.svg" width="800" height="800" decoding="async" alt=""></picture></div>
+      <div class="pg-stk pg-stk--b" style="--stk-bg: var(--bz-mari-lt)"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/art/static/biryani.svg"><img src="assets/art/biryani.svg" width="800" height="800" decoding="async" alt=""></picture></div>
+      <div class="pg-stk pg-stk--c" style="--stk-bg: var(--bz-pink-lt)"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/art/static/samosa-chutney.svg"><img src="assets/art/samosa-chutney.svg" width="800" height="800" decoding="async" alt=""></picture></div>
+      <p class="pg-seal"><span class="m-wobble">Planned<br>with you</span></p>
+    </div>
+  </div>
+</section>
+<section class="marquee marquee--saffron" aria-label="Party-tray favourites">
+  <div class="marquee__track" data-marquee="42"><span class="marquee__item">Chicken Dum Biryani <svg class="marquee__sep" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5C13 8 16 11 22.5 12 16 13 13 16 12 22.5 11 16 8 13 1.5 12 8 11 11 8 12 1.5Z" fill="currentColor" stroke="#1D1147" stroke-width="1.6" stroke-linejoin="round"/></svg></span><span class="marquee__item">Butter Chicken <svg class="marquee__sep" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5C13 8 16 11 22.5 12 16 13 13 16 12 22.5 11 16 8 13 1.5 12 8 11 11 8 12 1.5Z" fill="currentColor" stroke="#1D1147" stroke-width="1.6" stroke-linejoin="round"/></svg></span><span class="marquee__item">Garlic Naan <svg class="marquee__sep" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5C13 8 16 11 22.5 12 16 13 13 16 12 22.5 11 16 8 13 1.5 12 8 11 11 8 12 1.5Z" fill="currentColor" stroke="#1D1147" stroke-width="1.6" stroke-linejoin="round"/></svg></span><span class="marquee__item">Veg Samosa <svg class="marquee__sep" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5C13 8 16 11 22.5 12 16 13 13 16 12 22.5 11 16 8 13 1.5 12 8 11 11 8 12 1.5Z" fill="currentColor" stroke="#1D1147" stroke-width="1.6" stroke-linejoin="round"/></svg></span><span class="marquee__item">Gobi Manchurian <svg class="marquee__sep" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5C13 8 16 11 22.5 12 16 13 13 16 12 22.5 11 16 8 13 1.5 12 8 11 11 8 12 1.5Z" fill="currentColor" stroke="#1D1147" stroke-width="1.6" stroke-linejoin="round"/></svg></span><span class="marquee__item">Paneer Butter Masala <svg class="marquee__sep" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5C13 8 16 11 22.5 12 16 13 13 16 12 22.5 11 16 8 13 1.5 12 8 11 11 8 12 1.5Z" fill="currentColor" stroke="#1D1147" stroke-width="1.6" stroke-linejoin="round"/></svg></span><span class="marquee__item">Tandoori Chicken <svg class="marquee__sep" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5C13 8 16 11 22.5 12 16 13 13 16 12 22.5 11 16 8 13 1.5 12 8 11 11 8 12 1.5Z" fill="currentColor" stroke="#1D1147" stroke-width="1.6" stroke-linejoin="round"/></svg></span><span class="marquee__item">Gulab Jamun <svg class="marquee__sep" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1.5C13 8 16 11 22.5 12 16 13 13 16 12 22.5 11 16 8 13 1.5 12 8 11 11 8 12 1.5Z" fill="currentColor" stroke="#1D1147" stroke-width="1.6" stroke-linejoin="round"/></svg></span></div>
+  <button class="marquee__toggle" type="button" data-marquee-toggle aria-pressed="false" aria-label="Pause the ticker">
+    <svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 2h3.5v12H3zM9.5 2H13v12H9.5z" fill="currentColor"/></svg>
+    <svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2l10 6-10 6z" fill="currentColor"/></svg></button>
+</section>
+<section class="sec sec--cream edge-scallop" id="trays" aria-labelledby="trays-title">
+  <div class="wrap">
+    <div class="sec__head sec__head--center" data-reveal><p class="kicker">Pick your streets</p><h2 class="h2" id="trays-title">Party-tray picks</h2><p>Seven streets of the District menu, ready to scale up for a crowd. Mix and match: one tray from each street is a very good start.</p></div>
+    <ul class="pg-trays" role="list" data-stagger="pop 70">
+    <li><article class="pg-tray" style="--tray-bg: var(--bz-marigold)">
+      <div class="pg-tray__art" aria-hidden="true"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/art/static/samosa-chutney.svg"><img src="assets/art/samosa-chutney.svg" width="800" height="800" loading="lazy" decoding="async" alt=""></picture></div>
+      <h3 class="pg-tray__name">Starters Square</h3>
+      <p class="pg-tray__tag">Crunch first, ask questions later.</p>
+      <ul class="pg-tray__picks" aria-label="Starters Square picks"><li>Veg Samosa</li><li>Chicken 65</li><li>Gobi 65</li><li>Karampodi Chicken</li></ul>
+      <a class="pg-tray__go" href="menu.html#starters">See the street<span class="visually-hidden">: Starters Square on the menu</span><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-arrow-right-mono"></use></svg></a>
+    </article></li>
+    <li><article class="pg-tray" style="--tray-bg: var(--bz-pink-lt)">
+      <div class="pg-tray__art" aria-hidden="true"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/art/static/tandoori-platter.svg"><img src="assets/art/tandoori-platter.svg" width="800" height="800" loading="lazy" decoding="async" alt=""></picture></div>
+      <h3 class="pg-tray__name">Tandoor Quarter</h3>
+      <p class="pg-tray__tag">Clay oven, big smoke, bigger flavour.</p>
+      <ul class="pg-tray__picks" aria-label="Tandoor Quarter picks"><li>Tandoori Chicken</li><li>Chicken Tikka Kabab</li><li>Malai Chicken Kabab</li><li>Paneer Tikka Kabab</li></ul>
+      <a class="pg-tray__go" href="menu.html#tandoor">See the street<span class="visually-hidden">: Tandoor Quarter on the menu</span><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-arrow-right-mono"></use></svg></a>
+    </article></li>
+    <li><article class="pg-tray" style="--tray-bg: var(--bz-teal-lt)">
+      <div class="pg-tray__art" aria-hidden="true"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/art/static/thali.svg"><img src="assets/art/thali.svg" width="800" height="800" loading="lazy" decoding="async" alt=""></picture></div>
+      <h3 class="pg-tray__name">Curry Quarter</h3>
+      <p class="pg-tray__tag">From butter-mellow to Andhra-fire.</p>
+      <ul class="pg-tray__picks" aria-label="Curry Quarter picks"><li>Butter Chicken</li><li>Chicken Tikka Masala</li><li>Paneer Butter Masala</li><li>Dal Makhani</li></ul>
+      <a class="pg-tray__go" href="menu.html#curry">See the street<span class="visually-hidden">: Curry Quarter on the menu</span><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-arrow-right-mono"></use></svg></a>
+    </article></li>
+    <li><article class="pg-tray" style="--tray-bg: #FFA06A">
+      <div class="pg-tray__art" aria-hidden="true"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/art/static/biryani.svg"><img src="assets/art/biryani.svg" width="800" height="800" loading="lazy" decoding="async" alt=""></picture></div>
+      <h3 class="pg-tray__name">Biryani Boulevard</h3>
+      <p class="pg-tray__tag">Lift the lid. Inhale. Repeat.</p>
+      <ul class="pg-tray__picks" aria-label="Biryani Boulevard picks"><li>Chicken Dum Biryani</li><li>Goat Dum Biryani</li><li>Veg Biryani</li><li>Gongura Mutton Pulav</li></ul>
+      <a class="pg-tray__go" href="menu.html#biryani">See the street<span class="visually-hidden">: Biryani Boulevard on the menu</span><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-arrow-right-mono"></use></svg></a>
+    </article></li>
+    <li><article class="pg-tray" style="--tray-bg: #C9BCFF">
+      <div class="pg-tray__art" aria-hidden="true"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/art/static/chilli-chicken.svg"><img src="assets/art/chilli-chicken.svg" width="800" height="800" loading="lazy" decoding="async" alt=""></picture></div>
+      <h3 class="pg-tray__name">Indo-Chinese Alley</h3>
+      <p class="pg-tray__tag">Wok-hot, chilli-sticky swagger.</p>
+      <ul class="pg-tray__picks" aria-label="Indo-Chinese Alley picks"><li>Gobi Manchurian</li><li>Chilli Paneer</li><li>Chilli Chicken</li><li>Veg Hakka Noodles</li></ul>
+      <a class="pg-tray__go" href="menu.html#indochinese">See the street<span class="visually-hidden">: Indo-Chinese Alley on the menu</span><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-arrow-right-mono"></use></svg></a>
+    </article></li>
+    <li><article class="pg-tray" style="--tray-bg: var(--bz-mari-lt)">
+      <div class="pg-tray__art" aria-hidden="true"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/art/static/garlic-naan.svg"><img src="assets/art/garlic-naan.svg" width="800" height="800" loading="lazy" decoding="async" alt=""></picture></div>
+      <h3 class="pg-tray__name">Bread Bazaar</h3>
+      <p class="pg-tray__tag">Torn, dunked, gone.</p>
+      <ul class="pg-tray__picks" aria-label="Bread Bazaar picks"><li>Garlic Naan</li><li>Butter Naan</li><li>Plain Naan</li><li>Roti / Chapati</li></ul>
+      <a class="pg-tray__go" href="menu.html#bread">See the street<span class="visually-hidden">: Bread Bazaar on the menu</span><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-arrow-right-mono"></use></svg></a>
+    </article></li>
+    <li><article class="pg-tray" style="--tray-bg: #FFC2DC">
+      <div class="pg-tray__art" aria-hidden="true"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/art/static/gulab-jamun.svg"><img src="assets/art/gulab-jamun.svg" width="800" height="800" loading="lazy" decoding="async" alt=""></picture></div>
+      <h3 class="pg-tray__name">Sweet Street</h3>
+      <p class="pg-tray__tag">Save room. Seriously.</p>
+      <ul class="pg-tray__picks" aria-label="Sweet Street picks"><li>Gulab Jamun</li><li>Rasmalai</li><li>Carrot Halwa</li><li>Rice Kheer</li></ul>
+      <a class="pg-tray__go" href="menu.html#sweets">See the street<span class="visually-hidden">: Sweet Street on the menu</span><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-arrow-right-mono"></use></svg></a>
+    </article></li>
+    </ul>
+    <p class="small-print pg-fine pg-fine--center">Names only: these are dishes from the everyday menu. Which ones come as trays, in what sizes and at what price is planned with you. Please call to confirm.</p>
+  </div>
+</section>
+<section class="sec sec--marigold edge-zigzag" aria-labelledby="how-title">
+  <div class="wrap">
+    <div class="sec__head sec__head--center" data-reveal><p class="kicker">Easy as 1, 2, 3</p><h2 class="h2" id="how-title">How it works</h2><p>One conversation sorts the menu, the timing and the details.</p></div>
+    <ol class="pg-steps" role="list" data-stagger="pop 110">
+      <li class="pg-step"><span class="pg-step__num" aria-hidden="true">1</span><svg class="pg-step__ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-phone"></use></svg><h3 class="h3"><span class="visually-hidden">Step 1: </span>Ask</h3><p>Send the form below or ring the kitchen. Share the date, a rough headcount and the occasion.</p></li>
+      <li class="pg-step"><span class="pg-step__num" aria-hidden="true">2</span><svg class="pg-step__ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-calendar"></use></svg><h3 class="h3"><span class="visually-hidden">Step 2: </span>Plan</h3><p>We plan the spread together: vegetarian and non-vegetarian dishes, heat levels for your crew, and the timing.</p></li>
+      <li class="pg-step"><span class="pg-step__num" aria-hidden="true">3</span><svg class="pg-step__ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-shopping-bag"></use></svg><h3 class="h3"><span class="visually-hidden">Step 3: </span>Pick up</h3><p>Collect your trays from FM 423 and bring on the feast. Planning something bigger? Ask about outdoor catering.</p></li>
+    </ol>
+  </div>
+</section>
+<section class="sec sec--ink edge-scallop" aria-labelledby="who-title">
+  <div class="wrap">
+    <div class="sec__head" data-reveal><p class="kicker">Made for a crowd</p><h2 class="h2" id="who-title">Who it’s for</h2><p>If there’s a guest list, there’s a spread for it.</p></div>
+    <ul class="pg-who" role="list" data-stagger="pop 80">
+      <li><div class="pg-who__tile" style="--tile-bg: var(--bz-marigold); --tile-sh: var(--bz-rani)"><svg class="pg-who__ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-thali-plate"></use></svg><h3 class="pg-who__title">Office lunches</h3><p class="pg-who__text">Feed the whole team without the takeout-menu shuffle.</p></div></li>
+      <li><div class="pg-who__tile" style="--tile-bg: var(--bz-pink-lt); --tile-sh: var(--bz-marigold)"><svg class="pg-who__ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-party-tray"></use></svg><h3 class="pg-who__title">Birthdays</h3><p class="pg-who__text">First birthdays, big-number birthdays and every candle in between.</p></div></li>
+      <li><div class="pg-who__tile" style="--tile-bg: var(--bz-teal-lt); --tile-sh: var(--bz-marigold)"><svg class="pg-who__ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-curry-bowl"></use></svg><h3 class="pg-who__title">House&shy;warmings</h3><p class="pg-who__text">New home, full table, happy neighbours.</p></div></li>
+      <li><div class="pg-who__tile" style="--tile-bg: var(--bz-sand); --tile-sh: var(--bz-rani)"><svg class="pg-who__ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-biryani-pot-handi"></use></svg><h3 class="pg-who__title">Community events</h3><p class="pg-who__text">Get-togethers and celebrations that call for a big pot.</p></div></li>
+    </ul>
+    <div class="pg-checks-wrap" data-reveal>
+      <h3 class="h3">The District way</h3>
+      <ul class="pg-checks" role="list">
+        <li><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-check"></use></svg><span>Vegetarian and non-vegetarian dishes, so every guest finds a plate.</span></li>
+        <li><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-check"></use></svg><span>Heat levels planned with you, from easy-going to full Andhra fire.</span></li>
+        <li><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-check"></use></svg><span>Platters for pickup, or outdoor catering for the big days.</span></li>
+        <li><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-check"></use></svg><span>One conversation to sort the menu, the timing and the details.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="sec sec--peacock edge-zigzag" id="inquiry" aria-labelledby="inquiry-title">
+  <div class="wrap pg-formgrid">
+    <div class="pg-formintro" data-reveal>
+      <p class="kicker">Tell us about your party</p>
+      <h2 class="h2" id="inquiry-title">Plan my party</h2>
+      <p class="lead">A few details and we’ll get back to you to talk menu, timing and heat level.</p>
+      <div class="pg-callcard">
+        <p class="pg-callcard__label">Rather talk it through?</p>
+        <a class="pg-callcard__tel" href="tel:+14692005856" data-cfg-href="tel"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-phone"></use></svg><span data-cfg-text="phone.display">(469) 200-5856</span></a>
+        <p class="small-print">Ring the kitchen during open hours. Phones never time out.</p>
+      </div>
+    </div>
+    <form class="pg-form" name="catering" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field" data-pg-form aria-labelledby="form-title">
+      <span class="badge badge--marigold pg-form__badge">Concept form</span>
+      <input type="hidden" name="form-name" value="catering">
+      <p class="pg-hp" aria-hidden="true"><label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+      <h3 class="pg-form__title" id="form-title">Catering inquiry</h3>
+      <p class="small-print pg-form__req">Every field is needed unless it says optional.</p>
+      <div class="pg-alert" role="alert" tabindex="-1" data-form-alert hidden></div>
+      <div class="pg-field"><label for="f-name">Your name</label><input class="pg-input" id="f-name" name="name" type="text" required autocomplete="name" maxlength="80" aria-describedby="f-name-err"><p class="pg-field__err" id="f-name-err" data-err></p></div>
+      <div class="pg-field"><label for="f-email">Email</label><input class="pg-input" id="f-email" name="email" type="email" required autocomplete="email" inputmode="email" maxlength="120" aria-describedby="f-email-err"><p class="pg-field__err" id="f-email-err" data-err></p></div>
+      <div class="pg-field"><label for="f-phone">Phone <span class="pg-opt">(optional)</span></label><input class="pg-input" id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="24" aria-describedby="f-phone-err"><p class="pg-field__err" id="f-phone-err" data-err></p></div>
+      <div class="pg-row-2">
+        <div class="pg-field"><label for="f-date">Event date</label><input class="pg-input" id="f-date" name="event-date" type="date" required aria-describedby="f-date-err"><p class="pg-field__err" id="f-date-err" data-err></p></div>
+        <div class="pg-field"><label for="f-guests">Guests (approx.)</label><p class="pg-hint" id="f-guests-hint">A rough number is fine.</p><input class="pg-input" id="f-guests" name="guests" type="number" required inputmode="numeric" min="1" max="5000" step="1" aria-describedby="f-guests-hint f-guests-err"><p class="pg-field__err" id="f-guests-err" data-err></p></div>
+      </div>
+      <div class="pg-field"><label for="f-msg">Tell us more <span class="pg-opt">(optional)</span></label><textarea class="pg-input" id="f-msg" name="message" rows="4" maxlength="1500" placeholder="The occasion, dishes you love, how hot your crew likes it…" aria-describedby="f-msg-err"></textarea><p class="pg-field__err" id="f-msg-err" data-err></p></div>
+      <button class="btn btn--primary btn--lg btn--block" type="submit" data-press><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-party-tray-mono"></use></svg><span data-submit-label>Send my party plan</span></button>
+      <p class="small-print pg-form__note">Concept form for this design proposal. Catering is planned in advance, so please call to confirm your date.</p>
+    </form>
+  </div>
+</section>
+<section class="sec sec--cream edge-scallop" aria-labelledby="faq-title">
+  <div class="wrap">
+    <div class="sec__head sec__head--center" data-reveal><p class="kicker">Good questions</p><h2 class="h2" id="faq-title">Party FAQ</h2><p>Straight answers, and where we’re not sure, we say so.</p></div>
+    <div class="pg-faq" data-reveal>
+    <details><summary><span>Do you cater parties?</span><span class="pg-faq__icon" aria-hidden="true"></span></summary>
+      <div class="pg-faq__a"><p>We do: pre-booked platters for parties and events, plus outdoor catering. Call us to talk menu, headcount and timing.</p><p class="pg-confirm"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-phone-mono"></use></svg>Please call to confirm</p></div></details>
+    <details><summary><span>How far ahead should I ask?</span><span class="pg-faq__icon" aria-hidden="true"></span></summary>
+      <div class="pg-faq__a"><p>Catering is planned in advance, so the sooner the better. Please call to confirm lead times for your date.</p><p class="pg-confirm"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-phone-mono"></use></svg>Please call to confirm</p></div></details>
+    <details><summary><span>Any vegetarian options?</span><span class="pg-faq__icon" aria-hidden="true"></span></summary>
+      <div class="pg-faq__a"><p>Plenty. Paneer curries, dal, veg biryani, Gobi Manchurian, Chilli Paneer and more. The menu runs vegetarian and non-vegetarian, side by side.</p></div></details>
+    <details><summary><span>Can you keep the heat down for the kids?</span><span class="pg-faq__icon" aria-hidden="true"></span></summary>
+      <div class="pg-faq__a"><p>Heat levels are planned with you, from easy-going to full Andhra fire. Heads-up: some guests say even Mild has a kick, so tell us who’s eating.</p></div></details>
+    <details><summary><span>What does catering cost?</span><span class="pg-faq__icon" aria-hidden="true"></span></summary>
+      <div class="pg-faq__a"><p>It depends on the dishes and the headcount, so we price it when we plan it with you. Please call to confirm.</p><p class="pg-confirm"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-phone-mono"></use></svg>Please call to confirm</p></div></details>
+    <details><summary><span>Is your food halal?</span><span class="pg-faq__icon" aria-hidden="true"></span></summary>
+      <div class="pg-faq__a"><p>Please call us to confirm. It’s an important question, and we’d rather answer it directly than guess on a website.</p><p class="pg-confirm"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-phone-mono"></use></svg>Please call to confirm</p></div></details>
+    <details><summary><span>Where do I pick up?</span><span class="pg-faq__icon" aria-hidden="true"></span></summary>
+      <div class="pg-faq__a"><p>11851 FM 423, Suite 200, Little Elm, TX 75068, a quick drive from Frisco. Ample parking is listed for the plaza, but please call to confirm before a big pickup.</p><p class="pg-confirm"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-phone-mono"></use></svg>Please call to confirm</p></div></details>
+    </div>
+  </div>
+</section>
+<section class="sec sec--saffron sec--tight edge-zigzag pg-callstrip" aria-labelledby="call-title">
+  <div class="wrap pg-callstrip__in">
+    <div><p class="kicker">Questions? Call us</p><h2 class="h2" id="call-title">Ring the kitchen</h2></div>
+    <a class="pg-bigtel" href="tel:+14692005856" data-cfg-href="tel"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-phone-mono"></use></svg><span data-cfg-text="phone.display">(469) 200-5856</span></a>
+    <div class="btn-row"><a class="btn btn--ink" href="https://curry-district-little-elm.cloveronline.com/" data-cfg-href="order" target="_blank" rel="noopener" data-press><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-shopping-bag-mono"></use></svg>Order pickup<span class="visually-hidden"> online (opens Clover in a new tab)</span></a><a class="btn btn--cream" href="menu.html" data-press><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-menu-book-mono"></use></svg>See the menu</a></div>
   </div>
 </section>
 </main>

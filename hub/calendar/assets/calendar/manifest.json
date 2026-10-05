@@ -1,0 +1,569 @@
+{
+ "helper": "calendar",
+ "items": [
+  {
+   "id": "post-navratri-dussehra-bazaar",
+   "title": "Navratri & Dussehra · Instagram post",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/calendar/post-navratri-dussehra-bazaar.png",
+   "thumb": "assets/calendar/post-navratri-dussehra-bazaar-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "A · Bazaar — Garlands up, plates full: a warm Dussehra greeting, plus easy vegetarian snack trays for garba-night hosts.",
+   "tags": [
+    "post",
+    "october"
+   ],
+   "download": "assets/calendar/post-navratri-dussehra-bazaar.png"
+  },
+  {
+   "id": "post-navratri-dussehra-royal",
+   "title": "Navratri & Dussehra · Instagram post",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/calendar/post-navratri-dussehra-royal.png",
+   "thumb": "assets/calendar/post-navratri-dussehra-royal-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "B · Royal — Garlands up, plates full: a warm Dussehra greeting, plus easy vegetarian snack trays for garba-night hosts.",
+   "tags": [
+    "post",
+    "october"
+   ],
+   "download": "assets/calendar/post-navratri-dussehra-royal.png"
+  },
+  {
+   "id": "post-diwali-bazaar",
+   "title": "Diwali · Instagram post",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/calendar/post-diwali-bazaar.png",
+   "thumb": "assets/calendar/post-diwali-bazaar-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "A · Bazaar — You do the lights, we’ll do the feast: a 3-week pre-order push for family platters, ending in a greeting on the day.",
+   "tags": [
+    "post",
+    "november"
+   ],
+   "download": "assets/calendar/post-diwali-bazaar.png"
+  },
+  {
+   "id": "post-diwali-royal",
+   "title": "Diwali · Instagram post",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/calendar/post-diwali-royal.png",
+   "thumb": "assets/calendar/post-diwali-royal-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "B · Royal — You do the lights, we’ll do the feast: a 3-week pre-order push for family platters, ending in a greeting on the day.",
+   "tags": [
+    "post",
+    "november"
+   ],
+   "download": "assets/calendar/post-diwali-royal.png"
+  },
+  {
+   "id": "post-thanksgiving-bazaar",
+   "title": "Thanksgiving · Instagram post",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/calendar/post-thanksgiving-bazaar.png",
+   "thumb": "assets/calendar/post-thanksgiving-bazaar-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "A · Bazaar — Pass the naan: Friendsgiving and Thanksgiving trays that make any table a little louder.",
+   "tags": [
+    "post",
+    "november"
+   ],
+   "download": "assets/calendar/post-thanksgiving-bazaar.png"
+  },
+  {
+   "id": "post-thanksgiving-royal",
+   "title": "Thanksgiving · Instagram post",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/calendar/post-thanksgiving-royal.png",
+   "thumb": "assets/calendar/post-thanksgiving-royal-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "B · Royal — Pass the naan: Friendsgiving and Thanksgiving trays that make any table a little louder.",
+   "tags": [
+    "post",
+    "november"
+   ],
+   "download": "assets/calendar/post-thanksgiving-royal.png"
+  },
+  {
+   "id": "post-holiday-trays-bazaar",
+   "title": "Holiday & NYE trays · Instagram post",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/calendar/post-holiday-trays-bazaar.png",
+   "thumb": "assets/calendar/post-holiday-trays-bazaar-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "A · Bazaar — Party trays, sorted: office-party and NYE trays with one phone call, pushed from the first week of December.",
+   "tags": [
+    "post",
+    "december"
+   ],
+   "download": "assets/calendar/post-holiday-trays-bazaar.png"
+  },
+  {
+   "id": "post-holiday-trays-royal",
+   "title": "Holiday & NYE trays · Instagram post",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/calendar/post-holiday-trays-royal.png",
+   "thumb": "assets/calendar/post-holiday-trays-royal-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "B · Royal — Party trays, sorted: office-party and NYE trays with one phone call, pushed from the first week of December.",
+   "tags": [
+    "post",
+    "december"
+   ],
+   "download": "assets/calendar/post-holiday-trays-royal.png"
+  },
+  {
+   "id": "post-sankranti-pongal-bazaar",
+   "title": "Sankranti & Pongal · Instagram post",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/calendar/post-sankranti-pongal-bazaar.png",
+   "thumb": "assets/calendar/post-sankranti-pongal-bazaar-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "A · Bazaar — Kites up, chai out: a bright harvest-season greeting, plus a weekend chai-and-snacks moment.",
+   "tags": [
+    "post",
+    "january"
+   ],
+   "download": "assets/calendar/post-sankranti-pongal-bazaar.png"
+  },
+  {
+   "id": "post-sankranti-pongal-royal",
+   "title": "Sankranti & Pongal · Instagram post",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/calendar/post-sankranti-pongal-royal.png",
+   "thumb": "assets/calendar/post-sankranti-pongal-royal-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "B · Royal — Kites up, chai out: a bright harvest-season greeting, plus a weekend chai-and-snacks moment.",
+   "tags": [
+    "post",
+    "january"
+   ],
+   "download": "assets/calendar/post-sankranti-pongal-royal.png"
+  },
+  {
+   "id": "post-valentines-bazaar",
+   "title": "Valentine’s · Instagram post",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/calendar/post-valentines-bazaar.png",
+   "thumb": "assets/calendar/post-valentines-bazaar-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "A · Bazaar — Dinner, made an occasion: a Royal-led date-night push with a shareable “two plates, one garlic naan” line.",
+   "tags": [
+    "post",
+    "february"
+   ],
+   "download": "assets/calendar/post-valentines-bazaar.png"
+  },
+  {
+   "id": "post-valentines-royal",
+   "title": "Valentine’s · Instagram post",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/calendar/post-valentines-royal.png",
+   "thumb": "assets/calendar/post-valentines-royal-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "B · Royal — Dinner, made an occasion: a Royal-led date-night push with a shareable “two plates, one garlic naan” line.",
+   "tags": [
+    "post",
+    "february"
+   ],
+   "download": "assets/calendar/post-valentines-royal.png"
+  },
+  {
+   "id": "post-eid-bazaar",
+   "title": "Eid al-Fitr · Instagram post",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/calendar/post-eid-bazaar.png",
+   "thumb": "assets/calendar/post-eid-bazaar-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "A · Bazaar — A quiet, text-led Eid greeting on geometric pattern: warm wishes, no hard sell.",
+   "tags": [
+    "post",
+    "march"
+   ],
+   "download": "assets/calendar/post-eid-bazaar.png"
+  },
+  {
+   "id": "post-eid-royal",
+   "title": "Eid al-Fitr · Instagram post",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/calendar/post-eid-royal.png",
+   "thumb": "assets/calendar/post-eid-royal-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "B · Royal — A quiet, text-led Eid greeting on geometric pattern: warm wishes, no hard sell.",
+   "tags": [
+    "post",
+    "march"
+   ],
+   "download": "assets/calendar/post-eid-royal.png"
+  },
+  {
+   "id": "post-holi-bazaar",
+   "title": "Holi · Instagram post",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/calendar/post-holi-bazaar.png",
+   "thumb": "assets/calendar/post-holi-bazaar-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "A · Bazaar — Color me hungry: a bright reel and post with snacks for the after-party, plus a color-burst bag sticker.",
+   "tags": [
+    "post",
+    "march"
+   ],
+   "download": "assets/calendar/post-holi-bazaar.png"
+  },
+  {
+   "id": "post-holi-royal",
+   "title": "Holi · Instagram post",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/calendar/post-holi-royal.png",
+   "thumb": "assets/calendar/post-holi-royal-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "B · Royal — Color me hungry: a bright reel and post with snacks for the after-party, plus a color-burst bag sticker.",
+   "tags": [
+    "post",
+    "march"
+   ],
+   "download": "assets/calendar/post-holi-royal.png"
+  },
+  {
+   "id": "post-ugadi-bazaar",
+   "title": "Ugadi · Instagram post",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/calendar/post-ugadi-bazaar.png",
+   "thumb": "assets/calendar/post-ugadi-bazaar-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "A · Bazaar — New year, new heat: spotlight the Andhra-leaning dishes for the Telugu families who know them best.",
+   "tags": [
+    "post",
+    "april"
+   ],
+   "download": "assets/calendar/post-ugadi-bazaar.png"
+  },
+  {
+   "id": "post-ugadi-royal",
+   "title": "Ugadi · Instagram post",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/calendar/post-ugadi-royal.png",
+   "thumb": "assets/calendar/post-ugadi-royal-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "B · Royal — New year, new heat: spotlight the Andhra-leaning dishes for the Telugu families who know them best.",
+   "tags": [
+    "post",
+    "april"
+   ],
+   "download": "assets/calendar/post-ugadi-royal.png"
+  },
+  {
+   "id": "post-mothers-day-bazaar",
+   "title": "Mother’s Day · Instagram post",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/calendar/post-mothers-day-bazaar.png",
+   "thumb": "assets/calendar/post-mothers-day-bazaar-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "A · Bazaar — Mom’s night off: whole-family tables and pickup feasts, with a sweet finish.",
+   "tags": [
+    "post",
+    "may"
+   ],
+   "download": "assets/calendar/post-mothers-day-bazaar.png"
+  },
+  {
+   "id": "post-mothers-day-royal",
+   "title": "Mother’s Day · Instagram post",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/calendar/post-mothers-day-royal.png",
+   "thumb": "assets/calendar/post-mothers-day-royal-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "B · Royal — Mom’s night off: whole-family tables and pickup feasts, with a sweet finish.",
+   "tags": [
+    "post",
+    "may"
+   ],
+   "download": "assets/calendar/post-mothers-day-royal.png"
+  },
+  {
+   "id": "post-july-4-bazaar",
+   "title": "July 4th · Instagram post",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/calendar/post-july-4-bazaar.png",
+   "thumb": "assets/calendar/post-july-4-bazaar-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "A · Bazaar — Lake day, naan night: pickup trays for the lake crowd, plus a fireworks-meets-rangoli post.",
+   "tags": [
+    "post",
+    "july"
+   ],
+   "download": "assets/calendar/post-july-4-bazaar.png"
+  },
+  {
+   "id": "post-july-4-royal",
+   "title": "July 4th · Instagram post",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/calendar/post-july-4-royal.png",
+   "thumb": "assets/calendar/post-july-4-royal-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "B · Royal — Lake day, naan night: pickup trays for the lake crowd, plus a fireworks-meets-rangoli post.",
+   "tags": [
+    "post",
+    "july"
+   ],
+   "download": "assets/calendar/post-july-4-royal.png"
+  },
+  {
+   "id": "post-football-fridays-bazaar",
+   "title": "Friday-night football · Instagram post",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/calendar/post-football-fridays-bazaar.png",
+   "thumb": "assets/calendar/post-football-fridays-bazaar-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "A · Bazaar — Friday night bites: post-game pickup for families and team-dinner trays for booster clubs.",
+   "tags": [
+    "post",
+    "september"
+   ],
+   "download": "assets/calendar/post-football-fridays-bazaar.png"
+  },
+  {
+   "id": "post-football-fridays-royal",
+   "title": "Friday-night football · Instagram post",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/calendar/post-football-fridays-royal.png",
+   "thumb": "assets/calendar/post-football-fridays-royal-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "B · Royal — Friday night bites: post-game pickup for families and team-dinner trays for booster clubs.",
+   "tags": [
+    "post",
+    "september"
+   ],
+   "download": "assets/calendar/post-football-fridays-royal.png"
+  },
+  {
+   "id": "planner-bazaar",
+   "title": "Wall planner, 11×17 in (Bazaar)",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/calendar/planner-bazaar.png",
+   "thumb": "assets/calendar/planner-bazaar-thumb.jpg",
+   "w": 1650,
+   "h": 2550,
+   "caption": "Twelve months, nineteen moments, approx dates flagged. Print at Tabloid for the back office.",
+   "tags": [
+    "planner"
+   ],
+   "download": "assets/calendar/planner-bazaar.pdf"
+  },
+  {
+   "id": "planner-bazaar-pdf",
+   "title": "Wall planner PDF, print-ready (Bazaar)",
+   "direction": "bazaar",
+   "type": "pdf",
+   "src": "assets/calendar/planner-bazaar.pdf",
+   "thumb": "assets/calendar/planner-bazaar-thumb.jpg",
+   "w": 1650,
+   "h": 2550,
+   "caption": "Tabloid 11×17 in PDF.",
+   "tags": [
+    "planner"
+   ],
+   "download": "assets/calendar/planner-bazaar.pdf"
+  },
+  {
+   "id": "planner-royal",
+   "title": "Wall planner, 11×17 in (Royal)",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/calendar/planner-royal.png",
+   "thumb": "assets/calendar/planner-royal-thumb.jpg",
+   "w": 1650,
+   "h": 2550,
+   "caption": "Twelve months, nineteen moments, approx dates flagged. Print at Tabloid for the back office.",
+   "tags": [
+    "planner"
+   ],
+   "download": "assets/calendar/planner-royal.pdf"
+  },
+  {
+   "id": "planner-royal-pdf",
+   "title": "Wall planner PDF, print-ready (Royal)",
+   "direction": "royal",
+   "type": "pdf",
+   "src": "assets/calendar/planner-royal.pdf",
+   "thumb": "assets/calendar/planner-royal-thumb.jpg",
+   "w": 1650,
+   "h": 2550,
+   "caption": "Tabloid 11×17 in PDF.",
+   "tags": [
+    "planner"
+   ],
+   "download": "assets/calendar/planner-royal.pdf"
+  },
+  {
+   "id": "sticker-lights-bazaar",
+   "title": "Festival of Lights sticker, 2 in round",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/calendar/sticker-lights-bazaar.png",
+   "thumb": "assets/calendar/sticker-lights-bazaar-thumb.jpg",
+   "w": 1200,
+   "h": 1200,
+   "caption": "Seasonal bag seal · Diwali: every bag for 3 weeks. 1200 px = 600 dpi at 2 in.",
+   "tags": [
+    "sticker"
+   ],
+   "download": "assets/calendar/sticker-lights-bazaar.png"
+  },
+  {
+   "id": "sticker-lights-royal",
+   "title": "Festival of Lights sticker, 2 in round",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/calendar/sticker-lights-royal.png",
+   "thumb": "assets/calendar/sticker-lights-royal-thumb.jpg",
+   "w": 1200,
+   "h": 1200,
+   "caption": "Seasonal bag seal · Diwali: every bag for 3 weeks. 1200 px = 600 dpi at 2 in.",
+   "tags": [
+    "sticker"
+   ],
+   "download": "assets/calendar/sticker-lights-royal.png"
+  },
+  {
+   "id": "sticker-feast-bazaar",
+   "title": "Feast Season sticker, 2 in round",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/calendar/sticker-feast-bazaar.png",
+   "thumb": "assets/calendar/sticker-feast-bazaar-thumb.jpg",
+   "w": 1200,
+   "h": 1200,
+   "caption": "Seasonal bag seal · Thanksgiving to New Year, grad and lake-day trays. 1200 px = 600 dpi at 2 in.",
+   "tags": [
+    "sticker"
+   ],
+   "download": "assets/calendar/sticker-feast-bazaar.png"
+  },
+  {
+   "id": "sticker-feast-royal",
+   "title": "Feast Season sticker, 2 in round",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/calendar/sticker-feast-royal.png",
+   "thumb": "assets/calendar/sticker-feast-royal-thumb.jpg",
+   "w": 1200,
+   "h": 1200,
+   "caption": "Seasonal bag seal · Thanksgiving to New Year, grad and lake-day trays. 1200 px = 600 dpi at 2 in.",
+   "tags": [
+    "sticker"
+   ],
+   "download": "assets/calendar/sticker-feast-royal.png"
+  },
+  {
+   "id": "sticker-color-bazaar",
+   "title": "Color Season sticker, 2 in round",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/calendar/sticker-color-bazaar.png",
+   "thumb": "assets/calendar/sticker-color-bazaar-thumb.jpg",
+   "w": 1200,
+   "h": 1200,
+   "caption": "Seasonal bag seal · Holi week. 1200 px = 600 dpi at 2 in.",
+   "tags": [
+    "sticker"
+   ],
+   "download": "assets/calendar/sticker-color-bazaar.png"
+  },
+  {
+   "id": "sticker-color-royal",
+   "title": "Color Season sticker, 2 in round",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/calendar/sticker-color-royal.png",
+   "thumb": "assets/calendar/sticker-color-royal-thumb.jpg",
+   "w": 1200,
+   "h": 1200,
+   "caption": "Seasonal bag seal · Holi week. 1200 px = 600 dpi at 2 in.",
+   "tags": [
+    "sticker"
+   ],
+   "download": "assets/calendar/sticker-color-royal.png"
+  },
+  {
+   "id": "sticker-game-bazaar",
+   "title": "Game Day sticker, 2 in round",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/calendar/sticker-game-bazaar.png",
+   "thumb": "assets/calendar/sticker-game-bazaar-thumb.jpg",
+   "w": 1200,
+   "h": 1200,
+   "caption": "Seasonal bag seal · Football Fridays, cricket nights, the big game. 1200 px = 600 dpi at 2 in.",
+   "tags": [
+    "sticker"
+   ],
+   "download": "assets/calendar/sticker-game-bazaar.png"
+  },
+  {
+   "id": "sticker-game-royal",
+   "title": "Game Day sticker, 2 in round",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/calendar/sticker-game-royal.png",
+   "thumb": "assets/calendar/sticker-game-royal-thumb.jpg",
+   "w": 1200,
+   "h": 1200,
+   "caption": "Seasonal bag seal · Football Fridays, cricket nights, the big game. 1200 px = 600 dpi at 2 in.",
+   "tags": [
+    "sticker"
+   ],
+   "download": "assets/calendar/sticker-game-royal.png"
+  }
+ ]
+}

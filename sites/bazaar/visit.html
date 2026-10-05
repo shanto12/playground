@@ -30,11 +30,13 @@
 <link rel="preload" href="assets/fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="vendor/motion.css">
 <link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/pages.css">
 
 <script>(function(h){try{if(localStorage.getItem('cd-bz-banner-off')==='1')h.classList.add('banner-off')}catch(e){}try{if(sessionStorage.getItem('m-curtain'))h.classList.add('m-arrive')}catch(e){}h.classList.add('m-js');setTimeout(function(){if(!window.Motion)h.classList.remove('m-js','m-arrive')},3000)})(document.documentElement);</script>
 <script src="js/config.js" defer></script>
 <script src="vendor/motion.min.js" defer data-manual></script>
 <script src="js/site.js" defer></script>
+<script src="js/pages.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to the food</a>
@@ -63,17 +65,109 @@
   </div>
 </div>
 <main id="main">
-<section class="sec sec--cream">
-  <div class="wrap stub">
-    <p class="kicker">Swing by</p>
-    <h1 class="h-hero">Find us on FM 423</h1>
-    <p class="lead">We’re at 11851 FM 423, Suite 200, in Little Elm, a quick drive from Frisco. Parking is plentiful, the menu is loud and the garlic naan comes out hot. Order at the counter, grab a seat, get happy.</p>
-    <p class="chip chip--marigold"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-clock-mono"></use></svg>This page is coming together: the street crew is still painting the signs.</p>
-    <div class="btn-row">
-      <a class="btn btn--primary" href="https://curry-district-little-elm.cloveronline.com/" data-cfg-href="order" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-shopping-bag-mono"></use></svg>Order pickup</a>
-      <a class="btn btn--cream" href="index.html">Back to the District</a>
+<section class="pg-hero pg-hero--peacock" aria-labelledby="pg-title">
+  <div class="wrap pg-hero__in">
+    <div class="pg-hero__copy">
+      <p class="pg-hero__kicker"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-map-pin-mono"></use></svg>Little Elm, near Frisco</p>
+      <h1 class="pg-hero__title" id="pg-title"><span class="pg-hero__t1">Find the</span> <span class="pg-hero__t2 text-sticker">District</span></h1>
+      <p class="pg-hero__tag">Come hungry.</p>
+      <p class="pg-hero__lead">We’re on FM 423 in Little Elm, a quick drive from Frisco and the lake. Order at the counter, grab a table and watch the naan come out hot.</p>
+      <div class="pg-hero__ctas"><a class="btn btn--ink" href="https://www.google.com/maps/dir/?api=1&amp;destination=11851+FM+423+Suite+200+Little+Elm+TX+75068" data-cfg-href="directions" target="_blank" rel="noopener" data-press><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-map-pin-mono"></use></svg>Get directions<span class="visually-hidden"> (opens in a new tab)</span></a><a class="btn btn--cream" href="tel:+14692005856" data-cfg-href="tel" data-press><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-phone-mono"></use></svg>Call us</a></div>
+      <div class="pg-addr"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-map-pin"></use></svg><address><strong data-cfg-text="address.line1">11851 FM 423, Suite 200</strong><br>Little Elm, TX 75068<small>Little Elm, near Frisco</small></address></div>
+      <div class="pg-status"><p class="status-chip" data-open-status><span class="status-chip__dot" aria-hidden="true"></span><span class="status-chip__text">Lunch from 11 AM · dinner from 4:30 PM</span></p><p class="small-print" data-open-caveat>Hours as listed publicly. Call to confirm on holidays.</p></div>
     </div>
-    
+    <svg class="pg-post" viewBox="0 0 400 470" width="400" height="470" role="img" aria-label="Illustrated street signpost pointing to FM 423, Suite 200, Little Elm, Texas" data-reveal="pop">
+  <ellipse cx="200" cy="455" rx="128" ry="11" fill="#1D1147" opacity=".28"/>
+  <rect x="190" y="104" width="26" height="352" rx="6" fill="#1D1147" transform="translate(6 0)" opacity=".35"/>
+  <rect x="187" y="104" width="26" height="352" rx="6" fill="#FFF4DC" stroke="#1D1147" stroke-width="5"/>
+  <g transform="rotate(-5 200 172)">
+    <path d="M44 140h266l40 32-40 32H44z" fill="#1D1147" transform="translate(7 7)"/>
+    <path d="M44 140h266l40 32-40 32H44z" fill="#FFB000" stroke="#1D1147" stroke-width="5" stroke-linejoin="round"/>
+    <text x="182" y="186" text-anchor="middle" font-family="'Bowlby One','Arial Black',sans-serif" font-size="38" fill="#1D1147">FM 423</text>
+  </g>
+  <g transform="rotate(4 200 250)">
+    <rect x="76" y="224" width="248" height="52" rx="10" fill="#1D1147" transform="translate(6 6)"/>
+    <rect x="76" y="224" width="248" height="52" rx="10" fill="#FFF4DC" stroke="#1D1147" stroke-width="5"/>
+    <text x="200" y="261" text-anchor="middle" font-family="'Bowlby One','Arial Black',sans-serif" font-size="29" fill="#1D1147">SUITE 200</text>
+  </g>
+  <g transform="rotate(-3 200 322)">
+    <path d="M340 292H86l-40 30 40 30h254z" fill="#1D1147" transform="translate(7 7)"/>
+    <path d="M340 292H86l-40 30 40 30h254z" fill="#D0106F" stroke="#1D1147" stroke-width="5" stroke-linejoin="round"/>
+    <text x="205" y="334" text-anchor="middle" font-family="'Bowlby One','Arial Black',sans-serif" font-size="31" fill="#FFF4DC">FRISCO</text>
+  </g>
+  <g transform="rotate(3 200 392)">
+    <rect x="64" y="368" width="272" height="48" rx="10" fill="#1D1147" transform="translate(6 6)"/>
+    <rect x="64" y="368" width="272" height="48" rx="10" fill="#FFD56E" stroke="#1D1147" stroke-width="5"/>
+    <text x="200" y="402" text-anchor="middle" font-family="'Bowlby One','Arial Black',sans-serif" font-size="24" fill="#1D1147">LITTLE ELM · TX</text>
+  </g>
+  <g transform="translate(200 60)">
+    <path d="M0-56C-31-56-50-33-50-9-50 22 0 56 0 56S50 22 50-9C50-33 31-56 0-56Z" fill="#1D1147" transform="translate(6 6)"/>
+    <path d="M0-56C-31-56-50-33-50-9-50 22 0 56 0 56S50 22 50-9C50-33 31-56 0-56Z" fill="#E4147E" stroke="#1D1147" stroke-width="5" stroke-linejoin="round"/>
+    <circle cx="0" cy="-10" r="20" fill="#FFF4DC" stroke="#1D1147" stroke-width="5"/>
+    <circle cx="0" cy="-10" r="7" fill="#FF6A13"/>
+  </g>
+  <g fill="#FFB000" stroke="#1D1147" stroke-width="3"><path d="M330 70l6 14 15 2-11 10 3 15-13-7-13 7 3-15-11-10 15-2z"/><path d="M62 96l4 9 10 1-7 7 2 10-9-5-9 5 2-10-7-7 10-1z"/></g>
+</svg>
+  </div>
+</section>
+<section class="sec sec--cream edge-scallop" id="hours" aria-labelledby="hours-title">
+  <div class="wrap pg-visitgrid">
+    <div class="pg-hourscard" data-reveal>
+      <p class="kicker">Hours</p>
+      <h2 class="h2 pg-h2s" id="hours-title">When the kitchen’s cooking</h2>
+      <p class="status-chip" data-open-status><span class="status-chip__dot" aria-hidden="true"></span><span class="status-chip__text">Lunch from 11 AM · dinner from 4:30 PM</span></p>
+      <table class="hours"><caption class="visually-hidden">Opening hours</caption><tbody data-hours>
+<tr><th scope="row"><abbr title="Monday to Thursday">Mon–Thu</abbr></th><td><span>11 AM – 2:30 PM</span><span>4:30 PM – 10 PM</span></td></tr>
+<tr><th scope="row"><abbr title="Friday and Saturday">Fri–Sat</abbr></th><td><span>11 AM – 3 PM</span><span>4:30 PM – 10:30 PM</span></td></tr>
+<tr><th scope="row"><abbr title="Sunday">Sun</abbr></th><td><span>11 AM – 3 PM</span><span>4:30 PM – 10 PM</span></td></tr>
+      </tbody></table>
+      <p class="pg-note"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-clock-mono"></use></svg><span>Hours as listed publicly — please call to confirm, especially around holidays.</span></p>
+    </div>
+    <div data-reveal="right">
+      <div class="map-frame"><span class="badge badge--marigold map-frame__pin">FM 423 · Suite 200</span><iframe data-cfg-src="mapEmbed" src="https://www.google.com/maps?q=11851+FM+423+Suite+200+Little+Elm+TX+75068&amp;output=embed" title="Map showing Curry District, 11851 FM 423, Suite 200, Little Elm" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <div class="btn-row pg-mapbtns">
+        <a class="btn btn--primary btn--sm" href="https://www.google.com/maps/dir/?api=1&amp;destination=11851+FM+423+Suite+200+Little+Elm+TX+75068" data-cfg-href="directions" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-map-pin-mono"></use></svg>Google Maps<span class="visually-hidden"> (opens in a new tab)</span></a>
+        <a class="btn btn--cream btn--sm" href="https://maps.apple.com/?daddr=11851+FM+423+Suite+200,Little+Elm,TX+75068" data-cfg-href="appleMaps" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-map-pin-mono"></use></svg>Apple Maps<span class="visually-hidden"> (opens in a new tab)</span></a>
+        <button class="btn btn--white btn--sm" type="button" data-copy="11851 FM 423, Suite 200, Little Elm, TX 75068"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-share-mono"></use></svg><span data-copy-label>Copy address</span></button>
+      </div>
+      <p class="visually-hidden" aria-live="polite" data-copy-status></p>
+    </div>
+  </div>
+</section>
+<section class="sec sec--saffron edge-zigzag" aria-labelledby="ways-title">
+  <div class="wrap">
+    <div class="sec__head" data-reveal><p class="kicker">Dine in, pick up or stay put</p><h2 class="h2" id="ways-title">Pick your way to eat</h2></div>
+    <ul class="pg-ways" role="list" data-stagger="pop 80">
+      <li><article class="pg-way"><svg class="pg-way__ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-thali-plate"></use></svg><h3 class="h3">Dine in</h3><p>Order at the counter, grab a table and watch the naan come out hot.</p><p class="pg-way__label">Counter service</p></article></li>
+      <li><article class="pg-way"><svg class="pg-way__ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-shopping-bag"></use></svg><h3 class="h3">Pickup</h3><p>Order direct online, then swing by FM 423 to collect it hot.</p><div class="btn-row"><a class="btn btn--primary btn--sm" href="https://curry-district-little-elm.cloveronline.com/" data-cfg-href="order" target="_blank" rel="noopener" data-press><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-shopping-bag-mono"></use></svg>Order pickup<span class="visually-hidden"> online (opens Clover in a new tab)</span></a></div></article></li>
+      <li><article class="pg-way"><svg class="pg-way__ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-delivery-scooter"></use></svg><h3 class="h3">Delivery apps</h3><p>Staying on the couch? Find us on the delivery apps.</p><div class="btn-row">
+        <a class="btn btn--cream btn--sm" href="https://www.ubereats.com/store/curry-district/uWXzS9FzRBqEC8dXe5241w" data-cfg-href="uberEats" target="_blank" rel="noopener">Uber Eats<span class="visually-hidden"> (opens in a new tab)</span></a>
+        <a class="btn btn--cream btn--sm" href="https://www.doordash.com/store/curry-district-little-elm-900790/" data-cfg-href="doorDash" target="_blank" rel="noopener">DoorDash<span class="visually-hidden"> (opens in a new tab)</span></a></div></article></li>
+      <li><article class="pg-way"><svg class="pg-way__ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-party-tray"></use></svg><h3 class="h3">Catering</h3><p>Feeding a crowd? Tell us the date and we’ll plan the spread with you.</p><div class="btn-row"><a class="btn btn--rani btn--sm" href="catering.html" data-press>Plan my party</a></div></article></li>
+    </ul>
+  </div>
+</section>
+<section class="sec sec--marigold edge-scallop" aria-labelledby="know-title">
+  <div class="wrap">
+    <div class="sec__head" data-reveal><p class="kicker">Before you head over</p><h2 class="h2" id="know-title">Good to know</h2><p>Straight answers, and where a listing hasn’t been confirmed yet, we say so.</p></div>
+    <ul class="pg-notes" role="list" data-stagger="pop 80">
+      <li><article class="pg-notecard"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-map-pin"></use></svg><h3>Parking</h3><p>Ample parking is listed for our spot on FM 423.</p><p class="pg-confirm"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-phone-mono"></use></svg>Please call to confirm</p></article></li>
+      <li><article class="pg-notecard"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-lassi-glass"></use></svg><h3>Bringing your own?</h3><p>Ask us about bringing your own.</p><p class="pg-confirm"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-phone-mono"></use></svg>Please call to confirm</p></article></li>
+      <li><article class="pg-notecard"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-party-tray"></use></svg><h3>Coming with a crowd?</h3><p>Please call to confirm, especially for larger parties, so we can plan for you before you arrive.</p></article></li>
+      <li><article class="pg-notecard"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-calendar"></use></svg><h3>Holidays</h3><p>Holidays can shuffle things, so call ahead for a special trip.</p></article></li>
+    </ul>
+  </div>
+</section>
+<section class="sec sec--ink edge-zigzag" aria-labelledby="contact-title">
+  <div class="wrap pg-contact" data-reveal>
+    <p class="kicker">Questions? Call us</p>
+    <h2 class="h2" id="contact-title">Call the kitchen</h2>
+    <a class="pg-bigtel" href="tel:+14692005856" data-cfg-href="tel"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-phone-mono"></use></svg><span data-cfg-text="phone.display">(469) 200-5856</span></a>
+    <p class="small-print">Phone number and hours as listed publicly, to be confirmed by the restaurant.</p>
+    <div class="btn-row on-dark">
+      <a class="btn btn--cream btn--sm" href="https://www.instagram.com/currydistrictfrisco/" data-cfg-href="instagram" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-instagram-glyph-mono"></use></svg>Instagram<span class="visually-hidden"> (opens in a new tab)</span></a>
+      <a class="btn btn--cream btn--sm" href="https://www.facebook.com/CurryDistrictFrisco/" data-cfg-href="facebook" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-facebook-glyph-mono"></use></svg>Facebook<span class="visually-hidden"> (opens in a new tab)</span></a>
+    </div>
   </div>
 </section>
 </main>

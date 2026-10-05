@@ -117,7 +117,7 @@ html.js:not([data-dir="both"]) #compare{display:none}
 .sc-menu--a{padding:15cqw 6cqw 5cqw}
 .sc-menu--a::before{content:"";position:absolute;inset:0 0 auto;height:11.5cqw;background:url(assets/patterns/bazaar/07-jaipur-arches-sunset.svg) 0 0/23cqw repeat-x;border-bottom:.7cqw solid #1D1147}
 .sc-kick{font-family:'Caveat',cursive;font-weight:700;font-size:6cqw;line-height:1;color:#B5126A;transform:rotate(-4deg);display:inline-block;margin:0 0 1cqw 2cqw}
-.sc-sign{display:inline-block;padding:1.4cqw 4cqw 1.6cqw;background:#00A8A0;color:#FFF4DC;border:.8cqw solid #1D1147;border-radius:2.4cqw;box-shadow:1.4cqw 1.4cqw 0 #1D1147;font:400 7.6cqw/1 'Bowlby One',sans-serif;text-transform:uppercase;letter-spacing:.02em;text-shadow:.5cqw .5cqw 0 #1D1147;-webkit-text-stroke:.25cqw #1D1147;paint-order:stroke fill}
+.sc-sign{display:inline-block;padding:1.4cqw 3.4cqw 1.6cqw;background:#00A8A0;color:#FFF4DC;border:.8cqw solid #1D1147;border-radius:2.4cqw;box-shadow:1.4cqw 1.4cqw 0 #1D1147;font:400 6.6cqw/1 'Bowlby One',sans-serif;text-transform:uppercase;letter-spacing:.01em;text-shadow:.5cqw .5cqw 0 #1D1147;-webkit-text-stroke:.25cqw #1D1147;paint-order:stroke fill}
 .sc-tag{margin:3.4cqw 0 2.4cqw;font-size:3.5cqw;font-weight:600;color:#4A3C7A}
 .sc-dishes{display:grid;gap:0;margin:0;padding:0;list-style:none}
 .sc-dish{display:grid;grid-template-columns:1fr auto;gap:.6cqw 2cqw;padding:2.6cqw 0;border-top:.55cqw dashed rgba(29,17,71,.35)}
@@ -285,7 +285,7 @@ html.js:not([data-dir="both"]) #compare{display:none}
 .bk-story[data-theme="bazaar"] .st-intro::before{content:"";position:absolute;inset:0 0 auto;height:46px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='44' viewBox='0 0 160 44'%3E%3Cpath d='M0 6Q40 16 80 6Q120 16 160 6' fill='none' stroke='%231D1147' stroke-width='2.5'/%3E%3Cg stroke='%231D1147' stroke-width='2.5' stroke-linejoin='round'%3E%3Cpath d='M10 10H30L20 32Z' fill='%23FFB000'/%3E%3Cpath d='M50 10H70L60 32Z' fill='%23E4147E'/%3E%3Cpath d='M90 10H110L100 32Z' fill='%2300A8A0'/%3E%3Cpath d='M130 10H150L140 32Z' fill='%23FF6A13'/%3E%3C/g%3E%3C/svg%3E") 0 0/160px 44px repeat-x}
 .bk-story[data-theme="bazaar"] .st-intro::after{content:"";position:absolute;z-index:-1;right:-18vw;top:6%;width:min(70vw,620px);aspect-ratio:1;border-radius:50%;background:radial-gradient(closest-side,rgba(255,176,0,.55),rgba(255,106,19,.18) 60%,transparent)}
 .bk-story[data-theme="bazaar"] .st-intro__kick{background:#1D1147;color:#FFF4DC}
-.bk-story[data-theme="bazaar"] .st-intro__title{font:400 clamp(4.2rem,21vw,10rem)/.88 'Bowlby One',sans-serif;text-transform:uppercase;letter-spacing:.005em;color:#1D1147;text-shadow:.06em .06em 0 #E4147E}
+.bk-story[data-theme="bazaar"] .st-intro__title{font:400 clamp(3.4rem,17vw,10rem)/.88 'Bowlby One',sans-serif;text-transform:uppercase;letter-spacing:.005em;color:#1D1147;text-shadow:.06em .06em 0 #E4147E}
 .bk-story[data-theme="bazaar"] .st-intro__line{font:800 clamp(1.5rem,5.6vw,2.5rem)/1.08 'DM Sans',sans-serif;letter-spacing:-.02em}
 .bk-story[data-theme="bazaar"] .st-intro__line em{font:700 1.18em/1 'Caveat',cursive;color:#B5126A;font-style:normal}
 .bk-story[data-theme="bazaar"] .st-chips li{background:#fff;border:2.5px solid #1D1147;box-shadow:3px 3px 0 #1D1147}
@@ -374,7 +374,7 @@ html.js:not([data-dir="both"]) #compare{display:none}
 @media (min-width:768px){.lg-family{grid-template-columns:2fr 1fr 1fr 1fr}}
 .lg-family figure{margin:0;display:grid;gap:8px}
 .lg-family__tile{display:grid;place-items:center;height:132px;padding:16px;border-radius:calc(var(--s-radius) - 4px);background:var(--s-card)}
-.lg-family__tile img{max-height:100%;max-width:100%;object-fit:contain}
+.lg-family__tile img{width:100%;height:100%;min-height:0;object-fit:contain}
 .lg-family figure:first-child{grid-column:1/-1}
 @media (min-width:768px){.lg-family figure:first-child{grid-column:auto}}
 .lg-family figcaption{font-size:.8125rem;color:var(--s-muted)}
