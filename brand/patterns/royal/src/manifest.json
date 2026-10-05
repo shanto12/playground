@@ -1,0 +1,218 @@
+[
+ {
+  "pattern": "01-jali-lattice",
+  "colourway": "midnight",
+  "file": "01-jali-lattice-midnight.svg",
+  "tile": 240,
+  "bytes": 18880,
+  "bg": "#160B26"
+ },
+ {
+  "pattern": "01-jali-lattice",
+  "colourway": "emerald",
+  "file": "01-jali-lattice-emerald.svg",
+  "tile": 240,
+  "bytes": 18899,
+  "bg": "#0F4D3F"
+ },
+ {
+  "pattern": "01-jali-lattice",
+  "colourway": "ivory",
+  "file": "01-jali-lattice-ivory.svg",
+  "tile": 240,
+  "bytes": 18877,
+  "bg": "#FBF3E4"
+ },
+ {
+  "pattern": "02-mehrab-trellis",
+  "colourway": "midnight",
+  "file": "02-mehrab-trellis-midnight.svg",
+  "tile": 240,
+  "bytes": 5947,
+  "bg": "#160B26"
+ },
+ {
+  "pattern": "02-mehrab-trellis",
+  "colourway": "emerald",
+  "file": "02-mehrab-trellis-emerald.svg",
+  "tile": 240,
+  "bytes": 6032,
+  "bg": "#0F4D3F"
+ },
+ {
+  "pattern": "02-mehrab-trellis",
+  "colourway": "ivory",
+  "file": "02-mehrab-trellis-ivory.svg",
+  "tile": 240,
+  "bytes": 5944,
+  "bg": "#FBF3E4"
+ },
+ {
+  "pattern": "03-paisley-vine",
+  "colourway": "midnight",
+  "file": "03-paisley-vine-midnight.svg",
+  "tile": 320,
+  "bytes": 11458,
+  "bg": "#160B26"
+ },
+ {
+  "pattern": "03-paisley-vine",
+  "colourway": "emerald",
+  "file": "03-paisley-vine-emerald.svg",
+  "tile": 320,
+  "bytes": 11477,
+  "bg": "#0F4D3F"
+ },
+ {
+  "pattern": "03-paisley-vine",
+  "colourway": "ivory",
+  "file": "03-paisley-vine-ivory.svg",
+  "tile": 320,
+  "bytes": 11455,
+  "bg": "#FBF3E4"
+ },
+ {
+  "pattern": "03-paisley-vine",
+  "colourway": "ruby",
+  "file": "03-paisley-vine-ruby.svg",
+  "tile": 320,
+  "bytes": 11474,
+  "bg": "#A3173F"
+ },
+ {
+  "pattern": "04-marigold-damask",
+  "colourway": "midnight",
+  "file": "04-marigold-damask-midnight.svg",
+  "tile": 320,
+  "bytes": 26476,
+  "bg": "#160B26"
+ },
+ {
+  "pattern": "04-marigold-damask",
+  "colourway": "emerald",
+  "file": "04-marigold-damask-emerald.svg",
+  "tile": 320,
+  "bytes": 26494,
+  "bg": "#0F4D3F"
+ },
+ {
+  "pattern": "04-marigold-damask",
+  "colourway": "ivory",
+  "file": "04-marigold-damask-ivory.svg",
+  "tile": 320,
+  "bytes": 26473,
+  "bg": "#FBF3E4"
+ },
+ {
+  "pattern": "04-marigold-damask",
+  "colourway": "ruby",
+  "file": "04-marigold-damask-ruby.svg",
+  "tile": 320,
+  "bytes": 26491,
+  "bg": "#A3173F"
+ },
+ {
+  "pattern": "05-peacock-eye",
+  "colourway": "midnight",
+  "file": "05-peacock-eye-midnight.svg",
+  "tile": 240,
+  "bytes": 3526,
+  "bg": "#160B26"
+ },
+ {
+  "pattern": "05-peacock-eye",
+  "colourway": "emerald",
+  "file": "05-peacock-eye-emerald.svg",
+  "tile": 240,
+  "bytes": 3524,
+  "bg": "#0F4D3F"
+ },
+ {
+  "pattern": "05-peacock-eye",
+  "colourway": "ivory",
+  "file": "05-peacock-eye-ivory.svg",
+  "tile": 240,
+  "bytes": 3523,
+  "bg": "#FBF3E4"
+ },
+ {
+  "pattern": "05-peacock-eye",
+  "colourway": "peacock",
+  "file": "05-peacock-eye-peacock.svg",
+  "tile": 240,
+  "bytes": 3524,
+  "bg": "#117C86"
+ },
+ {
+  "pattern": "06-star-tile",
+  "colourway": "midnight",
+  "file": "06-star-tile-midnight.svg",
+  "tile": 240,
+  "bytes": 6023,
+  "bg": "#160B26"
+ },
+ {
+  "pattern": "06-star-tile",
+  "colourway": "emerald",
+  "file": "06-star-tile-emerald.svg",
+  "tile": 240,
+  "bytes": 7047,
+  "bg": "#160B26"
+ },
+ {
+  "pattern": "06-star-tile",
+  "colourway": "ivory",
+  "file": "06-star-tile-ivory.svg",
+  "tile": 240,
+  "bytes": 6022,
+  "bg": "#B7791F"
+ },
+ {
+  "pattern": "07-spice-botanical",
+  "colourway": "midnight",
+  "file": "07-spice-botanical-midnight.svg",
+  "tile": 320,
+  "bytes": 6794,
+  "bg": "#160B26"
+ },
+ {
+  "pattern": "07-spice-botanical",
+  "colourway": "emerald",
+  "file": "07-spice-botanical-emerald.svg",
+  "tile": 320,
+  "bytes": 6793,
+  "bg": "#0F4D3F"
+ },
+ {
+  "pattern": "07-spice-botanical",
+  "colourway": "ivory",
+  "file": "07-spice-botanical-ivory.svg",
+  "tile": 320,
+  "bytes": 6791,
+  "bg": "#FBF3E4"
+ },
+ {
+  "pattern": "08-brass-dots-diamonds",
+  "colourway": "midnight",
+  "file": "08-brass-dots-diamonds-midnight.svg",
+  "tile": 240,
+  "bytes": 7505,
+  "bg": "#160B26"
+ },
+ {
+  "pattern": "08-brass-dots-diamonds",
+  "colourway": "emerald",
+  "file": "08-brass-dots-diamonds-emerald.svg",
+  "tile": 240,
+  "bytes": 7504,
+  "bg": "#0F4D3F"
+ },
+ {
+  "pattern": "08-brass-dots-diamonds",
+  "colourway": "ivory",
+  "file": "08-brass-dots-diamonds-ivory.svg",
+  "tile": 240,
+  "bytes": 7501,
+  "bg": "#FBF3E4"
+ }
+]

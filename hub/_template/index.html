@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en" data-dir="both">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<!-- ✏️ 1. Title + description: "<Area name> · Curry District Glow-Up" -->
+<title>Area Name · Curry District Glow-Up</title>
+<meta name="description" content="One sentence on what this page shows the owners.">
+<meta name="theme-color" content="#120C1E">
+<!-- ✏️ 2. OG tags: replace AREA in og:url with your folder name -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Curry District · Brand Glow-Up">
+<meta property="og:title" content="Area Name · Curry District Glow-Up">
+<meta property="og:description" content="One sentence on what this page shows the owners.">
+<meta property="og:url" content="https://curry-district-pitch.netlify.app/AREA/">
+<meta property="og:image" content="https://curry-district-pitch.netlify.app/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/hub.css">
+<!-- Optional: your own page styles live in THIS folder, e.g. <link rel="stylesheet" href="page.css"> -->
+<script>/* restore direction before first paint (no flash) */try{var d=localStorage.getItem('cd-hub-dir');if(d)document.documentElement.setAttribute('data-dir',d)}catch(e){}document.documentElement.classList.add('js')</script>
+<script src="../assets/config.js" defer></script>
+<script src="../assets/hub.js" defer></script>
+</head>
+<!-- ✏️ 3. data-area = your folder id (brand, packaging, interiors, menu-design, social, signage,
+        merch, loyalty, motion, gbp, thali, calendar, audit, benchmarks, ideas). data-root stays "../" -->
+<body class="hub" data-root="../" data-area="AREA">
+<div data-hub-nav></div><!-- hub.js renders skip-link, top bar (desktop), tab bar (phones) here -->
+
+<main id="main" class="main">
+
+  <!-- ═════ PAGE HEADER ═════ -->
+  <header class="page-head wrap">
+    <a class="backlink" href="../#tour"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5 8 12l7 7"/></svg>All samples</a>
+    <p class="eyebrow">Sample 04 · Area kicker</p>
+    <h1 class="page-title">Big, confident <em>page title</em></h1>
+    <p class="lede">One or two warm sentences: what the owners are looking at and why it will make Curry District look as good as it tastes.</p>
+    <div class="page-head__meta">
+      <span class="chip" data-tone="a">A · Bazaar</span>
+      <span class="chip" data-tone="b">B · Royal</span>
+      <button type="button" class="btn btn--ghost btn--sm" data-share>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg>
+        Open on your phone</button>
+    </div>
+  </header>
+
+  <!-- ═════ SECTION: direction-aware previews (A / B / Both switch) ═════ -->
+  <section class="section" aria-labelledby="s1">
+    <div class="wrap">
+      <div class="sec-head sec-head--split">
+        <p class="sec-head__num">01</p>
+        <h2 class="sec-head__title" id="s1">Section title, <em>with flair</em></h2>
+        <p class="sec-head__desc">Short framing line. Flip the switch to compare directions.</p>
+        <div class="sec-head__action" data-dir-switch="full"></div>
+      </div>
+
+      <div class="dir-pair">
+        <!-- data-preview fixes the theme; hidden when the other direction is chosen -->
+        <div class="preview" data-preview="bazaar" data-theme="bazaar" data-label="A · Bazaar">
+          <p style="font-family:var(--font-display);text-transform:var(--display-case);font-size:1.6rem;line-height:1;margin:0 0 8px;color:var(--c-primary)">Bazaar preview</p>
+          <p style="margin:0">Anything inside uses brand tokens: var(--c-bg), var(--c-primary), var(--font-display)…</p>
+        </div>
+        <div class="preview" data-preview="royal" data-theme="royal" data-label="B · Royal">
+          <p style="font-family:var(--font-display);font-size:1.6rem;line-height:1;margin:0 0 8px;color:var(--c-secondary)">Royal preview</p>
+          <p style="margin:0">Same markup, different data-theme — the switch shows one or both.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════ SECTION: gallery + lightbox ═════ -->
+  <section class="section" aria-labelledby="s2">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-head__num">02</p>
+        <h2 class="sec-head__title" id="s2">The gallery</h2>
+        <p class="sec-head__desc">Tap any piece to open it full-screen — swipe, pinch, double-tap to zoom.</p>
+      </div>
+      <div class="gallery" data-stagger>
+        <!-- Replace href/src with your files (e.g. img/bag-a.jpg). Same data-lightbox value = one swipeable set. -->
+        <a class="gallery__item" href="../assets/favicon.svg" data-lightbox="area" data-caption="Caption shown in the lightbox" data-preview="bazaar">
+          <img src="../assets/favicon.svg" alt="Describe the design" loading="lazy" decoding="async">
+          <span class="gallery__cap">A · Bazaar — item name</span>
+        </a>
+        <a class="gallery__item" href="../assets/favicon.svg" data-lightbox="area" data-caption="Second caption" data-preview="royal">
+          <img src="../assets/favicon.svg" alt="Describe the design" loading="lazy" decoding="async">
+          <span class="gallery__cap">B · Royal — item name</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════ SECTION: more samples (auto tiles, excludes this page) ═════ -->
+  <section class="section" aria-labelledby="more">
+    <div class="wrap">
+      <div class="sec-head sec-head--split">
+        <h2 class="sec-head__title" id="more">Keep <em>exploring</em></h2>
+        <a class="sec-head__action link-arrow" href="../#tour">All samples</a>
+      </div>
+      <div data-area-tiles="kit" data-exclude="current" data-limit="4"></div>
+    </div>
+  </section>
+
+  <!-- ═════ STICKY NEXT-STEPS CTA — keep as the LAST child of <main> ═════ -->
+  <aside class="next-cta" aria-label="Next steps">
+    <p class="next-cta__txt" style="margin:0">Like where this is going?<small>See the 10 things we can do together</small></p>
+    <a class="btn btn--primary btn--sm" href="../ideas/">Next steps</a>
+  </aside>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap site-foot__grid">
+    <div>
+      <p class="site-foot__brand">Curry District · Brand Glow-Up</p>
+      <p class="site-foot__disclaimer">Independent design concept prepared as a proposal — not the official Curry District website.</p>
+      <p class="site-foot__disclaimer" data-config="studio" style="margin-top:6px">Prepared by <span data-config-text="studio"></span></p>
+    </div>
+    <nav class="site-foot__links" aria-label="Footer">
+      <a href="../">Home</a><a href="../ideas/">Ideas</a><a href="../audit/">Audit</a><a href="../benchmarks/">Chains</a>
+      <a href="#" data-print>Save as PDF</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
