@@ -195,3 +195,5 @@
   html[data-dir="bazaar"] .feed-wrap .feed-notes,html[data-dir="royal"] .feed-wrap .feed-notes{grid-template-columns:1fr;margin-top:0}
 }
 .board{align-self:start}
+/* single direction: keep the profile card a sensible size on wide screens */
+html[data-dir="bazaar"] .dir-pair > .pcard,html[data-dir="royal"] .dir-pair > .pcard{max-width:760px;margin-inline:auto}

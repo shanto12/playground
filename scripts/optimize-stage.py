@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Shrink the STAGED hub copy: convert large PNGs to WebP and rewrite references.
-Source files in the repo are never touched. PNGs named in a manifest `download` field are kept.
+Source files in the repo are never touched. Manifest `download` PNGs are converted too (the pitch hub is a presentation copy; full-res originals stay in the repo).
 usage: optimize-stage.py /tmp/cd-dist/hub"""
 import os, re, sys, subprocess, json, collections
 root = sys.argv[1]; MIN = 250 * 1024
@@ -20,12 +20,14 @@ cnt = collections.Counter(os.path.basename(p) for p in pngs)
 conv = {}; saved = 0
 for p in pngs:
     b = os.path.basename(p)
-    if os.path.getsize(p) < MIN or b in refs_dl or cnt[b] > 1 or '/downloads/' in p or '/qr/' in p: continue
+    if os.path.getsize(p) < MIN or '/downloads/' in p or '/qr/' in p: continue
     w = p[:-4] + '.webp'
     r = subprocess.run(['convert', p, '-quality', '86', '-define', 'webp:method=4', w], capture_output=True)
     if r.returncode or not os.path.exists(w): continue
     if os.path.getsize(w) < 0.75 * os.path.getsize(p):
-        saved += os.path.getsize(p) - os.path.getsize(w); os.remove(p); conv[b] = b[:-4] + '.webp'
+        saved += os.path.getsize(p) - os.path.getsize(w); os.remove(p)
+        key = (os.path.basename(os.path.dirname(p)) + '/' + b) if cnt[b] > 1 else b   # path-qualify colliding names
+        conv[key] = key[:-4] + '.webp'
     else: os.remove(w)
 if conv:
     pat = re.compile('|'.join(re.escape(k) for k in sorted(conv, key=len, reverse=True)))
