@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en" data-theme="bazaar">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Motion Kit · Curry District</title>
+<meta name="description" content="The Curry District motion kit: scroll reveals, tickers, steam, petals, embers, bursts, tilt cards, count-ups, text effects and page curtains in both brand directions.">
+<script>
+/* pre-paint: theme choice + motion flags (copy the m-js / m-arrive part into every page that uses the kit) */
+(function (d) {
+  var h = d.documentElement;
+  try {
+    var t = new URLSearchParams(location.search).get('theme') || localStorage.getItem('cd-motion-theme');
+    if (t === 'royal' || t === 'bazaar') h.setAttribute('data-theme', t);
+    if (sessionStorage.getItem('m-curtain')) h.classList.add('m-arrive');
+  } catch (e) {}
+  h.classList.add('m-js');
+  setTimeout(function () { if (!window.Motion) h.classList.remove('m-js', 'm-arrive'); }, 3000); /* kit failed to load → show everything */
+})(document);
+</script>
+<link rel="stylesheet" href="demo/fonts.css">
+<link rel="stylesheet" href="demo/tokens.css">
+<link rel="stylesheet" href="motion.css">
+<script src="motion.min.js" defer></script>
+<style>
+/* ── demo-only skin (the kit itself is motion.css + motion.js) ── */
+:root,[data-theme=bazaar]{
+  --d-r:18px; --d-r-sm:12px; --d-border:3px solid var(--bz-ink); --d-shadow:6px 6px 0 var(--bz-ink); --d-shadow-sm:4px 4px 0 var(--bz-ink);
+  --d-hw:400; --d-hero:var(--grad-night); --d-panel:var(--bz-ink); --d-panel-2:#2B1A63; --d-on-panel:var(--bz-cream);
+  --d-accent:var(--bz-rani); --d-num-bg:var(--bz-marigold); --d-num-ink:var(--bz-ink);
+  --d-btn:var(--bz-saffron); --d-btn-ink:var(--bz-ink); --d-btn-2:var(--bz-cream);
+  --d-chip:var(--c-surface-2); --d-code:#1D1147; --d-code-ink:#FFE7B8;
+  --d-bowl:var(--bz-peacock); --d-food:var(--bz-saffron); --d-cream:var(--bz-cream); --d-leaf:var(--bz-cilantro); --d-chai:#D9A066; --d-rice:var(--bz-marigold);
+  --d-ill-stroke:var(--bz-ink); --d-ill-sw:4; --d-band:var(--bz-marigold);
+  --d-neon:var(--bz-rani); --d-pattern:radial-gradient(rgba(29,17,71,.07) 1.6px, transparent 1.8px) 0 0/22px 22px;
+  --d-tilt-1:var(--bz-saffron); --d-tilt-2:var(--bz-peacock); --d-tilt-3:var(--bz-rani);
+  --m-header-shift:-8px;
+}
+[data-theme=royal]{
+  --d-r:28px; --d-r-sm:18px; --d-border:1px solid rgba(183,121,31,.45); --d-shadow:0 26px 50px -30px rgba(22,11,38,.55); --d-shadow-sm:0 14px 30px -18px rgba(22,11,38,.5);
+  --d-hw:600; --d-hero:var(--grad-hero); --d-panel:var(--ry-ink); --d-panel-2:var(--ry-plum); --d-on-panel:var(--ry-ivory);
+  --d-accent:var(--ry-ruby); --d-num-bg:transparent; --d-num-ink:var(--ry-gold-dk);
+  --d-btn:var(--grad-foil); --d-btn-ink:var(--ry-ink); --d-btn-2:var(--ry-ivory);
+  --d-chip:var(--c-surface-2); --d-code:#160B26; --d-code-ink:#F7D98A;
+  --d-bowl:url(#brass); --d-food:#B5371F; --d-cream:var(--ry-ivory); --d-leaf:var(--ry-emerald); --d-chai:#C99263; --d-rice:var(--ry-gold-lt);
+  --d-ill-stroke:var(--ry-gold-lt); --d-ill-sw:1.5; --d-band:var(--ry-gold-lt);
+  --d-neon:var(--ry-gold); --d-pattern:repeating-linear-gradient(45deg, rgba(183,121,31,.07) 0 1px, transparent 1px 26px), repeating-linear-gradient(-45deg, rgba(183,121,31,.07) 0 1px, transparent 1px 26px);
+  --d-tilt-1:var(--ry-plum); --d-tilt-2:var(--ry-emerald); --d-tilt-3:var(--ry-ruby);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:84px}
+body{margin:0;background:var(--d-pattern),var(--c-bg);color:var(--c-text);font:400 16px/1.6 var(--font-body);overflow-x:hidden}
+main{overflow-x:hidden;overflow-x:clip}
+svg{display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--d-accent);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1140px;margin:0 auto;padding:0 var(--gutter)}
+h1,h2,h3,.disp{font-family:var(--font-display);font-weight:var(--d-hw);text-transform:var(--display-case);letter-spacing:var(--display-tracking);line-height:var(--display-leading);margin:0}
+p{margin:0}
+.accent{font-family:var(--font-accent);font-weight:600}
+[data-theme=royal] .accent{font-style:italic}
+
+/* header */
+.site-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px var(--gutter) 12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand svg{width:38px;height:38px;flex:none}
+.brand b{font-family:var(--font-display);font-weight:var(--d-hw);text-transform:var(--display-case);font-size:17px;line-height:1;letter-spacing:var(--display-tracking)}
+.brand small{display:block;font:600 11px/1.2 var(--font-body);letter-spacing:.14em;text-transform:uppercase;color:var(--c-muted);margin-top:4px}
+.seg{display:flex;padding:3px;border-radius:999px;background:var(--c-surface);border:var(--d-border);box-shadow:var(--d-shadow-sm)}
+.seg button{appearance:none;border:0;background:none;color:var(--c-text);font:700 13px/1 var(--font-body);padding:0 14px;min-height:40px;border-radius:999px;cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--c-dark);color:var(--c-text-inv)}
+.progress{position:absolute;left:0;right:0;bottom:-4px;height:4px;background:var(--grad-foil,var(--grad-hero))}
+
+/* hero */
+.hero{background:var(--d-hero);color:var(--c-text-inv);padding:56px 0 72px;overflow:hidden;border-bottom:var(--d-border)}
+.hero-grid{display:grid;gap:28px;align-items:center}
+.eyebrow{font:700 12px/1.2 var(--font-body);letter-spacing:.18em;text-transform:uppercase;opacity:.85;margin-bottom:16px}
+.hero h1{font-size:clamp(48px,14vw,104px)}
+.hero h1 .shimmer{padding-bottom:.08em}
+.lede{font-size:18px;max-width:34ch;margin-top:18px;opacity:.92}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.hero-art{justify-self:center;width:min(78vw,340px)}
+.hero-art .bowl{padding-top:70px}
+
+/* buttons */
+.btn{appearance:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 22px;border-radius:999px;font:700 16px/1 var(--font-body);text-decoration:none;cursor:pointer;border:var(--d-border);background:var(--d-btn);color:var(--d-btn-ink);box-shadow:var(--d-shadow-sm)}
+.btn-ghost{background:var(--d-btn-2);color:var(--c-dark)}
+.hero .btn-ghost{background:transparent;color:var(--c-text-inv);border-color:currentColor;box-shadow:none}
+[data-theme=royal] .btn{border-color:rgba(247,217,138,.6)}
+
+/* sections */
+.sec{padding:64px 0;border-top:var(--d-border)}
+.sec:nth-of-type(even){background:linear-gradient(var(--c-surface-2),var(--c-surface-2)) 0 0/100% 100% no-repeat}
+[data-theme=royal] .sec{border-top:0}
+.sec-head{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;margin-bottom:28px}
+.num{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--d-num-bg);color:var(--d-num-ink);border:var(--d-border);box-shadow:var(--d-shadow-sm);font:400 20px/1 var(--font-display)}
+[data-theme=royal] .num{font:italic 600 26px/1 var(--font-display);border-color:var(--ry-gold)}
+.sec h2{font-size:clamp(30px,8vw,52px)}
+.sec-head p{color:var(--c-muted);margin-top:8px;max-width:58ch}
+.code{margin:24px 0 0;padding:14px 16px;border-radius:var(--d-r-sm);background:var(--d-code);color:var(--d-code-ink);font:500 13px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:pre-wrap;word-break:break-word}
+.card{background:var(--c-surface);border:var(--d-border);border-radius:var(--d-r);box-shadow:var(--d-shadow);padding:20px}
+.label{font:700 12px/1.2 var(--font-body);letter-spacing:.12em;text-transform:uppercase;color:var(--c-muted)}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+
+/* contents */
+.toc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;list-style:none;margin:0;padding:0}
+.toc a{display:flex;align-items:center;gap:10px;min-height:48px;padding:8px 14px;border-radius:var(--d-r-sm);background:var(--c-surface);border:var(--d-border);text-decoration:none;font-weight:700;font-size:15px}
+.toc span{font:400 13px/1 var(--font-display);color:var(--d-accent)}
+
+/* 1 reveal */
+.tile{display:grid;place-items:center;min-height:110px;border-radius:var(--d-r);border:var(--d-border);box-shadow:var(--d-shadow-sm);font:400 22px/1 var(--font-display);text-transform:var(--display-case);color:var(--c-text-inv)}
+.t1{background:var(--c-primary);color:var(--c-dark)}.t2{background:var(--c-secondary)}.t3{background:var(--c-tertiary)}.t4{background:var(--c-quaternary);color:var(--c-dark)}.t5{background:var(--c-dark)}
+.zones{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;padding:0;list-style:none}
+.zones li{padding:10px 16px;border-radius:999px;background:var(--c-surface);border:var(--d-border);font-weight:700;font-size:15px}
+
+/* 2 marquee */
+.ticker{background:var(--c-dark);color:var(--c-text-inv);padding:16px 0;font:400 clamp(22px,6vw,34px)/1 var(--font-display);text-transform:var(--display-case);--m-gap:.9em;border-block:var(--d-border);cursor:pointer}
+.ticker.alt{background:var(--c-primary);color:var(--c-dark);font:600 clamp(26px,7vw,40px)/1 var(--font-accent);text-transform:none;--m-gap:.7em}
+[data-theme=royal] .ticker.alt{background:var(--ry-emerald);color:var(--ry-ivory);font-style:italic}
+.ticker .dot{color:var(--c-quaternary)}
+.ticker.alt .dot{color:var(--c-secondary)}
+[data-theme=royal] .ticker .dot{color:var(--ry-gold)}
+.note{margin-top:14px;color:var(--c-muted);font-size:14px}
+
+/* 3 steam / illustrations */
+.dark{background:var(--d-panel);color:var(--d-on-panel);border:var(--d-border);border-radius:var(--d-r);box-shadow:var(--d-shadow)}
+.steam-tile{padding:84px 22px 20px;text-align:center}
+.steam-tile .ill{width:min(100%,190px);margin:0 auto}
+.steam-tile p{margin-top:12px;font-weight:700}
+.ill-body,.ill-rim{stroke:var(--d-ill-stroke);stroke-width:var(--d-ill-sw);stroke-linejoin:round}
+.ill-body{fill:var(--d-bowl)}.ill-food{fill:var(--d-food)}.ill-chai{fill:var(--d-chai)}.ill-rice{fill:var(--d-rice)}.ill-leaf{fill:var(--d-leaf)}
+.ill-swirl{fill:none;stroke:var(--d-cream);stroke-width:5;stroke-linecap:round}
+.ill-band{fill:none;stroke:var(--d-band);stroke-width:5;stroke-dasharray:1 11;stroke-linecap:round}
+.ill-rim{fill:none}
+
+/* 4 particles */
+.pbox{position:relative;height:230px;border-radius:var(--d-r);border:var(--d-border);box-shadow:var(--d-shadow);overflow:hidden;color:var(--d-on-panel);display:flex;align-items:flex-end;padding:18px}
+.pbox.petals{background:linear-gradient(165deg,var(--d-panel-2),var(--d-panel))}
+.pbox.spice{background:radial-gradient(120% 90% at 50% 110%,#5A1F0F,var(--d-panel) 70%)}
+.pbox.embers{background:radial-gradient(120% 80% at 50% 120%,#7A2A0A,var(--d-panel) 65%)}
+[data-theme=royal] .pbox.embers{background:radial-gradient(120% 80% at 50% 120%,#5B3410,var(--ry-ink) 65%)}
+.pbox h3{font-size:24px}
+.pbox p{font-size:14px;opacity:.85;margin-top:4px}
+
+/* 5 burst */
+.burst-stage{display:grid;place-items:center;gap:14px;padding:36px 20px;text-align:center}
+.big-btn{width:160px;height:160px;border-radius:50%;font:400 22px/1.05 var(--font-display);text-transform:var(--display-case);padding:0 18px}
+
+/* 6 tilt */
+.tcard{position:relative;min-height:240px;padding:22px;border-radius:var(--d-r);border:var(--d-border);box-shadow:var(--d-shadow);color:var(--c-text-inv);overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;gap:6px}
+.tc1{background:var(--d-tilt-1)}.tc2{background:var(--d-tilt-2)}.tc3{background:var(--d-tilt-3)}
+.tcard h3{font-size:30px}
+.tcard p{font-weight:500}
+.tcard .motif{position:absolute;right:-30px;top:-30px;width:190px;height:190px;opacity:.28}
+.sticker{position:absolute;left:18px;top:18px;padding:8px 14px;border-radius:999px;background:var(--c-quaternary);color:var(--c-dark);font:700 14px/1 var(--font-body);border:var(--d-border);rotate:-6deg}
+[data-theme=royal] .sticker{background:var(--grad-foil);border-color:transparent;color:var(--ry-ink)}
+[data-theme=bazaar] .tc1,[data-theme=bazaar] .tc1 .sticker{color:var(--c-dark)}
+
+/* 7 buttons */
+.btn-row{display:flex;flex-wrap:wrap;gap:14px}
+.btn-row>span{display:inline-block}
+
+/* 8 numbers */
+.stat{text-align:left}
+.stat b{display:block;font:400 clamp(40px,11vw,64px)/1 var(--font-display);color:var(--d-accent)}
+[data-theme=royal] .stat b{font-weight:800;color:var(--ry-plum)}
+.stat span{display:block;margin-top:8px;font-weight:600}
+
+/* 10 type */
+.type-row{padding:22px 0;border-bottom:2px dashed rgba(91,79,133,.28)}
+.type-row:last-child{border-bottom:0}
+.big-type{font-size:clamp(40px,11vw,80px)}
+.foil-panel{padding:28px 22px}
+.foil-panel .disp{font-size:clamp(38px,10vw,72px)}
+.quote{font:500 clamp(22px,5.6vw,34px)/1.3 var(--font-body);max-width:24ch}
+[data-theme=royal] .quote{font:italic 400 clamp(24px,6vw,38px)/1.25 var(--font-accent)}
+
+/* 11 transitions */
+.link-list{display:grid;gap:12px}
+.link-list .btn{justify-content:space-between;width:100%}
+.link-list small{font-weight:500;opacity:.75}
+
+/* utilities */
+.util{display:grid;grid-template-rows:96px auto;gap:10px;place-items:center;text-align:center;padding:18px 10px}
+.util code{font:600 13px/1 ui-monospace,Menlo,Consolas,monospace;color:var(--c-muted)}
+.disc{display:grid;place-items:center;width:84px;height:84px;border-radius:50%;background:var(--c-secondary);color:var(--c-text-inv);font:400 13px/1.05 var(--font-display);text-transform:var(--display-case);border:var(--d-border);box-shadow:var(--d-shadow-sm)}
+.pill{display:inline-grid;place-items:center;min-width:84px;min-height:48px;padding:0 18px;border-radius:999px;background:var(--c-primary);color:var(--c-dark);font:700 15px/1 var(--font-body);border:var(--d-border);cursor:pointer}
+[data-theme=royal] .pill{background:var(--grad-foil)}
+.neon{font:400 34px/1 var(--font-display);color:#fff;text-shadow:0 0 6px var(--d-neon),0 0 18px var(--d-neon),0 0 36px var(--d-neon);padding:10px 14px;border-radius:12px;background:var(--d-panel)}
+.garland{width:40px;height:96px}
+.spark{display:flex;gap:6px}.spark svg{width:26px;height:26px;fill:var(--c-quaternary)}
+[data-theme=royal] .spark svg{fill:var(--ry-gold)}
+
+/* api */
+.api-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:18px}
+.status{font-weight:700}
+
+footer{padding:40px 0 56px;background:var(--c-dark);color:var(--c-text-inv);font-size:14px}
+footer p+p{margin-top:8px;opacity:.8}
+
+@media (min-width:720px){
+  .hero{padding:80px 0 96px}
+  .hero-grid{grid-template-columns:1.25fr 1fr}
+  .toc{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .g5{grid-template-columns:repeat(5,minmax(0,1fr))}
+  .link-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sec{padding:88px 0}
+}
+@media (max-width:719px){ .g4{grid-template-columns:repeat(2,minmax(0,1fr))} .g5{grid-template-columns:repeat(2,minmax(0,1fr))} .g5>:last-child{grid-column:1/-1} }
+</style>
+</head>
+<body id="top">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="brass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F7D98A"/><stop offset=".45" stop-color="#E9A63A"/><stop offset="1" stop-color="#8A5A14"/></linearGradient>
+    <symbol id="bowl" viewBox="0 0 200 150"><path class="ill-body" d="M12 58c4 52 40 84 88 84s84-32 88-84z"/><path class="ill-band" d="M30 98c18 20 42 28 70 28s52-8 70-28"/><ellipse class="ill-food" cx="100" cy="58" rx="88" ry="22"/><path class="ill-swirl" d="M66 58c10-9 26-9 34 0s24 9 34 0"/><circle class="ill-leaf" cx="126" cy="50" r="5"/><circle class="ill-leaf" cx="78" cy="66" r="4"/><circle class="ill-leaf" cx="146" cy="62" r="3.5"/><ellipse class="ill-rim" cx="100" cy="58" rx="88" ry="22"/></symbol>
+    <symbol id="kulhad" viewBox="0 0 200 150"><path class="ill-body" d="M46 30h108l-14 104c-2 9-18 14-40 14s-38-5-40-14z"/><path class="ill-band" d="M58 84h84"/><ellipse class="ill-chai" cx="100" cy="30" rx="54" ry="12"/><ellipse class="ill-rim" cx="100" cy="30" rx="54" ry="12"/></symbol>
+    <symbol id="handi" viewBox="0 0 200 150"><path class="ill-rice" d="M48 52c6-34 98-34 104 0z"/><circle class="ill-leaf" cx="86" cy="36" r="4"/><circle class="ill-food" cx="112" cy="32" r="4.5"/><circle class="ill-leaf" cx="128" cy="44" r="3.5"/><path class="ill-body" d="M34 60c-16 12-22 30-16 48 8 24 42 38 82 38s74-14 82-38c6-18 0-36-16-48z"/><rect class="ill-body" x="38" y="48" width="124" height="16" rx="8"/><path class="ill-band" d="M30 104h140"/></symbol>
+    <symbol id="motif" viewBox="-50 -50 100 100"><g fill="none" stroke="currentColor" stroke-width="2.4"><circle r="12"/><circle r="40"/><path d="M0-40C10-26 10-14 0-12C-10-14-10-26 0-40ZM0 40C10 26 10 14 0 12C-10 14-10 26 0 40ZM-40 0C-26 10-14 10-12 0C-14-10-26-10-40 0ZM40 0C26 10 14 10 12 0C14-10 26-10 40 0Z"/></g></symbol>
+    <symbol id="star" viewBox="-12 -12 24 24"><path d="M0-12C1.6-2.4 2.4-1.6 12 0C2.4 1.6 1.6 2.4 0 12C-1.6 2.4-2.4 1.6-12 0C-2.4-1.6-1.6-2.4 0-12Z"/></symbol>
+  </defs>
+</svg>
+
+<header class="site-head" data-header="60">
+  <a class="brand" href="#top" data-shrink aria-label="Curry District Motion Kit — back to top">
+    <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="var(--c-primary)" stroke="var(--c-dark)" stroke-width="2.5"/><path d="M8 21h24c-1 7-6 11-12 11S9 28 8 21z" fill="var(--c-dark)"/><path d="M14 16c0-3 3-3 3-6M20 16c0-3 3-3 3-6M26 16c0-3 3-3 3-6" fill="none" stroke="var(--c-dark)" stroke-width="2" stroke-linecap="round"/></svg>
+    <span><b>Curry District</b><small>Motion kit</small></span>
+  </a>
+  <div class="seg" role="group" aria-label="Brand direction">
+    <button type="button" data-set="bazaar" aria-pressed="true">Bazaar</button>
+    <button type="button" data-set="royal" aria-pressed="false">Royal</button>
+  </div>
+  <div class="progress" data-progress aria-hidden="true"></div>
+</header>
+
+<main>
+  <section class="hero" data-particles="auto" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow" data-reveal="fade">Brand Glow-Up · Motion kit v1.0</p>
+        <h1 id="hero-title"><span data-wave="loop">Swaad,</span><br><span class="shimmer foil-text">in motion.</span></h1>
+        <p class="lede" data-reveal data-delay="250">One small, dependency-free kit — petals, steam, embers, pop-ins and page curtains — that re-skins between Bazaar and Royal with a single attribute.</p>
+        <div class="cta" data-reveal data-delay="380">
+          <button class="btn" type="button" data-burst data-ripple data-press data-magnetic>Shower some petals</button>
+          <a class="btn btn-ghost" href="#contents" data-ripple data-press>Tour the kit ↓</a>
+        </div>
+      </div>
+      <div class="hero-art" data-reveal="pop" data-delay="200">
+        <div class="bowl m-float" data-steam="5"><svg class="ill" viewBox="0 0 200 150" aria-hidden="true"><use href="#bowl"/></svg></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker" data-marquee="70" aria-label="Menu districts">
+    <span>Starters Square</span><span class="dot" aria-hidden="true">✺</span><span>Tandoor Quarter</span><span class="dot" aria-hidden="true">✺</span><span>Curry Quarter</span><span class="dot" aria-hidden="true">✺</span><span>Biryani Boulevard</span><span class="dot" aria-hidden="true">✺</span><span>Indo-Chinese Alley</span><span class="dot" aria-hidden="true">✺</span><span>Bread Bazaar</span><span class="dot" aria-hidden="true">✺</span><span>Sweet Street</span><span class="dot" aria-hidden="true">✺</span><span>Chai &amp; Coolers</span><span class="dot" aria-hidden="true">✺</span>
+  </div>
+
+  <section id="contents" class="sec" aria-labelledby="contents-title">
+    <div class="wrap">
+      <div class="sec-head"><span class="num" aria-hidden="true">✦</span><div><h2 id="contents-title">What's in the kit</h2><p>Every link below is a smooth anchor (component 12) — focus moves with the scroll, the URL hash updates, and nothing breaks without JavaScript.</p></div></div>
+      <ol class="toc" data-stagger="up 50">
+        <li><a href="#reveal"><span>01</span>Scroll reveal</a></li>
+        <li><a href="#ticker"><span>02</span>Ticker</a></li>
+        <li><a href="#steam"><span>03</span>Steam</a></li>
+        <li><a href="#particles"><span>04</span>Particles</a></li>
+        <li><a href="#burst"><span>05</span>Tap burst</a></li>
+        <li><a href="#tilt"><span>06</span>Tilt cards</a></li>
+        <li><a href="#buttons"><span>07</span>Buttons</a></li>
+        <li><a href="#numbers"><span>08</span>Count-up</a></li>
+        <li><a href="#header-demo"><span>09</span>Header</a></li>
+        <li><a href="#type"><span>10</span>Text effects</a></li>
+        <li><a href="#transitions"><span>11</span>Transitions</a></li>
+        <li><a href="#utilities"><span>✦</span>Utilities</a></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="reveal" class="sec" aria-labelledby="reveal-title">
+    <div class="wrap">
+      <div class="sec-head"><span class="num" aria-hidden="true">01</span><div><h2 id="reveal-title">Scroll reveal</h2><p>Dishes arrive like a good thali — one katori at a time. Bazaar springs in; Royal glides.</p></div></div>
+      <div class="grid g5">
+        <div class="tile t1" data-reveal="up">up</div>
+        <div class="tile t2" data-reveal="left" data-delay="80">left</div>
+        <div class="tile t3" data-reveal="right" data-delay="160">right</div>
+        <div class="tile t4" data-reveal="zoom" data-delay="240">zoom</div>
+        <div class="tile t5" data-reveal="pop" data-delay="320">pop</div>
+      </div>
+      <ul class="zones" data-stagger="pop 70" aria-label="Menu districts">
+        <li>Starters Square</li><li>Tandoor Quarter</li><li>Curry Quarter</li><li>Biryani Boulevard</li><li>Indo-Chinese Alley</li><li>Bread Bazaar</li><li>Sweet Street</li><li>Chai &amp; Coolers</li>
+      </ul>
+<pre class="code"><code>&lt;div data-reveal="pop" data-delay="120"&gt;…&lt;/div&gt;   &lt;!-- up | left | right | zoom | pop | fade --&gt;
+&lt;ul data-stagger="pop 70"&gt;&lt;li&gt;…&lt;/li&gt;&lt;/ul&gt;      &lt;!-- children reveal 70ms apart --&gt;</code></pre>
+    </div>
+  </section>
+
+  <section id="ticker" class="sec" aria-labelledby="ticker-title">
+    <div class="wrap">
+      <div class="sec-head"><span class="num" aria-hidden="true">02</span><div><h2 id="ticker-title">Marquee ticker</h2><p>Seamless at any width. Pauses on hover and keyboard focus, and on tap for touch screens. Reduced motion turns it into a swipeable strip.</p></div></div>
+    </div>
+    <div class="ticker alt" data-marquee="55 right" aria-label="Crowd favourites">
+      <span>Butter Chicken</span><span class="dot" aria-hidden="true">•</span><span>Chicken Tikka Masala</span><span class="dot" aria-hidden="true">•</span><span>Garlic Naan</span><span class="dot" aria-hidden="true">•</span><span>Tandoori Chicken</span><span class="dot" aria-hidden="true">•</span><span>Chicken Vindaloo</span><span class="dot" aria-hidden="true">•</span><span>Bas, ek aur naan</span><span class="dot" aria-hidden="true">•</span>
+    </div>
+    <div class="wrap">
+      <p class="note">Tap the strip to pause or resume it.</p>
+<pre class="code"><code>&lt;div data-marquee="60"&gt;…items…&lt;/div&gt;        &lt;!-- px per second --&gt;
+&lt;div data-marquee="55 right"&gt;…items…&lt;/div&gt;  &lt;!-- reverse direction --&gt;</code></pre>
+    </div>
+  </section>
+
+  <section id="steam" class="sec" aria-labelledby="steam-title">
+    <div class="wrap">
+      <div class="sec-head"><span class="num" aria-hidden="true">03</span><div><h2 id="steam-title">Steam wisps</h2><p>Put <code>data-steam</code> on any wrapper and translucent wisps curl up from it. Pure CSS loops, paused when offscreen.</p></div></div>
+      <div class="grid g3">
+        <div class="dark steam-tile" data-reveal="up"><div data-steam="4"><svg class="ill" viewBox="0 0 200 150" aria-hidden="true"><use href="#bowl"/></svg></div><p>Curry Quarter</p></div>
+        <div class="dark steam-tile" data-reveal="up" data-delay="100"><div data-steam="3" style="--m-steam-y:80%"><svg class="ill" viewBox="0 0 200 150" aria-hidden="true"><use href="#kulhad"/></svg></div><p>Chai &amp; Coolers</p></div>
+        <div class="dark steam-tile" data-reveal="up" data-delay="200"><div data-steam="5"><svg class="ill" viewBox="0 0 200 150" aria-hidden="true"><use href="#handi"/></svg></div><p>Biryani Boulevard</p></div>
+      </div>
+<pre class="code"><code>&lt;div data-steam="4"&gt;&lt;img src="bowl.svg" alt=""&gt;&lt;/div&gt;   // or Motion.steam(el, 4)</code></pre>
+    </div>
+  </section>
+
+  <section id="particles" class="sec" aria-labelledby="particles-title">
+    <div class="wrap">
+      <div class="sec-head"><span class="num" aria-hidden="true">04</span><div><h2 id="particles-title">Petals, spice &amp; embers</h2><p>One canvas per host, sized to its parent and DPR-aware. Counts are capped by screen size, and drawing stops offscreen, in background tabs and for reduced motion.</p></div></div>
+      <div class="grid g3">
+        <div class="pbox petals" data-particles="petals" data-reveal="up"><div><h3>Petals</h3><p>Marigold genda, fluttering down</p></div></div>
+        <div class="pbox spice" data-particles="spice" data-reveal="up" data-delay="100"><div><h3>Spice</h3><p>Haldi &amp; mirchi dust, drifting up</p></div></div>
+        <div class="pbox embers" data-particles="embers" data-reveal="up" data-delay="200"><div><h3>Embers</h3><p>Tandoor sparks with a glow</p></div></div>
+      </div>
+<pre class="code"><code>&lt;section data-particles="petals"&gt;…&lt;/section&gt;   &lt;!-- petals | spice | embers | auto (theme default) --&gt;</code></pre>
+    </div>
+  </section>
+
+  <section id="burst" class="sec" aria-labelledby="burst-title">
+    <div class="wrap">
+      <div class="sec-head"><span class="num" aria-hidden="true">05</span><div><h2 id="burst-title">Tap burst</h2><p>A small celebration on every tap: marigold petals in Bazaar, gold-leaf flakes in Royal. It also works from the keyboard.</p></div></div>
+      <div class="card burst-stage" data-reveal="zoom">
+        <button class="btn big-btn m-pulse-ring" type="button" data-burst="24" data-press>Order up!</button>
+        <p class="accent" style="font-size:22px">go on, tap it twice</p>
+      </div>
+<pre class="code"><code>&lt;button data-burst&gt;Order up!&lt;/button&gt;      // or Motion.burst(x, y, sourceEl)</code></pre>
+    </div>
+  </section>
+
+  <section id="tilt" class="sec" aria-labelledby="tilt-title">
+    <div class="wrap">
+      <div class="sec-head"><span class="num" aria-hidden="true">06</span><div><h2 id="tilt-title">Tilt &amp; depth cards</h2><p>Cards lean toward the pointer, or the finger while pressed. Layers marked <code>data-depth</code> drift for parallax and a soft glare follows along. Gyro tilt is off by design, so iOS never shows a permission prompt.</p></div></div>
+      <div class="grid g3">
+        <div data-reveal="up"><article class="tcard tc1" data-tilt><svg class="motif" data-depth="1" aria-hidden="true"><use href="#motif"/></svg><span class="sticker" data-depth="3">Smoky</span><h3 data-depth="2">Tandoor Quarter</h3><p data-depth="1">Kababs and breads from the clay oven.</p></article></div>
+        <div data-reveal="up" data-delay="100"><article class="tcard tc2" data-tilt><svg class="motif" data-depth="1" aria-hidden="true"><use href="#motif"/></svg><span class="sticker" data-depth="3">Slow-simmered</span><h3 data-depth="2">Curry Quarter</h3><p data-depth="1">Makhani, masala, vindaloo and more.</p></article></div>
+        <div data-reveal="up" data-delay="200"><article class="tcard tc3" data-tilt><svg class="motif" data-depth="1" aria-hidden="true"><use href="#motif"/></svg><span class="sticker" data-depth="3">Layered</span><h3 data-depth="2">Biryani Boulevard</h3><p data-depth="1">Biryani and pulao, sealed and steamed.</p></article></div>
+      </div>
+<pre class="code"><code>&lt;article data-tilt="10"&gt;&lt;h3 data-depth="2"&gt;…&lt;/h3&gt;&lt;span data-depth="3"&gt;…&lt;/span&gt;&lt;/article&gt;</code></pre>
+    </div>
+  </section>
+
+  <section id="buttons" class="sec" aria-labelledby="buttons-title">
+    <div class="wrap">
+      <div class="sec-head"><span class="num" aria-hidden="true">07</span><div><h2 id="buttons-title">Magnetic, pressable, ripple</h2><p>Mix and match. The buttons use the individual <code>translate</code> and <code>scale</code> properties, so they never fight your own transforms.</p></div></div>
+      <div class="btn-row" data-stagger="pop 80">
+        <span><button class="btn" type="button" data-magnetic>Magnetic</button></span>
+        <span><button class="btn btn-ghost" type="button" data-press>Pressable</button></span>
+        <span><button class="btn btn-ghost" type="button" data-ripple>Ripple</button></span>
+        <span><button class="btn" type="button" data-magnetic=".5" data-press data-ripple data-burst>All of it</button></span>
+      </div>
+<pre class="code"><code>&lt;button data-magnetic=".35" data-press data-ripple&gt;Order now&lt;/button&gt;</code></pre>
+    </div>
+  </section>
+
+  <section id="numbers" class="sec" aria-labelledby="numbers-title">
+    <div class="wrap">
+      <div class="sec-head"><span class="num" aria-hidden="true">08</span><div><h2 id="numbers-title">Count-up numbers</h2><p>Write the real number in the HTML and the kit counts up to it once in view. Screen readers only ever hear the final value.</p></div></div>
+      <div class="grid g4">
+        <div class="card stat" data-reveal="up"><b data-count>8</b><span>menu districts</span></div>
+        <div class="card stat" data-reveal="up" data-delay="80"><b data-count>5</b><span>steps on the spice scale</span></div>
+        <div class="card stat" data-reveal="up" data-delay="160"><b data-count>11851</b><span>FM 423, Suite 200, Little Elm</span></div>
+        <div class="card stat" data-reveal="up" data-delay="240"><b data-count>2</b><span>brand directions, one kit</span></div>
+      </div>
+<pre class="code"><code>&lt;b data-count&gt;11851&lt;/b&gt;   &lt;b data-count data-duration="2400"&gt;1,200+&lt;/b&gt;</code></pre>
+    </div>
+  </section>
+
+  <section id="header-demo" class="sec" aria-labelledby="header-title">
+    <div class="wrap">
+      <div class="sec-head"><span class="num" aria-hidden="true">09</span><div><h2 id="header-title">Sticky header &amp; progress</h2><p>Look up. Past 60px the header tucks in and gains its backdrop, and the bar under it tracks how far you've read. It's all transforms: no height animation and no layout work.</p></div></div>
+<pre class="code"><code>&lt;header data-header="60"&gt;
+  &lt;a data-shrink&gt;Logo&lt;/a&gt; … &lt;div data-progress&gt;&lt;/div&gt;
+&lt;/header&gt;</code></pre>
+    </div>
+  </section>
+
+  <section id="type" class="sec" aria-labelledby="type-title">
+    <div class="wrap">
+      <div class="sec-head"><span class="num" aria-hidden="true">10</span><div><h2 id="type-title">Text effects</h2><p>A split-letter wave, a foil shimmer sweep and a highlighter that draws itself in.</p></div></div>
+      <div class="type-row"><p class="label">data-wave="loop"</p><p class="disp big-type" data-wave="loop">Bas, ek aur naan.</p></div>
+      <div class="type-row"><p class="label">.shimmer + .foil-text</p><div class="dark foil-panel"><p class="disp"><span class="shimmer foil-text">Saffron-gold foil</span></p></div></div>
+      <div class="type-row"><p class="label">.draw-underline</p><p class="quote">Butter chicken so good it needs <span class="draw-underline">its own zip code.</span></p></div>
+<pre class="code"><code>&lt;h2 data-wave&gt;Chai-lo&lt;/h2&gt;  &lt;!-- data-wave="loop" keeps waving --&gt;
+&lt;span class="shimmer foil-text"&gt;Royal&lt;/span&gt;   &lt;mark class="draw-underline"&gt;zip code&lt;/mark&gt;</code></pre>
+    </div>
+  </section>
+
+  <section id="transitions" class="sec" aria-labelledby="transitions-title">
+    <div class="wrap">
+      <div class="sec-head"><span class="num" aria-hidden="true">11</span><div><h2 id="transitions-title">Curtain &amp; arch wipe</h2><p>Bazaar draws a bright curtain and Royal raises a mihrab arch. It works between sections and between pages on the same site. Plain links behave normally, and new-tab or modified clicks are never intercepted.</p></div></div>
+      <div class="link-list">
+        <a class="btn" href="#numbers" data-transition="arch">Arch wipe → Count-up <small>same page</small></a>
+        <a class="btn" href="#utilities" data-transition="curtain">Curtain → Utilities <small>same page</small></a>
+        <a class="btn btn-ghost" href="demo.html?visit=2#transitions" data-transition>Theme default → reload <small>cross-page</small></a>
+        <a class="btn btn-ghost" href="#type">Plain anchor <small>smooth scroll only</small></a>
+      </div>
+<pre class="code"><code>&lt;a href="/menu.html" data-transition&gt;Menu&lt;/a&gt;            &lt;!-- theme default --&gt;
+&lt;nav data-transition="arch"&gt;…all links inside…&lt;/nav&gt;    &lt;!-- curtain | arch --&gt;</code></pre>
+    </div>
+  </section>
+
+  <section id="utilities" class="sec" aria-labelledby="utilities-title">
+    <div class="wrap">
+      <div class="sec-head"><span class="num" aria-hidden="true">✦</span><div><h2 id="utilities-title">Keyframe utilities</h2><p>Drop-in classes for stickers, diyas, garlands and sparkles. They pause offscreen and stop for reduced motion.</p></div></div>
+      <div class="grid g4">
+        <div class="card util"><span class="disc m-wobble">District<br>Hot</span><code>.m-wobble</code></div>
+        <div class="card util"><svg class="m-float" viewBox="0 0 200 150" width="110" aria-hidden="true"><use href="#bowl"/></svg><code>.m-float</code></div>
+        <div class="card util"><button class="pill m-pulse-ring" type="button" data-burst="12">Tap</button><code>.m-pulse-ring</code></div>
+        <div class="card util"><button class="disc m-bounce-in replay" type="button" aria-label="Replay bounce">Swaad!</button><code>.m-bounce-in</code></div>
+        <div class="card util"><svg class="m-spin-slow" viewBox="-50 -50 100 100" width="88" aria-hidden="true"><g fill="var(--c-secondary)"><ellipse rx="7" ry="16" transform="translate(0,-26)"/><ellipse rx="7" ry="16" transform="rotate(45) translate(0,-26)"/><ellipse rx="7" ry="16" transform="rotate(90) translate(0,-26)"/><ellipse rx="7" ry="16" transform="rotate(135) translate(0,-26)"/><ellipse rx="7" ry="16" transform="rotate(180) translate(0,-26)"/><ellipse rx="7" ry="16" transform="rotate(225) translate(0,-26)"/><ellipse rx="7" ry="16" transform="rotate(270) translate(0,-26)"/><ellipse rx="7" ry="16" transform="rotate(315) translate(0,-26)"/></g><g fill="var(--c-quaternary)"><circle r="5" transform="rotate(22.5) translate(0,-44)"/><circle r="5" transform="rotate(67.5) translate(0,-44)"/><circle r="5" transform="rotate(112.5) translate(0,-44)"/><circle r="5" transform="rotate(157.5) translate(0,-44)"/><circle r="5" transform="rotate(202.5) translate(0,-44)"/><circle r="5" transform="rotate(247.5) translate(0,-44)"/><circle r="5" transform="rotate(292.5) translate(0,-44)"/><circle r="5" transform="rotate(337.5) translate(0,-44)"/></g><circle r="11" fill="var(--c-primary)"/><circle r="5" fill="var(--c-dark)"/></svg><code>.m-spin-slow</code></div>
+        <div class="card util"><span class="neon m-flicker">CHAI</span><code>.m-flicker</code></div>
+        <div class="card util"><svg class="garland m-sway" viewBox="0 0 40 100" aria-hidden="true"><path d="M20 0v84" stroke="var(--c-good)" stroke-width="2"/><g stroke="var(--c-dark)" stroke-width="1.5"><circle cx="20" cy="14" r="8" fill="var(--c-quaternary)"/><circle cx="20" cy="32" r="8" fill="var(--c-primary)"/><circle cx="20" cy="50" r="8" fill="var(--c-quaternary)"/><circle cx="20" cy="68" r="8" fill="var(--c-primary)"/></g><path d="M20 78c-6 6-6 14 0 20 6-6 6-14 0-20z" fill="var(--c-good)"/></svg><code>.m-sway</code></div>
+        <div class="card util"><span class="spark" aria-hidden="true"><svg class="m-twinkle"><use href="#star"/></svg><svg class="m-twinkle" style="animation-delay:-.8s"><use href="#star"/></svg><svg class="m-twinkle" style="animation-delay:-1.6s"><use href="#star"/></svg></span><code>.m-twinkle</code></div>
+      </div>
+<pre class="code"><code>.m-wobble .m-float .m-pulse-ring .m-bounce-in .m-spin-slow .m-flicker .m-sway .m-twinkle</code></pre>
+    </div>
+  </section>
+
+  <section id="api" class="sec" aria-labelledby="api-title">
+    <div class="wrap">
+      <div class="sec-head"><span class="num" aria-hidden="true">{ }</span><div><h2 id="api-title">Init &amp; destroy</h2><p>It auto-starts on DOMContentLoaded. <code>Motion.destroy()</code> removes every listener, observer, canvas and injected node and restores the original markup. <code>Motion.init()</code> brings it all back and also wires up any markup added since.</p></div></div>
+      <div class="api-row">
+        <button class="btn btn-ghost" type="button" id="kill" data-press>Motion.destroy()</button>
+        <button class="btn" type="button" id="revive" data-press>Motion.init()</button>
+        <span class="status" id="status" role="status" aria-live="polite">Kit running.</span>
+      </div>
+<pre class="code"><code>&lt;script src="motion.min.js" defer&gt;&lt;/script&gt;           // auto-init
+&lt;script src="motion.min.js" defer data-manual&gt;&lt;/script&gt; // then Motion.init()</code></pre>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Independent design concept prepared as a proposal — not the official Curry District website.</p>
+    <p>Curry District · 11851 FM 423, Suite 200, Little Elm, TX 75068 · Motion kit: motion.min.js + motion.css · <a href="#top">Back to top ↑</a></p>
+  </div>
+</footer>
+
+<script>
+/* demo controls only */
+(function () {
+  var h = document.documentElement, btns = document.querySelectorAll('.seg button');
+  function sync() {
+    var t = h.getAttribute('data-theme');
+    btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-set') === t)); });
+  }
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var t = b.getAttribute('data-set');
+      h.setAttribute('data-theme', t);
+      try { localStorage.setItem('cd-motion-theme', t); } catch (e) {}
+      sync();
+    });
+  });
+  sync();
+  var st = document.getElementById('status');
+  document.getElementById('kill').addEventListener('click', function () { if (window.Motion) { Motion.destroy(); st.textContent = 'Destroyed: plain page, nothing animating.'; } });
+  document.getElementById('revive').addEventListener('click', function () { if (window.Motion) { Motion.init(); st.textContent = 'Kit running.'; } });
+  document.querySelectorAll('.replay').forEach(function (b) {
+    b.addEventListener('click', function () { b.classList.remove('m-bounce-in'); void b.offsetWidth; b.classList.add('m-bounce-in'); });
+  });
+})();
+</script>
+</body>
+</html>

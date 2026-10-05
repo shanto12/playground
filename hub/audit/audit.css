@@ -252,11 +252,12 @@ html.js [data-reveal].is-in .au-plot__pos{transform:translateX(var(--x));opacity
 /* ───────── 06 · Quick wins checklist ───────── */
 .hub .au-wins{position:relative}
 .hub .au-wins__bar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin-bottom:14px;padding:12px 14px 12px 18px;border-radius:20px;background:rgba(255,244,220,.05);border:1px solid var(--hub-line)}
-.hub .au-wins__count{margin:0;white-space:nowrap;font-weight:600;font-size:.9375rem;color:var(--hub-soft)}
+.hub .au-wins__count{flex:1;margin:0;white-space:nowrap;font-weight:600;font-size:.9375rem;color:var(--hub-soft)}
 .hub .au-wins__count b{margin-right:2px;font:700 1.45rem/1 var(--hub-font-body);color:var(--hub-text);font-variant-numeric:tabular-nums}
-.hub .au-wins__meter{position:relative;flex:1 1 120px;height:10px;border-radius:var(--hub-pill);overflow:hidden;background:rgba(255,244,220,.09)}
+.hub .au-wins__meter{position:relative;order:3;flex:1 1 100%;height:10px;border-radius:var(--hub-pill);overflow:hidden;background:rgba(255,244,220,.09)}
 .hub .au-wins__meter span{position:absolute;inset:0;background:var(--g-bazaar);transform-origin:left center;transform:scaleX(var(--p,0));transition:transform .7s var(--hub-spring)}
-.hub .au-wins__reset{min-height:44px}
+.hub .au-wins__reset{min-height:44px;padding-inline:18px}
+@media (min-width:600px){.hub .au-wins__count{flex:none}.hub .au-wins__meter{order:0;flex:1 1 160px}}
 .hub .au-wins.is-complete .au-wins__bar{border-color:rgba(255,176,0,.5);background:rgba(255,176,0,.08)}
 
 .hub .au-wins__list{display:grid;gap:10px;margin:0;padding:0;list-style:none}
@@ -272,12 +273,12 @@ html.js [data-reveal].is-in .au-plot__pos{transform:translateX(var(--x));opacity
 .hub .au-win input:checked + .au-win__box svg{transform:none}
 .hub .au-win input:focus-visible + .au-win__box{outline:2px solid var(--hub-marigold);outline-offset:3px}
 .hub .au-win__body{display:grid;gap:6px;min-width:0}
-.hub .au-win__title{display:flex;align-items:baseline;gap:8px;font:700 1.0938rem/1.25 var(--hub-font-display);color:var(--hub-text);text-decoration-thickness:2px;text-decoration-color:rgba(255,176,0,.75)}
+.hub .au-win__title{display:flex;align-items:baseline;gap:8px;font:700 1.0938rem/1.25 var(--hub-font-display);color:var(--hub-text);text-decoration-thickness:1.5px;text-decoration-color:rgba(255,176,0,.65)}
 .hub .au-win__n{flex:none;font:700 .8125rem/1 var(--hub-font-body);color:var(--hub-t-gold);font-variant-numeric:tabular-nums}
 .hub .au-win__desc{font-size:.9063rem;line-height:1.48;color:var(--hub-soft)}
 .hub .au-win__tag{justify-self:start;padding:5px 9px;border-radius:var(--hub-pill);background:rgba(0,168,160,.13);border:1px solid rgba(0,168,160,.38);font:700 .6563rem/1 var(--hub-font-body);letter-spacing:.12em;text-transform:uppercase;color:var(--hub-t-peacock)}
 .hub .au-win.is-done{border-color:rgba(255,176,0,.45);background:linear-gradient(180deg,rgba(255,176,0,.09),rgba(255,176,0,.03))}
-.hub .au-win.is-done .au-win__title{text-decoration-line:line-through}
+.hub .au-win.is-done .au-win__title{text-decoration-line:line-through;color:var(--hub-soft)}
 .hub .au-win.is-done .au-win__desc{color:var(--hub-muted)}
 
 /* marigold petal burst (JS-spawned, skipped for reduced motion) */
