@@ -277,7 +277,7 @@
     stage.addEventListener('pointermove', function (e) {
       if (!drag || e.pointerId !== drag.id) return;
       var dx = e.clientX - drag.x, dy = e.clientY - drag.y; drag.x = e.clientX; drag.y = e.clientY;
-      st.ry += dx * 0.55; st.rx = clamp(st.rx - dy * 0.4, -88, 18); st.vx = dx * 0.55;
+      st.ry += dx * 0.55; st.rx = clamp(st.rx - dy * 0.4, -88, 18); st.vx = clamp(dx * 0.3, -12, 12);
     });
     function up(e) {
       if (!drag || (e && e.pointerId !== drag.id)) return;

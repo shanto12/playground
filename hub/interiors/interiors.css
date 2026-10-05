@@ -48,6 +48,7 @@
 .wall__img .wall__badge{position:absolute;left:10px;top:10px}
 .wall__body{display:flex;flex-direction:column;gap:12px;padding:16px 16px 18px;flex:1}
 .wall__name{font:700 1.375rem/1.1 var(--hub-font-display);letter-spacing:-.02em;margin:0}
+.wall__name{min-height:2.2em}
 .wall__name em{font-style:italic;font-weight:400}
 .wall__wp{margin:0;font-size:.9375rem;color:var(--hub-text)}
 .wall__wp span{display:block;font:700 .6875rem/1 var(--hub-font-body);letter-spacing:.12em;text-transform:uppercase;color:var(--hub-muted);margin-bottom:4px}
