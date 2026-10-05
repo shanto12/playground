@@ -207,12 +207,14 @@
       P.push({ g, x0: R() * W, y0: R() * H, vx: (R() - 0.5), vy: R(), sz: (opt.size || 18) * (0.6 + R() * 0.8), spin: (R() - 0.5) * 720, ph: R(), sway: 20 + R() * 40 });
     }
     return {
+      svg,
       burstAt(t, ox, oy) { // ballistic from (ox, oy), t local
         P.forEach(p => {
           if (t < 0 || t > 2.6) { p.g.setAttribute('opacity', 0); return; }
           const sp = 900 + p.vy * 900, a = -Math.PI / 2 + p.vx * 2.6;
-          const x = ox + Math.cos(a) * sp * t * 0.9 + Math.sin((t + p.ph) * 6) * p.sway * 0.5;
-          const y = oy + Math.sin(a) * sp * t + 0.5 * 2600 * t * t * 0.55;
+          const r0 = (opt.spread || 90) * p.ph;
+          const x = ox + Math.cos(a) * (sp * t * 0.9 + r0) + Math.sin((t + p.ph) * 6) * p.sway * 0.5;
+          const y = oy + Math.sin(a) * (sp * t + r0) + 0.5 * 2600 * t * t * 0.55;
           const drag = Math.min(1, t * 1.2);
           p.g.setAttribute('opacity', t > 2.1 ? 1 - (t - 2.1) / 0.5 : 1);
           p.g.setAttribute('transform', 'translate(' + x.toFixed(1) + ' ' + y.toFixed(1) + ') rotate(' + (p.spin * t + p.ph * 360).toFixed(1) + ') scale(' + (p.sz * (0.85 + 0.15 * Math.cos(t * 9 + p.ph * 6))).toFixed(2) + ',' + (p.sz * (0.6 + 0.4 * Math.cos(t * 7 + p.ph * 9) * (1 - drag * 0.3))).toFixed(2) + ')');
@@ -376,6 +378,24 @@
 
   /* ── helpers for loops ── */
   const osc = (t, period, phase) => Math.sin(TAU * (t / period + (phase || 0)));
+  // shrink an element's font-size until its width fits maxW (layout-time only)
+  function fit(e, maxW) {
+    let fs = parseFloat(getComputedStyle(e).fontSize);
+    for (let i = 0; i < 40 && e.scrollWidth > maxW; i++) { fs *= 0.96; e.style.fontSize = fs.toFixed(1) + 'px'; }
+    return fs;
+  }
+  // scalloped "rangoli plate" disc
+  function scallopSVG(R, n, bump, fillOuter, fillInner, ring, sw) {
+    let sc = '';
+    for (let k = 0; k < n; k++) { const a = k / n * TAU; sc += '<circle cx="' + (Math.cos(a) * R).toFixed(1) + '" cy="' + (Math.sin(a) * R).toFixed(1) + '" r="' + bump + '"/>'; }
+    const S = R + bump + 30;
+    sw = sw || 7;
+    return '<svg viewBox="' + (-S) + ' ' + (-S) + ' ' + 2 * S + ' ' + 2 * S + '" width="100%" height="100%" aria-hidden="true">' +
+      '<g transform="translate(14 14)" fill="#1D1147">' + sc + '<circle r="' + R + '"/></g>' +
+      '<g fill="' + fillOuter + '" stroke="#1D1147" stroke-width="' + sw + '">' + sc + '</g><circle r="' + (R + 2) + '" fill="' + fillOuter + '"/>' +
+      '<circle r="' + (R - bump * 0.6) + '" fill="' + fillInner + '" stroke="#1D1147" stroke-width="' + sw + '"/>' +
+      (ring ? '<circle r="' + (R - bump * 1.15) + '" fill="none" stroke="' + ring + '" stroke-width="6" stroke-dasharray="2 22" stroke-linecap="round"/>' : '') + '</svg>';
+  }
 
-  w.M = { TAU, C, clamp, seg, lerp, mod, E, K, rng, mix, h, s, box, T, ST, sunburstSVG, STAR4, PETAL, steamOf, steamAt, sparklesOf, sparkleAt, Dish, Burst, Petals, Bunting, Logo, osc, pathsOf, pathMarkup };
+  w.M = { TAU, C, clamp, seg, lerp, mod, E, K, rng, mix, h, s, box, T, ST, sunburstSVG, STAR4, PETAL, steamOf, steamAt, sparklesOf, sparkleAt, Dish, Burst, Petals, Bunting, Logo, osc, pathsOf, pathMarkup, fit, scallopSVG };
 })(window);

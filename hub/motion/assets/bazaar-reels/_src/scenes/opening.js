@@ -11,6 +11,7 @@
   const petalsA = Petals(A1, W, H, 64, 11, { size: 26 });
   const bunt = Bunting(A1, W, 372, 46, 11, { flagW: 74, flagH: 92 });
   const logoA = Logo(A1, { layout: 'stacked', cx: 540, cy: 990, scale: 1.42 });
+  A1.insertBefore(petalsA.svg, logoA.root);
   const hookA = h('div', { class: 'abs', style: { left: '0', top: '150px', width: W + 'px', textAlign: 'center' } }, A1,
     '<div class="hand" style="font-size:84px;color:#E4147E;transform:rotate(-3deg)">Bhookh lagi hai?</div>' +
     '<div class="disp" style="font-size:66px;color:#FFB000;--sw:13px;--sh:7px;margin-top:4px">Follow the steam.</div>');
@@ -53,12 +54,12 @@
     const tag = h('div', { class: 'abs', style: { left: '0', top: '1500px', width: W + 'px', display: 'flex', justifyContent: 'center' } }, sl,
       '<div class="plate" style="background:#FFF4DC;padding:6px 30px 12px;border-radius:16px;display:flex;align-items:center;gap:16px">' +
       '<span class="hand" style="font-size:62px;color:#1D1147">' + d.item + '</span>' +
-      (pop(d.item) ? '<span class="body" style="font-weight:800;font-size:24px;letter-spacing:.08em;background:#E4147E;color:#FFF4DC;border:4px solid #1D1147;border-radius:999px;padding:6px 14px 5px">FAN FAVE</span>' : '') + '</div>');
+      (pop(d.item) ? '<span class="body" style="font-weight:800;font-size:24px;letter-spacing:.08em;background:#E4147E;color:#FFF4DC;border:4px solid #1D1147;border-radius:999px;padding:6px 14px 5px">POPULAR</span>' : '') + '</div>');
     return { sl, rays, disc, dish, burst, sign: sign.firstChild, tag: tag.firstChild, d, t0: T0 + i * P };
   });
   // route map header (persistent through the parade)
   const route = h('div', { class: 'abs plate', style: { left: '120px', top: '168px', width: '840px', height: '128px', background: C.cream, borderRadius: '64px' } }, B);
-  h('div', { class: 'abs disp', style: { left: '0', top: '14px', width: '100%', textAlign: 'center', fontSize: '30px', color: C.ink, WebkitTextStroke: '0', textShadow: 'none', letterSpacing: '.06em' } }, route, 'The District tour');
+  h('div', { class: 'abs disp', style: { left: '0', top: '10px', width: '100%', textAlign: 'center', fontSize: '34px', color: C.ink, WebkitTextStroke: '0', textShadow: 'none', letterSpacing: '.06em' } }, route, 'The District tour');
   const rl = h('div', { class: 'abs', style: { left: '70px', top: '74px', width: '688px', height: '0', borderTop: '6px dashed #1D1147' } }, route);
   const stops = DISHES.map((d, i) => h('div', { class: 'abs', style: { left: (70 + i * 137.6 - 17) + 'px', top: '60px', width: '34px', height: '34px', borderRadius: '50%', border: '6px solid #1D1147', background: C.cream } }, route));
 
@@ -89,9 +90,9 @@
   const D = h('div', { class: 'fill' }, st);
   D.style.background = C.rani;
   const raysD = box(D, 540, 780, 2800, 2800, '', sunburstSVG(32, 'rgba(255,255,255,0)', 'rgba(255,176,0,.22)', 1400));
-  const petalsD = Petals(D, W, H, 30, 23, { size: 18, colors: [C.marigold, C.saffron, C.cream, C.marigold] });
-  const logoD = Logo(D, { layout: 'stacked', cx: 540, cy: 760, scale: 1.12 });
-  const tagD = h('div', { class: 'abs body', style: { left: '0', top: '1150px', width: W + 'px', textAlign: 'center', fontWeight: 800, fontSize: '40px', letterSpacing: '.16em', color: C.cream } }, D, 'INDIAN KITCHEN · LITTLE ELM, TX');
+  const petalsD = Petals(D, W, H, 34, 23, { size: 24, colors: [C.marigold, C.saffron, C.cream, C.marigold] });
+  const logoD = Logo(D, { layout: 'stacked', cx: 540, cy: 700, scale: 1.3 });
+  const tagD = h('div', { class: 'abs body', style: { left: '0', top: '1140px', width: W + 'px', textAlign: 'center', fontWeight: 800, fontSize: '40px', letterSpacing: '.16em', color: C.cream } }, D, 'INDIAN KITCHEN · LITTLE ELM, TX');
   const btnW = h('div', { class: 'abs', style: { left: '0', top: '1250px', width: W + 'px', display: 'flex', justifyContent: 'center' } }, D,
     '<div class="pill disp" style="background:#FFB000;color:#1D1147;font-size:64px;padding:26px 64px 30px;-webkit-text-stroke:0;text-shadow:none;display:flex;align-items:center;gap:22px">Order online <svg width="60" height="60" viewBox="0 0 64 64" fill="none" stroke="#1D1147" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 32H50M34 16L50 32L34 48"/></svg></div>');
   const btn = btnW.firstChild;
@@ -156,7 +157,7 @@
         // dish: drop + squash on landing
         const land = 0.2;
         let dy = 0, dsx = 1, dsy = 1;
-        if (u < land) { const v = seg(u, 0.02, land); dy = lerp(-520, 0, E.inQuad(v)); dsx = 0.88; dsy = 1.14; }
+        if (u < land) { const v = seg(u, 0.02, land); dy = lerp(-340, 0, E.inQuad(v)); dsx = 0.88; dsy = 1.14; }
         else { const v = u - land; dsy = K(v, [[0, 0.82], [0.08, 1.07, E.outQuad], [0.18, 0.98], [0.3, 1]]); dsx = K(v, [[0, 1.16], [0.08, 0.96, E.outQuad], [0.18, 1.01], [0.3, 1]]); }
         const exit = seg(u, 0.86, 1.05);
         s.dish.el.style.transformOrigin = '50% 75%';

@@ -1,0 +1,73 @@
+{
+  "helper": "storefront",
+  "items": [
+    {
+      "id": "elev-bazaar-day",
+      "title": "Storefront by day — A · Bazaar",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/storefront/elev-bazaar-day.png",
+      "thumb": "assets/storefront/elev-bazaar-day-thumb.jpg",
+      "w": 2400,
+      "h": 1350,
+      "caption": "Illustrative storefront — not your actual unit. Face-lit channel letters, striped awning with lettered valance, block-print window band, order-ahead QR and a marigold-planter welcome.",
+      "alt": "Daytime elevation of a strip-centre restaurant unit in the A · Bazaar direction",
+      "tags": [
+        "storefront",
+        "pair:elev-bazaar"
+      ],
+      "download": "assets/storefront/elev-bazaar-day.svg"
+    },
+    {
+      "id": "elev-bazaar-dusk",
+      "title": "Storefront at dusk — A · Bazaar",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/storefront/elev-bazaar-dusk.png",
+      "thumb": "assets/storefront/elev-bazaar-dusk-thumb.jpg",
+      "w": 2400,
+      "h": 1350,
+      "caption": "Illustrative storefront — not your actual unit. Same unit at dusk: halo + face-lit letters, festoon bulbs on the awning, \"Chai-lo!\" LED neon and warm window light spilling onto the walk.",
+      "alt": "Dusk elevation of the same unit in the A · Bazaar direction, signs lit",
+      "tags": [
+        "storefront",
+        "pair:elev-bazaar"
+      ],
+      "download": "assets/storefront/elev-bazaar-dusk.svg"
+    },
+    {
+      "id": "elev-royal-day",
+      "title": "Storefront by day — B · Royal",
+      "direction": "royal",
+      "type": "image",
+      "src": "assets/storefront/elev-royal-day.png",
+      "thumb": "assets/storefront/elev-royal-day-thumb.jpg",
+      "w": 2400,
+      "h": 1350,
+      "caption": "Illustrative storefront — not your actual unit. Brass channel letters on an aubergine backer, emerald-painted pilasters with gold inlay, jali-arch window band and lantern sconces.",
+      "alt": "Daytime elevation of a strip-centre restaurant unit in the B · Royal direction",
+      "tags": [
+        "storefront",
+        "pair:elev-royal"
+      ],
+      "download": "assets/storefront/elev-royal-day.svg"
+    },
+    {
+      "id": "elev-royal-dusk",
+      "title": "Storefront at dusk — B · Royal",
+      "direction": "royal",
+      "type": "image",
+      "src": "assets/storefront/elev-royal-dusk.png",
+      "thumb": "assets/storefront/elev-royal-dusk-thumb.jpg",
+      "w": 2400,
+      "h": 1350,
+      "caption": "Illustrative storefront — not your actual unit. Same unit at dusk: halo-lit brass letters glow gold on the backer, lanterns wash the emerald pilasters, LED-neon arch in the window.",
+      "alt": "Dusk elevation of the same unit in the B · Royal direction, signs lit",
+      "tags": [
+        "storefront",
+        "pair:elev-royal"
+      ],
+      "download": "assets/storefront/elev-royal-dusk.svg"
+    }
+  ]
+}

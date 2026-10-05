@@ -52,6 +52,7 @@ function renderRoom(cfgIn) {
   defs.push(`<linearGradient id="gAOup" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".30"/><stop offset="1" stop-color="#000" stop-opacity="0"/></linearGradient>`);
   defs.push(`<linearGradient id="gAOright" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".28"/><stop offset="1" stop-color="#000" stop-opacity="0"/></linearGradient>`);
   defs.push(`<linearGradient id="gBrass" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8E5A16"/><stop offset=".28" stop-color="#F7D98A"/><stop offset=".5" stop-color="#E9A63A"/><stop offset=".78" stop-color="#B7791F"/><stop offset="1" stop-color="#7A4C12"/></linearGradient>`);
+  defs.push(`<linearGradient id="gBrassD" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6E4410"/><stop offset=".3" stop-color="#C98A2E"/><stop offset=".42" stop-color="#F3CF7E"/><stop offset=".6" stop-color="#B7791F"/><stop offset="1" stop-color="#5E3A0E"/></linearGradient>`);
   defs.push(`<linearGradient id="gBrassV" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F7D98A"/><stop offset=".45" stop-color="#E9A63A"/><stop offset="1" stop-color="#8E5A16"/></linearGradient>`);
   defs.push(`<linearGradient id="gGlass" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".55"/><stop offset=".3" stop-color="#FFFFFF" stop-opacity=".12"/><stop offset=".8" stop-color="#FFFFFF" stop-opacity=".25"/><stop offset="1" stop-color="#FFFFFF" stop-opacity=".5"/></linearGradient>`);
   defs.push(`<filter id="fBlur6" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="6"/></filter>`);
@@ -63,22 +64,33 @@ function renderRoom(cfgIn) {
   defs.push(`<filter id="fWeave" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".9 .06" numOctaves="1" seed="2" result="t"/><feColorMatrix in="t" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.7 .95"/></filter>`);
 
   /* wallpaper pattern (repeat in inches, aligned to picture rail & left corner = how a paperhanger would set out) */
-  let wpFill = null;
+  let wpFill = null, WP = null;
   if (c.wallpaper) {
     const t = L.tile(c.wallpaper.dir, c.wallpaper.file);
     const rep = c.wallpaper.repeat || 24;
-    const px = rep * cam.k / 12;           // screen px per repeat
-    const repR = Math.round(px) * 12 / cam.k;  // snap to whole pixels → no seams
-    const off = c.wallpaper.offset || 0;
-    defs.push(`<pattern id="pWP" patternUnits="userSpaceOnUse" width="${repR.toFixed(4)}" height="${repR.toFixed(4)}" patternTransform="translate(${n(off)} ${n(-railIn)})"><image href="${t.uri}" width="${repR.toFixed(4)}" height="${repR.toFixed(4)}" preserveAspectRatio="none"/></pattern>`);
-    wpFill = 'url(#pWP)';
+    const P = Math.round(rep * cam.k / 12);           // whole screen px per repeat
+    defs.push(`<image id="wpT" href="${t.uri}" width="${P + 0.8}" height="${P + 0.8}" preserveAspectRatio="none"/>`);
+    WP = { P, off: (c.wallpaper.offset || 0) };
+    wpFill = 'WP';
     c._wpBg = t.bg;
+  }
+  /* lay wallpaper tiles in screen space, snapped to whole pixels and overlapped 0.8px → seamless like a real hang */
+  function wallpaperTiles(sx0, sx1, sy0, sy1, ox, oy) {
+    const P = WP.P; const id = uid('wc');
+    defs.push(`<clipPath id="${id}"><rect x="${n(sx0)}" y="${n(sy0)}" width="${n(sx1 - sx0)}" height="${n(sy1 - sy0)}"/></clipPath>`);
+    ox = Math.round(ox); oy = Math.round(oy);
+    const i0 = Math.floor((sx0 - ox) / P), i1 = Math.ceil((sx1 - ox) / P), j0 = Math.floor((sy0 - oy) / P), j1 = Math.ceil((sy1 - oy) / P);
+    let u = '';
+    for (let j = j0; j < j1; j++) for (let i = i0; i < i1; i++) u += `<use href="#wpT" x="${ox + i * P}" y="${oy + j * P}"/>`;
+    return `<g clip-path="url(#${id})">${u}</g>`;
   }
 
   /* ───────── CEILING ───────── */
   {
     const q = [cam.p(-6, RH, 0), cam.p(60, RH, 0), cam.p(60, RH, 16), cam.p(-6, RH, 16)];
-    out.push(poly(q, { fill: c.paint.ceiling }));
+    const gce = uid('ce'); const cy0 = cam.p(0, RH, 0)[1];
+    defs.push(`<linearGradient id="${gce}" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="${n(cy0)}"><stop offset="0" stop-color="${shade(c.paint.ceiling, -0.16)}"/><stop offset="1" stop-color="${c.paint.ceiling}"/></linearGradient>`);
+    out.push(poly(q, { fill: `url(#${gce})` }));
     if (c.room.ceiling === 'grid') {          // suspended acoustic-tile ceiling (the "before" room)
       let d = '';
       for (let z = 0; z <= 16; z += 2) { const a = cam.p(-6, RH, z), b = cam.p(60, RH, z); d += `M${n(a[0])} ${n(a[1])}L${n(b[0])} ${n(b[1])}`; }
@@ -88,29 +100,35 @@ function renderRoom(cfgIn) {
       [[4, 6], [14, 16]].forEach(([x0, x1]) => { out.push(poly(cam.quadY(x0, x1, 0.6, 3.4, RH), { fill: '#F4F8F6', stroke: '#A9A398', 'stroke-width': 2 })); });
     }
     // ceiling falls off into shadow toward the viewer
-    out.push(h('rect', { x: 0, y: 0, width: W, height: n(cam.p(0, RH, 0)[1]), fill: c.light.grade, opacity: c.room.ceiling === 'grid' ? 0.05 : 0.22 }));
+    out.push(h('rect', { x: 0, y: 0, width: W, height: n(cam.p(0, RH, 0)[1]), fill: c.light.grade, opacity: c.room.ceiling === 'grid' ? 0.03 : 0.06 }));
   }
 
   /* ───────── BACK WALL (inches, origin = floor at left corner) ───────── */
   {
     const o = cam.p(0, 0, 0);
-    const g = [];
+    const g = [];      // painted base
+    const g2 = [];     // textures, wainscot detail, rails, items (over the paper)
+    const wpLayers = [];
     const T = c.paint.trim;
     const zones = c.wall.zones;
+    const kk = cam.k / 12;
     zones.forEach((zn) => {
       const x0 = zn.x0 * 12, w = (zn.x1 - zn.x0) * 12;
-      const up = zn.upper === 'wallpaper' && wpFill ? wpFill : (zn.paint || c.paint.upper);
+      const isWP = zn.upper === 'wallpaper' && wpFill;
+      const up = isWP ? (c._wpBg || '#888') : (zn.paint || c.paint.upper);
       const fr = zn.frieze || c.paint.frieze;
       const ws = zn.wainscot || c.paint.wainscot;
       g.push(h('rect', { x: n(x0), y: n(-HIn), width: n(w), height: n(HIn - railIn), fill: fr }));
       g.push(h('rect', { x: n(x0), y: n(-railIn), width: n(w), height: n(railIn - dadoIn), fill: up }));
-      if (zn.upper === 'wallpaper' && wpFill) {
+      if (isWP) {
+        const sx0 = o[0] + x0 * kk, sx1 = o[0] + (x0 + w) * kk, sy0 = o[1] - railIn * kk, sy1 = o[1] - dadoIn * kk;
+        wpLayers.push(wallpaperTiles(sx0, sx1, sy0, sy1, o[0] + WP.off * kk, sy0));
         // Type II wallcovering emboss + faint 54-in drop seams
-        g.push(h('rect', { x: n(x0), y: n(-railIn), width: n(w), height: n(railIn - dadoIn), filter: 'url(#fFabric)', opacity: 0.16 }));
+        g2.push(h('rect', { x: n(x0), y: n(-railIn), width: n(w), height: n(railIn - dadoIn), filter: 'url(#fFabric)', opacity: c.wallpaper && c.wallpaper.tex !== undefined ? c.wallpaper.tex : 0.06 }));
         let sd = ''; for (let sx = x0 + 54; sx < x0 + w; sx += 54) sd += `M${n(sx)} ${n(-railIn)}V${n(-dadoIn)}`;
-        if (sd) g.push(h('path', { d: sd, stroke: '#000', 'stroke-opacity': 0.06, 'stroke-width': 0.25 }));
+        if (sd) g2.push(h('path', { d: sd, stroke: '#000', 'stroke-opacity': 0.05, 'stroke-width': 0.25 }));
       } else {
-        g.push(h('rect', { x: n(x0), y: n(-railIn), width: n(w), height: n(railIn - dadoIn), filter: 'url(#fPaint)', opacity: 0.05 }));
+        g2.push(h('rect', { x: n(x0), y: n(-railIn), width: n(w), height: n(railIn - dadoIn), filter: 'url(#fPaint)', opacity: 0.05 }));
       }
       if (c.wall.wainscot !== 'none') g.push(h('rect', { x: n(x0), y: n(-dadoIn), width: n(w), height: n(dadoIn), fill: ws }));
       else g.push(h('rect', { x: n(x0), y: n(-dadoIn), width: n(w), height: n(dadoIn), fill: up }));
@@ -118,19 +136,23 @@ function renderRoom(cfgIn) {
       if (c.wall.wainscot === 'panels') {
         const pw = 30, top = -dadoIn + 6, bot = -9;
         for (let px = x0 + 4; px + pw <= x0 + w - 2; px += pw + 4) {
-          g.push(h('rect', { x: n(px), y: n(top), width: pw, height: n(bot - top), fill: 'none', stroke: shade(ws, -0.22), 'stroke-width': 0.7 }));
-          g.push(h('path', { d: `M${n(px + 0.7)} ${n(bot - 0.7)}V${n(top + 0.7)}H${n(px + pw - 0.7)}`, fill: 'none', stroke: shade(ws, 0.25), 'stroke-width': 0.6 }));
+          g2.push(h('rect', { x: n(px), y: n(top), width: pw, height: n(bot - top), fill: 'none', stroke: shade(ws, -0.22), 'stroke-width': 0.7 }));
+          g2.push(h('path', { d: `M${n(px + 0.7)} ${n(bot - 0.7)}V${n(top + 0.7)}H${n(px + pw - 0.7)}`, fill: 'none', stroke: shade(ws, 0.25), 'stroke-width': 0.6 }));
         }
       } else if (c.wall.wainscot === 'beadboard') {
         let d = ''; for (let px = x0 + 3.5; px < x0 + w; px += 3.5) d += `M${n(px)} ${n(-dadoIn)}V-6`;
-        g.push(h('path', { d, stroke: shade(ws, -0.18), 'stroke-width': 0.35 }));
+        g2.push(h('path', { d, stroke: shade(ws, -0.18), 'stroke-width': 0.35 }));
       } else if (c.wall.wainscot === 'tile') {   // glazed brick tile (chai corner)
         let d = ''; let row = 0;
         for (let y = -6; y > -dadoIn; y -= 3, row++) { d += `M${n(x0)} ${n(y)}H${n(x0 + w)}`; for (let px = x0 + (row % 2 ? 3 : 0); px < x0 + w; px += 6) d += `M${n(px)} ${n(y)}V${n(Math.max(y - 3, -dadoIn))}`; }
-        g.push(h('path', { d, stroke: shade(ws, 0.45), 'stroke-width': 0.35 }));
+        g2.push(h('path', { d, stroke: shade(ws, 0.45), 'stroke-width': 0.35 }));
       }
-      if (c.wall.wainscot !== 'none') g.push(h('rect', { x: n(x0), y: n(-dadoIn), width: n(w), height: n(dadoIn), filter: 'url(#fPaint)', opacity: 0.05 }));
+      if (c.wall.wainscot !== 'none') g2.push(h('rect', { x: n(x0), y: n(-dadoIn), width: n(w), height: n(dadoIn), filter: 'url(#fPaint)', opacity: 0.05 }));
     });
+    const gT = `translate(${n(o[0])} ${n(o[1])}) scale(${kk.toFixed(4)})`;
+    out.push(`<g transform="${gT}">${g.join('')}</g>`);
+    out.push(wpLayers.join(''));
+    g.length = 0; g.push(...g2);
     // ceiling-line AO + crown
     g.push(h('rect', { x: -24, y: n(-HIn + 3), width: 900, height: 10, fill: 'url(#gAOdown)' }));
     g.push(h('rect', { x: -24, y: n(-HIn), width: 900, height: 3, fill: T }));
@@ -151,7 +173,7 @@ function renderRoom(cfgIn) {
     g.push(h('rect', { x: -24, y: -6, width: 900, height: 0.6, fill: shade(c.wall.base || T, 0.3) }));
     // wall-mounted items that live ON the wall plane
     c.items.filter((it) => it.wall).forEach((it) => g.push(wallItem(it)));
-    out.push(`<g transform="translate(${n(o[0])} ${n(o[1])}) scale(${(cam.k / 12).toFixed(4)})">${g.join('')}</g>`);
+    out.push(`<g transform="${gT}">${g.join('')}</g>`);
     // pilasters (proud of the wall by 4in): side face + front face
     (c.wall.pilasters || []).forEach((pl) => {
       const d = 0.34, x = pl.x, w = pl.w, col = pl.color || c.paint.trim;
@@ -165,6 +187,12 @@ function renderRoom(cfgIn) {
       const sh = [cam.p(x + w, 0, 0), cam.p(x + w + 0.7, 0, 0), cam.p(x + w + 0.7, RH, 0), cam.p(x + w, RH, 0)];
       out.push(poly(sh, { fill: '#000', opacity: 0.12, filter: 'url(#fBlur6)' }));
     });
+    // evening: the wall falls off toward the ceiling so the lamp pools read
+    if (c.light.wallDim) {
+      const gw = uid('wd'); const yT = cam.p(0, RH, 0)[1], yB = cam.p(0, 0, 0)[1];
+      defs.push(`<linearGradient id="${gw}" gradientUnits="userSpaceOnUse" x1="0" y1="${n(yT)}" x2="0" y2="${n(yB)}"><stop offset="0" stop-color="${c.light.grade}" stop-opacity="${c.light.wallDim}"/><stop offset=".55" stop-color="${c.light.grade}" stop-opacity="${c.light.wallDim * 0.25}"/><stop offset="1" stop-color="${c.light.grade}" stop-opacity="${c.light.wallDim * 0.5}"/></linearGradient>`);
+      out.push(h('rect', { x: 0, y: n(yT), width: W, height: n(yB - yT), fill: `url(#${gw})` }));
+    }
     // light pools from the pendants on the wall (behind furniture)
     if (c.light.pool > 0) pendants.forEach((p) => {
       if (p.noPool) return;
@@ -183,8 +211,8 @@ function renderRoom(cfgIn) {
     const P = (Y, Z) => cam.p(0, Y, Z);
     const quad = (Y0, Y1, Z0, Z1) => [P(Y0, Z0), P(Y1, Z0), P(Y1, Z1), P(Y0, Z1)];
     out.push(poly(quad(d, RH, 0, Zf), { fill: c.paint.side }));
-    if (c.wall.wainscot !== 'none') out.push(poly(quad(0, d, 0, Zf), { fill: c.paint.sideWainscot }));
-    out.push(poly(quad(d - 0.02, d + 0.25, 0, Zf), { fill: c.wall.railBrass ? '#C8892A' : c.paint.trim }));
+    out.push(poly(quad(0, d, 0, Zf), { fill: c.wall.wainscot !== 'none' ? c.paint.sideWainscot : c.paint.side }));
+    if (c.wall.wainscot !== 'none') out.push(poly(quad(d - 0.02, d + 0.25, 0, Zf), { fill: c.wall.railBrass ? '#C8892A' : c.paint.trim }));
     if (c.room.rail) out.push(poly(quad(rl - 0.03, rl + 0.15, 0, Zf), { fill: c.wall.railBrass ? '#C8892A' : c.paint.trim }));
     out.push(poly(quad(RH - 0.25, RH, 0, Zf), { fill: c.paint.trim }));
     out.push(poly(quad(0, 0.5, 0, Zf), { fill: c.wall.base || c.paint.trim }));
@@ -241,18 +269,20 @@ function renderRoom(cfgIn) {
       const beam = [P(wy1, wz0), P(wy1, wz1), fh(wy1, wz1), fh(wy0, wz1), fh(wy0, wz0)];
       const gb = uid('beam');
       defs.push(`<linearGradient id="${gb}" gradientUnits="userSpaceOnUse" x1="${n(P(wy1, wz0)[0])}" y1="0" x2="${n(fh(wy0, wz1)[0])}" y2="0"><stop offset="0" stop-color="${c.light.sunColor || '#FFE2B0'}" stop-opacity=".22"/><stop offset="1" stop-color="${c.light.sunColor || '#FFE2B0'}" stop-opacity="0"/></linearGradient>`);
-      c._sunBeam = poly(beam, { fill: `url(#${gb})`, style: 'mix-blend-mode:screen', opacity: c.light.sun });
+      c._sunBeam = '';
+      const wc = P((wy0 + wy1) / 2, (wz0 + wz1) / 2);
+      out.push(h('ellipse', { cx: n(wc[0]), cy: n(wc[1]), rx: 260, ry: 330, fill: c.light.sunColor || '#FFE2B0', opacity: 0.16 * c.light.sun * 2.5, filter: 'url(#fBlur14)', style: 'mix-blend-mode:screen' }));
     }
   }
 
   /* ───────── FLOOR ───────── */
   {
     const F = c.floor, T = F.size || 8 / 12;
-    out.push(poly([cam.p(-4, 0, 0), cam.p(60, 0, 0), cam.p(60, 0, 16), cam.p(-4, 0, 16)], { fill: F.colors[0] }));
+    out.push(poly([cam.p(c.room.side ? 0 : -30, 0, 0), cam.p(60, 0, 0), cam.p(60, 0, 16), cam.p(c.room.side ? 0 : -30, 0, 16)], { fill: F.colors[0] }));
     const layers = {}; const add = (col, arr) => { (layers[col] = layers[col] || []).push(pathFrom(arr.map((p) => [Math.round(p[0] * 2) / 2, Math.round(p[1] * 2) / 2]))); };
     const zMax = (() => { for (let z = 0; z < 16; z += 0.1) if (cam.p(0, 0, z)[1] > Hh + 30) return z; return 16; })();
     const visX = (z) => [cam.camX - (W / 2 + 40) / cam.s(z), cam.camX + (W / 2 + 40) / cam.s(z)];
-    const xr0 = Math.max(-T, Math.floor(visX(zMax)[0] / T) * T), xr1 = visX(0)[1];
+    const xr0 = c.room.side ? 0 : Math.floor(visX(zMax)[0] / T) * T, xr1 = visX(0)[1];
     const TP = (x0, z0) => (u, v) => cam.p(x0 + u * T, 0, z0 + v * T);
     const circ = (pf, cu, cv, r, seg) => { const a = []; for (let i = 0; i < seg; i++) { const t = i / seg * Math.PI * 2; a.push(pf(cu + Math.cos(t) * r, cv + Math.sin(t) * r)); } return a; };
     for (let z0 = 0; z0 < zMax; z0 += T) {
@@ -386,31 +416,32 @@ const WALL = {
       const hy = y + 9; let d = `M${n(x)} ${n(y + 2)}Q${n(x)} ${n(y)} ${n(x + 2)} ${n(y)}H${n(x + w - 2)}Q${n(x + w)} ${n(y)} ${n(x + w)} ${n(y + 2)}V${n(hy)}`;
       const nS = 9, sw = w / nS; for (let i = nS - 1; i >= 0; i--) d += `A${n(sw / 2)} ${n(sw / 2.4)} 0 0 1 ${n(x + i * sw)} ${n(hy)}`;
       s.push(h('path', { d: d + 'Z', fill: '#FFB000' }));
-      s.push(h('text', { x: n(x + w / 2), y: n(y + 6.6), 'text-anchor': 'middle', 'font-family': "'Bowlby One',sans-serif", 'font-size': 4.4, fill: '#1D1147', 'letter-spacing': 0.2 }, esc(it.title || 'WHAT’S COOKING')));
+      s.push(h('text', { x: n(x + w / 2), y: n(y + 6.6), 'text-anchor': 'middle', 'font-family': "'Bowlby One',sans-serif", 'font-size': n(Math.min(4.4, (w - 5) / ((it.title || 'WHAT’S COOKING').length * 0.74))), fill: '#1D1147', 'letter-spacing': 0.2 }, esc(it.title || 'WHAT’S COOKING')));
       const cols = [x + 3.5, x + w / 2 + 1.5]; const cw = w / 2 - 5;
+      const top0 = y + 13, avail = hh - 13 - 7, pitch = avail / 11.2;
       cols.forEach((cx, ci) => {
-        let yy = y + 15.5;
-        [['#FF6A13', 4], ['#00A8A0', 3], ['#E4147E', 3]].forEach(([col, rows], gi) => {
+        let yy = top0;
+        ['#FF6A13', '#00A8A0', '#E4147E'].forEach((col, gi) => {
           if (ci === 1) col = ['#3FA34D', '#FFB000', '#FF6A13'][gi];
-          s.push(h('rect', { x: n(cx), y: n(yy), width: n(cw * 0.55), height: 1.6, rx: 0.8, fill: col })); yy += 3.6;
-          for (let r = 0; r < rows; r++) { s.push(h('rect', { x: n(cx), y: n(yy), width: n(cw * (0.62 + ((r * 7 + gi * 3 + ci) % 4) * 0.09)), height: 0.95, rx: 0.5, fill: '#FFF4DC', opacity: 0.85 })); yy += 2.35; }
-          yy += 1.6;
+          s.push(h('rect', { x: n(cx), y: n(yy), width: n(cw * 0.55), height: n(pitch * 0.5), rx: n(pitch * 0.25), fill: col })); yy += pitch * 1.25;
+          for (let r = 0; r < 2; r++) { s.push(h('rect', { x: n(cx), y: n(yy), width: n(cw * (0.62 + ((r * 7 + gi * 3 + ci) % 4) * 0.09)), height: n(pitch * 0.3), rx: n(pitch * 0.15), fill: '#FFF4DC', opacity: 0.85 })); yy += pitch * 0.85; }
+          yy += pitch * 0.75;
         });
       });
-      s.push(h('text', { x: n(x + w / 2), y: n(y + hh - 2.6), 'text-anchor': 'middle', 'font-family': "'Caveat',cursive", 'font-weight': 700, 'font-size': 3.8, fill: '#FFB000' }, esc(it.foot || 'ask us what we’d order →')));
+      s.push(h('text', { x: n(x + w / 2), y: n(y + hh - 2.6), 'text-anchor': 'middle', 'font-family': "'Caveat',cursive", 'font-weight': 700, 'font-size': 3.6, fill: '#FFB000' }, esc(it.foot || 'ask us what we’d order →')));
     } else {
       const ar = w / 2;
       const d = `M${n(x)} ${n(y + hh)}V${n(y + ar)}A${n(ar)} ${n(ar * 0.9)} 0 0 1 ${n(x + w)} ${n(y + ar)}V${n(y + hh)}Z`;
       s.push(h('path', { d, fill: '#160B26', stroke: 'url(#gBrass)', 'stroke-width': 1.4 }));
       const i = 2.2; const d2 = `M${n(x + i)} ${n(y + hh - i)}V${n(y + ar)}A${n(ar - i)} ${n((ar - i) * 0.9)} 0 0 1 ${n(x + w - i)} ${n(y + ar)}V${n(y + hh - i)}Z`;
       s.push(h('path', { d: d2, fill: 'none', stroke: '#E9A63A', 'stroke-width': 0.3, opacity: 0.8 }));
-      s.push(h('text', { x: n(x + w / 2), y: n(y + ar * 0.62), 'text-anchor': 'middle', 'font-family': "'Fraunces',serif", 'font-style': 'italic', 'font-weight': 600, 'font-size': 4.6, fill: '#E9A63A' }, esc(it.title || 'Tonight’s Table')));
+      s.push(h('text', { x: n(x + w / 2), y: n(y + ar * 0.62), 'text-anchor': 'middle', 'font-family': "'Fraunces',serif", 'font-style': 'italic', 'font-weight': 600, 'font-size': n(Math.min(4.2, w * 0.082)), fill: '#E9A63A' }, esc(it.title || 'Tonight’s Table')));
       s.push(h('path', { d: `M${n(x + w / 2 - 7)} ${n(y + ar * 0.62 + 2.4)}H${n(x + w / 2 + 7)}`, stroke: '#B7791F', 'stroke-width': 0.3 }));
-      let yy = y + ar * 0.62 + 6;
+      let yy = y + ar * 0.62 + 5.5; const pitch = (y + hh - 3 - yy) / 11;
       for (let gi = 0; gi < 3; gi++) {
-        s.push(h('rect', { x: n(x + w / 2 - 6), y: n(yy), width: 12, height: 1.3, rx: 0.65, fill: '#E9A63A' })); yy += 3.6;
-        for (let r = 0; r < 3; r++) { const ww = w * (0.5 + ((r * 5 + gi) % 3) * 0.08); s.push(h('rect', { x: n(x + w / 2 - ww / 2), y: n(yy), width: n(ww), height: 0.9, rx: 0.45, fill: '#FBF3E4', opacity: 0.8 })); yy += 2.4; }
-        yy += 2;
+        s.push(h('rect', { x: n(x + w / 2 - 6), y: n(yy), width: 12, height: n(pitch * 0.42), rx: n(pitch * 0.21), fill: '#E9A63A' })); yy += pitch * 1.2;
+        for (let r = 0; r < 2; r++) { const ww = w * (0.5 + ((r * 5 + gi) % 3) * 0.08); s.push(h('rect', { x: n(x + w / 2 - ww / 2), y: n(yy), width: n(ww), height: n(pitch * 0.28), rx: n(pitch * 0.14), fill: '#FBF3E4', opacity: 0.8 })); yy += pitch * 0.85; }
+        yy += pitch * 0.8;
       }
     }
     return s.join('');
@@ -630,8 +661,8 @@ const OBJ = {
         g.push(h('rect', { x: -1.5, y: -28.6, width: 3, height: 27.4, fill: '#000', opacity: 0.18 }));
       }
       s.push(`<g transform="${cam.bb(X, Z)}">${g.join('')}</g>`);
-      if (T.baseStyle !== 'x') s.push(poly(cam.ellY(X, Z, 0.75, 0.75, 0.04, 28), { fill: bc }));
-      if (T.baseStyle !== 'x') s.push(poly(cam.ellY(X, Z, 0.75, 0.75, 0.02, 28).slice(0, 15), { fill: '#000', opacity: 0.2 }));
+      if (T.baseStyle !== 'x') s.push(poly(cam.ellY(X, Z, 0.6, 0.6, 0.04, 28), { fill: bc }));
+      if (T.baseStyle !== 'x') s.push(poly(cam.ellY(X, Z, 0.6, 0.6, 0.02, 28).slice(0, 15), { fill: '#fff', opacity: 0.12 }));
     }
     // top surface
     const q = cam.quadY(X - hw, X + hw, Z - hd, Z + hd, top);
@@ -781,7 +812,7 @@ const OBJ = {
       g.push(h('ellipse', { cx: 0, cy: 0, rx: 10, ry: 1.3, fill: '#FFF0C8' }));
     } else if (lp.style === 'bell') {
       g.push(h('rect', { x: -1.1, y: -13, width: 2.2, height: 2.5, fill: met }));
-      g.push(h('path', { d: 'M-2.4 -10.8C-3 -6 -8 -4.6 -8.6 0H8.6C8 -4.6 3 -6 2.4 -10.8Z', fill: lp.color || 'url(#gBrass)' }));
+      g.push(h('path', { d: 'M-2.4 -10.8C-3 -6 -8 -4.6 -8.6 0H8.6C8 -4.6 3 -6 2.4 -10.8Z', fill: lp.color || 'url(#gBrassD)' }));
       g.push(h('path', { d: 'M-1.4 -10C-2 -6 -6 -4.4 -6.8 -1', stroke: '#FFF3CF', 'stroke-opacity': 0.55, 'stroke-width': 0.6, fill: 'none' }));
       g.push(h('ellipse', { cx: 0, cy: 0, rx: 8.6, ry: 1.2, fill: '#FFF4D6' }));
     } else if (lp.style === 'globe') {
@@ -789,7 +820,7 @@ const OBJ = {
       g.push(h('circle', { cx: 0, cy: -5, r: 5.6, fill: '#FFF2D2' }));
       g.push(h('circle', { cx: 0, cy: -5, r: 5.6, fill: 'url(#gGlow)', opacity: 0.8 }));
     } else if (lp.style === 'lantern') {     // faceted brass lantern with jali cut-outs (glowing)
-      g.push(h('path', { d: 'M0 -17L-4.6 -12.6H4.6Z', fill: 'url(#gBrass)' }));
+      g.push(h('path', { d: 'M0 -17L-4.6 -12.6H4.6Z', fill: 'url(#gBrassD)' }));
       g.push(h('rect', { x: -5.2, y: -12.8, width: 10.4, height: 1.2, fill: '#B7791F' }));
       g.push(h('path', { d: 'M-5 -11.6H5L5.6 -2.2L0 0.4L-5.6 -2.2Z', fill: lp.color || '#4B1D52' }));
       g.push(h('path', { d: 'M-5 -11.6H5L5.6 -2.2L0 0.4L-5.6 -2.2Z', fill: 'none', stroke: 'url(#gBrass)', 'stroke-width': 0.6 }));
@@ -808,7 +839,7 @@ const OBJ = {
     if (c.light.pool > 0) {
       const tableY = cam.p(X, 2.5, Z)[1];
       const r1 = 8 * sc, r2 = 24 * sc;
-      fx.push(h('path', { d: `M${n(base[0] - r1)} ${n(base[1])}L${n(base[0] + r1)} ${n(base[1])}L${n(base[0] + r2)} ${n(tableY)}L${n(base[0] - r2)} ${n(tableY)}Z`, fill: 'url(#gCone)', opacity: (it.cone || 0.55) * c.light.pool / 0.6, style: 'mix-blend-mode:screen' }));
+      fx.push(h('path', { d: `M${n(base[0] - r1)} ${n(base[1])}L${n(base[0] + r1)} ${n(base[1])}L${n(base[0] + r2)} ${n(tableY)}L${n(base[0] - r2)} ${n(tableY)}Z`, fill: 'url(#gCone)', opacity: (it.cone || 0.55) * c.light.pool / 0.6, filter: 'url(#fBlur3)', style: 'mix-blend-mode:screen' }));
       fx.push(h('ellipse', { cx: n(base[0]), cy: n(base[1] - (lp.style === 'globe' ? 5 * sc : 0)), rx: n(30 * sc), ry: n(22 * sc), fill: 'url(#gGlow)', opacity: 0.9, style: 'mix-blend-mode:screen' }));
     }
     return s.join('');

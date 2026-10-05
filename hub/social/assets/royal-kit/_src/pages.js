@@ -257,3 +257,256 @@ ${wordmark('midnight', { y: 1196, h: 70 })}`,
 }
 chefsPick(true);
 chefsPick(false);
+
+// ──────────────────────────────── STORIES 1080×1920 ────────────────────────────────
+// Safe zone used throughout: keep key content between y 250 and y 1580, x 64–1016 (approx.; verify in-app).
+const SW = 1080, SH = 1920;
+const heroScene = (w, h, { file = 'hero-portrait-static', x = 0, y = 0, width = w } = {}) => `<img class="abs" alt="" src="${L.BR}/illustrations/royal/hero/${file}.svg" style="left:${x}px;top:${y}px;width:${width}px">`;
+const embers = (n, seed, box, { min = 3, max = 9, color = '#FBD27A' } = {}) => {
+  const R = L.rng(seed); let s = '';
+  for (let i = 0; i < n; i++) {
+    const r = min + R() * (max - min), x = box.x + R() * box.w, y = box.y + R() * box.h, o = 0.35 + R() * 0.6;
+    s += `<i class="abs" style="left:${x.toFixed(1)}px;top:${y.toFixed(1)}px;width:${r.toFixed(1)}px;height:${r.toFixed(1)}px;border-radius:50%;background:radial-gradient(circle,#FFF4CF 0,${color} 45%,rgba(242,182,79,0) 72%);opacity:${o.toFixed(2)}"></i>`;
+  }
+  return s;
+};
+const diya = (x, y, s = 1) => `<svg class="abs" aria-hidden="true" style="left:${x}px;top:${y}px;width:${110 * s}px;height:${110 * s}px;overflow:visible" viewBox="0 0 110 110">
+<defs><radialGradient id="dg${x}" cx="50%" cy="60%" r="50%"><stop offset="0" stop-color="#FFF6D6"/><stop offset=".4" stop-color="#FBD27A"/><stop offset="1" stop-color="#F2B64F" stop-opacity="0"/></radialGradient>
+<linearGradient id="dc${x}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#C8622E"/><stop offset="1" stop-color="#6E2510"/></linearGradient></defs>
+<circle cx="55" cy="40" r="46" fill="url(#dg${x})" opacity=".55"/>
+<path d="M55 14C63 28 66 38 55 50C44 38 47 28 55 14Z" fill="#FFE7A8"/><path d="M55 26C59 33 60 39 55 46C50 39 51 33 55 26Z" fill="#FFF8E2"/>
+<path d="M10 58C24 52 86 52 100 58C96 78 78 90 55 90C32 90 14 78 10 58Z" fill="url(#dc${x})"/>
+<path d="M10 58C24 52 86 52 100 58" fill="none" stroke="#F7D98A" stroke-width="3"/><path d="M24 72C40 78 70 78 86 72" fill="none" stroke="#F7D98A" stroke-width="1.6" stroke-dasharray="0 7" stroke-linecap="round"/></svg>`;
+
+add({
+  id: 'story-dinner-occasion', w: SW, h: SH, html: page({
+    w: SW, h: SH, kind: 'midnight', noFrame: true, body: `
+${heroScene(SW, SH, { x: -100, y: 0, width: 1280 })}
+<div class="abs" style="inset:0;background:linear-gradient(180deg,rgba(14,6,26,.94) 0,rgba(14,6,26,.78) 520px,rgba(14,6,26,0) 860px)"></div>
+<div class="abs" style="inset:0;background:linear-gradient(0deg,rgba(14,6,26,.95) 0,rgba(14,6,26,.75) 520px,rgba(14,6,26,0) 820px)"></div>
+${L.frame(SW, SH, { tone: 'dark' })}
+<div class="abs center eyebrow" style="top:276px">Little Elm, TX</div>
+<div class="abs center h1" style="top:326px;font-size:128px">Dinner, made<br>an <span class="foil">occasion.</span></div>
+${wordmark('midnight', { y: 1282, h: 84 })}
+<div class="abs center it" style="top:1404px;font-size:44px;color:${C.ivory}">Slow-simmered. Tandoor-fired.<br><span style="color:${C.goldLt}">Made for sharing.</span></div>
+<div class="abs center" style="top:1532px"><span class="pill gold" style="height:84px">Order online ${arrow(44, C.ink, 4)}</span></div>`,
+  }),
+});
+
+{
+  const opts = [
+    { l: 'Mild', s: 'A gentle glow', f: 0.0 },
+    { l: 'Hot', s: 'Warm and lively', f: 0.55 },
+    { l: 'District Hot', s: 'Fierce, and proud of it', f: 1 },
+  ];
+  const cards = opts.map((o, i) => `<div class="abs opt" style="top:${700 + i * 236}px">
+<div class="om">${chili(112, o.f, { stroke: 2.4, glow: i === 2 })}</div><div><div class="ol">${o.l}</div><div class="os">${o.s}</div></div>
+<div class="gm">${Array.from({ length: 3 }, (_, g) => `<span class="gem ${g <= i ? 'on' : ''}"></span>`).join('')}</div></div>`).join('');
+  add({
+    id: 'story-spice-poll', w: SW, h: SH, html: page({
+      w: SW, h: SH, kind: 'ruby', css: `
+.opt{left:110px;width:860px;height:200px;border-radius:30px;display:flex;align-items:center;gap:36px;padding:0 44px 0 34px;background:linear-gradient(135deg,rgba(42,6,20,.62),rgba(74,11,34,.5));box-shadow:0 0 0 2px rgba(247,217,138,.7),0 26px 50px -24px rgba(0,0,0,.7)}
+.om{width:144px;height:144px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 40%,#7E1438,#2E0616);box-shadow:0 0 0 3px #E9A63A}
+.ol{font-family:'Fraunces';font-weight:650;font-size:62px;line-height:1;color:${C.ivory}}
+.os{font-family:'Fraunces';font-style:italic;font-size:36px;color:${C.goldLt};margin-top:10px}
+.gm{margin-left:auto;display:flex;gap:10px}
+.gem{width:16px;height:16px;transform:rotate(45deg);border:2px solid rgba(247,217,138,.7)}.gem.on{background:linear-gradient(135deg,#FBE3A0,#E9A63A);border-color:#FBE3A0}`,
+      body: `
+<div class="abs center eyebrow" style="top:290px">Quick question</div>
+<div class="abs center h1" style="top:340px;font-size:132px">Where do<br>you <span class="foil">land?</span></div>
+${cards}
+<div class="abs center body" style="top:1420px;font-size:40px">Reply with your level. <span class="it" style="color:${C.goldLt}">We cook to it.</span></div>
+${wordmark('ruby', { y: 1500, h: 72 })}`,
+    }),
+  });
+}
+
+add({
+  id: 'story-garlic-naan-order', w: SW, h: SH, html: page({
+    w: SW, h: SH, kind: 'emerald', body: `
+<div class="abs center eyebrow" style="top:290px">From the Bread Bazaar</div>
+<div class="abs center h1" style="top:340px;font-size:132px">Made for<br><span class="foil">tearing.</span></div>
+${bloom(540, 930, 500)}
+${archWindow({ x: 220, y: 660, w: 640, h: 580, glow: 'ruby', spring: 0.44 })}
+${dishImg('garlic-naan', { w: 720, sillY: 1240, base: 700 })}
+<div class="abs center it" style="top:1290px;font-size:46px;color:${C.ivory}">Garlic Naan, blistered and buttered.</div>
+<div class="abs center" style="top:1376px"><span class="pill gold">Order online ${arrow(44, C.ink, 4)}</span></div>
+${wordmark('emerald', { y: 1500, h: 70 })}`,
+  }),
+});
+
+add({
+  id: 'story-diwali-gathering', w: SW, h: SH, html: page({
+    w: SW, h: SH, kind: 'midnight', body: `
+${embers(70, 9, { x: 70, y: 120, w: 940, h: 1650 })}
+<div class="abs center eyebrow" style="top:290px">Diwali gatherings</div>
+<div class="abs center h1" style="top:340px;font-size:132px">Lamps lit,<br>plates <span class="foil">full.</span></div>
+${bloom(540, 930, 520, 'rgba(242,182,79,.3)')}
+${archWindow({ x: 250, y: 660, w: 580, h: 580, glow: 'plum', spring: 0.44 })}
+${dishImg('gulab-jamun', { w: 660, sillY: 1240, base: 650 })}
+${diya(98, 1150, 0.9)}${diya(884, 1150, 0.9)}
+<div class="abs center body" style="top:1290px;font-size:42px">Planning a Diwali gathering?<br><span class="it" style="font-size:46px;color:${C.goldLt}">Call us to plan your catering.</span></div>
+${wordmark('midnight', { y: 1480, h: 72 })}`,
+  }),
+});
+
+// Story safe-zone guide: the four stories at 0.43× with UI-overlay bands marked.
+{
+  const sc = 0.43, tw = SW * sc, th = SH * sc;
+  const ids = ['story-dinner-occasion', 'story-spice-poll', 'story-garlic-naan-order', 'story-diwali-gathering'];
+  const tiles = ids.map((id, i) => {
+    const x = 60 + (i % 2) * (tw + 40), y = 300 + Math.floor(i / 2) * (th + 110);
+    return `<div class="abs tile" style="left:${x}px;top:${y}px;width:${tw}px;height:${th}px">
+<img src="../../${id}.png" alt="" style="width:100%;height:100%;display:block">
+<div class="band" style="top:0;height:${250 * sc}px"><span>Top ~250 px</span></div>
+<div class="band" style="bottom:0;height:${340 * sc}px"><span>Bottom ~340 px</span></div>
+<div class="side" style="left:0"></div><div class="side" style="right:0"></div>
+<div class="safe" style="top:${250 * sc}px;bottom:${340 * sc}px;left:${64 * sc}px;right:${64 * sc}px"></div></div>
+<div class="abs cap" style="left:${x}px;top:${y + th + 18}px;width:${tw}px">${['Hero scene', 'Spice poll', 'Order · garlic naan', 'Diwali gathering'][i]}</div>`;
+  }).join('');
+  add({
+    id: 'story-safe-zone-guide', w: SW, h: 2240, html: page({
+      w: SW, h: 2240, kind: 'midnight', css: `
+.tile{border-radius:22px;overflow:hidden;box-shadow:0 0 0 2px rgba(247,217,138,.6),0 24px 50px -20px rgba(0,0,0,.7)}
+.band{position:absolute;left:0;right:0;background:repeating-linear-gradient(135deg,rgba(244,201,187,.42) 0 10px,rgba(163,23,63,.42) 10px 20px);display:flex;align-items:center;justify-content:center}
+.band span{font:800 21px/1 'Hanken Grotesk';letter-spacing:.06em;color:#160B26;background:#FBF3E4;padding:6px 10px;border-radius:6px}
+.side{position:absolute;top:0;bottom:0;width:${64 * sc}px;background:rgba(244,201,187,.28)}
+.safe{position:absolute;outline:3px dashed #FBE3A0}
+.cap{text-align:center;font:600 28px/1 'Hanken Grotesk';color:${C.ivory}}
+.leg{display:flex;gap:30px;justify-content:center;font:500 26px/1.2 'Hanken Grotesk';color:${C.ivory}}
+.leg i{display:inline-block;width:30px;height:20px;vertical-align:middle;margin-right:10px;border-radius:4px}`,
+      body: `
+<div class="abs center eyebrow" style="top:96px">Stories · 1080 × 1920</div>
+<div class="abs center h2" style="top:138px;font-size:76px">Safe-zone guide</div>
+<div class="abs center leg" style="top:240px"><span><i style="background:repeating-linear-gradient(135deg,#F4C9BB 0 5px,#A3173F 5px 10px)"></i>App UI overlays</span><span><i style="outline:3px dashed #FBE3A0;outline-offset:-3px"></i>Keep key content inside</span></div>
+${tiles}
+<div class="abs center" style="top:2096px;width:940px;font:500 25px/1.35 'Hanken Grotesk';color:rgba(251,243,228,.8)">Overlay bands are approximate (about 250 px top, 340 px bottom and 64 px at the sides) and shift between app versions and devices. Check in the app before posting.</div>`,
+    }),
+  });
+}
+
+// ──────────────────────────────── HIGHLIGHT COVERS 1080×1920 ────────────────────────────────
+const HL = [
+  ['menu', 'Menu', 'menu-book', 'plum'], ['biryani', 'Biryani', 'biryani-pot-handi', 'emerald'], ['tandoor', 'Tandoor', 'tandoor-oven', 'ruby'], ['curry', 'Curry', 'curry-bowl', 'peacock'],
+  ['sweets', 'Sweets', 'gulab-jamun', 'plum'], ['catering', 'Catering', 'party-tray', 'emerald'], ['order', 'Order', 'shopping-bag', 'ruby'], ['visit', 'Visit', 'map-pin', 'peacock'],
+];
+const DISC = { plum: ['#5E2466', '#2A0F33'], emerald: ['#17664F', '#06281F'], ruby: ['#8E1A40', '#3A0719'], peacock: ['#14838C', '#073A42'] };
+for (const [key, label, ic, kind] of HL) {
+  const d = DISC[kind];
+  add({
+    id: 'highlight-' + key, w: SW, h: SH, html: page({
+      w: SW, h: SH, kind, noFrame: true, css: `
+.disc{position:absolute;left:${540 - 370}px;top:${960 - 370}px;width:740px;height:740px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+background:radial-gradient(circle at 50% 36%,${d[0]},${d[1]} 78%);box-shadow:0 0 0 10px #E9A63A,0 0 0 11px #FBE3A0,0 0 0 30px rgba(10,4,18,.28),0 0 0 32px rgba(247,217,138,.55),0 40px 90px -30px rgba(0,0,0,.7)}
+.disc::before{content:'';position:absolute;inset:30px;border-radius:50%;border:3px solid rgba(247,217,138,.28)}`,
+      body: `${bloom(540, 960, 560, 'rgba(242,182,79,.18)')}<div class="disc">${iconInline(ic, { size: 500, color: '#F4C45E', stroke: 2.5, fillOpacity: 0.5 })}</div>
+<div class="abs center eyebrow" style="top:1500px;font-size:30px;opacity:.7">${label}</div>`,
+    }),
+  });
+}
+// Highlight row preview (what the circles look like on a profile)
+add({
+  id: 'highlight-covers-preview', w: 1080, h: 900, html: page({
+    w: 1080, h: 900, kind: 'midnight', css: `.hc{position:absolute;width:200px;text-align:center}
+.hc .c{width:200px;height:200px;border-radius:50%;overflow:hidden;box-shadow:0 0 0 4px #160B26,0 0 0 7px rgba(247,217,138,.75)}
+.hc img{width:200px;height:355.5px;margin-top:-77.75px;display:block}
+.hc .t{margin-top:24px;font:600 30px/1 'Hanken Grotesk';color:${C.ivory}}`,
+    body: `<div class="abs center eyebrow" style="top:96px">Story highlight covers</div>
+<div class="abs center h2" style="top:138px;font-size:68px">Eight doors into the District</div>
+${HL.map(([key, label], i) => `<div class="hc" style="left:${110 + (i % 4) * 230}px;top:${290 + Math.floor(i / 4) * 300}px"><div class="c"><img src="../../highlight-${key}.png" alt=""></div><div class="t">${label}</div></div>`).join('')}`,
+  }),
+});
+
+// ──────────────────────────────── PROFILE AVATAR ────────────────────────────────
+add({
+  id: 'profile-avatar', w: 1080, h: 1080, html: page({ w: 1080, h: 1080, kind: 'midnight', noFrame: true, body: `<img class="abs" alt="" src="${logo('social-avatar-1080')}" style="inset:0;width:1080px;height:1080px">` }),
+});
+add({
+  id: 'profile-avatar-sizes', w: 1080, h: 820, html: page({
+    w: 1080, h: 820, kind: 'ivory', css: `.av{position:absolute;border-radius:50%;overflow:hidden;box-shadow:0 0 0 3px #FBF3E4,0 0 0 5px rgba(183,121,31,.6)}.av img{width:100%;height:100%;display:block}
+.lb{position:absolute;text-align:center;font:600 26px/1.2 'Hanken Grotesk';color:#3B2A44}`,
+    body: `<div class="abs center eyebrow dk" style="top:96px">Profile avatar · circle crop</div>
+<div class="abs center h2 ink" style="top:140px;font-size:66px">Reads at every size</div>
+<div class="av" style="left:110px;top:300px;width:320px;height:320px"><img src="../../profile-avatar.png" alt=""></div>
+<div class="av" style="left:520px;top:380px;width:180px;height:180px"><img src="../../profile-avatar.png" alt=""></div>
+<div class="av" style="left:780px;top:425px;width:110px;height:110px"><img src="../../profile-avatar.png" alt=""></div>
+<div class="av" style="left:946px;top:452px;width:56px;height:56px"><img src="../../profile-avatar.png" alt=""></div>
+<div class="lb" style="left:110px;width:320px;top:660px">Profile page<br>320 px</div><div class="lb" style="left:470px;width:280px;top:660px">Feed post<br>180 px</div><div class="lb" style="left:735px;width:200px;top:660px">Stories<br>110 px</div><div class="lb" style="left:904px;width:140px;top:660px">Comments<br>56 px</div>`,
+  }),
+});
+
+// ──────────────────────────────── FACEBOOK COVER 1640×856 ────────────────────────────────
+function fbCover(guide) {
+  const W = 1640, H = 856;
+  const g = guide ? `<div class="abs" style="left:0;right:0;top:0;height:116px" data-band></div><div class="abs" style="left:0;right:0;bottom:0;height:116px" data-band></div>
+<div class="abs" style="left:0;top:0;bottom:0;width:59px" data-side></div><div class="abs" style="right:0;top:0;bottom:0;width:59px" data-side></div>
+<div class="abs" style="left:59px;right:59px;top:116px;bottom:116px;outline:4px dashed #FBE3A0"></div>
+<div class="abs gl" style="left:80px;top:40px">Desktop shows ~1640 × 624 (top and bottom ~116 px hidden)</div>
+<div class="abs gl" style="left:80px;bottom:40px">Mobile shows ~1522 × 856 (~59 px hidden each side) · profile photo overlaps lower-left on some layouts</div>` : '';
+  add({
+    id: guide ? 'facebook-cover-crop-guide' : 'facebook-cover', w: W, h: H, html: page({
+      w: W, h: H, kind: 'midnight', noFrame: true, css: `[data-band]{background:repeating-linear-gradient(135deg,rgba(244,201,187,.4) 0 12px,rgba(163,23,63,.4) 12px 24px)}[data-side]{background:rgba(244,201,187,.3)}
+.gl{font:700 24px/1 'Hanken Grotesk';color:#160B26;background:#FBF3E4;padding:8px 12px;border-radius:6px}`,
+      body: `${heroScene(W, H, { file: 'hero-landscape-static', x: 470, y: -150, width: 1600 })}
+<div class="abs" style="left:0;top:0;bottom:0;width:1060px;background:linear-gradient(90deg,#160B26 0,#160B26 520px,rgba(22,11,38,.85) 700px,rgba(22,11,38,0) 1060px)"></div>
+<div class="abs" style="left:0;top:0;bottom:0;width:640px;background:url(${L.pattern('01-jali-lattice-midnight')}) 0 0/240px;opacity:.12;mix-blend-mode:screen"></div>
+${L.frame(W, H, { tone: 'dark', inset: 26 })}
+<img class="abs" alt="" src="${logo('colourways/wordmark-horizontal--foil')}" style="left:130px;top:178px;height:118px">
+<div class="abs h1" style="left:130px;top:340px;font-size:92px;line-height:1">Dinner, made<br>an <span class="foil">occasion.</span></div>
+<div class="abs eyebrow" style="left:132px;top:568px;font-size:26px">Indian Kitchen · Little Elm, TX</div>
+${g}`,
+    }),
+  });
+}
+fbCover(false);
+fbCover(true);
+
+// ──────────────────────────────── GOOGLE BUSINESS PROFILE ────────────────────────────────
+// Specs from research/social_gbp_playbook.md (secondary sources, medium confidence — verify in the GBP dashboard):
+// cover 16:9 (~1024×576; exported at 1600×900), logo 720×720, post 1200×900 (4:3), photo tiles 1:1 exported at 1600.
+add({
+  id: 'gbp-cover', w: 1600, h: 900, html: page({
+    w: 1600, h: 900, kind: 'midnight', body: `
+${bloom(800, 450, 660, 'rgba(242,182,79,.26)')}
+${archWindow({ x: 150, y: 296, w: 330, h: 508, glow: 'emerald', spring: 0.46, lobes: 3, finial: false })}
+${archWindow({ x: 1120, y: 296, w: 330, h: 508, glow: 'ruby', spring: 0.46, lobes: 3, finial: false })}
+${archWindow({ x: 525, y: 112, w: 550, h: 692, glow: 'plum', spring: 0.44 })}
+${dishImg('garlic-naan', { w: 420, cx: 315, sillY: 804, base: 700 })}
+${dishImg('butter-chicken', { w: 450, cx: 1285, sillY: 804, base: 618 })}
+${dishImg('biryani', { w: 660, cx: 800, sillY: 804, base: 650 })}`,
+  }),
+});
+add({
+  id: 'gbp-logo', w: 720, h: 720, html: page({
+    w: 720, h: 720, kind: 'midnight', noFrame: true, body: `${bloom(360, 360, 330, 'rgba(242,182,79,.22)')}
+<div class="abs" style="left:60px;top:60px;width:600px;height:600px;border-radius:50%;box-shadow:0 0 0 3px rgba(233,166,58,.85),0 0 0 14px rgba(10,4,18,.25),0 0 0 15px rgba(247,217,138,.45)"></div>
+<img class="abs" alt="" src="${logo('colourways/emblem--foil')}" style="left:50%;transform:translateX(-50%);top:150px;height:420px">`,
+  }),
+});
+function gbpPost({ id, kind, glow, dish, dishW, base, eyebrow, h, cta }) {
+  add({
+    id, w: 1200, h: 900, html: page({
+      w: 1200, h: 900, kind, frameOpts: { inset: 28 }, body: `
+${bloom(860, 440, 420)}
+${archWindow({ x: 640, y: 120, w: 440, h: 600, glow, spring: 0.44 })}
+${dishImg(dish, { w: dishW, cx: 860, sillY: 720, base })}
+<div class="abs eyebrow" style="left:100px;top:190px">${eyebrow}</div>
+<div class="abs h1" style="left:96px;top:240px;font-size:88px;line-height:1.02;width:520px">${h}</div>
+<div class="abs" style="left:100px;top:${cta ? 560 : 600}px">${cta ? `<span class="pill gold" style="height:80px;font-size:30px;padding:0 38px">${cta} ${arrow(38, C.ink, 4)}</span>` : ''}</div>
+<img class="abs" alt="" src="${logo('colourways/wordmark-horizontal--foil')}" style="left:100px;top:${cta ? 700 : 640}px;height:72px">`,
+    }),
+  });
+}
+gbpPost({ id: 'gbp-post-update', kind: 'emerald', glow: 'midnight', dish: 'tandoori-platter', dishW: 520, base: 712, eyebrow: 'Little Elm, TX', h: 'Fire, smoke and <span class="foil">comfort.</span>' });
+gbpPost({ id: 'gbp-post-order', kind: 'plum', glow: 'emerald', dish: 'butter-chicken', dishW: 540, base: 618, eyebrow: 'Pickup from FM 423', h: 'Take the evening <span class="foil">home.</span>', cta: 'Order online' });
+for (const [dish, kind, glow, dishW, base] of [['butter-chicken', 'midnight', 'plum', 1100, 618], ['biryani', 'emerald', 'midnight', 900, 650], ['garlic-naan', 'ruby', 'emerald', 1000, 700]]) {
+  add({
+    id: 'gbp-tile-' + dish, w: 1600, h: 1600, html: page({
+      w: 1600, h: 1600, kind, frameOpts: { inset: 44 }, body: `
+${bloom(800, 760, 700)}
+${archWindow({ x: 330, y: 170, w: 940, h: 1110, glow, spring: 0.42, lobes: 5 })}
+${dishImg(dish, { w: dishW, cx: 800, sillY: 1280, base })}
+<img class="abs" alt="" src="${logo('colourways/wordmark-horizontal--foil')}" style="left:50%;transform:translateX(-50%);top:1376px;height:110px">`,
+    }),
+  });
+}

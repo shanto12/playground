@@ -79,6 +79,7 @@ a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 3px; 
 p { margin: 0 0 1em; }
 h1, h2, h3, h4 { margin: 0; font-weight: 400; }
 ul, ol { margin: 0; padding: 0; }
+ul[role="list"], ol[role="list"] { list-style: none; }
 button, input, select, textarea { font: inherit; color: inherit; }
 button { cursor: pointer; }
 :focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 6px; }
@@ -302,13 +303,13 @@ a.card:hover, .card--lift:hover { transform: translate(-3px,-3px) rotate(0deg); 
   background: linear-gradient(to top left, currentColor 50%, transparent 52%) left / 50% 100% no-repeat content-box,
               linear-gradient(to top right, currentColor 50%, transparent 52%) right / 50% 100% no-repeat content-box; }
 .diet--egg::before { background: radial-gradient(3.2px 4.3px at 50% 52%, #E38B00 92%, transparent 100%); }
-.on-dark .diet--veg, .sec--ink .diet--veg { color: #86CF6E; }
-.on-dark .diet--nonveg, .sec--ink .diet--nonveg, .on-dark .diet--egg, .sec--ink .diet--egg { color: #FFA06A; }
+.diet--on-dark.diet--veg { color: #86CF6E; }
+.diet--on-dark.diet--nonveg, .diet--on-dark.diet--egg { color: #FFA06A; }
 
 /* spice pips (chillies + text label) */
 .spice { display: inline-flex; align-items: center; gap: .4em; font-weight: 700; font-size: .82rem; }
 .spice__pips { display: inline-flex; gap: 1px; }
-.spice__pips .ico { width: 18px; height: 18px; }
+.spice__pips .ico { width: 22px; height: 22px; margin-right: -4px; }
 .spice__pips .ico.is-off { opacity: .22; filter: grayscale(1); }
 
 /* typographic art tile, for dishes without an illustration (never borrow another dish's art) */
@@ -368,7 +369,7 @@ a.rating:hover { transform: translate(-3px,-3px) rotate(0); box-shadow: 8px 8px 
 .rating__stars { display: flex; gap: 2px; }
 .rating__stars .ico { width: 20px; height: 20px; }
 .rating__count { font-weight: 700; font-size: .9rem; line-height: 1.25; }
-.rating__label { font-size: .74rem; line-height: 1.3; color: #4A3F78; }
+.rating__label { font-size: .74rem; line-height: 1.3; color: #4A3F78; text-wrap: balance; }
 
 /* ---------- 13 · hours table ---------- */
 .hours { width: 100%; border-collapse: collapse; font-size: .98rem; }

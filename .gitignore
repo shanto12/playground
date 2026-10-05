@@ -7,3 +7,7 @@ frames/
 _frames/
 frame_*/
 *.tmp
+frames-*/
+**/frames-*/
+_src/frames*/
+tmp-frames*/

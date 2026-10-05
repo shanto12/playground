@@ -12,8 +12,8 @@ const signAt = (s, ox, oy) => ({ x: 798 * s + ox, y: 457 * s + oy, h: 74 * s });
 function avatarBody(S) { // S = canvas size (square)
   const k = S / 1080;
   return `${sunburst({ w: S, h: S, cx: S / 2, cy: S / 2, n: 32, a: C.saffron, b: C.marigold, patB: '03-block-print-booti-sunset', patScale: .9 * k, patOpacity: .5 })}
-    ${halo({ w: S, h: S, cx: S / 2, cy: S / 2, r: 462 * k, bumps: 46, ring: C.rani, disc: C.cream, sw: 8 * k, inner: true })}
-    ${logo('emblem.svg', { style: `position:absolute;left:50%;top:${S / 2 + 6 * k}px;transform:translate(-50%,-50%);height:${600 * k}px;width:auto` })}`;
+    ${halo({ w: S, h: S, cx: S / 2, cy: S / 2, r: 494 * k, bumps: 54, ring: C.rani, disc: C.cream, sw: 8 * k, inner: false })}
+    ${logo('emblem.svg', { style: `position:absolute;left:50%;top:${S / 2 + 6 * k}px;transform:translate(-50%,-50%);height:${690 * k}px;width:auto` })}`;
 }
 
 const items = [
@@ -83,17 +83,17 @@ const items = [
   title: 'GBP post · Biryani, naan, repeat',
   caption: '4:3 Update-post image at 1200×900 (playbook spec, secondary sources: verify); dish and headline kept inside the centre for Google’s crops.',
   html: () => page({ w: 1200, h: 900, bg: C.saffron, title: 'GBP post biryani', css: FOOT_CSS + `
-    .hl{position:absolute;left:640px;top:180px;font-size:92px;color:${C.cream};${ol(8, C.ink, 9, 9, C.ink)}}
-    .sub{position:absolute;left:646px;top:540px;width:460px;font-weight:700;font-size:34px;line-height:1.25;color:${C.ink}}
+    .hl{position:absolute;left:646px;top:222px;font-size:84px;color:${C.cream};${ol(8, C.ink, 9, 9, C.ink)}}
+    .sub{position:absolute;left:650px;top:528px;width:480px;font-weight:700;font-size:34px;line-height:1.25;color:${C.ink}}
     .bb .steam{stroke:${C.ink};opacity:.5}
-  `, body: `${sunburst({ w: 1200, h: 900, cx: 390, cy: 450, n: 32, a: C.saffron, b: C.marigold, patB: '06-spice-confetti-sunset', patScale: .9, patOpacity: .45 })}
-    ${halo({ w: 1200, h: 900, cx: 390, cy: 450, r: 300, bumps: 36, ring: C.peacock, disc: C.cream, sw: 7 })}
-    ${dish('biryani', { style: 'left:60px;top:110px;width:660px;height:660px', cls: 'bb' })}
-    ${dish('garlic-naan', { style: 'left:330px;top:450px;width:380px;height:380px', cls: 'bb' })}
-    ${kicker('Biryani Boulevard', { x: 646, y: 92, size: 30 })}
+  `, body: `${sunburst({ w: 1200, h: 900, cx: 330, cy: 450, n: 32, a: C.saffron, b: C.marigold, patB: '06-spice-confetti-sunset', patScale: .9, patOpacity: .45 })}
+    ${halo({ w: 1200, h: 900, cx: 330, cy: 450, r: 268, bumps: 34, ring: C.peacock, disc: C.cream, sw: 7 })}
+    ${dish('biryani', { style: 'left:44px;top:150px;width:570px;height:570px', cls: 'bb' })}
+    ${dish('garlic-naan', { style: 'left:300px;top:500px;width:330px;height:330px', cls: 'bb' })}
+    ${kicker('Biryani Boulevard', { x: 650, y: 130, size: 30 })}
     <h1 class="disp hl">Biryani,<br>naan,<br>repeat.</h1>
     <p class="sub">Order pickup or dine in on FM 423, Little Elm.</p>
-    ${logo('colourways/wordmark-horizontal--mono-indigo.svg', { style: 'position:absolute;left:646px;top:700px;height:84px;width:auto' })}` }) },
+    ${logo('colourways/wordmark-horizontal--mono-indigo.svg', { style: 'position:absolute;left:650px;top:660px;height:84px;width:auto' })}` }) },
 
 { id: 'gbp-post-02-spice', file: 'gbp-post-02-spice', w: 1200, h: 900, type: 'image', tags: ['gbp'],
   title: 'GBP post · Pick your heat',
