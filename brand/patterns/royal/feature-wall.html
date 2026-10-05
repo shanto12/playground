@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" data-theme="royal">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Royal Feature Wall · Curry District</title>
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+  :root { --ink:#160B26; --ivory:#FBF3E4; --gold:#E9A63A; --gold-lt:#F7D98A; }
+  html, body { margin:0; background:var(--ink); color:var(--ivory); font-family:'Hanken Grotesk', system-ui, sans-serif; }
+  .rs-scene { position:relative; width:100%; aspect-ratio:16/9; background-color:var(--ink); background-repeat:repeat; background-position:0 0; overflow:hidden; }
+  .rs-scene > svg { position:absolute; inset:0; width:100%; height:100%; display:block; }
+  .steam path { animation: rise 4.5s ease-in-out infinite; transform-box: fill-box; }
+  .steam path:nth-child(2) { animation-delay: -1.5s; } .steam path:nth-child(3) { animation-delay: -3s; }
+  .flame { animation: flick 1.8s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: 50% 100%; }
+  @keyframes rise { 0% { transform: translateY(6px); opacity:0; } 35% { opacity:.9; } 100% { transform: translateY(-16px); opacity:0; } }
+  @keyframes flick { from { transform: scale(1, .9); } to { transform: scale(.92, 1.08); } }
+  @media (prefers-reduced-motion: reduce) { .steam path, .flame { animation: none; } }
+  footer { padding: 16px; font-size: 13px; color: #cdbfd6; }
+  .export footer { display:none; }
+</style>
+</head>
+<body>
+<main>
+  <div id="scene" role="img" aria-label="Concept render: a dining-room feature wall papered in a Curry District Royal pattern, with a brass arched mirror, a velvet banquette and brass pendant lights."></div>
+</main>
+<footer>Independent design concept prepared as a proposal — not the official Curry District website.</footer>
+<script src="scene.js"></script>
+<script>
+  var SCENES = {
+    a: { pattern: '04-marigold-damask-midnight.svg', tile: 236, panel: '#0F4D3F', velvet: '#A3173F', caption: 'Feature wall · Marigold Damask — Midnight' },
+    b: { pattern: '01-jali-lattice-emerald.svg', tile: 216, panel: '#160B26', velvet: '#4B1D52', caption: 'Feature wall · Jali Lattice — Emerald' }
+  };
+  var q = new URLSearchParams(location.search), key = SCENES[q.get('scene')] ? q.get('scene') : 'a';
+  if (q.get('export')) {
+    document.documentElement.classList.add('export');
+    // freeze motion for a clean still
+    var s = document.createElement('style'); s.textContent = '.steam path,.flame{animation:none!important}'; document.head.appendChild(s);
+  }
+  RoyalScene.mount(document.getElementById('scene'), SCENES[key]);
+</script>
+</body>
+</html>

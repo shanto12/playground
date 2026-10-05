@@ -5,7 +5,7 @@ const { C, f, rng, bestSpot, scallop, rpetal, leaf } = require('./lib');
 const CW = {
   sunset: { bg: C.cream, line: C.ink, cord: C.ink, A: C.mari, B: C.saff, Cc: C.rani, leaf: C.rani, vein: C.cream, tassel: C.rani, petal: [C.saff, C.mari, C.rani], dot: C.rani },
   night:  { bg: C.ink, line: C.ink, cord: C.mari, A: C.mari, B: C.saff, Cc: C.rani, leaf: C.pea, vein: C.ink, tassel: C.rani, petal: [C.mari, C.saff, C.cream], dot: C.cream },
-  fresh:  { bg: C.cream, line: C.ink, cord: C.ink, A: C.mari, B: C.pea, Cc: C.pea, hA: [C.mari, C.cil], hB: [C.mari, C.pea], hC: [C.pea, C.mari], leaf: C.cil, vein: C.cream, tassel: C.pea, petal: [C.mari, C.pea, C.cil], dot: C.pea },
+  fresh:  { bg: C.cream, line: C.ink, cord: C.ink, A: C.mari, B: C.pea, Cc: C.pea, hA: [C.mari, C.paper2], hB: [C.white, C.mari], hC: [C.pea, C.mari], leaf: C.cil, vein: C.cream, tassel: C.pea, petal: [C.mari, C.pea, C.cil], dot: C.pea },
 };
 
 function marigold(outer, inner, line, lw = 1.5) {
@@ -41,7 +41,7 @@ module.exports = function p01(T, cwName) {
   T.def('mC', marigold(hC[0], hC[1], c.line));
   T.def('lf', `<path d="${leaf(21, 5.4)}" fill="${c.leaf}" stroke="${c.line}" stroke-width="1.4" stroke-linejoin="round"/><path d="M0 -3V-17" stroke="${c.vein}" stroke-width="1.1" stroke-linecap="round"/>`);
   T.def('lfL', `<path d="${leaf(27, 6.2)}" fill="${c.leaf}" stroke="${c.line}" stroke-width="1.4" stroke-linejoin="round"/><path d="M0 -3V-22" stroke="${c.vein}" stroke-width="1.1" stroke-linecap="round"/>`);
-  T.def('ts', `<path d="M0 0C5 3 6 13 0 19C-6 13 -5 3 0 0Z" fill="${c.tassel}" stroke="${c.line}" stroke-width="1.4" stroke-linejoin="round"/><path d="M0 6V16M-2.4 7V14M2.4 7V14" stroke="${c.line}" stroke-width=".8" stroke-linecap="round" opacity=".55"/><rect x="-3.2" y="-1.6" width="6.4" height="3.6" rx="1.6" fill="${c.A}" stroke="${c.line}" stroke-width="1.2"/>`);
+  T.def('ts', `<path d="M0 0C5 3 6 13 0 19C-6 13 -5 3 0 0Z" fill="${c.tassel}" stroke="${c.line}" stroke-width="1.4" stroke-linejoin="round"/><path d="M0 6V16M-2.4 7V14M2.4 7V14" stroke="${c.line}" stroke-width=".6" stroke-linecap="round"/><rect x="-3.2" y="-1.6" width="6.4" height="3.6" rx="1.6" fill="${c.A}" stroke="${c.line}" stroke-width="1.2"/>`);
   T.def('thr', `<path d="M0 0V54" stroke="${c.line === c.bg ? c.A : c.line}" stroke-width="1.2" stroke-linecap="round"/>`);
   T.def('pt0', `<path d="${rpetal(7, 3.6)}" fill="${c.petal[0]}" stroke="${c.line}" stroke-width="1.1" stroke-linejoin="round"/>`);
   T.def('pt1', `<path d="${rpetal(7, 3.6)}" fill="${c.petal[1]}" stroke="${c.line}" stroke-width="1.1" stroke-linejoin="round"/>`);

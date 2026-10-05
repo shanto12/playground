@@ -23,12 +23,12 @@
 <style>
 /* ── home-only styles ── */
 .hero__grid{display:grid;gap:clamp(36px,7vw,64px);align-items:center}
-@media (min-width:960px){.hero__grid{grid-template-columns:1.15fr .85fr}}
+@media (min-width:960px){.hero__grid{grid-template-columns:1fr 1fr}.hero__title{font-size:clamp(4.5rem,8.4vw,7.25rem)}.duo{height:500px;max-width:580px}.duo__card{width:57%}.duo__card--a{left:0}.duo__card--b{right:0}}
 .hero__title .grad-text{display:inline-block;padding-bottom:.06em}
-.duo{position:relative;height:clamp(250px,66vw,420px);max-width:520px;width:100%;margin-inline:auto}
-.duo__card{position:absolute;display:flex;flex-direction:column;justify-content:space-between;width:68%;aspect-ratio:4/5;padding:clamp(14px,3.6vw,24px);text-decoration:none;transition:transform .6s var(--hub-ease),box-shadow .6s var(--hub-ease)}
-.duo__card--a{left:0;top:4%;z-index:2;background:#FFF4DC;color:#1D1147 !important;border:3px solid #1D1147;border-radius:22px;box-shadow:7px 7px 0 #1D1147,0 30px 60px -30px rgba(0,0,0,.8);transform:rotate(-5deg);animation:duoA 7s ease-in-out infinite alternate}
-.duo__card--b{right:0;top:0;z-index:1;background:radial-gradient(120% 80% at 50% 0%,#4B1D52 0%,#160B26 65%);color:#FBF3E4 !important;border:1px solid rgba(233,166,58,.6);border-radius:28px;box-shadow:0 30px 70px -26px rgba(0,0,0,.9),inset 0 0 0 6px #160B26,inset 0 0 0 7px rgba(233,166,58,.45);transform:rotate(4deg) translateY(10%);animation:duoB 8s ease-in-out infinite alternate}
+.duo{position:relative;height:clamp(270px,72vw,430px);max-width:520px;width:calc(100% - 12px);margin-inline:auto}
+.duo__card{position:absolute;display:flex;flex-direction:column;justify-content:space-between;width:63%;aspect-ratio:4/5;padding:clamp(14px,3.6vw,24px);text-decoration:none;transition:transform .6s var(--hub-ease),box-shadow .6s var(--hub-ease)}
+.duo__card--a{left:2%;top:6%;z-index:2;background:#FFF4DC;color:#1D1147 !important;border:3px solid #1D1147;border-radius:22px;box-shadow:7px 7px 0 #1D1147,0 30px 60px -30px rgba(0,0,0,.8);transform:rotate(-5deg);animation:duoA 7s ease-in-out infinite alternate}
+.duo__card--b{right:2%;top:0;z-index:1;background:radial-gradient(120% 80% at 50% 0%,#4B1D52 0%,#160B26 65%);color:#FBF3E4 !important;border:1px solid rgba(233,166,58,.6);border-radius:28px;box-shadow:0 30px 70px -26px rgba(0,0,0,.9),inset 0 0 0 6px #160B26,inset 0 0 0 7px rgba(233,166,58,.45);transform:rotate(4deg) translateY(10%);animation:duoB 8s ease-in-out infinite alternate}
 .duo__card:hover,.duo__card:focus-visible{z-index:3}
 .duo__card--a:hover{transform:rotate(-2deg) translateY(-4px) scale(1.02)}
 .duo__card--b:hover{transform:rotate(1.5deg) translateY(6%) scale(1.02)}
@@ -45,7 +45,7 @@
 .duo__card--b .duo__dots{justify-content:flex-end}
 .duo__dots i{width:clamp(14px,3.6vw,20px);aspect-ratio:1;border-radius:50%}
 .duo__card--a .duo__dots i{border:2px solid #1D1147}
-.duo__sun{position:absolute;right:14px;top:14px;width:clamp(44px,12vw,70px);height:auto}
+.duo__sun{position:absolute;right:12px;top:12px;width:clamp(40px,10vw,60px);height:auto}
 .duo__arch{position:absolute;left:16px;top:16px;width:clamp(36px,10vw,58px);height:auto;opacity:.9}
 @keyframes duoA{to{transform:rotate(-3deg) translateY(-8px)}}
 @keyframes duoB{to{transform:rotate(5.5deg) translateY(12%)}}
@@ -75,7 +75,8 @@ html.js .gap-meter:not(.is-in) .gap-meter__bar i{transform:scaleX(0)}
 .site-card::before{content:"";position:absolute;z-index:-1;left:50%;top:-10%;width:120%;aspect-ratio:1;translate:-50% 0;border-radius:50%;background:radial-gradient(closest-side,var(--glow),transparent);opacity:.55}
 .site-card--a{--glow:rgba(255,106,19,.45)}
 .site-card--b{--glow:rgba(233,166,58,.38)}
-.site-card .phone{--w:268px}
+.site-card .phone{--w:min(248px,68vw)}
+@media (min-width:768px){.site-card .phone{--w:268px}}
 .site-card__name{font:700 clamp(2rem,7vw,2.75rem)/1 var(--hub-font-display);letter-spacing:-.03em;margin:8px 0 8px}
 .site-card__desc{color:var(--hub-soft);margin:0 0 14px;max-width:40ch}
 .site-card__swatch{display:flex;gap:6px;margin-bottom:18px}
@@ -91,6 +92,7 @@ html.js .gap-meter:not(.is-in) .gap-meter__bar i{transform:scaleX(0)}
 .screen-ph span{position:relative}
 
 .top10{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.top10 > li{display:flex}.top10 .idea{flex:1}
 @media (min-width:768px){.top10{grid-template-columns:repeat(2,1fr);gap:12px}}
 .idea__blurb{margin:0;font-size:.875rem;color:var(--hub-muted);line-height:1.35}
 
@@ -171,14 +173,14 @@ html.js .gap-meter:not(.is-in) .gap-meter__bar i{transform:scaleX(0)}
       <div class="found__grid" data-stagger>
         <article class="stat" style="--stat-g:linear-gradient(90deg,#FFB000,#FF6A13)">
           <p class="stat__source">Google</p>
-          <p class="stat__value">≈<span data-count="4.2" data-decimals="1">4.2</span><small>★</small></p>
+          <p class="stat__value"><span class="stat__approx" aria-label="about">≈</span><span data-count="4.2" data-decimals="1">4.2</span><small>★</small></p>
           <p class="stat__label">~1,000 reviews</p>
           <p class="stat__note">As listed publicly, Oct 2026 · via review mirrors</p>
           <div class="chips"><span class="chip chip--dot" data-tone="gold">likely</span></div>
         </article>
         <article class="stat" style="--stat-g:linear-gradient(90deg,#E4147E,#7B5CFF)">
           <p class="stat__source">Uber Eats</p>
-          <p class="stat__value">≈<span data-count="4.5" data-decimals="1">4.5</span><small>★</small></p>
+          <p class="stat__value"><span class="stat__approx" aria-label="about">≈</span><span data-count="4.5" data-decimals="1">4.5</span><small>★</small></p>
           <p class="stat__label">2,000+ ratings</p>
           <p class="stat__note">As listed publicly, Oct 2026</p>
           <div class="chips"><span class="chip chip--dot" data-tone="gold">likely</span></div>

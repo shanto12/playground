@@ -140,6 +140,7 @@ function build(F) {
 
   /* shared gradients */
   def('gold', `<linearGradient id="${P}gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${C.goldDk}"/><stop offset=".38" stop-color="${C.goldLt}"/><stop offset=".6" stop-color="${C.gold}"/><stop offset="1" stop-color="${C.goldDk}"/></linearGradient>`);
+  def('foil', `<linearGradient id="${P}foil" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="${H}"><stop offset="0" stop-color="#F6D78E"/><stop offset=".3" stop-color="#EDB65A"/><stop offset=".62" stop-color="#D9993C"/><stop offset="1" stop-color="#A86E1E"/></linearGradient>`);
   def('brassV', `<linearGradient id="${P}brassV" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBE3A0"/><stop offset=".35" stop-color="${C.gold}"/><stop offset=".75" stop-color="${C.goldDk}"/><stop offset="1" stop-color="#5E3410"/></linearGradient>`);
   def('brassH', `<linearGradient id="${P}brassH" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5E3410"/><stop offset=".22" stop-color="${C.goldDk}"/><stop offset=".42" stop-color="#FBE3A0"/><stop offset=".6" stop-color="${C.gold}"/><stop offset="1" stop-color="#4A280C"/></linearGradient>`);
 
@@ -181,7 +182,7 @@ function build(F) {
   /* ── #floor ── */
   def('floor', `<linearGradient id="${P}floor" gradientUnits="userSpaceOnUse" x1="0" y1="${vy}" x2="0" y2="${H}"><stop offset="0" stop-color="#E89A55"/><stop offset=".03" stop-color="#C9664A"/><stop offset=".09" stop-color="#8E2C4E"/><stop offset=".2" stop-color="#521C55"/><stop offset=".4" stop-color="#2E1443"/><stop offset=".7" stop-color="#1D0D2D"/><stop offset="1" stop-color="#12081E"/></linearGradient>`);
   def('refl', `<linearGradient id="${P}refl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${C.goldLt}" stop-opacity=".55"/><stop offset=".45" stop-color="${C.gold}" stop-opacity=".18"/><stop offset="1" stop-color="${C.gold}" stop-opacity="0"/></linearGradient>`);
-  def('reflJ', `<radialGradient id="${P}reflJ"><stop offset="0" stop-color="#F7C45A" stop-opacity=".42"/><stop offset=".45" stop-color="#D9782F" stop-opacity=".14"/><stop offset="1" stop-color="#D9782F" stop-opacity="0"/></radialGradient>`);
+  def('reflJ', `<radialGradient id="${P}reflJ"><stop offset="0" stop-color="#F7C45A" stop-opacity=".3"/><stop offset=".45" stop-color="#D9782F" stop-opacity=".1"/><stop offset="1" stop-color="#D9782F" stop-opacity="0"/></radialGradient>`);
   let floor = `<rect x="${-M}" y="${vy}" width="${W + 2 * M}" height="${H - vy + M}" fill="${ref('floor')}"/>`;
   { // tile grid converging to the vanishing point
     let g = ''; const tile = arch.w * 0.27, sMax = (H + 60 - vy) / arch.yf;
@@ -190,15 +191,14 @@ function build(F) {
     floor += `<path d="${g}" stroke="${C.goldDk}" stroke-opacity=".17" stroke-width="${n1(1 * lw)}" fill="none"/>`;
   }
   floor += `<ellipse cx="${O.x}" cy="${vy}" rx="${n1(O.r * 3.2)}" ry="${n1(O.r * 0.5)}" fill="${ref('halo')}"/>`;
-  floor += `<rect x="${n1(O.x - O.r * 0.62)}" y="${vy}" width="${n1(O.r * 1.24)}" height="${n1(O.r * 2.8)}" fill="${ref('refl')}"/>`;
-  { let rp = ''; [[0.22, 0.95], [0.5, 1.25], [0.85, 0.8], [1.25, 1.1], [1.7, 0.7]].forEach(([dy, wk]) => { const y = vy + O.r * dy, hw = O.r * wk;
-      rp += `M${n1(O.x - hw)} ${n1(y)}H${n1(O.x - hw * 0.25)}M${n1(O.x + hw * 0.1)} ${n1(y)}H${n1(O.x + hw)}`; });
-    floor += `<path d="${rp}" stroke="${C.goldLt}" stroke-opacity=".32" stroke-width="${n1(1 * lw)}" stroke-linecap="round"/>`; }
+  def('reflO', `<radialGradient id="${P}reflO"><stop offset="0" stop-color="#FFF1C9" stop-opacity=".72"/><stop offset=".3" stop-color="${C.goldLt}" stop-opacity=".34"/><stop offset=".7" stop-color="${C.gold}" stop-opacity=".08"/><stop offset="1" stop-color="${C.gold}" stop-opacity="0"/></radialGradient>`);
+  floor += `<ellipse cx="${O.x}" cy="${vy}" rx="${n1(O.r * 0.95)}" ry="${n1(O.r * 3.4)}" fill="${ref('reflO')}"/>`;
   { const m1 = plane('mid1'), J = F.jali, yb = vy + arch.yf * m1.s;
     for (const sg of [-1, 1]) { const x = vx + sg * J.X * m1.s; floor += `<ellipse cx="${n1(x)}" cy="${n1(yb)}" rx="${n1(J.hw * m1.s * 1.25)}" ry="${n1((H - yb) * 1.05)}" fill="${ref('reflJ')}"/>`; } }
   floor = `<g id="floor">${floor}</g>`;
 
   /* ── arch planes ── */
+  const term = (so, s) => [so[0], so[so.length - 1]].map(g => `<circle cx="${n1(vx + s * g.x)}" cy="${n1(vy + s * g.y)}" r="${n1(2.6 * lw * Math.sqrt(s))}" fill="${C.gold}"/>`).join('');
   const planeSvg = (p) => {
     const s = p.s, sb = p.sb, yb = vy + arch.yf * s;
     def('f-' + p.k, `<radialGradient id="${P}f-${p.k}" gradientUnits="userSpaceOnUse" cx="${vx}" cy="${n1(vy + 60 * s)}" r="${n1(arch.w * s * 1.75)}"><stop offset="0" stop-color="${p.inner}"/><stop offset=".55" stop-color="${p.inner}"/><stop offset="1" stop-color="${p.outer}"/></radialGradient>`);
@@ -212,18 +212,20 @@ function build(F) {
       def('vig', `<radialGradient id="${P}vig" gradientUnits="userSpaceOnUse" cx="${vx}" cy="${n1(vy - 40)}" r="${n1(Math.max(W, H) * 0.78)}"><stop offset=".55" stop-color="#0A0414" stop-opacity="0"/><stop offset="1" stop-color="#0A0414" stop-opacity=".78"/></radialGradient>`);
       g += `<path d="${face}" fill="${ref('latFace')}" opacity=".06"/><path d="${face}" fill="${ref('vig')}"/>`;
       const so = smoothSegs(arch.w + ch * 0.31 + 22, arch.ys, arch.ya - ch * 0.2 - 58, arch.yf, 40);
-      g += `<path d="${pd(so, s, vx, vy)}" fill="none" stroke="${ref('gold')}" stroke-opacity=".55" stroke-width="${n1(1 * lw)}"/>`;
+      g += `<path d="${pd(so, s, vx, vy)}" fill="none" stroke="${ref('foil')}" stroke-opacity=".5" stroke-width="${n1(1 * lw)}"/>` + term(so, s);
     }
     if (p.k === 'mid1') { const so = smoothSegs(arch.w + ch * 0.31 + 20, arch.ys, arch.ya - ch * 0.2 - 52, arch.yf, 30);
-      g += `<path d="${pd(so, s, vx, vy)}" fill="none" stroke="${ref('gold')}" stroke-opacity=".38" stroke-width="${n1(0.9 * lw)}"/>`; }
+      g += `<path d="${pd(so, s, vx, vy)}" fill="none" stroke="${ref('foil')}" stroke-opacity=".38" stroke-width="${n1(0.9 * lw)}"/>` + term(so, s); }
     g += `<path d="${openD(s)}" fill="none" stroke="${C.goldLt}" stroke-opacity=".1" stroke-width="${n1(9 * s * lw)}"/>`;
-    g += `<path d="${openD(s)}" fill="none" stroke="${ref('gold')}" stroke-width="${sw}"/>`;
+    g += `<path d="${openD(s)}" fill="none" stroke="${ref('foil')}" stroke-width="${sw}"/>`;
     if (p.k === 'near' || p.k === 'mid1') g += `<path d="${openD(sb)}" fill="none" stroke="${C.goldDk}" stroke-opacity=".3" stroke-width="${n1(0.7 * lw)}"/>`;
     return g;
   };
   const shimmer = (s, delay, dur) => `<path class="shimmer" d="${openD(s)}" pathLength="1000" fill="none" stroke="#FFF1C9" stroke-width="${n1(2.2 * lw * Math.sqrt(s))}" stroke-linecap="round" style="animation-delay:${delay}s;animation-duration:${dur}s"/>`;
   const groupPlanes = (grp, shimmers) => `<g id="${grp}">${F.planes.filter(p => p.grp === grp).map(planeSvg).join('')}${shimmers}</g>`;
-  const archesFar = groupPlanes('arches-far', shimmer(far2.s, -2, 11));
+  def('haze', `<radialGradient id="${P}haze"><stop offset="0" stop-color="#F4C474" stop-opacity=".2"/><stop offset=".5" stop-color="#D2714A" stop-opacity=".07"/><stop offset="1" stop-color="#A3173F" stop-opacity="0"/></radialGradient>`);
+  const haze = `<ellipse cx="${O.x}" cy="${n1(O.y + O.r)}" rx="${n1(arch.w * plane('mid2').sb * 1.05)}" ry="${n1(-arch.ya * plane('mid2').sb * 0.95)}" fill="${ref('haze')}"/>`;
+  const archesFar = groupPlanes('arches-far', haze + shimmer(far2.s, -2, 11));
   const archesMid = groupPlanes('arches-mid', shimmer(plane('mid1').s, -6.5, 13));
   const archesNear = groupPlanes('arches-near', shimmer(1, 0, 15));
 
@@ -240,7 +242,7 @@ function build(F) {
       const cyc = vy + s * (J.top + J.bot) / 2;
       jali += `<ellipse cx="${n1(cx)}" cy="${n1(cyc)}" rx="${n1(J.hw * s * 2.6)}" ry="${n1((J.bot - J.top) * s * 0.78)}" fill="${ref('jHalo')}"/>`;
       jali += `<path d="${d}" fill="#2A0E2A"/><path d="${di}" fill="${ref('jaliG')}"/><path d="${di}" fill="${ref('lat')}"/>`;
-      jali += `<path d="${d}" fill="none" stroke="${ref('gold')}" stroke-width="${n1(1.3 * lw)}"/><path d="${di}" fill="none" stroke="${C.goldLt}" stroke-opacity=".5" stroke-width="${n1(0.7 * lw)}"/>`;
+      jali += `<path d="${d}" fill="none" stroke="${ref('foil')}" stroke-width="${n1(1.3 * lw)}"/><path d="${di}" fill="none" stroke="${C.goldLt}" stroke-opacity=".5" stroke-width="${n1(0.7 * lw)}"/>`;
     } }
   jali = `<g id="jali">${jali}</g>`;
 
@@ -288,8 +290,9 @@ function build(F) {
     items.push({ s, svg });
     steamAt.push({ x: cx, y: rimY, s, rx });
   };
+  const diyaAt = [];
   const diya = (X, s) => {
-    const cx = vx + X * s, cy = tY(s), k = s * 0.95;
+    const cx = vx + X * s, cy = tY(s), k = s * 0.95; diyaAt.push({ x: cx, y: cy - 30 * k, k: Math.max(0.6, s) });
     let svg = `<circle cx="${n1(cx)}" cy="${n1(cy - 22 * k)}" r="${n1(42 * k)}" fill="${ref('dglow')}"/>`;
     svg += `<path d="M${n1(cx - 15 * k)} ${n1(cy - 5 * k)}A${n1(15 * k)} ${n1(9 * k)} 0 0 0 ${n1(cx + 15 * k)} ${n1(cy - 5 * k)}Z" fill="${ref('clay')}"/>`;
     svg += `<ellipse cx="${n1(cx)}" cy="${n1(cy - 5 * k)}" rx="${n1(15 * k)}" ry="${n1(4.2 * k)}" fill="#E8924C"/><ellipse cx="${n1(cx)}" cy="${n1(cy - 4.6 * k)}" rx="${n1(11.5 * k)}" ry="${n1(2.8 * k)}" fill="#4A1E10"/>`;
@@ -313,7 +316,7 @@ function build(F) {
   table += `<path d="${quad(-tw, tw, t0, t1, tY)}" fill="${ref('cloth')}"/>`;
   table += `<path d="${quad(-T.runner, T.runner, t0, t1, tY)}" fill="${ref('runner')}"/>`;
   { let g = ''; for (const X of [-tw + 8, tw - 8, -T.runner + 6, T.runner - 6]) g += `M${n1(vx + X * t0)} ${n1(tY(t0))}L${n1(vx + X * t1)} ${n1(tY(t1))}`;
-    table += `<path d="${g}" stroke="${ref('gold')}" stroke-opacity=".75" stroke-width="${n1(1.1 * lw)}" fill="none"/>`;
+    table += `<path d="${g}" stroke="${ref('foil')}" stroke-opacity=".75" stroke-width="${n1(1.1 * lw)}" fill="none"/>`;
     table += `<path d="M${n1(vx - tw * t1)} ${n1(tY(t1))}L${n1(vx + tw * t1)} ${n1(tY(t1))}" stroke="${C.goldLt}" stroke-opacity=".7" stroke-width="${n1(1 * lw)}"/>`; }
   // front drop of the cloth (we see the table's near edge)
   { const y0 = tY(t0), x0 = vx - tw * t0, x1 = vx + tw * t0;
@@ -368,10 +371,13 @@ function build(F) {
   /* ── #embers ── */
   def('ember', `<radialGradient id="${P}ember"><stop offset="0" stop-color="#FFF6D2"/><stop offset=".35" stop-color="${C.goldLt}" stop-opacity=".9"/><stop offset="1" stop-color="${C.gold}" stop-opacity="0"/></radialGradient>`);
   let embers = '';
+  const src = [...diyaAt, ...F.lanternsFg.map(L => ({ x: L.x, y: L.y + (L.chain + 150) * L.k, k: 2.2 })), ...F.lanternsDepth.flatMap(L => [-1, 1].map(sg => ({ x: vx + sg * L.X * L.s, y: vy + (L.Y + 120) * L.s, k: 1.4 })))];
+  const wsum = src.reduce((a, e) => a + Math.pow(e.k, 1.6), 0);
+  const pick = () => { let r = R() * wsum; for (const e of src) { r -= Math.pow(e.k, 1.6); if (r <= 0) return e; } return src[0]; };
   for (let i = 0; i < F.embers; i++) {
-    const side = R() < 0.5 ? -1 : 1, spread = R();
-    const x = vx + side * (40 + spread * W * 0.44), y = vy - 40 + R() * (H - vy + 10);
-    const r = (1.6 + R() * 2.6) * Math.sqrt(lw), dx = ((R() - 0.5) * 60).toFixed(0), dy = -(120 + R() * 220).toFixed(0);
+    const e = pick(), sp = 40 * (e.k || 1);
+    const x = e.x + (R() - 0.5) * sp * 2, y = e.y - R() * sp * 2.2;
+    const r = (1.2 + R() * 2.2) * Math.sqrt(lw) * Math.min(1.4, 0.55 + e.k * 0.5), dx = ((R() - 0.5) * 60).toFixed(0), dy = -(120 + R() * 220).toFixed(0);
     const t = (7 + R() * 7).toFixed(1), dl = -(R() * 12).toFixed(1);
     embers += `<circle class="ember" cx="${n1(x)}" cy="${n1(y)}" r="${n1(r * 2.2)}" fill="${ref('ember')}" style="--dx:${dx}px;--dy:${dy}px;--t:${t}s;animation-delay:${dl}s"/>`;
   }
@@ -476,6 +482,44 @@ write('layers/manifest.json', JSON.stringify(manifest, null, 2));
    then: .my-dish { clip-path: url(#cd-arch-clip); }
 */
 `);
+}
+
+/* ── demo dish art: overhead thali (used to show the arch mask) ── */
+{
+  const R = rng(5); const cx = 300, cy = 430;
+  const kat = [
+    ['#F06A3E', '#C83A2E', '#7A1228', 'swirl'], ['#FFE08E', '#F0A934', '#B8641C', 'dots'], ['#6DBB6A', '#2E7D4F', '#124A35', 'swirl'],
+    ['#FFFFFA', '#F2E6CC', '#CDB48A', 'flecks'], ['#E9A86A', '#B8642E', '#6E3214', 'dots'], ['#7A2A1E', '#4A140E', '#2A0806', 'balls']];
+  let g = '';
+  kat.forEach(([a, b, c, t], i) => {
+    const ang = (-90 + i * 60) * Math.PI / 180, x = cx + Math.cos(ang) * 152, y = cy + Math.sin(ang) * 152;
+    g += `<radialGradient id="k${i}" cx=".42" cy=".38" r=".7"><stop offset="0" stop-color="${a}"/><stop offset=".55" stop-color="${b}"/><stop offset="1" stop-color="${c}"/></radialGradient>`;
+    let top = `<circle cx="${n1(x + 4)}" cy="${n1(y + 7)}" r="52" fill="#2A1206" opacity=".45"/><circle cx="${n1(x)}" cy="${n1(y)}" r="52" fill="url(#br)"/><circle cx="${n1(x)}" cy="${n1(y)}" r="43" fill="url(#k${i})"/><circle cx="${n1(x)}" cy="${n1(y)}" r="51" fill="none" stroke="#F7D98A" stroke-width="1.5"/>`;
+    if (t === 'swirl') top += `<path d="M${n1(x - 24)} ${n1(y + 4)}C${n1(x - 10)} ${n1(y - 20)} ${n1(x + 12)} ${n1(y + 18)} ${n1(x + 26)} ${n1(y - 6)}" fill="none" stroke="#FFF4DF" stroke-opacity=".8" stroke-width="4" stroke-linecap="round"/>`;
+    if (t === 'dots') for (let k = 0; k < 9; k++) top += `<circle cx="${n1(x + (R() - .5) * 52)}" cy="${n1(y + (R() - .5) * 52)}" r="${n1(2 + R() * 2.5)}" fill="#5A1E0E" opacity=".55"/>`;
+    if (t === 'flecks') for (let k = 0; k < 10; k++) top += `<ellipse cx="${n1(x + (R() - .5) * 50)}" cy="${n1(y + (R() - .5) * 50)}" rx="3" ry="1.4" fill="#3FA34D" transform="rotate(${Math.floor(R() * 180)} ${n1(x)} ${n1(y)})"/>`;
+    if (t === 'balls') for (const [dx, dy] of [[-12, -10], [13, -6], [-2, 14]]) top += `<circle cx="${x + dx}" cy="${y + dy}" r="15" fill="url(#gj)"/><circle cx="${x + dx - 5}" cy="${y + dy - 6}" r="4" fill="#FFE4B0" opacity=".45"/>`;
+    g += top;
+  });
+  let petals = ''; for (let i = 0; i < 26; i++) { const a = R() * Math.PI * 2, rr = 300 + R() * 130; const x = cx + Math.cos(a) * rr, y = cy + Math.sin(a) * rr * 1.1;
+    petals += `<ellipse cx="${n1(x)}" cy="${n1(y)}" rx="${n1(7 + R() * 6)}" ry="${n1(4 + R() * 3)}" fill="${R() < .5 ? '#FFB000' : '#F08A1C'}" opacity=".9" transform="rotate(${Math.floor(R() * 180)} ${n1(x)} ${n1(y)})"/>`; }
+  const dish = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 860" width="600" height="860" aria-hidden="true"><defs>`
+    + `<radialGradient id="bg" cx=".5" cy=".5" r=".75"><stop offset="0" stop-color="#5C2664"/><stop offset=".6" stop-color="#2E1240"/><stop offset="1" stop-color="#140A22"/></radialGradient>`
+    + `<radialGradient id="br" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#FBE3A0"/><stop offset=".45" stop-color="${C.gold}"/><stop offset="1" stop-color="#7A4614"/></radialGradient>`
+    + `<radialGradient id="wl" cx=".45" cy=".4" r=".65"><stop offset="0" stop-color="#E9B460"/><stop offset=".75" stop-color="#B07424"/><stop offset="1" stop-color="#6E3E10"/></radialGradient>`
+    + `<radialGradient id="rc" cx=".42" cy=".38" r=".7"><stop offset="0" stop-color="#FFFFF8"/><stop offset=".7" stop-color="#F3E3C2"/><stop offset="1" stop-color="#D0B07A"/></radialGradient>`
+    + `<radialGradient id="nn" cx=".4" cy=".4" r=".7"><stop offset="0" stop-color="#FFE7BF"/><stop offset=".6" stop-color="#E5AA6C"/><stop offset="1" stop-color="#A9622C"/></radialGradient>`
+    + `<radialGradient id="gj" cx=".38" cy=".35" r=".7"><stop offset="0" stop-color="#B0522A"/><stop offset="1" stop-color="#3A0E06"/></radialGradient>`
+    + `<pattern id="jl" width="28" height="28" patternUnits="userSpaceOnUse"><g fill="none" stroke="${C.goldLt}" stroke-width=".8"><circle r="14"/><circle cx="28" r="14"/><circle cy="28" r="14"/><circle cx="28" cy="28" r="14"/><circle cx="14" cy="14" r="14"/></g></pattern>`
+    + g.match(/<radialGradient id="k\d"[\s\S]*?<\/radialGradient>/g).join('') + `</defs>`
+    + `<rect width="600" height="860" fill="url(#bg)"/><rect width="600" height="860" fill="url(#jl)" opacity=".07"/>${petals}`
+    + `<circle cx="${cx + 8}" cy="${cy + 14}" r="250" fill="#0A0414" opacity=".5"/><circle cx="${cx}" cy="${cy}" r="248" fill="url(#br)"/><circle cx="${cx}" cy="${cy}" r="226" fill="url(#wl)"/><circle cx="${cx}" cy="${cy}" r="246" fill="none" stroke="#FFF1C9" stroke-opacity=".7" stroke-width="2"/><circle cx="${cx}" cy="${cy}" r="226" fill="none" stroke="#7A4614" stroke-width="2"/>`
+    + g.replace(/<radialGradient id="k\d"[\s\S]*?<\/radialGradient>/g, '')
+    + `<ellipse cx="${cx - 18}" cy="${cy - 8}" rx="74" ry="64" fill="url(#rc)"/>${Array.from({ length: 14 }, () => { const x = cx - 18 + (R() - .5) * 100, y = cy - 8 + (R() - .5) * 80; return `<path d="M${n1(x)} ${n1(y)}l${n1(6 + R() * 6)} ${n1((R() - .5) * 6)}" stroke="#F0A934" stroke-width="2" stroke-linecap="round"/>`; }).join('')}`
+    + `<path d="M${cx + 20} ${cy + 30}C${cx + 80} ${cy + 6} ${cx + 132} ${cy + 52} ${cx + 118} ${cy + 96}C${cx + 104} ${cy + 136} ${cx + 44} ${cy + 128} ${cx + 22} ${cy + 92}C${cx + 6} ${cy + 66} ${cx + 4} ${cy + 40} ${cx + 20} ${cy + 30}Z" fill="url(#nn)"/>${[[60, 60], [86, 80], [74, 100], [44, 84], [96, 56]].map(([dx, dy]) => `<ellipse cx="${cx + dx}" cy="${cy + dy}" rx="5" ry="3.5" fill="#7A3A12" opacity=".55"/>`).join('')}`
+    + `<path d="M${cx - 96} ${cy + 70}C${cx - 70} ${cy + 96} ${cx - 34} ${cy + 104} ${cx - 8} ${cy + 96}" fill="none" stroke="#2E8B3E" stroke-width="9" stroke-linecap="round"/><circle cx="${cx - 66}" cy="${cy + 112}" r="22" fill="#C9E46A"/><circle cx="${cx - 66}" cy="${cy + 112}" r="17" fill="#E8F59A"/><path d="M${cx - 66} ${cy + 95}V${cy + 129}M${cx - 83} ${cy + 112}H${cx - 49}M${cx - 78} ${cy + 100}L${cx - 54} ${cy + 124}M${cx - 54} ${cy + 100}L${cx - 78} ${cy + 124}" stroke="#C9E46A" stroke-width="1.6"/>`
+    + `</svg>`;
+  write('demo-dish.svg', dish);
 }
 
 console.log(report.join('\n'));

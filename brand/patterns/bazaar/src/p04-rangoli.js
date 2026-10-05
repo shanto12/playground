@@ -27,7 +27,7 @@ function medallion(m, line, shine) {
   // painted shine stroke down each outer petal
   let sh = '';
   for (let i = 0; i < 12; i++) sh += `<path d="M0 -41Q2.4 -47 0 -53" transform="rotate(${i * 30})"/><path d="M-2 -27Q-4.2 -31 -2.6 -35" transform="rotate(${i * 30 + 15})"/>`;
-  s += `<g fill="none" stroke="${shine}" stroke-width="2.2" stroke-linecap="round" opacity=".9">${sh}</g>`;
+  s += `<g fill="none" stroke="${shine}" stroke-width="2.2" stroke-linecap="round">${sh}</g>`;
   s += dots(12, 31.5, 1.9, 15, line);
   // disc with dotted ring
   s += `<circle r="24" fill="${m.disc}" ${L}/>`;
@@ -43,7 +43,7 @@ function small(m, line, shine) {
   s += ring(petal(22, 5), 8, 22.5, `fill="${m.p2}" ${L}`);
   let sh = '';
   for (let i = 0; i < 8; i++) sh += `<path d="M0 -15Q2 -21 0 -26" transform="rotate(${i * 45})"/>`;
-  s += `<g fill="none" stroke="${shine}" stroke-width="1.9" stroke-linecap="round" opacity=".9">${sh}</g>`;
+  s += `<g fill="none" stroke="${shine}" stroke-width="1.9" stroke-linecap="round">${sh}</g>`;
   s += `<path d="${scallop(9, 10)}" fill="${m.c}" ${L}/>`;
   s += `<circle r="3.4" fill="${line}"/><circle r="1.3" fill="${shine}"/>`;
   s += dots(8, 35.5, 2.2, 22.5, m.dot);

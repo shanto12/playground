@@ -21,8 +21,8 @@ function glass(c) {
     `<path d="${O}" fill="${c.glass}"/>` +
     `<path d="M-12 -8L12 -8L9.6 14.5Q0 16.2 -9.6 14.5Z" fill="${c.chai}"/>` +
     `<path d="M-12 -8.2H12" stroke="${c.foam}" stroke-width="2.6"/>` +
-    `<path d="${fl}" stroke="${c.line}" stroke-width="1" opacity=".4"/>` +
-    `<path d="M-10 10.4Q0 12 10 10.4" fill="none" stroke="${c.line}" stroke-width="1.4" opacity=".6"/>` +
+    `<path d="${fl}" stroke="${c.foam}" stroke-width="1.1"/>` +
+    `<path d="M-10 10.4Q0 12 10 10.4" fill="none" stroke="${c.line}" stroke-width="1.1"/>` +
     `<path d="${O}" fill="none" stroke="${c.line}" stroke-width="2.1" ${LJ}/>`;
 }
 function kulhad(c) {
@@ -31,7 +31,7 @@ function kulhad(c) {
     `<path d="M-12.6 -3.6Q0 -1.4 12.6 -3.6" fill="none" stroke="${c.kulband}" stroke-width="2.6"/>` +
     `<path d="M-11.6 3.4Q0 5.4 11.6 3.4" fill="none" stroke="${c.kulband}" stroke-width="1.4"/>` +
     `<ellipse cy="-13" rx="13.5" ry="3.6" fill="${c.kulchai}" stroke="${c.line}" stroke-width="2.1"/>` +
-    `<path d="M-8 -6Q-8.6 2 -6.4 9" fill="none" stroke="${c.glass}" stroke-width="1.8" opacity=".7" ${LJ}/>`;
+    `<path d="M-8 -6Q-8.6 2 -6.4 9" fill="none" stroke="${c.glass}" stroke-width="1.8" ${LJ}/>`;
 }
 function ketli(c) {
   return `<path d="M13 2C20 0 21 -8 26 -11" fill="none" stroke="${c.line}" stroke-width="6" ${LJ}/>` +
@@ -40,7 +40,7 @@ function ketli(c) {
     `<path d="M-16 0C-16 -10 -9 -13 0 -13C9 -13 16 -10 16 0C16 9 10 13 0 13C-10 13 -16 9 -16 0Z" fill="${c.ket}" stroke="${c.line}" stroke-width="2.1" ${LJ}/>` +
     `<path d="M-9 -12.4Q0 -17 9 -12.4Z" fill="${c.ketlid}" stroke="${c.line}" stroke-width="1.8" ${LJ}/><circle cy="-16.4" r="2.4" fill="${c.ketlid}" stroke="${c.line}" stroke-width="1.6"/>` +
     `<path d="M-15.6 2.6H15.6" stroke="${c.ketlid}" stroke-width="2.6"/>` +
-    `<path d="M-10 -5Q-11 0 -9.4 4" fill="none" stroke="${c.glass}" stroke-width="2" opacity=".8" ${LJ}/>`;
+    `<path d="M-10 -5Q-11 0 -9.4 4" fill="none" stroke="${c.glass}" stroke-width="2" ${LJ}/>`;
 }
 function anise(c) {
   const P = 'M0 -2C4 -5 5 -10 0 -13.5C-5 -10 -4 -5 0 -2Z';
@@ -50,7 +50,7 @@ function anise(c) {
 }
 function cinnamon(c) {
   const stick = (dx) => `<g transform="translate(${dx} 0)"><rect x="-4" y="-21" width="8" height="42" rx="3.4" fill="${c.cin}" stroke="${c.line}" stroke-width="1.9"/>` +
-    `<path d="M-1.4 -17V17" stroke="${c.line}" stroke-width=".9" opacity=".45"/>` +
+    `<path d="M-1.4 -17V17" stroke="${c.line}" stroke-width=".7"/>` +
     `<ellipse cy="-21" rx="4" ry="2.4" fill="${c.cinend}" stroke="${c.line}" stroke-width="1.5"/><path d="M-1.6 -21.4a1.6 1.2 0 1 1 1.6 1.4" fill="none" stroke="${c.line}" stroke-width="1"/></g>`;
   return `<g transform="rotate(-8)">${stick(-4.6)}</g><g transform="rotate(8)">${stick(4.6)}</g>` +
     `<path d="M-10 1.5Q0 5 10 1.5" fill="none" stroke="${c.tie}" stroke-width="3.2" ${LJ}/><path d="M0 3.4l-4 7M0 3.4l4.4 6.4" stroke="${c.tie}" stroke-width="2" ${LJ}/>`;
@@ -58,7 +58,7 @@ function cinnamon(c) {
 function pod(c) {
   return `<path d="M0 -12.5V-9.5" stroke="${c.line}" stroke-width="2" stroke-linecap="round"/>` +
     `<path d="M0 -10C6.2 -7.6 6.6 5.6 0 10.5C-6.6 5.6 -6.2 -7.6 0 -10Z" fill="${c.pod}" stroke="${c.line}" stroke-width="1.8" ${LJ}/>` +
-    `<path d="M0 -7.4Q2.6 0 0 7.6M-3.2 -4.2Q-4 1 -2 5.4" fill="none" stroke="${c.line}" stroke-width="1" stroke-linecap="round" opacity=".6"/>`;
+    `<path d="M0 -7.4Q2.6 0 0 7.6M-3.2 -4.2Q-4 1 -2 5.4" fill="none" stroke="${c.line}" stroke-width=".8" stroke-linecap="round"/>`;
 }
 
 module.exports = function p05(T, cwName) {

@@ -30,7 +30,7 @@ function chiliDef(body, cap, line, hi) {
   const ang = Math.atan2(d0[1], d0[0]) * 180 / Math.PI - 90;
   return `<g transform="translate(${f(-CEN[0])} ${f(-CEN[1])})">` +
     `<path d="${outline}" fill="${body}" stroke="${line}" stroke-width="2" stroke-linejoin="round"/>` +
-    `<path d="${spline(H, false)}" fill="none" stroke="${hi}" stroke-width="1.9" stroke-linecap="round" opacity=".85"/>` +
+    `<path d="${spline(H, false)}" fill="none" stroke="${hi}" stroke-width="1.8" stroke-linecap="round"/>` +
     `<g transform="rotate(${f(ang)})">` +
     `<path d="M0 -3C0 -10 3 -13.5 8 -15" fill="none" stroke="${line}" stroke-width="5" stroke-linecap="round"/>` +
     `<path d="M0 -3C0 -10 3 -13.5 8 -15" fill="none" stroke="${cap}" stroke-width="2.2" stroke-linecap="round"/>` +
@@ -59,7 +59,7 @@ function wheelDef(rind, flesh, pith, line) {
 function podDef(fill, line) {
   return `<path d="M0 -12.5V-9.5" stroke="${line}" stroke-width="2" stroke-linecap="round"/>` +
     `<path d="M0 -10C6.2 -7.6 6.6 5.6 0 10.5C-6.6 5.6 -6.2 -7.6 0 -10Z" fill="${fill}" stroke="${line}" stroke-width="1.8" stroke-linejoin="round"/>` +
-    `<path d="M0 -7.4Q2.6 0 0 7.6M-3.2 -4.2Q-4 1 -2 5.4" fill="none" stroke="${line}" stroke-width="1" stroke-linecap="round" opacity=".7"/>`;
+    `<path d="M0 -7.4Q2.6 0 0 7.6M-3.2 -4.2Q-4 1 -2 5.4" fill="none" stroke="${line}" stroke-width=".8" stroke-linecap="round"/>`;
 }
 function sprigDef(lf, stem, line) {
   let s = `<path d="M-1 25Q4 2 0 -22" fill="none" stroke="${stem}" stroke-width="1.8" stroke-linecap="round"/>`;

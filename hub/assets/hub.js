@@ -297,7 +297,7 @@
   }
   function publicURL(url) {
     if (url) return url;
-    if (/^https?:/.test(location.protocol + '') && location.hostname && location.hostname !== 'localhost') return location.href.split('#')[0];
+    if (/^https?:/.test(location.protocol + '') && location.hostname && !/^(localhost|127\.|0\.0\.0\.0)/.test(location.hostname)) return location.href.split('#')[0];
     return URLS.hub + (AREA && AREA !== 'home' ? AREA + '/' : '');
   }
   function copyText(text) {
