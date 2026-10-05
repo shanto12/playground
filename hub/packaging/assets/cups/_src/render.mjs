@@ -55,9 +55,9 @@ try {
     // optimise: lossless recompress; thumbs ≤120 KB
     execFileSync('convert', [png, '-strip', '-define', 'png:compression-level=9', png]);
     const thumb = `${OUT}/${sc.name}-thumb.jpg`;
-    for (const q of [82, 76, 70, 62, 55]) {
+    for (const q of [80, 72, 64, 56, 48]) {
       execFileSync('convert', [png, '-resize', '600x', '-strip', '-interlace', 'Plane', '-sampling-factor', '4:2:0', '-quality', String(q), thumb]);
-      if (fs.statSync(thumb).size <= 120 * 1024) break;
+      if (fs.statSync(thumb).size <= 98 * 1024) break;
     }
     console.log(`${sc.name}  ${((Date.now() - t0) / 1000).toFixed(1)}s  png ${(fs.statSync(png).size / 1024 / 1024).toFixed(2)} MB  thumb ${(fs.statSync(thumb).size / 1024).toFixed(0)} KB`);
   }

@@ -123,13 +123,13 @@ function paintBoard(dir) {
   // finish notes + colour drench
   const ny = ly + 100;
   const colW = (W - 80 - 30) / 2;
-  const box = (x, y, w, hh, title, body) => {
+  const box = (x, y, w, hh, title, body, padR = 0) => {
     const g = [];
     g.push(th.shadow(x, y, w, hh, 20));
     g.push(h('rect', { x, y, width: w, height: hh, rx: 20, fill: '#FFFFFF', stroke: th.stroke, 'stroke-width': th.sw }));
     g.push(T(x + 26, y + 46, title, { f: dir === 'bazaar' ? th.disp : th.disp, s: dir === 'bazaar' ? 24 : 30, w: 600, i: dir !== 'bazaar', c: th.ink }));
     let yy = y + 84;
-    body.forEach((b) => { const p = P(x + 26, yy, b, w - 52, { f: th.body, s: 18.5, c: '#2E2540', lh: 25 }); g.push(p.svg); yy += p.h + 8; });
+    body.forEach((b, bi) => { const p = P(x + 26, yy, b, w - 52 - (bi === 0 ? padR : 0), { f: th.body, s: 18.5, c: '#2E2540', lh: 25 }); g.push(p.svg); yy += p.h + 8; });
     return g.join('');
   };
   s.push(box(40, ny, colW, 300, dir === 'bazaar' ? 'FINISH NOTES' : 'Finish notes', [
@@ -142,9 +142,9 @@ function paintBoard(dir) {
   s.push(box(dx, ny, colW, 300, dir === 'bazaar' ? 'COLOUR-DRENCH IDEA' : 'The colour-drench idea', [
     `Walls, ceiling and trim all in one hue — e.g. ${dir === 'bazaar' ? 'Peacock Teal' : 'Deep Emerald'}. The paint-only move with the biggest change.`,
     'Approx. ~$500 DIY for one wall → ~$8,000 pro incl. ceiling (estimate, needs a quote).',
-  ]));
+  ], 140));
   // mini drench room icon
-  const mx = dx + colW - 140, my = ny + 26;
+  const mx = dx + colW - 136, my = ny + 70;
   s.push(`<g transform="translate(${mx} ${my})">${h('path', { d: 'M0 0H110L86 20H24Z', fill: shade(drench, -0.15) })}${h('path', { d: 'M0 0L24 20V70L0 90Z', fill: shade(drench, -0.08) })}${h('path', { d: 'M110 0L86 20V70L110 90Z', fill: shade(drench, -0.08) })}${h('rect', { x: 24, y: 20, width: 62, height: 50, fill: drench })}${h('path', { d: 'M0 90L24 70H86L110 90Z', fill: dir === 'bazaar' ? BZ.cream : RY.ivory })}${h('rect', { x: 24, y: 52, width: 62, height: 2.5, fill: shade(drench, -0.3) })}</g>`);
   s.push(footer(th, W, H, 'Concept board · hex values from brand tokens · no paint-brand codes implied'));
   return L.doc(W, H, BDEFS, s.join(''), { fonts: th.dir === 'bazaar' ? FB.keys : FR.keys, title: `Paint the room — ${th.badge}` });
@@ -358,10 +358,10 @@ function costsPhased() {
     s.push(h('rect', { x: 60, y, width: W - 120, height: hh, rx: 28, fill: '#FFFFFF', stroke: '#E9D9B4', 'stroke-width': 1.5 }));
     s.push(h('rect', { x: 60, y, width: 14, height: hh, rx: 7, fill: ['#FFB000', '#E4147E', '#0F4D3F'][pi] }));
     s.push(T(100, y + 86, p.amt, { f: F.display, s: 72, w: 800, c: INK }));
-    s.push(T(100 + p.amt.length * 40 + 24, y + 62, p.name, { f: F.display, s: 30, w: 600, i: true, c: INK }));
-    s.push(P(100 + p.amt.length * 40 + 24, y + 92, p.blurb, W - 260 - p.amt.length * 40, { f: F.body, s: 18, c: '#4A3F66', lh: 23 }).svg);
+    s.push(T(100 + p.amt.length * 47 + 24, y + 62, p.name, { f: F.display, s: 30, w: 600, i: true, c: INK }));
+    s.push(P(100 + p.amt.length * 47 + 24, y + 92, p.blurb, W - 260 - p.amt.length * 47, { f: F.body, s: 18, c: '#4A3F66', lh: 23 }).svg);
     const max = Math.max(...p.items.map((it) => it[1]));
-    const barX = 640, barW = W - 120 - (barX - 60) - 150;
+    const barX = 640, barW = W - 120 - (barX - 60) - 210;
     p.items.forEach((it, i) => {
       const iy = y + 168 + i * 58;
       s.push(T(100, iy, it[0], { f: F.body, s: 20, c: INK }));

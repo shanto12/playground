@@ -1,0 +1,122 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><title>Curry District · Royal social kit</title><style>
+@font-face{font-family:'Fraunces';src:url(file:///home/user/playground/hub/social/assets/royal-kit/_src/fonts/fraunces.woff2) format('woff2');font-weight:100 900;font-style:normal}
+@font-face{font-family:'Fraunces';src:url(file:///home/user/playground/hub/social/assets/royal-kit/_src/fonts/fraunces-italic.woff2) format('woff2');font-weight:100 900;font-style:italic}
+@font-face{font-family:'Hanken Grotesk';src:url(file:///home/user/playground/hub/social/assets/royal-kit/_src/fonts/hanken.woff2) format('woff2');font-weight:100 900;font-style:normal}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#160B26}
+body{font-family:'Hanken Grotesk',system-ui,sans-serif;color:#FBF3E4;-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}
+.cv{position:relative;overflow:hidden}
+.field{position:absolute;inset:0}
+.field .pat{position:absolute;inset:0;background-size:240px 240px;opacity:.10;mix-blend-mode:screen}
+.field.light .pat{opacity:.22;mix-blend-mode:multiply}
+.field .vig{position:absolute;inset:0;background:radial-gradient(130% 100% at 50% 45%,transparent 55%,rgba(8,3,14,.55) 100%)}
+.field.light .vig{background:radial-gradient(130% 100% at 50% 45%,transparent 60%,rgba(183,121,31,.12) 100%)}
+.abs{position:absolute}
+.center{left:0;right:0;text-align:center;margin:0 auto}
+.eyebrow{font-family:'Hanken Grotesk';font-weight:700;font-size:28px;letter-spacing:.28em;text-transform:uppercase;color:#F7D98A}
+.light .eyebrow,.eyebrow.dk{color:#8A5A12}
+.h1{font-family:'Fraunces';font-weight:650;font-size:116px;line-height:.98;letter-spacing:-.018em;color:#FBF3E4}
+.h2{font-family:'Fraunces';font-weight:620;font-size:84px;line-height:1.02;letter-spacing:-.012em;color:#FBF3E4}
+.it{font-family:'Fraunces';font-style:italic;font-weight:420}
+.body{font-family:'Hanken Grotesk';font-weight:450;font-size:36px;line-height:1.38;color:rgba(251,243,228,.9)}
+.ink{color:#160B26}
+.foil{background:linear-gradient(120deg,#D29433 0%,#FBE3A0 34%,#F2BC55 55%,#FFE7A8 72%,#D2932F 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-box-decoration-break:clone;padding:0 .04em;filter:drop-shadow(0 2px 0 rgba(10,4,18,.35))}
+.foil-dk{background:linear-gradient(120deg,#7A4E0F 0%,#B7791F 40%,#94600F 65%,#6E450C 100%);-webkit-background-clip:text;background-clip:text;color:transparent;padding:0 .04em}
+.pill{display:inline-flex;align-items:center;gap:18px;height:92px;padding:0 48px;border-radius:999px;font-family:'Hanken Grotesk';font-weight:700;font-size:34px;letter-spacing:.04em}
+.pill.gold{background:linear-gradient(120deg,#E9A63A,#FBE3A0 45%,#E9A63A 75%,#C98A2B);color:#160B26;box-shadow:0 14px 30px -12px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.6)}
+.pill.line{border:2px solid #F7D98A;color:#F7D98A}
+.wm{position:absolute;left:50%;transform:translateX(-50%)}
+.rule{height:2px;background:linear-gradient(90deg,transparent,#E9A63A,transparent)}
+.diamond{display:inline-block;width:14px;height:14px;transform:rotate(45deg);background:linear-gradient(135deg,#FBE3A0,#C98A2B)}
+
+html,body{width:1640px;height:2600px}
+.cv{width:1640px;height:2600px}
+
+.cell{position:absolute;width:350px;height:300px;border-radius:22px;background:#FFFDF8;box-shadow:0 0 0 2px rgba(183,121,31,.4);display:flex;gap:16px;padding:16px;overflow:hidden}
+.cell::before{content:'';position:absolute;left:0;top:0;bottom:0;width:8px}
+.k-post::before{background:#0F4D3F}.k-story::before{background:#A3173F}.k-motion::before{background:#E9A63A}.k-gbp::before{background:#117C86}.k-shoot::before{background:repeating-linear-gradient(180deg,#B7791F 0 8px,transparent 8px 14px)}
+.th{flex:none;width:126px;height:268px;border-radius:14px;overflow:hidden;background:#F3E4C8;display:flex;align-items:center;justify-content:center}.th img{width:100%;height:100%;object-fit:cover}
+.tx{display:flex;flex-direction:column;gap:8px;padding-top:4px}
+.dt{font:700 21px/1.1 'Hanken Grotesk';letter-spacing:.1em;text-transform:uppercase;color:#8A5A12}.pf{font:700 22px/1.2 'Hanken Grotesk';color:#0F4D3F}
+.id{font:600 27px/1.15 'Fraunces';color:#160B26}.src{margin-top:auto;font:500 19px/1.2 'Hanken Grotesk';color:#5E4E66}
+.dl{position:absolute;left:66px;width:90px;font:700 30px/1 'Fraunces';color:#4B1D52}.wl{position:absolute;width:350px;text-align:center;font:700 24px/1 'Hanken Grotesk';letter-spacing:.2em;text-transform:uppercase;color:#8A5A12}
+.lg{display:flex;gap:30px;justify-content:center;font:600 24px/1 'Hanken Grotesk';color:#3B2A44}.lg i{display:inline-block;width:22px;height:22px;border-radius:5px;vertical-align:-4px;margin-right:9px}</style></head><body><svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<linearGradient id="foil" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C98A2B"/><stop offset=".38" stop-color="#FBE3A0"/><stop offset=".6" stop-color="#EDB04A"/><stop offset="1" stop-color="#C08024"/></linearGradient>
+<linearGradient id="foilH" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#B7791F"/><stop offset=".3" stop-color="#F7D98A"/><stop offset=".55" stop-color="#E9A63A"/><stop offset=".8" stop-color="#FBE3A0"/><stop offset="1" stop-color="#B7791F"/></linearGradient>
+<linearGradient id="foilDk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7A4E0F"/><stop offset=".45" stop-color="#B7791F"/><stop offset=".7" stop-color="#9A6418"/><stop offset="1" stop-color="#6E450C"/></linearGradient>
+<linearGradient id="brass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBE3A0"/><stop offset=".35" stop-color="#E9A63A"/><stop offset=".7" stop-color="#B7791F"/><stop offset="1" stop-color="#6E450C"/></linearGradient>
+</defs></svg><div class="cv light"><div class="field light" style="background:radial-gradient(120% 90% at 50% 25%, #FFFBF2 0%, #FBF3E4 45%, #F3E4C8 100%)"><div class="pat" style="background-image:url(file:///home/user/playground/brand/patterns/royal/01-jali-lattice-ivory.svg)"></div><div class="vig"></div></div><svg class="frame" aria-hidden="true" style="position:absolute;inset:0;width:1640px;height:2600px" viewBox="0 0 1640 2600">
+<rect x="34" y="34" width="1572" height="2532" fill="none" stroke="url(#foilDk)" stroke-width="2" opacity=".85"/>
+<rect x="46" y="46" width="1548" height="2508" fill="none" stroke="#B7791F" stroke-width="1" opacity=".35"/>
+<path d="M34 23L45 34L34 45L23 34Z" fill="url(#foilDk)"/><path d="M1606 23L1617 34L1606 45L1595 34Z" fill="url(#foilDk)"/><path d="M34 2555L45 2566L34 2577L23 2566Z" fill="url(#foilDk)"/><path d="M1606 2555L1617 2566L1606 2577L1595 2566Z" fill="url(#foilDk)"/></svg><div class="abs center eyebrow dk" style="top:96px">Feed rhythm · 4 weeks from 12 Oct 2026</div>
+<div class="abs center h2 ink" style="top:140px;font-size:72px">What goes out, and when</div>
+<div class="abs center lg" style="top:240px"><span><i style="background:#0F4D3F"></i>Kit post</span><span><i style="background:#A3173F"></i>Kit story</span><span><i style="background:#E9A63A"></i>Kit motion</span><span><i style="background:#117C86"></i>GBP</span><span><i style="background:#B7791F"></i>Real footage / photo</span></div>
+<div class="wl" style="left:170px;top:296px">Week 1</div><div class="wl" style="left:536px;top:296px">Week 2</div><div class="wl" style="left:902px;top:296px">Week 3</div><div class="wl" style="left:1268px;top:296px">Week 4</div>
+<div class="dl" style="top:460px">Mon</div><div class="dl" style="top:774px">Tue</div><div class="dl" style="top:1088px">Wed</div><div class="dl" style="top:1402px">Thu</div><div class="dl" style="top:1716px">Fri</div><div class="dl" style="top:2030px">Sat</div><div class="dl" style="top:2344px">Sun</div>
+<div class="cell k-motion" style="left:170px;top:330px">
+<div class="th"><img src="../../motion-steam-glints.jpg" alt=""></div>
+<div class="tx"><div class="dt">Day 1 · Mon 12 Oct</div><div class="pf">IG+FB · Reel</div><div class="id">Butter chicken steam pull</div><div class="src">Kit: steam glints</div></div></div><div class="cell k-gbp" style="left:170px;top:644px">
+<div class="th"><img src="../../gbp-post-update.png" alt=""></div>
+<div class="tx"><div class="dt">Day 2 · Tue 13 Oct</div><div class="pf">GBP · Update</div><div class="id">Fresh photos, same fire</div><div class="src">Kit: post update</div></div></div><div class="cell k-story" style="left:170px;top:958px">
+<div class="th"><img src="../../story-spice-poll.png" alt=""></div>
+<div class="tx"><div class="dt">Day 3 · Wed 14 Oct</div><div class="pf">IG · Story poll</div><div class="id">Mild, hot or District Hot?</div><div class="src">Kit: spice poll</div></div></div><div class="cell k-shoot" style="left:170px;top:1272px">
+<div class="th"><svg aria-hidden="true" style="color:#B7791F;width:70px;height:70px;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g stroke="currentColor"><path d="M-5 -27V-17M0 -27V-15.5M5 -27V-17" transform="translate(32 32) rotate(-30)"/><path d="M-5 -17C-5 -11.4 5 -11.4 5 -17" transform="translate(32 32) rotate(-30)"/><path d="M0 -12.8V19" transform="translate(32 32) rotate(-30)"/><path d="M0 19C-2.6 21 -2.6 24.6 0 26.4C2.6 24.6 2.6 21 0 19Z" transform="translate(32 32) rotate(-30)"/><ellipse cx="0" cy="-18" rx="6.2" ry="8.6" transform="translate(32 32) rotate(30)"/><path d="M0 -9.4V19" transform="translate(32 32) rotate(30)"/><path d="M0 19C-2.6 21 -2.6 24.6 0 26.4C2.6 24.6 2.6 21 0 19Z" transform="translate(32 32) rotate(30)"/></g></svg>
+</div>
+<div class="tx"><div class="dt">Day 4 · Thu 15 Oct</div><div class="pf">TikTok · Video</div><div class="id">Tandoori sizzle, sound on</div><div class="src">Needs real footage</div></div></div><div class="cell k-post" style="left:170px;top:1586px">
+<div class="th"><img src="../../post-hero-butter-chicken.png" alt=""></div>
+<div class="tx"><div class="dt">Day 5 · Fri 16 Oct</div><div class="pf">IG · Carousel</div><div class="id">First-timer picks</div><div class="src">Kit: hero butter chicken</div></div></div><div class="cell k-shoot" style="left:170px;top:1900px">
+<div class="th"><svg aria-hidden="true" style="color:#B7791F;width:70px;height:70px;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g stroke="currentColor"><path d="M-5 -27V-17M0 -27V-15.5M5 -27V-17" transform="translate(32 32) rotate(-30)"/><path d="M-5 -17C-5 -11.4 5 -11.4 5 -17" transform="translate(32 32) rotate(-30)"/><path d="M0 -12.8V19" transform="translate(32 32) rotate(-30)"/><path d="M0 19C-2.6 21 -2.6 24.6 0 26.4C2.6 24.6 2.6 21 0 19Z" transform="translate(32 32) rotate(-30)"/><ellipse cx="0" cy="-18" rx="6.2" ry="8.6" transform="translate(32 32) rotate(30)"/><path d="M0 -9.4V19" transform="translate(32 32) rotate(30)"/><path d="M0 19C-2.6 21 -2.6 24.6 0 26.4C2.6 24.6 2.6 21 0 19Z" transform="translate(32 32) rotate(30)"/></g></svg>
+</div>
+<div class="tx"><div class="dt">Day 6 · Sat 17 Oct</div><div class="pf">IG+FB · Reel</div><div class="id">Chef hands: dough and tadka</div><div class="src">Needs real footage</div></div></div><div class="cell k-story" style="left:170px;top:2214px">
+<div class="th"><img src="../../story-dinner-occasion.png" alt=""></div>
+<div class="tx"><div class="dt">Day 7 · Sun 18 Oct</div><div class="pf">IG+FB · Story</div><div class="id">Sunday is for sharing</div><div class="src">Kit: dinner occasion</div></div></div><div class="cell k-gbp" style="left:536px;top:330px">
+<div class="th"><img src="../../gbp-post-order.png" alt=""></div>
+<div class="tx"><div class="dt">Day 8 · Mon 19 Oct</div><div class="pf">GBP · Update</div><div class="id">Order online (happy-hour post held: unverified)</div><div class="src">Kit: post order</div></div></div><div class="cell k-shoot" style="left:536px;top:644px">
+<div class="th"><svg aria-hidden="true" style="color:#B7791F;width:70px;height:70px;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g stroke="currentColor"><path d="M-5 -27V-17M0 -27V-15.5M5 -27V-17" transform="translate(32 32) rotate(-30)"/><path d="M-5 -17C-5 -11.4 5 -11.4 5 -17" transform="translate(32 32) rotate(-30)"/><path d="M0 -12.8V19" transform="translate(32 32) rotate(-30)"/><path d="M0 19C-2.6 21 -2.6 24.6 0 26.4C2.6 24.6 2.6 21 0 19Z" transform="translate(32 32) rotate(-30)"/><ellipse cx="0" cy="-18" rx="6.2" ry="8.6" transform="translate(32 32) rotate(30)"/><path d="M0 -9.4V19" transform="translate(32 32) rotate(30)"/><path d="M0 19C-2.6 21 -2.6 24.6 0 26.4C2.6 24.6 2.6 21 0 19Z" transform="translate(32 32) rotate(30)"/></g></svg>
+</div>
+<div class="tx"><div class="dt">Day 9 · Tue 20 Oct</div><div class="pf">IG+FB · Reel</div><div class="id">Dussehra greeting + kitchen B-roll</div><div class="src">Needs real footage</div></div></div><div class="cell k-post" style="left:536px;top:958px">
+<div class="th"><img src="../../post-spice-meter.png" alt=""></div>
+<div class="tx"><div class="dt">Day 10 · Wed 21 Oct</div><div class="pf">TikTok · Video</div><div class="id">Spice challenge ep. 1</div><div class="src">Kit: spice meter</div></div></div><div class="cell k-post" style="left:536px;top:1272px">
+<div class="th"><img src="../../post-zone-biryani-boulevard.png" alt=""></div>
+<div class="tx"><div class="dt">Day 11 · Thu 22 Oct</div><div class="pf">IG · Carousel</div><div class="id">Biryani Boulevard (price post held)</div><div class="src">Kit: zone biryani boulevard</div></div></div><div class="cell k-story" style="left:536px;top:1586px">
+<div class="th"><img src="../../story-garlic-naan-order.png" alt=""></div>
+<div class="tx"><div class="dt">Day 12 · Fri 23 Oct</div><div class="pf">IG · Reel</div><div class="id">Three naans, three tears</div><div class="src">Kit: garlic naan order</div></div></div><div class="cell k-shoot" style="left:536px;top:1900px">
+<div class="th"><svg aria-hidden="true" style="color:#B7791F;width:70px;height:70px;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g stroke="currentColor"><path d="M-5 -27V-17M0 -27V-15.5M5 -27V-17" transform="translate(32 32) rotate(-30)"/><path d="M-5 -17C-5 -11.4 5 -11.4 5 -17" transform="translate(32 32) rotate(-30)"/><path d="M0 -12.8V19" transform="translate(32 32) rotate(-30)"/><path d="M0 19C-2.6 21 -2.6 24.6 0 26.4C2.6 24.6 2.6 21 0 19Z" transform="translate(32 32) rotate(-30)"/><ellipse cx="0" cy="-18" rx="6.2" ry="8.6" transform="translate(32 32) rotate(30)"/><path d="M0 -9.4V19" transform="translate(32 32) rotate(30)"/><path d="M0 19C-2.6 21 -2.6 24.6 0 26.4C2.6 24.6 2.6 21 0 19Z" transform="translate(32 32) rotate(30)"/></g></svg>
+</div>
+<div class="tx"><div class="dt">Day 13 · Sat 24 Oct</div><div class="pf">IG+FB · Photo</div><div class="id">Staff feature (owner facts needed)</div><div class="src">Needs real footage</div></div></div><div class="cell k-post" style="left:536px;top:2214px">
+<div class="th"><img src="../../post-ratings-card.png" alt=""></div>
+<div class="tx"><div class="dt">Day 14 · Sun 25 Oct</div><div class="pf">IG+GBP · Story</div><div class="id">Review QR launch; thank-you card</div><div class="src">Kit: ratings card</div></div></div><div class="cell k-shoot" style="left:902px;top:330px">
+<div class="th"><svg aria-hidden="true" style="color:#B7791F;width:70px;height:70px;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g stroke="currentColor"><path d="M-5 -27V-17M0 -27V-15.5M5 -27V-17" transform="translate(32 32) rotate(-30)"/><path d="M-5 -17C-5 -11.4 5 -11.4 5 -17" transform="translate(32 32) rotate(-30)"/><path d="M0 -12.8V19" transform="translate(32 32) rotate(-30)"/><path d="M0 19C-2.6 21 -2.6 24.6 0 26.4C2.6 24.6 2.6 21 0 19Z" transform="translate(32 32) rotate(-30)"/><ellipse cx="0" cy="-18" rx="6.2" ry="8.6" transform="translate(32 32) rotate(30)"/><path d="M0 -9.4V19" transform="translate(32 32) rotate(30)"/><path d="M0 19C-2.6 21 -2.6 24.6 0 26.4C2.6 24.6 2.6 21 0 19Z" transform="translate(32 32) rotate(30)"/></g></svg>
+</div>
+<div class="tx"><div class="dt">Day 15 · Mon 26 Oct</div><div class="pf">IG · Story</div><div class="id">Customer repost (with permission)</div><div class="src">Needs real footage</div></div></div><div class="cell k-story" style="left:902px;top:644px">
+<div class="th"><img src="../../story-diwali-gathering.png" alt=""></div>
+<div class="tx"><div class="dt">Day 16 · Tue 27 Oct</div><div class="pf">FB+GBP · Event</div><div class="id">Diwali gatherings</div><div class="src">Kit: diwali gathering</div></div></div><div class="cell k-post" style="left:902px;top:958px">
+<div class="th"><img src="../../post-did-you-know-tandoor.png" alt=""></div>
+<div class="tx"><div class="dt">Day 17 · Wed 28 Oct</div><div class="pf">TikTok · Video</div><div class="id">Menu words, decoded</div><div class="src">Kit: did you know tandoor</div></div></div><div class="cell k-motion" style="left:902px;top:1272px">
+<div class="th"><img src="../../motion-ember-arch.jpg" alt=""></div>
+<div class="tx"><div class="dt">Day 18 · Thu 29 Oct</div><div class="pf">IG · Reel</div><div class="id">Tandoor flame close-up</div><div class="src">Kit: ember arch</div></div></div><div class="cell k-post" style="left:902px;top:1586px">
+<div class="th"><img src="../../post-did-you-know-dum.png" alt=""></div>
+<div class="tx"><div class="dt">Day 19 · Fri 30 Oct</div><div class="pf">IG · Carousel</div><div class="id">Spice cabinet 101</div><div class="src">Kit: did you know dum</div></div></div><div class="cell k-shoot" style="left:902px;top:1900px">
+<div class="th"><svg aria-hidden="true" style="color:#B7791F;width:70px;height:70px;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g stroke="currentColor"><path d="M-5 -27V-17M0 -27V-15.5M5 -27V-17" transform="translate(32 32) rotate(-30)"/><path d="M-5 -17C-5 -11.4 5 -11.4 5 -17" transform="translate(32 32) rotate(-30)"/><path d="M0 -12.8V19" transform="translate(32 32) rotate(-30)"/><path d="M0 19C-2.6 21 -2.6 24.6 0 26.4C2.6 24.6 2.6 21 0 19Z" transform="translate(32 32) rotate(-30)"/><ellipse cx="0" cy="-18" rx="6.2" ry="8.6" transform="translate(32 32) rotate(30)"/><path d="M0 -9.4V19" transform="translate(32 32) rotate(30)"/><path d="M0 19C-2.6 21 -2.6 24.6 0 26.4C2.6 24.6 2.6 21 0 19Z" transform="translate(32 32) rotate(30)"/></g></svg>
+</div>
+<div class="tx"><div class="dt">Day 20 · Sat 31 Oct</div><div class="pf">IG+FB · Reel</div><div class="id">Trick or heat? vindaloo dare</div><div class="src">Needs real footage</div></div></div><div class="cell k-gbp" style="left:902px;top:2214px">
+<div class="th"><img src="../../gbp-post-order.png" alt=""></div>
+<div class="tx"><div class="dt">Day 21 · Sun 1 Nov</div><div class="pf">GBP · Update</div><div class="id">Diwali hours + order online</div><div class="src">Kit: post order</div></div></div><div class="cell k-shoot" style="left:1268px;top:330px">
+<div class="th"><svg aria-hidden="true" style="color:#B7791F;width:70px;height:70px;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g stroke="currentColor"><path d="M-5 -27V-17M0 -27V-15.5M5 -27V-17" transform="translate(32 32) rotate(-30)"/><path d="M-5 -17C-5 -11.4 5 -11.4 5 -17" transform="translate(32 32) rotate(-30)"/><path d="M0 -12.8V19" transform="translate(32 32) rotate(-30)"/><path d="M0 19C-2.6 21 -2.6 24.6 0 26.4C2.6 24.6 2.6 21 0 19Z" transform="translate(32 32) rotate(-30)"/><ellipse cx="0" cy="-18" rx="6.2" ry="8.6" transform="translate(32 32) rotate(30)"/><path d="M0 -9.4V19" transform="translate(32 32) rotate(30)"/><path d="M0 19C-2.6 21 -2.6 24.6 0 26.4C2.6 24.6 2.6 21 0 19Z" transform="translate(32 32) rotate(30)"/></g></svg>
+</div>
+<div class="tx"><div class="dt">Day 22 · Mon 2 Nov</div><div class="pf">IG · Collab Reel</div><div class="id">Creator tasting (disclosed)</div><div class="src">Needs real footage</div></div></div><div class="cell k-shoot" style="left:1268px;top:644px">
+<div class="th"><svg aria-hidden="true" style="color:#B7791F;width:70px;height:70px;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g stroke="currentColor"><path d="M-5 -27V-17M0 -27V-15.5M5 -27V-17" transform="translate(32 32) rotate(-30)"/><path d="M-5 -17C-5 -11.4 5 -11.4 5 -17" transform="translate(32 32) rotate(-30)"/><path d="M0 -12.8V19" transform="translate(32 32) rotate(-30)"/><path d="M0 19C-2.6 21 -2.6 24.6 0 26.4C2.6 24.6 2.6 21 0 19Z" transform="translate(32 32) rotate(-30)"/><ellipse cx="0" cy="-18" rx="6.2" ry="8.6" transform="translate(32 32) rotate(30)"/><path d="M0 -9.4V19" transform="translate(32 32) rotate(30)"/><path d="M0 19C-2.6 21 -2.6 24.6 0 26.4C2.6 24.6 2.6 21 0 19Z" transform="translate(32 32) rotate(30)"/></g></svg>
+</div>
+<div class="tx"><div class="dt">Day 23 · Tue 3 Nov</div><div class="pf">TikTok · Video</div><div class="id">Something sweet (verify menu)</div><div class="src">Needs real footage</div></div></div><div class="cell k-story" style="left:1268px;top:958px">
+<div class="th"><img src="../../story-diwali-gathering.png" alt=""></div>
+<div class="tx"><div class="dt">Day 24 · Wed 4 Nov</div><div class="pf">IG · Story series</div><div class="id">Diwali countdown</div><div class="src">Kit: diwali gathering</div></div></div><div class="cell k-post" style="left:1268px;top:1272px">
+<div class="th"><img src="../../post-catering-celebrations.png" alt=""></div>
+<div class="tx"><div class="dt">Day 25 · Thu 5 Nov</div><div class="pf">IG · Carousel</div><div class="id">Celebrations, beautifully fed</div><div class="src">Kit: catering celebrations</div></div></div><div class="cell k-motion" style="left:1268px;top:1586px">
+<div class="th"><img src="../../motion-foil-wordmark.jpg" alt=""></div>
+<div class="tx"><div class="dt">Day 26 · Fri 6 Nov</div><div class="pf">IG+FB · Reel</div><div class="id">Lights on + wordmark end card</div><div class="src">Kit: foil wordmark</div></div></div><div class="cell k-story" style="left:1268px;top:1900px">
+<div class="th"><img src="../../story-dinner-occasion.png" alt=""></div>
+<div class="tx"><div class="dt">Day 27 · Sat 7 Nov</div><div class="pf">FB+IG · Story</div><div class="id">See you tomorrow</div><div class="src">Kit: dinner occasion</div></div></div><div class="cell k-shoot" style="left:1268px;top:2214px">
+<div class="th"><svg aria-hidden="true" style="color:#B7791F;width:70px;height:70px;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g stroke="currentColor"><path d="M-5 -27V-17M0 -27V-15.5M5 -27V-17" transform="translate(32 32) rotate(-30)"/><path d="M-5 -17C-5 -11.4 5 -11.4 5 -17" transform="translate(32 32) rotate(-30)"/><path d="M0 -12.8V19" transform="translate(32 32) rotate(-30)"/><path d="M0 19C-2.6 21 -2.6 24.6 0 26.4C2.6 24.6 2.6 21 0 19Z" transform="translate(32 32) rotate(-30)"/><ellipse cx="0" cy="-18" rx="6.2" ry="8.6" transform="translate(32 32) rotate(30)"/><path d="M0 -9.4V19" transform="translate(32 32) rotate(30)"/><path d="M0 19C-2.6 21 -2.6 24.6 0 26.4C2.6 24.6 2.6 21 0 19Z" transform="translate(32 32) rotate(30)"/></g></svg>
+</div>
+<div class="tx"><div class="dt">Day 28 · Sun 8 Nov</div><div class="pf">All · Reel + GBP</div><div class="id">Diwali greeting (verify date)</div><div class="src">Needs real footage</div></div></div>
+<div class="abs center" style="top:2546px;width:1400px;font:500 22px/1.3 'Hanken Grotesk';color:#5E4E66">From the playbook's 30-day starter calendar (days 29–30 omitted). Holiday dates, happy hour and prices are unverified, so those posts stay on hold until the owners confirm them.</div></div></body></html>

@@ -1,0 +1,535 @@
+{
+ "helper": "rooms",
+ "items": [
+  {
+   "id": "fw-bazaar-1-marigold-saffron",
+   "title": "Marigold Garland on Saffron — A · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/rooms/fw-bazaar-1-marigold-saffron.png",
+   "thumb": "assets/rooms/fw-bazaar-1-marigold-saffron-thumb.jpg",
+   "w": 1920,
+   "h": 1080,
+   "caption": "Cream-ground garlands over a saffron wainscot: festival energy that still reads calm above the booth.",
+   "tags": [
+    "wallpaper",
+    "paint",
+    "feature-wall"
+   ],
+   "download": "assets/rooms/fw-bazaar-1-marigold-saffron.svg"
+  },
+  {
+   "id": "fw-bazaar-2-arches-peacock",
+   "title": "Jaipur Arches on Peacock — A · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/rooms/fw-bazaar-2-arches-peacock.png",
+   "thumb": "assets/rooms/fw-bazaar-2-arches-peacock-thumb.jpg",
+   "w": 1920,
+   "h": 1080,
+   "caption": "Jaipur arches echo a street of doorways; peacock beadboard takes the knocks below.",
+   "tags": [
+    "wallpaper",
+    "paint",
+    "feature-wall"
+   ],
+   "download": "assets/rooms/fw-bazaar-2-arches-peacock.svg"
+  },
+  {
+   "id": "fw-bazaar-3-booti-indigo",
+   "title": "Block-Print Booti on Indigo — A · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/rooms/fw-bazaar-3-booti-indigo.png",
+   "thumb": "assets/rooms/fw-bazaar-3-booti-indigo-thumb.jpg",
+   "w": 1920,
+   "h": 1080,
+   "caption": "Indigo block-print booti makes the pink bay and marigold lamps glow like a night market.",
+   "tags": [
+    "wallpaper",
+    "paint",
+    "feature-wall"
+   ],
+   "download": "assets/rooms/fw-bazaar-3-booti-indigo.svg"
+  },
+  {
+   "id": "fw-bazaar-4-chai-rani",
+   "title": "Chai Time on Rani — A · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/rooms/fw-bazaar-4-chai-rani.png",
+   "thumb": "assets/rooms/fw-bazaar-4-chai-rani-thumb.jpg",
+   "w": 1920,
+   "h": 1080,
+   "caption": "Chai-time icons tell the story on the wall; rani wainscot and teal booths keep it loud and happy.",
+   "tags": [
+    "wallpaper",
+    "paint",
+    "feature-wall"
+   ],
+   "download": "assets/rooms/fw-bazaar-4-chai-rani.svg"
+  },
+  {
+   "id": "fw-royal-1-jali-midnight",
+   "title": "Jali Lattice on Midnight — B · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/rooms/fw-royal-1-jali-midnight.png",
+   "thumb": "assets/rooms/fw-royal-1-jali-midnight-thumb.jpg",
+   "w": 1920,
+   "h": 1080,
+   "caption": "Gold jali on midnight catches lantern light in pools — date-night drama with one wallcovering.",
+   "tags": [
+    "wallpaper",
+    "paint",
+    "feature-wall"
+   ],
+   "download": "assets/rooms/fw-royal-1-jali-midnight.svg"
+  },
+  {
+   "id": "fw-royal-2-mehrab-emerald",
+   "title": "Mehrab Trellis on Emerald — B · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/rooms/fw-royal-2-mehrab-emerald.png",
+   "thumb": "assets/rooms/fw-royal-2-mehrab-emerald-thumb.jpg",
+   "w": 1920,
+   "h": 1080,
+   "caption": "Mehrab arches on emerald frame each booth like an alcove; ivory bay keeps the room bright.",
+   "tags": [
+    "wallpaper",
+    "paint",
+    "feature-wall"
+   ],
+   "download": "assets/rooms/fw-royal-2-mehrab-emerald.svg"
+  },
+  {
+   "id": "fw-royal-3-paisley-ruby",
+   "title": "Paisley Vine on Ruby — B · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/rooms/fw-royal-3-paisley-ruby.png",
+   "thumb": "assets/rooms/fw-royal-3-paisley-ruby-thumb.jpg",
+   "w": 1920,
+   "h": 1080,
+   "caption": "Ruby paisley above a plum wainscot: warm, celebratory and photographs beautifully.",
+   "tags": [
+    "wallpaper",
+    "paint",
+    "feature-wall"
+   ],
+   "download": "assets/rooms/fw-royal-3-paisley-ruby.svg"
+  },
+  {
+   "id": "fw-royal-4-botanical-aubergine",
+   "title": "Spice Botanical on Aubergine — B · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/rooms/fw-royal-4-botanical-aubergine.png",
+   "thumb": "assets/rooms/fw-royal-4-botanical-aubergine-thumb.jpg",
+   "w": 1920,
+   "h": 1080,
+   "caption": "Spice botanicals on emerald with an aubergine dado and saffron-gold bay — refined, not stuffy.",
+   "tags": [
+    "wallpaper",
+    "paint",
+    "feature-wall"
+   ],
+   "download": "assets/rooms/fw-royal-4-botanical-aubergine.svg"
+  },
+  {
+   "id": "ba-bazaar-before",
+   "title": "Before — plain room (A · Bazaar pair)",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/rooms/ba-bazaar-before.png",
+   "thumb": "assets/rooms/ba-bazaar-before-thumb.jpg",
+   "w": 1920,
+   "h": 1080,
+   "caption": "Same illustrative room, typical beige finishes: flat light, loud TVs, nothing to photograph.",
+   "tags": [
+    "before-after",
+    "pair:ba-bazaar",
+    "before"
+   ],
+   "download": "assets/rooms/ba-bazaar-before.svg"
+  },
+  {
+   "id": "ba-bazaar-after",
+   "title": "After — Marigold Garland on Saffron",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/rooms/ba-bazaar-after.png",
+   "thumb": "assets/rooms/ba-bazaar-after-thumb.jpg",
+   "w": 1920,
+   "h": 1080,
+   "caption": "Same furniture plan: wallpaper, paint, pendants and upholstery do all the work.",
+   "tags": [
+    "before-after",
+    "pair:ba-bazaar",
+    "after"
+   ],
+   "download": "assets/rooms/ba-bazaar-after.svg"
+  },
+  {
+   "id": "ba-royal-before",
+   "title": "Before — plain room (B · Royal pair)",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/rooms/ba-royal-before.png",
+   "thumb": "assets/rooms/ba-royal-before-thumb.jpg",
+   "w": 1920,
+   "h": 1080,
+   "caption": "Same illustrative room, typical beige finishes: flat light, loud TVs, nothing to photograph.",
+   "tags": [
+    "before-after",
+    "pair:ba-royal",
+    "before"
+   ],
+   "download": "assets/rooms/ba-royal-before.svg"
+  },
+  {
+   "id": "ba-royal-after",
+   "title": "After — Jali Lattice on Midnight",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/rooms/ba-royal-after.png",
+   "thumb": "assets/rooms/ba-royal-after-thumb.jpg",
+   "w": 1920,
+   "h": 1080,
+   "caption": "Same furniture plan: wallpaper, paint, pendants and upholstery do all the work.",
+   "tags": [
+    "before-after",
+    "pair:ba-royal",
+    "after"
+   ],
+   "download": "assets/rooms/ba-royal-after.svg"
+  },
+  {
+   "id": "paint-board-bazaar",
+   "title": "Paint the room — A · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/rooms/paint-board-bazaar.png",
+   "thumb": "assets/rooms/paint-board-bazaar-thumb.jpg",
+   "w": 1200,
+   "h": 1640,
+   "caption": "Eight named brand colours with finish notes; confirm each with a physical swatch.",
+   "tags": [
+    "paint",
+    "board"
+   ],
+   "download": "assets/rooms/paint-board-bazaar.svg"
+  },
+  {
+   "id": "drench-bazaar",
+   "title": "Peacock colour-drench — paint only",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/rooms/drench-bazaar.png",
+   "thumb": "assets/rooms/drench-bazaar-thumb.jpg",
+   "w": 1920,
+   "h": 1080,
+   "caption": "No wallpaper at all: one hue on walls, ceiling and trim is the cheapest big change.",
+   "tags": [
+    "paint",
+    "colour-drench"
+   ],
+   "download": "assets/rooms/drench-bazaar.svg"
+  },
+  {
+   "id": "paint-board-royal",
+   "title": "Paint the room — B · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/rooms/paint-board-royal.png",
+   "thumb": "assets/rooms/paint-board-royal-thumb.jpg",
+   "w": 1200,
+   "h": 1640,
+   "caption": "Eight named brand colours with finish notes; confirm each with a physical swatch.",
+   "tags": [
+    "paint",
+    "board"
+   ],
+   "download": "assets/rooms/paint-board-royal.svg"
+  },
+  {
+   "id": "drench-royal",
+   "title": "Emerald colour-drench — paint only",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/rooms/drench-royal.png",
+   "thumb": "assets/rooms/drench-royal-thumb.jpg",
+   "w": 1920,
+   "h": 1080,
+   "caption": "No wallpaper at all: one hue on walls, ceiling and trim is the cheapest big change.",
+   "tags": [
+    "paint",
+    "colour-drench"
+   ],
+   "download": "assets/rooms/drench-royal.svg"
+  },
+  {
+   "id": "vig-booth-bazaar",
+   "title": "Booth close-up — Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/rooms/vig-booth-bazaar.png",
+   "thumb": "assets/rooms/vig-booth-bazaar-thumb.jpg",
+   "w": 1920,
+   "h": 1080,
+   "caption": "Piped channel booth, terrazzo top and an enamel pendant against garland paper.",
+   "tags": [
+    "vignette",
+    "booth",
+    "wallpaper"
+   ],
+   "download": "assets/rooms/vig-booth-bazaar.svg"
+  },
+  {
+   "id": "vig-booth-royal",
+   "title": "Booth close-up — Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/rooms/vig-booth-royal.png",
+   "thumb": "assets/rooms/vig-booth-royal-thumb.jpg",
+   "w": 1920,
+   "h": 1080,
+   "caption": "Emerald velvet channels, brass-edged terrazzo and a jali lantern pooling gold light.",
+   "tags": [
+    "vignette",
+    "booth",
+    "wallpaper"
+   ],
+   "download": "assets/rooms/vig-booth-royal.svg"
+  },
+  {
+   "id": "vig-chai-corner-bazaar",
+   "title": "Chai corner — Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/rooms/vig-chai-corner-bazaar.png",
+   "thumb": "assets/rooms/vig-chai-corner-bazaar-thumb.jpg",
+   "w": 1920,
+   "h": 1080,
+   "caption": "A truck-art chai counter with a shelf of glasses: a self-contained photo moment.",
+   "tags": [
+    "vignette",
+    "chai-corner"
+   ],
+   "download": "assets/rooms/vig-chai-corner-bazaar.svg"
+  },
+  {
+   "id": "vig-jali-divider-royal",
+   "title": "Jali-screen divider — Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/rooms/vig-jali-divider-royal.png",
+   "thumb": "assets/rooms/vig-jali-divider-royal-thumb.jpg",
+   "w": 1920,
+   "h": 1080,
+   "caption": "Brass jali panels split booth rows and break sight-lines without blocking light.",
+   "tags": [
+    "vignette",
+    "jali"
+   ],
+   "download": "assets/rooms/vig-jali-divider-royal.svg"
+  },
+  {
+   "id": "vig-neon-wall-bazaar",
+   "title": "Feature wall + neon slot — Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/rooms/vig-neon-wall-bazaar.png",
+   "thumb": "assets/rooms/vig-neon-wall-bazaar-thumb.jpg",
+   "w": 1920,
+   "h": 1080,
+   "caption": "Photo-corner bench on a calm backer panel; the neon art itself comes from the murals team.",
+   "tags": [
+    "vignette",
+    "neon-placeholder",
+    "photo-corner"
+   ],
+   "download": "assets/rooms/vig-neon-wall-bazaar.svg"
+  },
+  {
+   "id": "vig-neon-wall-royal",
+   "title": "Feature wall + neon slot — Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/rooms/vig-neon-wall-royal.png",
+   "thumb": "assets/rooms/vig-neon-wall-royal-thumb.jpg",
+   "w": 1920,
+   "h": 1080,
+   "caption": "Arched backer and brass sconces frame the future neon; mehrab paper does the rest.",
+   "tags": [
+    "vignette",
+    "neon-placeholder",
+    "photo-corner"
+   ],
+   "download": "assets/rooms/vig-neon-wall-royal.svg"
+  },
+  {
+   "id": "swatch-book-bazaar-1",
+   "title": "Wallpaper swatch book 1 — A · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/rooms/swatch-book-bazaar-1.png",
+   "thumb": "assets/rooms/swatch-book-bazaar-1-thumb.jpg",
+   "w": 1500,
+   "h": 2290,
+   "caption": "Every colourway at 1:1 tile scale with repeat markers and the recommended printed repeat.",
+   "tags": [
+    "wallpaper",
+    "swatch-book"
+   ],
+   "download": "assets/rooms/swatch-book-bazaar-1.svg"
+  },
+  {
+   "id": "swatch-book-bazaar-2",
+   "title": "Wallpaper swatch book 2 — A · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/rooms/swatch-book-bazaar-2.png",
+   "thumb": "assets/rooms/swatch-book-bazaar-2-thumb.jpg",
+   "w": 1500,
+   "h": 2290,
+   "caption": "Every colourway at 1:1 tile scale with repeat markers and the recommended printed repeat.",
+   "tags": [
+    "wallpaper",
+    "swatch-book"
+   ],
+   "download": "assets/rooms/swatch-book-bazaar-2.svg"
+  },
+  {
+   "id": "spec-bazaar",
+   "title": "Feature-wall spec — A · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/rooms/spec-bazaar.png",
+   "thumb": "assets/rooms/spec-bazaar-thumb.jpg",
+   "w": 1200,
+   "h": 1980,
+   "caption": "Type II / Class A wallcovering notes, paint schedule and an approx. budget — all from research.",
+   "tags": [
+    "spec",
+    "wallpaper",
+    "paint"
+   ],
+   "download": "assets/rooms/spec-bazaar.svg"
+  },
+  {
+   "id": "scale-bazaar",
+   "title": "Pattern scale study — A · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/rooms/scale-bazaar.png",
+   "thumb": "assets/rooms/scale-bazaar-thumb.jpg",
+   "w": 1920,
+   "h": 1080,
+   "caption": "Same paper at three repeat sizes: why we recommend ~24 in for this room.",
+   "tags": [
+    "wallpaper",
+    "scale"
+   ],
+   "download": "assets/rooms/scale-bazaar.svg"
+  },
+  {
+   "id": "swatch-book-royal-1",
+   "title": "Wallpaper swatch book 1 — B · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/rooms/swatch-book-royal-1.png",
+   "thumb": "assets/rooms/swatch-book-royal-1-thumb.jpg",
+   "w": 1500,
+   "h": 2290,
+   "caption": "Every colourway at 1:1 tile scale with repeat markers and the recommended printed repeat.",
+   "tags": [
+    "wallpaper",
+    "swatch-book"
+   ],
+   "download": "assets/rooms/swatch-book-royal-1.svg"
+  },
+  {
+   "id": "swatch-book-royal-2",
+   "title": "Wallpaper swatch book 2 — B · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/rooms/swatch-book-royal-2.png",
+   "thumb": "assets/rooms/swatch-book-royal-2-thumb.jpg",
+   "w": 1500,
+   "h": 2290,
+   "caption": "Every colourway at 1:1 tile scale with repeat markers and the recommended printed repeat.",
+   "tags": [
+    "wallpaper",
+    "swatch-book"
+   ],
+   "download": "assets/rooms/swatch-book-royal-2.svg"
+  },
+  {
+   "id": "spec-royal",
+   "title": "Feature-wall spec — B · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/rooms/spec-royal.png",
+   "thumb": "assets/rooms/spec-royal-thumb.jpg",
+   "w": 1200,
+   "h": 1980,
+   "caption": "Type II / Class A wallcovering notes, paint schedule and an approx. budget — all from research.",
+   "tags": [
+    "spec",
+    "wallpaper",
+    "paint"
+   ],
+   "download": "assets/rooms/spec-royal.svg"
+  },
+  {
+   "id": "scale-royal",
+   "title": "Pattern scale study — B · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/rooms/scale-royal.png",
+   "thumb": "assets/rooms/scale-royal-thumb.jpg",
+   "w": 1920,
+   "h": 1080,
+   "caption": "Same paper at three repeat sizes: why we recommend ~24 in for this room.",
+   "tags": [
+    "wallpaper",
+    "scale"
+   ],
+   "download": "assets/rooms/scale-royal.svg"
+  },
+  {
+   "id": "costs-phased",
+   "title": "What it costs — $500 / $2,500 / $10,000",
+   "direction": "both",
+   "type": "image",
+   "src": "assets/rooms/costs-phased.png",
+   "thumb": "assets/rooms/costs-phased-thumb.jpg",
+   "w": 1200,
+   "h": 2282,
+   "caption": "Three phased plans from research; every line flagged approx. (sourced) or est. (needs a quote).",
+   "tags": [
+    "costs",
+    "budget"
+   ],
+   "download": "assets/rooms/costs-phased.svg"
+  },
+  {
+   "id": "costs-ranges",
+   "title": "What it costs — low / mid / high",
+   "direction": "both",
+   "type": "image",
+   "src": "assets/rooms/costs-ranges.png",
+   "thumb": "assets/rooms/costs-ranges-thumb.jpg",
+   "w": 1200,
+   "h": 1690,
+   "caption": "Low-mid-high ranges for each interior upgrade, so the owners can pick an entry point.",
+   "tags": [
+    "costs",
+    "budget"
+   ],
+   "download": "assets/rooms/costs-ranges.svg"
+  }
+ ]
+}

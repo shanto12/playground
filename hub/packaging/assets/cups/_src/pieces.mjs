@@ -248,7 +248,7 @@ const FILLS = {
 for (const dir of DIRS) {
   PIECES.push({
     id: `lassi-${dir}`,
-    textures: [{ name: `lassi-band-${dir}`, art: () => lassiBand(dir), ppm: 16 }, { name: `flag-${dir}`, art: () => strawFlag(dir), ppm: 20 }],
+    textures: [{ name: `lassi-band-${dir}`, art: () => lassiBand(dir), ppm: 16 }, { name: `flag-${dir}`, art: () => strawFlag(dir), ppm: 20, transparent: true }],
     files: [
       { file: `lassi-cup-${dir}.svg`, doc: () => lassiBoard(dir), preview: 4 },
       { file: `art/lassi-band-${dir}.svg`, doc: () => faceDoc(lassiBand(dir), `Lassi cup wrap band (unrolled, UV-ready) — ${dir}`) },
@@ -263,10 +263,10 @@ for (const dir of DIRS) {
     id: `tray-${dir}`,
     textures: [
       { name: `traylid-${dir}`, art: () => trayLid(dir), ppm: 8 },
-      { name: `label-${dir}-curry`, art: () => zoneLabel(dir, 'curry', FILLS.curry), ppm: 12 },
-      { name: `label-${dir}-biryani`, art: () => zoneLabel(dir, 'biryani', FILLS.biryani), ppm: 12 },
-      { name: `label-${dir}-rice`, art: () => zoneLabel(dir, 'biryani', FILLS.rice), ppm: 12 },
-      { name: `label-${dir}-bread`, art: () => zoneLabel(dir, 'bread', FILLS.bread), ppm: 12 },
+      { name: `label-${dir}-curry`, art: () => zoneLabel(dir, 'curry', FILLS.curry), ppm: 12, transparent: true },
+      { name: `label-${dir}-biryani`, art: () => zoneLabel(dir, 'biryani', FILLS.biryani), ppm: 12, transparent: true },
+      { name: `label-${dir}-rice`, art: () => zoneLabel(dir, 'biryani', FILLS.rice), ppm: 12, transparent: true },
+      { name: `label-${dir}-bread`, art: () => zoneLabel(dir, 'bread', FILLS.bread), ppm: 12, transparent: true },
       { name: `tentf-${dir}-curry`, art: () => tentFront(dir, 'curry', FILLS.curry), ppm: 12 },
       { name: `tentf-${dir}-biryani`, art: () => tentFront(dir, 'biryani', FILLS.biryani), ppm: 12 },
       { name: `tentf-${dir}-bread`, art: () => tentFront(dir, 'bread', FILLS.bread), ppm: 12 },

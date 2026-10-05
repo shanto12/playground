@@ -1,0 +1,517 @@
+{
+  "helper": "bags",
+  "note": "Independent design concept — not official Curry District material. Dielines indicative; confirm with supplier. QR on stuffer cards is a sample pattern placeholder.",
+  "items": [
+    {
+      "id": "bag-hero-bazaar",
+      "title": "Handled bag — hero (Bazaar)",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bags/bag-hero-bazaar.png",
+      "thumb": "assets/bags/bag-hero-bazaar-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "A truck-art arch around the wordmark turns every carry-out into a moving billboard.",
+      "tags": [
+        "bag",
+        "hero",
+        "mockup",
+        "3d"
+      ],
+      "download": "assets/bags/bag-front-bazaar.svg"
+    },
+    {
+      "id": "bag-hero-royal",
+      "title": "Handled bag — hero (Royal)",
+      "direction": "royal",
+      "type": "image",
+      "src": "assets/bags/bag-hero-royal.png",
+      "thumb": "assets/bags/bag-hero-royal-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "Jali and a gold mihrab on midnight make takeout feel like a gift worth carrying.",
+      "tags": [
+        "bag",
+        "hero",
+        "mockup",
+        "3d"
+      ],
+      "download": "assets/bags/bag-front-royal.svg"
+    },
+    {
+      "id": "bag-faces-bazaar",
+      "title": "Handled bag — front, side & back (Bazaar)",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bags/bag-faces-bazaar.png",
+      "thumb": "assets/bags/bag-faces-bazaar-thumb.jpg",
+      "w": 1600,
+      "h": 1200,
+      "caption": "Front sells the brand, the back maps the menu \"districts\", the gusset shouts HOT FOOD INSIDE.",
+      "tags": [
+        "bag",
+        "flat",
+        "artwork"
+      ],
+      "download": "assets/bags/bag-faces-bazaar.svg"
+    },
+    {
+      "id": "bag-faces-royal",
+      "title": "Handled bag — front, side & back (Royal)",
+      "direction": "royal",
+      "type": "image",
+      "src": "assets/bags/bag-faces-royal.png",
+      "thumb": "assets/bags/bag-faces-royal-thumb.jpg",
+      "w": 1600,
+      "h": 1200,
+      "caption": "Mihrab front, a district directory on the back and a foil \"Hot food inside\" gusset.",
+      "tags": [
+        "bag",
+        "flat",
+        "artwork"
+      ],
+      "download": "assets/bags/bag-faces-royal.svg"
+    },
+    {
+      "id": "seals-bazaar",
+      "title": "Bag-seal sticker set (Bazaar)",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bags/seals-bazaar.png",
+      "thumb": "assets/bags/seals-bazaar-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "Stamp, 5-step spice scale, write-in \"sealed fresh\", thank-you, packed-for and a tamper strip — tiny ads on every delivery order.",
+      "tags": [
+        "stickers",
+        "delivery",
+        "seal",
+        "mockup"
+      ],
+      "download": "assets/bags/seals-sheet-bazaar.svg"
+    },
+    {
+      "id": "seals-royal",
+      "title": "Bag-seal sticker set (Royal)",
+      "direction": "royal",
+      "type": "image",
+      "src": "assets/bags/seals-royal.png",
+      "thumb": "assets/bags/seals-royal-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "Stamp, 5-step spice scale, write-in \"sealed fresh\", thank-you, packed-for and a tamper strip — tiny ads on every delivery order.",
+      "tags": [
+        "stickers",
+        "delivery",
+        "seal",
+        "mockup"
+      ],
+      "download": "assets/bags/seals-sheet-royal.svg"
+    },
+    {
+      "id": "seal-closeup-bazaar",
+      "title": "Delivery seal in use (Bazaar)",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bags/seal-closeup-bazaar.png",
+      "thumb": "assets/bags/seal-closeup-bazaar-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "The District Stamp closes the fold and a tamper strip rides over the top — the first thing in every delivery photo.",
+      "tags": [
+        "stickers",
+        "delivery",
+        "seal",
+        "tamper-evident",
+        "mockup"
+      ],
+      "download": "assets/bags/seals-sheet-bazaar.svg"
+    },
+    {
+      "id": "seal-closeup-royal",
+      "title": "Delivery seal in use (Royal)",
+      "direction": "royal",
+      "type": "image",
+      "src": "assets/bags/seal-closeup-royal.png",
+      "thumb": "assets/bags/seal-closeup-royal-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "The District Stamp closes the fold and a tamper strip rides over the top — the first thing in every delivery photo.",
+      "tags": [
+        "stickers",
+        "delivery",
+        "seal",
+        "tamper-evident",
+        "mockup"
+      ],
+      "download": "assets/bags/seals-sheet-royal.svg"
+    },
+    {
+      "id": "napkin-bazaar",
+      "title": "Napkin — folded & unfolded (Bazaar)",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bags/napkin-bazaar.png",
+      "thumb": "assets/bags/napkin-bazaar-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "Two-colour block-print border with a face panel that winks: \"For the saucy bits. (we won't tell)\".",
+      "tags": [
+        "napkin",
+        "tableware",
+        "mockup"
+      ],
+      "download": "assets/bags/napkin-bazaar.svg"
+    },
+    {
+      "id": "napkin-royal",
+      "title": "Napkin — folded & unfolded (Royal)",
+      "direction": "royal",
+      "type": "image",
+      "src": "assets/bags/napkin-royal.png",
+      "thumb": "assets/bags/napkin-royal-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "Gold arcade border, ivory tissue and one quiet line: \"For the last drop of gravy.\"",
+      "tags": [
+        "napkin",
+        "tableware",
+        "mockup"
+      ],
+      "download": "assets/bags/napkin-royal.svg"
+    },
+    {
+      "id": "cutlery-bazaar",
+      "title": "Cutlery sleeve & kit (Bazaar)",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bags/cutlery-bazaar.png",
+      "thumb": "assets/bags/cutlery-bazaar-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "\"Dig in. Pro tip: naan is also a spoon.\" — a stripe-sleeve that sounds like the brand.",
+      "tags": [
+        "cutlery",
+        "kit",
+        "mockup"
+      ],
+      "download": "assets/bags/cutlery-sleeve-bazaar.svg"
+    },
+    {
+      "id": "cutlery-royal",
+      "title": "Cutlery sleeve & kit (Royal)",
+      "direction": "royal",
+      "type": "image",
+      "src": "assets/bags/cutlery-royal.png",
+      "thumb": "assets/bags/cutlery-royal-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "\"Cutlery, should the naan run out.\" — an arch-window sleeve with a wink.",
+      "tags": [
+        "cutlery",
+        "kit",
+        "mockup"
+      ],
+      "download": "assets/bags/cutlery-sleeve-royal.svg"
+    },
+    {
+      "id": "tape-bazaar",
+      "title": "Branded tape (Bazaar)",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bags/tape-bazaar.png",
+      "thumb": "assets/bags/tape-bazaar-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "One roll turns any plain stock box or bag into a branded order — the cheapest glow-up in the kit.",
+      "tags": [
+        "tape",
+        "catering",
+        "mockup"
+      ],
+      "download": "assets/bags/tape-bazaar.svg"
+    },
+    {
+      "id": "tape-royal",
+      "title": "Branded tape (Royal)",
+      "direction": "royal",
+      "type": "image",
+      "src": "assets/bags/tape-royal.png",
+      "thumb": "assets/bags/tape-royal-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "One roll turns any plain stock box or bag into a branded order — the cheapest glow-up in the kit.",
+      "tags": [
+        "tape",
+        "catering",
+        "mockup"
+      ],
+      "download": "assets/bags/tape-royal.svg"
+    },
+    {
+      "id": "stuffer-bazaar",
+      "title": "Bag-stuffer thank-you card 4×6 (Bazaar)",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bags/stuffer-bazaar.png",
+      "thumb": "assets/bags/stuffer-bazaar-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "Warm thanks up front; on the back a policy-safe review ask (no incentive), a QR placeholder and a little spice wisdom.",
+      "tags": [
+        "insert",
+        "review",
+        "QR",
+        "mockup"
+      ],
+      "download": "assets/bags/stuffer-back-bazaar.svg"
+    },
+    {
+      "id": "stuffer-royal",
+      "title": "Bag-stuffer thank-you card 4×6 (Royal)",
+      "direction": "royal",
+      "type": "image",
+      "src": "assets/bags/stuffer-royal.png",
+      "thumb": "assets/bags/stuffer-royal-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "Warm thanks up front; on the back a policy-safe review ask (no incentive), a QR placeholder and a little spice wisdom.",
+      "tags": [
+        "insert",
+        "review",
+        "QR",
+        "mockup"
+      ],
+      "download": "assets/bags/stuffer-back-royal.svg"
+    },
+    {
+      "id": "sauces-bazaar",
+      "title": "Sauce-packet characters (Bazaar)",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bags/sauces-bazaar.png",
+      "thumb": "assets/bags/sauces-bazaar-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "Mint, Tamarind, Raita and Mango Pickle as a collectible cast — each with its own personality line.",
+      "tags": [
+        "sauce",
+        "packets",
+        "characters",
+        "mockup"
+      ],
+      "download": "assets/bags/sauce-packets-bazaar.svg"
+    },
+    {
+      "id": "sauces-royal",
+      "title": "Sauce-packet characters (Royal)",
+      "direction": "royal",
+      "type": "image",
+      "src": "assets/bags/sauces-royal.png",
+      "thumb": "assets/bags/sauces-royal-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "Four jewel-toned sachets with gold line-art inside a mihrab window — elegant, never cute.",
+      "tags": [
+        "sauce",
+        "packets",
+        "characters",
+        "mockup"
+      ],
+      "download": "assets/bags/sauce-packets-royal.svg"
+    },
+    {
+      "id": "receipt-stamp-bazaar",
+      "title": "Receipt & bag stamp (Bazaar)",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bags/receipt-stamp-bazaar.png",
+      "thumb": "assets/bags/receipt-stamp-bazaar-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "A one-colour rubber stamp with staff check-boxes brands receipts and plain stock bags for pennies.",
+      "tags": [
+        "stamp",
+        "receipt",
+        "low-cost",
+        "mockup"
+      ],
+      "download": "assets/bags/receipt-stamp-bazaar.svg"
+    },
+    {
+      "id": "receipt-stamp-royal",
+      "title": "Receipt & bag stamp (Royal)",
+      "direction": "royal",
+      "type": "image",
+      "src": "assets/bags/receipt-stamp-royal.png",
+      "thumb": "assets/bags/receipt-stamp-royal-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "A one-colour rubber stamp with staff check-boxes brands receipts and plain stock bags for pennies.",
+      "tags": [
+        "stamp",
+        "receipt",
+        "low-cost",
+        "mockup"
+      ],
+      "download": "assets/bags/receipt-stamp-royal.svg"
+    },
+    {
+      "id": "flatlay-bazaar",
+      "title": "What's in the bag — flat-lay (Bazaar)",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bags/flatlay-bazaar.png",
+      "thumb": "assets/bags/flatlay-bazaar-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "Bag, seals, napkin, cutlery, stuffer and sauces at true relative scale — one system, nothing generic.",
+      "tags": [
+        "flat-lay",
+        "unboxing",
+        "system",
+        "mockup"
+      ],
+      "download": "assets/bags/bag-front-bazaar.svg"
+    },
+    {
+      "id": "flatlay-royal",
+      "title": "What's in the bag — flat-lay (Royal)",
+      "direction": "royal",
+      "type": "image",
+      "src": "assets/bags/flatlay-royal.png",
+      "thumb": "assets/bags/flatlay-royal-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "Bag, seals, napkin, cutlery, stuffer and sauces at true relative scale — one system, nothing generic.",
+      "tags": [
+        "flat-lay",
+        "unboxing",
+        "system",
+        "mockup"
+      ],
+      "download": "assets/bags/bag-front-royal.svg"
+    },
+    {
+      "id": "doorstep-bazaar",
+      "title": "Delivery doorstep (Bazaar)",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bags/doorstep-bazaar.png",
+      "thumb": "assets/bags/doorstep-bazaar-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "Sealed, stamped and loud on the doormat — the neighbours know exactly where dinner came from.",
+      "tags": [
+        "delivery",
+        "doorstep",
+        "scene",
+        "mockup"
+      ],
+      "download": "assets/bags/bag-front-bazaar.svg"
+    },
+    {
+      "id": "doorstep-royal",
+      "title": "Delivery doorstep (Royal)",
+      "direction": "royal",
+      "type": "image",
+      "src": "assets/bags/doorstep-royal.png",
+      "thumb": "assets/bags/doorstep-royal-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "Dusk drop-off: a midnight-and-gold parcel that reads \"special occasion\" from the street.",
+      "tags": [
+        "delivery",
+        "doorstep",
+        "scene",
+        "mockup"
+      ],
+      "download": "assets/bags/bag-front-royal.svg"
+    },
+    {
+      "id": "bags-duo",
+      "title": "Bazaar vs Royal — side by side",
+      "direction": "both",
+      "type": "image",
+      "src": "assets/bags/bags-duo.png",
+      "thumb": "assets/bags/bags-duo-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "Same bag, same system — pick loud-and-joyful or jewel-and-gold; both read as Curry District from across the lot.",
+      "tags": [
+        "bag",
+        "comparison",
+        "3d"
+      ],
+      "download": "assets/bags/bag-front-bazaar.svg"
+    },
+    {
+      "id": "bag-dieline-bazaar-sheet",
+      "title": "Bag dieline sheet (Bazaar)",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bags/bag-dieline-bazaar-sheet.png",
+      "thumb": "assets/bags/bag-dieline-bazaar-sheet-thumb.jpg",
+      "w": 1600,
+      "h": 1278,
+      "caption": "30.75 × 18 in flat with folds, gusset creases, bleed, safe zone and handle patches — indicative, confirm with supplier.",
+      "tags": [
+        "dieline",
+        "print",
+        "spec"
+      ],
+      "download": "assets/bags/bag-dieline-bazaar.svg"
+    },
+    {
+      "id": "napkin-dieline-bazaar-sheet",
+      "title": "Napkin dieline sheet (Bazaar)",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bags/napkin-dieline-bazaar-sheet.png",
+      "thumb": "assets/bags/napkin-dieline-bazaar-sheet-thumb.jpg",
+      "w": 1600,
+      "h": 2130,
+      "caption": "13 × 13 in, ¼ fold: the face panel is planned first so the joke always lands on top — indicative, confirm with supplier.",
+      "tags": [
+        "dieline",
+        "napkin",
+        "spec"
+      ],
+      "download": "assets/bags/napkin-dieline-bazaar.svg"
+    },
+    {
+      "id": "bag-dieline-royal-sheet",
+      "title": "Bag dieline sheet (Royal)",
+      "direction": "royal",
+      "type": "image",
+      "src": "assets/bags/bag-dieline-royal-sheet.png",
+      "thumb": "assets/bags/bag-dieline-royal-sheet-thumb.jpg",
+      "w": 1600,
+      "h": 1278,
+      "caption": "30.75 × 18 in flat with folds, gusset creases, bleed, safe zone and handle patches — indicative, confirm with supplier.",
+      "tags": [
+        "dieline",
+        "print",
+        "spec"
+      ],
+      "download": "assets/bags/bag-dieline-royal.svg"
+    },
+    {
+      "id": "napkin-dieline-royal-sheet",
+      "title": "Napkin dieline sheet (Royal)",
+      "direction": "royal",
+      "type": "image",
+      "src": "assets/bags/napkin-dieline-royal-sheet.png",
+      "thumb": "assets/bags/napkin-dieline-royal-sheet-thumb.jpg",
+      "w": 1600,
+      "h": 2130,
+      "caption": "13 × 13 in, ¼ fold: the face panel is planned first so the joke always lands on top — indicative, confirm with supplier.",
+      "tags": [
+        "dieline",
+        "napkin",
+        "spec"
+      ],
+      "download": "assets/bags/napkin-dieline-royal.svg"
+    }
+  ]
+}

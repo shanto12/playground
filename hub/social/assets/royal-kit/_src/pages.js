@@ -510,3 +510,73 @@ ${dishImg(dish, { w: dishW, cx: 800, sillY: 1280, base })}
     }),
   });
 }
+
+// ──────────────────────────────── FEED GRID PREVIEW (generic phone, no app UI) ────────────────────────────────
+{
+  const G = ['post-hero-butter-chicken', 'post-zone-biryani-boulevard', 'post-spice-meter', 'post-ratings-card', 'post-order-online-qr', 'post-catering-celebrations',
+    'post-chefs-pick-example', 'post-daily-special-example', 'post-did-you-know-dum', 'post-zone-tandoor-quarter', 'motion-foil-wordmark', 'post-did-you-know-tandoor'];
+  const sw = 876, tw = (sw - 6) / 3, th = tw * 4 / 3;
+  const tiles = G.map((id, i) => `<div class="gt" style="left:${(i % 3) * (tw + 3)}px;top:${Math.round(Math.floor(i / 3) * (th + 3))}px;width:${tw.toFixed(1)}px;height:${th.toFixed(1)}px"><img src="../../${id}.${id.startsWith('motion') ? 'jpg' : 'png'}" alt="">${id.startsWith('motion') ? '<svg class="play" viewBox="0 0 20 20"><path d="M6 4L16 10L6 16Z" fill="#FBF3E4"/></svg>' : ''}</div>`).join('');
+  add({
+    id: 'feed-grid-preview', w: 1080, h: 2200, html: page({
+      w: 1080, h: 2200, kind: 'midnight', noFrame: true, css: `
+.phone{position:absolute;left:80px;top:250px;width:920px;height:1900px;border-radius:110px;background:linear-gradient(145deg,#3A2A44,#120A1A);box-shadow:0 0 0 2px rgba(247,217,138,.35),0 50px 100px -30px rgba(0,0,0,.8)}
+.scr{position:absolute;left:22px;top:22px;width:${sw}px;height:1856px;border-radius:90px;overflow:hidden;background:#FBF3E4}
+.gt{position:absolute;overflow:hidden}.gt img{width:100%;height:100%;object-fit:cover;display:block}
+.play{position:absolute;right:12px;top:12px;width:34px;height:34px;filter:drop-shadow(0 1px 2px rgba(0,0,0,.6))}
+.av{position:absolute;left:44px;top:70px;width:118px;height:118px;border-radius:50%;overflow:hidden;box-shadow:0 0 0 3px #FBF3E4,0 0 0 5px #B7791F}.av img{width:100%;height:100%}
+.nm{position:absolute;left:190px;top:84px;font:700 40px/1 'Fraunces';color:#160B26}.bio{position:absolute;left:190px;top:136px;font:500 26px/1.3 'Hanken Grotesk';color:#4B3A55}`,
+      body: `<div class="abs center eyebrow" style="top:90px">Feed grid · 3 × 4 preview</div>
+<div class="abs center h2" style="top:132px;font-size:64px">A jewel-tone mosaic</div>
+<div class="phone"><div class="scr"><div class="av"><img src="../../profile-avatar.png" alt=""></div><div class="nm">Curry District</div><div class="bio">Indian Kitchen · Little Elm, TX</div>
+<div style="position:absolute;left:0;top:210px;width:100%">${tiles}</div></div></div>`,
+    }),
+  });
+}
+
+// ──────────────────────────────── FEED RHYTHM BOARD (4 weeks from the playbook calendar) ────────────────────────────────
+{
+  // Day 1 = Mon 12 Oct 2026 (research/social_gbp_playbook.md §C). k = kit asset; null = needs real footage/photo.
+  const D = [
+    ['IG+FB · Reel', 'Butter chicken steam pull', 'motion-steam-glints'], ['GBP · Update', 'Fresh photos, same fire', 'gbp-post-update'], ['IG · Story poll', 'Mild, hot or District Hot?', 'story-spice-poll'],
+    ['TikTok · Video', 'Tandoori sizzle, sound on', null], ['IG · Carousel', 'First-timer picks', 'post-hero-butter-chicken'], ['IG+FB · Reel', 'Chef hands: dough and tadka', null], ['IG+FB · Story', 'Sunday is for sharing', 'story-dinner-occasion'],
+    ['GBP · Update', 'Order online (happy-hour post held: unverified)', 'gbp-post-order'], ['IG+FB · Reel', 'Dussehra greeting + kitchen B-roll', null], ['TikTok · Video', 'Spice challenge ep. 1', 'post-spice-meter'],
+    ['IG · Carousel', 'Biryani Boulevard (price post held)', 'post-zone-biryani-boulevard'], ['IG · Reel', 'Three naans, three tears', 'story-garlic-naan-order'], ['IG+FB · Photo', 'Staff feature (owner facts needed)', null], ['IG+GBP · Story', 'Review QR launch; thank-you card', 'post-ratings-card'],
+    ['IG · Story', 'Customer repost (with permission)', null], ['FB+GBP · Event', 'Diwali gatherings', 'story-diwali-gathering'], ['TikTok · Video', 'Menu words, decoded', 'post-did-you-know-tandoor'], ['IG · Reel', 'Tandoor flame close-up', 'motion-ember-arch'],
+    ['IG · Carousel', 'Spice cabinet 101', 'post-did-you-know-dum'], ['IG+FB · Reel', 'Trick or heat? vindaloo dare', null], ['GBP · Update', 'Diwali hours + order online', 'gbp-post-order'],
+    ['IG · Collab Reel', 'Creator tasting (disclosed)', null], ['TikTok · Video', 'Something sweet (verify menu)', null], ['IG · Story series', 'Diwali countdown', 'story-diwali-gathering'], ['IG · Carousel', 'Celebrations, beautifully fed', 'post-catering-celebrations'],
+    ['IG+FB · Reel', 'Lights on + wordmark end card', 'motion-foil-wordmark'], ['FB+IG · Story', 'See you tomorrow', 'story-dinner-occasion'], ['All · Reel + GBP', 'Diwali greeting (verify date)', null],
+  ];
+  const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+  const cw = 350, ch = 300, x0 = 170, y0 = 330;
+  const cells = D.map((d, i) => {
+    const wk = Math.floor(i / 7), dy = i % 7, date = new Date(Date.UTC(2026, 9, 12 + i));
+    const lab = `${days[dy]} ${date.getUTCDate()} ${date.getUTCMonth() === 9 ? 'Oct' : 'Nov'}`;
+    const src = d[2] ? `../../${d[2]}.${d[2].startsWith('motion') ? 'jpg' : 'png'}` : '';
+    const kind = d[2] ? (d[2].split('-')[0]) : 'shoot';
+    return `<div class="cell k-${kind}" style="left:${x0 + wk * (cw + 16)}px;top:${y0 + dy * (ch + 14)}px">
+<div class="th">${src ? `<img src="${src}" alt="">` : iconInline('spoon-fork', { size: 70, color: '#B7791F', stroke: 2 })}</div>
+<div class="tx"><div class="dt">Day ${i + 1} · ${lab}</div><div class="pf">${d[0]}</div><div class="id">${d[1]}</div><div class="src">${d[2] ? 'Kit: ' + d[2].replace(/^(post|story|gbp|motion)-/, '').replace(/-/g, ' ') : 'Needs real footage'}</div></div></div>`;
+  }).join('');
+  add({
+    id: 'feed-rhythm-board', w: 1640, h: 2600, html: page({
+      w: 1640, h: 2600, kind: 'ivory', css: `
+.cell{position:absolute;width:${cw}px;height:${ch}px;border-radius:22px;background:#FFFDF8;box-shadow:0 0 0 2px rgba(183,121,31,.4);display:flex;gap:16px;padding:16px;overflow:hidden}
+.cell::before{content:'';position:absolute;left:0;top:0;bottom:0;width:8px}
+.k-post::before{background:#0F4D3F}.k-story::before{background:#A3173F}.k-motion::before{background:#E9A63A}.k-gbp::before{background:#117C86}.k-shoot::before{background:repeating-linear-gradient(180deg,#B7791F 0 8px,transparent 8px 14px)}
+.th{flex:none;width:126px;height:268px;border-radius:14px;overflow:hidden;background:#F3E4C8;display:flex;align-items:center;justify-content:center}.th img{width:100%;height:100%;object-fit:cover}
+.tx{display:flex;flex-direction:column;gap:8px;padding-top:4px}
+.dt{font:700 21px/1.1 'Hanken Grotesk';letter-spacing:.1em;text-transform:uppercase;color:#8A5A12}.pf{font:700 22px/1.2 'Hanken Grotesk';color:#0F4D3F}
+.id{font:600 27px/1.15 'Fraunces';color:#160B26}.src{margin-top:auto;font:500 19px/1.2 'Hanken Grotesk';color:#5E4E66}
+.dl{position:absolute;left:66px;width:90px;font:700 30px/1 'Fraunces';color:#4B1D52}.wl{position:absolute;width:${cw}px;text-align:center;font:700 24px/1 'Hanken Grotesk';letter-spacing:.2em;text-transform:uppercase;color:#8A5A12}
+.lg{display:flex;gap:30px;justify-content:center;font:600 24px/1 'Hanken Grotesk';color:#3B2A44}.lg i{display:inline-block;width:22px;height:22px;border-radius:5px;vertical-align:-4px;margin-right:9px}`,
+      body: `<div class="abs center eyebrow dk" style="top:96px">Feed rhythm · 4 weeks from 12 Oct 2026</div>
+<div class="abs center h2 ink" style="top:140px;font-size:72px">What goes out, and when</div>
+<div class="abs center lg" style="top:240px"><span><i style="background:#0F4D3F"></i>Kit post</span><span><i style="background:#A3173F"></i>Kit story</span><span><i style="background:#E9A63A"></i>Kit motion</span><span><i style="background:#117C86"></i>GBP</span><span><i style="background:#B7791F"></i>Real footage / photo</span></div>
+${[0, 1, 2, 3].map((w) => `<div class="wl" style="left:${x0 + w * (cw + 16)}px;top:296px">Week ${w + 1}</div>`).join('')}
+${days.map((d, i) => `<div class="dl" style="top:${y0 + i * (ch + 14) + 130}px">${d}</div>`).join('')}
+${cells}
+<div class="abs center" style="top:2546px;width:1400px;font:500 22px/1.3 'Hanken Grotesk';color:#5E4E66">From the playbook's 30-day starter calendar (days 29–30 omitted). Holiday dates, happy hour and prices are unverified, so those posts stay on hold until the owners confirm them.</div>`,
+    }),
+  });
+}

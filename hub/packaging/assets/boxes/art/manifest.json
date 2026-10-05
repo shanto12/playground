@@ -1,0 +1,645 @@
+{
+ "helper": "boxes",
+ "units": "mm",
+ "note": "Indicative dimensions \u2014 confirm with supplier template. Faces are transparent outside their trim shape; art 'top' = physical top for walls, = back edge for lids/tops. Wrap faces (shape:wrap) map u around the object with the FRONT at u=0.5 and the seam at the back. Seal stickers are shown applied.",
+ "containers": [
+  {
+   "id": "pail-bazaar",
+   "container": "pail",
+   "direction": "bazaar",
+   "title": "Takeout pail 26 oz",
+   "geometry": {
+    "base": [
+     70,
+     70
+    ],
+    "top": [
+     102,
+     86
+    ],
+    "height": 112,
+    "ridge_above_top": 34,
+    "wire_handle": true
+   },
+   "faces": [
+    {
+     "face": "front",
+     "file": "assets/boxes/art/pail-bazaar-front.svg",
+     "w_mm": 102,
+     "h_mm": 112.29,
+     "shape": "trapezoid",
+     "mapping": "front panel; top edge 102 \u2192 bottom 70"
+    },
+    {
+     "face": "back",
+     "file": "assets/boxes/art/pail-bazaar-back.svg",
+     "w_mm": 102,
+     "h_mm": 112.29,
+     "shape": "trapezoid",
+     "mapping": "back panel"
+    },
+    {
+     "face": "side",
+     "file": "assets/boxes/art/pail-bazaar-side.svg",
+     "w_mm": 86,
+     "h_mm": 113.14,
+     "shape": "trapezoid",
+     "mapping": "both side panels; handle punch 12 mm below top centre"
+    },
+    {
+     "face": "lid",
+     "file": "assets/boxes/art/pail-bazaar-lid.svg",
+     "w_mm": 102,
+     "h_mm": 54.82,
+     "shape": "trapezoid",
+     "mapping": "front closing flap; art top = ridge"
+    },
+    {
+     "face": "lid-back",
+     "file": "assets/boxes/art/pail-bazaar-lid-back.svg",
+     "w_mm": 102,
+     "h_mm": 54.82,
+     "shape": "trapezoid",
+     "mapping": "back closing flap; art top = ridge"
+    },
+    {
+     "face": "gable",
+     "file": "assets/boxes/art/pail-bazaar-gable.svg",
+     "w_mm": 86,
+     "h_mm": 34.37,
+     "shape": "triangle",
+     "mapping": "side gable flaps; apex = ridge end"
+    }
+   ]
+  },
+  {
+   "id": "clamshell-bazaar",
+   "container": "clamshell",
+   "direction": "bazaar",
+   "title": "Kraft clamshell 9\u00d76 + belly band",
+   "geometry": {
+    "lid": [
+     231,
+     154
+    ],
+    "base": [
+     214,
+     138
+    ],
+    "height": 76,
+    "lid_seam_y": 58,
+    "band_width": 90,
+    "board_colour": "#B9875A"
+   },
+   "faces": [
+    {
+     "face": "lid",
+     "file": "assets/boxes/art/clamshell-bazaar-lid.svg",
+     "w_mm": 90,
+     "h_mm": 154,
+     "shape": "rect",
+     "mapping": "belly band over lid (90 wide, centred); art bottom = front edge"
+    },
+    {
+     "face": "front",
+     "file": "assets/boxes/art/clamshell-bazaar-front.svg",
+     "w_mm": 90,
+     "h_mm": 76.42,
+     "shape": "rect",
+     "mapping": "belly band front (taut lid edge \u2192 base edge)"
+    },
+    {
+     "face": "back",
+     "file": "assets/boxes/art/clamshell-bazaar-back.svg",
+     "w_mm": 90,
+     "h_mm": 76.42,
+     "shape": "rect",
+     "mapping": "belly band back"
+    },
+    {
+     "face": "bottom",
+     "file": "assets/boxes/art/clamshell-bazaar-bottom.svg",
+     "w_mm": 90,
+     "h_mm": 138,
+     "shape": "rect",
+     "mapping": "belly band under base"
+    },
+    {
+     "face": "side",
+     "file": "assets/boxes/art/clamshell-bazaar-side.svg",
+     "w_mm": 154,
+     "h_mm": 76,
+     "shape": "rect",
+     "mapping": "box end walls (unprinted board + stamp)"
+    },
+    {
+     "face": "inside-lid",
+     "file": "assets/boxes/art/clamshell-bazaar-inside-lid.svg",
+     "w_mm": 231,
+     "h_mm": 154,
+     "shape": "rect",
+     "mapping": "inner face of lid (see food-contact note)"
+    }
+   ]
+  },
+  {
+   "id": "tub-bazaar",
+   "container": "tub",
+   "direction": "bazaar",
+   "title": "Deli tub 16 oz + lid sleeve",
+   "geometry": {
+    "top_d": 114,
+    "base_d": 86,
+    "height": 76,
+    "lid_d": 118,
+    "sleeve_y": [
+     8,
+     66
+    ],
+    "tub": "frosted PP (stock)"
+   },
+   "faces": [
+    {
+     "face": "side",
+     "file": "assets/boxes/art/tub-bazaar-side.svg",
+     "w_mm": 313.0,
+     "h_mm": 58.98,
+     "shape": "wrap",
+     "mapping": "conical sleeve y 8\u219266 on tub; front at u=0.5"
+    },
+    {
+     "face": "lid",
+     "file": "assets/boxes/art/tub-bazaar-lid.svg",
+     "w_mm": 101.6,
+     "h_mm": 101.6,
+     "shape": "disc",
+     "mapping": "lid label \u00d8101.6; art bottom = front"
+    }
+   ]
+  },
+  {
+   "id": "handi-bazaar",
+   "container": "handi",
+   "direction": "bazaar",
+   "title": "Handi biryani box",
+   "geometry": {
+    "profile_r_y": [
+     [
+      0,
+      0
+     ],
+     [
+      60,
+      0
+     ],
+     [
+      66,
+      4
+     ],
+     [
+      76,
+      16
+     ],
+     [
+      84,
+      32
+     ],
+     [
+      88,
+      48
+     ],
+     [
+      86,
+      64
+     ],
+     [
+      80,
+      80
+     ],
+     [
+      74,
+      92
+     ],
+     [
+      73,
+      96
+     ]
+    ],
+    "band_r": 79.5,
+    "band_y": [
+     92,
+     109
+    ],
+    "dome_rise": 40,
+    "knob_r": 11
+   },
+   "faces": [
+    {
+     "face": "side",
+     "file": "assets/boxes/art/handi-bazaar-side.svg",
+     "w_mm": 552.92,
+     "h_mm": 107.96,
+     "shape": "wrap",
+     "mapping": "body wall, arc-length v from base (0) to neck (1)"
+    },
+    {
+     "face": "lid",
+     "file": "assets/boxes/art/handi-bazaar-lid.svg",
+     "w_mm": 160.0,
+     "h_mm": 160.0,
+     "shape": "disc",
+     "mapping": "domed lid, top-down planar projection; art bottom = front"
+    },
+    {
+     "face": "band",
+     "file": "assets/boxes/art/handi-bazaar-band.svg",
+     "w_mm": 499.51,
+     "h_mm": 17,
+     "shape": "wrap",
+     "mapping": "rim band (lid skirt) y 92\u2192109"
+    }
+   ]
+  },
+  {
+   "id": "tray-bazaar",
+   "container": "tray",
+   "direction": "bazaar",
+   "title": "2-compartment drawer tray",
+   "geometry": {
+    "sleeve": [
+     256,
+     180,
+     66
+    ],
+    "tray": [
+     250,
+     174,
+     60
+    ],
+    "divider_from_pull_end": 90.0,
+    "open_ends": "short ends"
+   },
+   "faces": [
+    {
+     "face": "lid",
+     "file": "assets/boxes/art/tray-bazaar-lid.svg",
+     "w_mm": 256,
+     "h_mm": 180,
+     "shape": "rect",
+     "mapping": "sleeve top; art top = back"
+    },
+    {
+     "face": "front",
+     "file": "assets/boxes/art/tray-bazaar-front.svg",
+     "w_mm": 256,
+     "h_mm": 66,
+     "shape": "rect",
+     "mapping": "sleeve front long side"
+    },
+    {
+     "face": "back",
+     "file": "assets/boxes/art/tray-bazaar-back.svg",
+     "w_mm": 256,
+     "h_mm": 66,
+     "shape": "rect",
+     "mapping": "sleeve back long side"
+    },
+    {
+     "face": "side",
+     "file": "assets/boxes/art/tray-bazaar-side.svg",
+     "w_mm": 174,
+     "h_mm": 60,
+     "shape": "rect",
+     "mapping": "drawer end face (pull end)"
+    },
+    {
+     "face": "tray-wall",
+     "file": "assets/boxes/art/tray-bazaar-tray-wall.svg",
+     "w_mm": 250,
+     "h_mm": 60,
+     "shape": "rect",
+     "mapping": "drawer long walls (outside)"
+    }
+   ]
+  },
+  {
+   "id": "pail-royal",
+   "container": "pail",
+   "direction": "royal",
+   "title": "Takeout pail 26 oz",
+   "geometry": {
+    "base": [
+     70,
+     70
+    ],
+    "top": [
+     102,
+     86
+    ],
+    "height": 112,
+    "ridge_above_top": 34,
+    "wire_handle": true
+   },
+   "faces": [
+    {
+     "face": "front",
+     "file": "assets/boxes/art/pail-royal-front.svg",
+     "w_mm": 102,
+     "h_mm": 112.29,
+     "shape": "trapezoid",
+     "mapping": "front panel; top edge 102 \u2192 bottom 70"
+    },
+    {
+     "face": "back",
+     "file": "assets/boxes/art/pail-royal-back.svg",
+     "w_mm": 102,
+     "h_mm": 112.29,
+     "shape": "trapezoid",
+     "mapping": "back panel"
+    },
+    {
+     "face": "side",
+     "file": "assets/boxes/art/pail-royal-side.svg",
+     "w_mm": 86,
+     "h_mm": 113.14,
+     "shape": "trapezoid",
+     "mapping": "both side panels; handle punch 12 mm below top centre"
+    },
+    {
+     "face": "lid",
+     "file": "assets/boxes/art/pail-royal-lid.svg",
+     "w_mm": 102,
+     "h_mm": 54.82,
+     "shape": "trapezoid",
+     "mapping": "front closing flap; art top = ridge"
+    },
+    {
+     "face": "lid-back",
+     "file": "assets/boxes/art/pail-royal-lid-back.svg",
+     "w_mm": 102,
+     "h_mm": 54.82,
+     "shape": "trapezoid",
+     "mapping": "back closing flap; art top = ridge"
+    },
+    {
+     "face": "gable",
+     "file": "assets/boxes/art/pail-royal-gable.svg",
+     "w_mm": 86,
+     "h_mm": 34.37,
+     "shape": "triangle",
+     "mapping": "side gable flaps; apex = ridge end"
+    }
+   ]
+  },
+  {
+   "id": "clamshell-royal",
+   "container": "clamshell",
+   "direction": "royal",
+   "title": "Kraft clamshell 9\u00d76 + belly band",
+   "geometry": {
+    "lid": [
+     231,
+     154
+    ],
+    "base": [
+     214,
+     138
+    ],
+    "height": 76,
+    "lid_seam_y": 58,
+    "band_width": 90,
+    "board_colour": "#1A1024"
+   },
+   "faces": [
+    {
+     "face": "lid",
+     "file": "assets/boxes/art/clamshell-royal-lid.svg",
+     "w_mm": 90,
+     "h_mm": 154,
+     "shape": "rect",
+     "mapping": "belly band over lid (90 wide, centred); art bottom = front edge"
+    },
+    {
+     "face": "front",
+     "file": "assets/boxes/art/clamshell-royal-front.svg",
+     "w_mm": 90,
+     "h_mm": 76.42,
+     "shape": "rect",
+     "mapping": "belly band front (taut lid edge \u2192 base edge)"
+    },
+    {
+     "face": "back",
+     "file": "assets/boxes/art/clamshell-royal-back.svg",
+     "w_mm": 90,
+     "h_mm": 76.42,
+     "shape": "rect",
+     "mapping": "belly band back"
+    },
+    {
+     "face": "bottom",
+     "file": "assets/boxes/art/clamshell-royal-bottom.svg",
+     "w_mm": 90,
+     "h_mm": 138,
+     "shape": "rect",
+     "mapping": "belly band under base"
+    },
+    {
+     "face": "side",
+     "file": "assets/boxes/art/clamshell-royal-side.svg",
+     "w_mm": 154,
+     "h_mm": 76,
+     "shape": "rect",
+     "mapping": "box end walls (unprinted board + stamp)"
+    },
+    {
+     "face": "inside-lid",
+     "file": "assets/boxes/art/clamshell-royal-inside-lid.svg",
+     "w_mm": 231,
+     "h_mm": 154,
+     "shape": "rect",
+     "mapping": "inner face of lid (see food-contact note)"
+    }
+   ]
+  },
+  {
+   "id": "tub-royal",
+   "container": "tub",
+   "direction": "royal",
+   "title": "Deli tub 16 oz + lid sleeve",
+   "geometry": {
+    "top_d": 114,
+    "base_d": 86,
+    "height": 76,
+    "lid_d": 118,
+    "sleeve_y": [
+     8,
+     66
+    ],
+    "tub": "frosted PP (stock)"
+   },
+   "faces": [
+    {
+     "face": "side",
+     "file": "assets/boxes/art/tub-royal-side.svg",
+     "w_mm": 313.0,
+     "h_mm": 58.98,
+     "shape": "wrap",
+     "mapping": "conical sleeve y 8\u219266 on tub; front at u=0.5"
+    },
+    {
+     "face": "lid",
+     "file": "assets/boxes/art/tub-royal-lid.svg",
+     "w_mm": 101.6,
+     "h_mm": 101.6,
+     "shape": "disc",
+     "mapping": "lid label \u00d8101.6; art bottom = front"
+    }
+   ]
+  },
+  {
+   "id": "handi-royal",
+   "container": "handi",
+   "direction": "royal",
+   "title": "Handi biryani box",
+   "geometry": {
+    "profile_r_y": [
+     [
+      0,
+      0
+     ],
+     [
+      60,
+      0
+     ],
+     [
+      66,
+      4
+     ],
+     [
+      76,
+      16
+     ],
+     [
+      84,
+      32
+     ],
+     [
+      88,
+      48
+     ],
+     [
+      86,
+      64
+     ],
+     [
+      80,
+      80
+     ],
+     [
+      74,
+      92
+     ],
+     [
+      73,
+      96
+     ]
+    ],
+    "band_r": 79.5,
+    "band_y": [
+     92,
+     109
+    ],
+    "dome_rise": 40,
+    "knob_r": 11
+   },
+   "faces": [
+    {
+     "face": "side",
+     "file": "assets/boxes/art/handi-royal-side.svg",
+     "w_mm": 552.92,
+     "h_mm": 107.96,
+     "shape": "wrap",
+     "mapping": "body wall, arc-length v from base (0) to neck (1)"
+    },
+    {
+     "face": "lid",
+     "file": "assets/boxes/art/handi-royal-lid.svg",
+     "w_mm": 160.0,
+     "h_mm": 160.0,
+     "shape": "disc",
+     "mapping": "domed lid, top-down planar projection; art bottom = front"
+    },
+    {
+     "face": "band",
+     "file": "assets/boxes/art/handi-royal-band.svg",
+     "w_mm": 499.51,
+     "h_mm": 17,
+     "shape": "wrap",
+     "mapping": "rim band (lid skirt) y 92\u2192109"
+    }
+   ]
+  },
+  {
+   "id": "tray-royal",
+   "container": "tray",
+   "direction": "royal",
+   "title": "2-compartment drawer tray",
+   "geometry": {
+    "sleeve": [
+     256,
+     180,
+     66
+    ],
+    "tray": [
+     250,
+     174,
+     60
+    ],
+    "divider_from_pull_end": 90.0,
+    "open_ends": "short ends"
+   },
+   "faces": [
+    {
+     "face": "lid",
+     "file": "assets/boxes/art/tray-royal-lid.svg",
+     "w_mm": 256,
+     "h_mm": 180,
+     "shape": "rect",
+     "mapping": "sleeve top; art top = back"
+    },
+    {
+     "face": "front",
+     "file": "assets/boxes/art/tray-royal-front.svg",
+     "w_mm": 256,
+     "h_mm": 66,
+     "shape": "rect",
+     "mapping": "sleeve front long side"
+    },
+    {
+     "face": "back",
+     "file": "assets/boxes/art/tray-royal-back.svg",
+     "w_mm": 256,
+     "h_mm": 66,
+     "shape": "rect",
+     "mapping": "sleeve back long side"
+    },
+    {
+     "face": "side",
+     "file": "assets/boxes/art/tray-royal-side.svg",
+     "w_mm": 174,
+     "h_mm": 60,
+     "shape": "rect",
+     "mapping": "drawer end face (pull end)"
+    },
+    {
+     "face": "tray-wall",
+     "file": "assets/boxes/art/tray-royal-tray-wall.svg",
+     "w_mm": 250,
+     "h_mm": 60,
+     "shape": "rect",
+     "mapping": "drawer long walls (outside)"
+    }
+   ]
+  }
+ ]
+}

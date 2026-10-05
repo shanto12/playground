@@ -1,0 +1,355 @@
+{
+ "helper": "menus",
+ "items": [
+  {
+   "id": "menu-bazaar-1",
+   "title": "Dine-in menu, side 1 — A · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/menus/menu-bazaar-side1.png",
+   "thumb": "assets/menus/menu-bazaar-side1-thumb.jpg",
+   "w": 1632,
+   "h": 2112,
+   "caption": "US Letter, side 1: masthead, zone index, one-line legend, Starters Square, Tandoor Quarter, Bread Bazaar and Biryani Boulevard.",
+   "tags": [
+    "menu"
+   ],
+   "download": "assets/menus/menu-bazaar-bleed.pdf"
+  },
+  {
+   "id": "menu-bazaar-2",
+   "title": "Dine-in menu, side 2 — A · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/menus/menu-bazaar-side2.png",
+   "thumb": "assets/menus/menu-bazaar-side2-thumb.jpg",
+   "w": 1632,
+   "h": 2112,
+   "caption": "Side 2: Curry Quarter split veg / chicken / lamb / goat, Indo-Chinese Alley, Sweet Street and Chai & Coolers, with allergen footer.",
+   "tags": [
+    "menu"
+   ],
+   "download": "assets/menus/menu-bazaar-bleed.pdf"
+  },
+  {
+   "id": "menu-bazaar-pdf",
+   "title": "Menu PDF with crop marks — A · Bazaar",
+   "direction": "bazaar",
+   "type": "pdf",
+   "src": "assets/menus/menu-bazaar-trim-marks.pdf",
+   "thumb": "assets/menus/menu-bazaar-side1-thumb.jpg",
+   "w": 1632,
+   "h": 2112,
+   "caption": "Two pages, 3 mm bleed, 0.25 pt crop marks. Proof only.",
+   "tags": [
+    "menu"
+   ]
+  },
+  {
+   "id": "tent-bazaar-front",
+   "title": "Table tent, front — A · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/menus/tent-bazaar-front.png",
+   "thumb": "assets/menus/tent-bazaar-front-thumb.jpg",
+   "w": 1152,
+   "h": 1728,
+   "caption": "4 × 6 in. Sample QR (not scannable) captioned QR → ordering link.",
+   "tags": [
+    "tent"
+   ],
+   "download": "assets/menus/tent-bazaar-bleed.pdf"
+  },
+  {
+   "id": "tent-bazaar-back",
+   "title": "Table tent, back — A · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/menus/tent-bazaar-back.png",
+   "thumb": "assets/menus/tent-bazaar-back-thumb.jpg",
+   "w": 1152,
+   "h": 1728,
+   "caption": "Tell us your spice level: five steps, each with a word, never colour alone.",
+   "tags": [
+    "tent"
+   ],
+   "download": "assets/menus/tent-bazaar-bleed.pdf"
+  },
+  {
+   "id": "board-bazaar-1",
+   "title": "Menu board 1/3: Starters + Tandoor — A · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/menus/board-bazaar-1.png",
+   "thumb": "assets/menus/board-bazaar-1-thumb.jpg",
+   "w": 1920,
+   "h": 1080,
+   "caption": "16:9 digital-signage still, sized to read from the counter queue.",
+   "tags": [
+    "board"
+   ]
+  },
+  {
+   "id": "board-bazaar-2",
+   "title": "Menu board 2/3: Curry + Biryani — A · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/menus/board-bazaar-2.png",
+   "thumb": "assets/menus/board-bazaar-2-thumb.jpg",
+   "w": 1920,
+   "h": 1080,
+   "caption": "16:9 digital-signage still, sized to read from the counter queue.",
+   "tags": [
+    "board"
+   ]
+  },
+  {
+   "id": "board-bazaar-3",
+   "title": "Menu board 3/3: Sweets + Chai — A · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/menus/board-bazaar-3.png",
+   "thumb": "assets/menus/board-bazaar-3-thumb.jpg",
+   "w": 1920,
+   "h": 1080,
+   "caption": "16:9 digital-signage still, sized to read from the counter queue.",
+   "tags": [
+    "board"
+   ]
+  },
+  {
+   "id": "board-bazaar-wall",
+   "title": "Boards on the wall — A · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/menus/board-bazaar-wall.png",
+   "thumb": "assets/menus/board-bazaar-wall-thumb.jpg",
+   "w": 1920,
+   "h": 1080,
+   "caption": "Sticker-style frames under a marigold garland. Concept mockup.",
+   "tags": [
+    "board"
+   ]
+  },
+  {
+   "id": "flyer-bazaar-front",
+   "title": "Door-hanger, front — A · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/menus/flyer-bazaar-front.png",
+   "thumb": "assets/menus/flyer-bazaar-front-thumb.jpg",
+   "w": 1020,
+   "h": 2640,
+   "caption": "4.25 × 11 in. The eight zones as a mini district map.",
+   "tags": [
+    "flyer"
+   ],
+   "download": "assets/menus/flyer-bazaar-bleed.pdf"
+  },
+  {
+   "id": "flyer-bazaar-back",
+   "title": "Door-hanger, back — A · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/menus/flyer-bazaar-back.png",
+   "thumb": "assets/menus/flyer-bazaar-back-thumb.jpg",
+   "w": 1020,
+   "h": 2640,
+   "caption": "Guest favorites, how to order, spice and allergen lines.",
+   "tags": [
+    "flyer"
+   ],
+   "download": "assets/menus/flyer-bazaar-bleed.pdf"
+  },
+  {
+   "id": "legend-bazaar",
+   "title": "Allergen & spice legend card — A · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/menus/legend-bazaar.png",
+   "thumb": "assets/menus/legend-bazaar-thumb.jpg",
+   "w": 1200,
+   "h": 1680,
+   "caption": "5 × 7 in card: spice scale, diet marks, badges and allergen prompt.",
+   "tags": [
+    "menu"
+   ],
+   "download": "assets/menus/legend-bazaar-bleed.pdf"
+  },
+  {
+   "id": "menu-royal-1",
+   "title": "Dine-in menu, side 1 — B · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/menus/menu-royal-side1.png",
+   "thumb": "assets/menus/menu-royal-side1-thumb.jpg",
+   "w": 1632,
+   "h": 2112,
+   "caption": "US Letter, side 1: masthead, zone index, one-line legend, Starters Square, Tandoor Quarter, Bread Bazaar and Biryani Boulevard.",
+   "tags": [
+    "menu"
+   ],
+   "download": "assets/menus/menu-royal-bleed.pdf"
+  },
+  {
+   "id": "menu-royal-2",
+   "title": "Dine-in menu, side 2 — B · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/menus/menu-royal-side2.png",
+   "thumb": "assets/menus/menu-royal-side2-thumb.jpg",
+   "w": 1632,
+   "h": 2112,
+   "caption": "Side 2: Curry Quarter split veg / chicken / lamb / goat, Indo-Chinese Alley, Sweet Street and Chai & Coolers, with allergen footer.",
+   "tags": [
+    "menu"
+   ],
+   "download": "assets/menus/menu-royal-bleed.pdf"
+  },
+  {
+   "id": "menu-royal-pdf",
+   "title": "Menu PDF with crop marks — B · Royal",
+   "direction": "royal",
+   "type": "pdf",
+   "src": "assets/menus/menu-royal-trim-marks.pdf",
+   "thumb": "assets/menus/menu-royal-side1-thumb.jpg",
+   "w": 1632,
+   "h": 2112,
+   "caption": "Two pages, 3 mm bleed, 0.25 pt crop marks. Proof only.",
+   "tags": [
+    "menu"
+   ]
+  },
+  {
+   "id": "tent-royal-front",
+   "title": "Table tent, front — B · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/menus/tent-royal-front.png",
+   "thumb": "assets/menus/tent-royal-front-thumb.jpg",
+   "w": 1152,
+   "h": 1728,
+   "caption": "4 × 6 in. Sample QR (not scannable) captioned QR → ordering link.",
+   "tags": [
+    "tent"
+   ],
+   "download": "assets/menus/tent-royal-bleed.pdf"
+  },
+  {
+   "id": "tent-royal-back",
+   "title": "Table tent, back — B · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/menus/tent-royal-back.png",
+   "thumb": "assets/menus/tent-royal-back-thumb.jpg",
+   "w": 1152,
+   "h": 1728,
+   "caption": "Tell us your spice level: five steps, each with a word, never colour alone.",
+   "tags": [
+    "tent"
+   ],
+   "download": "assets/menus/tent-royal-bleed.pdf"
+  },
+  {
+   "id": "board-royal-1",
+   "title": "Menu board 1/3: Starters + Tandoor — B · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/menus/board-royal-1.png",
+   "thumb": "assets/menus/board-royal-1-thumb.jpg",
+   "w": 1920,
+   "h": 1080,
+   "caption": "16:9 digital-signage still, sized to read from the counter queue.",
+   "tags": [
+    "board"
+   ]
+  },
+  {
+   "id": "board-royal-2",
+   "title": "Menu board 2/3: Curry + Biryani — B · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/menus/board-royal-2.png",
+   "thumb": "assets/menus/board-royal-2-thumb.jpg",
+   "w": 1920,
+   "h": 1080,
+   "caption": "16:9 digital-signage still, sized to read from the counter queue.",
+   "tags": [
+    "board"
+   ]
+  },
+  {
+   "id": "board-royal-3",
+   "title": "Menu board 3/3: Sweets + Chai — B · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/menus/board-royal-3.png",
+   "thumb": "assets/menus/board-royal-3-thumb.jpg",
+   "w": 1920,
+   "h": 1080,
+   "caption": "16:9 digital-signage still, sized to read from the counter queue.",
+   "tags": [
+    "board"
+   ]
+  },
+  {
+   "id": "board-royal-wall",
+   "title": "Boards on the wall — B · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/menus/board-royal-wall.png",
+   "thumb": "assets/menus/board-royal-wall-thumb.jpg",
+   "w": 1920,
+   "h": 1080,
+   "caption": "Brass frames on an emerald jali wall. Concept mockup.",
+   "tags": [
+    "board"
+   ]
+  },
+  {
+   "id": "flyer-royal-front",
+   "title": "Door-hanger, front — B · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/menus/flyer-royal-front.png",
+   "thumb": "assets/menus/flyer-royal-front-thumb.jpg",
+   "w": 1020,
+   "h": 2640,
+   "caption": "4.25 × 11 in. A tasting card: one dish from each quarter.",
+   "tags": [
+    "flyer"
+   ],
+   "download": "assets/menus/flyer-royal-bleed.pdf"
+  },
+  {
+   "id": "flyer-royal-back",
+   "title": "Door-hanger, back — B · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/menus/flyer-royal-back.png",
+   "thumb": "assets/menus/flyer-royal-back-thumb.jpg",
+   "w": 1020,
+   "h": 2640,
+   "caption": "Guest favorites, how to order, spice and allergen lines.",
+   "tags": [
+    "flyer"
+   ],
+   "download": "assets/menus/flyer-royal-bleed.pdf"
+  },
+  {
+   "id": "legend-royal",
+   "title": "Allergen & spice legend card — B · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/menus/legend-royal.png",
+   "thumb": "assets/menus/legend-royal-thumb.jpg",
+   "w": 1200,
+   "h": 1680,
+   "caption": "5 × 7 in card: spice scale, diet marks, badges and allergen prompt.",
+   "tags": [
+    "menu"
+   ],
+   "download": "assets/menus/legend-royal-bleed.pdf"
+  }
+ ]
+}

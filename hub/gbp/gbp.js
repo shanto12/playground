@@ -184,7 +184,7 @@
       o += plateTop(80, 104, 18, FOOD.dal) + plateTop(132, 96, 20, FOOD.red) + plateTop(184, 108, 15, FOOD.curry);
       o += '<path class="o" fill="' + FOOD.naan + '" d="M28 86c10-12 30-8 34 4s-8 22-22 20-20-12-12-24z"/><circle fill="' + FOOD.naanD + '" cx="42" cy="94" r="2.4"/><circle fill="' + FOOD.naanD + '" cx="50" cy="100" r="1.8"/>';
       o += flower(208, 24, 9) + flower(18, 30, 7);
-      if (full) o += '<g class="ov"><rect class="beam" x="40" y="10" width="170" height="130" rx="20"/></g>' + camTop(212, 140, '90° overhead') + tag(10, 152, 'soft top light');
+      if (full) o += '<g class="ov"><rect class="beam beam--soft" x="40" y="10" width="170" height="130" rx="20"/></g>' + camTop(212, 140, '90° overhead') + tag(10, 152, 'soft top light');
       return o;
     },
     dip: function (full) {
@@ -431,6 +431,7 @@
   function cleanText(el) {
     var c = el.cloneNode(true);
     c.querySelectorAll('.no-copy').forEach(function (x) { x.remove(); });
+    c.querySelectorAll('p,li').forEach(function (x) { x.append('\n'); });
     return c.textContent.replace(/[ \t]+/g, ' ').replace(/\s*\n\s*/g, '\n').trim();
   }
   function flashBtn(b, label) {

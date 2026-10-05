@@ -1,0 +1,656 @@
+{
+ "helper": "royal-kit",
+ "items": [
+  {
+   "id": "royal-post-hero-butter-chicken",
+   "title": "Hero dish · Butter Chicken",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/post-hero-butter-chicken.png",
+   "thumb": "assets/royal-kit/post-hero-butter-chicken-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "One focal point: the most-ordered dish glowing in a gold arch window on midnight.",
+   "tags": [
+    "post"
+   ],
+   "download": "assets/royal-kit/post-hero-butter-chicken.png"
+  },
+  {
+   "id": "royal-post-zone-biryani-boulevard",
+   "title": "Zone feature · Biryani Boulevard",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/post-zone-biryani-boulevard.png",
+   "thumb": "assets/royal-kit/post-zone-biryani-boulevard-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "The District street-sign plaque turns the menu into a map; real listed dishes, no prices.",
+   "tags": [
+    "post"
+   ],
+   "download": "assets/royal-kit/post-zone-biryani-boulevard.png"
+  },
+  {
+   "id": "royal-post-zone-tandoor-quarter",
+   "title": "Zone feature · Tandoor Quarter",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/post-zone-tandoor-quarter.png",
+   "thumb": "assets/royal-kit/post-zone-tandoor-quarter-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "Same plaque system on ruby, so every zone post is instantly part of one series.",
+   "tags": [
+    "post"
+   ],
+   "download": "assets/royal-kit/post-zone-tandoor-quarter.png"
+  },
+  {
+   "id": "royal-post-spice-meter",
+   "title": "Spice meter",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/post-spice-meter.png",
+   "thumb": "assets/royal-kit/post-spice-meter-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "Five gold-line chilies that grow and fill; honest copy that even Mild carries warmth.",
+   "tags": [
+    "post"
+   ],
+   "download": "assets/royal-kit/post-spice-meter.png"
+  },
+  {
+   "id": "royal-post-daily-special-template",
+   "title": "Daily special · template",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/post-daily-special-template.png",
+   "thumb": "assets/royal-kit/post-daily-special-template-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "Numbered dashed zones show staff exactly what to swap: date, art, name, line, tags.",
+   "tags": [
+    "post"
+   ],
+   "download": "assets/royal-kit/post-daily-special-template.png"
+  },
+  {
+   "id": "royal-post-daily-special-example",
+   "title": "Daily special · filled example",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/post-daily-special-example.png",
+   "thumb": "assets/royal-kit/post-daily-special-example-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "The template filled with a listed vegetarian dish; ivory tile adds rhythm to the grid.",
+   "tags": [
+    "post"
+   ],
+   "download": "assets/royal-kit/post-daily-special-example.png"
+  },
+  {
+   "id": "royal-post-ratings-card",
+   "title": "Ratings card",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/post-ratings-card.png",
+   "thumb": "assets/royal-kit/post-ratings-card-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "Only sourced public ratings, labelled \"as listed publicly, Oct 2026\"; no invented quotes.",
+   "tags": [
+    "post"
+   ],
+   "download": "assets/royal-kit/post-ratings-card.png"
+  },
+  {
+   "id": "royal-post-order-online-qr",
+   "title": "Order online · sample QR",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/post-order-online-qr.png",
+   "thumb": "assets/royal-kit/post-order-online-qr-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "Arch-framed QR lookalike (non-scannable SAMPLE) shows where the real ordering link goes.",
+   "tags": [
+    "post"
+   ],
+   "download": "assets/royal-kit/post-order-online-qr.png"
+  },
+  {
+   "id": "royal-post-catering-celebrations",
+   "title": "Catering & celebrations",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/post-catering-celebrations.png",
+   "thumb": "assets/royal-kit/post-catering-celebrations-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "Peacock field and a wide arch say occasion; CTA is a conversation, not a deal.",
+   "tags": [
+    "post"
+   ],
+   "download": "assets/royal-kit/post-catering-celebrations.png"
+  },
+  {
+   "id": "royal-post-did-you-know-dum",
+   "title": "Did you know · Dum",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/post-did-you-know-dum.png",
+   "thumb": "assets/royal-kit/post-did-you-know-dum-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "Save-worthy culinary note: what \"dum\" means, told in one accurate, generic sentence.",
+   "tags": [
+    "post"
+   ],
+   "download": "assets/royal-kit/post-did-you-know-dum.png"
+  },
+  {
+   "id": "royal-post-did-you-know-tandoor",
+   "title": "Did you know · Tandoor",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/post-did-you-know-tandoor.png",
+   "thumb": "assets/royal-kit/post-did-you-know-tandoor-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "Gold-line tandoor medallion plus a plain-English fact about how naan bakes.",
+   "tags": [
+    "post"
+   ],
+   "download": "assets/royal-kit/post-did-you-know-tandoor.png"
+  },
+  {
+   "id": "royal-post-chefs-pick-template",
+   "title": "Chef's pick · template",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/post-chefs-pick-template.png",
+   "thumb": "assets/royal-kit/post-chefs-pick-template-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "Seal-badged template with no invented chef; numbered zones for dish, line and tags.",
+   "tags": [
+    "post"
+   ],
+   "download": "assets/royal-kit/post-chefs-pick-template.png"
+  },
+  {
+   "id": "royal-post-chefs-pick-example",
+   "title": "Chef's pick · filled example",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/post-chefs-pick-example.png",
+   "thumb": "assets/royal-kit/post-chefs-pick-example-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "Chilli Chicken in a ruby window: Indo-Chinese Alley gets its own jewel moment.",
+   "tags": [
+    "post"
+   ],
+   "download": "assets/royal-kit/post-chefs-pick-example.png"
+  },
+  {
+   "id": "royal-story-dinner-occasion",
+   "title": "Story · Dinner, made an occasion",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/story-dinner-occasion.png",
+   "thumb": "assets/royal-kit/story-dinner-occasion-thumb.jpg",
+   "w": 1080,
+   "h": 1920,
+   "caption": "The palace dining-room scene as a full-bleed story; copy and CTA sit inside safe zones.",
+   "tags": [
+    "story"
+   ],
+   "download": "assets/royal-kit/story-dinner-occasion.png"
+  },
+  {
+   "id": "royal-story-spice-poll",
+   "title": "Story · Spice poll",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/story-spice-poll.png",
+   "thumb": "assets/royal-kit/story-spice-poll-thumb.jpg",
+   "w": 1080,
+   "h": 1920,
+   "caption": "Three tappable-looking heat cards; invites replies (calendar day 3).",
+   "tags": [
+    "story"
+   ],
+   "download": "assets/royal-kit/story-spice-poll.png"
+  },
+  {
+   "id": "royal-story-garlic-naan-order",
+   "title": "Story · Garlic naan order",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/story-garlic-naan-order.png",
+   "thumb": "assets/royal-kit/story-garlic-naan-order-thumb.jpg",
+   "w": 1080,
+   "h": 1920,
+   "caption": "Big sensory headline plus an Order online pill placed above the reply bar.",
+   "tags": [
+    "story"
+   ],
+   "download": "assets/royal-kit/story-garlic-naan-order.png"
+  },
+  {
+   "id": "royal-story-diwali-gathering",
+   "title": "Story · Diwali gatherings",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/story-diwali-gathering.png",
+   "thumb": "assets/royal-kit/story-diwali-gathering-thumb.jpg",
+   "w": 1080,
+   "h": 1920,
+   "caption": "Diyas, embers and a sweet finish; asks people to call about catering, no date or offer.",
+   "tags": [
+    "story"
+   ],
+   "download": "assets/royal-kit/story-diwali-gathering.png"
+  },
+  {
+   "id": "royal-story-safe-zone-guide",
+   "title": "Story safe-zone guide",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/story-safe-zone-guide.png",
+   "thumb": "assets/royal-kit/story-safe-zone-guide-thumb.jpg",
+   "w": 1080,
+   "h": 2240,
+   "caption": "All four stories with approximate app-overlay bands marked; verify in-app.",
+   "tags": [
+    "story"
+   ],
+   "download": "assets/royal-kit/story-safe-zone-guide.png"
+  },
+  {
+   "id": "royal-highlight-menu",
+   "title": "Highlight cover · Menu",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/highlight-menu.png",
+   "thumb": "assets/royal-kit/highlight-menu-thumb.jpg",
+   "w": 1080,
+   "h": 1920,
+   "caption": "Gold-line icon on a jewel disc; the circle crop stays clear at highlight size.",
+   "tags": [
+    "highlight"
+   ],
+   "download": "assets/royal-kit/highlight-menu.png"
+  },
+  {
+   "id": "royal-highlight-biryani",
+   "title": "Highlight cover · Biryani",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/highlight-biryani.png",
+   "thumb": "assets/royal-kit/highlight-biryani-thumb.jpg",
+   "w": 1080,
+   "h": 1920,
+   "caption": "Emerald disc, handi icon; reads at roughly 64 px.",
+   "tags": [
+    "highlight"
+   ],
+   "download": "assets/royal-kit/highlight-biryani.png"
+  },
+  {
+   "id": "royal-highlight-tandoor",
+   "title": "Highlight cover · Tandoor",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/highlight-tandoor.png",
+   "thumb": "assets/royal-kit/highlight-tandoor-thumb.jpg",
+   "w": 1080,
+   "h": 1920,
+   "caption": "Ruby disc, tandoor icon from the brand icon set.",
+   "tags": [
+    "highlight"
+   ],
+   "download": "assets/royal-kit/highlight-tandoor.png"
+  },
+  {
+   "id": "royal-highlight-curry",
+   "title": "Highlight cover · Curry",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/highlight-curry.png",
+   "thumb": "assets/royal-kit/highlight-curry-thumb.jpg",
+   "w": 1080,
+   "h": 1920,
+   "caption": "Peacock disc, curry bowl icon.",
+   "tags": [
+    "highlight"
+   ],
+   "download": "assets/royal-kit/highlight-curry.png"
+  },
+  {
+   "id": "royal-highlight-sweets",
+   "title": "Highlight cover · Sweets",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/highlight-sweets.png",
+   "thumb": "assets/royal-kit/highlight-sweets-thumb.jpg",
+   "w": 1080,
+   "h": 1920,
+   "caption": "Plum disc, gulab jamun icon.",
+   "tags": [
+    "highlight"
+   ],
+   "download": "assets/royal-kit/highlight-sweets.png"
+  },
+  {
+   "id": "royal-highlight-catering",
+   "title": "Highlight cover · Catering",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/highlight-catering.png",
+   "thumb": "assets/royal-kit/highlight-catering-thumb.jpg",
+   "w": 1080,
+   "h": 1920,
+   "caption": "Emerald disc, party-tray icon.",
+   "tags": [
+    "highlight"
+   ],
+   "download": "assets/royal-kit/highlight-catering.png"
+  },
+  {
+   "id": "royal-highlight-order",
+   "title": "Highlight cover · Order",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/highlight-order.png",
+   "thumb": "assets/royal-kit/highlight-order-thumb.jpg",
+   "w": 1080,
+   "h": 1920,
+   "caption": "Ruby disc, shopping-bag icon.",
+   "tags": [
+    "highlight"
+   ],
+   "download": "assets/royal-kit/highlight-order.png"
+  },
+  {
+   "id": "royal-highlight-visit",
+   "title": "Highlight cover · Visit",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/highlight-visit.png",
+   "thumb": "assets/royal-kit/highlight-visit-thumb.jpg",
+   "w": 1080,
+   "h": 1920,
+   "caption": "Peacock disc, map-pin icon.",
+   "tags": [
+    "highlight"
+   ],
+   "download": "assets/royal-kit/highlight-visit.png"
+  },
+  {
+   "id": "royal-highlight-covers-preview",
+   "title": "Highlight row preview",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/highlight-covers-preview.png",
+   "thumb": "assets/royal-kit/highlight-covers-preview-thumb.jpg",
+   "w": 1080,
+   "h": 900,
+   "caption": "All eight covers as profile circles: four jewel tones repeating in rhythm.",
+   "tags": [
+    "highlight"
+   ],
+   "download": "assets/royal-kit/highlight-covers-preview.png"
+  },
+  {
+   "id": "royal-profile-avatar",
+   "title": "Profile avatar",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/profile-avatar.png",
+   "thumb": "assets/royal-kit/profile-avatar-thumb.jpg",
+   "w": 1080,
+   "h": 1080,
+   "caption": "Built from the Royal logo; all art sits inside the circle crop.",
+   "tags": [
+    "cover"
+   ],
+   "download": "assets/royal-kit/profile-avatar.png"
+  },
+  {
+   "id": "royal-profile-avatar-sizes",
+   "title": "Avatar at real sizes",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/profile-avatar-sizes.png",
+   "thumb": "assets/royal-kit/profile-avatar-sizes-thumb.jpg",
+   "w": 1080,
+   "h": 820,
+   "caption": "Checks the avatar from 320 px down to 56 px in comments.",
+   "tags": [
+    "cover"
+   ],
+   "download": "assets/royal-kit/profile-avatar-sizes.png"
+  },
+  {
+   "id": "royal-facebook-cover",
+   "title": "Facebook cover 1640×856",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/facebook-cover.png",
+   "thumb": "assets/royal-kit/facebook-cover-thumb.jpg",
+   "w": 1640,
+   "h": 856,
+   "caption": "Hero dining room on the right, headline in the zone safe for both desktop and mobile crops.",
+   "tags": [
+    "cover"
+   ],
+   "download": "assets/royal-kit/facebook-cover.png"
+  },
+  {
+   "id": "royal-facebook-cover-crop-guide",
+   "title": "Facebook cover · crop guide",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/facebook-cover-crop-guide.png",
+   "thumb": "assets/royal-kit/facebook-cover-crop-guide-thumb.jpg",
+   "w": 1640,
+   "h": 856,
+   "caption": "Approximate desktop and mobile crops marked (unverified spec; check after upload).",
+   "tags": [
+    "cover"
+   ],
+   "download": "assets/royal-kit/facebook-cover-crop-guide.png"
+  },
+  {
+   "id": "royal-gbp-cover",
+   "title": "GBP cover 1600×900 (16:9)",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/gbp-cover.png",
+   "thumb": "assets/royal-kit/gbp-cover-thumb.jpg",
+   "w": 1600,
+   "h": 900,
+   "caption": "Centred arch triptych survives Google cropping; no text. Use until the real photo shoot. Spec from playbook secondary sources (unverified); check the GBP dashboard.",
+   "tags": [
+    "gbp",
+    "cover"
+   ],
+   "download": "assets/royal-kit/gbp-cover.png"
+  },
+  {
+   "id": "royal-gbp-logo",
+   "title": "GBP logo 720×720",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/gbp-logo.png",
+   "thumb": "assets/royal-kit/gbp-logo-thumb.jpg",
+   "w": 720,
+   "h": 720,
+   "caption": "Emblem only, so it stays legible in a tiny square or circle. Spec from playbook secondary sources (unverified); check the GBP dashboard.",
+   "tags": [
+    "gbp"
+   ],
+   "download": "assets/royal-kit/gbp-logo.png"
+  },
+  {
+   "id": "royal-gbp-post-update",
+   "title": "GBP post 1200×900 · Update",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/gbp-post-update.png",
+   "thumb": "assets/royal-kit/gbp-post-update-thumb.jpg",
+   "w": 1200,
+   "h": 900,
+   "caption": "A 4:3 update post with a short line and the dish centred. Spec from playbook secondary sources (unverified); check the GBP dashboard.",
+   "tags": [
+    "gbp",
+    "post"
+   ],
+   "download": "assets/royal-kit/gbp-post-update.png"
+  },
+  {
+   "id": "royal-gbp-post-order",
+   "title": "GBP post 1200×900 · Order",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/gbp-post-order.png",
+   "thumb": "assets/royal-kit/gbp-post-order-thumb.jpg",
+   "w": 1200,
+   "h": 900,
+   "caption": "A 4:3 post pairing the Order online CTA with butter chicken. Spec from playbook secondary sources (unverified); check the GBP dashboard.",
+   "tags": [
+    "gbp",
+    "post"
+   ],
+   "download": "assets/royal-kit/gbp-post-order.png"
+  },
+  {
+   "id": "royal-gbp-tile-butter-chicken",
+   "title": "GBP photo tile · Butter Chicken",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/gbp-tile-butter-chicken.png",
+   "thumb": "assets/royal-kit/gbp-tile-butter-chicken-thumb.jpg",
+   "w": 1600,
+   "h": 1600,
+   "caption": "A 1:1 tile at 1600 px for posts and products. Google favours real photos in the gallery. Spec from playbook secondary sources (unverified); check the GBP dashboard.",
+   "tags": [
+    "gbp"
+   ],
+   "download": "assets/royal-kit/gbp-tile-butter-chicken.png"
+  },
+  {
+   "id": "royal-gbp-tile-biryani",
+   "title": "GBP photo tile · Biryani",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/gbp-tile-biryani.png",
+   "thumb": "assets/royal-kit/gbp-tile-biryani-thumb.jpg",
+   "w": 1600,
+   "h": 1600,
+   "caption": "A 1:1 biryani tile on emerald, subject centred for Google crops. Spec from playbook secondary sources (unverified); check the GBP dashboard.",
+   "tags": [
+    "gbp"
+   ],
+   "download": "assets/royal-kit/gbp-tile-biryani.png"
+  },
+  {
+   "id": "royal-gbp-tile-garlic-naan",
+   "title": "GBP photo tile · Garlic Naan",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/gbp-tile-garlic-naan.png",
+   "thumb": "assets/royal-kit/gbp-tile-garlic-naan-thumb.jpg",
+   "w": 1600,
+   "h": 1600,
+   "caption": "A 1:1 naan tile on ruby; completes a three-colour set. Spec from playbook secondary sources (unverified); check the GBP dashboard.",
+   "tags": [
+    "gbp"
+   ],
+   "download": "assets/royal-kit/gbp-tile-garlic-naan.png"
+  },
+  {
+   "id": "royal-feed-grid-preview",
+   "title": "Feed grid 3×4 preview",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/feed-grid-preview.png",
+   "thumb": "assets/royal-kit/feed-grid-preview-thumb.jpg",
+   "w": 1080,
+   "h": 2200,
+   "caption": "Twelve posts in a generic phone at 3:4 crops: a cohesive jewel-tone mosaic.",
+   "tags": [
+    "grid"
+   ],
+   "download": "assets/royal-kit/feed-grid-preview.png"
+  },
+  {
+   "id": "royal-feed-rhythm-board",
+   "title": "Feed rhythm · 4-week plan",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-kit/feed-rhythm-board.png",
+   "thumb": "assets/royal-kit/feed-rhythm-board-thumb.jpg",
+   "w": 1640,
+   "h": 2600,
+   "caption": "The playbook's calendar mapped to kit assets day by day; unverified posts are held.",
+   "tags": [
+    "grid"
+   ],
+   "download": "assets/royal-kit/feed-rhythm-board.png"
+  },
+  {
+   "id": "royal-motion-steam-glints",
+   "title": "Motion · Steam & glints",
+   "direction": "royal",
+   "type": "video",
+   "src": "assets/royal-kit/motion-steam-glints.mp4",
+   "thumb": "assets/royal-kit/motion-steam-glints-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "A 6-second loop: steam rises and gold glints flicker off the karahi.",
+   "tags": [
+    "motion"
+   ],
+   "download": "assets/royal-kit/motion-steam-glints.mp4",
+   "poster": "assets/royal-kit/motion-steam-glints.jpg"
+  },
+  {
+   "id": "royal-motion-foil-wordmark",
+   "title": "Motion · Foil shimmer",
+   "direction": "royal",
+   "type": "video",
+   "src": "assets/royal-kit/motion-foil-wordmark.mp4",
+   "thumb": "assets/royal-kit/motion-foil-wordmark-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "A 6-second loop: a foil light sweep runs across the wordmark, with sparkles.",
+   "tags": [
+    "motion"
+   ],
+   "download": "assets/royal-kit/motion-foil-wordmark.mp4",
+   "poster": "assets/royal-kit/motion-foil-wordmark.jpg"
+  },
+  {
+   "id": "royal-motion-ember-arch",
+   "title": "Motion · Embers past the arch",
+   "direction": "royal",
+   "type": "video",
+   "src": "assets/royal-kit/motion-ember-arch.mp4",
+   "thumb": "assets/royal-kit/motion-ember-arch-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "A 6-second loop: embers drift up past the arch from the tandoori platter.",
+   "tags": [
+    "motion"
+   ],
+   "download": "assets/royal-kit/motion-ember-arch.mp4",
+   "poster": "assets/royal-kit/motion-ember-arch.jpg"
+  }
+ ]
+}

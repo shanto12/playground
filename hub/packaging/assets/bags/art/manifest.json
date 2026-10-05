@@ -1,0 +1,113 @@
+{
+  "helper": "bags",
+  "object": "handled paper bag",
+  "units": "in",
+  "size": {
+    "width": 10,
+    "height": 13,
+    "depth": 5
+  },
+  "mapping": "front faces +Z, back −Z, side used for both gussets (±X). Textures are 100 px/in, full-bleed, no surrounding background.",
+  "faces": {
+    "bazaar": {
+      "front": {
+        "svg": "assets/bags/art/bag-front-bazaar.svg",
+        "texture": "assets/bags/art/bag-front-bazaar.jpg",
+        "size_in": [
+          10,
+          13
+        ],
+        "px": [
+          1000,
+          1300
+        ]
+      },
+      "back": {
+        "svg": "assets/bags/art/bag-back-bazaar.svg",
+        "texture": "assets/bags/art/bag-back-bazaar.jpg",
+        "size_in": [
+          10,
+          13
+        ],
+        "px": [
+          1000,
+          1300
+        ]
+      },
+      "side": {
+        "svg": "assets/bags/art/bag-side-bazaar.svg",
+        "texture": "assets/bags/art/bag-side-bazaar.jpg",
+        "size_in": [
+          5,
+          13
+        ],
+        "px": [
+          500,
+          1300
+        ]
+      }
+    },
+    "royal": {
+      "front": {
+        "svg": "assets/bags/art/bag-front-royal.svg",
+        "texture": "assets/bags/art/bag-front-royal.jpg",
+        "size_in": [
+          10,
+          13
+        ],
+        "px": [
+          1000,
+          1300
+        ]
+      },
+      "back": {
+        "svg": "assets/bags/art/bag-back-royal.svg",
+        "texture": "assets/bags/art/bag-back-royal.jpg",
+        "size_in": [
+          10,
+          13
+        ],
+        "px": [
+          1000,
+          1300
+        ]
+      },
+      "side": {
+        "svg": "assets/bags/art/bag-side-royal.svg",
+        "texture": "assets/bags/art/bag-side-royal.jpg",
+        "size_in": [
+          5,
+          13
+        ],
+        "px": [
+          500,
+          1300
+        ]
+      }
+    }
+  },
+  "bottom": {
+    "bazaar": "#1D1147",
+    "royal": "#160B26"
+  },
+  "inside": {
+    "bazaar": "#F4EAD6",
+    "royal": "#EFE6D6"
+  },
+  "insideCuff_in": 1.75,
+  "cuffColor": {
+    "bazaar": "#FFB000",
+    "royal": "#FBF3E4"
+  },
+  "handles": {
+    "type": "twisted paper rope",
+    "diameter_in": 0.3,
+    "span_in": 4.5,
+    "riseAboveTop_in": 3.6,
+    "colour": {
+      "bazaar": "#E4147E",
+      "royal": "#D9A441"
+    }
+  },
+  "gussetCrease": "vertical centre crease + bottom V from corners to centre at 2.5 in"
+}

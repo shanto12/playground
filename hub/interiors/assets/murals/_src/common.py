@@ -72,7 +72,7 @@ def save(name, svg):
 # ---------- embedding sibling brand SVGs (read in place, ids prefixed) ----------
 _emb_n = [0]
 def embed(relpath, x, y, w, h=None, prefix=None, preserve='xMidYMid meet', extra=''):
-    src = open(BRAND + relpath).read()
+    src = open(relpath if relpath.startswith('/') else BRAND + relpath).read()
     vb = re.search(r'viewBox="([^"]+)"', src).group(1)
     vbn = [float(v) for v in vb.replace(',', ' ').split()]
     if h is None: h = w * vbn[3] / vbn[2]

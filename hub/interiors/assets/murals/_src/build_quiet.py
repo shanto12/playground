@@ -123,12 +123,13 @@ def build_marigold_chai():
         t = (x - 960) / 960
         L = 230 + 520 * (t * t) ** 0.8
         if abs(x - 960) < 330: L = 150 + abs(x - 960) * 0.25
+        if x > 1240: L = 150 + (x - 1240) * 0.12
         body.append(strand(x, 40, 40 + L, 17, R))
     body.append(swag(0, W, 34, 0, 20, R))
     body.append(rect(0, 0, W, 22, fill=INK))
     # the pour: kettle high, long chai arc into the glass
     kx, ky = 760, 360
-    stream = 'M915 318C990 300 1040 420 1080 560C1110 660 1124 740 1130 820'
+    stream = 'M898 200C980 228 1046 420 1080 560C1110 660 1124 740 1130 820'
     body.append(path(stream, fill='none', stroke=INK, stroke_width=26, stroke_linecap='round'))
     body.append(path(stream, fill='none', stroke='#C98A4B', stroke_width=16, stroke_linecap='round'))
     body.append(path(stream, fill='none', stroke='#F0D3A8', stroke_width=5, stroke_linecap='round', transform='translate(-4,0)', opacity='.9'))
@@ -151,5 +152,113 @@ def build_marigold_chai():
     body.append(txt(tag, 'bowlby', 30, 1360, 658, INK))
     save('bz-marigold-chai.svg', doc(W, H, ''.join(body), ''.join(defs), title='Marigold & Chai — Bazaar garland wall'))
 
+
+# ------------------------------------------------------------------ Royal: spice botanical frieze
+def leaf_d(x, y, L, w, ang):
+    a = math.radians(ang); ca, sa = math.cos(a), math.sin(a)
+    def T(u, v): return f'{f(x + u*ca - v*sa)} {f(y + u*sa + v*ca)}'
+    return (f'M{T(0,0)}C{T(L*0.3,-w)} {T(L*0.7,-w*0.9)} {T(L,0)}C{T(L*0.7,w*0.9)} {T(L*0.3,w)} {T(0,0)}Z'
+            f'M{T(L*0.05,0)}L{T(L*0.92,0)}' + ''.join(f'M{T(L*t,0)}L{T(L*t+L*0.12,-w*0.55)}M{T(L*t,0)}L{T(L*t+L*0.12,w*0.55)}' for t in (0.25, 0.45, 0.65)))
+
+def heart_leaf_d(x, y, s, ang):
+    return (f'<path d="M0 0C-30 -10 -44 -46 -26 -66C-14 -78 0 -70 0 -58C0 -70 14 -78 26 -66C44 -46 30 -10 0 0Z'
+            f'M0 -4V-58M0 -16C-14 -26 -22 -40 -20 -54M0 -16C14 -26 22 -40 20 -54" transform="translate({f(x)},{f(y)}) rotate({ang}) scale({f(s)})"/>')
+
+def plant(kind, cx, base, R):
+    G = []  # strokes
+    if kind == 'chilli':
+        G.append(f'<path d="M{cx} {base}C{cx-4} {base-120} {cx+10} {base-240} {cx} {base-380}M{cx+2} {base-200}C{cx+40} {base-250} {cx+70} {base-300} {cx+80} {base-360}M{cx} {base-140}C{cx-40} {base-190} {cx-70} {base-230} {cx-86} {base-300}"/>')
+        for (x, y, L, a) in [(cx, base-380, 70, -60), (cx, base-300, 80, 200), (cx+60, base-310, 70, -30), (cx-60, base-240, 70, 210), (cx+30, base-230, 60, 20), (cx-20, base-100, 70, 200)]:
+            G.append(f'<path d="{leaf_d(x, y, L, 18, a)}"/>')
+        for (x, y) in [(cx+40, base-250), (cx-40, base-190), (cx+76, base-350), (cx-80, base-290)]:
+            G.append(f'<path d="M{x} {y}c-4 10 -4 16 0 20c10 30 6 80 -10 110c-4 -40 -10 -80 -2 -112" class="ruby"/><path d="M{x-6} {y+8}l12 0"/>')
+    elif kind == 'cardamom':
+        for k, dx in enumerate((-30, 0, 34)):
+            G.append(f'<path d="M{cx+dx} {base}C{cx+dx} {base-200} {cx+dx*1.4} {base-360} {cx+dx*2.2} {base-480}"/>')
+            for j in range(4):
+                y = base - 140 - j * 90 - k * 20
+                G.append(f'<path d="{leaf_d(cx+dx*(1+j*0.3), y, 150, 22, (-150 if (j+k)%2 else -30) + j*6)}"/>')
+        for k in range(5):
+            x = cx - 90 + k * 40; y = base - 10 - (k % 2) * 16
+            G.append(f'<path d="M{x} {y}c8 -14 22 -14 26 0c-4 14 -18 14 -26 0Z M{x+3} {y}h20"/>')
+        G.append(f'<path d="M{cx-110} {base}C{cx-40} {base-20} {cx+40} {base-6} {cx+110} {base-14}"/>')
+    elif kind == 'pepper':
+        G.append(f'<path d="M{cx} {base}C{cx+30} {base-120} {cx-30} {base-260} {cx+10} {base-420}C{cx+20} {base-470} {cx} {base-500} {cx-10} {base-520}"/>')
+        for j, (dy, side) in enumerate([(100, -1), (180, 1), (260, -1), (340, 1), (420, -1)]):
+            G.append(heart_leaf_d(cx + side * 10, base - dy, 1.25, side * 70))
+            sx = cx + side * 40; sy = base - dy + 10
+            G.append(f'<path d="M{cx} {base-dy}C{sx} {sy-10} {sx} {sy+30} {sx+side*4} {sy+80}"/>')
+            for i in range(7):
+                G.append(f'<circle cx="{f(sx + side*4*i/7 + (4 if i%2 else -4))}" cy="{f(sy + 10 + i*10)}" r="5.5"/>')
+    elif kind == 'saffron':
+        for dx in (-40, -16, 12, 36, 52):
+            G.append(f'<path d="M{cx} {base-30}C{cx+dx*0.5} {base-160} {cx+dx*1.5} {base-300} {cx+dx*2.4} {base-420}"/>')
+        G.append(f'<path d="M{cx-34} {base-20}C{cx-40} {base+20} {cx+40} {base+20} {cx+34} {base-20}C{cx+20} {base-50} {cx-20} {base-50} {cx-34} {base-20}Z"/>')
+        for (fx, fy, s) in [(cx-50, base-260, 1.0), (cx+44, base-330, 1.1)]:
+            G.append(f'<path d="M{cx} {base-40}C{cx} {fy+100} {fx} {fy+80} {fx} {fy+40}"/>')
+            for a in (-40, -15, 15, 40):
+                G.append(f'<path d="M{fx} {fy+40}C{f(fx+a*0.6*s-14)} {fy+10} {f(fx+a*1.1*s-10)} {fy-50} {f(fx+a*0.9*s)} {fy-70}C{f(fx+a*1.1*s+10)} {fy-50} {f(fx+a*0.6*s+14)} {fy+10} {fx} {fy+40}"/>')
+            for a in (-12, 0, 12):
+                G.append(f'<path d="M{fx} {fy+20}C{fx+a} {fy-20} {fx+a*2} {fy-60} {fx+a*3} {fy-90}" class="ruby"/>')
+    elif kind == 'cinnamon':
+        G.append(f'<path d="M{cx-60} {base-80}C{cx-20} {base-200} {cx+30} {base-340} {cx+20} {base-500}M{cx+4} {base-300}C{cx+50} {base-330} {cx+80} {base-380} {cx+90} {base-430}"/>')
+        for (x, y, a) in [(cx-30, base-170, 200), (cx-10, base-230, -20), (cx+10, base-330, 200), (cx+24, base-420, -40), (cx+60, base-370, -10), (cx+20, base-490, -80)]:
+            G.append(f'<path d="{leaf_d(x, y, 100, 30, a)}"/>')
+        for k in range(3):
+            y = base - 20 - k * 22
+            G.append(f'<rect x="{cx-80+k*14}" y="{y-12}" width="170" height="20" rx="10"/><path d="M{cx-74+k*14} {y-2}h150"/>')
+    elif kind == 'curryleaf':
+        G.append(f'<path d="M{cx} {base}C{cx-10} {base-160} {cx+10} {base-320} {cx} {base-470}"/>')
+        for j, (dy, side) in enumerate([(120, -1), (210, 1), (300, -1), (380, 1)]):
+            x0, y0 = cx, base - dy
+            ex, ey = cx + side * 120, y0 - 70
+            G.append(f'<path d="M{x0} {y0}Q{(x0+ex)/2} {y0-60} {ex} {ey}"/>')
+            for i in range(1, 6):
+                t = i / 6
+                px = x0 + (ex - x0) * t; py = y0 + (ey - y0) * t - 30 * 4 * t * (1 - t)
+                G.append(f'<path d="{leaf_d(px, py, 34, 10, -90 + side*20)}"/><path d="{leaf_d(px, py, 34, 10, 90 + side*20)}"/>')
+        for i in range(6):
+            G.append(f'<circle cx="{cx-20+i*8}" cy="{base-480-(i%2)*10}" r="6"/>')
+    elif kind == 'staranise':
+        G.append(f'<path d="M{cx-40} {base}C{cx-20} {base-140} {cx+20} {base-300} {cx} {base-460}M{cx-6} {base-280}C{cx-50} {base-310} {cx-70} {base-360} {cx-80} {base-400}"/>')
+        for (x, y, a) in [(cx-20, base-160, -160), (cx, base-240, -20), (cx-10, base-360, -150), (cx+6, base-420, -50), (cx-70, base-380, -130)]:
+            G.append(f'<path d="{leaf_d(x, y, 110, 26, a)}"/>')
+        for (x, y, s) in [(cx+50, base-150, 1.0), (cx-70, base-60, 0.8)]:
+            pts = ''.join(f'<path d="M{x} {y}C{f(x+s*16*math.cos(math.radians(k*45-20)))} {f(y+s*16*math.sin(math.radians(k*45-20)))} {f(x+s*44*math.cos(math.radians(k*45)))} {f(y+s*44*math.sin(math.radians(k*45)))} {f(x+s*44*math.cos(math.radians(k*45)))} {f(y+s*44*math.sin(math.radians(k*45)))}C{f(x+s*44*math.cos(math.radians(k*45)))} {f(y+s*44*math.sin(math.radians(k*45)))} {f(x+s*16*math.cos(math.radians(k*45+20)))} {f(y+s*16*math.sin(math.radians(k*45+20)))} {x} {y}Z"/>' for k in range(8))
+            G.append(pts)
+    elif kind == 'turmeric':
+        for (a, L) in [(-100, 380), (-75, 420), (-120, 340), (-60, 300)]:
+            G.append(f'<path d="{leaf_d(cx, base-40, L, 56, a)}"/>')
+        G.append(f'<path d="M{cx-90} {base}C{cx-60} {base-30} {cx+60} {base-30} {cx+90} {base}C{cx+60} {base+16} {cx-60} {base+16} {cx-90} {base}Z'
+                 f'M{cx-40} {base}c-10 22 -30 26 -40 20M{cx+30} {base}c10 22 34 24 46 16M{cx} {base+6}c0 20 -6 30 -14 34"/>')
+    return f'<g fill="none" stroke="{GOLD}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">' + ''.join(G) + '</g>'
+
+PLANTS = [('cardamom', 'Cardamom', 'Elettaria cardamomum'), ('pepper', 'Black pepper', 'Piper nigrum'), ('chilli', 'Chilli', 'Capsicum annuum'),
+          ('saffron', 'Saffron', 'Crocus sativus'), ('cinnamon', 'Cinnamon', 'Cinnamomum verum'), ('curryleaf', 'Curry leaf', 'Murraya koenigii'),
+          ('staranise', 'Star anise', 'Illicium verum'), ('turmeric', 'Turmeric', 'Curcuma longa')]
+
+def frieze_body(x0, y0, W, H, R, ground='#0F4D3F'):
+    out = [rect(x0, y0, W, H, fill=ground)]
+    cw = W / len(PLANTS)
+    out.append(f'<style>.ruby{{stroke:{RY["blush"]}}}</style>')
+    for i, (k, name, latin) in enumerate(PLANTS):
+        cx = x0 + cw * (i + 0.5); base = y0 + H - 190
+        out.append(f'<g transform="translate({f(cx)},{f(base)}) scale({f(H/900)}) translate({f(-cx)},{f(-base)})">{plant(k, cx, base, R)}</g>')
+        out.append(txt(name, 'fraunces', 34 * H / 900, cx, y0 + H - 100 * H / 900, GLT, anchor='middle', wght=600))
+        out.append(txt(latin, 'fraunces-i', 24 * H / 900, cx, y0 + H - 62 * H / 900, GOLD, anchor='middle', wght=400))
+        if i:
+            xx = x0 + cw * i
+            out.append(path(f'M{f(xx)} {f(y0+H*0.2)}V{f(y0+H*0.86)}', stroke=GOLD, stroke_width=1, opacity='.35'))
+            out.append(path(f'M{f(xx)} {f(y0+H*0.17-10)}l8 10l-8 10l-8 -10z', fill=GOLD))
+    for yy in (y0 + 24, y0 + H - 24):
+        out.append(rect(x0, yy - 2, W, 3, fill=GOLD)); out.append(rect(x0, yy + (8 if yy < y0 + H / 2 else -10), W, 1.2, fill=GLT, opacity='.7'))
+    out.append(beading(f'M{f(x0+10)} {f(y0+42)}H{f(x0+W-10)}', 18, 2.6, fill=GLT, opacity=.8))
+    return ''.join(out)
+
+def build_botanical():
+    W, H = 3200, 900
+    R = rng(9)
+    save('ry-spice-botanical.svg', doc(W, H, frieze_body(0, 0, W, H, R), title='Spice Botanical — Royal fine-line frieze', px_w=2400, px_h=675))
+
 if __name__ == '__main__':
-    build_marigold_chai()
+    build_marigold_chai(); build_botanical()

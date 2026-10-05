@@ -376,7 +376,7 @@ function caption(c, W, H) {
   const x = 36, y = H - 36;
   const t1 = esc(cap.title || ''), t2 = esc(cap.sub || 'Illustrative room — not your actual dining room');
   const badge = esc(cap.badge || '');
-  const w1 = cap.width || Math.max(560, Math.min(W - 72, 26 + t1.length * (isB ? 19.5 : 18.5) + (badge ? badge.length * 15 + 40 : 0)));
+  const w1 = cap.width || Math.max(560, Math.min(W - 72, Math.max(26 + t1.length * (isB ? 19.5 : 18.5) + (badge ? badge.length * 15 + 40 : 0), 60 + t2.length * 11.6)));
   const hh = 106;
   const s = [];
   s.push(`<g>`);
