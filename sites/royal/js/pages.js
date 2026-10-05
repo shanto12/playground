@@ -66,25 +66,12 @@
       firstBad.focus();
       return;
     }
-    if (!w.fetch || !w.URLSearchParams || !w.FormData) return; // native POST fallback
+    /* DESIGN DEMO: nothing is sent or stored anywhere. Validate, then show the demo confirmation. */
     e.preventDefault();
     if (alertBox) alertBox.hidden = true;
     submit.setAttribute('aria-busy', 'true');
     submit.disabled = true;
-    submit.textContent = 'Sending…';
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams(new FormData(form)).toString()
-    }).then(function (r) {
-      if (!r.ok) throw new Error('HTTP ' + r.status);
-      w.location.href = form.getAttribute('action') || 'thanks.html';
-    }).catch(function () {
-      submit.removeAttribute('aria-busy');
-      submit.disabled = false;
-      submit.innerHTML = label;
-      say('That didn’t send.', 'Please try again in a moment, or call us directly at <a href="' + telLink + '">' + phoneText + '</a>. We’re glad to help.');
-      alertBox && alertBox.focus();
-    });
+    submit.textContent = 'One moment…';
+    setTimeout(function () { w.location.href = 'thanks.html?demo=1'; }, 450);
   });
 })(window, document);

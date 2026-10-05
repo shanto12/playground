@@ -1,0 +1,359 @@
+{
+ "helper": "boxes",
+ "items": [
+  {
+   "id": "pail-bazaar-hero",
+   "title": "Takeout pail 26 oz — A · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/boxes/pail-bazaar-hero.png",
+   "thumb": "assets/boxes/pail-bazaar-hero-thumb.jpg",
+   "w": 1600,
+   "h": 2000,
+   "caption": "Saffron booti wrap + chunky arch wordmark; spice dots on the flap tell the pass which order is whose.",
+   "tags": [
+    "box",
+    "pail",
+    "mockup",
+    "bazaar"
+   ],
+   "download": "assets/boxes/dieline-pail-wrap-bazaar.svg"
+  },
+  {
+   "id": "clam-bazaar-hero",
+   "title": "Kraft clamshell 9×6 + belly band — A · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/boxes/clam-bazaar-hero.png",
+   "thumb": "assets/boxes/clam-bazaar-hero-thumb.jpg",
+   "w": 1600,
+   "h": 2000,
+   "caption": "Stock kraft box, printed band does the branding — cheap to run, impossible to miss, stamp-sealed.",
+   "tags": [
+    "box",
+    "box",
+    "mockup",
+    "bazaar"
+   ],
+   "download": "assets/boxes/dieline-clamshell-band-bazaar.svg"
+  },
+  {
+   "id": "tub-bazaar-hero",
+   "title": "Deli tub 16 oz + lid sleeve — A · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/boxes/tub-bazaar-hero.png",
+   "thumb": "assets/boxes/tub-bazaar-hero-thumb.jpg",
+   "w": 1600,
+   "h": 2000,
+   "caption": "Sleeve + lid label on a stock tub; dish write-in and spice dots make every curry identifiable at a glance.",
+   "tags": [
+    "box",
+    "tub",
+    "mockup",
+    "bazaar"
+   ],
+   "download": "assets/boxes/dieline-tub-lid-sleeve-bazaar.svg"
+  },
+  {
+   "id": "handi-bazaar-hero",
+   "title": "Handi biryani box — A · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/boxes/handi-bazaar-hero.png",
+   "thumb": "assets/boxes/handi-bazaar-hero-thumb.jpg",
+   "w": 1600,
+   "h": 2000,
+   "caption": "The signature: a handi-shaped box with rim band, domed lid and steam-vent slots — biryani you can spot across a room.",
+   "tags": [
+    "box",
+    "handi",
+    "mockup",
+    "bazaar"
+   ],
+   "download": "assets/boxes/art/handi-bazaar-lid.svg"
+  },
+  {
+   "id": "tray-bazaar-hero",
+   "title": "2-compartment drawer tray — A · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/boxes/tray-bazaar-hero.png",
+   "thumb": "assets/boxes/tray-bazaar-hero-thumb.jpg",
+   "w": 1600,
+   "h": 2000,
+   "caption": "Matchbox-style drawer: curry + rice one side, naan the other; pulling it open is the unboxing moment.",
+   "tags": [
+    "box",
+    "tray",
+    "mockup",
+    "bazaar"
+   ],
+   "download": "assets/boxes/art/tray-bazaar-lid.svg"
+  },
+  {
+   "id": "flatlay-bazaar",
+   "title": "Family flat-lay — A · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/boxes/flatlay-bazaar.png",
+   "thumb": "assets/boxes/flatlay-bazaar-thumb.jpg",
+   "w": 1600,
+   "h": 2000,
+   "caption": "All five containers share one saffron + block-print system, so any single piece is recognisably Curry District.",
+   "tags": [
+    "box",
+    "family",
+    "flatlay",
+    "bazaar"
+   ],
+   "download": "assets/boxes/art/clamshell-bazaar-lid.svg"
+  },
+  {
+   "id": "openbox-bazaar",
+   "title": "Open box reveal — A · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/boxes/openbox-bazaar.png",
+   "thumb": "assets/boxes/openbox-bazaar-thumb.jpg",
+   "w": 1600,
+   "h": 2000,
+   "caption": "Lift the lid: “You earned this naan.” — a hidden line built for the unboxing photo.",
+   "tags": [
+    "box",
+    "open",
+    "mockup",
+    "bazaar"
+   ],
+   "download": "assets/boxes/art/clamshell-bazaar-inside-lid.svg"
+  },
+  {
+   "id": "pail-royal-hero",
+   "title": "Takeout pail 26 oz — B · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/boxes/pail-royal-hero.png",
+   "thumb": "assets/boxes/pail-royal-hero-thumb.jpg",
+   "w": 1600,
+   "h": 2000,
+   "caption": "One saffron-gold hit on midnight — a jali-banded pail that reads premium from delivery-bag distance.",
+   "tags": [
+    "box",
+    "pail",
+    "mockup",
+    "royal"
+   ],
+   "download": "assets/boxes/dieline-pail-wrap-royal.svg"
+  },
+  {
+   "id": "clam-royal-hero",
+   "title": "Kraft clamshell 9×6 + belly band — B · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/boxes/clam-royal-hero.png",
+   "thumb": "assets/boxes/clam-royal-hero-thumb.jpg",
+   "w": 1600,
+   "h": 2000,
+   "caption": "Midnight board + emerald foil band: a one-colour sleeve that turns a stock clamshell into a gift.",
+   "tags": [
+    "box",
+    "box",
+    "mockup",
+    "royal"
+   ],
+   "download": "assets/boxes/dieline-clamshell-band-royal.svg"
+  },
+  {
+   "id": "tub-royal-hero",
+   "title": "Deli tub 16 oz + lid sleeve — B · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/boxes/tub-royal-hero.png",
+   "thumb": "assets/boxes/tub-royal-hero-thumb.jpg",
+   "w": 1600,
+   "h": 2000,
+   "caption": "Emerald sleeve and foil lid medallion — the everyday curry tub dressed for date night.",
+   "tags": [
+    "box",
+    "tub",
+    "mockup",
+    "royal"
+   ],
+   "download": "assets/boxes/dieline-tub-lid-sleeve-royal.svg"
+  },
+  {
+   "id": "handi-royal-hero",
+   "title": "Handi biryani box — B · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/boxes/handi-royal-hero.png",
+   "thumb": "assets/boxes/handi-royal-hero-thumb.jpg",
+   "w": 1600,
+   "h": 2000,
+   "caption": "Domed handi in midnight and gold, vents with foil steam curls — a family biryani that arrives like an occasion.",
+   "tags": [
+    "box",
+    "handi",
+    "mockup",
+    "royal"
+   ],
+   "download": "assets/boxes/art/handi-royal-lid.svg"
+  },
+  {
+   "id": "tray-royal-hero",
+   "title": "2-compartment drawer tray — B · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/boxes/tray-royal-hero.png",
+   "thumb": "assets/boxes/tray-royal-hero-thumb.jpg",
+   "w": 1600,
+   "h": 2000,
+   "caption": "Sleeve-and-drawer combo in midnight and emerald — slide, lift, linger.",
+   "tags": [
+    "box",
+    "tray",
+    "mockup",
+    "royal"
+   ],
+   "download": "assets/boxes/art/tray-royal-lid.svg"
+  },
+  {
+   "id": "flatlay-royal",
+   "title": "Family flat-lay — B · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/boxes/flatlay-royal.png",
+   "thumb": "assets/boxes/flatlay-royal-thumb.jpg",
+   "w": 1600,
+   "h": 2000,
+   "caption": "Five containers, one colour discipline: midnight, emerald and a single gold foil — premium by restraint.",
+   "tags": [
+    "box",
+    "family",
+    "flatlay",
+    "royal"
+   ],
+   "download": "assets/boxes/art/clamshell-royal-lid.svg"
+  },
+  {
+   "id": "openbox-royal",
+   "title": "Open box reveal — B · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/boxes/openbox-royal.png",
+   "thumb": "assets/boxes/openbox-royal-thumb.jpg",
+   "w": 1600,
+   "h": 2000,
+   "caption": "Lift the lid: “Slow-simmered. Tandoor-fired.” in quiet serif — the brand line at the moment of steam.",
+   "tags": [
+    "box",
+    "open",
+    "mockup",
+    "royal"
+   ],
+   "download": "assets/boxes/art/clamshell-royal-inside-lid.svg"
+  },
+  {
+   "id": "dieline-pail-wrap-bazaar",
+   "title": "Pail wrap dieline — A · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/boxes/dieline-pail-wrap-bazaar.png",
+   "thumb": "assets/boxes/dieline-pail-wrap-bazaar-thumb.jpg",
+   "w": 1600,
+   "h": 884,
+   "caption": "Dieline sheet: cut, dashed folds, 3 mm bleed, safe zone, indicative dimensions — confirm with supplier template.",
+   "tags": [
+    "dieline",
+    "pail",
+    "bazaar"
+   ],
+   "download": "assets/boxes/dieline-pail-wrap-bazaar.svg"
+  },
+  {
+   "id": "dieline-clamshell-band-bazaar",
+   "title": "Clamshell belly-band dieline — A · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/boxes/dieline-clamshell-band-bazaar.png",
+   "thumb": "assets/boxes/dieline-clamshell-band-bazaar-thumb.jpg",
+   "w": 1600,
+   "h": 2446,
+   "caption": "Dieline sheet: cut, dashed folds, 3 mm bleed, safe zone, indicative dimensions — confirm with supplier template.",
+   "tags": [
+    "dieline",
+    "box",
+    "bazaar"
+   ],
+   "download": "assets/boxes/dieline-clamshell-band-bazaar.svg"
+  },
+  {
+   "id": "dieline-tub-lid-sleeve-bazaar",
+   "title": "Tub lid sleeve + label dieline — A · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/boxes/dieline-tub-lid-sleeve-bazaar.png",
+   "thumb": "assets/boxes/dieline-tub-lid-sleeve-bazaar-thumb.jpg",
+   "w": 1600,
+   "h": 750,
+   "caption": "Dieline sheet: cut, dashed folds, 3 mm bleed, safe zone, indicative dimensions — confirm with supplier template.",
+   "tags": [
+    "dieline",
+    "tub",
+    "bazaar"
+   ],
+   "download": "assets/boxes/dieline-tub-lid-sleeve-bazaar.svg"
+  },
+  {
+   "id": "dieline-pail-wrap-royal",
+   "title": "Pail wrap dieline — B · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/boxes/dieline-pail-wrap-royal.png",
+   "thumb": "assets/boxes/dieline-pail-wrap-royal-thumb.jpg",
+   "w": 1600,
+   "h": 884,
+   "caption": "Dieline sheet: cut, dashed folds, 3 mm bleed, safe zone, indicative dimensions — confirm with supplier template.",
+   "tags": [
+    "dieline",
+    "pail",
+    "royal"
+   ],
+   "download": "assets/boxes/dieline-pail-wrap-royal.svg"
+  },
+  {
+   "id": "dieline-clamshell-band-royal",
+   "title": "Clamshell belly-band dieline — B · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/boxes/dieline-clamshell-band-royal.png",
+   "thumb": "assets/boxes/dieline-clamshell-band-royal-thumb.jpg",
+   "w": 1600,
+   "h": 2446,
+   "caption": "Dieline sheet: cut, dashed folds, 3 mm bleed, safe zone, indicative dimensions — confirm with supplier template.",
+   "tags": [
+    "dieline",
+    "box",
+    "royal"
+   ],
+   "download": "assets/boxes/dieline-clamshell-band-royal.svg"
+  },
+  {
+   "id": "dieline-tub-lid-sleeve-royal",
+   "title": "Tub lid sleeve + label dieline — B · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/boxes/dieline-tub-lid-sleeve-royal.png",
+   "thumb": "assets/boxes/dieline-tub-lid-sleeve-royal-thumb.jpg",
+   "w": 1600,
+   "h": 750,
+   "caption": "Dieline sheet: cut, dashed folds, 3 mm bleed, safe zone, indicative dimensions — confirm with supplier template.",
+   "tags": [
+    "dieline",
+    "tub",
+    "royal"
+   ],
+   "download": "assets/boxes/dieline-tub-lid-sleeve-royal.svg"
+  }
+ ]
+}

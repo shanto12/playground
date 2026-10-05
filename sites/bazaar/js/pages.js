@@ -73,23 +73,11 @@
         bad[0].focus();
         return;
       }
-      if (!(w.fetch && w.FormData && w.URLSearchParams)) return;   /* old browser → native POST */
+      /* DESIGN DEMO: nothing is sent or stored anywhere. Validate, then show the demo confirmation. */
       e.preventDefault();
       alertBox.hidden = true;
       busy(true);
-      fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(new FormData(form)).toString()
-      }).then(function (r) {
-        if (!r.ok) throw new Error('HTTP ' + r.status);
-        w.location.href = 'thanks.html';
-      }).catch(function () {
-        busy(false);
-        say('<strong>Oops, that didn’t go through.</strong>Your details are still here, so try again in a moment, or just <a href="' +
-          telHref + '">call us at ' + telText + '</a>. Phones never time out.');
-        alertBox.focus();
-      });
+      setTimeout(function () { w.location.href = 'thanks.html?demo=1'; }, 450);
     });
   });
 

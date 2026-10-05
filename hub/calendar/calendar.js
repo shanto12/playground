@@ -165,7 +165,7 @@
     var st = toDate(m.ics.start), en = new Date(st); en.setDate(en.getDate() + 1);
     var now = new Date(), stamp = now.toISOString().replace(/[-:]/g, '').replace(/\.\d+/, '');
     var title = 'Curry District · ' + m.name + (m.approx ? ' (approx)' : '') + (m.ics.marker ? ' · month marker' : '');
-    var desc = [m.concept, 'Date: ' + m.dateLabel + (m.approx ? ' (approx: ' + m.dateNote + ')' : ''), m.ics.marker ? 'Placed on the 1st as a planning marker. The real date varies, so verify it each year.' : '', 'Lead time: ' + m.lead, 'KPI: ' + m.kpi].filter(Boolean).join('\n');
+    var desc = [m.concept, 'Date: ' + m.dateLabel + (m.approx ? ' (' + m.dateNote + ')' : ''), m.ics.marker ? 'Placed on the 1st as a planning marker. The real date varies, so verify it each year.' : '', 'Lead time: ' + m.lead, 'KPI: ' + m.kpi].filter(Boolean).join('\n');
     var L = ['BEGIN:VEVENT', 'UID:' + m.id + '-' + m.ics.start + '@curry-district-pitch', 'DTSTAMP:' + stamp, 'DTSTART;VALUE=DATE:' + ymd(st), 'DTEND;VALUE=DATE:' + ymd(en)];
     if (m.ics.rrule) L.push('RRULE:' + m.ics.rrule);
     L.push('SUMMARY:' + icsEsc(title), 'DESCRIPTION:' + icsEsc(desc), 'CATEGORIES:' + (m.cat === 'indian' ? 'Indian celebrations' : 'US & local') + (m.catering ? '\\,Catering-led' : ''), 'TRANSP:TRANSPARENT');
@@ -200,13 +200,13 @@
   doc.addEventListener('keydown', function (e) { if (e.key === 'Escape' && sheet && !sheet.hidden && !doc.querySelector('.lb:not([hidden])')) closeMoment(); });
   /* highlight the month chip for the card in view */
   function trackJump() {
-    var tr = doc.querySelector('[data-rail-track]'); if (!tr || !('IntersectionObserver' in window)) return;
-    var io = new IntersectionObserver(function (en) {
-      en.forEach(function (x) { if (x.isIntersecting && x.intersectionRatio > .6) { var k = x.target.id.slice(2); doc.querySelectorAll('[data-jump]').forEach(function (a) { a.setAttribute('aria-current', String(a.getAttribute('data-jump') === k)); }); } });
-    }, { root: tr, threshold: [.6] });
-    tr.querySelectorAll('.mcard').forEach(function (c) { io.observe(c); });
+    var tr = doc.querySelector('[data-rail-track]'); if (!tr) return; var raf = 0;
+    function upd() { raf = 0; var cards = tr.querySelectorAll('.mcard'), k = null, x = tr.scrollLeft + 4;
+      for (var i = 0; i < cards.length; i++) { if (cards[i].offsetLeft - tr.offsetLeft >= x - cards[i].offsetWidth * .4) { k = cards[i].id.slice(2); break; } }
+      if (tr.scrollLeft + tr.clientWidth >= tr.scrollWidth - 4) k = k || cards[cards.length - 1].id.slice(2);
+      doc.querySelectorAll('[data-jump]').forEach(function (a) { a.setAttribute('aria-current', String(a.getAttribute('data-jump') === k)); }); }
+    tr.addEventListener('scroll', function () { if (!raf) raf = requestAnimationFrame(upd); }, { passive: true }); setTimeout(upd, 400);
   }
-
   renderRail(); renderNow(); applyFilter(); trackJump();
   if (location.hash && BY[location.hash.slice(1)]) setTimeout(function () { openMoment(location.hash.slice(1)); }, 300);
 })();
