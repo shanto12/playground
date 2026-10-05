@@ -222,7 +222,7 @@
       if (bump) { tray.classList.remove('is-bump'); void tray.offsetWidth; tray.classList.add('is-bump'); }
     }
     if (subEl) {
-      if (!n) subEl.textContent = 'Tap + on any idea to add it';
+      if (!n) subEl.textContent = 'Tap + on any idea';
       else { var ph = phasesFor(plan).length; subEl.textContent = n + (n === 1 ? ' idea' : ' ideas') + ' · ' + ph + (ph === 1 ? ' phase' : ' phases'); }
     }
     if (sheet && sheet.classList.contains('is-open')) renderSheet();
