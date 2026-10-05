@@ -57,7 +57,7 @@ S('story-02-guest-repost', 'Story · Guest-photo repost frame',
    .slot{height:530px;border-radius:10px;background:repeating-linear-gradient(135deg,#FFE7B8 0 22px,#FFDDA0 22px 44px);border:5px dashed ${C.ink};display:flex;align-items:center;justify-content:center}
    .ph{display:flex;flex-direction:column;align-items:center;gap:16px;opacity:.75}
    .ph .hand{font-size:52px;color:${C.ink}}
-   .cap{text-align:center;font-size:50px;color:${C.rani};margin-top:10px}
+   .cap{text-align:center;font-size:50px;color:${C.chili};margin-top:10px}
    .tagus{position:absolute;left:84px;right:84px;top:1366px;text-align:center;background:${C.ink};color:${C.cream};border-radius:999px;padding:18px 24px;font-weight:800;font-size:36px;box-shadow:8px 8px 0 ${C.rani};white-space:nowrap}`,
   C.saffron),
 
@@ -101,22 +101,22 @@ S('story-04-chai-ask-us', 'Story · Chai lo + ask us',
 ];
 
 // ── Safe-zone guide (2×2 board of the stories with UI zones marked) ──
-const g = 0.45, gw = Math.round(W * g), gh = Math.round(H * g);
+const g = 0.44, gw = Math.round(W * g), gh = Math.round(H * g);
 const guide = {
-  id: 'story-00-safe-zone-guide', file: 'story-00-safe-zone-guide', w: 1080, h: 2230, type: 'image', stage: 2, tags: ['story', 'guide'],
+  id: 'story-00-safe-zone-guide', file: 'story-00-safe-zone-guide', w: 1080, h: 2140, type: 'image', stage: 2, tags: ['story', 'guide'],
   title: 'Story safe-zone guide',
   caption: 'Every story keeps text out of the top 250px and bottom 340px (approx. app UI; verify in-app); decoration only lives there.',
-  html: () => page({ w: 1080, h: 2230, bg: C.cream, title: 'Story safe zones', css: `
+  html: () => page({ w: 1080, h: 2140, bg: C.cream, title: 'Story safe zones', css: `
     .hd{position:absolute;left:56px;top:48px;right:56px}
     .hd h1{font-size:74px;color:${C.ink}} .hd p{font-size:30px;font-weight:600;color:${C.muted};margin-top:12px;line-height:1.3}
-    .g{position:absolute;left:56px;top:250px;display:grid;grid-template-columns:${gw}px ${gw}px;gap:56px 56px}
+    .g{position:absolute;left:${(1080 - 2 * gw - 44) / 2}px;top:250px;display:grid;grid-template-columns:${gw}px ${gw}px;gap:44px 44px}
     .s{position:relative;width:${gw}px;height:${gh}px;border:5px solid ${C.ink};border-radius:20px;overflow:hidden;box-shadow:8px 8px 0 ${C.ink}}
     .s img{width:100%;height:100%;display:block}
     .z{position:absolute;left:0;right:0;background:repeating-linear-gradient(135deg,rgba(214,40,57,.55) 0 12px,rgba(214,40,57,.25) 12px 24px);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:22px;letter-spacing:.04em;text-transform:uppercase;text-shadow:0 2px 4px rgba(0,0,0,.6);text-align:center;line-height:1.15}
     .z.t{top:0;height:${TOP * g}px} .z.b{bottom:0;height:${BOT * g}px}
     .m{position:absolute;top:${TOP * g}px;bottom:${BOT * g}px;left:${64 * g}px;right:${64 * g}px;border:3px dashed ${C.peacock};border-radius:6px}
     .lb{position:absolute;left:0;right:0;bottom:-46px;text-align:center;font-weight:800;font-size:24px;color:${C.ink}}
-    .lg{position:absolute;left:56px;right:56px;top:2020px;display:flex;gap:30px;flex-wrap:wrap;font-weight:700;font-size:28px;color:${C.ink}}
+    .lg{position:absolute;left:56px;right:56px;top:2052px;display:flex;gap:30px;flex-wrap:wrap;font-weight:700;font-size:28px;color:${C.ink}}
     .lg i{display:inline-block;width:40px;height:26px;vertical-align:-4px;margin-right:10px;border-radius:5px}
   `, body: `
     <div class="hd"><h1 class="disp">Story safe zones</h1><p>1080×1920. Red = app UI (profile, progress bar, reply bar, link sticker): decoration only. Dashed teal = text and key art safe area. Zones are approximate; verify in the app before posting.</p></div>
@@ -143,8 +143,8 @@ const highlights = HL.map(([k, label, ic, bg, acc, pat], i) => ({
   html: () => page({ w: W, h: H, bg, title: `Highlight · ${label}`, css: `
     .pat{position:absolute;inset:0;background-image:url(${patternUrl(pat)});background-size:240px;opacity:.22;mix-blend-mode:${bg === C.ink ? 'normal' : 'multiply'}}
     .vig{position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,${bg} 0 34%,transparent 60%)}
-    .lbl{position:absolute;left:0;right:0;top:1452px;text-align:center;font-size:120px;color:${C.cream};${ol(10, C.ink, 11, 11, C.ink)}}
-    .em{position:absolute;left:50%;top:300px;transform:translateX(-50%)}
+    .lbl{position:absolute;left:0;right:0;top:1580px;text-align:center;font-size:120px;color:${C.cream};${ol(10, C.ink, 11, 11, C.ink)}}
+    .em{position:absolute;left:50%;top:190px;transform:translateX(-50%)}
   `, body: `<div class="pat"></div><div class="vig"></div>
     <svg class="abs" aria-hidden="true" style="left:0;top:0" width="${W}" height="${H}">
       <circle cx="${W / 2 + 16}" cy="${H / 2 + 16}" r="360" fill="${C.ink}"/>
@@ -160,10 +160,10 @@ const highlights = HL.map(([k, label, ic, bg, acc, pat], i) => ({
 
 // ── Highlight row preview (neutral, generic app styling; no platform UI replica) ──
 const hlPreview = {
-  id: 'highlight-00-row-preview', file: 'highlight-00-row-preview', w: 1080, h: 860, type: 'image', stage: 2, tags: ['highlight', 'grid'],
+  id: 'highlight-00-row-preview', file: 'highlight-00-row-preview', w: 1080, h: 720, type: 'image', stage: 2, tags: ['highlight', 'grid'],
   title: 'Highlight row · as it crops',
   caption: 'All eight covers circle-cropped at profile size: one family, eight colours, every icon readable at a glance.',
-  html: () => page({ w: 1080, h: 860, bg: '#FFFFFF', title: 'Highlights preview', css: `
+  html: () => page({ w: 1080, h: 720, bg: '#FFFFFF', title: 'Highlights preview', css: `
     .hd{position:absolute;left:60px;top:44px;font-weight:800;font-size:30px;letter-spacing:.06em;text-transform:uppercase;color:${C.muted}}
     .row{position:absolute;left:40px;right:40px;top:120px;display:grid;grid-template-columns:repeat(4,1fr);gap:46px 0;justify-items:center}
     .c{display:flex;flex-direction:column;align-items:center;gap:16px}

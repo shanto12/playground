@@ -256,18 +256,19 @@ function boothClose(t, extra = {}) {
 function neonWall(t, extra = {}) {
   const isB = t.dir === 'bazaar';
   const items = [
-    { type: 'bench', x: 3.4, w: 9.2, z: 1.0, uph: t.benchUph || {}, cushions: isB ?
+    { type: 'bench', x: 3.4, w: 9.2, z: 1.1, uph: Object.assign({ apron: isB ? '#1D1147' : '#160B26' }, t.benchUph || {}), cushions: isB ?
       [{ x: 0.5, w: 1.5, color: '#E4147E', pattern: '#FFB000', h: 13 }, { x: 2.3, w: 1.2, color: '#FFB000', h: 11 }, { x: 5.6, w: 1.3, color: '#00A8A0', pattern: '#FFF4DC', h: 12 }, { x: 7.2, w: 1.5, color: '#FF6A13', h: 13 }] :
       [{ x: 0.6, w: 1.5, color: '#A3173F', pattern: '#E9A63A', h: 13 }, { x: 2.4, w: 1.2, color: '#E9A63A', h: 11 }, { x: 5.5, w: 1.3, color: '#117C86', pattern: '#F7D98A', h: 12 }, { x: 7.1, w: 1.5, color: '#4B1D52', pattern: '#E9A63A', h: 13 }] },
-    { wall: true, type: 'neonSlot', x: 5.15, y: 7.75, w: 5.7, h: 3.0, shape: isB ? 'rect' : 'arch', color: isB ? '#FF3D9A' : '#F7D98A',
-      font: isB ? "'Bowlby One',sans-serif" : "'Fraunces',serif", font2: isB ? "'DM Sans',sans-serif" : "'Hanken Grotesk',sans-serif", fs: isB ? 3.4 : 3.8,
-      label: isB ? 'NEON ARTWORK HERE' : 'Neon artwork here', label2: 'placeholder · artwork by the murals & neon team' },
-    { wall: true, type: 'sconce', x: 3.1, y: 6.2, metal: isB ? 'black' : 'brass', shade: isB ? 'tulip' : 'drum', color: isB ? '#FFB000' : '#FBF3E4' },
-    { wall: true, type: 'sconce', x: 12.4, y: 6.2, metal: isB ? 'black' : 'brass', shade: isB ? 'tulip' : 'drum', color: isB ? '#FFB000' : '#FBF3E4' },
+    { wall: true, type: 'neonSlot', x: 5.3, y: isB ? 7.55 : 7.95, w: 5.4, h: isB ? 2.75 : 3.25, shape: isB ? 'rect' : 'arch', color: isB ? '#FF4FA3' : '#F7D98A',
+      panel: isB ? '#1D1147' : '#160B26', panelEdge: isB ? '#FFB000' : 'url(#gBrass)', panelEdgeW: isB ? 1.6 : 1.1, pad: 3.5,
+      font: isB ? "'Bowlby One',sans-serif" : "'Fraunces',serif", font2: isB ? "'DM Sans',sans-serif" : "'Hanken Grotesk',sans-serif", fs: isB ? 3.1 : 4.0, italic: !isB, ls: isB ? 0.4 : 0,
+      label: isB ? 'NEON ARTWORK HERE' : 'Neon artwork here', label2: 'placeholder — artwork by the murals & neon team' },
+    { wall: true, type: 'sconce', x: 3.0, y: 6.1, metal: isB ? 'black' : 'brass', shade: isB ? 'dome' : 'drum', color: isB ? '#FFB000' : '#FBF3E4' },
+    { wall: true, type: 'sconce', x: 12.55, y: 6.1, metal: isB ? 'black' : 'brass', shade: isB ? 'dome' : 'drum', color: isB ? '#FFB000' : '#FBF3E4' },
     Object.assign({ type: 'plant', x: 1.6, z: 1.2, kind: 'fig', h: 6.0, seed: 4, potH: 17, potW: 15 }, t.plant),
     Object.assign({ type: 'plant', x: 14.4, z: 1.0, kind: 'snake', h: 3.2, seed: 9, potH: 13, potW: 12 }, t.plant),
   ];
-  if (isB) items.push({ wall: true, type: 'garland', x: 4.2, y: 8.55, w: 7.6, swags: 4, sag: 4 });
+  if (isB) items.push({ wall: true, type: 'garland', x: 4.2, y: 8.6, w: 7.6, swags: 4, sag: 3.5, drops: false });
   return base(t, Object.assign({
     cam: { k: 108, D: 13, E: 4.9, hY: 418, camX: 8.0 },
     room: Object.assign({}, t.room, { side: false }),
@@ -280,24 +281,25 @@ function neonWall(t, extra = {}) {
 /* VIGNETTE · Bazaar chai corner */
 function chaiCorner(t, extra = {}) {
   const items = [
-    { type: 'counter', x: 2.6, w: 6.2, z: 1.15, d: 2.0, h: 3.1, top: '#FFF4DC', topChips: '#E4147E', front: '#E4147E', panel: '#1D1147', accent: '#FFB000', accent2: '#00A8A0',
-      props: [{ t: 'kettle', u: 0.22 }, { t: 'chaiglass', u: 0.42, dz: 0.2 }, { t: 'chaiglass', u: 0.5, dz: 0.3 }, { t: 'chaiglass', u: 0.58, dz: 0.15 }, { t: 'vase', u: 0.8, dz: -0.2, color: '#00A8A0', flower: '#FFB000', flower2: '#FF6A13' }] },
-    { wall: true, type: 'shelf', x: 3.0, y: 6.0, w: 5.4 },
-    { wall: true, type: 'sign', x: 3.7, y: 8.45, w: 4.0, h: 1.7, text: 'CHAI', sub: 'pull up a stool', bg: '#E4147E' },
-    { wall: true, type: 'garland', x: 0.6, y: 8.95, w: 11.2, swags: 5, sag: 4 },
-    { type: 'stool', x: 4.1, z: 3.3, color: '#1D1147', seat: '#FFB000' },
-    { type: 'stool', x: 7.2, z: 3.3, color: '#1D1147', seat: '#00A8A0' },
-    { type: 'pendant', x: 5.7, z: 1.3, y: 6.4, lamp: { style: 'dome', color: '#FFB000', outline: '#1D1147', band: '#E4147E' }, poolR: 2.8, poolRy: 2.2 },
-    { type: 'table', x: 12.2, z: 2.8, w: 24, d: 24, props: [{ t: 'chaiglass', dx: -0.2 }, { t: 'chaiglass', dx: 0.25, dz: 0.1 }, { t: 'plate', dx: 0, dz: -0.2, food: '#E8A23A', food2: '#3FA34D' }], chips: 60 },
-    { type: 'chair', x: 10.9, z: 2.78, view: 'profile', dir: 1 },
-    { type: 'pendant', x: 12.2, z: 2.8, y: 5.2, lamp: { style: 'dome', color: '#00A8A0', outline: '#1D1147', band: '#FFB000' }, poolR: 2.6, poolRy: 2.2 },
-    Object.assign({ type: 'plant', x: 14.3, z: 1.0, kind: 'fig', h: 5.6, seed: 12, potH: 16, potW: 14 }, t.plant),
+    { type: 'counter', x: 2.4, w: 6.0, z: 1.1, d: 2.0, h: 3.0, top: '#FFF4DC', topChips: '#E4147E', front: '#00A8A0', panel: '#1D1147', accent: '#FFB000', accent2: '#FFF4DC',
+      props: [{ t: 'kettle', u: 0.2 }, { t: 'chaiglass', u: 0.4, dz: 0.25 }, { t: 'chaiglass', u: 0.48, dz: 0.35 }, { t: 'chaiglass', u: 0.56, dz: 0.2 }, { t: 'vase', u: 0.82, dz: -0.2, color: '#00A8A0', flower: '#FFB000', flower2: '#FF6A13' }] },
+    { wall: true, type: 'shelf', x: 2.9, y: 5.75, w: 5.2 },
+    { wall: true, type: 'sign', x: 3.3, y: 8.35, w: 4.4, h: 1.75, text: 'CHAI', sub: 'pull up a stool', bg: '#E4147E' },
+    { wall: true, type: 'garland', x: 0.4, y: 9.05, w: 13.6, swags: 6, sag: 3.5, drops: false },
+    { type: 'stool', x: 1.55, z: 2.6, color: '#1D1147', seat: '#FFB000' },
+    { type: 'stool', x: 9.25, z: 2.6, color: '#1D1147', seat: '#00A8A0' },
+    { type: 'pendant', x: 8.6, z: 1.6, y: 6.2, lamp: { style: 'dome', color: '#FFB000', outline: '#1D1147', band: '#E4147E' }, poolR: 2.8, poolRy: 2.2 },
+    { type: 'table', x: 12.6, z: 2.8, w: 24, d: 24, props: [{ t: 'chaiglass', dx: -0.2 }, { t: 'chaiglass', dx: 0.25, dz: 0.1 }, { t: 'plate', dx: 0, dz: -0.2, food: '#E8A23A', food2: '#3FA34D' }] },
+    { type: 'chair', x: 11.3, z: 2.78, view: 'profile', dir: 1 },
+    { type: 'chair', x: 13.9, z: 2.78, view: 'profile', dir: -1 },
+    { type: 'pendant', x: 12.6, z: 2.8, y: 5.1, lamp: { style: 'dome', color: '#00A8A0', outline: '#1D1147', band: '#FFB000' }, poolR: 2.6, poolRy: 2.2 },
+    Object.assign({ type: 'plant', x: 15.4, z: 0.9, kind: 'fig', h: 5.8, seed: 12, potH: 16, potW: 14 }, t.plant),
   ];
   return base(t, Object.assign({
-    cam: { k: 112, D: 13, E: 4.8, hY: 470, camX: 7.4 },
+    cam: { k: 96, D: 15, E: 5.4, hY: 420, camX: 7.0 },
     room: Object.assign({}, t.room, { side: true }),
     wall: Object.assign({}, t.wall, { zones: [{ x0: 0, x1: 60, upper: 'wallpaper' }], pilasters: [], wainscot: 'tile' }),
-    window: Object.assign({}, t.window, { z0: 1.0, z1: 4.0 }),
+    window: Object.assign({}, t.window, { z0: 1.2, z1: 5.2 }),
     items,
   }, extra));
 }
@@ -314,8 +316,8 @@ function jaliDivider(t, extra = {}) {
     { type: 'pendant', x: 3.0, z: 3.0, y: 5.0 },
     { type: 'pendant', x: 7.6, z: 3.0, y: 5.0 },
     { type: 'pendant', x: 14.2, z: 2.9, y: 5.0 },
-    { type: 'jali', x: 10.6, z: 4.7, panels: 3, pw: 3.1, ph: 7.6, color: t.jaliColor || '#E9A63A', plinth: '#160B26', cell: 5.2 },
-    Object.assign({ type: 'plant', x: 10.0, z: 5.2, kind: 'palm', h: 4.8, seed: 21, potH: 16, potW: 14 }, t.plant),
+    { type: 'jali', x: 11.4, z: 4.2, panels: 3, pw: 3.0, ph: 7.2, color: t.jaliColor || '#B07A2C', brass: true, plinth: '#160B26', cell: 4.0, open: 1.25 },
+    Object.assign({ type: 'plant', x: 10.3, z: 4.6, kind: 'palm', h: 4.6, seed: 21, potH: 16, potW: 14 }, t.plant),
     Object.assign({ wall: true, type: 'print', x: 4.45, y: 7.95, w: 2.0, h: 2.6 }, t.print),
   ];
   return base(t, Object.assign({

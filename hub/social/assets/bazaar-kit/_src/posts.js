@@ -26,7 +26,7 @@ P('post-01-hero-dish', 'post-01-hero-dish', 'Hero dish · Butter Chicken',
    ${footer({ dark: false })}`,
   `.hero .steam{stroke:${C.ink};opacity:.55}
    .tag{position:absolute;right:58px;top:70px;background:${C.cream};border:5px solid ${C.ink};border-radius:22px;padding:14px 24px 16px;font-size:50px;text-align:center;transform:rotate(5deg);box-shadow:8px 8px 0 ${C.ink};color:${C.ink}}
-   .tag small{display:block;font-size:34px;color:${C.rani};margin-top:4px}
+   .tag small{display:block;font-size:34px;color:${C.chili};margin-top:4px}
    .hl{position:absolute;left:0;right:0;top:905px;text-align:center;font-size:150px;color:${C.cream};${ol(10, C.ink, 10, 10, C.ink)}}`,
   C.saffron),
 
@@ -100,7 +100,7 @@ P('post-04-daily-special', 'post-04-daily-special', "Daily special · template",
    .ln{position:absolute;left:110px;right:110px;top:952px;text-align:center;font-size:37px;font-weight:600;color:${C.ink}}
    .bd{position:absolute;left:100px;right:100px;top:1030px;display:flex;justify-content:center;align-items:center;gap:18px}
    .bd>span:not(.mast){display:inline-flex;align-items:center;gap:10px;border:5px solid ${C.ink};border-radius:999px;padding:6px 20px 6px 12px;font-weight:800;font-size:30px;text-transform:uppercase;letter-spacing:.04em;background:#fff}
-   .mast{font-size:44px;color:${C.rani};margin-left:6px;white-space:nowrap} .mast small{font-size:30px;color:${C.muted}}`,
+   .mast{font-size:44px;color:${C.chili};margin-left:6px;white-space:nowrap} .mast small{font-size:30px;color:${C.muted}}`,
   C.rani),
 
 // 5 ─ RATINGS card (sourced public ratings only)
@@ -117,7 +117,7 @@ P('post-05-ratings', 'post-05-ratings', 'Ratings card · as listed publicly',
    <p class="fn">Ratings as listed publicly in Oct 2026; they change over time. Google figure is approximate. No reviews quoted or paid for.</p>
    ${footer({ dark: false })}`,
   `.hl{position:absolute;left:64px;top:158px;font-size:98px;color:${C.ink};text-shadow:7px 7px 0 ${C.rani}}
-   .gl{position:absolute;left:780px;top:196px;font-size:46px;line-height:1.05;text-align:center;color:${C.rani};transform:rotate(-6deg)}
+   .gl{position:absolute;left:780px;top:196px;font-size:46px;line-height:1.05;text-align:center;color:${C.chili};transform:rotate(-6deg)}
    .grid{position:absolute;left:64px;right:64px;top:418px;display:grid;grid-template-columns:1fr 1fr;gap:30px 30px}
    .rc{background:#fff;border:6px solid ${C.ink};border-radius:28px;box-shadow:12px 12px 0 var(--c);padding:20px 28px 24px;height:322px;position:relative;overflow:hidden}
    .rc::before{content:"";position:absolute;left:0;top:0;right:0;height:16px;background:var(--c);border-bottom:5px solid ${C.ink}}
@@ -145,7 +145,7 @@ P('post-06-order-online', 'post-06-order-online', 'Order online · QR call-to-ac
    .qrc{position:absolute;left:290px;top:470px;width:500px;padding:34px 34px 20px;border-radius:30px;box-shadow:14px 14px 0 ${C.saffron};text-align:center}
    .qrc .qr{display:block;margin:0 auto}
    .qemb{position:absolute;left:50%;top:224px;transform:translate(-50%,-50%);background:#fff;padding:10px 12px;border-radius:14px}
-   .qlab{display:inline-flex;align-items:center;gap:8px;margin-top:14px;background:${C.rani};color:${C.cream};font-weight:800;font-size:22px;letter-spacing:.05em;text-transform:uppercase;padding:8px 18px;border-radius:999px;white-space:nowrap}
+   .qlab{display:inline-flex;align-items:center;gap:8px;margin-top:14px;background:${C.ink};color:${C.cream};font-weight:800;font-size:22px;letter-spacing:.05em;text-transform:uppercase;padding:8px 18px;border-radius:999px;white-space:nowrap}
    .bag{position:absolute;left:790px;top:400px;transform:rotate(10deg)}
    .bag svg{filter:drop-shadow(8px 8px 0 ${C.rani})}
    .cta{position:absolute;left:50%;top:1046px;transform:translateX(-50%) rotate(-1.5deg);background:${C.marigold};color:${C.ink};font-family:'Bowlby One';text-transform:uppercase;font-weight:400;font-size:52px;padding:18px 44px 22px;box-shadow:9px 9px 0 ${C.rani};border-width:6px}`,
@@ -211,7 +211,7 @@ P('post-09-staff-pick', 'post-09-staff-pick', 'Staff pick · template',
    <div class="who"><div class="plate nmp" style="font-size:46px">[Name]</div><div class="role">[Role] · Curry District</div></div>
    ${dish('garlic-naan', { style: 'left:470px;top:150px;width:600px;height:600px', cls: 'gn' })}
    <h1 class="disp hl">Garlic<br>Naan</h1>
-   <div class="bas"><b>Bas, ek aur naan.</b><span class="hand">okay, just one more naan</span></div>
+   <div class="bas"><b>Bas, ek aur naan.</b><span class="hand">(okay, just one more naan)</span></div>
    ${footer({ dark: false })}`,
   `.ph{position:absolute;left:84px;top:200px;width:330px;height:330px}
    .ph svg{width:100%;height:100%;filter:drop-shadow(10px 10px 0 ${C.ink})}
@@ -223,7 +223,7 @@ P('post-09-staff-pick', 'post-09-staff-pick', 'Staff pick · template',
    .hl{position:absolute;left:64px;right:64px;top:760px;font-size:168px;color:${C.cream};${ol(10, C.ink, 11, 11, C.ink)};text-align:center}
    .bas{position:absolute;left:0;right:0;top:1100px;display:flex;justify-content:center;align-items:baseline;gap:18px}
    .bas b{font-size:40px;font-weight:800;color:${C.ink}}
-   .bas .hand{font-size:42px;color:${C.rani}}`,
+   .bas .hand{font-size:42px;color:${C.ink}}`,
   C.marigold),
 
 ];

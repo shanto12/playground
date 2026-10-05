@@ -42,6 +42,7 @@ function renderRoom(cfgIn) {
   const ol = c.outline; const OL = ol.w ? `stroke="${ol.color}" stroke-opacity="${ol.op}" stroke-width="${ol.w}" stroke-linejoin="round"` : '';
   const uid = (() => { let i = 0; return (p) => p + (++i); })();
   const pendants = c.items.filter((it) => it.type === 'pendant');
+  const ZL = Math.min(16, cam.D - 0.8);   // never project behind the camera
 
   /* ───────── defs: gradients, filters ───────── */
   const warm = c.light.warm;
@@ -87,14 +88,14 @@ function renderRoom(cfgIn) {
 
   /* ───────── CEILING ───────── */
   {
-    const q = [cam.p(-6, RH, 0), cam.p(60, RH, 0), cam.p(60, RH, 16), cam.p(-6, RH, 16)];
+    const q = [cam.p(-30, RH, 0), cam.p(60, RH, 0), cam.p(60, RH, ZL), cam.p(-30, RH, ZL)];
     const gce = uid('ce'); const cy0 = cam.p(0, RH, 0)[1];
     defs.push(`<linearGradient id="${gce}" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="${n(cy0)}"><stop offset="0" stop-color="${shade(c.paint.ceiling, -0.16)}"/><stop offset="1" stop-color="${c.paint.ceiling}"/></linearGradient>`);
     out.push(poly(q, { fill: `url(#${gce})` }));
     if (c.room.ceiling === 'grid') {          // suspended acoustic-tile ceiling (the "before" room)
       let d = '';
-      for (let z = 0; z <= 16; z += 2) { const a = cam.p(-6, RH, z), b = cam.p(60, RH, z); d += `M${n(a[0])} ${n(a[1])}L${n(b[0])} ${n(b[1])}`; }
-      for (let x = -6; x <= 60; x += 2) { const a = cam.p(x, RH, 0), b = cam.p(x, RH, 16); d += `M${n(a[0])} ${n(a[1])}L${n(b[0])} ${n(b[1])}`; }
+      for (let z = 0; z <= ZL; z += 2) { const a = cam.p(-6, RH, z), b = cam.p(60, RH, z); d += `M${n(a[0])} ${n(a[1])}L${n(b[0])} ${n(b[1])}`; }
+      for (let x = -6; x <= 60; x += 2) { const a = cam.p(x, RH, 0), b = cam.p(x, RH, ZL); d += `M${n(a[0])} ${n(a[1])}L${n(b[0])} ${n(b[1])}`; }
       out.push(h('path', { d, stroke: '#BDB6A8', 'stroke-width': 2.2, fill: 'none' }));
       // fluorescent troffers
       [[4, 6], [14, 16]].forEach(([x0, x1]) => { out.push(poly(cam.quadY(x0, x1, 0.6, 3.4, RH), { fill: '#F4F8F6', stroke: '#A9A398', 'stroke-width': 2 })); });
@@ -207,7 +208,7 @@ function renderRoom(cfgIn) {
 
   /* ───────── SIDE (RETURN) WALL with window ───────── */
   if (c.room.side) {
-    const Zf = 14, d = c.room.dado, rl = c.room.rail;
+    const Zf = ZL, d = c.room.dado, rl = c.room.rail;
     const P = (Y, Z) => cam.p(0, Y, Z);
     const quad = (Y0, Y1, Z0, Z1) => [P(Y0, Z0), P(Y1, Z0), P(Y1, Z1), P(Y0, Z1)];
     out.push(poly(quad(d, RH, 0, Zf), { fill: c.paint.side }));
@@ -278,9 +279,9 @@ function renderRoom(cfgIn) {
   /* ───────── FLOOR ───────── */
   {
     const F = c.floor, T = F.size || 8 / 12;
-    out.push(poly([cam.p(c.room.side ? 0 : -30, 0, 0), cam.p(60, 0, 0), cam.p(60, 0, 16), cam.p(c.room.side ? 0 : -30, 0, 16)], { fill: F.colors[0] }));
+    out.push(poly([cam.p(c.room.side ? 0 : -30, 0, 0), cam.p(60, 0, 0), cam.p(60, 0, ZL), cam.p(c.room.side ? 0 : -30, 0, ZL)], { fill: F.colors[0] }));
     const layers = {}; const add = (col, arr) => { (layers[col] = layers[col] || []).push(pathFrom(arr.map((p) => [Math.round(p[0] * 2) / 2, Math.round(p[1] * 2) / 2]))); };
-    const zMax = (() => { for (let z = 0; z < 16; z += 0.1) if (cam.p(0, 0, z)[1] > Hh + 30) return z; return 16; })();
+    const zMax = (() => { for (let z = 0; z < ZL; z += 0.1) if (cam.p(0, 0, z)[1] > Hh + 30) return z; return ZL; })();
     const visX = (z) => [cam.camX - (W / 2 + 40) / cam.s(z), cam.camX + (W / 2 + 40) / cam.s(z)];
     const xr0 = c.room.side ? 0 : Math.floor(visX(zMax)[0] / T) * T, xr1 = visX(0)[1];
     const TP = (x0, z0) => (u, v) => cam.p(x0 + u * T, 0, z0 + v * T);
@@ -459,20 +460,30 @@ const WALL = {
     s.push(h('rect', { x: n(x - 1.6), y: n(y + 3), width: 3.2, height: 6, rx: 1.4, fill: m }));
     s.push(h('path', { d: `M${n(x)} ${n(y + 5)}c0 -3 3 -4 6 -4`, stroke: it.metal === 'black' ? '#1D1147' : '#B7791F', 'stroke-width': 0.7, fill: 'none' }));
     const sx = x + 6.2;
-    if (it.shade === 'tulip') s.push(h('path', { d: `M${n(sx - 3.4)} ${n(y - 3.5)}Q${n(sx)} ${n(y + 3)} ${n(sx + 3.4)} ${n(y - 3.5)}Q${n(sx)} ${n(y - 1.6)} ${n(sx - 3.4)} ${n(y - 3.5)}Z`, fill: it.color || '#FFE7B8' }));
+    if (it.shade === 'dome') { s.push(h('path', { d: `M${n(sx - 3.8)} ${n(y)}C${n(sx - 3.8)} ${n(y - 3)} ${n(sx - 2)} ${n(y - 4.4)} ${n(sx)} ${n(y - 4.4)}C${n(sx + 2)} ${n(y - 4.4)} ${n(sx + 3.8)} ${n(y - 3)} ${n(sx + 3.8)} ${n(y)}Z`, fill: it.color || '#FFE7B8', stroke: '#1D1147', 'stroke-width': 0.4 })); s.push(h('ellipse', { cx: n(sx), cy: n(y), rx: 3.8, ry: 0.6, fill: '#FFF4D6' })); }
     else s.push(h('path', { d: `M${n(sx - 2.6)} ${n(y - 6)}H${n(sx + 2.6)}L${n(sx + 3.6)} ${n(y + 0.5)}H${n(sx - 3.6)}Z`, fill: it.color || '#FFE7B8', stroke: it.metal === 'black' ? '#1D1147' : '#B7791F', 'stroke-width': 0.4 }));
     s.push(h('ellipse', { cx: n(sx), cy: n(y - 1), rx: 22, ry: 26, fill: 'url(#gGlow)', opacity: 0.55, style: 'mix-blend-mode:screen' }));
     return s.join('');
   },
   neonSlot(it, { x, y, w, h: hh, c }) {
     const col = it.color || '#FF6A13'; const s = [];
-    s.push(h('ellipse', { cx: n(x + w / 2), cy: n(y + hh / 2), rx: n(w * 0.75), ry: n(hh * 0.8), fill: col, opacity: 0.16, filter: 'url(#fBlur14)', style: 'mix-blend-mode:screen' }));
+    const pad = it.pad || 4, bx = x - pad, by = y - pad, bw = w + 2 * pad, bh = hh + 2 * pad;
+    const panelD = it.shape === 'arch'
+      ? `M${n(bx)} ${n(by + bh)}V${n(by + bw / 2)}A${n(bw / 2)} ${n(bw / 2)} 0 0 1 ${n(bx + bw)} ${n(by + bw / 2)}V${n(by + bh)}Z`
+      : `M${n(bx + 5)} ${n(by)}H${n(bx + bw - 5)}Q${n(bx + bw)} ${n(by)} ${n(bx + bw)} ${n(by + 5)}V${n(by + bh - 5)}Q${n(bx + bw)} ${n(by + bh)} ${n(bx + bw - 5)} ${n(by + bh)}H${n(bx + 5)}Q${n(bx)} ${n(by + bh)} ${n(bx)} ${n(by + bh - 5)}V${n(by + 5)}Q${n(bx)} ${n(by)} ${n(bx + 5)} ${n(by)}Z`;
+    if (it.panel !== false) {
+      s.push(h('path', { d: panelD, fill: '#000', opacity: 0.35, filter: 'url(#fBlur3)', transform: 'translate(1 2.5)' }));
+      s.push(h('path', { d: panelD, fill: it.panel || '#1D1147' }));
+      s.push(h('path', { d: panelD, fill: 'none', stroke: it.panelEdge || 'url(#gBrass)', 'stroke-width': it.panelEdgeW || 1.2 }));
+    }
+    s.push(h('ellipse', { cx: n(x + w / 2), cy: n(y + hh / 2), rx: n(w * 0.6), ry: n(hh * 0.62), fill: col, opacity: 0.22, filter: 'url(#fBlur14)', style: 'mix-blend-mode:screen' }));
     const d = it.shape === 'arch' ? `M${n(x)} ${n(y + hh)}V${n(y + w / 2)}A${n(w / 2)} ${n(w / 2)} 0 0 1 ${n(x + w)} ${n(y + w / 2)}V${n(y + hh)}Z` : `M${n(x + 4)} ${n(y)}H${n(x + w - 4)}Q${n(x + w)} ${n(y)} ${n(x + w)} ${n(y + 4)}V${n(y + hh - 4)}Q${n(x + w)} ${n(y + hh)} ${n(x + w - 4)} ${n(y + hh)}H${n(x + 4)}Q${n(x)} ${n(y + hh)} ${n(x)} ${n(y + hh - 4)}V${n(y + 4)}Q${n(x)} ${n(y)} ${n(x + 4)} ${n(y)}Z`;
-    s.push(h('path', { d, fill: 'none', stroke: col, 'stroke-width': 0.9, 'stroke-dasharray': '3 2.2', opacity: 0.95 }));
-    s.push(h('path', { d, fill: 'none', stroke: '#FFFFFF', 'stroke-width': 0.3, 'stroke-dasharray': '3 2.2', opacity: 0.8 }));
-    const fy = y + hh / 2;
-    s.push(h('text', { x: n(x + w / 2), y: n(fy - 1), 'text-anchor': 'middle', 'font-family': it.font || "'DM Sans',sans-serif", 'font-weight': 700, 'font-size': it.fs || 3.4, 'letter-spacing': 0.5, fill: it.labelColor || '#FFFFFF' }, esc(it.label || 'NEON ARTWORK HERE')));
-    s.push(h('text', { x: n(x + w / 2), y: n(fy + 4), 'text-anchor': 'middle', 'font-family': it.font2 || "'DM Sans',sans-serif", 'font-weight': 500, 'font-size': (it.fs || 3.4) * 0.72, fill: it.labelColor || '#FFFFFF', opacity: 0.85 }, esc(it.label2 || 'placeholder · see Murals & Neon')));
+    s.push(h('path', { d, fill: 'none', stroke: col, 'stroke-width': 1.6, 'stroke-dasharray': '3.2 2.4', opacity: 0.55, filter: 'url(#fBlur3)' }));
+    s.push(h('path', { d, fill: 'none', stroke: col, 'stroke-width': 0.8, 'stroke-dasharray': '3.2 2.4' }));
+    s.push(h('path', { d, fill: 'none', stroke: '#FFFFFF', 'stroke-width': 0.25, 'stroke-dasharray': '3.2 2.4', opacity: 0.9 }));
+    const fy = y + hh * (it.shape === 'arch' ? 0.62 : 0.5);
+    s.push(h('text', { x: n(x + w / 2), y: n(fy - 1), 'text-anchor': 'middle', 'font-family': it.font || "'DM Sans',sans-serif", 'font-weight': 700, 'font-style': it.italic ? 'italic' : 'normal', 'font-size': it.fs || 3.4, 'letter-spacing': it.ls === undefined ? 0.5 : it.ls, fill: it.labelColor || col }, esc(it.label || 'NEON ARTWORK HERE')));
+    s.push(h('text', { x: n(x + w / 2), y: n(fy + 4.2), 'text-anchor': 'middle', 'font-family': it.font2 || "'DM Sans',sans-serif", 'font-weight': 500, 'font-size': (it.fs || 3.4) * 0.6, fill: '#FFFFFF', opacity: 0.85 }, esc(it.label2 || 'placeholder · see Murals & Neon')));
     return s.join('');
   },
   garland(it, { x, y, w }) {      // real marigold swag strung along a rail
@@ -670,9 +681,11 @@ const OBJ = {
     s.push(poly(q, { fill: tc[0] }));
     if (T.top === 'terrazzo') {
       let layers = {};
-      const nChips = it.chips || 90;
+      const pxW = cam.s(Z) * hw * 2;                       // table width on screen
+      const nChips = it.chips || Math.round(Math.min(520, Math.max(80, pxW * pxW / 260)));
+      const rMax = Math.min(0.05, 7 / cam.s(Z)), rMin = Math.max(0.012, 1.4 / cam.s(Z));
       for (let i = 0; i < nChips; i++) {
-        const u = R() * 2 - 1, v = R() * 2 - 1, r = 0.025 + R() * 0.05, col = tc[1 + Math.floor(R() * (tc.length - 1))];
+        const u = R() * 2 - 1, v = R() * 2 - 1, r = rMin + Math.pow(R(), 1.8) * (rMax - rMin), col = tc[1 + Math.floor(R() * (tc.length - 1))];
         const sides = 5 + Math.floor(R() * 3), rot = R() * 6;
         const ptsA = [];
         for (let k = 0; k < sides; k++) { const a = rot + k / sides * Math.PI * 2, rr = r * (0.6 + R() * 0.5); ptsA.push(cam.p(X + u * (hw - 0.05) + Math.cos(a) * rr, top, Z + v * (hd - 0.05) + Math.sin(a) * rr)); }
@@ -875,14 +888,24 @@ const OBJ = {
       }
     } else if (kind === 'palm') {
       for (let i = 0; i < 9; i++) {
-        const a = (-70 + i * 17.5) * Math.PI / 180; const L2 = height * (0.55 + R2() * 0.3);
-        const ex = Math.sin(a) * L2, ey = -potH - Math.cos(a) * L2 * 0.9;
+        const a = (-68 + i * 17) * Math.PI / 180; const L2 = height * (0.6 + R2() * 0.3);
+        const ex = Math.sin(a) * L2, ey = -potH - Math.cos(a) * L2 * 0.85;
         const col = greens[i % greens.length];
-        g.push(h('path', { d: `M0 ${-potH}Q${n(ex * 0.3)} ${n(ey * 0.8)} ${n(ex)} ${n(ey)}`, stroke: '#4E6B2A', 'stroke-width': 0.6, fill: 'none' }));
-        for (let k = 1; k < 12; k++) {
-          const t = k / 12; const px = ex * t * t * 0.7 + ex * 0.3 * t, py = -potH + (ey + potH) * (1 - (1 - t) * (1 - t));
-          [-1, 1].forEach((sd) => g.push(h('path', { d: `M${n(px)} ${n(py)}l${n(sd * 4.5 * (1 - t * 0.5))} ${n(3.2 + t * 2)}`, stroke: col, 'stroke-width': 1.1, 'stroke-linecap': 'round' })));
+        const ctrl = [ex * 0.25, -potH + (ey + potH) * 0.85];
+        const B = (t) => [2 * (1 - t) * t * ctrl[0] + t * t * ex, (1 - t) * (1 - t) * -potH + 2 * (1 - t) * t * ctrl[1] + t * t * ey];
+        g.push(h('path', { d: `M0 ${-potH}Q${n(ctrl[0])} ${n(ctrl[1])} ${n(ex)} ${n(ey)}`, stroke: '#4E6B2A', 'stroke-width': 0.5, fill: 'none' }));
+        let d = '';
+        for (let k = 2; k < 15; k++) {
+          const t = k / 15; const [px, py] = B(t); const [qx, qy] = B(t + 0.01);
+          const ang = Math.atan2(qy - py, qx - px);
+          const ll = 5.2 * (1 - Math.abs(t - 0.5) * 1.1);
+          [-1, 1].forEach((sd) => {
+            const la = ang + sd * 1.05 + 0.35; const tx = px + Math.cos(la) * ll, ty = py + Math.sin(la) * ll + 1.2;
+            const nx = -Math.sin(la) * 0.55, ny = Math.cos(la) * 0.55;
+            d += `M${n(px)} ${n(py)}Q${n((px + tx) / 2 + nx)} ${n((py + ty) / 2 + ny)} ${n(tx)} ${n(ty)}Q${n((px + tx) / 2 - nx)} ${n((py + ty) / 2 - ny)} ${n(px)} ${n(py)}Z`;
+          });
         }
+        g.push(h('path', { d, fill: col }));
       }
     }
     // pot
@@ -908,9 +931,9 @@ const OBJ = {
     const mid = uid('jm'), pid = uid('jp');
     const cell = it.cell || 6;
     // lattice holes: 8-point star + crosses between (classic Mughal geometry)
-    let star = ''; for (let i = 0; i < 16; i++) { const a = i / 16 * Math.PI * 2 + Math.PI / 8; const r = i % 2 ? cell * 0.19 : cell * 0.34; star += (i ? 'L' : 'M') + n(cell / 2 + Math.cos(a) * r) + ' ' + n(cell / 2 + Math.sin(a) * r); }
+    let star = ''; for (let i = 0; i < 16; i++) { const a = i / 16 * Math.PI * 2 + Math.PI / 8; const r = (i % 2 ? cell * 0.2 : cell * 0.36) * (it.open || 1); star += (i ? 'L' : 'M') + n(cell / 2 + Math.cos(a) * r) + ' ' + n(cell / 2 + Math.sin(a) * r); }
     star += 'Z';
-    const dia = `M0 ${n(-cell * 0.12)}L${n(cell * 0.12)} 0L0 ${n(cell * 0.12)}L${n(-cell * 0.12)} 0Z`;
+    const dq = cell * 0.13 * (it.open || 1); const dia = `M0 ${n(-dq)}L${n(dq)} 0L0 ${n(dq)}L${n(-dq)} 0Z`;
     defs.push(`<pattern id="${pid}" patternUnits="userSpaceOnUse" width="${cell}" height="${cell}"><rect width="${cell}" height="${cell}" fill="#fff"/><path d="${star}" fill="#000"/><path d="${dia}" fill="#000"/><path d="${dia}" transform="translate(${cell} 0)" fill="#000"/><path d="${dia}" transform="translate(0 ${cell})" fill="#000"/><path d="${dia}" transform="translate(${cell} ${cell})" fill="#000"/></pattern>`);
     const totalW = panels * pw + (panels - 1) * gap;
     const g = [];
@@ -923,6 +946,7 @@ const OBJ = {
     defs.push(`<mask id="${mid}" maskUnits="userSpaceOnUse" x="-10" y="${-ph - 20}" width="${totalW + 20}" height="${ph + 30}">${maskInner}</mask>`);
     // shadow + body
     g.push(h('rect', { x: 0, y: -ph - 4, width: n(totalW), height: ph + 4, fill: col, mask: `url(#${mid})` }));
+    if (it.brass) g.push(h('rect', { x: 0, y: -ph - 4, width: n(totalW), height: ph + 4, fill: 'url(#gBrassD)', opacity: 0.45, mask: `url(#${mid})` }));
     const gj = uid('jg');
     defs.push(`<linearGradient id="${gj}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFF3CF" stop-opacity=".45"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".35"/></linearGradient>`);
     g.push(h('rect', { x: 0, y: -ph - 4, width: n(totalW), height: ph + 4, fill: `url(#${gj})`, mask: `url(#${mid})` }));
@@ -943,16 +967,23 @@ const OBJ = {
     const W2 = (x1 - x0) * 12, H2 = hh * 12;
     const g = [];
     g.push(h('rect', { x: 0, y: -H2, width: n(W2), height: n(H2), fill: it.front || '#E4147E' }));
-    // truck-art inspired painted panels
-    const nP = Math.max(2, Math.round(W2 / 18)); const pw = (W2 - 6) / nP;
+    // truck-art inspired painted panels: little arches, a flower in each, a scalloped band and a chevron kick
+    const nP = Math.max(3, Math.round(W2 / 11)); const pw = (W2 - 6) / nP;
+    g.push(h('rect', { x: 0, y: n(-H2 + 1.6), width: n(W2), height: 3.2, fill: it.accent || '#FFB000' }));
+    let sc = ''; for (let xx = 0; xx < W2; xx += 3) sc += `M${n(xx)} ${n(-H2 + 4.8)}a1.5 1.5 0 0 0 3 0`;
+    g.push(h('path', { d: sc + `V${n(-H2 + 4.8)}Z`, fill: it.accent || '#FFB000' }));
     for (let i = 0; i < nP; i++) {
-      const px = 3 + i * pw;
-      g.push(h('rect', { x: n(px + 1), y: n(-H2 + 5), width: n(pw - 2), height: n(H2 - 12), rx: 2, fill: it.panel || '#1D1147' }));
-      g.push(h('path', { d: `M${n(px + 1 + (pw - 2) / 2)} ${n(-H2 + 9)}m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0`, fill: it.accent || '#FFB000' }));
-      g.push(h('path', { d: `M${n(px + 3)} ${n(-H2 + 18)}H${n(px + pw - 3)}M${n(px + 3)} ${n(-H2 + 21)}H${n(px + pw - 3)}`, stroke: it.accent2 || '#00A8A0', 'stroke-width': 1 }));
-      let d = ''; for (let xx = px + 3; xx < px + pw - 3; xx += 2.6) d += `M${n(xx)} ${n(-10)}l1.3 -2l1.3 2`;
-      g.push(h('path', { d, stroke: it.accent || '#FFB000', 'stroke-width': 0.6, fill: 'none' }));
+      const px = 3 + i * pw, aw = pw - 2.2, ax = px + 1.1, top = -H2 + 9, bot = -9;
+      const ad = `M${n(ax)} ${n(bot)}V${n(top + aw / 2)}A${n(aw / 2)} ${n(aw / 2)} 0 0 1 ${n(ax + aw)} ${n(top + aw / 2)}V${n(bot)}Z`;
+      g.push(h('path', { d: ad, fill: it.panel || '#1D1147' }));
+      g.push(h('path', { d: ad, fill: 'none', stroke: it.accent2 || '#00A8A0', 'stroke-width': 0.6, transform: `translate(0 0)` }));
+      const cx = ax + aw / 2, cy = top + aw / 2 + 2.2;
+      for (let k = 0; k < 6; k++) { const an = k / 6 * Math.PI * 2; g.push(h('ellipse', { cx: n(cx + Math.cos(an) * 1.5), cy: n(cy + Math.sin(an) * 1.5), rx: 1.1, ry: 0.7, transform: `rotate(${n(an * 57.3)} ${n(cx + Math.cos(an) * 1.5)} ${n(cy + Math.sin(an) * 1.5)})`, fill: i % 2 ? (it.accent || '#FFB000') : '#FF6A13' })); }
+      g.push(h('circle', { cx: n(cx), cy: n(cy), r: 0.9, fill: '#FFF4DC' }));
+      g.push(h('path', { d: `M${n(cx)} ${n(cy + 3)}V${n(bot - 2)}M${n(cx)} ${n(cy + 7)}q2 -1 3 -3M${n(cx)} ${n(cy + 9)}q-2 -1 -3 -3`, stroke: '#3FA34D', 'stroke-width': 0.5, fill: 'none' }));
     }
+    let ch = ''; for (let xx = 0; xx < W2; xx += 3) ch += `M${n(xx)} -5.2l1.5 -2.2l1.5 2.2`;
+    g.push(h('path', { d: ch, stroke: it.accent || '#FFB000', 'stroke-width': 0.6, fill: 'none' }));
     g.push(h('rect', { x: 0, y: -H2, width: n(W2), height: 1.6, fill: 'url(#gBrass)' }));
     g.push(h('rect', { x: 0, y: -4, width: n(W2), height: 4, fill: '#1D1147' }));
     s.push(`<g transform="${cam.bb(x0, Z1)}">${g.join('')}</g>`);
@@ -960,19 +991,36 @@ const OBJ = {
     return s.join('');
   },
 
-  bench(it, { cam, c }) {   // simple upholstered bench (photo corner) with bolster cushions
+  bench(it, { cam, c, defs, uid }) {   // upholstered bench (photo corner) with leaning cushions
     const u = Object.assign({}, c.uph, it.uph || {});
-    const x0 = it.x, w = it.w * 12, z = it.z;
-    const g = [];
-    g.push(h('rect', { x: 0, y: -18, width: n(w), height: 6, rx: 2.4, fill: u.color }));
-    g.push(h('path', { d: `M1 -17.6H${n(w - 1)}M1 -12.4H${n(w - 1)}`, stroke: u.piping, 'stroke-width': 0.5 }));
-    g.push(h('rect', { x: 2, y: -12, width: n(w - 4), height: 9, fill: u.apron || shade(u.color, -0.25) }));
-    g.push(h('path', { d: `M4 -3V0M${n(w - 4)} -3V0`, stroke: '#B7791F', 'stroke-width': 1.6 }));
-    (it.cushions || []).forEach((cu) => {
-      g.push(h('rect', { x: n(cu.x * 12), y: -18 - (cu.h || 14), width: n((cu.w || 1.4) * 12), height: cu.h || 14, rx: 3, fill: cu.color }));
-      if (cu.pattern) g.push(h('rect', { x: n(cu.x * 12 + 1.5), y: -18 - (cu.h || 14) + 1.5, width: n((cu.w || 1.4) * 12 - 3), height: (cu.h || 14) - 3, rx: 2, fill: 'none', stroke: cu.pattern, 'stroke-width': 0.8, 'stroke-dasharray': '1.4 1' }));
+    const x0 = it.x, w = it.w * 12, z = it.z, x1 = it.x + it.w;
+    const s = [];
+    s.push(poly(cam.quadY(x0, x1, z - 0.6, z + 0.45, 0), { fill: '#000', opacity: 0.32, filter: 'url(#fBlur6)' }));
+    // seat top
+    s.push(poly(cam.quadY(x0 + 0.02, x1 - 0.02, z - 0.85, z + 0.4, 1.5), { fill: shade(u.color, 0.08) }));
+    const gS = uid('bs');
+    defs.push(`<linearGradient id="${gS}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity=".3"/><stop offset="1" stop-color="#fff" stop-opacity=".1"/></linearGradient>`);
+    s.push(poly(cam.quadY(x0 + 0.02, x1 - 0.02, z - 0.85, z + 0.4, 1.5), { fill: `url(#${gS})` }));
+    // cushions lean on the wall, sitting on the seat (billboard a little behind the front)
+    const cg = [];
+    (it.cushions || []).forEach((cu, i) => {
+      const cw = (cu.w || 1.4) * 12, ch = cu.h || 14, cx = cu.x * 12, rot = (i % 2 ? 1 : -1) * (2 + i);
+      const gid = uid('cu');
+      defs.push(`<radialGradient id="${gid}" cx=".42" cy=".38" r=".7"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset=".6" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".35"/></radialGradient>`);
+      const dd = `M${n(cx + 2)} ${n(-18 - ch)}Q${n(cx + cw / 2)} ${n(-18 - ch + 1.6)} ${n(cx + cw - 2)} ${n(-18 - ch)}Q${n(cx + cw - 0.6)} ${n(-18 - ch / 2)} ${n(cx + cw - 1.4)} -18Q${n(cx + cw / 2)} -19.2 ${n(cx + 1.4)} -18Q${n(cx + 0.6)} ${n(-18 - ch / 2)} ${n(cx + 2)} ${n(-18 - ch)}Z`;
+      cg.push(`<g transform="rotate(${rot} ${n(cx + cw / 2)} -18)">` + h('path', { d: dd, fill: cu.color }) + (cu.pattern ? (() => { let d2 = ''; for (let yy = -18 - ch + 3.5; yy < -20; yy += 3) for (let xx = cx + 3.5; xx < cx + cw - 2.5; xx += 3) d2 += `M${n(xx)} ${n(yy)}m-0.7 0a0.7 0.7 0 1 0 1.4 0a0.7 0.7 0 1 0 -1.4 0`; return h('path', { d: d2, fill: cu.pattern, opacity: 0.85 }); })() : '') + h('path', { d: dd, fill: `url(#${gid})` }) + h('path', { d: dd, fill: 'none', stroke: cu.piping || shade(cu.color, -0.35), 'stroke-width': 0.4 }) + '</g>');
     });
-    return poly(cam.quadY(x0, x0 + it.w, z - 0.6, z + 0.4, 0), { fill: '#000', opacity: 0.3, filter: 'url(#fBlur6)' }) + `<g transform="${cam.bb(x0, z)}">${g.join('')}</g>`;
+    s.push(`<g transform="${cam.bb(x0, z - 0.45)}">${cg.join('')}</g>`);
+    // front: cushion band + apron + legs
+    const g = [];
+    g.push(h('rect', { x: 0, y: -18, width: n(w), height: 5.5, rx: 2.2, fill: u.color }));
+    g.push(h('rect', { x: 0, y: -18, width: n(w), height: 5.5, rx: 2.2, fill: 'url(#gAOdown)', opacity: 0.25 }));
+    g.push(h('path', { d: `M1 -17.7H${n(w - 1)}M1 -12.8H${n(w - 1)}`, stroke: u.piping, 'stroke-width': 0.5 }));
+    g.push(h('rect', { x: 1.5, y: -12.5, width: n(w - 3), height: 6.5, fill: u.apron || '#1D1147' }));
+    g.push(h('rect', { x: 1.5, y: -12.5, width: n(w - 3), height: 0.9, fill: '#000', opacity: 0.25 }));
+    [3.5, w - 5].forEach((lx) => g.push(h('path', { d: `M${n(lx)} -6L${n(lx + 0.4)} 0H${n(lx + 1.4)}L${n(lx + 1.6)} -6Z`, fill: 'url(#gBrass)' })));
+    s.push(`<g transform="${cam.bb(x0, z + 0.4)}">${g.join('')}</g>`);
+    return s.join('');
   },
 
   figure(it, { cam }) {    // neutral 6-ft scale figure (for scale comparisons) — simple silhouette, no features
@@ -1013,7 +1061,8 @@ function prop(p, X0, Z0, top, { cam, c }) {
     s.push(`<g transform="translate(${n(q[0])} ${n(q[1])}) scale(${sc.toFixed(4)})">${h('path', { d: 'M-1.2 0L-1.5 -3.8H1.5L1.2 0Z', fill: '#F3E3C3', opacity: 0.55 })}${h('path', { d: 'M-1.25 0L-1.4 -2.6H1.4L1.25 0Z', fill: '#C46A1B' })}${h('path', { d: 'M-1.2 0L-1.5 -3.8H1.5L1.2 0Z', fill: 'url(#gGlass)' })}</g>`);
   } else if (p.t === 'tent') {
     const q = cam.p(X, top, Z); const sc = cam.s(Z) / 12;
-    s.push(`<g transform="translate(${n(q[0])} ${n(q[1])}) scale(${sc.toFixed(4)})">${h('path', { d: 'M-2.4 0L-1.8 -5H1.8L2.4 0Z', fill: p.color || '#FFB000', stroke: p.stroke || '#1D1147', 'stroke-width': 0.2 })}${h('rect', { x: -1, y: -4, width: 2, height: 2, fill: p.stroke || '#1D1147', opacity: 0.8 })}</g>`);
+    let qr = ''; const RQ = rng(31); for (let i = 0; i < 5; i++) for (let j = 0; j < 5; j++) if (RQ() > 0.45 || (i < 2 && j < 2) || (i > 2 && j < 2) || (i < 2 && j > 2)) qr += `M${n(-0.95 + i * 0.38)} ${n(-3.55 + j * 0.38)}h0.36v0.36h-0.36z`;
+    s.push(`<g transform="translate(${n(q[0])} ${n(q[1])}) scale(${sc.toFixed(4)})">${h('path', { d: 'M-1.9 0L-1.5 -5.2H1.5L1.9 0Z', fill: p.color || '#FFB000', stroke: p.stroke || '#1D1147', 'stroke-width': 0.15 })}${h('rect', { x: -1.15, y: -3.75, width: 2.3, height: 2.3, rx: 0.15, fill: '#FFFFFF' })}${h('path', { d: qr, fill: p.stroke || '#1D1147' })}${h('rect', { x: -1.2, y: -4.75, width: 2.4, height: 0.45, rx: 0.2, fill: p.stroke || '#1D1147', opacity: 0.85 })}</g>`);
   }
   return s.join('');
 }

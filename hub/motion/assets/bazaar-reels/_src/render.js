@@ -58,7 +58,7 @@ const JOBS = [
   J('sticker-bowl-steam', 'sticker', 1080, 1080, 4, { kind: 'bowl', bg: '#00A8A0' }, 1.0),
   J('sticker-spinning-chili', 'sticker', 1080, 1080, 4, { kind: 'chili', bg: '#FFB000' }, 0.6),
   J('sticker-bouncing-naan', 'sticker', 1080, 1080, 4, { kind: 'naan', bg: '#E4147E' }, 1.45),
-  J('sticker-district-stamp', 'sticker', 1080, 1080, 4, { kind: 'stamp', bg: '#FFF4DC' }, 1.4)
+  J('sticker-district-stamp', 'sticker', 1080, 1080, 4, { kind: 'stamp', bg: '#1D1147' }, 1.4)
 ];
 const byId = id => { const j = JOBS.find(x => x.id === id); if (!j) throw new Error('no job ' + id); return j; };
 

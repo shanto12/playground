@@ -46,7 +46,7 @@ const items = [
   title: 'Facebook cover · crop guide',
   caption: 'Shows what desktop (centre 1640×624) and mobile (centre ~1522×856) keep, plus the profile-photo corner; crops approximate, verify after upload.',
   html: () => page({ w: 1640, h: 1060, bg: C.cream, title: 'Facebook cover crop guide', css: `
-    .c{position:absolute;left:0;top:0;width:1640px;height:856px}
+    .c{position:absolute;left:0;top:0;width:1640px;height:856px;overflow:hidden}
     .c img{width:100%;height:100%;display:block}
     .dk{position:absolute;left:0;right:0;background:rgba(29,17,71,.55)}
     .mb{position:absolute;top:0;height:856px;width:59px;background:repeating-linear-gradient(135deg,rgba(214,40,57,.6) 0 10px,rgba(214,40,57,.3) 10px 20px)}

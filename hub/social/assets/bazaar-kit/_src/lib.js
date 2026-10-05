@@ -191,7 +191,9 @@ body{font-family:'DM Sans',system-ui,sans-serif;color:${C.ink};-webkit-font-smoo
 /* street-sign plate (echoes the DISTRICT plate in the logo) */
 .plate{display:inline-flex;align-items:center;gap:14px;font-family:'Bowlby One',sans-serif;text-transform:uppercase;letter-spacing:.04em;
   background:${C.peacock};color:${C.cream};border:6px solid ${C.ink};border-radius:16px;padding:12px 26px 14px;box-shadow:8px 8px 0 ${C.ink};position:relative;line-height:1}
+.plate{${ol(3, C.ink, 3, 3, C.ink, 20)}}
 .plate::after{content:"";position:absolute;inset:6px;border:3px solid ${C.cream};border-radius:9px;pointer-events:none;opacity:.9}
+.plate.mari,.plate.cream,.plate.saff{text-shadow:none}
 .plate.mari{background:${C.marigold};color:${C.ink}} .plate.mari::after{border-color:${C.ink};opacity:.35}
 .plate.cream{background:${C.cream};color:${C.ink}} .plate.cream::after{border-color:${C.ink};opacity:.3}
 .plate.rani{background:${C.rani};color:${C.cream}}

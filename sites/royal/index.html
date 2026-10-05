@@ -29,7 +29,7 @@
 <link rel="preload" href="fonts/hanken-grotesk.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/motion.css">
 <link rel="stylesheet" href="css/site.css">
-<script>(function(h){h.className+=' js';try{if(localStorage.getItem('cd-royal-concept-dismissed')==='1')h.className+=' concept-dismissed'}catch(e){}})(document.documentElement);</script>
+<script>(function(h){h.className+=' js m-js';try{if(localStorage.getItem('cd-royal-concept-dismissed')==='1')h.className+=' concept-dismissed'}catch(e){}setTimeout(function(){if(!window.Motion)h.classList.remove('m-js')},3000)})(document.documentElement);</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

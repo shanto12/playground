@@ -1,0 +1,582 @@
+{
+  "helper": "bazaar-kit",
+  "items": [
+    {
+      "id": "bz-post-01-hero-dish",
+      "title": "Hero dish · Butter Chicken",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bazaar-kit/post-01-hero-dish.png",
+      "thumb": "assets/bazaar-kit/post-01-hero-dish-thumb.jpg",
+      "w": 1080,
+      "h": 1350,
+      "caption": "One dish, one sunburst, one big name: the scroll-stopper template for every fan favourite.",
+      "tags": [
+        "post"
+      ],
+      "download": "assets/bazaar-kit/post-01-hero-dish.png"
+    },
+    {
+      "id": "bz-post-02-zone-biryani-boulevard",
+      "title": "Zone feature · Biryani Boulevard",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bazaar-kit/post-02-zone-biryani-boulevard.png",
+      "thumb": "assets/bazaar-kit/post-02-zone-biryani-boulevard-thumb.jpg",
+      "w": 1080,
+      "h": 1350,
+      "caption": "Turns the menu into a map: each zone gets its own street sign, so a series of these reads like a walk through the District.",
+      "tags": [
+        "post"
+      ],
+      "download": "assets/bazaar-kit/post-02-zone-biryani-boulevard.png"
+    },
+    {
+      "id": "bz-post-03-spice-meter",
+      "title": "Spice meter · Pick your heat",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bazaar-kit/post-03-spice-meter.png",
+      "thumb": "assets/bazaar-kit/post-03-spice-meter-thumb.jpg",
+      "w": 1080,
+      "h": 1350,
+      "caption": "A five-chilli scale guests can screenshot; it answers the top review theme (heat levels) with honest copy: even Mild has a kick.",
+      "tags": [
+        "post"
+      ],
+      "download": "assets/bazaar-kit/post-03-spice-meter.png"
+    },
+    {
+      "id": "bz-post-04-daily-special",
+      "title": "Daily special · template",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bazaar-kit/post-04-daily-special.png",
+      "thumb": "assets/bazaar-kit/post-04-daily-special-thumb.jpg",
+      "w": 1080,
+      "h": 1350,
+      "caption": "Fill-in template: swap the dish art, name, one-liner and badges each day; no prices by design, so it never goes stale.",
+      "tags": [
+        "post"
+      ],
+      "download": "assets/bazaar-kit/post-04-daily-special.png"
+    },
+    {
+      "id": "bz-post-05-ratings",
+      "title": "Ratings card · as listed publicly",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bazaar-kit/post-05-ratings.png",
+      "thumb": "assets/bazaar-kit/post-05-ratings-thumb.jpg",
+      "w": 1080,
+      "h": 1350,
+      "caption": "Only sourced public ratings, dated and labelled, with no invented quotes; social proof that stays true.",
+      "tags": [
+        "post"
+      ],
+      "download": "assets/bazaar-kit/post-05-ratings.png"
+    },
+    {
+      "id": "bz-post-06-order-online",
+      "title": "Order online · QR call-to-action",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bazaar-kit/post-06-order-online.png",
+      "thumb": "assets/bazaar-kit/post-06-order-online-thumb.jpg",
+      "w": 1080,
+      "h": 1350,
+      "caption": "One job, one action: a big pickup CTA and a QR slot (shown as a non-scannable sample; QR → ordering link at production).",
+      "tags": [
+        "post"
+      ],
+      "download": "assets/bazaar-kit/post-06-order-online.png"
+    },
+    {
+      "id": "bz-post-07-catering",
+      "title": "Catering · party platters",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bazaar-kit/post-07-catering.png",
+      "thumb": "assets/bazaar-kit/post-07-catering-thumb.jpg",
+      "w": 1080,
+      "h": 1350,
+      "caption": "Sells the occasion, not a price: bunting, a loaded spread and the occasions people actually book for.",
+      "tags": [
+        "post"
+      ],
+      "download": "assets/bazaar-kit/post-07-catering.png"
+    },
+    {
+      "id": "bz-post-08-did-you-know-dum",
+      "title": "Did you know · what “dum” means",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bazaar-kit/post-08-did-you-know-dum.png",
+      "thumb": "assets/bazaar-kit/post-08-did-you-know-dum-thumb.jpg",
+      "w": 1080,
+      "h": 1350,
+      "caption": "Save-bait education post (menu words, decoded) using only generic, accurate food facts; no claims about the kitchen.",
+      "tags": [
+        "post"
+      ],
+      "download": "assets/bazaar-kit/post-08-did-you-know-dum.png"
+    },
+    {
+      "id": "bz-post-09-staff-pick",
+      "title": "Staff pick · template",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bazaar-kit/post-09-staff-pick.png",
+      "thumb": "assets/bazaar-kit/post-09-staff-pick-thumb.jpg",
+      "w": 1080,
+      "h": 1350,
+      "caption": "Puts the friendly team (a top review theme) in the feed: swap in a real photo, name and role (with consent); the dish line stays brand voice, never a fake quote.",
+      "tags": [
+        "post"
+      ],
+      "download": "assets/bazaar-kit/post-09-staff-pick.png"
+    },
+    {
+      "id": "bz-motion-01-steam",
+      "title": "Motion · Garma-garam steam",
+      "direction": "bazaar",
+      "type": "video",
+      "src": "assets/bazaar-kit/motion-01-steam.mp4",
+      "thumb": "assets/bazaar-kit/motion-01-steam-thumb.jpg",
+      "poster": "assets/bazaar-kit/motion-01-steam.jpg",
+      "w": 1080,
+      "h": 1350,
+      "caption": "Six-second loop: steam curls off a wok of Chilli Chicken while the sunburst turns; motion stops the scroll, the dish does the selling.",
+      "tags": [
+        "motion",
+        "post"
+      ],
+      "download": "assets/bazaar-kit/motion-01-steam.mp4"
+    },
+    {
+      "id": "bz-motion-02-spice-burst",
+      "title": "Motion · Spice sparkle burst",
+      "direction": "bazaar",
+      "type": "video",
+      "src": "assets/bazaar-kit/motion-02-spice-burst.mp4",
+      "thumb": "assets/bazaar-kit/motion-02-spice-burst-thumb.jpg",
+      "poster": "assets/bazaar-kit/motion-02-spice-burst.jpg",
+      "w": 1080,
+      "h": 1350,
+      "caption": "Three sparkle bursts per loop pop off a wobbling chilli: pure Bollywood-poster energy that still lands one clear line.",
+      "tags": [
+        "motion",
+        "post"
+      ],
+      "download": "assets/bazaar-kit/motion-02-spice-burst.mp4"
+    },
+    {
+      "id": "bz-motion-03-special-wipe",
+      "title": "Motion · Today’s special wipe",
+      "direction": "bazaar",
+      "type": "video",
+      "src": "assets/bazaar-kit/motion-03-special-wipe.mp4",
+      "thumb": "assets/bazaar-kit/motion-03-special-wipe-thumb.jpg",
+      "poster": "assets/bazaar-kit/motion-03-special-wipe.jpg",
+      "w": 1080,
+      "h": 1350,
+      "caption": "Template loop for the daily special: festival-colour bars wipe in the dish name (no price, ever); swap the name and art per day.",
+      "tags": [
+        "motion",
+        "post"
+      ],
+      "download": "assets/bazaar-kit/motion-03-special-wipe.mp4"
+    },
+    {
+      "id": "bz-story-01-spice-poll",
+      "title": "Story · Where do you land? (spice poll)",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bazaar-kit/story-01-spice-poll.png",
+      "thumb": "assets/bazaar-kit/story-01-spice-poll-thumb.jpg",
+      "w": 1080,
+      "h": 1920,
+      "caption": "Interactive poll frame (calendar Day 3): big, thumb-friendly options inside the safe zone; drop the native poll sticker over the cards.",
+      "tags": [
+        "story"
+      ],
+      "download": "assets/bazaar-kit/story-01-spice-poll.png"
+    },
+    {
+      "id": "bz-story-02-guest-repost",
+      "title": "Story · Guest-photo repost frame",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bazaar-kit/story-02-guest-repost.png",
+      "thumb": "assets/bazaar-kit/story-02-guest-repost-thumb.jpg",
+      "w": 1080,
+      "h": 1920,
+      "caption": "Branded frame for reposting guest photos (with permission, calendar Day 15); the guest’s photo drops into the polaroid.",
+      "tags": [
+        "story"
+      ],
+      "download": "assets/bazaar-kit/story-02-guest-repost.png"
+    },
+    {
+      "id": "bz-story-03-visit",
+      "title": "Story · Swagat hai (visit us)",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bazaar-kit/story-03-visit.png",
+      "thumb": "assets/bazaar-kit/story-03-visit-thumb.jpg",
+      "w": 1080,
+      "h": 1920,
+      "caption": "Turns the illustrated District street into a visit card: our wordmark sits on the shop’s blank sign, address in the safe zone, no hours promised.",
+      "tags": [
+        "story"
+      ],
+      "download": "assets/bazaar-kit/story-03-visit.png"
+    },
+    {
+      "id": "bz-story-04-chai-ask-us",
+      "title": "Story · Chai lo + ask us",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bazaar-kit/story-04-chai-ask-us.png",
+      "thumb": "assets/bazaar-kit/story-04-chai-ask-us-thumb.jpg",
+      "w": 1080,
+      "h": 1920,
+      "caption": "Question-box frame that leans on the friendly-team review theme: “Ask us what we’d order”, with the chai art doing the warm welcome.",
+      "tags": [
+        "story"
+      ],
+      "download": "assets/bazaar-kit/story-04-chai-ask-us.png"
+    },
+    {
+      "id": "bz-story-00-safe-zone-guide",
+      "title": "Story safe-zone guide",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bazaar-kit/story-00-safe-zone-guide.png",
+      "thumb": "assets/bazaar-kit/story-00-safe-zone-guide-thumb.jpg",
+      "w": 1080,
+      "h": 2140,
+      "caption": "Every story keeps text out of the top 250px and bottom 340px (approx. app UI; verify in-app); decoration only lives there.",
+      "tags": [
+        "story"
+      ],
+      "download": "assets/bazaar-kit/story-00-safe-zone-guide.png"
+    },
+    {
+      "id": "bz-highlight-01-menu",
+      "title": "Highlight cover · Menu",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bazaar-kit/highlight-01-menu.png",
+      "thumb": "assets/bazaar-kit/highlight-01-menu-thumb.jpg",
+      "w": 1080,
+      "h": 1920,
+      "caption": "Icon sits inside the centre circle so the profile crop is always clean; the label below shows only when the cover is opened.",
+      "tags": [
+        "highlight"
+      ],
+      "download": "assets/bazaar-kit/highlight-01-menu.png"
+    },
+    {
+      "id": "bz-highlight-02-biryani",
+      "title": "Highlight cover · Biryani",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bazaar-kit/highlight-02-biryani.png",
+      "thumb": "assets/bazaar-kit/highlight-02-biryani-thumb.jpg",
+      "w": 1080,
+      "h": 1920,
+      "caption": "Biryani: same disc, same icon weight, its own festival colour, so the highlight row reads as one set.",
+      "tags": [
+        "highlight"
+      ],
+      "download": "assets/bazaar-kit/highlight-02-biryani.png"
+    },
+    {
+      "id": "bz-highlight-03-tandoor",
+      "title": "Highlight cover · Tandoor",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bazaar-kit/highlight-03-tandoor.png",
+      "thumb": "assets/bazaar-kit/highlight-03-tandoor-thumb.jpg",
+      "w": 1080,
+      "h": 1920,
+      "caption": "Tandoor: same disc, same icon weight, its own festival colour, so the highlight row reads as one set.",
+      "tags": [
+        "highlight"
+      ],
+      "download": "assets/bazaar-kit/highlight-03-tandoor.png"
+    },
+    {
+      "id": "bz-highlight-04-curry",
+      "title": "Highlight cover · Curry",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bazaar-kit/highlight-04-curry.png",
+      "thumb": "assets/bazaar-kit/highlight-04-curry-thumb.jpg",
+      "w": 1080,
+      "h": 1920,
+      "caption": "Curry: same disc, same icon weight, its own festival colour, so the highlight row reads as one set.",
+      "tags": [
+        "highlight"
+      ],
+      "download": "assets/bazaar-kit/highlight-04-curry.png"
+    },
+    {
+      "id": "bz-highlight-05-sweets",
+      "title": "Highlight cover · Sweets",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bazaar-kit/highlight-05-sweets.png",
+      "thumb": "assets/bazaar-kit/highlight-05-sweets-thumb.jpg",
+      "w": 1080,
+      "h": 1920,
+      "caption": "Sweets: same disc, same icon weight, its own festival colour, so the highlight row reads as one set.",
+      "tags": [
+        "highlight"
+      ],
+      "download": "assets/bazaar-kit/highlight-05-sweets.png"
+    },
+    {
+      "id": "bz-highlight-06-catering",
+      "title": "Highlight cover · Catering",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bazaar-kit/highlight-06-catering.png",
+      "thumb": "assets/bazaar-kit/highlight-06-catering-thumb.jpg",
+      "w": 1080,
+      "h": 1920,
+      "caption": "Catering: same disc, same icon weight, its own festival colour, so the highlight row reads as one set.",
+      "tags": [
+        "highlight"
+      ],
+      "download": "assets/bazaar-kit/highlight-06-catering.png"
+    },
+    {
+      "id": "bz-highlight-07-order",
+      "title": "Highlight cover · Order",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bazaar-kit/highlight-07-order.png",
+      "thumb": "assets/bazaar-kit/highlight-07-order-thumb.jpg",
+      "w": 1080,
+      "h": 1920,
+      "caption": "Order: same disc, same icon weight, its own festival colour, so the highlight row reads as one set.",
+      "tags": [
+        "highlight"
+      ],
+      "download": "assets/bazaar-kit/highlight-07-order.png"
+    },
+    {
+      "id": "bz-highlight-08-visit",
+      "title": "Highlight cover · Visit",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bazaar-kit/highlight-08-visit.png",
+      "thumb": "assets/bazaar-kit/highlight-08-visit-thumb.jpg",
+      "w": 1080,
+      "h": 1920,
+      "caption": "Visit: same disc, same icon weight, its own festival colour, so the highlight row reads as one set.",
+      "tags": [
+        "highlight"
+      ],
+      "download": "assets/bazaar-kit/highlight-08-visit.png"
+    },
+    {
+      "id": "bz-highlight-00-row-preview",
+      "title": "Highlight row · as it crops",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bazaar-kit/highlight-00-row-preview.png",
+      "thumb": "assets/bazaar-kit/highlight-00-row-preview-thumb.jpg",
+      "w": 1080,
+      "h": 720,
+      "caption": "All eight covers circle-cropped at profile size: one family, eight colours, every icon readable at a glance.",
+      "tags": [
+        "highlight",
+        "grid"
+      ],
+      "download": "assets/bazaar-kit/highlight-00-row-preview.png"
+    },
+    {
+      "id": "bz-avatar-profile-1080",
+      "title": "Profile avatar · 1080",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bazaar-kit/avatar-profile-1080.png",
+      "thumb": "assets/bazaar-kit/avatar-profile-1080-thumb.jpg",
+      "w": 1080,
+      "h": 1080,
+      "caption": "Built from the logo emblem: the steaming-bowl gate sits well inside the circle crop, framed by the District-seal scallop.",
+      "tags": [
+        "cover"
+      ],
+      "download": "assets/bazaar-kit/avatar-profile-1080.png"
+    },
+    {
+      "id": "bz-avatar-crop-check",
+      "title": "Avatar · crop & size check",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bazaar-kit/avatar-crop-check.png",
+      "thumb": "assets/bazaar-kit/avatar-crop-check-thumb.jpg",
+      "w": 1080,
+      "h": 640,
+      "caption": "Circle-cropped at 320, 160, 80 and 40px on light and dark: the emblem stays readable even at comment size.",
+      "tags": [
+        "cover"
+      ],
+      "download": "assets/bazaar-kit/avatar-crop-check.png"
+    },
+    {
+      "id": "bz-facebook-cover-1640",
+      "title": "Facebook cover · 1640×856",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bazaar-kit/facebook-cover-1640.png",
+      "thumb": "assets/bazaar-kit/facebook-cover-1640-thumb.jpg",
+      "w": 1640,
+      "h": 856,
+      "caption": "The District street at golden hour with our wordmark on the shop sign; all key art sits inside the overlap of the desktop and mobile crops.",
+      "tags": [
+        "cover"
+      ],
+      "download": "assets/bazaar-kit/facebook-cover-1640.png"
+    },
+    {
+      "id": "bz-facebook-cover-crop-guide",
+      "title": "Facebook cover · crop guide",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bazaar-kit/facebook-cover-crop-guide.png",
+      "thumb": "assets/bazaar-kit/facebook-cover-crop-guide-thumb.jpg",
+      "w": 1640,
+      "h": 1060,
+      "caption": "Shows what desktop (centre 1640×624) and mobile (centre ~1522×856) keep, plus the profile-photo corner; crops approximate, verify after upload.",
+      "tags": [
+        "cover"
+      ],
+      "download": "assets/bazaar-kit/facebook-cover-crop-guide.png"
+    },
+    {
+      "id": "bz-gbp-logo-720",
+      "title": "GBP logo · 720×720",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bazaar-kit/gbp-logo-720.png",
+      "thumb": "assets/bazaar-kit/gbp-logo-720-thumb.jpg",
+      "w": 720,
+      "h": 720,
+      "caption": "Square logo at the 720×720 the playbook cites (secondary sources, medium confidence: verify in the GBP dashboard); circle-safe too.",
+      "tags": [
+        "gbp"
+      ],
+      "download": "assets/bazaar-kit/gbp-logo-720.png"
+    },
+    {
+      "id": "bz-gbp-cover-1600x900",
+      "title": "GBP cover · 16:9",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bazaar-kit/gbp-cover-1600x900.png",
+      "thumb": "assets/bazaar-kit/gbp-cover-1600x900-thumb.jpg",
+      "w": 1600,
+      "h": 900,
+      "caption": "16:9 cover exported at 1600px with the subject centred for Google’s crops (spec from secondary sources, medium confidence: verify); swap for a real exterior photo after the shoot.",
+      "tags": [
+        "gbp"
+      ],
+      "download": "assets/bazaar-kit/gbp-cover-1600x900.png"
+    },
+    {
+      "id": "bz-gbp-post-01-biryani",
+      "title": "GBP post · Biryani, naan, repeat",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bazaar-kit/gbp-post-01-biryani.png",
+      "thumb": "assets/bazaar-kit/gbp-post-01-biryani-thumb.jpg",
+      "w": 1200,
+      "h": 900,
+      "caption": "4:3 Update-post image at 1200×900 (playbook spec, secondary sources: verify); dish and headline kept inside the centre for Google’s crops.",
+      "tags": [
+        "gbp"
+      ],
+      "download": "assets/bazaar-kit/gbp-post-01-biryani.png"
+    },
+    {
+      "id": "bz-gbp-post-02-spice",
+      "title": "GBP post · Pick your heat",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bazaar-kit/gbp-post-02-spice.png",
+      "thumb": "assets/bazaar-kit/gbp-post-02-spice-thumb.jpg",
+      "w": 1200,
+      "h": 900,
+      "caption": "Answers the most-asked spice question right on the listing, with the honest note that even Mild has a kick (4:3 spec from secondary sources: verify).",
+      "tags": [
+        "gbp"
+      ],
+      "download": "assets/bazaar-kit/gbp-post-02-spice.png"
+    },
+    {
+      "id": "bz-gbp-tile-01-butter-chicken",
+      "title": "GBP photo tile · Butter Chicken",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bazaar-kit/gbp-tile-01-butter-chicken.png",
+      "thumb": "assets/bazaar-kit/gbp-tile-01-butter-chicken-thumb.jpg",
+      "w": 1600,
+      "h": 1600,
+      "caption": "1:1 tile at 1600px (playbook delivery spec; 720×720 is the cited minimum-recommended, secondary sources: verify). Illustrated stand-in: Google favours real photos, so replace after the shoot.",
+      "tags": [
+        "gbp"
+      ],
+      "download": "assets/bazaar-kit/gbp-tile-01-butter-chicken.png"
+    },
+    {
+      "id": "bz-gbp-tile-02-tandoori-chicken",
+      "title": "GBP photo tile · Tandoori Chicken",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bazaar-kit/gbp-tile-02-tandoori-chicken.png",
+      "thumb": "assets/bazaar-kit/gbp-tile-02-tandoori-chicken-thumb.jpg",
+      "w": 1600,
+      "h": 1600,
+      "caption": "Same tile system per menu favourite: dish centred for any crop, name on a District street sign (stand-in until real photos exist).",
+      "tags": [
+        "gbp"
+      ],
+      "download": "assets/bazaar-kit/gbp-tile-02-tandoori-chicken.png"
+    },
+    {
+      "id": "bz-grid-preview-phone",
+      "title": "Feed grid · 12 posts in a phone",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bazaar-kit/grid-preview-phone.png",
+      "thumb": "assets/bazaar-kit/grid-preview-phone-thumb.jpg",
+      "w": 1200,
+      "h": 2560,
+      "caption": "The 9 posts plus 3 motion posters, cropped to the 3:4 profile grid: bright and dark tiles alternate into one colourful checkerboard.",
+      "tags": [
+        "grid"
+      ],
+      "download": "assets/bazaar-kit/grid-preview-phone.png"
+    },
+    {
+      "id": "bz-feed-rhythm-board",
+      "title": "Feed rhythm · 4-week plan",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/bazaar-kit/feed-rhythm-board.png",
+      "thumb": "assets/bazaar-kit/feed-rhythm-board-thumb.jpg",
+      "w": 1080,
+      "h": 2440,
+      "caption": "The playbook’s 30-day calendar (weeks 1–4) mapped to kit pieces: colour = format, thumbnail = ready-made asset, icon = real footage to shoot.",
+      "tags": [
+        "grid"
+      ],
+      "download": "assets/bazaar-kit/feed-rhythm-board.png"
+    }
+  ]
+}

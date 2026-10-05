@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en" data-dir="both">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Plan your table · Curry District Glow-Up</title>
+<meta name="description" content="An interactive meal planner built on Curry District's real menu: pick guests, heat and diet, get a balanced spread, share it with the group and order on Clover.">
+<meta name="theme-color" content="#120C1E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Curry District · Brand Glow-Up">
+<meta property="og:title" content="Plan your table · Curry District Glow-Up">
+<meta property="og:description" content="A playful planner that turns “what should we order?” into a balanced spread from the real menu, then hands off to Clover.">
+<meta property="og:url" content="https://curry-district-pitch.netlify.app/thali/">
+<meta property="og:image" content="https://curry-district-pitch.netlify.app/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/hub.css">
+<link rel="stylesheet" href="planner.css">
+<script>/* restore direction before first paint (no flash) */try{var d=localStorage.getItem('cd-hub-dir');if(d)document.documentElement.setAttribute('data-dir',d)}catch(e){}document.documentElement.classList.add('js')</script>
+<script src="../assets/config.js" defer></script>
+<script src="../assets/hub.js" defer></script>
+<script src="data.js" defer></script>
+<script src="planner.js" defer></script>
+</head>
+<body class="hub" data-root="../" data-area="thali">
+<div data-hub-nav></div>
+
+<!-- icon sprite (inline so it works from file://) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="pi-chili" viewBox="0 0 64 64"><g transform="translate(31 9) rotate(-14) scale(-1.25 1.25)" stroke-linecap="round" stroke-linejoin="round"><path d="M0 -1 C0 -5 2 -8 5.5 -9" fill="none" style="stroke:var(--ch-stem,#3FA34D);stroke-width:var(--ch-w,2.6)"/><path d="M-5.5 1 C-5.5 -2.5 5.5 -2.5 5.5 1 C6.5 16 4 29 -1 37 C-3 40 -5.5 42 -8 42.5 C-6 40 -4.6 37 -4.6 33 C-4.6 24 -5.5 12 -5.5 1 Z" style="fill:var(--ch-body,#D62839);stroke:var(--ch-line,#1D1147);stroke-width:var(--ch-w,2.6)"/><path d="M-6.8 2.5 C-6.8 -2.8 6.8 -2.8 6.8 2.5 C4.7 1.2 2.4 4.3 0 2.6 C-2.4 4.3 -4.7 1.2 -6.8 2.5 Z" style="fill:var(--ch-cap,#3FA34D);stroke:var(--ch-line,#1D1147);stroke-width:var(--ch-w,2.6)"/><path d="M2.6 7 C3 13 2.4 19 0.8 23" fill="none" style="stroke:var(--ch-shine,#fff);stroke-width:2;opacity:var(--ch-shine-o,1)"/></g></symbol>
+    <symbol id="pi-veg" viewBox="0 0 20 20"><rect x="1.5" y="1.5" width="17" height="17" rx="3" fill="#fff" style="stroke:var(--veg,#2E8B3E)" stroke-width="2.2"/><circle cx="10" cy="10" r="4.4" style="fill:var(--veg,#2E8B3E)"/></symbol>
+    <symbol id="pi-nonveg" viewBox="0 0 20 20"><rect x="1.5" y="1.5" width="17" height="17" rx="3" fill="#fff" style="stroke:var(--nonveg,#8A3A1E)" stroke-width="2.2"/><path d="M10 5.2 15 14.2H5Z" style="fill:var(--nonveg,#8A3A1E)"/></symbol>
+    <symbol id="pi-egg" viewBox="0 0 20 20"><rect x="1.5" y="1.5" width="17" height="17" rx="3" fill="#fff" style="stroke:var(--nonveg,#8A3A1E)" stroke-width="2.2"/><path d="M10 4.6c2.6 0 4.3 3.7 4.3 6.4 0 2.6-1.8 4.4-4.3 4.4S5.7 13.6 5.7 11c0-2.7 1.7-6.4 4.3-6.4Z" fill="#FFB000" style="stroke:var(--nonveg,#8A3A1E)" stroke-width="1.2"/></symbol>
+    <symbol id="pi-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
+    <symbol id="pi-minus" viewBox="0 0 24 24"><path d="M5 12h14" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
+    <symbol id="pi-next" viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="pi-prev" viewBox="0 0 24 24"><path d="M19 12H6M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="pi-info" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></g></symbol>
+    <symbol id="pi-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3.5h6l-1 5.5 3.5 3.5v2h-11v-2L10 9z"/><path d="M12 14.5V21"/></g></symbol>
+    <symbol id="pi-swap" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h14l-3.5-3.5"/><path d="M20 16H6l3.5 3.5"/></g></symbol>
+    <symbol id="pi-shuffle" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h3.5c4.5 0 6.5 10 11 10H21"/><path d="M18 14l3 3-3 3"/><path d="M3 17h3.5c1.6 0 2.8-1.2 3.8-2.9M13.7 9.9C14.7 8.2 15.9 7 17.5 7H21"/><path d="M18 4l3 3-3 3"/></g></symbol>
+    <symbol id="pi-chat" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1.4-4A8 8 0 1 1 8.5 19Z"/><path d="M9 10h6M9 13.5h4"/></g></symbol>
+    <symbol id="pi-bag" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 12.2a1 1 0 0 1-1 .8H7.2a1 1 0 0 1-1-.8Z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></g></symbol>
+    <symbol id="pi-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="pi-ext" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></g></symbol>
+    <symbol id="pi-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="pi-reset" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 1 0 2.6-5.9L4 8.5"/><path d="M4 3.5v5h5"/></g></symbol>
+    <symbol id="pi-flame" viewBox="0 0 40 48"><path d="M20 46C9 46 3 38.5 5 29.5 6.5 23 12 20 12.5 12.5 17 16 18.5 20.5 17.8 25 20.5 22 22 17 21 9.5 30.5 15.5 36.5 24.5 35 33.5 34 40.5 28 46 20 46Z" style="fill:var(--fl-a,#FF6A13);stroke:var(--fl-line,#1D1147)" stroke-width="2.4" stroke-linejoin="round"/><path d="M20 44c-5.5 0-8.6-3.8-7.6-8.6.8-3.6 3.6-5 4.2-9 2.5 2 3.4 4.6 3 7.4 1.6-1.5 2.7-3.8 2.4-7 5 3.4 7.6 8.2 6.4 12.4-.9 3-3.8 4.8-8.4 4.8Z" style="fill:var(--fl-b,#FFB000)"/></symbol>
+  </defs>
+</svg>
+
+<main id="main" class="main">
+
+  <!-- ═════ PAGE HEADER ═════ -->
+  <header class="page-head wrap pl-pagehead" style="--head-glow:rgba(255,176,0,.22)">
+    <a class="backlink" href="../#tour"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5 8 12l7 7"/></svg>All samples</a>
+    <p class="eyebrow">Sample 11 · Ordering idea</p>
+    <h1 class="page-title">A table that <em>plans itself</em></h1>
+    <p class="lede">A pocket meal planner built on your real menu. Guests say who’s coming, how hot and what they eat, and it lays out a balanced spread, then sends them to your own Clover ordering page.</p>
+    <div class="page-head__meta">
+      <span class="chip chip--dot" data-tone="emerald">Interactive demo</span>
+      <span class="chip" data-tone="a">A · Bazaar</span>
+      <span class="chip" data-tone="b">B · Royal</span>
+      <button type="button" class="btn btn--ghost btn--sm" data-share>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg>
+        Open on your phone</button>
+    </div>
+  </header>
+
+  <!-- ═════ THE PLANNER ═════ -->
+  <section class="section section--tight pl-section" aria-label="Interactive meal planner">
+    <div class="wrap pl-layout">
+
+      <div class="planner" id="planner" data-preview="follow" data-both="bazaar" data-theme="bazaar">
+        <script>/* match the saved A/B direction before first paint */(function(){try{var d=document.documentElement.getAttribute('data-dir');document.getElementById('planner').setAttribute('data-theme',d==='royal'?'royal':'bazaar')}catch(e){}})()</script>
+        <canvas class="pl-fx" aria-hidden="true"></canvas>
+        <span class="pl-sheen" aria-hidden="true"></span>
+
+        <header class="pl-head">
+          <div class="pl-brand">
+            <img class="pl-brand__mark pl-only-bazaar" src="img/emblem-bazaar.svg" alt="" width="34" height="40">
+            <img class="pl-brand__mark pl-only-royal" src="img/emblem-royal.svg" alt="" width="34" height="38">
+            <h2 class="pl-brand__name"><span>Plan your</span> <b>table</b></h2>
+          </div>
+          <div class="pl-theme" role="group" aria-label="App style">
+            <button type="button" data-pl-theme="bazaar" aria-pressed="true"><span class="pl-theme__dot pl-theme__dot--a" aria-hidden="true"></span><span aria-hidden="true">A</span><span class="sr-only">A · Bazaar style</span></button>
+            <button type="button" data-pl-theme="royal" aria-pressed="false"><span class="pl-theme__dot pl-theme__dot--b" aria-hidden="true"></span><span aria-hidden="true">B</span><span class="sr-only">B · Royal style</span></button>
+          </div>
+        </header>
+
+        <p class="pl-concept"><svg aria-hidden="true"><use href="#pi-info"/></svg><span data-config-text-pl="conceptLabel">Concept demo — dishes shown from public listings; availability and spice levels to be confirmed by the kitchen</span></p>
+
+        <ol class="pl-steps" aria-label="Planner steps">
+          <li><button type="button" data-go="1" aria-current="step"><span class="pl-steps__n" aria-hidden="true">1</span><span class="pl-steps__l">Guests</span><span class="sr-only"> (step 1 of 4)</span></button></li>
+          <li><button type="button" data-go="2"><span class="pl-steps__n" aria-hidden="true">2</span><span class="pl-steps__l">Fire</span><span class="sr-only"> (step 2 of 4)</span></button></li>
+          <li><button type="button" data-go="3"><span class="pl-steps__n" aria-hidden="true">3</span><span class="pl-steps__l">Diet</span><span class="sr-only"> (step 3 of 4)</span></button></li>
+          <li><button type="button" data-go="4"><span class="pl-steps__n" aria-hidden="true">4</span><span class="pl-steps__l">Table</span><span class="sr-only"> (step 4 of 4)</span></button></li>
+        </ol>
+
+        <div class="pl-stage" id="pl-stage">
+
+          <!-- STEP 1 -->
+          <section class="pl-step is-active" data-step="1" aria-labelledby="pl-t1">
+            <p class="pl-kicker">Step 1 of 4</p>
+            <h3 class="pl-title" id="pl-t1" tabindex="-1">Who’s at the <em>table?</em></h3>
+            <p class="pl-sub" data-voice="s1">Count everyone. Yes, the cousin who “isn’t hungry”.</p>
+            <div class="pl-guests">
+              <button type="button" class="pl-round" data-guests="-1" aria-label="One fewer person" aria-controls="pl-count"><svg aria-hidden="true"><use href="#pi-minus"/></svg></button>
+              <div class="pl-mt">
+                <div class="pl-mt__seats" aria-hidden="true"></div>
+                <div class="pl-mt__table" aria-hidden="true"></div>
+                <div class="pl-count" id="pl-count" role="spinbutton" tabindex="0" aria-label="People at the table" aria-valuemin="1" aria-valuemax="12" aria-valuenow="4" aria-valuetext="4 people">
+                  <span class="pl-count__n">4</span><span class="pl-count__l">people</span>
+                </div>
+                <span class="pl-mt__kids" aria-hidden="true">+ little ones</span>
+              </div>
+              <button type="button" class="pl-round" data-guests="1" aria-label="One more person" aria-controls="pl-count"><svg aria-hidden="true"><use href="#pi-plus"/></svg></button>
+            </div>
+            <p class="pl-hint" aria-hidden="true">1 to 12 · arrow keys work too</p>
+            <button type="button" class="pl-switch" role="switch" aria-checked="false" id="pl-kids">
+              <span class="pl-switch__track" aria-hidden="true"><span class="pl-switch__knob"></span></span>
+              <span class="pl-switch__txt"><b>Kids at the table</b><small data-voice="kids">We’ll add a gentle starter and a mild curry, plus a mango-drink nudge.</small></span>
+            </button>
+            <div class="pl-nav">
+              <button type="button" class="pl-btn pl-btn--primary pl-btn--grow" data-go="2">Next: how much fire?<svg aria-hidden="true"><use href="#pi-next"/></svg></button>
+            </div>
+          </section>
+
+          <!-- STEP 2 -->
+          <section class="pl-step" data-step="2" aria-labelledby="pl-t2">
+            <p class="pl-kicker">Step 2 of 4</p>
+            <h3 class="pl-title" id="pl-t2" tabindex="-1">How much <em>fire?</em></h3>
+            <p class="pl-sub" data-voice="s2">Slide it. Every dish we pick stays at or below your line.</p>
+            <div class="pl-fire" aria-hidden="true">
+              <div class="pl-chilis">
+                <span class="pl-chili" data-n="1"><svg><use href="#pi-chili"/></svg></span>
+                <span class="pl-chili" data-n="2"><svg><use href="#pi-chili"/></svg></span>
+                <span class="pl-chili" data-n="3"><svg><use href="#pi-chili"/></svg></span>
+                <span class="pl-chili" data-n="4"><svg><use href="#pi-chili"/></svg></span>
+              </div>
+              <span class="pl-flame"><svg><use href="#pi-flame"/></svg></span>
+            </div>
+            <p class="pl-level"><span class="pl-level__name" id="pl-level-name">Medium</span><span class="pl-level__line" data-voice="spice">Medium. The crowd-pleaser.</span></p>
+            <div class="pl-range">
+              <label class="sr-only" for="pl-spice">Heat ceiling for the whole table</label>
+              <input type="range" id="pl-spice" min="0" max="4" step="1" value="2" aria-valuetext="Medium, level 2 of 4">
+              <div class="pl-range__ticks" aria-hidden="true"></div>
+            </div>
+            <p class="pl-guide"><svg aria-hidden="true"><use href="#pi-info"/></svg><span><b>Spice levels are a guide.</b> <span data-meta="spiceNote">Spice levels are our estimates of each dish as usually made. Many dishes can be ordered mild, medium or spicy, so just ask.</span></span></p>
+            <div class="pl-nav">
+              <button type="button" class="pl-btn pl-btn--ghost" data-go="1"><svg aria-hidden="true"><use href="#pi-prev"/></svg>Back</button>
+              <button type="button" class="pl-btn pl-btn--primary pl-btn--grow" data-go="3">Next: what do you eat?<svg aria-hidden="true"><use href="#pi-next"/></svg></button>
+            </div>
+          </section>
+
+          <!-- STEP 3 -->
+          <section class="pl-step" data-step="3" aria-labelledby="pl-t3">
+            <p class="pl-kicker">Step 3 of 4</p>
+            <h3 class="pl-title" id="pl-t3" tabindex="-1">What do you <em>eat?</em></h3>
+            <p class="pl-sub" data-voice="s3">Pick your table’s style. We’ll do the rest.</p>
+            <div class="pl-diet" role="radiogroup" aria-labelledby="pl-t3">
+              <button type="button" role="radio" aria-checked="false" data-diet="veg" class="pl-diet__opt">
+                <span class="pl-diet__marks" aria-hidden="true"><svg><use href="#pi-veg"/></svg></span>
+                <b>Veg only</b><small>Green marks only</small><svg class="pl-diet__tick" aria-hidden="true"><use href="#pi-check"/></svg></button>
+              <button type="button" role="radio" aria-checked="false" data-diet="vegegg" class="pl-diet__opt">
+                <span class="pl-diet__marks" aria-hidden="true"><svg><use href="#pi-veg"/></svg><svg><use href="#pi-egg"/></svg></span>
+                <b>Veg + eggs</b><small>Eggs are OK</small><svg class="pl-diet__tick" aria-hidden="true"><use href="#pi-check"/></svg></button>
+              <button type="button" role="radio" aria-checked="true" data-diet="mixed" class="pl-diet__opt">
+                <span class="pl-diet__marks" aria-hidden="true"><svg><use href="#pi-veg"/></svg><svg><use href="#pi-nonveg"/></svg></span>
+                <b>Mixed table</b><small>Both, balanced</small><svg class="pl-diet__tick" aria-hidden="true"><use href="#pi-check"/></svg></button>
+              <button type="button" role="radio" aria-checked="false" data-diet="nonveg" class="pl-diet__opt">
+                <span class="pl-diet__marks" aria-hidden="true"><svg><use href="#pi-nonveg"/></svg></span>
+                <b>Meat lovers</b><small>Mains lean non-veg</small><svg class="pl-diet__tick" aria-hidden="true"><use href="#pi-check"/></svg></button>
+            </div>
+            <div class="pl-note">
+              <p><b>We sort by the menu’s veg / non-veg / egg marks only</b>, not by ingredients. <span data-meta="dietNote">Diet marks reflect how each dish is usually made and are pending kitchen confirmation.</span></p>
+              <p><b>Allergies?</b> <span data-meta="allergenNote">Tell us about any allergies when you order — our kitchen handles nuts, dairy, gluten, shellfish and eggs, so we can't promise an allergen-free dish.</span></p>
+            </div>
+            <div class="pl-nav">
+              <button type="button" class="pl-btn pl-btn--ghost" data-go="2"><svg aria-hidden="true"><use href="#pi-prev"/></svg>Back</button>
+              <button type="button" class="pl-btn pl-btn--primary pl-btn--grow pl-btn--big" data-go="4" data-plan>Plan my table<svg aria-hidden="true"><use href="#pi-next"/></svg></button>
+            </div>
+          </section>
+
+          <!-- STEP 4 -->
+          <section class="pl-step pl-result" data-step="4" aria-labelledby="pl-t4">
+            <p class="pl-kicker">Step 4 of 4</p>
+            <h3 class="pl-title" id="pl-t4" tabindex="-1">Your <em>table</em></h3>
+            <p class="pl-sub" data-voice="s4">Order big, pass plates, fight over the last samosa.</p>
+            <div class="pl-summary" aria-label="Your answers (tap to change)"></div>
+
+            <figure class="pl-board">
+              <div class="pl-table" id="pl-table" role="img" aria-label="Your table">
+                <div class="pl-cloth" aria-hidden="true"></div>
+              </div>
+              <figcaption class="pl-plaque"><span class="pl-plaque__k">Table no.</span> <b id="pl-seed">Chef’s pick</b></figcaption>
+            </figure>
+
+            <div class="pl-toolbar">
+              <p class="pl-countline" id="pl-countline" aria-live="polite"><b>0 dishes</b></p>
+              <div class="pl-toolbar__btns">
+                <button type="button" class="pl-btn pl-btn--ghost pl-btn--sm" id="pl-chef" title="Back to the chef’s pick"><svg aria-hidden="true"><use href="#pi-reset"/></svg><span>Chef’s pick</span></button>
+                <button type="button" class="pl-btn pl-btn--accent pl-btn--sm" id="pl-shuffle"><svg aria-hidden="true"><use href="#pi-shuffle"/></svg><span data-voice="shuffle">Shuffle</span></button>
+              </div>
+            </div>
+            <p class="pl-tip" data-voice="tip">Tip: pin the dishes you love, then shuffle the rest.</p>
+
+            <div class="pl-balance" aria-labelledby="pl-bal-h">
+              <div class="pl-balance__head"><h4 id="pl-bal-h">Table balance</h4><span class="pl-pill">a fun guide</span></div>
+              <div class="pl-meters" id="pl-meters"></div>
+              <p class="pl-fine">Worked out from our own spice estimates, diet marks and menu sections. Not a nutrition or heat measurement.</p>
+            </div>
+
+            <div class="pl-list" id="pl-list"></div>
+
+            <div class="pl-actions">
+              <button type="button" class="pl-btn pl-btn--accent pl-btn--block" id="pl-send"><svg aria-hidden="true"><use href="#pi-chat"/></svg>Send to my group chat</button>
+              <a class="pl-btn pl-btn--primary pl-btn--block" id="pl-order" href="https://curry-district-little-elm.cloveronline.com/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#pi-bag"/></svg>Order online<span class="pl-btn__small">on Clover</span><svg class="pl-btn__ext" aria-hidden="true"><use href="#pi-ext"/></svg><span class="sr-only"> (opens in a new tab)</span></a>
+              <a class="pl-btn pl-btn--ghost pl-btn--block" id="pl-call" href="tel:+14692005856"><svg aria-hidden="true"><use href="#pi-phone"/></svg><span>Call <span id="pl-phone">(469) 200-5856</span></span><span class="pl-flag" title="Number from public listings, likely but not yet confirmed by the owners.">likely</span></a>
+            </div>
+            <p class="pl-fine pl-fine--center">Clover opens in a new tab: add these dishes there. Prices and today’s availability live on Clover. Quantities are a starting guide.</p>
+            <p class="pl-fine pl-fine--center" data-meta="disclaimer">Menu shown is a design concept built from public listings; dishes, spice levels and prices to be synced with the live menu.</p>
+
+            <div class="pl-nav">
+              <button type="button" class="pl-btn pl-btn--ghost" data-go="3"><svg aria-hidden="true"><use href="#pi-prev"/></svg>Back</button>
+              <button type="button" class="pl-btn pl-btn--ghost pl-btn--grow" id="pl-restart"><svg aria-hidden="true"><use href="#pi-reset"/></svg>Start a new table</button>
+            </div>
+          </section>
+        </div>
+        <p class="sr-only" aria-live="polite" id="pl-live"></p>
+        <noscript><p class="pl-noscript">The planner needs JavaScript. The full menu is on <a href="https://curry-district-little-elm.cloveronline.com/">Clover</a>.</p></noscript>
+      </div>
+
+      <!-- transparent rules, live -->
+      <aside class="pl-rules" aria-labelledby="pl-rules-h">
+        <p class="eyebrow eyebrow--gold">Rule-based, not magic</p>
+        <h2 class="pl-rules__title" id="pl-rules-h">How it <em>picks</em></h2>
+        <ol class="pl-rules__list" id="pl-rules-list"></ol>
+        <p class="pl-rules__foot">Same answers + same table number = the same table, every time. Swaps reset when you change an answer; pins stay.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ═════ WHY ═════ -->
+  <section class="section" aria-labelledby="why">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="sec-head__num">02</p>
+        <h2 class="sec-head__title" id="why">Why it earns <em>its place</em></h2>
+        <p class="sec-head__desc">Built to grow the order without a hard sell: every suggestion is a dish you already make.</p>
+      </div>
+      <div class="grid grid--2 pl-why">
+        <article class="card"><span class="pl-why__n" aria-hidden="true">1</span><h3>Fills the gaps</h3><p class="soft">It proposes the starter, breads, sweet and drinks a group might not think to add, sized to the headcount.</p></article>
+        <article class="card"><span class="pl-why__n" aria-hidden="true">2</span><h3>No new system</h3><p class="soft">“Order online” opens your existing Clover page. Linking straight to each dish could come later, if Clover supports it.</p></article>
+        <article class="card"><span class="pl-why__n" aria-hidden="true">3</span><h3>Decisions, faster</h3><p class="soft">One tap sends the plan to the group chat as a plain list, so the table agrees before anyone calls.</p></article>
+        <article class="card"><span class="pl-why__n" aria-hidden="true">4</span><h3>Your rules, visible</h3><p class="soft">Diet marks, spice levels and your own collections drive every pick. Nothing is random unless you press Shuffle.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="confirm">
+    <div class="wrap wrap--narrow">
+      <div class="sec-head">
+        <p class="sec-head__num">03</p>
+        <h2 class="sec-head__title" id="confirm">Before it goes <em>live</em></h2>
+        <p class="sec-head__desc">What the kitchen would confirm so every pick is right.</p>
+      </div>
+      <div class="acc">
+        <details><summary>Spice levels for all dishes</summary><div class="acc__body"><p>Every level here is our estimate of the dish as usually made. The planner never picks above the chosen line; where a course has nothing that gentle, it picks the mildest and says “ask for it milder”.</p></div></details>
+        <details><summary>Diet marks, especially hidden egg</summary><div class="acc__body"><p>Naan dough, Indo-Chinese batters and a few desserts can contain egg. We need the kitchen’s word before the “Veg only” filter can promise egg-free.</p></div></details>
+        <details><summary>Four dishes we left out</summary><div class="acc__body"><p id="pl-hidden-list">Lamb Seekh Kabab, Lamb Chop Kabab, Bullet Naan and Paratha appear only on older or uncertain listings, so the planner never shows them.</p></div></details>
+        <details><summary>Portions and weekend-only dishes</summary><div class="acc__body"><p>Quantities use simple rules (about one bread per person, one curry per two guests). Real portion sizes would tune them. Goat Dum Biryani carries a “Weekends only” badge until confirmed.</p></div></details>
+        <details><summary>The phone number</summary><div class="acc__body"><p>(469) 200-5856 is the likely main line from public listings. It is set in one place, so it’s a one-line change once the owners confirm.</p></div></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="more">
+    <div class="wrap">
+      <div class="sec-head sec-head--split">
+        <h2 class="sec-head__title" id="more">Keep <em>exploring</em></h2>
+        <a class="sec-head__action link-arrow" href="../#tour">All samples</a>
+      </div>
+      <div data-area-tiles="kit" data-exclude="current" data-limit="4"></div>
+    </div>
+  </section>
+
+  <aside class="next-cta" aria-label="Next steps">
+    <p class="next-cta__txt" style="margin:0">Want this on your own site?<small>See where it fits in the plan</small></p>
+    <a class="btn btn--primary btn--sm" href="../ideas/#2">Next step</a>
+  </aside>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap site-foot__grid">
+    <div>
+      <p class="site-foot__brand">Curry District · Brand Glow-Up</p>
+      <p class="site-foot__disclaimer">Independent design concept prepared as a proposal — not the official Curry District website.</p>
+      <p class="site-foot__disclaimer" data-config="studio" style="margin-top:6px">Prepared by <span data-config-text="studio"></span></p>
+    </div>
+    <nav class="site-foot__links" aria-label="Footer">
+      <a href="../">Home</a><a href="../ideas/">Ideas</a><a href="../audit/">Audit</a><a href="../benchmarks/">Chains</a>
+      <a href="#" data-print>Save as PDF</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

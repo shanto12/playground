@@ -29,7 +29,7 @@
 <link rel="preload" href="fonts/hanken-grotesk.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/motion.css">
 <link rel="stylesheet" href="css/site.css">
-<script>(function(h){h.className+=' js';try{if(localStorage.getItem('cd-royal-concept-dismissed')==='1')h.className+=' concept-dismissed'}catch(e){}})(document.documentElement);</script>
+<script>(function(h){h.className+=' js m-js';try{if(localStorage.getItem('cd-royal-concept-dismissed')==='1')h.className+=' concept-dismissed'}catch(e){}setTimeout(function(){if(!window.Motion)h.classList.remove('m-js')},3000)})(document.documentElement);</script>
 </head>
 <body id="top">
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -119,9 +119,9 @@
       <div>
         <h2>Hours</h2>
         <dl class="foot-hours">
-          <dt>Mon–Thu</dt><dd>11:00 AM – 2:30 PM · 4:30 PM – 10:00 PM</dd>
-          <dt>Fri–Sat</dt><dd>11:00 AM – 3:00 PM · 4:30 PM – 10:30 PM</dd>
-          <dt>Sun</dt><dd>11:00 AM – 3:00 PM · 4:30 PM – 10:00 PM</dd>
+          <dt>Mon–Thu</dt><dd><span>11:00 AM – 2:30 PM</span> <span>4:30 PM – 10:00 PM</span></dd>
+          <dt>Fri–Sat</dt><dd><span>11:00 AM – 3:00 PM</span> <span>4:30 PM – 10:30 PM</span></dd>
+          <dt>Sun</dt><dd><span>11:00 AM – 3:00 PM</span> <span>4:30 PM – 10:00 PM</span></dd>
         </dl>
         <p class="fine" data-cd="hoursCaveat">Hours as listed publicly; please call to confirm on holidays.</p>
       </div>

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en" data-theme="royal">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Motion kit demo · Curry District Glow-Up</title>
+<script>
+/* demo + theme come from the URL (?d=steam|reveal|burst&theme=royal|bazaar) and from the parent page via postMessage */
+(function () { var q = new URLSearchParams(location.search); var t = q.get('theme'); if (t === 'bazaar' || t === 'royal') document.documentElement.setAttribute('data-theme', t); document.documentElement.setAttribute('data-demo', q.get('d') || 'steam'); })();
+</script>
+<link rel="stylesheet" href="../../assets/tokens.css">
+<link rel="stylesheet" href="../kit/motion.css">
+<style>
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:100 900;font-display:swap;src:url(../../assets/fonts/fraunces.woff2) format('woff2')}
+@font-face{font-family:'Fraunces';font-style:italic;font-weight:100 900;font-display:swap;src:url(../../assets/fonts/fraunces-italic.woff2) format('woff2')}
+@font-face{font-family:'Hanken Grotesk';font-style:normal;font-weight:100 900;font-display:swap;src:url(../../assets/fonts/hanken.woff2) format('woff2')}
+@font-face{font-family:'Bowlby One';font-style:normal;font-weight:400;font-display:swap;src:url(../../assets/fonts/bowlby.woff2) format('woff2')}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:100 1000;font-display:swap;src:url(../../assets/fonts/dmsans.woff2) format('woff2')}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{font-family:var(--font-body);color:var(--c-text-inv);overflow:hidden;-webkit-font-smoothing:antialiased}
+[data-theme=royal] body{background:radial-gradient(ellipse 90% 80% at 50% 40%,#3A1446 0%,#1E0E30 55%,#160B26 100%)}
+[data-theme=bazaar] body{background:radial-gradient(ellipse 90% 80% at 50% 40%,#3A1B7A 0%,#26145A 55%,#1D1147 100%)}
+.demo{display:none;position:absolute;inset:0;align-items:center;justify-content:center;flex-direction:column;padding:16px}
+[data-demo=steam] #steam,[data-demo=reveal] #reveal,[data-demo=burst] #burst{display:flex}
+/* steam */
+.dish{position:relative;width:min(78%,260px);aspect-ratio:1;--m-steam-y:62%}
+.dish img{position:relative;z-index:0;display:block;width:100%;height:100%}
+.dish .bz,[data-theme=bazaar] .dish .ry{display:none}
+[data-theme=bazaar] .dish .bz{display:block}
+.toggle{margin-top:6px;min-height:44px;padding:0 18px;border-radius:999px;border:1px solid rgba(247,217,138,.5);background:transparent;color:inherit;font:600 14px/1 var(--font-body);cursor:pointer}
+[data-theme=bazaar] .toggle{border:2px solid var(--bz-marigold)}
+.toggle:focus-visible,.cta:focus-visible{outline:2px solid #F7D98A;outline-offset:3px}
+/* reveal */
+#reveal{justify-content:flex-start;padding-top:20px}
+.zones{list-style:none;margin:0;padding:0;width:min(100%,320px);display:grid;gap:8px}
+.zones li{display:flex;align-items:center;gap:12px;padding:10px 14px;border-radius:14px;background:rgba(255,244,220,.06);border:1px solid rgba(247,217,138,.28)}
+[data-theme=bazaar] .zones li{border:2px solid var(--bz-marigold);border-radius:12px;background:rgba(255,176,0,.08)}
+.zones b{font-family:var(--font-display);font-weight:600;font-size:17px;line-height:1.1;text-transform:var(--display-case);letter-spacing:var(--display-tracking)}
+[data-theme=royal] .zones b{font-style:italic}
+[data-theme=bazaar] .zones b{font-weight:400;font-size:14px}
+.zones i{flex:none;width:10px;height:10px;transform:rotate(45deg);background:var(--c-primary)}
+.replay{position:absolute;right:12px;bottom:12px}
+/* burst */
+.cta{min-height:56px;padding:0 30px;border-radius:999px;border:0;font:700 18px/1 var(--font-body);cursor:pointer;color:#160B26;background:linear-gradient(135deg,#B7791F 0%,#F7D98A 38%,#E9A63A 58%,#B7791F 100%)}
+[data-theme=bazaar] .cta{color:var(--bz-ink);background:var(--bz-marigold);border:3px solid var(--bz-ink);box-shadow:5px 5px 0 var(--bz-ink);font-family:var(--font-display);font-weight:400;text-transform:uppercase;letter-spacing:.02em}
+.hint{margin:14px 0 0;font-size:13px;opacity:.75;text-align:center}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+</style>
+<script src="../kit/motion.min.js" defer></script>
+</head>
+<body>
+<section class="demo" id="steam" aria-label="Steam wisps demo">
+  <div class="dish" data-steam="5">
+    <img class="ry" src="img/royal-butter-chicken.svg" alt="Butter chicken in a brass karahi, steam rising">
+    <img class="bz" src="img/bazaar-butter-chicken.svg" alt="Butter chicken in a terracotta bowl, steam rising">
+  </div>
+  <button type="button" class="toggle" id="steamBtn" aria-pressed="true">Steam on</button>
+</section>
+<section class="demo" id="reveal" aria-label="Scroll reveal stagger demo">
+  <ul class="zones" data-stagger="up 110">
+    <li><i aria-hidden="true"></i><b>Starters Square</b></li>
+    <li><i aria-hidden="true"></i><b>Tandoor Quarter</b></li>
+    <li><i aria-hidden="true"></i><b>Curry Quarter</b></li>
+    <li><i aria-hidden="true"></i><b>Biryani Boulevard</b></li>
+    <li><i aria-hidden="true"></i><b>Bread Bazaar</b></li>
+    <li><i aria-hidden="true"></i><b>Sweet Street</b></li>
+  </ul>
+  <button type="button" class="toggle replay" id="replay">Replay</button>
+</section>
+<section class="demo" id="burst" aria-label="Tap burst demo">
+  <button type="button" class="cta" data-burst="26">Order up</button>
+  <p class="hint">Tap the button (or anywhere) for a petal burst</p>
+</section>
+<script>
+(function () {
+  var de = document.documentElement;
+  window.addEventListener('message', function (e) {
+    var m = e.data || {};
+    if (m.type === 'cd-theme' && (m.theme === 'royal' || m.theme === 'bazaar')) de.setAttribute('data-theme', m.theme);
+    if (m.type === 'cd-replay') replay();
+  });
+  function replay() { if (window.Motion) { Motion.destroy(); Motion.init(); } }
+  document.addEventListener('DOMContentLoaded', function () {
+    var b = document.getElementById('steamBtn'), dish = document.querySelector('.dish');
+    b.addEventListener('click', function () {
+      var on = b.getAttribute('aria-pressed') !== 'true';
+      b.setAttribute('aria-pressed', String(on)); b.textContent = on ? 'Steam on' : 'Steam off';
+      var s = dish.querySelector('.m-steam'); if (s) s.style.display = on ? '' : 'none';
+    });
+    document.getElementById('replay').addEventListener('click', replay);
+    // tap anywhere in the burst demo → burst at the pointer
+    document.getElementById('burst').addEventListener('click', function (e) {
+      if (e.target.closest('[data-burst]') || !window.Motion) return;
+      Motion.burst(e.clientX, e.clientY, document.querySelector('[data-burst]'));
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -35,11 +35,11 @@ export function lassiBand(dir) {
     b += stickerText(mid + 9, H / 2 + 9, 'LASSI', { size: 12.5, fill: c.cream, shadow: c.rani, stroke: c.ink, sw: 1.3, dx: .9, dy: 1 });
     b += T(mid, H - 9.2, 'Your chilli-fire extinguisher.', { font: FONT.caveat(700), size: 6.2, fill: c.cream });
     // RIGHT: tick-a-flavour ticket
-    const rx = mid + W / 3, tw = 50, th = 34;
+    const rx = mid + W / 3, tw = 50, th = 40;
     b += `<rect x="${f(rx - tw / 2 + 1.3)}" y="${f(H / 2 - th / 2 + 1.3)}" width="${tw}" height="${th}" rx="4" fill="${c.ink}"/><rect x="${f(rx - tw / 2)}" y="${f(H / 2 - th / 2)}" width="${tw}" height="${th}" rx="4" fill="${c.cream}" stroke="${c.ink}" stroke-width=".8"/>`;
-    b += T(rx, H / 2 - th / 2 + 7.6, 'TICK ONE', { font: FONT.bowlby, size: 4.4, fill: c.rani, ls: .4 });
-    [['MANGO', -7], ['SWEET', 3.4]].forEach(([w, dy], i) => { b += tick(rx - 17, H / 2 + dy - 3.6, 4.6, c.ink, .7) + T(rx - 10, H / 2 + dy + .2, w, { font: FONT.dm(700), size: 4.4, fill: c.ink, anchor: 'start', ls: .3 }); });
-    b += T(rx, H / 2 + th / 2 - 4.4, 'Thandi. Creamy. Yours.', { font: FONT.caveat(700), size: 4.6, fill: c.muted });
+    b += T(rx, H / 2 - th / 2 + 8, 'TICK ONE', { font: FONT.bowlby, size: 4.6, fill: c.rani, ls: .4 });
+    [['MANGO', -3.2], ['SWEET', 5.6]].forEach(([w, dy], i) => { b += tick(rx - 16, H / 2 + dy - 3.6, 4.6, c.ink, .7) + T(rx - 9, H / 2 + dy + .2, w, { font: FONT.dm(700), size: 4.4, fill: c.ink, anchor: 'start', ls: .3 }); });
+    b += T(rx, H / 2 + th / 2 - 4.2, 'Thandi. Creamy. Yours.', { font: FONT.caveat(700), size: 4.8, fill: c.muted });
     // LEFT: stacked wordmark
     const lx = mid - W / 3;
     b += `<rect x="${f(lx - 26 + 1.3)}" y="${f(H / 2 - 20 + 1.3)}" width="52" height="40" rx="9" fill="${c.ink}"/><rect x="${f(lx - 26)}" y="${f(H / 2 - 20)}" width="52" height="40" rx="9" fill="${c.cream}" stroke="${c.ink}" stroke-width=".8"/>`;
@@ -54,18 +54,18 @@ export function lassiBand(dir) {
   b += `<rect y="9" width="${f(W)}" height=".7" fill="url(#foilL)"/><rect y="${f(H - 9.7)}" width="${f(W)}" height=".7" fill="url(#foilL)"/>`;
   b += `<rect y="10.6" width="${f(W)}" height=".25" fill="${c.goldDk}"/><rect y="${f(H - 10.85)}" width="${f(W)}" height=".25" fill="${c.goldDk}"/>`;
   // FRONT
-  b += `<path d="${archPath(mid, H - 13.5, 18, 22)}" fill="none" stroke="url(#foilL2)" stroke-width=".55" transform="translate(-40 0)"/>`;
+  b += `<circle cx="${f(mid - 40)}" cy="${f(H / 2 + .5)}" r="11.5" fill="none" stroke="url(#foilL2)" stroke-width=".55"/>`;
   b += mango(mid - 40, H / 2 + 1.5, 13, { stroke: c.goldDk, sw: .45, body: c.gold, blush: c.ruby, leafC: c.emerald });
   b += T(mid + 8, H / 2 + 1.5, 'Mango Lassi', { font: FONT.fr(600, true), size: 10.5, fill: c.ruby });
   b += T(mid + 8, H / 2 + 9.5, 'GOLDEN · COOL · UNHURRIED', { font: FONT.hk(600), size: 2.9, fill: c.emerald, ls: .9 });
   b += `<rect x="${f(mid - 6)}" y="${f(H / 2 - 9.5)}" width="28" height=".3" fill="${c.goldDk}"/>` + diamond(mid + 8, H / 2 - 9.35, .9, c.gold);
   // RIGHT: tick a flavour
   const rx = mid + W / 3;
-  b += T(rx, H / 2 - 6, 'Your lassi', { font: FONT.fr(500, true), size: 5.4, fill: c.ink });
-  [['Mango', -4], ['Sweet', 8]].forEach(([w, dx]) => { b += tick(rx - 15 + dx * 1.6 + (dx < 0 ? 0 : 6), H / 2 - .5, 4, c.goldDk, .45) + T(rx - 9.8 + dx * 1.6 + (dx < 0 ? 0 : 6), H / 2 + 2.8, w, { font: FONT.hk(600), size: 3.4, fill: c.ink, anchor: 'start' }); });
-  b += `<rect x="${f(rx - 16)}" y="${f(H / 2 + 7.6)}" width="32" height=".25" fill="${c.goldDk}"/>`;
+  b += T(rx, H / 2 - 8, 'Your lassi', { font: FONT.fr(500, true), size: 5.6, fill: c.ink });
+  b += `<rect x="${f(rx - 14)}" y="${f(H / 2 - 5)}" width="28" height=".25" fill="${c.goldDk}"/>` + diamond(rx, H / 2 - 4.9, .8, c.gold);
+  [['Mango', 1.6], ['Sweet', 9.4]].forEach(([w, dy]) => { b += tick(rx - 11, H / 2 + dy - 3.3, 4, c.goldDk, .45) + T(rx - 5, H / 2 + dy, w, { font: FONT.hk(600), size: 3.6, fill: c.ink, anchor: 'start' }); });
   // LEFT: emerald wordmark
-  b += placeC('logo/royal/colourways/wordmark-stacked--emerald.svg', mid - W / 3, H / 2, { h: 30 });
+  b += placeC('logo/royal/colourways/wordmark-stacked--ivory.svg', mid - W / 3, H / 2, { h: 30 });
   return { W, H, defs, body: b };
 }
 

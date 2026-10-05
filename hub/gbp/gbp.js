@@ -399,8 +399,9 @@
   }
   function palVars(s) {
     var a = s.A, b = s.B;
-    return '--a-bg:' + a.bg + ';--a-c1:' + a.c1 + ';--a-c2:' + a.c2 + ';--a-c3:' + a.c3 + ';--a-ink:' + inkFor(a.bg, 'bazaar') + ';' +
-      '--b-bg:' + b.bg + ';--b-c1:' + b.c1 + ';--b-c2:' + b.c2 + ';--b-c3:' + b.c3 + ';--b-ink:' + inkFor(b.bg, 'royal');
+    var ai = inkFor(a.bg, 'bazaar'), bi = inkFor(b.bg, 'royal');
+    return '--a-bg:' + a.bg + ';--a-c1:' + a.c1 + ';--a-c2:' + a.c2 + ';--a-c3:' + a.c3 + ';--a-ink:' + ai + ';--a-anti:' + (lum(ai) > .5 ? '#1D1147' : '#FFF4DC') + ';' +
+      '--b-bg:' + b.bg + ';--b-c1:' + b.c1 + ';--b-c2:' + b.c2 + ';--b-c3:' + b.c3 + ';--b-ink:' + bi + ';--b-anti:' + (lum(bi) > .5 ? '#160B26' : '#FBF3E4');
   }
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
   function pad(n) { return (n < 10 ? '0' : '') + n; }
@@ -445,7 +446,7 @@
     var parts = [];
     if (sel === '@utm') parts = [d.getElementById('utmOut').getAttribute('data-url') || ''];
     else (sel.charAt(0) === '#' ? [d.querySelector(sel)] : Array.prototype.slice.call(scope.querySelectorAll(sel))).forEach(function (el) {
-      if (!el || el.offsetParent === null && !el.closest('[data-voice-current]')) return;
+      if (!el) return;
       var vroot = el.closest('[data-voice]'); if (vroot && vroot.getAttribute('data-voice') !== currentVoice()) return;
       parts.push(cleanText(el));
     });
@@ -465,9 +466,9 @@
     };
     return '<article class="shot pal" data-cat="' + s.cat + '" id="shot-' + s.n + '" style="' + palVars(s) + '" aria-labelledby="shot-t-' + s.n + '">' +
       '<div class="shot__frame">' + sketchSVG(s, true, 'Sketch: ' + s.t + ', ' + s.angle + ', ' + s.light) +
-      '<span class="shot__vf" aria-hidden="true"></span><span class="shot__num">' + pad(s.n) + '<small>/25</small></span><span class="shot__gbp">' + esc(s.gbp) + '</span></div>' +
-      '<div class="shot__body"><h3 class="shot__title" id="shot-t-' + s.n + '">' + esc(s.t) + '<small>' + esc(s.sub) + '</small></h3>' +
-      '<dl class="shot__spec"><div><dt>Angle</dt><dd>' + esc(s.angle) + '</dd></div><div><dt>Light</dt><dd>' + esc(s.light) + '</dd></div><div><dt>Brief</dt><dd>' + esc(s.play) + '</dd></div></dl>' +
+      '</div>' +
+      '<div class="shot__body"><div class="shot__head"><span class="shot__num" aria-hidden="true">' + pad(s.n) + '<small>/25</small></span><h3 class="shot__title" id="shot-t-' + s.n + '"><span class="sr-only">Shot ' + s.n + ': </span>' + esc(s.t) + '<small>' + esc(s.sub) + '</small></h3></div>' +
+      '<dl class="shot__spec"><div><dt>Angle</dt><dd>' + esc(s.angle) + '</dd></div><div><dt>Light</dt><dd>' + esc(s.light) + '</dd></div><div><dt>Brief</dt><dd>' + esc(s.play) + '</dd></div><div><dt>Google</dt><dd>Tag as “' + esc(s.gbp) + '”</dd></div></dl>' +
       sw(s.A, 'bazaar') + sw(s.B, 'royal') + (flags ? '<div class="shot__flags">' + flags + '</div>' : '') + '</div></article>';
   }
   function initShots() {

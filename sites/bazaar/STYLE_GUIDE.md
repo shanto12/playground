@@ -36,10 +36,14 @@ _qa/                QA screenshots (stripped before deploy)
 
 1. `<head>`: title / description from `data/copy.json → bazaar.seo`, **`<meta name="robots" content="noindex,nofollow">`**,
    canonical + OG/Twitter (absolute `https://curry-district-bazaar.netlify.app/og-image.png`), icons, manifest,
-   2 font preloads, `vendor/motion.css`, `css/site.css`, the one-line banner script, then deferred
+   2 font preloads, `vendor/motion.css`, `css/site.css`, the one-line **pre-paint script** (banner flag + motion-kit
+   `m-js`/`m-arrive` flags with a 3 s failsafe — copy it verbatim from a stub), then deferred
    `js/config.js` → `vendor/motion.min.js` (`data-manual`) → `js/site.js`. Add page CSS/JS after these.
 2. `.skip-link` → `.concept-banner` → `header.site-header` → `#nav-drawer` → `<main id="main">` → `footer.site-footer` → `nav.bottom-bar`.
 3. Set `aria-current="page"` on your page's links in **both** `.nav` and `.nav-drawer` (stubs already do).
+   Both navs carry `data-transition`, so internal page changes get the Bazaar curtain wipe (rani + ink). It only
+   works if the destination page has the same head (pre-paint script + motion kit), so keep the head identical.
+   **Updated 00:50 UTC:** if you copied a stub before then, re-copy the `<head>` script line and the two `<nav … data-transition>` attributes.
 4. Footer disclaimer must stay verbatim: *Independent design concept prepared as a proposal — not the official Curry District website.*
 
 ## 3. Tokens (css/site.css `:root`)
@@ -143,11 +147,18 @@ CTA wording: `data/copy.json → bazaar.ctas`. Every Order CTA → Clover (`data
 </article>
 ```
 `card--tilt-l|r`, `card--cream`, `a.card` / `.card--lift` (hover lift). Art frames are 4:3 by default, so a real photo can drop in later.
-**Dishes with `art: null` get a typographic tile, never another dish's picture:**
+**Dishes with `art: null` get a typographic or icon tile, never another dish's picture:**
 ```html
-<div class="card__art"><div class="art-tile" style="--art-bg: var(--bz-chili)"><span class="art-tile__word">Kodi Vepudu</span></div></div>
+<!-- big frames: the dish word as sticker letters -->
+<div class="card__art"><div class="art-tile" style="--art-bg: var(--bz-chili)"><span class="art-tile__word">Vindaloo</span></div></div>
+<!-- small frames: a zone icon on a light tint (starters spoon-fork · tandoor tandoor-oven · curry curry-bowl ·
+     biryani biryani-pot-handi · indochinese rice-bowl · bread naan · sweets spoon-fork · chai lassi-glass) -->
+<div class="card__art"><div class="art-tile art-tile--icon" style="--art-bg: var(--bz-teal-lt)">
+  <svg class="art-tile__icon" aria-hidden="true"><use href="assets/icons/sprite.svg#icon-curry-bowl"></use></svg></div></div>
 ```
-Diet marks always carry text: `.diet--veg` "Veg" · `.diet--nonveg` "Non-veg" · `.diet--egg` "Egg". Spice: 0 Not spicy · 1 Mild · 2 Medium · 3 Hot · 4 District Hot (pips + word).
+Diet marks always carry text: `.diet--veg` "Veg" · `.diet--nonveg` "Non-veg" · `.diet--egg` "Egg" (add `.diet--on-dark`
+when the mark sits directly on ink — never inside a white card). Spice: 0 Not spicy · 1 Mild · 2 Medium · 3 Hot ·
+4 District Hot — render `level` chilli pips (none for 0) followed by the word, e.g. home's crowd-pleaser cards.
 
 ### Marquee ticker (pause button required — WCAG 2.2.2)
 ```html

@@ -31,7 +31,7 @@
 <link rel="stylesheet" href="vendor/motion.css">
 <link rel="stylesheet" href="css/site.css">
 
-<script>try{if(localStorage.getItem('cd-bz-banner-off')==='1')document.documentElement.classList.add('banner-off')}catch(e){}</script>
+<script>(function(h){try{if(localStorage.getItem('cd-bz-banner-off')==='1')h.classList.add('banner-off')}catch(e){}try{if(sessionStorage.getItem('m-curtain'))h.classList.add('m-arrive')}catch(e){}h.classList.add('m-js');setTimeout(function(){if(!window.Motion)h.classList.remove('m-js','m-arrive')},3000)})(document.documentElement);</script>
 <script src="js/config.js" defer></script>
 <script src="vendor/motion.min.js" defer data-manual></script>
 <script src="js/site.js" defer></script>
@@ -48,13 +48,13 @@
 <header class="site-header" data-header="8">
   <div class="wrap site-header__in">
     <a class="brand" href="index.html"><img src="assets/logo/wordmark-horizontal.svg" width="160" height="52" alt="Curry District home"></a>
-    <nav class="nav" aria-label="Main"><a href="menu.html" aria-current="page">Menu</a><a href="catering.html">Catering</a><a href="story.html">Our story</a><a href="visit.html">Visit</a></nav>
+    <nav class="nav" aria-label="Main" data-transition><a href="menu.html" aria-current="page">Menu</a><a href="catering.html">Catering</a><a href="story.html">Our story</a><a href="visit.html">Visit</a></nav>
     <a class="btn order-pill" href="https://curry-district-little-elm.cloveronline.com/" data-cfg-href="order" target="_blank" rel="noopener" data-press><svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-shopping-bag-mono"></use></svg>Order<span class="visually-hidden"> pickup online (opens Clover in a new tab)</span></a>
     <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="nav-drawer" aria-label="Open menu"><span class="nav-toggle__bars"></span></button>
   </div>
 </header>
 <div class="nav-drawer" id="nav-drawer" data-nav-drawer>
-  <nav aria-label="Mobile">
+  <nav aria-label="Mobile" data-transition>
     <ul><li><a class="nav-drawer__link" href="index.html">Home <svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-arrow-right-mono"></use></svg></a></li><li><a class="nav-drawer__link" href="menu.html" aria-current="page">Menu <svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-arrow-right-mono"></use></svg></a></li><li><a class="nav-drawer__link" href="catering.html">Catering <svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-arrow-right-mono"></use></svg></a></li><li><a class="nav-drawer__link" href="story.html">Our story <svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-arrow-right-mono"></use></svg></a></li><li><a class="nav-drawer__link" href="visit.html">Visit <svg class="ico" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-arrow-right-mono"></use></svg></a></li></ul>
   </nav>
   <div class="nav-drawer__meta stack">

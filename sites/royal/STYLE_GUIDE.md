@@ -45,7 +45,7 @@ Everything lives in `sites/royal/` and must stay self-contained (no paths outsid
 <link rel="preload" href="fonts/hanken-grotesk.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/motion.css">
 <link rel="stylesheet" href="css/site.css">
-<script>(function(h){h.className+=' js';try{if(localStorage.getItem('cd-royal-concept-dismissed')==='1')h.className+=' concept-dismissed'}catch(e){}})(document.documentElement);</script>
+<script>(function(h){h.className+=' js m-js';try{if(localStorage.getItem('cd-royal-concept-dismissed')==='1')h.className+=' concept-dismissed'}catch(e){}setTimeout(function(){if(!window.Motion)h.classList.remove('m-js')},3000)})(document.documentElement);</script>
 </head>
 <body id="top">
   <!-- skip link · concept banner · header · mobile nav  (copy verbatim; set aria-current="page" on your nav links) -->
@@ -75,6 +75,7 @@ The header overlays the first section (it is `position: sticky` with a negative 
   <div class="wrap"> … </div>
 </section>
 ```
+Add `room--valance` to give a room a carved top edge (a row of small gold-rimmed arches rising into the room above; the room overlaps the previous one by 13px). Use it on jewel rooms that follow another room.
 Modifiers: `room--ivory` (jali wash), `room--blush` (brass dots), `room--paper` (plain), `room--midnight`, `room--plum`, `room--emerald`, `room--ruby`, `room--peacock`.
 Each sets `--room-ink`, `--room-muted`, `--room-accent` (eyebrows, links), `--room-foil`, plus `--pattern`/`--pattern-o`. `room--inlay` adds the gold double hairline at the top edge, and `room--fade` fades the pattern in and out. For a **parallax jali** add `room--has-layer` and `<div class="room__pattern" data-parallax=".16" aria-hidden="true"></div>` as the first child.
 Containers: `.wrap` (1180px), `.wrap--narrow` (760px), `.wrap--wide` (1360px).

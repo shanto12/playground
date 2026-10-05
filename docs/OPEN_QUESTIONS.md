@@ -2,3 +2,4 @@
 - [research/presence_audit] PHONE: use (469) 200-5856 (likely primary); (469) 200-5944 secondary; (972) 787-1320 is a stale/Grubhub-listing number (Allmenus only). Owner to confirm before any print use.
 - [research/presence_audit] UNVERIFIED, so do not state on any page: happy hour, halal status, buffet, seating capacity, opening date, owner/chef story, any prices.
 - [research/presence_audit] Instagram @currydistrictfrisco is unconfirmed (inferred from the Facebook vanity URL). "Frisco" in handles vs Little Elm in the address needs owner clarification.
+- [sites/bazaar] Concept site uses phone (469) 200-5856 and the publicly listed (likely) hours from js/config.js; Google rating badge links to a Maps search (no confirmed listing URL); Instagram @currydistrictfrisco unverified; spice slider uses estimated spice levels (flagged on page). Owner to confirm all before any real launch.

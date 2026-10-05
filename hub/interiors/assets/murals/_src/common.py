@@ -57,6 +57,8 @@ def wrap(text, key, size, maxw, wght=None, tracking=0):
     return lines
 
 def doc(w, h, body, defs='', title='', desc='', px_w=None, px_h=None):
+    from xml.sax.saxutils import escape
+    title = escape(title); desc = escape(desc)
     pw = px_w or w; ph = px_h or h
     return (f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" '
             f'viewBox="0 0 {f(w)} {f(h)}" width="{f(pw)}" height="{f(ph)}" role="img" aria-labelledby="t">'

@@ -245,8 +245,8 @@ a.chip:hover { background: var(--bz-marigold); }
 .sec--marigold { --sec-bg: var(--bz-marigold); --sec-fg: var(--bz-ink); --sec-accent: var(--bz-ink); --sec-soft: #2E2160; --focus: var(--bz-ink); }
 .sec--saffron { --sec-bg: var(--bz-saffron); --sec-fg: var(--bz-ink); --sec-accent: var(--bz-ink); --sec-soft: #2A1550; --focus: var(--bz-ink); }
 .sec--peacock { --sec-bg: var(--bz-peacock); --sec-fg: var(--bz-ink); --sec-accent: var(--bz-ink); --sec-soft: #14093A; --focus: var(--bz-ink); }
-.sec--rani { --sec-bg: var(--bz-rani-text); --sec-fg: var(--bz-cream); --sec-accent: var(--bz-marigold); --sec-soft: #FFE9F2; --focus: var(--bz-marigold); }
-.sec--chili { --sec-bg: var(--bz-chili); --sec-fg: var(--bz-cream); --sec-accent: var(--bz-marigold); --sec-soft: #FFF0E6; --focus: var(--bz-marigold); }
+.sec--rani { --sec-bg: var(--bz-rani-text); --sec-fg: var(--bz-cream); --sec-accent: #FFE08A; --sec-soft: #FFE9F2; --focus: var(--bz-marigold); }
+.sec--chili { --sec-bg: var(--bz-chili); --sec-fg: var(--bz-cream); --sec-accent: #FFE7A6; --sec-soft: #FFF0E6; --focus: var(--bz-marigold); }
 .sec--ink { --sec-bg: var(--bz-ink); --sec-fg: var(--bz-cream); --sec-accent: var(--bz-marigold); --sec-soft: #C9C0E6; --focus: var(--bz-marigold); }
 .sec--night { --sec-bg: var(--bz-ink); --sec-fg: var(--bz-cream); --sec-accent: var(--bz-marigold); --sec-soft: #C9C0E6; --focus: var(--bz-marigold);
   background: var(--grad-night); }
@@ -316,6 +316,9 @@ a.card:hover, .card--lift:hover { transform: translate(-3px,-3px) rotate(0deg); 
 .art-tile { position: relative; width: 100%; height: 100%; display: grid; place-items: center; padding: 18px; text-align: center;
   background: var(--art-bg, var(--bz-rani-text)); color: var(--art-fg, var(--bz-cream)); overflow: hidden; }
 .art-tile::before { content: ''; position: absolute; inset: 0; opacity: .18; background: url(../assets/patterns/03-block-print-booti-fresh.svg) 0 0 / 110px 110px; }
+.art-tile--icon { padding: 10px; }
+.art-tile--icon::before { opacity: .35; }
+.art-tile__icon { position: relative; width: min(64%, 96px); aspect-ratio: 1; height: auto; filter: drop-shadow(3px 3px 0 var(--bz-ink)); transform: rotate(-6deg); }
 .art-tile__word { position: relative; font-family: var(--font-display); text-transform: uppercase; font-size: clamp(1.6rem, 7vw, 2.4rem);
   line-height: .9; -webkit-text-stroke: 2px var(--bz-ink); paint-order: stroke fill; text-shadow: 4px 4px 0 var(--bz-ink); transform: rotate(-4deg); }
 

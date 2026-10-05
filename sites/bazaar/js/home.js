@@ -15,6 +15,7 @@
     'Andhra fire. Brave souls only.'
   ];
   var DIET = { veg: ['diet--veg', 'Veg'], nonveg: ['diet--nonveg', 'Non-veg'], egg: ['diet--egg', 'Egg'] };
+  var ZICON = { starters: 'spoon-fork', tandoor: 'tandoor-oven', curry: 'curry-bowl', biryani: 'biryani-pot-handi', indochinese: 'rice-bowl', bread: 'naan', sweets: 'spoon-fork', chai: 'lassi-glass' };
   var ZN = {}; M.meta.zones.forEach(function (z) { ZN[z.id] = z.name; });
   var ART = {}; (M.meta.artAvailable || []).forEach(function (k) { ART[k] = 1; });
   var TITLES = {
@@ -49,7 +50,8 @@
     var art = it.art && ART[it.art]
       ? '<div class="card__art art-bg-' + (n % 6 + 1) + '"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/art/static/' + it.art + '.svg">' +
         '<img src="assets/art/' + it.art + '.svg" width="800" height="800" decoding="async" alt="Illustration of ' + esc(TITLES[it.art] || it.name) + '"></picture></div>'
-      : '<div class="card__art"><div class="art-tile" style="--art-bg:' + ['var(--bz-rani-text)', 'var(--bz-chili)', 'var(--bz-violet-deep)'][n % 3] + '"><span class="art-tile__word">' + esc(it.name) + '</span></div></div>';
+      : '<div class="card__art"><div class="art-tile art-tile--icon" style="--art-bg:' + ['var(--bz-pink-lt)', 'var(--bz-teal-lt)', 'var(--bz-mari-lt)'][n % 3] + '">' +
+        '<svg class="art-tile__icon" aria-hidden="true" focusable="false"><use href="assets/icons/sprite.svg#icon-' + (ZICON[it.zone] || 'spoon-fork') + '"></use></svg></div></div>';
     var dt = DIET[it.diet] || DIET.veg;
     return '<article class="card">' + art + '<div class="card__body"><h3 class="card__title">' + esc(it.name) + '</h3>' +
       '<p class="card__text">' + esc(it.desc_bazaar) + '</p><div class="card__meta"><span class="diet ' + dt[0] + '">' + dt[1] + '</span>' +

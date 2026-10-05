@@ -36,6 +36,22 @@
       "download": "assets/storefront/elev-bazaar-dusk.svg"
     },
     {
+      "id": "night-bazaar",
+      "title": "Night street hero — A · Bazaar",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/storefront/night-bazaar.png",
+      "thumb": "assets/storefront/night-bazaar-thumb.jpg",
+      "w": 2400,
+      "h": 1500,
+      "caption": "Illustrative storefront — not your actual unit. The unit as the brightest thing on the lot: halo-lit letters, festoon bulbs and a warm window glow pulling drivers in off the parking lot.",
+      "alt": "Night scene: the A · Bazaar storefront glowing across a parking lot",
+      "tags": [
+        "storefront"
+      ],
+      "download": "assets/storefront/night-bazaar.svg"
+    },
+    {
       "id": "elev-royal-day",
       "title": "Storefront by day — B · Royal",
       "direction": "royal",
@@ -68,6 +84,22 @@
         "pair:elev-royal"
       ],
       "download": "assets/storefront/elev-royal-dusk.svg"
+    },
+    {
+      "id": "night-royal",
+      "title": "Night street hero — B · Royal",
+      "direction": "royal",
+      "type": "image",
+      "src": "assets/storefront/night-royal.png",
+      "thumb": "assets/storefront/night-royal-thumb.jpg",
+      "w": 2400,
+      "h": 1500,
+      "caption": "Illustrative storefront — not your actual unit. Gold halo letters, lantern-washed emerald pilasters and a candle-warm dining room — the \"dinner, made an occasion\" view from the car park.",
+      "alt": "Night scene: the B · Royal storefront glowing across a parking lot",
+      "tags": [
+        "storefront"
+      ],
+      "download": "assets/storefront/night-royal.svg"
     }
   ]
 }

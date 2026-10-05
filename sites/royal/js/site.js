@@ -119,6 +119,7 @@
     function set(open) {
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
       btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      if (open) { var hd = $('.site-header'); if (hd) sheet.style.setProperty('--nav-top', Math.max(0, hd.getBoundingClientRect().bottom) + 'px'); }
       sheet.hidden = !open;
       de.classList.toggle('nav-open', open);
       if (open) { var f = $('a', sheet); if (f) f.focus(); }

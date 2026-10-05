@@ -46,7 +46,8 @@
       btn.setAttribute('aria-expanded', open ? 'true' : 'false');
       btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
       dr.classList.toggle('is-open', open); de.classList.toggle('nav-open', open);
-      if (open) { dr.removeAttribute('inert'); var f = dr.querySelector('a'); if (f) setTimeout(function () { f.focus(); }, 60); }
+      if (open) { var hd = d.querySelector('.site-header'); if (hd) dr.style.top = Math.max(0, Math.round(hd.getBoundingClientRect().bottom)) + 'px';
+        dr.removeAttribute('inert'); var f = dr.querySelector('a'); if (f) setTimeout(function () { f.focus(); }, 60); }
       else dr.setAttribute('inert', '');
     }
     set(false);
@@ -163,6 +164,9 @@
 
   /* ---------- marquee pause/play (WCAG 2.2.2) ---------- */
   safe(function () {
+    if (w.matchMedia && w.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      $$('[data-marquee]').forEach(function (m) { m.setAttribute('tabindex', '0'); });   // static + scrollable → keyboard reachable
+    }
     $$('[data-marquee-toggle]').forEach(function (b) {
       var host = b.closest('.marquee') || b.parentNode, mq = host.querySelector('[data-marquee]') || host;
       b.addEventListener('click', function (e) {
