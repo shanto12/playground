@@ -283,6 +283,6 @@
   .cc-nav,.cc-filters,.cc-hint,.st-tools .seg,.bm-jump{display:none !important}
   .cc__art,.steal::before,.bm-take li::before{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   .steal,.dd__card,.swap__row,.bm-take li{break-inside:avoid;background:#fff !important}
-  .html.js .steal .stars .on{transform:none !important}
+  html.js .steal .stars .on{transform:none !important;animation:none !important}
   .bm-cta{background:#fff !important;border:1px solid #DDD3C6}
 }
