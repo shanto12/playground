@@ -1,0 +1,397 @@
+{
+ "helper": "print",
+ "items": [
+  {
+   "id": "stamp-demo",
+   "title": "Digital stamp card (tap to stamp)",
+   "direction": "both",
+   "type": "interactive",
+   "src": "assets/print/stamp-demo-thumb.jpg",
+   "thumb": "assets/print/stamp-demo-thumb.jpg",
+   "href": "demo/index.html",
+   "w": 1600,
+   "h": 1200,
+   "caption": "Concept demo, no real rewards: tap a district to stamp it, flip Bazaar/Royal, show it at the counter.",
+   "tags": [
+    "loyalty"
+   ],
+   "alt": "Two phones showing the digital Curry Passport stamp card in Bazaar and Royal styles"
+  },
+  {
+   "id": "passport-bazaar",
+   "title": "Curry Passport card — Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/print/passport-bazaar.png",
+   "thumb": "assets/print/passport-bazaar-thumb.jpg",
+   "w": 1600,
+   "h": 1200,
+   "caption": "Wallet loyalty card, 3.5 × 2 in: collect one stamp per menu district. Reward line is a placeholder for the owners.",
+   "tags": [
+    "loyalty"
+   ],
+   "alt": "Curry Passport card — Bazaar mockup",
+   "download": "assets/print/passport-bazaar.pdf"
+  },
+  {
+   "id": "passport-royal",
+   "title": "Curry Passport card — Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/print/passport-royal.png",
+   "thumb": "assets/print/passport-royal-thumb.jpg",
+   "w": 1600,
+   "h": 1200,
+   "caption": "Wallet loyalty card, 3.5 × 2 in: collect one stamp per menu district. Reward line is a placeholder for the owners.",
+   "tags": [
+    "loyalty"
+   ],
+   "alt": "Curry Passport card — Royal mockup",
+   "download": "assets/print/passport-royal.pdf"
+  },
+  {
+   "id": "stamps-bazaar",
+   "title": "The 8 district stamps — Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/print/stamps-bazaar.png",
+   "thumb": "assets/print/stamps-bazaar-thumb.jpg",
+   "w": 1600,
+   "h": 1200,
+   "caption": "Stamp-impression art for eight 1 in self-inking stamps, one per menu zone, plus a completed passport.",
+   "tags": [
+    "loyalty"
+   ],
+   "alt": "The 8 district stamps — Bazaar mockup",
+   "download": "assets/print/district-stamps-bazaar.pdf"
+  },
+  {
+   "id": "stamps-royal",
+   "title": "The 8 district stamps — Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/print/stamps-royal.png",
+   "thumb": "assets/print/stamps-royal-thumb.jpg",
+   "w": 1600,
+   "h": 1200,
+   "caption": "Stamp-impression art for eight 1 in self-inking stamps, one per menu zone, plus a completed passport.",
+   "tags": [
+    "loyalty"
+   ],
+   "alt": "The 8 district stamps — Royal mockup",
+   "download": "assets/print/district-stamps-royal.pdf"
+  },
+  {
+   "id": "gift-bazaar",
+   "title": "Gift card + sleeve — Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/print/gift-bazaar.png",
+   "thumb": "assets/print/gift-bazaar-thumb.jpg",
+   "w": 1600,
+   "h": 1200,
+   "caption": "CR80 gift card (3.375 × 2.125 in) with a wallet sleeve. Card-number area and terms are placeholders.",
+   "tags": [
+    "gift"
+   ],
+   "alt": "Gift card + sleeve — Bazaar mockup",
+   "download": "assets/print/gift-card-bazaar.pdf"
+  },
+  {
+   "id": "gift-royal",
+   "title": "Gift card + sleeve — Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/print/gift-royal.png",
+   "thumb": "assets/print/gift-royal-thumb.jpg",
+   "w": 1600,
+   "h": 1200,
+   "caption": "CR80 gift card (3.375 × 2.125 in) with a wallet sleeve. Card-number area and terms are placeholders.",
+   "tags": [
+    "gift"
+   ],
+   "alt": "Gift card + sleeve — Royal mockup",
+   "download": "assets/print/gift-card-royal.pdf"
+  },
+  {
+   "id": "referral-bazaar",
+   "title": "Bring-a-friend card — Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/print/referral-bazaar.png",
+   "thumb": "assets/print/referral-bazaar-thumb.jpg",
+   "w": 1600,
+   "h": 1200,
+   "caption": "Referral card with write-in reward lines only: no incentive is promised.",
+   "tags": [
+    "loyalty"
+   ],
+   "alt": "Bring-a-friend card — Bazaar mockup",
+   "download": "assets/print/referral-card-bazaar.pdf"
+  },
+  {
+   "id": "referral-royal",
+   "title": "Bring-a-friend card — Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/print/referral-royal.png",
+   "thumb": "assets/print/referral-royal-thumb.jpg",
+   "w": 1600,
+   "h": 1200,
+   "caption": "Referral card with write-in reward lines only: no incentive is promised.",
+   "tags": [
+    "loyalty"
+   ],
+   "alt": "Bring-a-friend card — Royal mockup",
+   "download": "assets/print/referral-card-royal.pdf"
+  },
+  {
+   "id": "biz-bazaar",
+   "title": "Staff business card — Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/print/biz-bazaar.png",
+   "thumb": "assets/print/biz-bazaar-thumb.jpg",
+   "w": 1600,
+   "h": 1200,
+   "caption": "Staff card that doubles as the catering contact. Name and role are placeholders; phone/email flagged \"likely\".",
+   "tags": [
+    "catering"
+   ],
+   "alt": "Staff business card — Bazaar mockup",
+   "download": "assets/print/business-card-bazaar.pdf"
+  },
+  {
+   "id": "biz-royal",
+   "title": "Staff business card — Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/print/biz-royal.png",
+   "thumb": "assets/print/biz-royal-thumb.jpg",
+   "w": 1600,
+   "h": 1200,
+   "caption": "Staff card that doubles as the catering contact. Name and role are placeholders; phone/email flagged \"likely\".",
+   "tags": [
+    "catering"
+   ],
+   "alt": "Staff business card — Royal mockup",
+   "download": "assets/print/business-card-royal.pdf"
+  },
+  {
+   "id": "catering-bazaar",
+   "title": "Catering one-sheet — Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/print/catering-bazaar.png",
+   "thumb": "assets/print/catering-bazaar-thumb.jpg",
+   "w": 1600,
+   "h": 1200,
+   "caption": "US Letter, front/back: the eight zones as party-tray categories, write-in serving sizes, a party planner. No prices.",
+   "tags": [
+    "catering"
+   ],
+   "alt": "Catering one-sheet — Bazaar mockup",
+   "download": "assets/print/catering-sheet-bazaar.pdf"
+  },
+  {
+   "id": "catering-royal",
+   "title": "Catering one-sheet — Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/print/catering-royal.png",
+   "thumb": "assets/print/catering-royal-thumb.jpg",
+   "w": 1600,
+   "h": 1200,
+   "caption": "US Letter, front/back: the eight zones as party-tray categories, write-in serving sizes, a party planner. No prices.",
+   "tags": [
+    "catering"
+   ],
+   "alt": "Catering one-sheet — Royal mockup",
+   "download": "assets/print/catering-sheet-royal.pdf"
+  },
+  {
+   "id": "corporate-bazaar",
+   "title": "Corporate lunch sheet — Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/print/corporate-bazaar.png",
+   "thumb": "assets/print/corporate-bazaar-thumb.jpg",
+   "w": 1600,
+   "h": 1200,
+   "caption": "Leave-behind for nearby offices: concept lunch spreads and a team order form. Delivery is \"ask about\" only.",
+   "tags": [
+    "catering"
+   ],
+   "alt": "Corporate lunch sheet — Bazaar mockup",
+   "download": "assets/print/corporate-lunch-bazaar.pdf"
+  },
+  {
+   "id": "corporate-royal",
+   "title": "Corporate lunch sheet — Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/print/corporate-royal.png",
+   "thumb": "assets/print/corporate-royal-thumb.jpg",
+   "w": 1600,
+   "h": 1200,
+   "caption": "Leave-behind for nearby offices: concept lunch spreads and a team order form. Delivery is \"ask about\" only.",
+   "tags": [
+    "catering"
+   ],
+   "alt": "Corporate lunch sheet — Royal mockup",
+   "download": "assets/print/corporate-lunch-royal.pdf"
+  },
+  {
+   "id": "hanger-bazaar",
+   "title": "Door hanger — Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/print/hanger-bazaar.png",
+   "thumb": "assets/print/hanger-bazaar-thumb.jpg",
+   "w": 1600,
+   "h": 1200,
+   "caption": "Neighborhood door hanger, 3.5 × 8.5 in (approx; use the printer’s die). For HOAs and new-resident drops.",
+   "tags": [
+    "door-hanger"
+   ],
+   "alt": "Door hanger — Bazaar mockup",
+   "download": "assets/print/door-hanger-bazaar.pdf"
+  },
+  {
+   "id": "hanger-royal",
+   "title": "Door hanger — Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/print/hanger-royal.png",
+   "thumb": "assets/print/hanger-royal-thumb.jpg",
+   "w": 1600,
+   "h": 1200,
+   "caption": "Neighborhood door hanger, 3.5 × 8.5 in (approx; use the printer’s die). For HOAs and new-resident drops.",
+   "tags": [
+    "door-hanger"
+   ],
+   "alt": "Door hanger — Royal mockup",
+   "download": "assets/print/door-hanger-royal.pdf"
+  },
+  {
+   "id": "postcard-bazaar",
+   "title": "HOA postcard — Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/print/postcard-bazaar.png",
+   "thumb": "assets/print/postcard-bazaar-thumb.jpg",
+   "w": 1600,
+   "h": 1200,
+   "caption": "6 × 9 in mailer (approx; confirm EDDM sizes with the printer). Front: the District map. Back: party trays + mailing panel.",
+   "tags": [
+    "postcard"
+   ],
+   "alt": "HOA postcard — Bazaar mockup",
+   "download": "assets/print/postcard-bazaar.pdf"
+  },
+  {
+   "id": "postcard-royal",
+   "title": "HOA postcard — Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/print/postcard-royal.png",
+   "thumb": "assets/print/postcard-royal-thumb.jpg",
+   "w": 1600,
+   "h": 1200,
+   "caption": "6 × 9 in mailer (approx; confirm EDDM sizes with the printer). Front: the District map. Back: party trays + mailing panel.",
+   "tags": [
+    "postcard"
+   ],
+   "alt": "HOA postcard — Royal mockup",
+   "download": "assets/print/postcard-royal.pdf"
+  },
+  {
+   "id": "event-bazaar",
+   "title": "Event table kit — Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/print/event-bazaar.png",
+   "thumb": "assets/print/event-bazaar-thumb.jpg",
+   "w": 1600,
+   "h": 1200,
+   "caption": "Tent cards (passport sign-up + party trays) and a 6 ft table banner for Diwali, Holi and cricket nights. No dates printed.",
+   "tags": [
+    "event"
+   ],
+   "alt": "Event table kit — Bazaar mockup",
+   "download": "assets/print/event-banner-bazaar.pdf"
+  },
+  {
+   "id": "event-royal",
+   "title": "Event table kit — Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/print/event-royal.png",
+   "thumb": "assets/print/event-royal-thumb.jpg",
+   "w": 1600,
+   "h": 1200,
+   "caption": "Tent cards (passport sign-up + party trays) and a 6 ft table banner for Diwali, Holi and cricket nights. No dates printed.",
+   "tags": [
+    "event"
+   ],
+   "alt": "Event table kit — Royal mockup",
+   "download": "assets/print/event-banner-royal.pdf"
+  },
+  {
+   "id": "flatlay-bazaar",
+   "title": "Print package flat-lay — Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/print/flatlay-bazaar.png",
+   "thumb": "assets/print/flatlay-bazaar-thumb.jpg",
+   "w": 2000,
+   "h": 1333,
+   "caption": "The whole kit on one table: passport, gift card + sleeve, referral, business cards, catering sheet, door hanger, postcard, tent card.",
+   "tags": [
+    "loyalty",
+    "catering",
+    "gift",
+    "door-hanger",
+    "postcard",
+    "event"
+   ],
+   "alt": "Print package flat-lay — Bazaar mockup"
+  },
+  {
+   "id": "flatlay-royal",
+   "title": "Print package flat-lay — Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/print/flatlay-royal.png",
+   "thumb": "assets/print/flatlay-royal-thumb.jpg",
+   "w": 2000,
+   "h": 1333,
+   "caption": "The whole kit on one table: passport, gift card + sleeve, referral, business cards, catering sheet, door hanger, postcard, tent card.",
+   "tags": [
+    "loyalty",
+    "catering",
+    "gift",
+    "door-hanger",
+    "postcard",
+    "event"
+   ],
+   "alt": "Print package flat-lay — Royal mockup"
+  },
+  {
+   "id": "cost-spec",
+   "title": "Cost & spec sheet (approx)",
+   "direction": "both",
+   "type": "pdf",
+   "src": "assets/print/cost-spec-sheet.pdf",
+   "thumb": "assets/print/cost-spec-sheet-thumb.jpg",
+   "w": 816,
+   "h": 1056,
+   "caption": "Sizes, stocks, minimums and approximate unit costs. [V] vendor snippet, [E] estimate: get quotes.",
+   "tags": [
+    "spec"
+   ],
+   "download": "assets/print/cost-spec-sheet.pdf",
+   "alt": "Cost and spec sheet for the print kit"
+  }
+ ]
+}
