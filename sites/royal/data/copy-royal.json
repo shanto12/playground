@@ -1,0 +1,674 @@
+{
+ "shared": {
+  "facts": {
+   "name": "Curry District",
+   "address": {
+    "line1": "11851 FM 423, Suite 200",
+    "city": "Little Elm",
+    "state": "TX",
+    "zip": "75068",
+    "oneLine": "11851 FM 423, Suite 200, Little Elm, TX 75068",
+    "status": "verified"
+   },
+   "areaLine": "Little Elm, near Frisco",
+   "phone": {
+    "display": "(469) 200-5856",
+    "tel": "+14692005856",
+    "status": "likely",
+    "note": "Primary per research. Owner to confirm before any print or publication. Do not use (972) 787-1320."
+   },
+   "hours": [
+    {
+     "days": "Mon–Thu",
+     "daysLong": "Monday to Thursday",
+     "times": "11:00 AM – 2:30 PM, 4:30 PM – 10:00 PM",
+     "blocks": [
+      [
+       "11:00",
+       "14:30"
+      ],
+      [
+       "16:30",
+       "22:00"
+      ]
+     ]
+    },
+    {
+     "days": "Fri–Sat",
+     "daysLong": "Friday and Saturday",
+     "times": "11:00 AM – 3:00 PM, 4:30 PM – 10:30 PM",
+     "blocks": [
+      [
+       "11:00",
+       "15:00"
+      ],
+      [
+       "16:30",
+       "22:30"
+      ]
+     ]
+    },
+    {
+     "days": "Sun",
+     "daysLong": "Sunday",
+     "times": "11:00 AM – 3:00 PM, 4:30 PM – 10:00 PM",
+     "blocks": [
+      [
+       "11:00",
+       "15:00"
+      ],
+      [
+       "16:30",
+       "22:00"
+      ]
+     ]
+    }
+   ],
+   "hoursStatus": "likely (aggregator summaries; Yelp shows minor differences)",
+   "links": {
+    "orderOnline": "https://curry-district-little-elm.cloveronline.com/",
+    "uberEats": "https://www.ubereats.com/store/curry-district/uWXzS9FzRBqEC8dXe5241w",
+    "doorDash": "https://www.doordash.com/en-CA/store/curry-district-little-elm-900790/",
+    "directions": "https://www.google.com/maps/search/?api=1&query=Curry+District+11851+FM+423+Suite+200+Little+Elm+TX+75068",
+    "instagram": "https://www.instagram.com/currydistrictfrisco/",
+    "instagramStatus": "unverified (inferred from the Facebook vanity URL)",
+    "facebook": "https://www.facebook.com/CurryDistrictFrisco/"
+   },
+   "menuZones": [
+    "Starters Square",
+    "Tandoor Quarter",
+    "Curry Quarter",
+    "Biryani Boulevard",
+    "Indo-Chinese Alley",
+    "Bread Bazaar",
+    "Sweet Street",
+    "Chai & Coolers"
+   ]
+  },
+  "conceptDisclaimer": "Independent design concept prepared as a proposal — not the official Curry District website.",
+  "ratings": [
+   {
+    "platform": "Google",
+    "stars": 4.2,
+    "ratingDisplay": "≈4.2",
+    "countDisplay": "about 1,000 reviews",
+    "label": "as listed publicly in Oct 2026",
+    "status": "likely",
+    "display": "Google ≈4.2 · about 1,000 reviews · as listed publicly in Oct 2026",
+    "basis": "Restaurant Guru shows 4.2 from 1,021 reviews and usually mirrors Google; a summary says 'Google users granted 4.2'. The Google listing itself was not seen."
+   },
+   {
+    "platform": "Yelp",
+    "stars": 4.0,
+    "ratingDisplay": "4.0",
+    "countDisplay": "120 reviews",
+    "label": "as listed publicly in Oct 2026",
+    "status": "verified",
+    "display": "Yelp 4.0 · 120 reviews · as listed publicly in Oct 2026",
+    "basis": "Yelp listing title '45 Photos & 120 Reviews', updated September 2026."
+   },
+   {
+    "platform": "Restaurantji",
+    "stars": 4.5,
+    "ratingDisplay": "4.5",
+    "countDisplay": "479 reviews",
+    "label": "as listed publicly in Oct 2026",
+    "status": "likely",
+    "display": "Restaurantji 4.5 · 479 reviews · as listed publicly in Oct 2026",
+    "basis": "Count verbatim in listing title; 4.5 stars from a search summary."
+   },
+   {
+    "platform": "Uber Eats",
+    "stars": 4.5,
+    "ratingDisplay": "4.5",
+    "countDisplay": "2,000+ ratings",
+    "label": "as listed publicly in Oct 2026",
+    "status": "likely",
+    "display": "Uber Eats 4.5 · 2,000+ ratings · as listed publicly in Oct 2026",
+    "basis": "Search summaries of the Uber Eats / DoorDash listings (about 4.5, 2,000+ ratings)."
+   }
+  ]
+ },
+ "royal": {
+  "voice": {
+   "summary": "Warm, confident, sensory. Unhurried sentences, specific dishes, gracious hospitality. Premium but never stiff: a jewel-toned dining room that still feels like the neighborhood.",
+   "do": [
+    "Lead with the senses: char, steam, butter, tang, smoke.",
+    "Sound like a gracious host: ‘we’ and ‘you’, never ‘patrons’.",
+    "Let one word per headline carry the gold-foil treatment.",
+    "Stay approachable. This is Little Elm, not a black-tie room."
+   ],
+   "dont": [
+    "Claim halal, vegan, gluten-free, ‘authentic’, awards or family recipes.",
+    "Mention prices, happy hour, buffets, specials or opening dates.",
+    "Reach for palace cliches: maharajas, elephants, ‘a feast fit for a king’.",
+    "Put Hindi in Royal headlines; keep Hindi to the Bazaar voice."
+   ]
+  },
+  "heroHeadlines": [
+   "Slow-simmered. Tandoor-fired. Made for sharing.",
+   "Dinner, made an occasion.",
+   "The lid lifts. The evening begins.",
+   "From Andhra fire to tandoor gold.",
+   "Gather close. The good plates are coming.",
+   "A generous Indian table in Little Elm.",
+   "Sealed biryani. Glowing tandoor. Unhurried evenings.",
+   "Every celebration deserves a table like this."
+  ],
+  "heroSubs": [
+   "Andhra-style fire, North Indian tandoor classics, dum biryani and Indo-Chinese favorites, served with warmth on FM 423.",
+   "Slow-cooked curries, smoke-kissed kababs and biryani sealed with steam: a menu made for long tables and second helpings.",
+   "Bring the people you love to Little Elm for a dinner that feels like an occasion, without any fuss.",
+   "Every plate made to share, every spice level cooked to your taste, every guest welcomed like family.",
+   "From the first torn garlic naan to the last spoonful of dessert, an evening worth lingering over.",
+   "Dine with us, take dinner home, or let our kitchen cater your next celebration."
+  ],
+  "taglines": [
+   "Indian Kitchen · Little Elm, TX",
+   "Slow-simmered. Tandoor-fired. Made for sharing.",
+   "The neighborhood’s flavor capital.",
+   "Where every table feels like a celebration.",
+   "Generous plates. Gracious welcome.",
+   "Fire, smoke and comfort, close to home.",
+   "Dinner, made an occasion.",
+   "Jewel-bright flavor in Little Elm."
+  ],
+  "ctas": {
+   "primary": [
+    "Order for pickup",
+    "Begin your order",
+    "Order online"
+   ],
+   "secondary": [
+    "View the menu",
+    "Explore the menu",
+    "Browse the dishes"
+   ],
+   "ordering": [
+    "Order direct for pickup",
+    "Arrange delivery",
+    "Choose a delivery app"
+   ],
+   "call": [
+    "Call us",
+    "Speak with our team",
+    "Call to plan"
+   ],
+   "directions": [
+    "Get directions",
+    "Plan your visit",
+    "Find your way to us"
+   ],
+   "catering": [
+    "Plan your event",
+    "Ask about catering",
+    "Request a catering call"
+   ]
+  },
+  "sectionIntros": {
+   "menu": {
+    "headline": "The menu, quarter by quarter",
+    "body": "Begin in Starters Square, linger in the Tandoor Quarter, take the slow road down Biryani Boulevard and end on Sweet Street. Every dish is made to share, and every spice level is cooked to your taste."
+   },
+   "story": {
+    "headline": "A table that travels",
+    "body": "Our kitchen moves from Andhra-style fire to the smoky glow of the tandoor, from slow-sealed dum biryani to glossy, wok-tossed Indo-Chinese. It is a generous Indian table with many accents, set for our neighbors in Little Elm."
+   },
+   "catering": {
+    "headline": "Celebrations, beautifully fed",
+    "body": "From birthdays and baby showers to housewarmings and office gatherings, let our kitchen cater the feast while you enjoy your guests. We plan vegetarian and non-vegetarian dishes, spice levels and timing with you, one conversation at a time."
+   },
+   "visit": {
+    "headline": "Find your way to us",
+    "body": "You’ll find us at 11851 FM 423, Suite 200, in Little Elm, a short drive from Frisco. Parking is ample and the welcome is warm. Come for a long lunch, an easy dinner or a celebration table."
+   },
+   "reviews": {
+    "headline": "What our guests return for",
+    "body": "Rather than borrow a guest’s words, we’ll share the honest gist. Across Google, Yelp and the delivery apps, guests return for the biryani, the butter chicken, the garlic naan and a team that welcomes them warmly."
+   },
+   "gallery": {
+    "headline": "A feast for the eyes, first",
+    "body": "Steam caught in warm light. Naan torn at the table. The char on a tikka, the gloss on a curry, the moment a biryani is unsealed. Linger here a while, then come and taste it in person."
+   },
+   "order": {
+    "headline": "Take the evening home",
+    "body": "Order online for pickup directly from our kitchen, or choose delivery through Uber Eats, DoorDash or Grubhub. Select your dishes and your spice level, and we will prepare everything with the same care as in our dining room."
+   },
+   "faq": {
+    "headline": "Before you visit",
+    "body": "Directions, hours, ordering and catering, answered simply. For the questions that deserve a personal reply, such as dietary questions or seating a large party, please call us. We are always glad to talk."
+   }
+  },
+  "aboutStory": {
+   "headline": "A generous table in Little Elm",
+   "body": "Curry District sets a generous Indian table on FM 423 in Little Elm, and our menu travels far to fill it. There is Andhra-style fire: Karampodi Chicken, deep with chili, and Gongura Mutton Pulav, bright with tangy gongura leaves. There are North Indian tandoor classics: Tandoori Chicken and Chicken Tikka Kabab with charred edges, and garlic naan torn warm at the table. Our dum biryani is layered, sealed and slow-steamed, so the lid lifts on a cloud of fragrance. And for a playful turn, Indo-Chinese street favorites such as Gobi Manchurian and Chilli Paneer arrive glossy from the wok. We cook for the neighborhood: weeknight dinners, birthday tables and the friends you have been meaning to see. Choose your spice level, gather your people and stay a while.",
+   "placeholder_for_owner_story": true,
+   "ownerStorySlot": "[OWNER STORY: who cooks, where the dishes come from and how Curry District began. To be supplied by the owners. Do not invent; leave this out until confirmed.]"
+  },
+  "cateringCopy": {
+   "headline": "Let us cater the celebration",
+   "body": "Birthdays, baby showers, housewarmings and office gatherings all feel better when the host gets to sit down. Share the occasion with us, and we will shape a menu around your guests, their tastes and their spice levels.",
+   "bullets": [
+    "Vegetarian and non-vegetarian dishes, planned so every guest is looked after.",
+    "Spice levels set with you, from mild to Andhra-style fire.",
+    "Pre-booked platters for pickup, or outdoor catering for larger occasions.",
+    "One personal conversation to plan the menu, timing and details."
+   ],
+   "smallPrint": "Catering is arranged in advance. Please call us to discuss your date and menu."
+  },
+  "visitCopy": {
+   "headline": "Visit us in Little Elm",
+   "body": "On FM 423, a short drive from Frisco and the lake, with ample parking and a warm welcome. Join us for lunch, dinner or a celebration, or order ahead online for pickup.",
+   "addressLines": [
+    "11851 FM 423, Suite 200",
+    "Little Elm, TX 75068"
+   ],
+   "areaLine": "Little Elm, near Frisco",
+   "hoursHeading": "Hours",
+   "hours": [
+    {
+     "days": "Mon–Thu",
+     "daysLong": "Monday to Thursday",
+     "times": "11:00 AM – 2:30 PM, 4:30 PM – 10:00 PM",
+     "blocks": [
+      [
+       "11:00",
+       "14:30"
+      ],
+      [
+       "16:30",
+       "22:00"
+      ]
+     ]
+    },
+    {
+     "days": "Fri–Sat",
+     "daysLong": "Friday and Saturday",
+     "times": "11:00 AM – 3:00 PM, 4:30 PM – 10:30 PM",
+     "blocks": [
+      [
+       "11:00",
+       "15:00"
+      ],
+      [
+       "16:30",
+       "22:30"
+      ]
+     ]
+    },
+    {
+     "days": "Sun",
+     "daysLong": "Sunday",
+     "times": "11:00 AM – 3:00 PM, 4:30 PM – 10:00 PM",
+     "blocks": [
+      [
+       "11:00",
+       "15:00"
+      ],
+      [
+       "16:30",
+       "22:00"
+      ]
+     ]
+    }
+   ],
+   "hoursNote": "Hours as listed publicly. On holidays, please call ahead.",
+   "parkingLine": "Ample parking for guests.",
+   "serviceLine": "Dine in, pickup, delivery and catering.",
+   "phoneLabel": "Speak with our team",
+   "phoneRef": "shared.facts.phone"
+  },
+  "faq": [
+   {
+    "q": "Where will we find you?",
+    "a": "At 11851 FM 423, Suite 200, Little Elm, TX 75068, close to Frisco. There is ample parking for guests.",
+    "factStatus": "verified (address) / likely (parking)",
+    "basis": "business_verified.json address, extraFacts.parking"
+   },
+   {
+    "q": "What are your hours?",
+    "a": "Monday to Thursday, 11:00 AM–2:30 PM and 4:30–10:00 PM. Friday and Saturday, 11:00 AM–3:00 PM and 4:30–10:30 PM. Sunday, 11:00 AM–3:00 PM and 4:30–10:00 PM. These are our publicly listed hours; on holidays, please call ahead.",
+    "factStatus": "likely",
+    "basis": "business_verified.json hours"
+   },
+   {
+    "q": "Do you offer takeout and delivery?",
+    "a": "Yes. Order online for pickup directly from us, or choose delivery through Uber Eats, DoorDash or Grubhub. Dining in is relaxed and counter-service.",
+    "factStatus": "likely",
+    "basis": "business_verified.json serviceModes"
+   },
+   {
+    "q": "Can you cater our event?",
+    "a": "With pleasure. We prepare pre-booked platters and offer outdoor catering for celebrations and gatherings. Call us to plan the menu and the details.",
+    "factStatus": "likely",
+    "basis": "business_verified.json serviceModes (catering)"
+   },
+   {
+    "q": "Is there a good choice for vegetarians?",
+    "a": "A generous one: paneer curries, dal, vegetable biryani, Gobi Manchurian, Chilli Paneer and more. Our menu offers vegetarian and non-vegetarian dishes side by side.",
+    "factStatus": "likely",
+    "basis": "business_verified.json category (catering page: vegetarian and non-vegetarian), popularDishes"
+   },
+   {
+    "q": "Is your food halal?",
+    "a": "Please call us to confirm. It matters, and we would like to answer you personally rather than guess here.",
+    "factStatus": "unverified",
+    "basis": "business_verified.json extraFacts.halal = unverified"
+   },
+   {
+    "q": "Do you offer a lunch buffet or happy hour?",
+    "a": "Please call us to confirm. We would rather share what is current than repeat an older listing.",
+    "factStatus": "unverified",
+    "basis": "business_verified.json extraFacts.buffet, hours.happyHour = null"
+   },
+   {
+    "q": "Can you seat a large party?",
+    "a": "Please call us to confirm before you arrive, so we can plan properly for your group.",
+    "factStatus": "unverified",
+    "basis": "business_verified.json extraFacts.seatingCapacity = unverified"
+   }
+  ],
+  "microcopy": {
+   "loading": [
+    "Setting your table…",
+    "Warming the tandoor…",
+    "One moment, please…"
+   ],
+   "empty": {
+    "headline": "Nothing here just yet.",
+    "body": "Try another part of the menu, or call us for a recommendation. We love suggesting a favorite.",
+    "cta": "Show all dishes"
+   },
+   "notFound": {
+    "headline": "This path leads nowhere, but your table is still set.",
+    "body": "The page you’re looking for has moved or never existed. Allow us to guide you back.",
+    "ctaPrimary": "Return to the menu",
+    "ctaSecondary": "Go to the home page"
+   },
+   "formSuccess": {
+    "headline": "Thank you.",
+    "body": "Your note is with our team. We’ll be in touch to plan the details."
+   },
+   "formError": {
+    "headline": "That didn’t send.",
+    "body": "Please check the highlighted fields and try again, or call us directly. We’re glad to help."
+   },
+   "fieldErrors": {
+    "required": "This field is needed.",
+    "email": "Please check this email address.",
+    "phone": "Please check this phone number.",
+    "date": "Please choose a date for your event."
+   },
+   "hoursStatus": {
+    "openNow": "Open now",
+    "closingSoon": "Closing at {time}",
+    "closedNow": "Closed now · Opens at {time}",
+    "betweenServices": "Between services · Dinner from {time}",
+    "opensLaterToday": "Opening at {time} today",
+    "hoursCaveat": "Hours as listed publicly; please call to confirm on holidays."
+   },
+   "footer": {
+    "cookieLine": "This site keeps no cookies, only good company.",
+    "disclaimer": "Independent design concept prepared as a proposal — not the official Curry District website.",
+    "backToTop": "Return to top",
+    "skipLink": "Skip to main content"
+   }
+  },
+  "seo": {
+   "home": {
+    "title": "Indian Restaurant Little Elm TX, near Frisco | Curry District",
+    "description": "Andhra-style fire, tandoor classics, dum biryani and Indo-Chinese favorites, served warmly on FM 423. Dine in, take home or book catering in Little Elm.",
+    "ogTitle": "Curry District | Dinner, made an occasion",
+    "ogDescription": "Slow-simmered curries, tandoor-fired kababs and sealed dum biryani, made for sharing. A generous Indian table in Little Elm, TX."
+   },
+   "menu": {
+    "title": "Dum Biryani & Tandoor Menu — Indian Restaurant Little Elm TX",
+    "description": "From Gongura Mutton Pulav and dum biryani to Butter Chicken, tandoor kababs, paneer curries and Indo-Chinese favorites. Browse the Curry District menu.",
+    "ogTitle": "The Curry District menu, quarter by quarter",
+    "ogDescription": "Begin in Starters Square, end on Sweet Street. Explore the full menu of our Little Elm kitchen and order online for pickup."
+   },
+   "catering": {
+    "title": "Event & Celebration Catering — Indian Restaurant Little Elm TX",
+    "description": "Indian catering for birthdays, showers, housewarmings and office gatherings near Little Elm and Frisco. Vegetarian and non-vegetarian menus, planned with you.",
+    "ogTitle": "Let Curry District cater the celebration",
+    "ogDescription": "Pre-booked platters and outdoor catering from our Little Elm kitchen, shaped around your guests and their spice levels."
+   },
+   "visit": {
+    "title": "Visit Us on FM 423 — Indian Restaurant Little Elm TX",
+    "description": "Visit Curry District at 11851 FM 423, Suite 200, Little Elm, TX 75068, a short drive from Frisco. Hours, directions, parking and ordering details.",
+    "ogTitle": "Visit Curry District in Little Elm",
+    "ogDescription": "Directions, hours and parking for our Indian kitchen on FM 423. Dine in, pick up or arrange delivery."
+   }
+  },
+  "socialCaptions": [
+   {
+    "theme": "Dum biryani unsealing",
+    "caption": "Lift the lid slowly. Layered, sealed and steamed, our dum biryani is worth the pause.",
+    "hashtags": [
+     "#DumBiryani",
+     "#LittleElm",
+     "#FriscoEats",
+     "#DFWFoodie"
+    ]
+   },
+   {
+    "theme": "Butter Chicken",
+    "caption": "Butter Chicken, velvet-rich and unhurried. Add garlic naan and let the evening slow down.",
+    "hashtags": [
+     "#ButterChicken",
+     "#LittleElmTX",
+     "#DFWEats",
+     "#IndianFood"
+    ]
+   },
+   {
+    "theme": "From the tandoor",
+    "caption": "From the tandoor: Chicken Tikka Kabab, edges kissed with char.",
+    "hashtags": [
+     "#Tandoori",
+     "#ChickenTikka",
+     "#FriscoEats",
+     "#DFWFoodie"
+    ]
+   },
+   {
+    "theme": "Gongura Mutton Pulav",
+    "caption": "Gongura Mutton Pulav: tangy gongura leaves, tender mutton and a pulav with real character. Andhra-style and unforgettable.",
+    "hashtags": [
+     "#AndhraFood",
+     "#Pulav",
+     "#LittleElm",
+     "#DFWFoodie"
+    ]
+   },
+   {
+    "theme": "Date night",
+    "caption": "Date night, Little Elm edition: two plates, one shared garlic naan and nowhere else to be.",
+    "hashtags": [
+     "#DateNightDFW",
+     "#LittleElm",
+     "#FriscoEats",
+     "#DFWFoodie"
+    ]
+   },
+   {
+    "theme": "The family table",
+    "caption": "The table keeps growing: biryani in the middle, naan going around, everyone reaching at once.",
+    "hashtags": [
+     "#FamilyDinner",
+     "#LittleElmTX",
+     "#DFWEats",
+     "#IndianFood"
+    ]
+   },
+   {
+    "theme": "Catering season",
+    "caption": "Hosting this season? Let our kitchen cater the celebration while you enjoy your guests. Call us to plan.",
+    "hashtags": [
+     "#IndianCatering",
+     "#DFWCatering",
+     "#LittleElm",
+     "#FriscoEats"
+    ]
+   },
+   {
+    "theme": "Diwali gatherings",
+    "caption": "Lamps lit, plates full, everyone home. Planning a Diwali gathering? Call us to plan your catering. 🪔",
+    "hashtags": [
+     "#Diwali2026",
+     "#DFWDiwali",
+     "#LittleElm",
+     "#FriscoEats"
+    ],
+    "factCheck": "Schedule 2–3 weeks before Diwali (about 8 Nov 2026; verify the date). No offer or price implied."
+   },
+   {
+    "theme": "The vegetarian spotlight",
+    "caption": "Paneer Tikka Masala, Palak Paneer, Dal Makhani: the vegetarian side of our menu deserves its own spotlight.",
+    "hashtags": [
+     "#VegetarianDFW",
+     "#PaneerTikkaMasala",
+     "#LittleElm",
+     "#DFWFoodie"
+    ]
+   },
+   {
+    "theme": "Indo-Chinese corner",
+    "caption": "Chilli Paneer, wok-tossed and glossy. The Indo-Chinese corner of our menu, served with confidence.",
+    "hashtags": [
+     "#IndoChinese",
+     "#ChilliPaneer",
+     "#FriscoEats",
+     "#LittleElm"
+    ]
+   },
+   {
+    "theme": "A sweet finish",
+    "caption": "End on something sweet. Gulab Jamun, soft and syrup-soaked, is the quiet finale after all that fire.",
+    "hashtags": [
+     "#GulabJamun",
+     "#IndianDessert",
+     "#LittleElmTX",
+     "#DFWEats"
+    ],
+    "factCheck": "Gulab Jamun is on the researched dessert list at medium confidence; confirm it is on the current menu."
+   },
+   {
+    "theme": "Thank you, neighbors",
+    "caption": "To every guest who has shared a review: thank you. You are how Little Elm finds its way to our table.",
+    "hashtags": [
+     "#LittleElm",
+     "#SupportLocal",
+     "#FriscoEats",
+     "#DFWFoodie"
+    ]
+   }
+  ],
+  "reviewThemes": {
+   "heading": "What guests keep coming back for",
+   "intro": "An honest summary of public reviews, paraphrased with care. No invented quotes.",
+   "bullets": [
+    {
+     "theme": "Biryani & pulav",
+     "text": "Biryani and pulav above all, and the family-size pulav packs especially, for flavor, portion and value.",
+     "verbatim": false,
+     "basis": "reviews_sentiment.md §2: biryani and pulav named in 7 of 16 summaries; family-pack pulavs 'consistently positive' for taste, portion and value",
+     "confidence": "M"
+    },
+    {
+     "theme": "Butter Chicken",
+     "text": "Butter Chicken, creamy and rich, and a favorite for delivery nights.",
+     "verbatim": false,
+     "basis": "reviews_sentiment.md §2: Butter Chicken named in 6 of 16; creamy, the standout; most-ordered item on DoorDash",
+     "confidence": "M"
+    },
+    {
+     "theme": "Garlic naan",
+     "text": "Garlic naan, the natural partner to every curry.",
+     "verbatim": false,
+     "basis": "reviews_sentiment.md §2: garlic naan named in 6 of 16, paired with the curries",
+     "confidence": "M"
+    },
+    {
+     "theme": "Generous portions",
+     "text": "Generous portions that feel like good value.",
+     "verbatim": false,
+     "basis": "reviews_sentiment.md §2: portions generous, prices reasonable for the portions",
+     "confidence": "M"
+    },
+    {
+     "theme": "Warm hospitality",
+     "text": "Friendly, accommodating staff who are glad to recommend a dish.",
+     "verbatim": false,
+     "basis": "reviews_sentiment.md §2: staff friendly, accommodating, give good recommendations (5 summaries)",
+     "confidence": "M"
+    },
+    {
+     "theme": "Spice to your taste",
+     "text": "Spice cooked to the level you request. Some guests note that even Mild carries warmth.",
+     "verbatim": false,
+     "basis": "reviews_sentiment.md §2-3: praised for honouring chosen heat; 2 of 16 say even Mild runs hot",
+     "confidence": "M"
+    },
+    {
+     "theme": "From the tandoor",
+     "text": "Tandoor favorites such as chicken tikka kebab, which brings real heat, and tandoori chicken.",
+     "verbatim": false,
+     "basis": "reviews_sentiment.md §2: chicken tikka kebab (2, 'very spicy'), tandoori chicken (1)",
+     "confidence": "L-M"
+    },
+    {
+     "theme": "A clean, cozy room",
+     "text": "A clean, cozy dining room with Indian music in the background.",
+     "verbatim": false,
+     "basis": "reviews_sentiment.md §2: clean, cozy room, Indian music in the background",
+     "confidence": "M"
+    }
+   ],
+   "ratings": [
+    {
+     "platform": "Google",
+     "stars": 4.2,
+     "ratingDisplay": "≈4.2",
+     "countDisplay": "about 1,000 reviews",
+     "label": "as listed publicly in Oct 2026",
+     "status": "likely",
+     "display": "Google ≈4.2 · about 1,000 reviews · as listed publicly in Oct 2026",
+     "basis": "Restaurant Guru shows 4.2 from 1,021 reviews and usually mirrors Google; a summary says 'Google users granted 4.2'. The Google listing itself was not seen."
+    },
+    {
+     "platform": "Yelp",
+     "stars": 4.0,
+     "ratingDisplay": "4.0",
+     "countDisplay": "120 reviews",
+     "label": "as listed publicly in Oct 2026",
+     "status": "verified",
+     "display": "Yelp 4.0 · 120 reviews · as listed publicly in Oct 2026",
+     "basis": "Yelp listing title '45 Photos & 120 Reviews', updated September 2026."
+    },
+    {
+     "platform": "Restaurantji",
+     "stars": 4.5,
+     "ratingDisplay": "4.5",
+     "countDisplay": "479 reviews",
+     "label": "as listed publicly in Oct 2026",
+     "status": "likely",
+     "display": "Restaurantji 4.5 · 479 reviews · as listed publicly in Oct 2026",
+     "basis": "Count verbatim in listing title; 4.5 stars from a search summary."
+    },
+    {
+     "platform": "Uber Eats",
+     "stars": 4.5,
+     "ratingDisplay": "4.5",
+     "countDisplay": "2,000+ ratings",
+     "label": "as listed publicly in Oct 2026",
+     "status": "likely",
+     "display": "Uber Eats 4.5 · 2,000+ ratings · as listed publicly in Oct 2026",
+     "basis": "Search summaries of the Uber Eats / DoorDash listings (about 4.5, 2,000+ ratings)."
+    }
+   ],
+   "ratingsFootnote": "Ratings as listed publicly in Oct 2026. They change over time; check each platform for the latest.",
+   "disclaimer": "Themes are paraphrased from public review summaries. They are not direct quotes."
+  }
+ }
+}

@@ -60,8 +60,8 @@ function gauge(level) {
   const ax = B[0] - A[0], ay = B[1] - A[1], len = Math.hypot(ax, ay), ux = ax / len, uy = ay / len;
   const proj = (p) => (p[0] - A[0]) * ux + (p[1] - A[1]) * uy;
   const lim = level >= 5 ? 1e9 : (len * level) / 5 * 0.96;
-  const poly = samplePath(CHILI.body, 40).map(([x, y]) => f(x, y));
-  const fill = fmt(clipHalf(poly, (p) => proj(p) <= lim, (a, b) => { const pa = proj(a), pb = proj(b), t = (lim - pa) / (pb - pa); return [a[0] + t * (b[0] - a[0]), a[1] + t * (b[1] - a[1])]; })) + 'Z';
+  const poly = samplePath(CHILI.body, 14).map(([x, y]) => f(x, y));
+  const fill = level >= 5 ? tp(CHILI.body) : fmt(clipHalf(poly, (p) => proj(p) <= lim, (a, b) => { const pa = proj(a), pb = proj(b), t = (lim - pa) / (pb - pa); return [a[0] + t * (b[0] - a[0]), a[1] + t * (b[1] - a[1])]; })) + 'Z';
   const pipX = [13, 22.5, 32, 41.5, 51];
   const pips = pipX.map((x, i) => (i < level
     ? P(`M${x} 46.6L${x + 4.2} 50.8L${x} 55L${x - 4.2} 50.8Z`, { f: 'pin' })

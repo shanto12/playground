@@ -1,0 +1,212 @@
+[
+  {
+    "name": "chili-1",
+    "label": "Spice 1 · Mild",
+    "group": "spice"
+  },
+  {
+    "name": "chili-2",
+    "label": "Spice 2 · Medium",
+    "group": "spice"
+  },
+  {
+    "name": "chili-3",
+    "label": "Spice 3 · Hot",
+    "group": "spice"
+  },
+  {
+    "name": "chili-4",
+    "label": "Spice 4 · Extra-Hot",
+    "group": "spice"
+  },
+  {
+    "name": "chili-5",
+    "label": "Spice 5 · District Hot",
+    "group": "spice"
+  },
+  {
+    "name": "veg-mark",
+    "label": "Veg mark",
+    "group": "diet"
+  },
+  {
+    "name": "nonveg-mark",
+    "label": "Non-veg mark",
+    "group": "diet"
+  },
+  {
+    "name": "curry-bowl",
+    "label": "Curry bowl",
+    "group": "food"
+  },
+  {
+    "name": "biryani-pot-handi",
+    "label": "Biryani handi",
+    "group": "food"
+  },
+  {
+    "name": "naan",
+    "label": "Naan",
+    "group": "food"
+  },
+  {
+    "name": "samosa",
+    "label": "Samosa",
+    "group": "food"
+  },
+  {
+    "name": "kebab-skewer",
+    "label": "Kebab skewer",
+    "group": "food"
+  },
+  {
+    "name": "tandoor-oven",
+    "label": "Tandoor oven",
+    "group": "food"
+  },
+  {
+    "name": "chai-cup",
+    "label": "Chai cup",
+    "group": "food"
+  },
+  {
+    "name": "lassi-glass",
+    "label": "Lassi glass",
+    "group": "food"
+  },
+  {
+    "name": "gulab-jamun",
+    "label": "Gulab jamun",
+    "group": "food"
+  },
+  {
+    "name": "thali-plate",
+    "label": "Thali plate",
+    "group": "food"
+  },
+  {
+    "name": "chaat-plate",
+    "label": "Chaat plate",
+    "group": "food"
+  },
+  {
+    "name": "chili",
+    "label": "Chili",
+    "group": "food"
+  },
+  {
+    "name": "lime",
+    "label": "Lime",
+    "group": "food"
+  },
+  {
+    "name": "cilantro",
+    "label": "Cilantro",
+    "group": "food"
+  },
+  {
+    "name": "spoon-fork",
+    "label": "Spoon & fork",
+    "group": "food"
+  },
+  {
+    "name": "rice-bowl",
+    "label": "Rice bowl",
+    "group": "food"
+  },
+  {
+    "name": "phone",
+    "label": "Phone",
+    "group": "utility"
+  },
+  {
+    "name": "map-pin",
+    "label": "Map pin",
+    "group": "utility"
+  },
+  {
+    "name": "clock",
+    "label": "Clock",
+    "group": "utility"
+  },
+  {
+    "name": "shopping-bag",
+    "label": "Shopping bag",
+    "group": "utility"
+  },
+  {
+    "name": "delivery-scooter",
+    "label": "Delivery scooter",
+    "group": "utility"
+  },
+  {
+    "name": "star",
+    "label": "Star",
+    "group": "utility"
+  },
+  {
+    "name": "heart",
+    "label": "Heart",
+    "group": "utility"
+  },
+  {
+    "name": "share",
+    "label": "Share",
+    "group": "utility"
+  },
+  {
+    "name": "qr-code",
+    "label": "QR code",
+    "group": "utility"
+  },
+  {
+    "name": "gift-card",
+    "label": "Gift card",
+    "group": "utility"
+  },
+  {
+    "name": "calendar",
+    "label": "Calendar",
+    "group": "utility"
+  },
+  {
+    "name": "party-tray",
+    "label": "Party tray",
+    "group": "utility"
+  },
+  {
+    "name": "instagram-glyph",
+    "label": "Instagram",
+    "group": "social"
+  },
+  {
+    "name": "facebook-glyph",
+    "label": "Facebook",
+    "group": "social"
+  },
+  {
+    "name": "google-pin-glyph",
+    "label": "Maps pin",
+    "group": "social"
+  },
+  {
+    "name": "menu-book",
+    "label": "Menu",
+    "group": "utility"
+  },
+  {
+    "name": "check",
+    "label": "Check",
+    "group": "utility"
+  },
+  {
+    "name": "arrow-right",
+    "label": "Arrow right",
+    "group": "utility"
+  },
+  {
+    "name": "quote",
+    "label": "Quote",
+    "group": "utility"
+  }
+]

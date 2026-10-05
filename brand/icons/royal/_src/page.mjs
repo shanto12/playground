@@ -28,7 +28,7 @@ export function page({ icons, spriteInner }) {
   const monoSet = ['phone', 'map-pin', 'clock', 'shopping-bag', 'delivery-scooter', 'heart', 'star', 'menu-book', 'party-tray', 'calendar', 'gift-card', 'chai-cup'];
   const recolour = [
     ['ivory on emerald', '#FBF3E4', '#0F4D3F'], ['gold-lt on plum', '#F7D98A', '#4B1D52'], ['blush on ruby', '#F4C9BB', '#A3173F'],
-    ['ruby on blush', '#A3173F', '#F4C9BB'], ['peacock on ivory', '#117C86', '#FBF3E4'], ['ink on ivory (print)', '#160B26', '#FBF3E4'],
+    ['ruby on blush', '#A3173F', '#F4C9BB'], ['peacock on ivory', '#117C86', '#FBF3E4', '#0B5F67'], ['ink on ivory (print)', '#160B26', '#FBF3E4'],
   ];
 
   return `<!doctype html>
@@ -48,7 +48,7 @@ export function page({ icons, spriteInner }) {
 :root{
   --ink:#160B26;--ink-2:#1E1033;--plum:#4B1D52;--emerald:#0F4D3F;--peacock:#117C86;--ruby:#A3173F;
   --gold:#E9A63A;--gold-lt:#F7D98A;--gold-dk:#B7791F;--ivory:#FBF3E4;--ivory-2:#F3E4C8;--blush:#F4C9BB;
-  --text-inv:#FBF3E4;--muted-inv:#CDBFD8;--muted:#6B5A73;
+  --text-inv:#FBF3E4;--gold-text:#8A5A16;--muted-inv:#CDBFD8;--muted:#6B5A73;
   --hair:rgba(233,166,58,.28);--hair-ivory:rgba(183,121,31,.35);
   --foil:linear-gradient(135deg,#B7791F 0%,#F7D98A 38%,#E9A63A 58%,#B7791F 100%);
   --r-l:28px;--r-m:16px;--gutter:16px;
@@ -97,7 +97,7 @@ section{padding:56px 0 8px;scroll-margin-top:60px}
 /* ── spice & diet ── */
 .scale{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
 .scale figure{margin:0;text-align:center;border:1px solid var(--hair);border-radius:var(--r-m);padding:12px 4px 10px;background:linear-gradient(180deg,rgba(255,255,255,.03),transparent)}
-.scale .ic{--s:clamp(52px,14vw,96px);margin:0 auto 6px}
+.scale .ic{--s:clamp(52px,14vw,120px);margin:0 auto 6px}
 .scale figcaption{font-size:12px;line-height:1.25;color:var(--muted-inv)}
 .scale figcaption b{display:block;font:600 15px/1.2 var(--display);color:var(--gold-lt)}
 .panel{background:var(--ivory);color:var(--ink);border-radius:var(--r-l);padding:22px 18px;margin-top:16px;--icon-line:var(--gold-dk)}
@@ -112,7 +112,7 @@ section{padding:56px 0 8px;scroll-margin-top:60px}
 .diet figure{margin:0;display:flex;align-items:center;gap:12px;border:1px solid var(--hair);border-radius:var(--r-m);padding:12px}
 .diet .ic{--s:56px}
 .diet b{font:600 18px/1.1 var(--display);color:var(--gold-lt);display:block}
-.diet small{color:var(--muted-inv);font-size:13px}
+.diet small{display:block;color:var(--muted-inv);font-size:13px;line-height:1.35;margin-top:4px}
 
 /* ── tiles ── */
 .surface{border-radius:var(--r-l);padding:20px 14px 8px;border:1px solid var(--hair)}
@@ -124,7 +124,7 @@ section{padding:56px 0 8px;scroll-margin-top:60px}
 .group-head p{grid-column:1/-1;margin:0;font-size:13.5px;color:var(--muted-inv);order:3}
 .surface.ivory .group-head p{color:var(--muted)}
 .count{font:600 12px var(--body);color:var(--gold);border:1px solid var(--hair);border-radius:999px;padding:2px 9px}
-.surface.ivory .count{color:var(--gold-dk);border-color:var(--hair-ivory)}
+.surface.ivory .count{color:var(--gold-text);border-color:var(--hair-ivory)}
 .tiles{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:8px}
 .tile{all:unset;box-sizing:border-box;cursor:pointer;width:100%;min-height:118px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:14px 6px 10px;border-radius:18px;
   border:1px solid rgba(233,166,58,.14);background:rgba(255,255,255,.02);transition:transform .35s var(--ease),border-color .35s var(--ease),background .35s var(--ease)}
@@ -175,7 +175,8 @@ pre{margin:0;overflow-x:auto;background:#0f0719;border:1px solid var(--hair);bor
 pre .c{color:#9b86ad}pre .k{color:var(--gold-lt)}
 
 /* ── construction ── */
-.build{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.build{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.build figure:first-child{grid-column:1/-1}
 .build figure{margin:0;border:1px solid var(--hair);border-radius:var(--r-m);padding:12px;background:#1a0d2c}
 .build figure svg.frame{width:100%;height:auto;display:block}
 .build figcaption{font-size:13px;color:var(--muted-inv);margin-top:8px}
@@ -202,6 +203,8 @@ footer .rule{height:1px;background:linear-gradient(90deg,transparent,var(--gold)
   :root{--gutter:28px}
   .hero{grid-template-columns:1.2fr 1fr}
   .swatches{grid-template-columns:repeat(3,1fr)}
+  .build{grid-template-columns:repeat(3,1fr)}
+  .build figure:first-child{grid-column:auto}
   .tile .ic{--s:64px}
   .surface{padding:28px 22px 12px}
 }
@@ -214,7 +217,7 @@ footer .rule{height:1px;background:linear-gradient(90deg,transparent,var(--gold)
 <header>
   <div class="wrap hero">
     <div>
-      <p class="eyebrow">Curry District · Brand Glow-Up · Direction B</p>
+      <p class="eyebrow">Curry District · Direction B</p>
       <h1><span class="foil">Royal</span> <i>icons</i></h1>
       <p class="lede">${icons.length} saffron-gold line icons drawn on one 64-grid — with a little emerald, ruby and peacock enamel, and arch &amp; jali details you notice the second time you look. Tap any icon to copy its snippet.</p>
       <ul class="chips" role="list"><li>64 × 64 grid</li><li>1.75 stroke · round caps</li><li>Gold + jewel accents</li><li>Mono via currentColor</li><li>SVG files + sprite</li></ul>
@@ -240,7 +243,7 @@ footer .rule{height:1px;background:linear-gradient(90deg,transparent,var(--gold)
       <figure>${ic('nonveg-mark')}<figcaption><b>Non-veg</b><small>Brown triangle in a brown square</small></figcaption></figure>
     </div>
     <div class="panel">
-      <p class="eyebrow" style="color:var(--gold-dk)">On the menu · sample legend</p>
+      <p class="eyebrow" style="color:var(--gold-text)">On the menu · sample legend</p>
       <h3>Find your district</h3>
       <ul class="zones" role="list">${ZONES.map(([n, z]) => `<li>${ic(n)}${z}</li>`).join('')}</ul>
       <div class="legend">
@@ -278,7 +281,7 @@ footer .rule{height:1px;background:linear-gradient(90deg,transparent,var(--gold)
   <section id="recolour" class="wrap reveal">
     <div class="sec-head"><p class="eyebrow">Mono variants</p><h2>Any colour, <em>one line of CSS</em></h2>
       <p class="lede">Every icon has a single-colour twin that paints with <code>currentColor</code>: lines solid, enamel as a 30% tint, diet marks and gems solid. Set <code>color</code> and it follows.</p></div>
-    <div class="swatches">${recolour.map(([label, fg, bg]) => `<div class="sw" style="background:${bg};color:${fg}"><p>${label}</p><div class="row">${monoSet.slice(0, 6).map((n) => ic(`${n}-mono`)).join('')}</div><div class="row">${monoSet.slice(6).map((n) => ic(`${n}-mono`)).join('')}</div></div>`).join('')}</div>
+    <div class="swatches">${recolour.map(([label, fg, bg, lc]) => `<div class="sw" style="background:${bg};color:${fg}"><p${lc ? ` style="color:${lc}"` : ''}>${label}</p><div class="row">${monoSet.slice(0, 6).map((n) => ic(`${n}-mono`)).join('')}</div><div class="row">${monoSet.slice(6).map((n) => ic(`${n}-mono`)).join('')}</div></div>`).join('')}</div>
     <div class="ui-demo">
       <div class="btns">
         <a class="btn gold" href="#use">${ic('phone-mono')}Call to order</a>
@@ -294,19 +297,19 @@ footer .rule{height:1px;background:linear-gradient(90deg,transparent,var(--gold)
         <a href="#use">${ic('phone-mono')}Call</a>
       </nav>
       <div class="chipline">
-        <span class="chip">${ic('clock')}Open today</span><span class="chip">${ic('star')}Reviews</span><span class="chip">${ic('gift-card')}Gift cards</span><span class="chip">${ic('instagram-glyph')}Follow</span>
+        <span class="chip">${ic('clock')}Hours</span><span class="chip">${ic('star')}Reviews</span><span class="chip">${ic('share')}Share</span><span class="chip">${ic('instagram-glyph')}Follow</span>
       </div>
     </div>
   </section>
 
   <section id="grid" class="wrap reveal">
     <div class="sec-head"><p class="eyebrow">Construction</p><h2>One grid, <em>one hand</em></h2>
-      <p class="lede">64 × 64 artboard, live area 6–58, 1.75 hairline with round caps and joins. Accents never touch the outline weight — they sit inside it like enamel in brass.</p></div>
+      <p class="lede">64 × 64 artboard, live area 6–58 (dashed: keyline square 52, circle Ø52, inner square 44), 1.75 hairline with round caps and joins. Accents never touch the outline weight — they sit inside it like enamel in brass.</p></div>
     <div class="build">${['curry-bowl', 'chili-3', 'map-pin'].map((n) => `<figure><svg class="frame" viewBox="-4 -4 72 72" aria-hidden="true">
       <g fill="none" stroke="rgba(233,166,58,.12)" stroke-width=".12">${Array.from({ length: 65 }, (_, k) => `<path d="M${k} 0V64M0 ${k}H64"/>`).join('')}</g>
       <g fill="none" stroke="rgba(233,166,58,.28)" stroke-width=".2"><path d="M8 0V64M16 0V64M24 0V64M32 0V64M40 0V64M48 0V64M56 0V64M0 8H64M0 16H64M0 24H64M0 32H64M0 40H64M0 48H64M0 56H64"/></g>
       <g fill="none" stroke="#117C86" stroke-width=".35" stroke-dasharray="1 1"><rect x="6" y="6" width="52" height="52" rx="2"/><circle cx="32" cy="32" r="26"/><rect x="10" y="10" width="44" height="44" rx="4"/></g>
-      <use href="#icon-${n}"/></svg><figcaption>${n} — keyline square 52, circle Ø52, inner square 44</figcaption></figure>`).join('')}</div>
+      <use href="#icon-${n}"/></svg><figcaption>${n}</figcaption></figure>`).join('')}</div>
     <ul class="specs" role="list">
       <li><b>64 × 64</b>artboard, 6 px live-area margin</li>
       <li><b>1.75</b>stroke, round caps &amp; joins</li>

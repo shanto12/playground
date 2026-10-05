@@ -119,8 +119,16 @@
     uid += 1;
     el.classList.add('rs-scene');
     el.style.backgroundImage = 'url("' + o.pattern + '")';
-    el.style.backgroundSize = (o.tile * 100 / 1600) + '% auto';
     el.innerHTML = svg(o, 's' + uid);
+    // keep the wallpaper locked to the furniture scale, whatever the frame's crop (SVG uses "slice")
+    function fit() {
+      var w = el.clientWidth, h = el.clientHeight; if (!w || !h) return;
+      var s = Math.max(w / 1600, h / 900), size = o.tile * s;
+      el.style.backgroundSize = size.toFixed(2) + 'px ' + size.toFixed(2) + 'px';
+      el.style.backgroundPosition = ((w - 1600 * s) / 2).toFixed(2) + 'px ' + ((h - 900 * s) / 2).toFixed(2) + 'px';
+    }
+    fit();
+    if (window.ResizeObserver) new ResizeObserver(fit).observe(el); else window.addEventListener('resize', fit);
   }
   window.RoyalScene = { mount: mount };
 })();

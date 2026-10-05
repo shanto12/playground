@@ -37,9 +37,9 @@ const P = [
     uses: ['Lunch-rush takeaway bags', 'Packaging tape & sleeves', 'Section dividers on web', 'Kids’ menu'] },
 ];
 const WALLS = [
-  { file: '07-jaipur-arches-sunset', t: 240, sign: 'Bas, ek aur naan.', tag: 'Curry District', theme: 'day',
+  { file: '07-jaipur-arches-sunset', t: 240, ws: 1.6, sign: 'Bas, ek aur naan.', tag: 'Curry District', theme: 'day',
     alt: 'Mock-up of a restaurant wall papered in Jaipur Arches, sunset colourway, above an indigo wainscot with a rani-pink banquette, two pendant lamps and a hand-lettered sign.' },
-  { file: '01-marigold-garland-night', t: 240, sign: 'Chai-lo!', tag: 'the District is open late', theme: 'night',
+  { file: '01-marigold-garland-night', t: 240, ws: 1.45, sign: 'Chai-lo!', tag: 'the District is open late', theme: 'night',
     alt: 'Mock-up of a restaurant wall papered in Marigold Garland, night colourway, above a rani wainscot with a marigold banquette, two glowing pendant lamps and a hand-lettered sign.' },
 ];
 
@@ -82,16 +82,16 @@ const walls = WALLS.map((w, i) => {
   const p = P.find((x) => w.file.startsWith(x.n));
   const cw = CWS.find((c) => w.file.endsWith(c.key));
   return `<figure class="wall-fig">
-      <div class="wall wall-${w.theme}" id="wall-${i + 1}" style="--src:url('${w.file}.svg');--t:${w.t}" role="img" aria-label="${esc(w.alt)}">
+      <div class="wall wall-${w.theme}" id="wall-${i + 1}" style="--src:url('${w.file}.svg');--t:${w.t};--ws:${w.ws}" role="img" aria-label="${esc(w.alt)}">
         <div class="paper"></div>
-        <span class="glow" style="--x:24%"></span><span class="glow" style="--x:76%"></span>
-        <span class="lamp" style="--x:24%"></span><span class="lamp" style="--x:76%"></span>
+        <span class="glow" style="--x:15%"></span><span class="glow" style="--x:85%"></span>
+        <span class="lamp" style="--x:15%"></span><span class="lamp" style="--x:85%"></span>
         <div class="sign"><b>${esc(w.sign)}</b><small>${esc(w.tag)}</small></div>
         <div class="wainscot"></div>
         <div class="bench"></div>
-        <span class="table" style="--x:30%"></span><span class="table" style="--x:70%"></span>
+        <span class="pillow" style="--x:24%;--r:-6deg;--c:var(--p1)"></span><span class="pillow" style="--x:31%;--r:5deg;--c:var(--p2)"></span><span class="pillow" style="--x:72%;--r:-4deg;--c:var(--p2)"></span>
       </div>
-      <figcaption><span><b>${p.n} ${esc(p.name)}</b> · ${cw.label} — wall mock-up, 1600 × 900, one repeat ≈ 15% of the wall width</span>
+      <figcaption><span><b>${p.n} ${esc(p.name)}</b> · ${cw.label} — wall mock-up, 1600 × 900, one repeat ≈ ${Math.round(w.t * w.ws / 16)}% of the wall width</span>
         <a href="png/wall-${w.file}.png" download>PNG 1600×900</a></figcaption>
     </figure>`;
 }).join('\n    ');
@@ -104,7 +104,6 @@ const html = `<!doctype html>
 <meta name="robots" content="noindex,nofollow">
 <meta name="description" content="Curry District · Bazaar direction — eight seamless repeat patterns in three colourways for wallpaper, packaging wraps, bag tissue, napkins and web backgrounds.">
 <title>Bazaar Patterns · Curry District</title>
-<link rel="preload" href="fonts/taiPGmVuC4y96PFeqp8sqomI_A.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
 :root{
@@ -141,9 +140,11 @@ h1{font:400 clamp(2.3rem,9vw,4.6rem)/.95 'Bowlby One','Arial Black',sans-serif;t
 .pill{appearance:none;font:700 .95rem/1 'DM Sans',sans-serif;color:var(--fg);background:var(--chip);border:2.5px solid var(--line);border-radius:999px;min-height:44px;min-width:44px;padding:0 14px;cursor:pointer}
 .pill[aria-pressed="true"]{background:var(--rani);color:#FFFFFF;border-color:var(--line);box-shadow:3px 3px 0 var(--line)}
 .pill:focus-visible,a:focus-visible{outline:3px solid var(--pea);outline-offset:3px}
+@media(max-width:600px){.bar .wrap{flex-wrap:nowrap;overflow-x:auto;gap:10px;scrollbar-width:none;padding-top:8px;padding-bottom:8px}.bar .wrap::-webkit-scrollbar{display:none}.grp{flex-wrap:nowrap}.grp+.grp{border-left:2.5px solid var(--line);padding-left:10px}.grp>span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.pill{flex:none;padding:0 13px}}
 /* pattern sections */
 main{padding:8px 0 40px}
-.pat{padding:40px 0 8px}
+.pat{padding:40px 0 8px;scroll-margin-top:72px}
+.walls,.notes{scroll-margin-top:72px}
 .pat-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px}
 .num{font:400 2.4rem/1 'Bowlby One','Arial Black',sans-serif;color:var(--rani);-webkit-text-stroke:0;min-width:2.1ch}
 h2{font:400 clamp(1.55rem,5vw,2.2rem)/1.02 'Bowlby One','Arial Black',sans-serif;text-transform:uppercase;margin:2px 0 8px}
@@ -171,21 +172,20 @@ main[data-show="sunset"] .sw:not([data-cw="sunset"]),main[data-show="night"] .sw
 .wall-fig{margin:0 0 34px}
 .wall-fig figcaption{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;margin-top:12px;font-size:.92rem}
 .wall{position:relative;container-type:inline-size;aspect-ratio:16/9;max-width:1600px;overflow:hidden;border:3px solid var(--line);border-radius:16px;box-shadow:6px 6px 0 var(--shadow);background:var(--cream)}
-.wall .paper{position:absolute;inset:0;background:var(--src) 0 0/calc(var(--t) * 100cqw / 1600) repeat}
+.wall .paper{position:absolute;inset:0;background:var(--src) 0 0/calc(var(--t) * var(--ws,1) * 100cqw / 1600) repeat}
 .wall .wainscot{position:absolute;left:0;right:0;bottom:0;height:29%;background:repeating-linear-gradient(90deg,var(--w1) 0 12.2cqw,var(--w2) 12.2cqw 12.5cqw);border-top:1.1cqw solid var(--rail);box-shadow:0 -.35cqw 0 var(--ink)}
-.wall-day{--w1:#1D1147;--w2:#3A1B7A;--rail:#FFB000;--bench:#E4147E;--shade:#FF6A13;--cord:#1D1147;--table:#FFF4DC}
-.wall-night{--w1:#E4147E;--w2:#D62839;--rail:#FFB000;--bench:#FFB000;--shade:#00A8A0;--cord:#FFF4DC;--table:#FFF4DC}
+.wall-day{--w1:#1D1147;--w2:#3A1B7A;--rail:#FFB000;--bench:#E4147E;--shade:#FF6A13;--cord:#1D1147;--p1:#FFB000;--p2:#00A8A0;--glow:rgba(255,176,0,.16)}
+.wall-night{--w1:#E4147E;--w2:#D62839;--rail:#FFB000;--bench:#FFB000;--shade:#00A8A0;--cord:#FFF4DC;--p1:#00A8A0;--p2:#FFF4DC;--glow:rgba(255,176,0,.42)}
 .wall .lamp{position:absolute;top:0;left:var(--x);width:8cqw;height:13.5cqw;transform:translateX(-50%)}
 .wall .lamp::before{content:"";position:absolute;left:50%;top:0;width:.3cqw;height:8.6cqw;background:var(--cord);transform:translateX(-50%)}
 .wall .lamp::after{content:"";position:absolute;left:0;right:0;top:8.4cqw;height:4.2cqw;background:var(--shade);border:.32cqw solid #1D1147;border-radius:5cqw 5cqw .6cqw .6cqw;box-shadow:inset 0 -.9cqw 0 #FFB000}
-.wall .glow{position:absolute;top:10cqw;left:var(--x);width:22cqw;height:18cqw;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(255,176,0,.42),rgba(255,176,0,0));pointer-events:none}
+.wall .glow{position:absolute;top:10cqw;left:var(--x);width:22cqw;height:18cqw;transform:translateX(-50%);background:radial-gradient(closest-side,var(--glow),rgba(255,176,0,0));pointer-events:none}
 .wall .sign{position:absolute;left:50%;top:14%;transform:translateX(-50%) rotate(-2deg);background:#FFF4DC;color:#1D1147;border:.35cqw solid #1D1147;border-radius:1.6cqw;box-shadow:.7cqw .7cqw 0 #1D1147;padding:1.4cqw 3.2cqw 1.2cqw;text-align:center;white-space:nowrap}
 .wall .sign b{display:block;font:400 3.3cqw/1 'Bowlby One','Arial Black',sans-serif;text-transform:uppercase}
 .wall .sign small{display:block;font:700 2.5cqw/1.1 'Caveat','Comic Sans MS',cursive;color:#E4147E;margin-top:.5cqw}
 .wall .bench{position:absolute;left:9%;right:9%;bottom:9%;height:11%;background:repeating-linear-gradient(90deg,var(--bench) 0 13.6cqw,#1D1147 13.6cqw 13.9cqw);border:.35cqw solid #1D1147;border-radius:2cqw 2cqw .8cqw .8cqw;box-shadow:inset 0 -1.6cqw 0 rgba(29,17,71,.22)}
-.wall .table{position:absolute;bottom:0;left:var(--x);width:12cqw;height:7.5cqw;transform:translateX(-50%)}
-.wall .table::before{content:"";position:absolute;left:0;right:0;top:0;height:1.5cqw;background:var(--table);border:.32cqw solid #1D1147;border-radius:1cqw}
-.wall .table::after{content:"";position:absolute;left:50%;top:1.6cqw;bottom:0;width:1.1cqw;background:#1D1147;transform:translateX(-50%)}
+.wall .pillow{position:absolute;bottom:17.5%;left:var(--x);width:6.6cqw;height:5.6cqw;transform:translateX(-50%) rotate(var(--r));background:var(--c);border:.35cqw solid #1D1147;border-radius:1.4cqw;box-shadow:inset 0 0 0 .9cqw rgba(255,244,220,.0),.4cqw .4cqw 0 #1D1147}
+.wall .pillow::after{content:"";position:absolute;inset:1.1cqw;border:.25cqw dashed #1D1147;border-radius:.8cqw}
 /* notes + footer */
 .notes{border:3px solid var(--line);border-radius:16px;background:var(--card);padding:18px 18px 8px;margin:24px 0 8px;box-shadow:6px 6px 0 var(--shadow)}
 .notes h2{font-size:1.3rem}
@@ -275,11 +275,11 @@ Open \`index.html\` for the swatch book (filters, scale toggle, two wall mock-up
 
 | | Colourway | Palette (from \`brand/tokens.css\`) |
 |---|---|---|
-| \`-sunset\` | saffron · marigold · rani on cream | #FF6A13 · #FFB000 · #E4147E on #FFF4DC, ink #1D1147 lines (tiny cilantro #3FA34D chili caps in 02) |
+| \`-sunset\` | saffron · marigold · rani on cream | #FF6A13 · #FFB000 · #E4147E on #FFF4DC, ink #1D1147 lines |
 | \`-night\` | brights on deep indigo | #FFB000 · #FF6A13 · #E4147E · #00A8A0 · #FFF4DC on #1D1147 |
 | \`-fresh\` | peacock · cilantro · marigold on cream | #00A8A0 · #3FA34D · #FFB000 on #FFF4DC, ink #1D1147 lines |
 
-Supporting tokens also used: #FFFFFF (surface), #FFE7B8 (surface-2), #3A1B7A (night-gradient violet). No gradients, no transparency — every fill is a flat palette colour, so the files separate cleanly for screen/spot printing.
+Small accents: chili #D62839 (chilies, star anise, terrazzo chips), cilantro #3FA34D (chili caps, leaves), plus the semantic tokens #FFFFFF (citrus pith, glass), #FFE7B8 (chai foam, tiffin rails) and #3A1B7A (night arch windows). No gradients, no transparency — every fill is a flat palette colour, so the files separate cleanly for screen/spot printing.
 
 ## Patterns
 
@@ -306,12 +306,12 @@ md += `
 ## Using them
 
 * **Web/CSS:** \`background: url(07-jaipur-arches-sunset.svg) 0 0 / 240px repeat;\` — use a whole-pixel size (e.g. 160/200/240/320 px). Spice Confetti and Block-Print Booti are the calmest behind text; put text on a solid card over the busier ones.
-* **Print:** vector, scale freely. Suggested repeat sizes: wallpaper/murals 45–60 cm, wraps & bag tissue 12–18 cm, napkins 6–8 cm, cup sleeves 5–7 cm. Night colourways need a rich-black-free indigo (#1D1147) — proof on the actual stock.
+* **Print:** vector, scale freely. Suggested repeat sizes: wallpaper/murals 45–60 cm, wraps & bag tissue 12–18 cm, napkins 6–8 cm, cup sleeves 5–7 cm. Night colourways are a solid #1D1147 flood — proof on the actual stock before a run.
 * **Pairing:** one pattern per surface, plus solid colour. Tiffin Stripes and Jaipur Arches are directional (keep upright); the rest can rotate.
 
 ## Seamless check (how it was verified)
 
-Every motif is placed on a torus: anything crossing a tile edge is re-emitted on the opposite edge. \`src/qa.js\` renders each tile 3×3 on a canvas and diffs it against an un-clipped 3×3 reference built from the same placements; a single missing twin shows up as thousands of clustered bad pixels (tested), while all 24 tiles show 0–6 isolated anti-aliasing pixels. Each tile was also eyeballed tiled with the seams moved to the middle of the frame.
+Every motif is placed on a torus: anything crossing a tile edge is re-emitted on the opposite edge. \`src/qa.js\` renders each tile 3×3 on a canvas and diffs it against an un-clipped 3×3 reference built from the same placements; a single missing twin shows up as thousands of clustered bad pixels (tested), while all 24 tiles show only scattered anti-aliasing pixels (largest cluster ≤ 6 px, invisible at 8× zoom). Each tile was also eyeballed tiled with the seams moved to the middle of the frame.
 
 ## Cultural notes
 

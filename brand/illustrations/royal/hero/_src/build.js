@@ -221,7 +221,8 @@ function build(F) {
     if (p.k === 'near' || p.k === 'mid1') g += `<path d="${openD(sb)}" fill="none" stroke="${C.goldDk}" stroke-opacity=".3" stroke-width="${n1(0.7 * lw)}"/>`;
     return g;
   };
-  const shimmer = (s, delay, dur) => `<path class="shimmer" d="${openD(s)}" pathLength="1000" fill="none" stroke="#FFF1C9" stroke-width="${n1(2.2 * lw * Math.sqrt(s))}" stroke-linecap="round" style="animation-delay:${delay}s;animation-duration:${dur}s"/>`;
+  const crown = A.slice(1, -1).map((g, i) => i === 0 ? { t: 'M', x: g.x, y: g.y } : g);
+  const shimmer = (s, delay, dur) => `<path class="shimmer" d="${pd(crown, s, vx, vy)}" pathLength="1000" fill="none" stroke="#FFE3A3" stroke-width="${n1(2.4 * lw * Math.sqrt(s))}" stroke-linecap="round" style="animation-delay:${delay}s;animation-duration:${dur}s"/>`;
   const groupPlanes = (grp, shimmers) => `<g id="${grp}">${F.planes.filter(p => p.grp === grp).map(planeSvg).join('')}${shimmers}</g>`;
   def('haze', `<radialGradient id="${P}haze"><stop offset="0" stop-color="#F4C474" stop-opacity=".2"/><stop offset=".5" stop-color="#D2714A" stop-opacity=".07"/><stop offset="1" stop-color="#A3173F" stop-opacity="0"/></radialGradient>`);
   const haze = `<ellipse cx="${O.x}" cy="${n1(O.y + O.r)}" rx="${n1(arch.w * plane('mid2').sb * 1.05)}" ry="${n1(-arch.ya * plane('mid2').sb * 0.95)}" fill="${ref('haze')}"/>`;
@@ -404,14 +405,14 @@ const STYLE = `<style>
 .flame{transform-box:fill-box;transform-origin:50% 100%;animation:cd-flicker 1.6s ease-in-out infinite alternate}
 .steam{animation:cd-rise 5.2s ease-in-out infinite;opacity:0}
 .ember{animation:cd-float var(--t,9s) linear infinite;opacity:0}
-.shimmer{stroke-dasharray:60 940;stroke-dashoffset:1000;animation:cd-sweep 12s cubic-bezier(.45,0,.55,1) infinite;opacity:0}
+.shimmer{stroke-dasharray:46 954;stroke-dashoffset:1000;animation:cd-sweep 12s cubic-bezier(.45,0,.55,1) infinite;opacity:0}
 @keyframes cd-twinkle{0%,100%{opacity:.35;transform:scale(.72)}50%{opacity:1;transform:scale(1)}}
 @keyframes cd-sway{0%,100%{transform:rotate(-1.1deg)}50%{transform:rotate(1.1deg)}}
 @keyframes cd-glow{from{opacity:.72}to{opacity:1}}
 @keyframes cd-flicker{0%{transform:scale(1,1)}40%{transform:scale(.94,1.08)}70%{transform:scale(1.05,.95)}100%{transform:scale(.97,1.04)}}
 @keyframes cd-rise{0%{opacity:0;transform:translateY(10px)}30%{opacity:1}100%{opacity:0;transform:translateY(-34px)}}
 @keyframes cd-float{0%{opacity:0;transform:translate(0,0)}12%{opacity:1}80%{opacity:.75}100%{opacity:0;transform:translate(var(--dx,0),var(--dy,-200px))}}
-@keyframes cd-sweep{0%{stroke-dashoffset:1000;opacity:0}6%{opacity:1}55%{opacity:1}62%,100%{stroke-dashoffset:0;opacity:0}}
+@keyframes cd-sweep{0%{stroke-dashoffset:1000;opacity:0}8%{opacity:.9}50%{opacity:.9}58%,100%{stroke-dashoffset:0;opacity:0}}
 @media (prefers-reduced-motion:reduce){.star,.lantern,.lantern .glow,.flame,.steam,.ember,.shimmer{animation:none!important}.steam{opacity:.7}.ember{opacity:.6}.shimmer{opacity:0}}
 </style>`;
 
@@ -476,7 +477,7 @@ write('layers/manifest.json', JSON.stringify(manifest, null, 2));
 }
 /* gold trim: wrap the window — <div class="cd-arch-frame"><div class="cd-arch">…</div></div> (a mask would clip a child overlay) */
 .cd-arch-frame { position: relative; }
-.cd-arch-frame::after { content: ""; position: absolute; inset: -2% -2%; background: url(arch-frame-trim.svg) center / 100% 100% no-repeat; pointer-events: none; }
+.cd-arch-frame::after { content: ""; position: absolute; inset: -${n2(8 / vbH * 100)}% -2%; background: url(arch-frame-trim.svg) center / 100% 100% no-repeat; pointer-events: none; }
 
 /* Option C — paste once into the page:
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><clipPath id="cd-arch-clip" clipPathUnits="objectBoundingBox"><path d="${obb}"/></clipPath></svg>
@@ -487,7 +488,7 @@ write('layers/manifest.json', JSON.stringify(manifest, null, 2));
 
 /* ── demo dish art: overhead thali (used to show the arch mask) ── */
 {
-  const R = rng(5); const cx = 300, cy = 430;
+  const R = rng(5); const cx = 300, cy = 505;
   const kat = [
     ['#F06A3E', '#C83A2E', '#7A1228', 'swirl'], ['#FFE08E', '#F0A934', '#B8641C', 'dots'], ['#6DBB6A', '#2E7D4F', '#124A35', 'swirl'],
     ['#FFFFFA', '#F2E6CC', '#CDB48A', 'flecks'], ['#E9A86A', '#B8642E', '#6E3214', 'dots'], ['#7A2A1E', '#4A140E', '#2A0806', 'balls']];

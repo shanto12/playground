@@ -50,7 +50,7 @@ section{padding:56px 0 8px}
 .hr{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.5;margin:0 auto;width:min(1180px,100% - 2*var(--gutter))}
 
 /* compositions */
-.comps{display:grid;gap:20px;margin-top:24px;grid-template-columns:1fr}
+.comps{display:grid;gap:20px;margin-top:24px;grid-template-columns:1fr;align-items:start}
 @media (min-width:860px){.comps{grid-template-columns:1.6fr 1fr}}
 .card{background:linear-gradient(160deg,#1F0F33,#160B26 60%);border:1px solid var(--line);border-radius:var(--radius-l);padding:12px;overflow:hidden}
 .card img{display:block;width:100%;height:auto;border-radius:18px}
@@ -70,13 +70,13 @@ section{padding:56px 0 8px}
 .layers code{color:var(--gold-lt);font-size:12.5px}
 
 /* arch mask demo */
-.arches{display:grid;gap:20px;margin-top:28px;grid-template-columns:repeat(3,1fr);align-items:end}
+.arches{display:grid;gap:clamp(16px,3vw,36px);margin:28px auto 0;max-width:860px;grid-template-columns:repeat(3,1fr);align-items:end}
 @media (max-width:620px){.arches{grid-template-columns:repeat(2,1fr)}.arches figure:last-child{grid-column:1/-1;width:62%;margin-inline:auto}}
 .arches figure{margin:0;text-align:center}
 .arches figcaption{margin-top:10px;font-size:13px;color:var(--muted)}
 .cd-arch > img,.cd-arch--clip > img{animation:kb 18s var(--ease) infinite alternate;transform-origin:50% 60%}
 @keyframes kb{from{transform:scale(1.04)}to{transform:scale(1.14) translateY(-2%)}}
-pre{margin:22px 0 0;padding:16px 18px;background:#0E0719;border:1px solid var(--line);border-radius:18px;overflow:auto;font:13px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#EADCF0;max-width:100%}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;margin:22px auto 0;max-width:860px;padding:16px 18px;background:#0E0719;border:1px solid var(--line);border-radius:18px;overflow:auto;font:13px/1.55 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#EADCF0;max-width:100%}
 pre .c{color:#9C88AA}
 
 footer{margin-top:64px;padding:28px 0 40px;border-top:1px solid var(--line);color:var(--muted);font-size:13.5px}
@@ -157,8 +157,8 @@ footer{margin-top:64px;padding:28px 0 40px;border-top:1px solid var(--line);colo
         <figcaption><code>.cd-arch--clip</code> · CSS polygon + trim</figcaption>
       </figure>
       <figure>
-        <div class="cd-arch-frame"><div class="cd-arch"><img src="demo-dish.svg" alt="Close crop of the thali illustration inside an arch window." loading="lazy" style="object-position:70% 40%"></div></div>
-        <figcaption>mask + gold trim overlay</figcaption>
+        <div class="cd-arch-frame"><div class="cd-arch"><img src="hero-landscape-static.svg" alt="Centre crop of the landscape hero inside an arch window." loading="lazy" style="object-position:50% 50%"></div></div>
+        <figcaption><code>.cd-arch</code> + <code>.cd-arch-frame</code> trim</figcaption>
       </figure>
     </div>
 <pre><span class="c">/* arch-frame.css — drop any image into an arch window */</span>
