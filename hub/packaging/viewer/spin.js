@@ -69,7 +69,7 @@
   /* a cone / cylinder wrapped from N flat slices; u = 0.5 faces the viewer, seam at the back */
   function frustum(fr, spin, faces) {
     var N = fr.N || 40, slant = Math.hypot(fr.h, fr.rt - fr.rb), rm = (fr.rt + fr.rb) / 2;
-    var alpha = Math.atan2(fr.rt - fr.rb, fr.h), ca = Math.cos(alpha), sa = Math.sin(alpha), chord = 2 * rm * Math.sin(Math.PI / N) * 1.06;
+    var alpha = Math.atan2(fr.rt - fr.rb, fr.h), ca = Math.cos(alpha), sa = Math.sin(alpha), chord = 2 * rm * Math.sin(Math.PI / N) * (fr.glass ? 1.0 : 1.06);
     for (var i = 0; i < N; i++) {
       var phi = -Math.PI + (i + 0.5) * 2 * Math.PI / N;
       var e = mk('div', 'sp-f', 'width:' + L(chord) + ';height:' + L(slant) + ';margin:' + L(fr.y - slant / 2) + ' 0 0 ' + L(-chord / 2) +
@@ -97,7 +97,7 @@
     var g = faceGeo(def.w, def.h, def.d);
     var spin = mk('div', 'sp-spin'), faces = [];
     Object.keys(g).forEach(function (k) {
-      var spec = def.faces[k]; if (!spec) return;
+      var spec = (def.faces || {})[k]; if (!spec) return;
       var f = faceEl(g[k], spec, false); spin.appendChild(f.el); faces.push(f);
     });
     if (def.open) {
@@ -220,7 +220,7 @@
         var b = idx[pick('lassi-band', dir)], F = b.frustum;
         return {
           w: 98, d: 98, h: 120,
-          frusta: [{ rt: 49, rb: 30, h: 120, y: 0, bg: 'rgba(255,255,255,.14)', glass: true },
+          frusta: [{ rt: 49, rb: 30, h: 120, y: 0, bg: 'rgba(255,255,255,.1)', glass: true },
                    { rt: F.topDiameter / 2, rb: F.bottomDiameter / 2, h: F.height, y: (F.coversFromTop + F.coversToTop) / 2 - 60, img: fileOf(pick('lassi-band', dir)) }],
           discs: [{ r: 30, y: 60, bg: 'rgba(255,255,255,.3)', down: true }],
           views: cupViews, title: 'Lassi cup with printed band', dims: '16 oz clear cup · 98 mm top · 120 mm tall', info: 'A clear cup with one printed band, so the drink stays the star.'

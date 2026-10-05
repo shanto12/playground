@@ -1,0 +1,307 @@
+{
+ "helper": "royal-reels",
+ "note": "Royal (Direction B) motion pack. Deterministic renders from hub/motion/_build (renderAt(t) + Playwright @30 fps + ffmpeg).",
+ "items": [
+  {
+   "id": "royal-gateway-reel",
+   "title": "The Gateway · Royal reel",
+   "direction": "royal",
+   "type": "video",
+   "src": "assets/royal-reels/royal-gateway-reel.mp4",
+   "poster": "assets/royal-reels/royal-gateway-reel-poster.jpg",
+   "thumb": "assets/royal-reels/royal-gateway-reel-thumb.jpg",
+   "w": 1080,
+   "h": 1920,
+   "caption": "15 s reel: dusk arches, a gold-foil logo, six dishes surfacing in arch windows, an ember rise and an Order online card.",
+   "tags": [
+    "reel"
+   ],
+   "download": "assets/royal-reels/royal-gateway-reel.mp4",
+   "alt": "The Gateway · Royal reel"
+  },
+  {
+   "id": "royal-story-order-now",
+   "title": "Story ad · Order now",
+   "direction": "royal",
+   "type": "video",
+   "src": "assets/royal-reels/royal-story-order-now.mp4",
+   "poster": "assets/royal-reels/royal-story-order-now-poster.jpg",
+   "thumb": "assets/royal-reels/royal-story-order-now-thumb.jpg",
+   "w": 1080,
+   "h": 1920,
+   "caption": "6 s loop: butter chicken steaming in an emerald arch. “Take the evening home.” with an Order online button.",
+   "tags": [
+    "story-ad"
+   ],
+   "download": "assets/royal-reels/royal-story-order-now.mp4",
+   "alt": "Story ad · Order now"
+  },
+  {
+   "id": "royal-story-celebrations",
+   "title": "Story ad · Celebrations & catering",
+   "direction": "royal",
+   "type": "video",
+   "src": "assets/royal-reels/royal-story-celebrations.mp4",
+   "poster": "assets/royal-reels/royal-story-celebrations-poster.jpg",
+   "thumb": "assets/royal-reels/royal-story-celebrations-thumb.jpg",
+   "w": 1080,
+   "h": 1920,
+   "caption": "6 s loop: tandoor, biryani and paneer tikka in three arches, marigold petals drifting, Ask about catering.",
+   "tags": [
+    "story-ad"
+   ],
+   "download": "assets/royal-reels/royal-story-celebrations.mp4",
+   "alt": "Story ad · Celebrations & catering"
+  },
+  {
+   "id": "royal-story-chai-at-dusk",
+   "title": "Story ad · Chai at dusk",
+   "direction": "royal",
+   "type": "video",
+   "src": "assets/royal-reels/royal-story-chai-at-dusk.mp4",
+   "poster": "assets/royal-reels/royal-story-chai-at-dusk-poster.jpg",
+   "thumb": "assets/royal-reels/royal-story-chai-at-dusk-thumb.jpg",
+   "w": 1080,
+   "h": 1920,
+   "caption": "6 s loop: chai and lassi on a sill, dusk through the arch, long curls of steam. Plan your visit.",
+   "tags": [
+    "story-ad"
+   ],
+   "download": "assets/royal-reels/royal-story-chai-at-dusk.mp4",
+   "alt": "Story ad · Chai at dusk"
+  },
+  {
+   "id": "royal-logo-sting-1x1",
+   "title": "Logo sting · square",
+   "direction": "royal",
+   "type": "video",
+   "src": "assets/royal-reels/royal-logo-sting-1x1.mp4",
+   "poster": "assets/royal-reels/royal-logo-sting-1x1-poster.jpg",
+   "thumb": "assets/royal-reels/royal-logo-sting-1x1-thumb.jpg",
+   "w": 1080,
+   "h": 1080,
+   "caption": "4 s: the gate arch draws itself in gold, the handi steams, “Curry District” shimmers in.",
+   "tags": [
+    "sting"
+   ],
+   "download": "assets/royal-reels/royal-logo-sting-1x1.mp4",
+   "alt": "Logo sting · square"
+  },
+  {
+   "id": "royal-logo-sting-16x9",
+   "title": "Logo sting · widescreen",
+   "direction": "royal",
+   "type": "video",
+   "src": "assets/royal-reels/royal-logo-sting-16x9.mp4",
+   "poster": "assets/royal-reels/royal-logo-sting-16x9-poster.jpg",
+   "thumb": "assets/royal-reels/royal-logo-sting-16x9-thumb.jpg",
+   "w": 1920,
+   "h": 1080,
+   "caption": "4 s widescreen sting for the website hero, YouTube and the in-store TV.",
+   "tags": [
+    "sting"
+   ],
+   "download": "assets/royal-reels/royal-logo-sting-16x9.mp4",
+   "alt": "Logo sting · widescreen"
+  },
+  {
+   "id": "royal-board-starters",
+   "title": "TV menu board · Starters & Tandoor",
+   "direction": "royal",
+   "type": "video",
+   "src": "assets/royal-reels/royal-board-starters.mp4",
+   "poster": "assets/royal-reels/royal-board-starters-poster.jpg",
+   "thumb": "assets/royal-reels/royal-board-starters-thumb.jpg",
+   "w": 1920,
+   "h": 1080,
+   "caption": "8 s loop for the dining-room TV. Tasting-card layout, arch-framed dishes, slow crossfades, no prices.",
+   "tags": [
+    "menu-board"
+   ],
+   "download": "assets/royal-reels/royal-board-starters.mp4",
+   "alt": "TV menu board · Starters & Tandoor"
+  },
+  {
+   "id": "royal-board-curry",
+   "title": "TV menu board · Curry & Biryani",
+   "direction": "royal",
+   "type": "video",
+   "src": "assets/royal-reels/royal-board-curry.mp4",
+   "poster": "assets/royal-reels/royal-board-curry-poster.jpg",
+   "thumb": "assets/royal-reels/royal-board-curry-thumb.jpg",
+   "w": 1920,
+   "h": 1080,
+   "caption": "8 s loop: Curry Quarter and Biryani Boulevard, guest favourites marked in gold.",
+   "tags": [
+    "menu-board"
+   ],
+   "download": "assets/royal-reels/royal-board-curry.mp4",
+   "alt": "TV menu board · Curry & Biryani"
+  },
+  {
+   "id": "royal-board-sweets",
+   "title": "TV menu board · Sweets & Chai",
+   "direction": "royal",
+   "type": "video",
+   "src": "assets/royal-reels/royal-board-sweets.mp4",
+   "poster": "assets/royal-reels/royal-board-sweets-poster.jpg",
+   "thumb": "assets/royal-reels/royal-board-sweets-thumb.jpg",
+   "w": 1920,
+   "h": 1080,
+   "caption": "8 s loop: Sweet Street and Chai & Coolers, gulab jamun crossfading to chai.",
+   "tags": [
+    "menu-board"
+   ],
+   "download": "assets/royal-reels/royal-board-sweets.mp4",
+   "alt": "TV menu board · Sweets & Chai"
+  },
+  {
+   "id": "royal-orn-handi",
+   "title": "Ornament · Steaming handi",
+   "direction": "royal",
+   "type": "video",
+   "src": "assets/royal-reels/royal-orn-handi.mp4",
+   "poster": "assets/royal-reels/royal-orn-handi-poster.jpg",
+   "thumb": "assets/royal-reels/royal-orn-handi-thumb.jpg",
+   "w": 1080,
+   "h": 1080,
+   "caption": "4 s seamless loop: biryani handi in an emerald arch, slow steam. Website, stories, slides.",
+   "tags": [
+    "ornament"
+   ],
+   "download": "assets/royal-reels/royal-orn-handi.mp4",
+   "alt": "Ornament · Steaming handi"
+  },
+  {
+   "id": "royal-orn-embers",
+   "title": "Ornament · Drifting embers",
+   "direction": "royal",
+   "type": "video",
+   "src": "assets/royal-reels/royal-orn-embers.mp4",
+   "poster": "assets/royal-reels/royal-orn-embers-poster.jpg",
+   "thumb": "assets/royal-reels/royal-orn-embers-thumb.jpg",
+   "w": 1080,
+   "h": 1080,
+   "caption": "4 s seamless loop of rising embers, for backgrounds and text posts.",
+   "tags": [
+    "ornament"
+   ],
+   "download": "assets/royal-reels/royal-orn-embers.mp4",
+   "alt": "Ornament · Drifting embers"
+  },
+  {
+   "id": "royal-orn-jali",
+   "title": "Ornament · Gold jali shimmer",
+   "direction": "royal",
+   "type": "video",
+   "src": "assets/royal-reels/royal-orn-jali.mp4",
+   "poster": "assets/royal-reels/royal-orn-jali-poster.jpg",
+   "thumb": "assets/royal-reels/royal-orn-jali-thumb.jpg",
+   "w": 1080,
+   "h": 1080,
+   "caption": "4 s seamless loop: light sweeps across the gold jali lattice.",
+   "tags": [
+    "ornament"
+   ],
+   "download": "assets/royal-reels/royal-orn-jali.mp4",
+   "alt": "Ornament · Gold jali shimmer"
+  },
+  {
+   "id": "royal-orn-arch",
+   "title": "Ornament · Arch light-sweep",
+   "direction": "royal",
+   "type": "video",
+   "src": "assets/royal-reels/royal-orn-arch.mp4",
+   "poster": "assets/royal-reels/royal-orn-arch-poster.jpg",
+   "thumb": "assets/royal-reels/royal-orn-arch-thumb.jpg",
+   "w": 1080,
+   "h": 1080,
+   "caption": "4 s seamless loop: light travels around the District Gate arch.",
+   "tags": [
+    "ornament"
+   ],
+   "download": "assets/royal-reels/royal-orn-arch.mp4",
+   "alt": "Ornament · Arch light-sweep"
+  },
+  {
+   "id": "royal-storyboard-gateway",
+   "title": "Storyboard · The Gateway",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-reels/royal-storyboard-gateway.png",
+   "thumb": "assets/royal-reels/royal-storyboard-gateway-thumb.jpg",
+   "w": 1390,
+   "h": 1640,
+   "caption": "8 keyframes with timings for the 15 s reel.",
+   "tags": [
+    "storyboard"
+   ],
+   "download": "assets/royal-reels/royal-storyboard-gateway.png",
+   "alt": "Storyboard · The Gateway"
+  },
+  {
+   "id": "royal-storyboard-sting",
+   "title": "Storyboard · Logo sting",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-reels/royal-storyboard-sting.png",
+   "thumb": "assets/royal-reels/royal-storyboard-sting-thumb.jpg",
+   "w": 1550,
+   "h": 1254,
+   "caption": "8 keyframes for the 4 s sting.",
+   "tags": [
+    "storyboard"
+   ],
+   "download": "assets/royal-reels/royal-storyboard-sting.png",
+   "alt": "Storyboard · Logo sting"
+  },
+  {
+   "id": "royal-storyboard-story-order",
+   "title": "Storyboard · Order now",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-reels/royal-storyboard-story-order.png",
+   "thumb": "assets/royal-reels/royal-storyboard-story-order-thumb.jpg",
+   "w": 1390,
+   "h": 1640,
+   "caption": "8 keyframes, one per beat at 80 BPM.",
+   "tags": [
+    "storyboard"
+   ],
+   "download": "assets/royal-reels/royal-storyboard-story-order.png",
+   "alt": "Storyboard · Order now"
+  },
+  {
+   "id": "royal-storyboard-story-catering",
+   "title": "Storyboard · Celebrations",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-reels/royal-storyboard-story-catering.png",
+   "thumb": "assets/royal-reels/royal-storyboard-story-catering-thumb.jpg",
+   "w": 1390,
+   "h": 1640,
+   "caption": "8 keyframes, one per beat at 80 BPM.",
+   "tags": [
+    "storyboard"
+   ],
+   "download": "assets/royal-reels/royal-storyboard-story-catering.png",
+   "alt": "Storyboard · Celebrations"
+  },
+  {
+   "id": "royal-storyboard-story-chai",
+   "title": "Storyboard · Chai at dusk",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/royal-reels/royal-storyboard-story-chai.png",
+   "thumb": "assets/royal-reels/royal-storyboard-story-chai-thumb.jpg",
+   "w": 1390,
+   "h": 1640,
+   "caption": "8 keyframes, one per beat at 80 BPM.",
+   "tags": [
+    "storyboard"
+   ],
+   "download": "assets/royal-reels/royal-storyboard-story-chai.png",
+   "alt": "Storyboard · Chai at dusk"
+  }
+ ]
+}

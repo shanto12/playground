@@ -27,7 +27,8 @@
 .sp__row[hidden]{display:none}
 .sp__row--tools{display:flex;flex-wrap:wrap;gap:8px}
 .sp__lbl{font:700 .6875rem/1 var(--hub-font-body,'DM Sans',sans-serif);letter-spacing:.14em;text-transform:uppercase;color:var(--hub-muted,#A99FBE)}
-.sp .seg{justify-self:start}
+.sp .seg{justify-self:start;flex-wrap:wrap;overflow:visible;border-radius:26px}
+.sp .seg button{flex:none}
 .sp .btn[aria-pressed="true"]{background:#FFF4DC;color:#120C1E}
 .sp__keys{margin:0;font-size:.8125rem;color:var(--hub-muted,#A99FBE)}
 @media (min-width:900px){
