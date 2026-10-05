@@ -186,7 +186,7 @@
 .planner[data-theme="bazaar"] .pl-seat i{background:var(--c,#fff);border:3px solid #1D1147;box-shadow:2px 2px 0 #1D1147}
 .planner[data-theme="bazaar"] .pl-seat i::after{content:"";display:block;margin:22%;height:56%;border-radius:50%;background:#fff;border:2px solid #1D1147}
 .planner[data-theme="royal"] .pl-seat i{background:radial-gradient(circle,#2A163C 52%,#E9A63A 54%,#F7D98A 62%,#B7791F 70%,transparent 72%)}
-.pl-count{position:absolute;inset:30%;border-radius:50%;display:grid;place-content:center;text-align:center;cursor:ns-resize;touch-action:none;user-select:none;-webkit-user-select:none}
+.pl-count{position:absolute;inset:30%;border-radius:50%;display:grid;place-content:center;text-align:center;user-select:none;-webkit-user-select:none}
 .pl-count__n{display:block;font-family:var(--font-display);font-size:3.2rem;line-height:.9;font-variant-numeric:tabular-nums}
 .pl-count__l{display:block;margin-top:4px;font:800 .75rem/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase}
 .planner[data-theme="bazaar"] .pl-count{color:#1D1147}
@@ -492,3 +492,4 @@
   .pl-fx,.pl-sheen,.pl-theme,.pl-steps,.pl-nav,.pl-dish__acts,.pl-toolbar__btns,.pl-actions{display:none !important}
   .pl-rules{position:static}
 }
+.pl-plate__ring{position:absolute;inset:-6%;border-radius:50%;border:1.5px solid #F7D98A;pointer-events:none;opacity:0;box-shadow:0 0 18px rgba(233,166,58,.55)}

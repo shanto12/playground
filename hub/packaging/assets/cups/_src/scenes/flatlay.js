@@ -14,7 +14,7 @@ async function napkin(scene, { x, z, rot, tile, tileMM = 46, w = 150, d = 150 })
 }
 export async function run({ dir }) {
   const bz = dir === 'bazaar';
-  const { renderer, scene, camera } = setup({ fov: 32, pos: [0, 1600, 160], target: [0, 0, 20], env: bz ? .9 : .8 });
+  const { renderer, scene, camera } = setup({ fov: 32, pos: [0, 2050, 200], target: [0, 0, 40], env: bz ? .9 : .8 });
   keyLight(scene, { pos: [-520, 1200, -260], intensity: 2.1, color: bz ? 0xfff0dc : 0xffe6c4, size: 900, radius: 18, map: 4096 });
   fill(scene, { pos: [400, 800, 600], intensity: .45 });
   ground(scene, { opacity: .35, color: bz ? 0x00302c : 0x02100c });

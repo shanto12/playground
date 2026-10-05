@@ -20,7 +20,7 @@ const BG = {
 
 export async function run({ dir, item }) {
   const bz = dir === 'bazaar', bg = BG[dir][item];
-  const cam = { lassi: { pos: [20, 360, 1000], target: [10, 92, 0] }, trays: { pos: [60, 720, 980], target: [10, 60, 30] }, lunch: { pos: [80, 560, 900], target: [0, 50, 20] }, carton: { pos: [120, 420, 960], target: [0, 92, 0] } }[item];
+  const cam = { lassi: { pos: [20, 330, 760], target: [12, 108, 0] }, trays: { pos: [60, 760, 1060], target: [30, 60, 40] }, lunch: { pos: [80, 560, 900], target: [0, 50, 20] }, carton: { pos: [120, 420, 960], target: [0, 92, 0] } }[item];
   const { renderer, scene, camera } = setup({ fov: item === 'trays' ? 30 : 24, ...cam, env: bz ? .85 : .75 });
   keyLight(scene, { pos: [-480, 760, 420], intensity: 2.2, color: bz ? 0xfff0dc : 0xffe6c4, size: 520, radius: 16 });
   fill(scene, { pos: [520, 260, 520], intensity: .5 });

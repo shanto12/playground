@@ -100,6 +100,198 @@
         "storefront"
       ],
       "download": "assets/storefront/night-royal.svg"
+    },
+    {
+      "id": "decals-bazaar",
+      "title": "Window decal set — A · Bazaar",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/storefront/decals-bazaar.png",
+      "thumb": "assets/storefront/decals-bazaar-thumb.jpg",
+      "w": 1800,
+      "h": 2250,
+      "caption": "Hours panel, order-online QR (sample — opens this pitch), a generic \"We deliver\" roundel and welcome pull/push plates. Hours as listed publicly; confirm before print.",
+      "alt": "Sheet of window decals in the A · Bazaar style",
+      "tags": [
+        "decal"
+      ],
+      "download": "assets/storefront/decals-bazaar.svg"
+    },
+    {
+      "id": "door-bazaar",
+      "title": "Door decals & open/closed hanger — A · Bazaar",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/storefront/door-bazaar.png",
+      "thumb": "assets/storefront/door-bazaar-thumb.jpg",
+      "w": 1800,
+      "h": 2250,
+      "caption": "Suite number, eye-level hours, a reversible open/closed hanger with a wink, and pull/push plates. Illustrative door, not your actual unit.",
+      "alt": "Glass door with A · Bazaar decals and an open/closed sign",
+      "tags": [
+        "decal"
+      ],
+      "download": "assets/storefront/door-bazaar.svg"
+    },
+    {
+      "id": "frost-bazaar",
+      "title": "Seasonal frosted vinyl — A · Bazaar",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/storefront/frost-bazaar.png",
+      "thumb": "assets/storefront/frost-bazaar-thumb.jpg",
+      "w": 1800,
+      "h": 2250,
+      "caption": "Etched-look privacy film at seated eye level, swapped by season: marigold toran for festival season, kulhads and star anise for chai season.",
+      "alt": "Two windows with frosted seasonal patterns, A · Bazaar",
+      "tags": [
+        "decal"
+      ],
+      "download": "assets/storefront/frost-bazaar.svg"
+    },
+    {
+      "id": "aframe-bazaar-1",
+      "title": "A-frame specials board 1 — A · Bazaar",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/storefront/aframe-bazaar-1.png",
+      "thumb": "assets/storefront/aframe-bazaar-1-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "Printed frame, real chalkboard centre for daily specials. 24 × 36 in face, under 4 ft tall — Little Elm lists a 12 sq ft cap and one per tenant (S, check City/landlord). Dish names from the public menu; no prices.",
+      "alt": "A-frame sidewalk board design 1, A · Bazaar",
+      "tags": [
+        "a-frame"
+      ],
+      "download": "assets/storefront/aframe-bazaar-1.svg"
+    },
+    {
+      "id": "aframe-bazaar-2",
+      "title": "A-frame specials board 2 — A · Bazaar",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/storefront/aframe-bazaar-2.png",
+      "thumb": "assets/storefront/aframe-bazaar-2-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "Printed frame, real chalkboard centre for daily specials. 24 × 36 in face, under 4 ft tall — Little Elm lists a 12 sq ft cap and one per tenant (S, check City/landlord). Dish names from the public menu; no prices.",
+      "alt": "A-frame sidewalk board design 2, A · Bazaar",
+      "tags": [
+        "a-frame"
+      ],
+      "download": "assets/storefront/aframe-bazaar-2.svg"
+    },
+    {
+      "id": "wayfinding-bazaar",
+      "title": "Indoor wayfinding family — A · Bazaar",
+      "direction": "bazaar",
+      "type": "image",
+      "src": "assets/storefront/wayfinding-bazaar.png",
+      "thumb": "assets/storefront/wayfinding-bazaar-thumb.jpg",
+      "w": 1800,
+      "h": 2250,
+      "caption": "Eight signs, one voice: order here, pickup, chai, water & cutlery, catering, seat yourself, restrooms, staff only. Decorative — ADA tactile signage stays as required.",
+      "alt": "Eight indoor wayfinding signs in the A · Bazaar style",
+      "tags": [
+        "wayfinding"
+      ],
+      "download": "assets/storefront/wayfinding-bazaar.svg"
+    },
+    {
+      "id": "decals-royal",
+      "title": "Window decal set — B · Royal",
+      "direction": "royal",
+      "type": "image",
+      "src": "assets/storefront/decals-royal.png",
+      "thumb": "assets/storefront/decals-royal-thumb.jpg",
+      "w": 1800,
+      "h": 2250,
+      "caption": "Hours panel, order-online QR (sample — opens this pitch), a generic \"We deliver\" roundel and welcome pull/push plates. Hours as listed publicly; confirm before print.",
+      "alt": "Sheet of window decals in the B · Royal style",
+      "tags": [
+        "decal"
+      ],
+      "download": "assets/storefront/decals-royal.svg"
+    },
+    {
+      "id": "door-royal",
+      "title": "Door decals & open/closed hanger — B · Royal",
+      "direction": "royal",
+      "type": "image",
+      "src": "assets/storefront/door-royal.png",
+      "thumb": "assets/storefront/door-royal-thumb.jpg",
+      "w": 1800,
+      "h": 2250,
+      "caption": "Suite number, eye-level hours, a reversible open/closed hanger with a wink, and pull/push plates. Illustrative door, not your actual unit.",
+      "alt": "Glass door with B · Royal decals and an open/closed sign",
+      "tags": [
+        "decal"
+      ],
+      "download": "assets/storefront/door-royal.svg"
+    },
+    {
+      "id": "frost-royal",
+      "title": "Seasonal frosted vinyl — B · Royal",
+      "direction": "royal",
+      "type": "image",
+      "src": "assets/storefront/frost-royal.png",
+      "thumb": "assets/storefront/frost-royal-thumb.jpg",
+      "w": 1800,
+      "h": 2250,
+      "caption": "Etched-look privacy film: an all-year jali lattice, and an arches-and-lanterns version for festival season.",
+      "alt": "Two windows with frosted seasonal patterns, B · Royal",
+      "tags": [
+        "decal"
+      ],
+      "download": "assets/storefront/frost-royal.svg"
+    },
+    {
+      "id": "aframe-royal-1",
+      "title": "A-frame specials board 1 — B · Royal",
+      "direction": "royal",
+      "type": "image",
+      "src": "assets/storefront/aframe-royal-1.png",
+      "thumb": "assets/storefront/aframe-royal-1-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "Printed frame, real chalkboard centre for daily specials. 24 × 36 in face, under 4 ft tall — Little Elm lists a 12 sq ft cap and one per tenant (S, check City/landlord). Dish names from the public menu; no prices.",
+      "alt": "A-frame sidewalk board design 1, B · Royal",
+      "tags": [
+        "a-frame"
+      ],
+      "download": "assets/storefront/aframe-royal-1.svg"
+    },
+    {
+      "id": "aframe-royal-2",
+      "title": "A-frame specials board 2 — B · Royal",
+      "direction": "royal",
+      "type": "image",
+      "src": "assets/storefront/aframe-royal-2.png",
+      "thumb": "assets/storefront/aframe-royal-2-thumb.jpg",
+      "w": 1600,
+      "h": 2000,
+      "caption": "Printed frame, real chalkboard centre for daily specials. 24 × 36 in face, under 4 ft tall — Little Elm lists a 12 sq ft cap and one per tenant (S, check City/landlord). Dish names from the public menu; no prices.",
+      "alt": "A-frame sidewalk board design 2, B · Royal",
+      "tags": [
+        "a-frame"
+      ],
+      "download": "assets/storefront/aframe-royal-2.svg"
+    },
+    {
+      "id": "wayfinding-royal",
+      "title": "Indoor wayfinding family — B · Royal",
+      "direction": "royal",
+      "type": "image",
+      "src": "assets/storefront/wayfinding-royal.png",
+      "thumb": "assets/storefront/wayfinding-royal-thumb.jpg",
+      "w": 1800,
+      "h": 2250,
+      "caption": "Eight signs, one voice: order here, pickup, chai, water & cutlery, catering, seat yourself, restrooms, staff only. Decorative — ADA tactile signage stays as required.",
+      "alt": "Eight indoor wayfinding signs in the B · Royal style",
+      "tags": [
+        "wayfinding"
+      ],
+      "download": "assets/storefront/wayfinding-royal.svg"
     }
   ]
 }

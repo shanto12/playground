@@ -1,0 +1,596 @@
+{
+ "helper": "murals",
+ "items": [
+  {
+   "id": "bz-district-map-16x9",
+   "title": "The District Map · mural 16:9",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/murals/bz-district-map-16x9.png",
+   "thumb": "assets/murals/bz-district-map-16x9-thumb.jpg",
+   "w": 1920,
+   "h": 1080,
+   "caption": "All eight menu zones as a walkable bazaar map, so guests find their order on the wall before the menu.",
+   "tags": [
+    "mural",
+    "hero"
+   ],
+   "download": "assets/murals/bz-district-map-16x9.svg"
+  },
+  {
+   "id": "bz-district-map-9x16",
+   "title": "The District Map · tall wall 9:16",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/murals/bz-district-map-9x16.png",
+   "thumb": "assets/murals/bz-district-map-9x16-thumb.jpg",
+   "w": 1080,
+   "h": 1920,
+   "caption": "The same map stacked for a tall wall or host-stand column; it reads top to bottom like a stroll.",
+   "tags": [
+    "mural",
+    "hero"
+   ],
+   "download": "assets/murals/bz-district-map-9x16.svg"
+  },
+  {
+   "id": "ry-gateway-9x16",
+   "title": "The Gateway · mural 9:16",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/murals/ry-gateway-9x16.png",
+   "thumb": "assets/murals/ry-gateway-9x16-thumb.jpg",
+   "w": 1080,
+   "h": 1920,
+   "caption": "Nested gold-lined arches open onto a sunset as spices drift up from a copper handi: date-night drama with no clichés.",
+   "tags": [
+    "mural",
+    "hero"
+   ],
+   "download": "assets/murals/ry-gateway-9x16.svg"
+  },
+  {
+   "id": "ry-gateway-16x9",
+   "title": "The Gateway · panorama 16:9",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/murals/ry-gateway-16x9.png",
+   "thumb": "assets/murals/ry-gateway-16x9-thumb.jpg",
+   "w": 1920,
+   "h": 1080,
+   "caption": "Wide version: backlit jali side arches flank the sunset gateway, with brass vessels on one long ledge.",
+   "tags": [
+    "mural",
+    "hero"
+   ],
+   "download": "assets/murals/ry-gateway-16x9.svg"
+  },
+  {
+   "id": "bz-marigold-chai",
+   "title": "Marigold & Chai · garland wall",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/murals/bz-marigold-chai.png",
+   "thumb": "assets/murals/bz-marigold-chai-thumb.jpg",
+   "w": 1920,
+   "h": 1080,
+   "caption": "A quieter wall: one pulled-chai pour framed by marigold strands, made for the chai counter.",
+   "tags": [
+    "mural",
+    "quiet"
+   ],
+   "download": "assets/murals/bz-marigold-chai.svg"
+  },
+  {
+   "id": "ry-spice-botanical",
+   "title": "Spice Botanical · fine-line frieze",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/murals/ry-spice-botanical.png",
+   "thumb": "assets/murals/ry-spice-botanical-thumb.jpg",
+   "w": 2400,
+   "h": 675,
+   "caption": "Eight real spice plants in gold hairline with botanical names, a frieze band that adds calm luxury over banquettes.",
+   "tags": [
+    "mural",
+    "frieze",
+    "quiet"
+   ],
+   "download": "assets/murals/ry-spice-botanical.svg"
+  },
+  {
+   "id": "bz-neon-wordmark",
+   "title": "Wordmark neon",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/murals/bz-neon-wordmark.png",
+   "thumb": "assets/murals/bz-neon-wordmark-thumb.jpg",
+   "w": 1200,
+   "h": 1500,
+   "caption": "Bowlby outline tubes plus the DISTRICT street-sign plate: the logo, translated faithfully into light.",
+   "tags": [
+    "neon",
+    "signage"
+   ],
+   "download": "assets/murals/bz-neon-wordmark.svg"
+  },
+  {
+   "id": "bz-neon-emblem",
+   "title": "Emblem neon",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/murals/bz-neon-emblem.png",
+   "thumb": "assets/murals/bz-neon-emblem-thumb.jpg",
+   "w": 1200,
+   "h": 1500,
+   "caption": "Gate, sun-bowl, steam and bunting as single-line tubes, readable from across the room.",
+   "tags": [
+    "neon",
+    "signage"
+   ],
+   "download": "assets/murals/bz-neon-emblem.svg"
+  },
+  {
+   "id": "bz-neon-chai-time",
+   "title": "“Chai Time” neon",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/murals/bz-neon-chai-time.png",
+   "thumb": "assets/murals/bz-neon-chai-time-thumb.jpg",
+   "w": 1200,
+   "h": 1500,
+   "caption": "Original hand-drawn monoline script with a cutting-chai glass, made for the chai counter.",
+   "tags": [
+    "neon",
+    "signage"
+   ],
+   "download": "assets/murals/bz-neon-chai-time.svg"
+  },
+  {
+   "id": "bz-neon-naan-stop",
+   "title": "“Naan Stop” neon",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/murals/bz-neon-naan-stop.png",
+   "thumb": "assets/murals/bz-neon-naan-stop-thumb.jpg",
+   "w": 1200,
+   "h": 1500,
+   "caption": "Loud Bazaar pun in chunky outline tubes with a blistered naan, an easy photo by the bread station.",
+   "tags": [
+    "neon",
+    "signage"
+   ],
+   "download": "assets/murals/bz-neon-naan-stop.svg"
+  },
+  {
+   "id": "bz-neon-order-here",
+   "title": "“Order here” counter neon",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/murals/bz-neon-order-here.png",
+   "thumb": "assets/murals/bz-neon-order-here-thumb.jpg",
+   "w": 1200,
+   "h": 1500,
+   "caption": "Clear wayfinding: an aqua caps line and a bent arrow landing on the counter.",
+   "tags": [
+    "neon",
+    "signage"
+   ],
+   "download": "assets/murals/bz-neon-order-here.svg"
+  },
+  {
+   "id": "bz-neon-flicker",
+   "title": "Neon flicker-hint frames",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/murals/bz-neon-flicker.png",
+   "thumb": "assets/murals/bz-neon-flicker-thumb.jpg",
+   "w": 1200,
+   "h": 1500,
+   "caption": "Power-on strike sequence, from off to steady, ready for a reel opener.",
+   "tags": [
+    "neon",
+    "signage"
+   ],
+   "download": "assets/murals/bz-neon-flicker.svg"
+  },
+  {
+   "id": "ry-neon-wordmark",
+   "title": "Wordmark neon",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/murals/ry-neon-wordmark.png",
+   "thumb": "assets/murals/ry-neon-wordmark-thumb.jpg",
+   "w": 1200,
+   "h": 1500,
+   "caption": "Fraunces “Curry” in outline tubes over spaced DISTRICT: serif neon that matches the Royal logo.",
+   "tags": [
+    "neon",
+    "signage"
+   ],
+   "download": "assets/murals/ry-neon-wordmark.svg"
+  },
+  {
+   "id": "ry-neon-emblem",
+   "title": "Emblem neon",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/murals/ry-neon-emblem.png",
+   "thumb": "assets/murals/ry-neon-emblem-thumb.jpg",
+   "w": 1200,
+   "h": 1500,
+   "caption": "Mughal arch, cusped inner arch, handi and three steam ribbons in gold and ruby light.",
+   "tags": [
+    "neon",
+    "signage"
+   ],
+   "download": "assets/murals/ry-neon-emblem.svg"
+  },
+  {
+   "id": "ry-neon-chai-time",
+   "title": "“Chai Time” neon",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/murals/ry-neon-chai-time.png",
+   "thumb": "assets/murals/ry-neon-chai-time-thumb.jpg",
+   "w": 1200,
+   "h": 1500,
+   "caption": "Monoline script under a brass-kettle outline, in warm gold on emerald plaster.",
+   "tags": [
+    "neon",
+    "signage"
+   ],
+   "download": "assets/murals/ry-neon-chai-time.svg"
+  },
+  {
+   "id": "ry-neon-slow-simmered",
+   "title": "“Slow-simmered” script neon",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/murals/ry-neon-slow-simmered.png",
+   "thumb": "assets/murals/ry-neon-slow-simmered-thumb.jpg",
+   "w": 1200,
+   "h": 1500,
+   "caption": "The brand line as a hand-drawn gold script with a ruby swash, the calm sign for the dining room.",
+   "tags": [
+    "neon",
+    "signage"
+   ],
+   "download": "assets/murals/ry-neon-slow-simmered.svg"
+  },
+  {
+   "id": "ry-neon-order-here",
+   "title": "“Order here” counter neon",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/murals/ry-neon-order-here.png",
+   "thumb": "assets/murals/ry-neon-order-here-thumb.jpg",
+   "w": 1200,
+   "h": 1500,
+   "caption": "Elegant script and a ruby arrow over a brass-topped counter.",
+   "tags": [
+    "neon",
+    "signage"
+   ],
+   "download": "assets/murals/ry-neon-order-here.svg"
+  },
+  {
+   "id": "ry-neon-flicker",
+   "title": "Neon flicker-hint frames",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/murals/ry-neon-flicker.png",
+   "thumb": "assets/murals/ry-neon-flicker-thumb.jpg",
+   "w": 1200,
+   "h": 1500,
+   "caption": "Strike sequence for “Slow-simmered”, from off to steady glow.",
+   "tags": [
+    "neon",
+    "signage"
+   ],
+   "download": "assets/murals/ry-neon-flicker.svg"
+  },
+  {
+   "id": "bz-gallery-wall",
+   "title": "Gallery wall · six prints",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/murals/bz-gallery-wall.png",
+   "thumb": "assets/murals/bz-gallery-wall-thumb.jpg",
+   "w": 1600,
+   "h": 1000,
+   "caption": "Six framed prints in a salon hang over a bench, in loud frames with hard sticker shadows.",
+   "tags": [
+    "print",
+    "gallery-wall"
+   ],
+   "download": "assets/murals/bz-gallery-wall.svg"
+  },
+  {
+   "id": "bz-print-set",
+   "title": "Print set · six posters",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/murals/bz-print-set.png",
+   "thumb": "assets/murals/bz-print-set-thumb.jpg",
+   "w": 1600,
+   "h": 1200,
+   "caption": "Spice of the week, chai wisdom, two dish portraits, the map mini and a dum-sealing technique card.",
+   "tags": [
+    "print"
+   ],
+   "download": "assets/murals/bz-print-set.svg"
+  },
+  {
+   "id": "ry-gallery-wall",
+   "title": "Gallery wall · six prints",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/murals/ry-gallery-wall.png",
+   "thumb": "assets/murals/ry-gallery-wall-thumb.jpg",
+   "w": 1600,
+   "h": 1000,
+   "caption": "Brass frames and ivory mats on plum above emerald panelling, like a private dining room.",
+   "tags": [
+    "print",
+    "gallery-wall"
+   ],
+   "download": "assets/murals/ry-gallery-wall.svg"
+  },
+  {
+   "id": "ry-print-set",
+   "title": "Print set · six posters",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/murals/ry-print-set.png",
+   "thumb": "assets/murals/ry-print-set-thumb.jpg",
+   "w": 1600,
+   "h": 1200,
+   "caption": "Saffron study, chai wisdom, arch-framed dish portraits, a fine-line district plan and a technique card.",
+   "tags": [
+    "print"
+   ],
+   "download": "assets/murals/ry-print-set.svg"
+  },
+  {
+   "id": "bz-print-spice",
+   "title": "Spice of the week · Cardamom",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/murals/bz-print-spice.png",
+   "thumb": "assets/murals/bz-print-spice-thumb.jpg",
+   "w": 900,
+   "h": 1350,
+   "caption": "A rotating spice poster gives regulars something new to read each week.",
+   "tags": [
+    "print",
+    "poster"
+   ],
+   "download": "assets/murals/bz-print-spice.svg"
+  },
+  {
+   "id": "bz-print-chai",
+   "title": "Chai wisdom",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/murals/bz-print-chai.png",
+   "thumb": "assets/murals/bz-print-chai-thumb.jpg",
+   "w": 900,
+   "h": 1350,
+   "caption": "A non-religious chai quote, warm and shareable.",
+   "tags": [
+    "print",
+    "poster"
+   ],
+   "download": "assets/murals/bz-print-chai.svg"
+  },
+  {
+   "id": "bz-print-biryani",
+   "title": "Dish portrait · Biryani",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/murals/bz-print-biryani.png",
+   "thumb": "assets/murals/bz-print-biryani-thumb.jpg",
+   "w": 900,
+   "h": 1350,
+   "caption": "Hero dish on its own, labelled with its menu district.",
+   "tags": [
+    "print",
+    "poster"
+   ],
+   "download": "assets/murals/bz-print-biryani.svg"
+  },
+  {
+   "id": "bz-print-butter",
+   "title": "Dish portrait · Butter chicken",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/murals/bz-print-butter.png",
+   "thumb": "assets/murals/bz-print-butter-thumb.jpg",
+   "w": 900,
+   "h": 1350,
+   "caption": "The best-known dish, framed as a portrait.",
+   "tags": [
+    "print",
+    "poster"
+   ],
+   "download": "assets/murals/bz-print-butter.svg"
+  },
+  {
+   "id": "bz-print-map",
+   "title": "District map mini",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/murals/bz-print-map.png",
+   "thumb": "assets/murals/bz-print-map-thumb.jpg",
+   "w": 900,
+   "h": 1350,
+   "caption": "A print-size map so the district idea follows guests to the table.",
+   "tags": [
+    "print",
+    "poster"
+   ],
+   "download": "assets/murals/bz-print-map.svg"
+  },
+  {
+   "id": "bz-print-recipe",
+   "title": "How a dum biryani is sealed",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/murals/bz-print-recipe.png",
+   "thumb": "assets/murals/bz-print-recipe-thumb.jpg",
+   "w": 900,
+   "h": 1350,
+   "caption": "Generic technique only (layer, seal, dum, open), with no house-recipe claims.",
+   "tags": [
+    "print",
+    "poster"
+   ],
+   "download": "assets/murals/bz-print-recipe.svg"
+  },
+  {
+   "id": "ry-print-spice",
+   "title": "Spice of the week · Saffron",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/murals/ry-print-spice.png",
+   "thumb": "assets/murals/ry-print-spice-thumb.jpg",
+   "w": 900,
+   "h": 1350,
+   "caption": "A rotating spice poster gives regulars something new to read each week.",
+   "tags": [
+    "print",
+    "poster"
+   ],
+   "download": "assets/murals/ry-print-spice.svg"
+  },
+  {
+   "id": "ry-print-chai",
+   "title": "Chai wisdom",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/murals/ry-print-chai.png",
+   "thumb": "assets/murals/ry-print-chai-thumb.jpg",
+   "w": 900,
+   "h": 1350,
+   "caption": "A non-religious chai quote, warm and shareable.",
+   "tags": [
+    "print",
+    "poster"
+   ],
+   "download": "assets/murals/ry-print-chai.svg"
+  },
+  {
+   "id": "ry-print-biryani",
+   "title": "Dish portrait · Biryani",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/murals/ry-print-biryani.png",
+   "thumb": "assets/murals/ry-print-biryani-thumb.jpg",
+   "w": 900,
+   "h": 1350,
+   "caption": "Hero dish on its own, labelled with its menu district.",
+   "tags": [
+    "print",
+    "poster"
+   ],
+   "download": "assets/murals/ry-print-biryani.svg"
+  },
+  {
+   "id": "ry-print-butter",
+   "title": "Dish portrait · Butter chicken",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/murals/ry-print-butter.png",
+   "thumb": "assets/murals/ry-print-butter-thumb.jpg",
+   "w": 900,
+   "h": 1350,
+   "caption": "The best-known dish, framed as a portrait.",
+   "tags": [
+    "print",
+    "poster"
+   ],
+   "download": "assets/murals/ry-print-butter.svg"
+  },
+  {
+   "id": "ry-print-map",
+   "title": "The District · fine-line plan",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/murals/ry-print-map.png",
+   "thumb": "assets/murals/ry-print-map-thumb.jpg",
+   "w": 900,
+   "h": 1350,
+   "caption": "A print-size map so the district idea follows guests to the table.",
+   "tags": [
+    "print",
+    "poster"
+   ],
+   "download": "assets/murals/ry-print-map.svg"
+  },
+  {
+   "id": "ry-print-recipe",
+   "title": "How a dum biryani is sealed",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/murals/ry-print-recipe.png",
+   "thumb": "assets/murals/ry-print-recipe-thumb.jpg",
+   "w": 900,
+   "h": 1350,
+   "caption": "Generic technique only (layer, seal, dum, open), with no house-recipe claims.",
+   "tags": [
+    "print",
+    "poster"
+   ],
+   "download": "assets/murals/ry-print-recipe.svg"
+  },
+  {
+   "id": "bz-selfie-wall",
+   "title": "Instagram corner · #CurryDistrict",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/murals/bz-selfie-wall.png",
+   "thumb": "assets/murals/bz-selfie-wall-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "A painted arch, a neon inside, a cane stool and a “say paneer” floor sticker: the photo nearly takes itself.",
+   "tags": [
+    "selfie-wall",
+    "neon"
+   ],
+   "download": "assets/murals/bz-selfie-wall.svg"
+  },
+  {
+   "id": "ry-selfie-wall",
+   "title": "Instagram corner · #CurryDistrict",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/murals/ry-selfie-wall.png",
+   "thumb": "assets/murals/ry-selfie-wall-thumb.jpg",
+   "w": 1080,
+   "h": 1350,
+   "caption": "An emerald arch alcove with gold beading, backlit brass jali, a ruby pouf and a brass hashtag plaque.",
+   "tags": [
+    "selfie-wall",
+    "neon"
+   ],
+   "download": "assets/murals/ry-selfie-wall.svg"
+  },
+  {
+   "id": "production-notes",
+   "title": "Mural & sign production notes",
+   "direction": "both",
+   "type": "image",
+   "src": "assets/murals/production-notes.png",
+   "thumb": "assets/murals/production-notes-thumb.jpg",
+   "w": 1080,
+   "h": 1920,
+   "caption": "Paint vs. print vs. hybrid, sizes, lead times and approx. costs from the research brief, all flagged approx.",
+   "tags": [
+    "production",
+    "notes"
+   ],
+   "download": "assets/murals/production-notes.svg"
+  }
+ ]
+}

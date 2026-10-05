@@ -233,9 +233,9 @@ def gallery(direction, order):
             o.append(path(f'M220 820C{220+a} 760 {220+a*1.6} 720 {220+a*2.2} 690', fill='none', stroke=INK, stroke_width=3, opacity='.4'))
         o.append(txt('“Chai first. Decisions later.” — framed', 'caveat', 34, 1300, 710, INK, wght=700, opacity='0'))
     else:
-        o.append(path('M360 800H1240V836H360Z', fill='url(#gbr)'))
-        o.append(f'<g transform="translate(560,796)">{kettle("gbr", 0.7)}</g>')
-        o.append(f'<g transform="translate(1040,796)">{katori_stack("gbr", 0.8)}</g>')
+        o.append(path('M300 800H1300V836H300Z', fill='url(#gbr)'))
+        o.append(f'<g transform="translate(345,796)">{kettle("gbr", 0.62)}</g>')
+        o.append(f'<g transform="translate(1260,796)">{katori_stack("gbr", 0.7)}</g>')
         o.append(path('M150 950L170 830H270L290 950Z', fill='url(#gbr)'))
         for a in range(-60, 61, 30):
             o.append(path(f'M220 830C{220+a} 770 {220+a*1.6} 730 {220+a*2.2} 700', fill='none', stroke='#1F7A5E', stroke_width=12, stroke_linecap='round'))
@@ -293,7 +293,7 @@ def selfie_bz():
             o.append(circle(i, j + 60, 12, fill=BZ['marigold']))
     o.append(rect(0, 1040, W, 10, fill=INK, opacity='.6'))
     # floor sticker
-    o.append(ellipse(540, 1200, 150, 44, fill=BZ['marigold'], stroke=INK, stroke_width=4))
+    o.append(ellipse(540, 1200, 196, 46, fill=BZ['marigold'], stroke=INK, stroke_width=4))
     o.append(txt('STAND HERE · SAY “PANEER”', 'bowlby', 20, 540, 1208, INK, anchor='middle'))
     # moora stool (woven cane) + props
     sx, sy = 300, 1150
