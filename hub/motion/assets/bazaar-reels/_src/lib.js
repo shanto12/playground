@@ -294,7 +294,7 @@
     const wp = pathsOf(A.wordText);     // 5 paths: CURRY(2) + DISTRICT(3)
     const root = h('div', { class: 'abs logo', style: { left: '0px', top: '0px', width: '0px', height: '0px' } }, parent);
     // emblem svg: viewBox -4 -4 218 249.11 → we use 0..218 coordinates (shifted)
-    const em = h('div', { class: 'abs', style: { width: '218px', height: '249px', transformOrigin: '50% 100%' } }, root);
+    const em = h('div', { class: 'abs', style: { width: '218px', height: '249px', transformOrigin: '50% 50%' } }, root);
     em.innerHTML = '<svg viewBox="-4 -4 218 249.11" width="218" height="249" overflow="visible" aria-hidden="true">' +
       '<defs><clipPath id="' + id + 'sky"><path d="' + ep[2].d + '"/></clipPath>' +
       '<clipPath id="' + id + 'st"><rect class="stc" x="-10" y="110" width="240" height="0"/></clipPath>' +
@@ -310,15 +310,18 @@
     dist.innerHTML = '<svg viewBox="-284.57 136 579.14 124" width="579" height="124" overflow="visible" aria-hidden="true">' + pathMarkup(wp.slice(2, 5)) + '</svg>';
     const q = sel => em.querySelector(sel);
     const sun = q('.sun'), stc = q('.stc'), btc = q('.btc'), steamg = q('.steamg');
+    // positions measured from brand/logo/bazaar/wordmark-stacked.svg & wordmark-horizontal.svg
     const lay = {};
     const sc = opt.scale || 1;
+    let anchor;
     if (opt.layout === 'horizontal') {
-      // emblem left, words right (mirrors wordmark-horizontal proportions)
-      lay.em = { x: -400, y: -130, s: 1.18 }; lay.cu = { x: 125, y: -12, s: 1 }; lay.di = { x: 125, y: 0, s: 1 };
+      lay.em = { x: 107.1, y: 123.0, s: 1.02 }; lay.cu = { x: 531.74, y: 63, s: 1 }; lay.di = { x: 460.04, y: 198, s: 1 };
+      anchor = [404.6, 123];
     } else {
-      lay.em = { x: 0, y: -235, s: 1.32 }; lay.cu = { x: 0, y: 58, s: 1 }; lay.di = { x: 0, y: 66, s: 1 };
+      lay.em = { x: 7.4, y: 178.4, s: 1.48 }; lay.cu = { x: 5, y: 427.04, s: 1 }; lay.di = { x: 5, y: 562.04, s: 1 };
+      anchor = [0, 305];
     }
-    root.style.left = opt.cx + 'px'; root.style.top = opt.cy + 'px';
+    root.style.left = (opt.cx - anchor[0] * sc) + 'px'; root.style.top = (opt.cy - anchor[1] * sc) + 'px';
     root.style.transform = 'scale(' + sc + ')';
     root.style.transformOrigin = '0 0';
     function place(e, ww, hh, L, o) {
@@ -326,8 +329,11 @@
       e.style.left = (L.x - ww / 2) + 'px'; e.style.top = (L.y - hh / 2) + 'px';
       T(e, Object.assign({}, o, { s: (o.s == null ? 1 : o.s) * L.s }));
     }
+    const rl = opt.cx - anchor[0] * sc, rt = opt.cy - anchor[1] * sc;
     return {
       root,
+      // page coords of a point in emblem units (e.g. sun centre = 100,160)
+      emPt(x, y) { return [rl + (lay.em.x + (x - 105) * lay.em.s) * sc, rt + (lay.em.y + (y - 120.55) * lay.em.s) * sc]; },
       at(t, k) { // k: timing table (seconds, local)
         k = Object.assign({ gate: 0, sun: 0.35, steam: 0.9, bunt: 0.95, curry: 1.55, dist: 1.85 }, k || {});
         // emblem pop

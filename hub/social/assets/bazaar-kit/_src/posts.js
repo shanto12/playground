@@ -39,7 +39,7 @@ P('post-02-zone-biryani-boulevard', 'post-02-zone-biryani-boulevard', 'Zone feat
    <div class="pole"></div>
    <div class="sign"><span class="disp">Biryani<br>Boulevard</span></div>
    <p class="tagl">Lift the lid. Inhale. Repeat.</p>
-   ${dish('biryani', { style: 'left:205px;top:520px;width:670px;height:670px', cls: 'z' })}
+   ${dish('biryani', { style: 'left:205px;top:528px;width:670px;height:670px', cls: 'z' })}
    <div class="chips"><span>Chicken Dum</span><span>Chicken 65</span><span>Gongura Veg</span><span>Paneer</span></div>
    ${footer({ dark: true })}`,
   `.glow{position:absolute;left:140px;top:560px;width:800px;height:620px;border-radius:50%;background:radial-gradient(closest-side,rgba(255,106,19,.55),rgba(228,20,126,.18) 60%,transparent)}
@@ -49,7 +49,7 @@ P('post-02-zone-biryani-boulevard', 'post-02-zone-biryani-boulevard', 'Zone feat
    .sign .disp{font-size:112px;color:${C.cream};line-height:.98;${ol(7, C.ink, 7, 7, C.ink)}}
    .tagl{position:absolute;left:0;right:0;top:500px;text-align:center;font-weight:800;font-size:46px;color:${C.marigold};letter-spacing:.01em}
    .z .steam{stroke:${C.cream};opacity:.8}
-   .chips{position:absolute;left:60px;right:60px;top:1112px;display:flex;justify-content:center;gap:14px}
+   .chips{position:absolute;left:60px;right:60px;top:1124px;display:flex;justify-content:center;gap:14px}
    .chips span{background:${C.marigold};color:${C.ink};border:5px solid ${C.ink};border-radius:999px;padding:10px 22px;font-weight:800;font-size:30px;box-shadow:5px 5px 0 ${C.rani};white-space:nowrap}`,
   C.ink),
 
@@ -70,15 +70,15 @@ P('post-03-spice-meter', 'post-03-spice-meter', 'Spice meter · Pick your heat',
    .hl span{color:${C.marigold}}
    .meter{position:absolute;left:64px;right:64px;top:430px}
    .therm{position:absolute;left:-2px;top:20px;bottom:20px;width:0}
-   .row{display:flex;align-items:center;gap:26px;background:${C.cream};border:5px solid ${C.ink};border-radius:24px;height:112px;margin-bottom:16px;box-shadow:9px 9px 0 var(--c);padding-right:26px}
+   .row{display:flex;align-items:center;gap:26px;background:${C.cream};border:5px solid ${C.ink};border-radius:24px;height:106px;margin-bottom:15px;box-shadow:9px 9px 0 var(--c);padding-right:26px}
    .row:nth-child(2){margin-right:150px} .row:nth-child(3){margin-right:110px} .row:nth-child(4){margin-right:70px} .row:nth-child(5){margin-right:30px}
-   .badge{width:128px;height:102px;background:var(--c);border-radius:19px 0 0 19px;display:flex;align-items:center;justify-content:center;border-right:5px solid ${C.ink}}
+   .badge{width:128px;height:96px;background:var(--c);border-radius:19px 0 0 19px;display:flex;align-items:center;justify-content:center;border-right:5px solid ${C.ink}}
    .lab{flex:1;display:flex;flex-direction:column;gap:2px}
    .lab b{font-size:46px;color:${C.ink};line-height:1}
    .lab em{font-style:normal;font-weight:700;font-size:28px;color:${C.muted}}
    .lvl{font-size:40px;color:${C.ink};opacity:.25}
    .note{position:absolute;right:56px;top:318px;font-size:46px;color:${C.marigold};transform:rotate(6deg);text-align:right}
-   .ask{position:absolute;left:64px;right:64px;top:1062px;font-size:33px;line-height:1.3;color:${C.cream};font-weight:500;text-align:center}
+   .ask{position:absolute;left:90px;right:90px;top:1060px;font-size:32px;line-height:1.3;color:${C.cream};font-weight:500;text-align:center}
    .ask b{color:${C.marigold};font-weight:800} .ask i{font-style:normal;opacity:.85}`,
   C.ink),
 
@@ -88,7 +88,7 @@ P('post-04-daily-special', 'post-04-daily-special', "Daily special · template",
   `${sunburst({ w: W, h: H, cx: 540, cy: 520, n: 40, a: C.rani, b: '#D10E72', patB: '06-spice-confetti-sunset', patScale: 1.1, patOpacity: .35 })}
    <div class="tsp plate cream" style="font-size:60px">Today’s special</div>
    <div class="card sp"></div>
-   ${dish('paneer-tikka', { style: 'left:250px;top:186px;width:580px;height:580px', cls: 'pt' })}
+   ${dish('paneer-tikka', { style: 'left:215px;top:170px;width:650px;height:650px', cls: 'pt' })}
    <h2 class="disp nm" data-zone="A">Paneer Tikka<br>Kabab</h2>
    <p class="ln" data-zone="B">Paneer with char marks and a spicy attitude.</p>
    <div class="bd" data-zone="C"><span class="b1">${icon('veg-mark',{style:'width:44px;height:44px'})}Veg</span><span class="b2">${icon('chili-2',{style:'width:50px;height:50px'})}Medium</span><span class="hand mast">Ekdum mast! <small>(absolutely awesome)</small></span></div>
@@ -109,23 +109,23 @@ P('post-05-ratings', 'post-05-ratings', 'Ratings card · as listed publicly',
   `${sunburst({ w: W, h: H, cx: 540, cy: 330, n: 44, a: C.cream, b: C.surface2 })}
    ${kicker('As listed publicly · Oct 2026', { cls: '', x: 64, y: 64, size: 30 })}
    <h1 class="disp hl">Shukriya,<br>Little Elm!</h1>
-   <div class="gl hand">(shukriya = thank you)</div>
+   <div class="gl hand">(shukriya =<br>thank you)</div>
    <div class="grid">
    ${[['Google','4.2',4.2,'about 1,000 reviews',C.marigold,'approx.'],['Uber Eats','4.5',4.5,'2,000+ ratings',C.peacock,''],['Restaurantji','4.5',4.5,'479 reviews',C.rani,''],['Yelp','4.0',4.0,'120 reviews',C.saffron,'']].map(([pf,num,v,cnt,col,ap])=>`
      <div class="rc" style="--c:${col}"><div class="pf">${pf}${ap?` <i>${ap}</i>`:''}</div><div class="num disp">${num}</div>${stars(v,{size:46,gap:8})}<div class="cnt">${cnt}</div></div>`).join('')}
    </div>
    <p class="fn">Ratings as listed publicly in Oct 2026; they change over time. Google figure is approximate. No reviews quoted or paid for.</p>
    ${footer({ dark: false })}`,
-  `.hl{position:absolute;left:64px;top:170px;font-size:112px;color:${C.rani};${ol(8, C.ink, 9, 9, C.ink)}}
-   .gl{position:absolute;right:64px;top:300px;font-size:44px;color:${C.ink};transform:rotate(-4deg)}
-   .grid{position:absolute;left:64px;right:64px;top:440px;display:grid;grid-template-columns:1fr 1fr;gap:30px 30px}
-   .rc{background:#fff;border:6px solid ${C.ink};border-radius:28px;box-shadow:12px 12px 0 var(--c);padding:22px 26px 24px;height:296px;position:relative;overflow:hidden}
+  `.hl{position:absolute;left:64px;top:158px;font-size:98px;color:${C.ink};text-shadow:7px 7px 0 ${C.rani}}
+   .gl{position:absolute;left:780px;top:196px;font-size:46px;line-height:1.05;text-align:center;color:${C.rani};transform:rotate(-6deg)}
+   .grid{position:absolute;left:64px;right:64px;top:418px;display:grid;grid-template-columns:1fr 1fr;gap:30px 30px}
+   .rc{background:#fff;border:6px solid ${C.ink};border-radius:28px;box-shadow:12px 12px 0 var(--c);padding:20px 28px 24px;height:322px;position:relative;overflow:hidden}
    .rc::before{content:"";position:absolute;left:0;top:0;right:0;height:16px;background:var(--c);border-bottom:5px solid ${C.ink}}
    .pf{font-weight:800;font-size:32px;text-transform:uppercase;letter-spacing:.06em;margin-top:12px}
    .pf i{font-style:normal;font-weight:700;font-size:22px;letter-spacing:.04em;color:${C.muted};vertical-align:3px}
-   .num{font-size:112px;line-height:1;margin:6px 0 10px;color:${C.ink}}
+   .num{font-size:108px;line-height:1;margin:4px 0 12px;color:${C.ink}}
    .cnt{font-weight:700;font-size:28px;color:${C.muted};margin-top:10px}
-   .fn{position:absolute;left:84px;right:84px;top:1110px;text-align:center;font-size:24px;line-height:1.35;color:${C.muted};font-weight:600}`,
+   .fn{position:absolute;left:84px;right:84px;top:1118px;text-align:center;font-size:24px;line-height:1.35;color:${C.muted};font-weight:600}`,
   C.cream),
 
 // 6 ─ ORDER ONLINE CTA with SAMPLE QR
@@ -141,12 +141,12 @@ P('post-06-order-online', 'post-06-order-online', 'Order online · QR call-to-ac
    <div class="cta pill">Order pickup ${inlineArrow(C.ink,1.1)}</div>
    ${footer({ dark: true })}`,
   `.hl{position:absolute;left:64px;top:168px;font-size:128px;color:${C.cream};text-shadow:9px 9px 0 ${C.rani}}
-   .gl{position:absolute;left:640px;top:350px;font-size:60px;color:${C.marigold};transform:rotate(-6deg)}
-   .qrc{position:absolute;left:310px;top:470px;width:460px;padding:34px 34px 20px;border-radius:30px;box-shadow:14px 14px 0 ${C.saffron};text-align:center}
+   .gl{position:absolute;left:730px;top:196px;font-size:64px;color:${C.marigold};transform:rotate(-6deg)}
+   .qrc{position:absolute;left:290px;top:470px;width:500px;padding:34px 34px 20px;border-radius:30px;box-shadow:14px 14px 0 ${C.saffron};text-align:center}
    .qrc .qr{display:block;margin:0 auto}
    .qemb{position:absolute;left:50%;top:224px;transform:translate(-50%,-50%);background:#fff;padding:10px 12px;border-radius:14px}
-   .qlab{display:inline-flex;align-items:center;gap:8px;margin-top:14px;background:${C.rani};color:${C.cream};font-weight:800;font-size:23px;letter-spacing:.06em;text-transform:uppercase;padding:8px 16px;border-radius:999px}
-   .bag{position:absolute;left:770px;top:420px;transform:rotate(10deg)}
+   .qlab{display:inline-flex;align-items:center;gap:8px;margin-top:14px;background:${C.rani};color:${C.cream};font-weight:800;font-size:22px;letter-spacing:.05em;text-transform:uppercase;padding:8px 18px;border-radius:999px;white-space:nowrap}
+   .bag{position:absolute;left:790px;top:400px;transform:rotate(10deg)}
    .bag svg{filter:drop-shadow(8px 8px 0 ${C.rani})}
    .cta{position:absolute;left:50%;top:1046px;transform:translateX(-50%) rotate(-1.5deg);background:${C.marigold};color:${C.ink};font-family:'Bowlby One';text-transform:uppercase;font-weight:400;font-size:52px;padding:18px 44px 22px;box-shadow:9px 9px 0 ${C.rani};border-width:6px}`,
   C.ink),
@@ -179,7 +179,7 @@ P('post-08-did-you-know-dum', 'post-08-did-you-know-dum', 'Did you know · what 
    <div class="series">Menu words, decoded · No. 1</div>
    <h1 class="disp big">Dum</h1>
    <div class="say hand">say it like “thumb”<br>with a d</div>
-   <div class="handi">${icon('biryani-pot-handi',{style:'width:330px;height:330px'})}
+   <div class="handi">${icon('biryani-pot-handi',{style:'width:220px;height:220px'})}
      <svg class="wisp" viewBox="0 0 200 160" aria-hidden="true"><g fill="none" stroke="${C.cream}" stroke-width="9" stroke-linecap="round"><path d="M50 150c-14-22 14-34 0-58s14-36 0-60"/><path d="M100 150c-14-22 14-34 0-58s14-36 0-60"/><path d="M150 150c-14-22 14-34 0-58s14-36 0-60"/></g></svg></div>
    <div class="def"><p><b>Dum</b> is slow cooking in a <b>sealed pot</b>: the lid stays on, so everything cooks gently in its own steam.</p>
    <p class="small">The word comes from Persian for <i>breath</i>.</p></div>
@@ -187,12 +187,12 @@ P('post-08-did-you-know-dum', 'post-08-did-you-know-dum', 'Did you know · what 
    ${footer({ dark: true })}`,
   `.night{position:absolute;inset:0;background:linear-gradient(165deg,${C.ink} 0%,${C.violet} 62%,#7A1670 100%)}
    .series{position:absolute;left:72px;top:160px;font-weight:800;font-size:28px;letter-spacing:.08em;text-transform:uppercase;color:${C.marigold}}
-   .big{position:absolute;left:52px;top:200px;font-size:330px;color:${C.marigold};line-height:1;${ol(10, C.ink, 14, 14, C.rani)}}
-   .say{position:absolute;left:76px;top:560px;font-size:46px;color:${C.cream};transform:rotate(-3deg)}
-   .handi{position:absolute;left:640px;top:250px;width:330px}
-   .handi .wisp{position:absolute;left:65px;top:-150px;width:200px;height:160px;opacity:.9}
+   .big{position:absolute;left:46px;top:214px;font-size:262px;color:${C.marigold};line-height:1;${ol(10, C.ink, 14, 14, C.rani)}}
+   .say{position:absolute;left:76px;top:540px;font-size:46px;color:${C.cream};transform:rotate(-3deg)}
+   .handi{position:absolute;left:800px;top:296px;width:220px}
+   .handi .wisp{position:absolute;left:40px;top:-112px;width:140px;height:112px;opacity:.9}
    .handi svg:not(.wisp){filter:drop-shadow(10px 10px 0 ${C.rani})}
-   .def{position:absolute;left:64px;right:64px;top:700px;background:${C.cream};border:6px solid ${C.ink};border-radius:28px;box-shadow:12px 12px 0 ${C.marigold};padding:30px 36px 28px}
+   .def{position:absolute;left:64px;right:64px;top:680px;background:${C.cream};border:6px solid ${C.ink};border-radius:28px;box-shadow:12px 12px 0 ${C.marigold};padding:30px 36px 28px}
    .def p{font-size:40px;line-height:1.28;font-weight:500;color:${C.ink}}
    .def b{font-weight:800}
    .def .small{font-size:32px;margin-top:12px;color:${C.muted};font-weight:600}

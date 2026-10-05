@@ -45,8 +45,8 @@
 .hero__status { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin-top: 18px; }
 .hero__status .small-print { color: #2A1550; margin: 0; }
 .hero__sub { margin: 16px 0 0; font-size: var(--fs-lead); line-height: 1.45; max-width: 34em; font-weight: 500; }
-.hero__stamp { position: absolute; right: 10px; top: -86px; z-index: 3; width: 124px; }
-@media (max-width: 370px) { .hero__stamp { width: 108px; top: -74px; } }
+.hero__stamp { position: absolute; right: 10px; top: -122px; z-index: 3; width: 124px; }
+@media (max-width: 370px) { .hero__stamp { width: 108px; top: -106px; } }
 @media (max-width: 389px) { .hero__ctas .btn .ico { display: none; } }
 @media (min-width: 600px) and (max-width: 959px) { .hero__stamp { width: 150px; top: -110px; right: 24px; } }
 
@@ -248,6 +248,8 @@
 /* ================= ORDER STRIP ================= */
 .order-strip { background: var(--bz-saffron); }
 .order-strip__in { display: grid; gap: 22px; align-items: center; }
+.order-strip__in > * { min-width: 0; }
+.order-apps .btn--block { white-space: normal; text-align: center; line-height: 1.1; }
 @media (min-width: 900px) { .order-strip__in { grid-template-columns: 1.1fr 1fr; } }
 .order-strip .h2 { margin-bottom: .25em; }
 .order-strip p { margin: 0; font-size: var(--fs-lead); max-width: 34em; }

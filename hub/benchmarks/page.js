@@ -48,6 +48,7 @@
       barEl.style.transform = 'scaleX(' + Math.min(1, (pv / n) + p * (1 - pv / n)).toFixed(4) + ')';
       prev.disabled = sl <= 4;
       next.disabled = sl >= max - 4;
+      track.classList.toggle('has-more', !next.disabled);
     };
     var schedule = function () { if (!raf) raf = requestAnimationFrame(update); };
 

@@ -154,7 +154,7 @@ p{margin:0}
 .tcard h3{font-size:30px}
 .tcard p{font-weight:500}
 .tcard .motif{position:absolute;right:-30px;top:-30px;width:190px;height:190px;opacity:.28}
-.sticker{position:absolute;left:18px;top:18px;padding:8px 14px;border-radius:999px;background:var(--c-quaternary);color:var(--c-dark);font:700 14px/1 var(--font-body);border:var(--d-border);rotate:-6deg}
+.sticker{position:absolute;left:22px;top:26px;padding:8px 14px;border-radius:999px;background:var(--c-quaternary);color:var(--c-dark);font:700 14px/1 var(--font-body);border:var(--d-border);rotate:-6deg}
 [data-theme=royal] .sticker{background:var(--grad-foil);border-color:transparent;color:var(--ry-ink)}
 [data-theme=bazaar] .tc1,[data-theme=bazaar] .tc1 .sticker{color:var(--c-dark)}
 
@@ -353,9 +353,9 @@ footer p+p{margin-top:8px;opacity:.8}
     <div class="wrap">
       <div class="sec-head"><span class="num" aria-hidden="true">06</span><div><h2 id="tilt-title">Tilt &amp; depth cards</h2><p>Cards lean toward the pointer, or the finger while pressed. Layers marked <code>data-depth</code> drift for parallax and a soft glare follows along. Gyro tilt is off by design, so iOS never shows a permission prompt.</p></div></div>
       <div class="grid g3">
-        <div data-reveal="up"><article class="tcard tc1" data-tilt><svg class="motif" data-depth="1" aria-hidden="true"><use href="#motif"/></svg><span class="sticker" data-depth="3">Smoky</span><h3 data-depth="2">Tandoor Quarter</h3><p data-depth="1">Kababs and breads from the clay oven.</p></article></div>
-        <div data-reveal="up" data-delay="100"><article class="tcard tc2" data-tilt><svg class="motif" data-depth="1" aria-hidden="true"><use href="#motif"/></svg><span class="sticker" data-depth="3">Slow-simmered</span><h3 data-depth="2">Curry Quarter</h3><p data-depth="1">Makhani, masala, vindaloo and more.</p></article></div>
-        <div data-reveal="up" data-delay="200"><article class="tcard tc3" data-tilt><svg class="motif" data-depth="1" aria-hidden="true"><use href="#motif"/></svg><span class="sticker" data-depth="3">Layered</span><h3 data-depth="2">Biryani Boulevard</h3><p data-depth="1">Biryani and pulao, sealed and steamed.</p></article></div>
+        <div data-reveal="up"><article class="tcard tc1" data-tilt><svg class="motif" data-depth="1" aria-hidden="true"><use href="#motif"/></svg><span class="sticker" data-depth="2">Smoky</span><h3 data-depth="2">Tandoor Quarter</h3><p data-depth="1">Kababs and breads from the clay oven.</p></article></div>
+        <div data-reveal="up" data-delay="100"><article class="tcard tc2" data-tilt><svg class="motif" data-depth="1" aria-hidden="true"><use href="#motif"/></svg><span class="sticker" data-depth="2">Slow-simmered</span><h3 data-depth="2">Curry Quarter</h3><p data-depth="1">Makhani, masala, vindaloo and more.</p></article></div>
+        <div data-reveal="up" data-delay="200"><article class="tcard tc3" data-tilt><svg class="motif" data-depth="1" aria-hidden="true"><use href="#motif"/></svg><span class="sticker" data-depth="2">Layered</span><h3 data-depth="2">Biryani Boulevard</h3><p data-depth="1">Biryani and pulao, sealed and steamed.</p></article></div>
       </div>
 <pre class="code"><code>&lt;article data-tilt="10"&gt;&lt;h3 data-depth="2"&gt;…&lt;/h3&gt;&lt;span data-depth="3"&gt;…&lt;/span&gt;&lt;/article&gt;</code></pre>
     </div>

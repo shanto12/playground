@@ -92,7 +92,7 @@ html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-to
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 body {
   margin: 0; min-height: 100vh; overflow-x: clip;
-  background: var(--ry-ink); color: var(--c-text);
+  background: #0E0619; color: var(--c-text);
   font: 400 var(--fs-body)/1.62 var(--font-body);
   font-feature-settings: "kern", "liga";
   -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
@@ -141,17 +141,17 @@ strong { font-weight: 700; }
 }
 .room--has-layer::before { display: none; }
 
-.room--ivory   { --room-bg: var(--ry-ivory); --pattern: url(../img/patterns/01-jali-lattice-ivory.svg); --pattern-o: .28; --pattern-size: 240px; }
+.room--ivory   { --room-bg: var(--ry-ivory); --pattern: url(../img/patterns/01-jali-lattice-ivory.svg); --pattern-o: .13; --pattern-size: 240px; }
 .room--paper   { --room-bg: var(--ry-paper); --pattern: none; }
-.room--blush   { --room-bg: var(--ry-ivory-2); --pattern: url(../img/patterns/08-brass-dots-diamonds-ivory.svg); --pattern-o: .35; --pattern-size: 200px; }
+.room--blush   { --room-bg: var(--ry-ivory-2); --pattern: url(../img/patterns/08-brass-dots-diamonds-ivory.svg); --pattern-o: .22; --pattern-size: 200px; }
 .room--dark, .room--midnight, .room--plum, .room--emerald, .room--ruby, .room--peacock {
   --room-ink: var(--ry-ivory); --room-muted: #D9C9DD; --room-accent: var(--ry-gold-lt); --room-foil: var(--grad-foil); --room-line: rgba(233,166,58,.5);
   color-scheme: dark;
 }
-.room--midnight { --room-bg: var(--ry-ink); --pattern: url(../img/patterns/01-jali-lattice-midnight.svg); --pattern-o: .22; --pattern-size: 240px; }
-.room--plum     { --room-bg: radial-gradient(120% 70% at 50% 0%, #5C2464 0%, var(--ry-plum) 38%, var(--ry-aubergine) 100%); --pattern: url(../img/patterns/02-mehrab-trellis-midnight.svg); --pattern-o: .2; --pattern-size: 200px; --room-muted: #E3D2E3; }
-.room--emerald  { --room-bg: radial-gradient(110% 80% at 50% 10%, #136352 0%, var(--ry-emerald) 45%, var(--ry-emerald-dk) 100%); --pattern: url(../img/patterns/01-jali-lattice-emerald.svg); --pattern-o: .3; --pattern-size: 260px; --room-muted: #CFE3DA; }
-.room--ruby     { --room-bg: radial-gradient(120% 80% at 30% 0%, #B92250 0%, var(--ry-ruby) 42%, var(--ry-ruby-dk) 100%); --pattern: url(../img/patterns/04-marigold-damask-ruby.svg); --pattern-o: .16; --pattern-size: 300px; --room-muted: #F6DCE2; }
+.room--midnight { --room-bg: var(--ry-ink); --pattern: url(../img/patterns/01-jali-lattice-midnight.svg); --pattern-o: .14; --pattern-size: 240px; }
+.room--plum     { --room-bg: radial-gradient(120% 70% at 50% 0%, #5C2464 0%, var(--ry-plum) 38%, var(--ry-aubergine) 100%); --pattern: url(../img/patterns/02-mehrab-trellis-midnight.svg); --pattern-o: .09; --pattern-size: 200px; --room-muted: #E3D2E3; }
+.room--emerald  { --room-bg: radial-gradient(110% 80% at 50% 10%, #136352 0%, var(--ry-emerald) 45%, var(--ry-emerald-dk) 100%); --pattern: url(../img/patterns/01-jali-lattice-emerald.svg); --pattern-o: .14; --pattern-size: 260px; --room-muted: #CFE3DA; }
+.room--ruby     { --room-bg: radial-gradient(120% 80% at 30% 0%, #B92250 0%, var(--ry-ruby) 42%, var(--ry-ruby-dk) 100%); --pattern: url(../img/patterns/04-marigold-damask-ruby.svg); --pattern-o: .1; --pattern-size: 300px; --room-muted: #F6DCE2; }
 .room--peacock  { --room-bg: radial-gradient(120% 80% at 50% 0%, #168F9A 0%, var(--ry-peacock) 40%, #07454B 100%); --pattern: url(../img/patterns/05-peacock-eye-peacock.svg); --pattern-o: .25; --pattern-size: 200px; --room-muted: #D3EEF0; }
 .room { background: var(--room-bg); }
 
@@ -392,12 +392,13 @@ html.nav-open { overflow: hidden; }
   -webkit-mask: var(--arch-mask) center / 100% 100% no-repeat; mask: var(--arch-mask) center / 100% 100% no-repeat;
 }
 :root { --arch-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-52 0 504 644.9' preserveAspectRatio='none'%3E%3Cpath d='M0 644.9L0 294.9A39.7 39.7 0 0 1 10.3 224.7A39.7 39.7 0 0 1 40.4 160.5A39.7 39.7 0 0 1 87.7 107.6A39.7 39.7 0 0 1 148.2 70.5A37.1 37.1 0 0 1 200 40.7A37.1 37.1 0 0 1 251.8 70.5A39.7 39.7 0 0 1 312.3 107.6A39.7 39.7 0 0 1 359.6 160.5A39.7 39.7 0 0 1 389.7 224.7A39.7 39.7 0 0 1 400 294.9L400 644.9Z' fill='%23fff'/%3E%3C/svg%3E"); }
-.arch__glass::before { /* jali wash inside the window */
-  content: ""; position: absolute; inset: 0; background: var(--arch-pattern, url(../img/patterns/01-jali-lattice-midnight.svg)) 50% 0 / 150px; opacity: .2; mix-blend-mode: soft-light; }
+.arch__glass::before { /* carved jali screen in the crown of the window, fading towards the lit dish */
+  content: ""; position: absolute; inset: 0; background: var(--arch-pattern, url(../img/patterns/01-jali-lattice-midnight.svg)) 50% 0 / var(--arch-pattern-size, 132px); opacity: .5; mix-blend-mode: screen;
+  -webkit-mask-image: linear-gradient(180deg, #000 0%, rgba(0,0,0,.55) 30%, transparent 62%); mask-image: linear-gradient(180deg, #000 0%, rgba(0,0,0,.55) 30%, transparent 62%); }
 .arch__glass::after { /* candle-glow pool behind the dish */
   content: ""; position: absolute; left: -10%; right: -10%; bottom: -8%; height: 70%;
   background: radial-gradient(50% 50% at 50% 60%, rgba(247,217,138,.42), rgba(233,166,58,.12) 55%, transparent 75%); }
-.arch__art { position: absolute; z-index: 1; left: 50%; bottom: var(--art-b, -2%); width: var(--art-w, 112%); max-width: none; height: auto; transform: translateX(-50%); }
+.arch__art { position: absolute; z-index: 1; left: 50%; bottom: var(--art-b, 3%); width: var(--art-w, 100%); max-width: none; height: auto; transform: translateX(-50%); }
 .arch::after { /* gold trim (arch-frame-trim.svg, widened) */
   content: ""; position: absolute; inset: -1.6%; pointer-events: none; z-index: 2;
   background: url(../img/arch-window-trim.svg) center / 100% 100% no-repeat; }
@@ -459,7 +460,7 @@ html.nav-open { overflow: hidden; }
 .zone-card .arch { transition: transform .6s var(--ease-out); }
 .zone-card .arch__glass { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; text-align: center; padding: 0 1.2rem 1.5rem; }
 .zone-card .arch__glass::after { bottom: auto; top: 12%; height: 52%; background: radial-gradient(50% 50% at 50% 50%, rgba(247,217,138,.32), rgba(233,166,58,.08) 60%, transparent 75%); }
-.zone-card__icon { position: absolute; z-index: 1; left: 50%; top: 21%; width: 34%; height: auto; aspect-ratio: 1; transform: translateX(-50%); --icon-stroke: 1.5; filter: drop-shadow(0 6px 16px rgba(0,0,0,.35)); }
+.zone-card__icon { position: absolute; z-index: 1; left: 50%; top: 17%; width: 42%; height: auto; aspect-ratio: 1; transform: translateX(-50%); --icon-stroke: 1.5; filter: drop-shadow(0 6px 16px rgba(0,0,0,.35)); }
 .zone-card__num { position: relative; z-index: 1; font: italic 500 .95rem/1 var(--font-display); color: var(--ry-gold-lt); letter-spacing: .08em; margin-bottom: .55rem; }
 .zone-card__num::before, .zone-card__num::after { content: "·"; margin: 0 .5em; opacity: .7; }
 .zone-card__name { position: relative; z-index: 1; font: 600 1.5rem/1.05 var(--font-display); margin-bottom: .45rem; }
@@ -481,7 +482,7 @@ html.nav-open { overflow: hidden; }
 .fact-list { list-style: none; display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.1rem 0 1.25rem; }
 .fact-list li { display: inline-flex; align-items: center; gap: .5em; padding: .45rem .85rem; border: 1px solid var(--room-line); border-radius: var(--radius-pill); font: 600 .78rem/1.2 var(--font-body); letter-spacing: .06em; color: var(--room-ink); }
 .fact-list li::before { content: ""; width: 5px; height: 5px; background: var(--ry-gold); transform: rotate(45deg); }
-.pull-line { margin: clamp(3.5rem, 9vw, 6rem) auto 0; max-width: 22ch; text-align: center; font: italic 400 clamp(1.7rem, 6.4vw, 3rem)/1.15 var(--font-accent); }
+.pull-line { margin: clamp(3.5rem, 9vw, 6rem) auto 0; max-width: 24ch; text-align: center; font: italic 400 clamp(1.7rem, 6.4vw, 3rem)/1.15 var(--font-accent); }
 
 /* ───────────────────────── 15 · Generic jewel card ───────────────────────── */
 .card { position: relative; border-radius: var(--radius-l); padding: clamp(1.4rem, 4vw, 2.2rem); background: var(--c-surface); color: var(--ry-ink); border: 1px solid rgba(183,121,31,.35); box-shadow: var(--shadow-soft); }
@@ -539,7 +540,8 @@ html.nav-open { overflow: hidden; }
 .map-frame { position: relative; aspect-ratio: 4 / 4.4; border-radius: 50% 50% var(--radius-l) var(--radius-l) / 28% 28% var(--radius-l) var(--radius-l); overflow: hidden; border: 1px solid var(--ry-gold-dk); box-shadow: 0 0 0 6px var(--ry-ivory-2), 0 0 0 7px rgba(183,121,31,.45), var(--shadow-soft); background: var(--ry-ivory) url(../img/patterns/02-mehrab-trellis-ivory.svg) 0 0 / 160px; }
 @media (min-width: 900px) { .map-frame { aspect-ratio: 4 / 4.6; } }
 .map-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; filter: saturate(.85) sepia(.12); }
-.map-frame__fallback { position: absolute; inset: 0; display: grid; place-content: center; gap: .5rem; text-align: center; padding: 2rem; font-size: .9rem; color: var(--c-muted); }
+.map-frame__fallback { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; padding: 2rem; }
+.map-frame__fallback span { display: grid; justify-items: center; gap: .4rem; padding: 1rem 1.4rem; border-radius: var(--radius-m); background: rgba(255,251,243,.94); border: 1px solid rgba(183,121,31,.4); font-size: .9rem; line-height: 1.45; color: var(--ry-ink); text-align: center; }
 
 /* ───────────────────────── 19 · Page hero (inner pages) ───────────────────────── */
 .page-hero { position: relative; isolation: isolate; overflow: clip; color: var(--ry-ivory); background: var(--grad-night);
@@ -551,7 +553,7 @@ html.nav-open { overflow: hidden; }
 .page-hero .ornament { margin-bottom: 1.2rem; }
 
 /* ───────────────────────── 20 · Footer ───────────────────────── */
-.site-footer { position: relative; isolation: isolate; background: #0E0619; color: #E7DACB; padding: 0 0 2rem; margin-top: 0; }
+.site-footer { --room-muted: #C4B5C9; --room-accent: var(--ry-gold-lt); position: relative; isolation: isolate; background: #0E0619; color: #E7DACB; padding: 0 0 2rem; margin-top: 0; }
 .site-footer::before { content: ""; position: absolute; inset: 0; z-index: -1; background: url(../img/patterns/08-brass-dots-diamonds-midnight.svg) 0 0 / 180px; opacity: .22; }
 .site-footer__rule { position: relative; height: 1px; background: linear-gradient(90deg, transparent, var(--ry-gold) 18%, var(--ry-gold) 82%, transparent); }
 .site-footer__rule::after { content: ""; position: absolute; left: 0; right: 0; top: 5px; height: 1px; background: linear-gradient(90deg, transparent, rgba(233,166,58,.35) 25%, rgba(233,166,58,.35) 75%, transparent); }
@@ -591,3 +593,22 @@ html.nav-open { overflow: hidden; }
 
 /* print: keep it legible */
 @media print { .concept-banner, .site-header, .action-bar, .hero__art, .hero__scrim, .mobile-nav { display: none !important; } .hero { height: auto; color: #000; } body { background: #fff; } }
+
+/* ───────────────────────── 23 · Page-specific spacing helpers ───────────────────────── */
+.chapter-cta { margin-top: clamp(2.5rem, 7vw, 3.75rem); }
+.celebrate .chapter-cta { margin-top: 1.5rem; }
+.ratings-note { margin-top: 1.25rem; }
+.themes-note { margin-top: 1rem; }
+.visit__title { margin: .25rem 0 1rem; }
+.visit .chapter-head__num { margin-bottom: .9rem; }
+.visit .ornament { margin-bottom: 1.2rem; }
+.visit__lede { margin-bottom: 1.75rem; }
+.apple-link { margin-top: .75rem; }
+/* jewel-aware icon enamel inside arches */
+.arch--ruby { --icon-ruby: var(--ry-blush); }
+.arch--emerald { --icon-emerald: #2FA27C; }
+.arch--peacock { --icon-peacock: #6FD0D6; }
+.arch--midnight { --icon-ruby: #D94E74; }
+
+.pull-line > span { white-space: nowrap; }
+.arch__art--wide { --art-w: 92%; }

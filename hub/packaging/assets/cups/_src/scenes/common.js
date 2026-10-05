@@ -45,8 +45,9 @@ let blobTex;
 export function blob(scene, { x = 0, z = 0, y = .2, rx = 50, rz = 50, opacity = .45, color = 0x000000, rot = 0 } = {}) {
   if (!blobTex) {
     const c = document.createElement('canvas'); c.width = c.height = 256; const g = c.getContext('2d');
+    g.fillStyle = '#000'; g.fillRect(0, 0, 256, 256);
     const gr = g.createRadialGradient(128, 128, 0, 128, 128, 128);
-    gr.addColorStop(0, 'rgba(0,0,0,1)'); gr.addColorStop(.45, 'rgba(0,0,0,.55)'); gr.addColorStop(.75, 'rgba(0,0,0,.15)'); gr.addColorStop(1, 'rgba(0,0,0,0)');
+    gr.addColorStop(0, '#fff'); gr.addColorStop(.35, 'rgb(170,170,170)'); gr.addColorStop(.62, 'rgb(60,60,60)'); gr.addColorStop(.85, 'rgb(12,12,12)'); gr.addColorStop(1, '#000');
     g.fillStyle = gr; g.fillRect(0, 0, 256, 256); blobTex = new THREE.CanvasTexture(c);
   }
   const m = new THREE.Mesh(new THREE.PlaneGeometry(rx * 2, rz * 2), new THREE.MeshBasicMaterial({ alphaMap: blobTex, color: new THREE.Color(color), transparent: true, opacity, depthWrite: false }));
@@ -118,7 +119,7 @@ export function surface({ top, bottom, light = [0.42, 0.42], lightColor = '#fff'
   <linearGradient id="sg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${top}"/><stop offset="1" stop-color="${bottom}"/></linearGradient>
   <radialGradient id="sl" cx="${light[0]}" cy="${light[1]}" r=".75"><stop offset="0" stop-color="${lightColor}" stop-opacity="${lightOp}"/><stop offset="1" stop-color="${lightColor}" stop-opacity="0"/></radialGradient>
   <radialGradient id="sv" cx=".5" cy=".46" r=".78"><stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="${vignette}"/></radialGradient>
-  <filter id="paper" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".012 .9" numOctaves="3" seed="4" result="n"/><feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.6 1.15"/></filter>
+  <filter id="paper" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".0045" numOctaves="4" seed="4" result="m"/><feColorMatrix in="m" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.1 .62" result="mo"/><feTurbulence type="fractalNoise" baseFrequency=".55 .35" numOctaves="2" seed="11" result="f"/><feColorMatrix in="f" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -1.4 .95" result="fo"/><feMerge><feMergeNode in="mo"/><feMergeNode in="fo"/></feMerge></filter>
   <filter id="grainF" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="9"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 .9"/></feComponentTransfer></filter>
   </defs>
   <rect width="${W}" height="${H}" fill="url(#sg)"/>
@@ -135,17 +136,22 @@ export function steam(x, y, { h = 220, n = 3, spread = 26, width = 9, color = '#
   const s = fg(); let r = seed;
   const rnd = () => (r = (r * 9301 + 49297) % 233280) / 233280;
   const id = 'st' + Math.floor(rnd() * 1e6);
-  el(s, 'defs', {}, `<linearGradient id="${id}g" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="${color}" stop-opacity="0"/><stop offset=".18" stop-color="${color}" stop-opacity="${op}"/><stop offset=".6" stop-color="${color}" stop-opacity="${op * .5}"/><stop offset="1" stop-color="${color}" stop-opacity="0"/></linearGradient><filter id="${id}b" x="-50%" y="-20%" width="200%" height="140%"><feGaussianBlur stdDeviation="${blur}"/></filter>`);
+  el(s, 'defs', {}, `<linearGradient id="${id}g" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="${color}" stop-opacity="0"/><stop offset=".15" stop-color="${color}" stop-opacity="${op}"/><stop offset=".55" stop-color="${color}" stop-opacity="${op * .45}"/><stop offset="1" stop-color="${color}" stop-opacity="0"/></linearGradient><filter id="${id}b" x="-80%" y="-20%" width="260%" height="140%"><feGaussianBlur stdDeviation="${blur}"/></filter><filter id="${id}h" x="-80%" y="-20%" width="260%" height="140%"><feGaussianBlur stdDeviation="${blur * 3.5}"/></filter>`);
+  const paths = [];
   for (let i = 0; i < n; i++) {
-    const x0 = x + (i - (n - 1) / 2) * spread * (0.7 + rnd() * .5), ph = rnd() * 6;
-    let d = `M${x0} ${y}`; const steps = 6;
+    const x0 = x + (i - (n - 1) / 2) * spread * (0.7 + rnd() * .5), ph = rnd() * 6, hh = h * (0.75 + rnd() * .35);
+    let d = `M${x0.toFixed(1)} ${y}`; const steps = 4;
+    let px = x0, py = y;
     for (let k = 1; k <= steps; k++) {
-      const yy = y - h * k / steps, xx = x0 + Math.sin(ph + k * 1.25) * sway * (k / steps) + (rnd() - .5) * 6;
-      const cy1 = y - h * (k - .5) / steps, cx1 = x0 + Math.sin(ph + (k - .5) * 1.25 + .8) * sway * (k / steps) * 1.3;
-      d += ` Q${cx1.toFixed(1)} ${cy1.toFixed(1)} ${xx.toFixed(1)} ${yy.toFixed(1)}`;
+      const yy = y - hh * k / steps, xx = x0 + Math.sin(ph + k * 1.6) * sway * (0.35 + k / steps);
+      const c1x = px, c1y = py - hh / steps * .55, c2x = xx, c2y = yy + hh / steps * .55;
+      d += ` C${c1x.toFixed(1)} ${c1y.toFixed(1)} ${c2x.toFixed(1)} ${c2y.toFixed(1)} ${xx.toFixed(1)} ${yy.toFixed(1)}`;
+      px = xx; py = yy;
     }
-    el(s, 'path', { d, fill: 'none', stroke: `url(#${id}g)`, 'stroke-width': width * (0.8 + rnd() * .5), 'stroke-linecap': 'round', filter: `url(#${id}b)`, style: 'mix-blend-mode:screen' });
-    el(s, 'path', { d, fill: 'none', stroke: `url(#${id}g)`, 'stroke-width': width * .28, 'stroke-linecap': 'round', opacity: .8, filter: `url(#${id}b)` });
+    paths.push(d);
   }
+  // broad haze then wisps
+  for (const d of paths) el(s, 'path', { d, fill: 'none', stroke: `url(#${id}g)`, 'stroke-width': width * 3.2, 'stroke-linecap': 'round', opacity: .35, filter: `url(#${id}h)`, style: 'mix-blend-mode:screen' });
+  for (const d of paths) el(s, 'path', { d, fill: 'none', stroke: `url(#${id}g)`, 'stroke-width': width * (0.8 + rnd() * .4), 'stroke-linecap': 'round', filter: `url(#${id}b)`, style: 'mix-blend-mode:screen' });
 }
 export function done(renderer, scene, camera) { renderer.render(scene, camera); }

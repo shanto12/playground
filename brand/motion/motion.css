@@ -74,7 +74,7 @@
 @keyframes m-wave2{0%,32%,to{transform:none}14%{transform:translate(0,-.14em)}}
 .shimmer{position:relative;display:inline-block}
 .shimmer::after{content:'';position:absolute;inset:0 auto 0 0;width:45%;background:radial-gradient(closest-side,var(--m-glint,#fff),transparent);mix-blend-mode:overlay;opacity:0;transform:translate(-100%) skewX(-18deg);animation:m-shine 4.2s cubic-bezier(.77,0,.18,1) 1s infinite;pointer-events:none}
-@keyframes m-shine{25%{opacity:1}50%,to{opacity:0;transform:translate(222%) skewX(-18deg)}}
+@keyframes m-shine{25%{opacity:.8}50%,to{opacity:0;transform:translate(222%) skewX(-18deg)}}
 .draw-underline{position:relative;display:inline-block;z-index:0}
 .draw-underline::after{content:'';position:absolute;left:-.08em;right:-.08em;bottom:var(--m-ul-y);height:var(--m-ul-h);background:var(--m-ul-c);border-radius:var(--m-ul-r);z-index:-1;transform-origin:0;transform:rotate(var(--m-ul-rot));transition:transform 1s var(--m-ease-out) calc(var(--m-delay,0ms) + .25s)}
 /*11 curtain*/

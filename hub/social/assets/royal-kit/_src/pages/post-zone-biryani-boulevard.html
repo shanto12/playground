@@ -1,0 +1,66 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><title>Curry District · Royal social kit</title><style>
+@font-face{font-family:'Fraunces';src:url(file:///home/user/playground/hub/social/assets/royal-kit/_src/fonts/fraunces.woff2) format('woff2');font-weight:100 900;font-style:normal}
+@font-face{font-family:'Fraunces';src:url(file:///home/user/playground/hub/social/assets/royal-kit/_src/fonts/fraunces-italic.woff2) format('woff2');font-weight:100 900;font-style:italic}
+@font-face{font-family:'Hanken Grotesk';src:url(file:///home/user/playground/hub/social/assets/royal-kit/_src/fonts/hanken.woff2) format('woff2');font-weight:100 900;font-style:normal}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#160B26}
+body{font-family:'Hanken Grotesk',system-ui,sans-serif;color:#FBF3E4;-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}
+.cv{position:relative;overflow:hidden}
+.field{position:absolute;inset:0}
+.field .pat{position:absolute;inset:0;background-size:240px 240px;opacity:.10;mix-blend-mode:screen}
+.field.light .pat{opacity:.22;mix-blend-mode:multiply}
+.field .vig{position:absolute;inset:0;background:radial-gradient(130% 100% at 50% 45%,transparent 55%,rgba(8,3,14,.55) 100%)}
+.field.light .vig{background:radial-gradient(130% 100% at 50% 45%,transparent 60%,rgba(183,121,31,.12) 100%)}
+.abs{position:absolute}
+.center{left:0;right:0;text-align:center;margin:0 auto}
+.eyebrow{font-family:'Hanken Grotesk';font-weight:700;font-size:28px;letter-spacing:.28em;text-transform:uppercase;color:#F7D98A}
+.light .eyebrow,.eyebrow.dk{color:#8A5A12}
+.h1{font-family:'Fraunces';font-weight:650;font-size:116px;line-height:.98;letter-spacing:-.018em;color:#FBF3E4}
+.h2{font-family:'Fraunces';font-weight:620;font-size:84px;line-height:1.02;letter-spacing:-.012em;color:#FBF3E4}
+.it{font-family:'Fraunces';font-style:italic;font-weight:420}
+.body{font-family:'Hanken Grotesk';font-weight:450;font-size:36px;line-height:1.38;color:rgba(251,243,228,.9)}
+.ink{color:#160B26}
+.foil{background:linear-gradient(120deg,#D29433 0%,#FBE3A0 34%,#F2BC55 55%,#FFE7A8 72%,#D2932F 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-box-decoration-break:clone;padding:0 .04em;filter:drop-shadow(0 2px 0 rgba(10,4,18,.35))}
+.foil-dk{background:linear-gradient(120deg,#7A4E0F 0%,#B7791F 40%,#94600F 65%,#6E450C 100%);-webkit-background-clip:text;background-clip:text;color:transparent;padding:0 .04em}
+.pill{display:inline-flex;align-items:center;gap:18px;height:92px;padding:0 48px;border-radius:999px;font-family:'Hanken Grotesk';font-weight:700;font-size:34px;letter-spacing:.04em}
+.pill.gold{background:linear-gradient(120deg,#E9A63A,#FBE3A0 45%,#E9A63A 75%,#C98A2B);color:#160B26;box-shadow:0 14px 30px -12px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.6)}
+.pill.line{border:2px solid #F7D98A;color:#F7D98A}
+.wm{position:absolute;left:50%;transform:translateX(-50%)}
+.rule{height:2px;background:linear-gradient(90deg,transparent,#E9A63A,transparent)}
+.diamond{display:inline-block;width:14px;height:14px;transform:rotate(45deg);background:linear-gradient(135deg,#FBE3A0,#C98A2B)}
+
+html,body{width:1080px;height:1350px}
+.cv{width:1080px;height:1350px}
+.plaque{background:linear-gradient(180deg,#FFFBF2,#F6EAD2);border-radius:26px;padding:34px 40px 30px;text-align:center;box-shadow:0 0 0 3px #E9A63A,0 0 0 9px rgba(251,243,228,.0),0 0 0 10px rgba(247,217,138,.65),0 26px 50px -20px rgba(0,0,0,.6)}
+.plaque .pn{font-family:'Fraunces';font-weight:700;font-size:86px;white-space:nowrap;line-height:1.02;letter-spacing:-.02em;color:#160B26;margin-top:6px}
+.plaque .sc{position:absolute;width:12px;height:12px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#FBE3A0,#B7791F 70%)}</style></head><body><svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<linearGradient id="foil" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C98A2B"/><stop offset=".38" stop-color="#FBE3A0"/><stop offset=".6" stop-color="#EDB04A"/><stop offset="1" stop-color="#C08024"/></linearGradient>
+<linearGradient id="foilH" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#B7791F"/><stop offset=".3" stop-color="#F7D98A"/><stop offset=".55" stop-color="#E9A63A"/><stop offset=".8" stop-color="#FBE3A0"/><stop offset="1" stop-color="#B7791F"/></linearGradient>
+<linearGradient id="foilDk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7A4E0F"/><stop offset=".45" stop-color="#B7791F"/><stop offset=".7" stop-color="#9A6418"/><stop offset="1" stop-color="#6E450C"/></linearGradient>
+<linearGradient id="brass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBE3A0"/><stop offset=".35" stop-color="#E9A63A"/><stop offset=".7" stop-color="#B7791F"/><stop offset="1" stop-color="#6E450C"/></linearGradient>
+</defs></svg><div class="cv "><div class="field " style="background:radial-gradient(120% 85% at 50% 28%, #1C7560 0%, #0F4D3F 42%, #0A3A30 70%, #05201A 100%)"><div class="pat" style="background-image:url(file:///home/user/playground/brand/patterns/royal/01-jali-lattice-midnight.svg)"></div><div class="vig"></div></div><svg class="frame" aria-hidden="true" style="position:absolute;inset:0;width:1080px;height:1350px" viewBox="0 0 1080 1350">
+<rect x="34" y="34" width="1012" height="1282" fill="none" stroke="url(#foil)" stroke-width="2" opacity=".85"/>
+<rect x="46" y="46" width="988" height="1258" fill="none" stroke="#F7D98A" stroke-width="1" opacity=".35"/>
+<path d="M34 23L45 34L34 45L23 34Z" fill="url(#foil)"/><path d="M1046 23L1057 34L1046 45L1035 34Z" fill="url(#foil)"/><path d="M34 1305L45 1316L34 1327L23 1316Z" fill="url(#foil)"/><path d="M1046 1305L1057 1316L1046 1327L1035 1316Z" fill="url(#foil)"/></svg>
+<div class="abs plaque" style="left:100px;top:96px;width:880px">
+  <i class="sc" style="left:18px;top:18px"></i><i class="sc" style="right:18px;top:18px"></i><i class="sc" style="left:18px;bottom:18px"></i><i class="sc" style="right:18px;bottom:18px"></i>
+  <div class="eyebrow dk" style="font-size:26px;letter-spacing:.3em">The District &nbsp;·&nbsp; No. 04</div>
+  <div class="pn"><span class="foil-dk">Biryani</span> Boulevard</div></div>
+<div class="abs" aria-hidden="true" style="left:100px;top:220px;width:880px;height:880px;border-radius:50%;background:radial-gradient(closest-side,rgba(233,166,58,.26),transparent)"></div>
+<svg class="archwin" aria-hidden="true" style="position:absolute;left:250px;top:322px;width:580px;height:646px;overflow:visible" viewBox="0 0 580 646">
+<defs><clipPath id="aw2-c"><path d="M40.00 606.00L40.00 289.04L62.89 289.04A54.85 54.85 0 0 1 80.20 202.28A54.85 54.85 0 0 1 129.47 128.79A54.85 54.85 0 0 1 203.16 79.83A54.85 54.85 0 0 1 290.00 62.89A54.85 54.85 0 0 1 376.84 79.83A54.85 54.85 0 0 1 450.53 128.79A54.85 54.85 0 0 1 499.80 202.28A54.85 54.85 0 0 1 517.11 289.04L540.00 289.04L540.00 606.00Z"/></clipPath>
+<radialGradient id="aw2-g" cx="50%" cy="58%" r="70%"><stop offset="0" stop-color="#5B2D6B"/><stop offset=".5" stop-color="#2A1240"/><stop offset="1" stop-color="#120820"/></radialGradient>
+<radialGradient id="aw2-hl" cx="50%" cy="30%" r="45%"><stop offset="0" stop-color="#FBE3A0" stop-opacity=".22"/><stop offset="1" stop-color="#FBE3A0" stop-opacity="0"/></radialGradient>
+<radialGradient id="aw2-cg" cx="50%" cy="74%" r="55%"><stop offset="0" stop-color="#F2B64F" stop-opacity="0.34"/><stop offset="1" stop-color="#F2B64F" stop-opacity="0"/></radialGradient>
+<pattern id="aw2-p" width="240" height="240" patternUnits="userSpaceOnUse"><image href="file:///home/user/playground/brand/patterns/royal/01-jali-lattice-midnight.svg" width="240" height="240"/></pattern></defs>
+<g clip-path="url(#aw2-c)"><rect width="100%" height="100%" fill="url(#aw2-g)"/><rect width="100%" height="100%" fill="url(#aw2-p)" opacity="0.16" style="mix-blend-mode:screen"/><rect width="100%" height="100%" fill="url(#aw2-hl)"/><rect width="100%" height="100%" fill="url(#aw2-cg)"/></g>
+<path d="M28.00 606.00L28.00 283.04L51.79 283.04A57.01 57.01 0 0 1 70.06 192.92A57.01 57.01 0 0 1 122.00 117.04A57.01 57.01 0 0 1 199.38 67.39A57.01 57.01 0 0 1 290.00 51.79A57.01 57.01 0 0 1 380.62 67.39A57.01 57.01 0 0 1 458.00 117.04A57.01 57.01 0 0 1 509.94 192.92A57.01 57.01 0 0 1 528.21 283.04L552.00 283.04L552.00 606.00Z" fill="none" stroke="#F7D98A" stroke-width="3.4" stroke-dasharray="0 13" stroke-linecap="round" opacity=".75"/>
+<path d="M40.00 606.00L40.00 289.04L62.89 289.04A54.85 54.85 0 0 1 80.20 202.28A54.85 54.85 0 0 1 129.47 128.79A54.85 54.85 0 0 1 203.16 79.83A54.85 54.85 0 0 1 290.00 62.89A54.85 54.85 0 0 1 376.84 79.83A54.85 54.85 0 0 1 450.53 128.79A54.85 54.85 0 0 1 499.80 202.28A54.85 54.85 0 0 1 517.11 289.04L540.00 289.04L540.00 606.00Z" fill="none" stroke="url(#foil)" stroke-width="5"/>
+<path d="M54.00 606.00L54.00 296.04L75.85 296.04A52.36 52.36 0 0 1 92.04 213.16A52.36 52.36 0 0 1 138.22 142.46A52.36 52.36 0 0 1 207.60 94.33A52.36 52.36 0 0 1 290.00 75.85A52.36 52.36 0 0 1 372.40 94.33A52.36 52.36 0 0 1 441.78 142.46A52.36 52.36 0 0 1 487.96 213.16A52.36 52.36 0 0 1 504.15 296.04L526.00 296.04L526.00 606.00Z" fill="none" stroke="#F7D98A" stroke-opacity=".6" stroke-width="1.6"/>
+<g transform="translate(290 14)"><path d="M0 -16L9 0L0 16L-9 0Z" fill="url(#foil)"/><circle cy="-26" r="4" fill="url(#foil)"/></g>
+<rect x="6" y="604" width="568" height="14" rx="3" fill="url(#brass)"/><rect x="20" y="620" width="540" height="3" fill="url(#foil)" opacity=".8"/>
+</svg>
+<img class="abs dish" alt="" src="file:///home/user/playground/brand/illustrations/royal/set1/biryani.svg" style="left:240px;top:446.5px;width:600px;">
+<div class="abs center it" style="top:974px;font-size:42px;line-height:1.18;width:900px;color:#FBF3E4">Layered, sealed and slow-steamed<br>with whole spice.</div>
+<div class="abs center" style="top:1106px;font-size:29px;font-weight:600;letter-spacing:.02em;color:#F7D98A">Chicken Dum Biryani&nbsp; <span class="diamond" style="width:9px;height:9px;margin:0 8px 4px"></span> &nbsp;Gongura Mutton Pulav&nbsp; <span class="diamond" style="width:9px;height:9px;margin:0 8px 4px"></span> &nbsp;Veg Biryani</div>
+<img class="wm" alt="" src="file:///home/user/playground/brand/logo/royal/colourways/wordmark-horizontal--foil.svg" style="top:1200px;height:70px"></div></body></html>

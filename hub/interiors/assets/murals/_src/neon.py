@@ -66,7 +66,7 @@ SCRIPT = {
     ' ': (46, []),
     "'": (20, ["M12 -190L8 -150"]),
 }
-KERN = {('C', 'h'): -6, ('T', 'i'): -34, ('S', 'l'): -8, ('O', 'r'): -6, ('w', '-'): -4, ('r', 'e'): -4, ('r', 'r'): -2,
+KERN = {('C', 'h'): 12, ('T', 'i'): -34, ('S', 'l'): -8, ('O', 'r'): -6, ('w', '-'): -4, ('r', 'e'): -4, ('r', 'r'): -2,
         ('C', 'u'): -4, ('r', 'y'): -2}
 
 def set_mono(text, table, size=100, x=0, y=0, tracking=10, slant=0, anchor='start', kern=True):
@@ -145,7 +145,7 @@ def wall_light_mask(p, pieces_all, tw, W, H, cx, cy, rx, ry, strength=1.0):
     d = ''.join(x if isinstance(x, str) else x.d() for x in pieces_all)
     return (f'<radialGradient id="{p}rg" cx="{f(cx)}" cy="{f(cy)}" r="1" gradientUnits="userSpaceOnUse" '
             f'gradientTransform="translate({f(cx)} {f(cy)}) scale({f(rx)} {f(ry)}) translate({f(-cx)} {f(-cy)})">'
-            f'<stop offset="0" stop-color="#fff" stop-opacity="{f(0.55*strength)}"/><stop offset=".55" stop-color="#fff" stop-opacity="{f(0.22*strength)}"/>'
+            f'<stop offset="0" stop-color="#fff" stop-opacity="{f(0.30*strength)}"/><stop offset=".55" stop-color="#fff" stop-opacity="{f(0.10*strength)}"/>'
             f'<stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>'
             f'<mask id="{p}lm" maskUnits="userSpaceOnUse" x="0" y="0" width="{f(W)}" height="{f(H)}">'
             f'<rect width="{f(W)}" height="{f(H)}" fill="#000"/>'
@@ -179,12 +179,12 @@ def brick_wall(W, H, ppi, base='#211845', mortar='#120C2C', seed=7, jitter=0.08,
     # mortar shading: lit top edge of each course, shadow under
     return f'<g id="{gid}">' + ''.join(out) + '</g>'
 
-def plaster_wall(W, H, base, gid='wall', seed=4, light='#FFFFFF', dark='#000000', amt=0.10):
+def plaster_wall(W, H, base, gid='wall', seed=4, light='#FFFFFF', dark='#000000', amt=0.05):
     """limewash plaster: base + low-frequency mottling + fine grain (via turbulence)"""
     fid = gid + 'pf'
     return (f'<filter id="{fid}" x="0" y="0" width="100%" height="100%" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">'
-            f'<feTurbulence type="fractalNoise" baseFrequency="0.0035 0.006" numOctaves="4" seed="{seed}" result="n"/>'
-            f'<feColorMatrix in="n" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  {f(amt*3.2)} 0 0 0 {f(-amt*1.4)}" result="l"/>'
+            f'<feTurbulence type="fractalNoise" baseFrequency="0.009 0.016" numOctaves="5" seed="{seed}" result="n"/>'
+            f'<feColorMatrix in="n" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  {f(amt*1.6)} 0 0 0 {f(-amt*0.7)}" result="l"/>'
             f'<feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="{seed+3}" result="gr"/>'
             f'<feColorMatrix in="gr" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 {f(amt*1.6)} {f(-amt*0.5)}" result="d"/>'
             f'<feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="l"/><feMergeNode in="d"/></feMerge></filter>'

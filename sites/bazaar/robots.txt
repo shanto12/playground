@@ -1,0 +1,4 @@
+# Curry District · Bazaar — independent design concept, not the official website.
+# Pages also send "X-Robots-Tag: noindex, nofollow" and carry <meta name="robots" content="noindex,nofollow">.
+User-agent: *
+Disallow: /

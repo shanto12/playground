@@ -1,0 +1,81 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><title>Curry District · Royal social kit</title><style>
+@font-face{font-family:'Fraunces';src:url(file:///home/user/playground/hub/social/assets/royal-kit/_src/fonts/fraunces.woff2) format('woff2');font-weight:100 900;font-style:normal}
+@font-face{font-family:'Fraunces';src:url(file:///home/user/playground/hub/social/assets/royal-kit/_src/fonts/fraunces-italic.woff2) format('woff2');font-weight:100 900;font-style:italic}
+@font-face{font-family:'Hanken Grotesk';src:url(file:///home/user/playground/hub/social/assets/royal-kit/_src/fonts/hanken.woff2) format('woff2');font-weight:100 900;font-style:normal}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#160B26}
+body{font-family:'Hanken Grotesk',system-ui,sans-serif;color:#FBF3E4;-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}
+.cv{position:relative;overflow:hidden}
+.field{position:absolute;inset:0}
+.field .pat{position:absolute;inset:0;background-size:240px 240px;opacity:.10;mix-blend-mode:screen}
+.field.light .pat{opacity:.22;mix-blend-mode:multiply}
+.field .vig{position:absolute;inset:0;background:radial-gradient(130% 100% at 50% 45%,transparent 55%,rgba(8,3,14,.55) 100%)}
+.field.light .vig{background:radial-gradient(130% 100% at 50% 45%,transparent 60%,rgba(183,121,31,.12) 100%)}
+.abs{position:absolute}
+.center{left:0;right:0;text-align:center;margin:0 auto}
+.eyebrow{font-family:'Hanken Grotesk';font-weight:700;font-size:28px;letter-spacing:.28em;text-transform:uppercase;color:#F7D98A}
+.light .eyebrow,.eyebrow.dk{color:#8A5A12}
+.h1{font-family:'Fraunces';font-weight:650;font-size:116px;line-height:.98;letter-spacing:-.018em;color:#FBF3E4}
+.h2{font-family:'Fraunces';font-weight:620;font-size:84px;line-height:1.02;letter-spacing:-.012em;color:#FBF3E4}
+.it{font-family:'Fraunces';font-style:italic;font-weight:420}
+.body{font-family:'Hanken Grotesk';font-weight:450;font-size:36px;line-height:1.38;color:rgba(251,243,228,.9)}
+.ink{color:#160B26}
+.foil{background:linear-gradient(120deg,#D29433 0%,#FBE3A0 34%,#F2BC55 55%,#FFE7A8 72%,#D2932F 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-box-decoration-break:clone;padding:0 .04em;filter:drop-shadow(0 2px 0 rgba(10,4,18,.35))}
+.foil-dk{background:linear-gradient(120deg,#7A4E0F 0%,#B7791F 40%,#94600F 65%,#6E450C 100%);-webkit-background-clip:text;background-clip:text;color:transparent;padding:0 .04em}
+.pill{display:inline-flex;align-items:center;gap:18px;height:92px;padding:0 48px;border-radius:999px;font-family:'Hanken Grotesk';font-weight:700;font-size:34px;letter-spacing:.04em}
+.pill.gold{background:linear-gradient(120deg,#E9A63A,#FBE3A0 45%,#E9A63A 75%,#C98A2B);color:#160B26;box-shadow:0 14px 30px -12px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.6)}
+.pill.line{border:2px solid #F7D98A;color:#F7D98A}
+.wm{position:absolute;left:50%;transform:translateX(-50%)}
+.rule{height:2px;background:linear-gradient(90deg,transparent,#E9A63A,transparent)}
+.diamond{display:inline-block;width:14px;height:14px;transform:rotate(45deg);background:linear-gradient(135deg,#FBE3A0,#C98A2B)}
+
+html,body{width:1080px;height:1350px}
+.cv{width:1080px;height:1350px}
+
+.z{position:absolute;text-align:center}
+.tpl .z{outline:3px dashed rgba(183,121,31,.8);outline-offset:8px;border-radius:4px}
+.tpl.dark .z{outline-color:rgba(247,217,138,.75)}
+.nb{position:absolute;display:none;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:#8A5A12;color:#FBF3E4;font:800 22px/1 'Hanken Grotesk';box-shadow:0 0 0 3px #FBF3E4;z-index:6}
+.tpl.dark .nb{background:#FBE3A0;color:#160B26;box-shadow:0 0 0 3px #160B26}
+.tpl .nb{display:flex}
+.swap{position:absolute;display:none;font:700 22px/1 'Hanken Grotesk';letter-spacing:.16em;text-transform:uppercase;color:#160B26;background:#FBE3A0;padding:9px 16px;border-radius:999px;z-index:6;white-space:nowrap}
+.tpl .swap{display:block}
+.meta{display:flex;justify-content:center;align-items:center;gap:20px;font:600 31px/1 'Hanken Grotesk';color:#3B2A44}
+.meta img{width:42px;height:42px}
+.meta .sep{width:9px;height:9px;transform:rotate(45deg);background:#B7791F}
+.ph{color:rgba(22,11,38,.42)}
+.tpl.dark .ph{color:rgba(251,243,228,.5)}
+</style></head><body><svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<linearGradient id="foil" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C98A2B"/><stop offset=".38" stop-color="#FBE3A0"/><stop offset=".6" stop-color="#EDB04A"/><stop offset="1" stop-color="#C08024"/></linearGradient>
+<linearGradient id="foilH" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#B7791F"/><stop offset=".3" stop-color="#F7D98A"/><stop offset=".55" stop-color="#E9A63A"/><stop offset=".8" stop-color="#FBE3A0"/><stop offset="1" stop-color="#B7791F"/></linearGradient>
+<linearGradient id="foilDk" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7A4E0F"/><stop offset=".45" stop-color="#B7791F"/><stop offset=".7" stop-color="#9A6418"/><stop offset="1" stop-color="#6E450C"/></linearGradient>
+<linearGradient id="brass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FBE3A0"/><stop offset=".35" stop-color="#E9A63A"/><stop offset=".7" stop-color="#B7791F"/><stop offset="1" stop-color="#6E450C"/></linearGradient>
+</defs></svg><div class="cv light"><div class="field light" style="background:radial-gradient(120% 90% at 50% 25%, #FFFBF2 0%, #FBF3E4 45%, #F3E4C8 100%)"><div class="pat" style="background-image:url(file:///home/user/playground/brand/patterns/royal/01-jali-lattice-ivory.svg)"></div><div class="vig"></div></div><svg class="frame" aria-hidden="true" style="position:absolute;inset:0;width:1080px;height:1350px" viewBox="0 0 1080 1350">
+<rect x="34" y="34" width="1012" height="1282" fill="none" stroke="url(#foilDk)" stroke-width="2" opacity=".85"/>
+<rect x="46" y="46" width="988" height="1258" fill="none" stroke="#B7791F" stroke-width="1" opacity=".35"/>
+<path d="M34 23L45 34L34 45L23 34Z" fill="url(#foilDk)"/><path d="M1046 23L1057 34L1046 45L1035 34Z" fill="url(#foilDk)"/><path d="M34 1305L45 1316L34 1327L23 1316Z" fill="url(#foilDk)"/><path d="M1046 1305L1057 1316L1046 1327L1035 1316Z" fill="url(#foilDk)"/></svg><div class="" style="position:absolute;inset:0">
+<div class="abs center eyebrow dk" style="top:88px">From the kitchen today</div>
+<div class="z it" style="left:320px;width:440px;top:136px;height:52px;font-size:42px;line-height:52px;color:#4B1D52">Tuesday evening</div><span class="nb" style="left:293px;top:109px">1</span>
+<div class="abs" aria-hidden="true" style="left:160px;top:160px;width:760px;height:760px;border-radius:50%;background:radial-gradient(closest-side,rgba(15,77,63,.14),transparent)"></div>
+<div class="z" style="left:262px;top:226px;width:556px;height:580px"></div><span class="nb" style="left:235px;top:199px">2</span>
+<svg class="archwin" aria-hidden="true" style="position:absolute;left:260px;top:196px;width:560px;height:628px;overflow:visible" viewBox="0 0 560 628">
+<defs><clipPath id="aw10-c"><path d="M40.00 588.00L40.00 270.16L61.68 270.16A51.95 51.95 0 0 1 78.50 188.08A51.95 51.95 0 0 1 126.25 119.22A51.95 51.95 0 0 1 197.23 74.70A51.95 51.95 0 0 1 280.00 61.68A51.95 51.95 0 0 1 362.77 74.70A51.95 51.95 0 0 1 433.75 119.22A51.95 51.95 0 0 1 481.50 188.08A51.95 51.95 0 0 1 498.32 270.16L520.00 270.16L520.00 588.00Z"/></clipPath>
+<radialGradient id="aw10-g" cx="50%" cy="58%" r="70%"><stop offset="0" stop-color="#2E8C6E"/><stop offset=".5" stop-color="#0F4D3F"/><stop offset="1" stop-color="#06231C"/></radialGradient>
+<radialGradient id="aw10-hl" cx="50%" cy="30%" r="45%"><stop offset="0" stop-color="#FBE3A0" stop-opacity=".22"/><stop offset="1" stop-color="#FBE3A0" stop-opacity="0"/></radialGradient>
+<radialGradient id="aw10-cg" cx="50%" cy="74%" r="55%"><stop offset="0" stop-color="#F2B64F" stop-opacity="0.34"/><stop offset="1" stop-color="#F2B64F" stop-opacity="0"/></radialGradient>
+<pattern id="aw10-p" width="240" height="240" patternUnits="userSpaceOnUse"><image href="file:///home/user/playground/brand/patterns/royal/01-jali-lattice-midnight.svg" width="240" height="240"/></pattern></defs>
+<g clip-path="url(#aw10-c)"><rect width="100%" height="100%" fill="url(#aw10-g)"/><rect width="100%" height="100%" fill="url(#aw10-p)" opacity="0.16" style="mix-blend-mode:screen"/><rect width="100%" height="100%" fill="url(#aw10-hl)"/><rect width="100%" height="100%" fill="url(#aw10-cg)"/></g>
+<path d="M28.00 588.00L28.00 264.16L50.59 264.16A54.12 54.12 0 0 1 68.38 178.70A54.12 54.12 0 0 1 118.81 107.44A54.12 54.12 0 0 1 193.49 62.23A54.12 54.12 0 0 1 280.00 50.59A54.12 54.12 0 0 1 366.51 62.23A54.12 54.12 0 0 1 441.19 107.44A54.12 54.12 0 0 1 491.62 178.70A54.12 54.12 0 0 1 509.41 264.16L532.00 264.16L532.00 588.00Z" fill="none" stroke="#F7D98A" stroke-width="3.4" stroke-dasharray="0 13" stroke-linecap="round" opacity=".75"/>
+<path d="M40.00 588.00L40.00 270.16L61.68 270.16A51.95 51.95 0 0 1 78.50 188.08A51.95 51.95 0 0 1 126.25 119.22A51.95 51.95 0 0 1 197.23 74.70A51.95 51.95 0 0 1 280.00 61.68A51.95 51.95 0 0 1 362.77 74.70A51.95 51.95 0 0 1 433.75 119.22A51.95 51.95 0 0 1 481.50 188.08A51.95 51.95 0 0 1 498.32 270.16L520.00 270.16L520.00 588.00Z" fill="none" stroke="url(#foil)" stroke-width="5"/>
+<path d="M54.00 588.00L54.00 277.16L74.63 277.16A49.43 49.43 0 0 1 90.32 199.00A49.43 49.43 0 0 1 134.96 132.94A49.43 49.43 0 0 1 201.63 89.23A49.43 49.43 0 0 1 280.00 74.63A49.43 49.43 0 0 1 358.37 89.23A49.43 49.43 0 0 1 425.04 132.94A49.43 49.43 0 0 1 469.68 199.00A49.43 49.43 0 0 1 485.37 277.16L506.00 277.16L506.00 588.00Z" fill="none" stroke="#F7D98A" stroke-opacity=".6" stroke-width="1.6"/>
+<g transform="translate(280 14)"><path d="M0 -16L9 0L0 16L-9 0Z" fill="url(#foil)"/><circle cy="-26" r="4" fill="url(#foil)"/></g>
+<rect x="6" y="586" width="548" height="14" rx="3" fill="url(#brass)"/><rect x="20" y="602" width="520" height="3" fill="url(#foil)" opacity=".8"/>
+</svg>
+<img class="abs dish" alt="" src="file:///home/user/playground/brand/illustrations/royal/set2/dal-saag.svg" style="left:240px;top:310px;width:600px;">
+<span class="swap" style="left:50%;transform:translateX(-50%);top:330px">Swap dish art</span>
+<div class="z h1 ink" style="left:140px;width:800px;top:842px;height:104px;font-size:100px;line-height:104px">Dal Makhani</div><span class="nb" style="left:113px;top:815px">3</span>
+<div class="z it" style="left:120px;width:840px;top:974px;height:96px;font-size:40px;line-height:48px;color:#3B2A44">Black lentils, slow-simmered until velvet,<br>finished with butter and cream.</div><span class="nb" style="left:93px;top:947px">4</span>
+<div class="z meta" style="left:180px;width:720px;top:1100px;height:44px"><img src="file:///home/user/playground/brand/icons/royal/veg-mark.svg" alt="">Vegetarian<i class="sep"></i><svg width="42" height="42" viewBox="0 0 64 64" aria-hidden="true" style="overflow:visible"><defs><linearGradient id="ch11" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FBE3A0"/><stop offset=".55" stop-color="#E9A63A"/><stop offset="1" stop-color="#B7791F"/></linearGradient></defs>
+<g style="color:#8A5A12" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"><g opacity="0.3" style="color:url(#ch11)"><path d="M15.6 18.5C25 14 36 20 41 31C45 40 48 47 55 53.5C44.5 54.5 35 49 29 42C22.5 34.5 16 28 14.3 22.6C13.8 21 14.3 19.3 15.6 18.5Z" fill="url(#ch11)"/><path d="M12 21.5C11.5 16 16.5 11.8 23 13.5C21.8 16.2 20.2 17.6 18 18C17.8 20.4 15.6 22.2 12 21.5Z" fill="url(#ch11)"/></g><g stroke="currentColor"><path d="M12 21.5C11.5 16 16.5 11.8 23 13.5C21.8 16.2 20.2 17.6 18 18C17.8 20.4 15.6 22.2 12 21.5Z"/><path d="M21 16.4C29.5 16.5 37 22.5 41 31C45 40 48 47 55 53.5C44.5 54.5 35 49 29 42C22.5 34.5 17.5 28.5 14.6 21.8"/><path d="M17.4 13.8C16.4 9.6 13.4 7.6 9.4 8"/><path d="M24.5 21.5C30.5 23 35 28 38 34.5"/></g></g></svg>Mild<i class="sep"></i>Curry Quarter</div><span class="nb" style="left:153px;top:1073px">5</span>
+</div>
+<img class="wm" alt="" src="file:///home/user/playground/brand/logo/royal/colourways/wordmark-horizontal--ivory.svg" style="top:1198px;height:68px"></div></body></html>

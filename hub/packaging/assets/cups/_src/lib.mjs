@@ -10,7 +10,7 @@ const require = createRequire(SCR + '/package.json');
 const subsetFont = require('subset-font');
 
 /* ───────── palettes ───────── */
-export const BZ = { ink: '#1D1147', cream: '#FFF4DC', marigold: '#FFB000', saffron: '#FF6A13', rani: '#E4147E', chili: '#D62839', peacock: '#00A8A0', cilantro: '#3FA34D', violet: '#7B5CFF', sand: '#FFE7B8', muted: '#5B4F85', clay: '#C2552B', clayDk: '#9E3F1E', clayLt: '#D9774A' };
+export const BZ = { ink: '#1D1147', cream: '#FFF4DC', marigold: '#FFB000', saffron: '#FF6A13', rani: '#E4147E', chili: '#D62839', peacock: '#00A8A0', cilantro: '#3FA34D', violet: '#7B5CFF', sand: '#FFE7B8', muted: '#5B4F85', clay: '#B04A26', clayDk: '#8A3519', clayLt: '#C9683F' };
 export const RY = { ink: '#160B26', plum: '#4B1D52', emerald: '#0F4D3F', peacock: '#117C86', ruby: '#A3173F', gold: '#E9A63A', goldLt: '#F7D98A', goldDk: '#B7791F', ivory: '#FBF3E4', blush: '#F4C9BB', parch: '#F3E4C8', muted: '#6B5A73', clay: '#9A3A24', clayDk: '#6E2516', clayLt: '#B65334' };
 
 /* dish zones — exact names from data/menu.json meta.zones */

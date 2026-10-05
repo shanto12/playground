@@ -6,8 +6,9 @@ export async function rasterize(jobs) {
   const b = await chromium.launch();
   try {
     for (const j of jobs) {
-      const cssW = Math.ceil(j.wmm * 3.7795275591), cssH = Math.ceil(j.hmm * 3.7795275591);
-      const dpr = j.pxPerMm / 3.7795275591;
+      let cssW = Math.ceil(j.wmm * 3.7795275591), cssH = Math.ceil(j.hmm * 3.7795275591);
+      let dpr = j.pxPerMm / 3.7795275591;
+      if (j.px) { [cssW, cssH] = j.px; dpr = 1; }
       const p = await b.newPage({ viewport: { width: cssW, height: cssH }, deviceScaleFactor: dpr });
       const html = `<!doctype html><html><head><style>html,body{margin:0;background:transparent}img{display:block;width:${cssW}px;height:${cssH}px}</style></head><body>${fs.readFileSync(j.svg, 'utf8').replace(/<svg /, `<svg style="display:block;width:${cssW}px;height:${cssH}px" `)}</body></html>`;
       await p.setContent(html, { waitUntil: 'load' });

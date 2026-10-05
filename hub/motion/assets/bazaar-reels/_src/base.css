@@ -1,0 +1,19 @@
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;overflow:hidden;background:#FFF4DC;-webkit-font-smoothing:antialiased}
+#stage{position:relative;overflow:hidden;background:#FFF4DC;color:#1D1147;font-family:'DM Sans',system-ui,sans-serif}
+.abs{position:absolute}
+.fill{position:absolute;left:0;top:0;width:100%;height:100%}
+.ctr{display:flex;align-items:center;justify-content:center}
+svg{display:block}
+.dish svg,.logo svg{overflow:visible}
+/* display type: Bowlby One, uppercase, indigo outline painted under the fill, hard offset shadow */
+.disp{font-family:'Bowlby One','Arial Black',sans-serif;text-transform:uppercase;line-height:.98;letter-spacing:.01em;white-space:nowrap;paint-order:stroke fill;-webkit-text-stroke:var(--sw,10px) #1D1147;text-shadow:var(--sh,8px) var(--sh,8px) 0 #1D1147}
+.hand{font-family:'Caveat',cursive;font-weight:700;white-space:nowrap;line-height:1}
+.body{font-family:'DM Sans',sans-serif}
+/* sticker plate: thick indigo outline + hard offset shadow */
+.plate{border:6px solid #1D1147;box-shadow:10px 10px 0 #1D1147;border-radius:22px}
+.pill{border:6px solid #1D1147;box-shadow:10px 10px 0 #1D1147;border-radius:999px}
+/* street-sign (mirrors the DISTRICT plate in the logo) */
+.sign{background:#00A8A0;border:7px solid #1D1147;border-radius:20px;box-shadow:12px 12px 0 #1D1147;padding:12px}
+.sign>.in{border:5px solid #FFF4DC;border-radius:10px;padding:10px 34px 16px;display:flex;align-items:center;justify-content:center}
+.sign .t{font-family:'Bowlby One',sans-serif;text-transform:uppercase;color:#FFF4DC;white-space:nowrap;line-height:1}

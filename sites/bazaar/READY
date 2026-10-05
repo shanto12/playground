@@ -1,0 +1,5 @@
+Bazaar shell is usable (phase 1).
+- Shared CSS: css/site.css  ·  JS: js/config.js (facts), js/site.js, js/menu-data.js  ·  motion: vendor/
+- Start a page by copying menu.html / catering.html / story.html / visit.html and replacing <main>.
+- Read STYLE_GUIDE.md first (components, contrast rules, anchors menu.html#<zone> and #dish-<id>).
+- Home (index.html) is owned by the lead; it is being finished now.

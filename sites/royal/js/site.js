@@ -135,14 +135,16 @@
   function actionBar() {
     var bar = $('[data-action-bar]'), sentinel = $('[data-bar-sentinel]');
     if (!bar) return;
-    if (!sentinel || !('IntersectionObserver' in w)) { bar.setAttribute('data-state', 'shown'); return; }
-    bar.setAttribute('data-state', 'hidden');
-    new IntersectionObserver(function (es) {
-      es.forEach(function (e) {
-        var past = !e.isIntersecting && e.boundingClientRect.top < 0;
-        bar.setAttribute('data-state', past ? 'shown' : 'hidden');
-      });
-    }, { threshold: 0 }).observe(sentinel);
+    if (!sentinel) { bar.setAttribute('data-state', 'shown'); return; }
+    var raf = 0, last = '';
+    function check() {
+      raf = 0;
+      var s = sentinel.getBoundingClientRect().bottom < 0 ? 'shown' : 'hidden';
+      if (s !== last) { last = s; bar.setAttribute('data-state', s); }
+    }
+    w.addEventListener('scroll', function () { if (!raf) raf = requestAnimationFrame(check); }, { passive: true });
+    w.addEventListener('resize', check, { passive: true });
+    check();
   }
 
   /* ── 6 · hero parallax (scroll on all devices, pointer drift on fine pointers) ── */

@@ -1,0 +1,57 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow">
+<title>Story · Guest-photo repost frame</title><style>
+@font-face{font-family:'Bowlby One';src:url(file:///home/user/playground/hub/social/assets/bazaar-kit/_src/fonts/bowlby-one.woff2) format('woff2');font-weight:400;font-display:block}
+@font-face{font-family:'DM Sans';src:url(file:///home/user/playground/hub/social/assets/bazaar-kit/_src/fonts/dm-sans.woff2) format('woff2');font-weight:100 1000;font-display:block}
+@font-face{font-family:'Caveat';src:url(file:///home/user/playground/hub/social/assets/bazaar-kit/_src/fonts/caveat.woff2) format('woff2');font-weight:400 700;font-display:block}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:transparent}
+body{font-family:'DM Sans',system-ui,sans-serif;color:#1D1147;-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}
+.cv{position:relative;overflow:hidden}
+.abs{position:absolute}
+.burst{position:absolute;inset:0;width:100%;height:100%}
+.dish{position:absolute}
+.dish svg{width:100%;height:100%;display:block;overflow:visible}
+.ico{display:inline-block;line-height:0}
+.ico svg{width:100%;height:100%;display:block;overflow:visible}
+.logo{display:block}
+.disp{font-family:'Bowlby One','Arial Black',sans-serif;text-transform:uppercase;line-height:.92;letter-spacing:.01em;font-weight:400}
+.hand{font-family:'Caveat',cursive;font-weight:700;line-height:1}
+.stk{paint-order:stroke fill;-webkit-text-stroke:var(--sw,14px) #1D1147}
+/* street-sign plate (echoes the DISTRICT plate in the logo) */
+.plate{display:inline-flex;align-items:center;gap:14px;font-family:'Bowlby One',sans-serif;text-transform:uppercase;letter-spacing:.04em;
+  background:#00A8A0;color:#FFF4DC;border:6px solid #1D1147;border-radius:16px;padding:12px 26px 14px;box-shadow:8px 8px 0 #1D1147;position:relative;line-height:1}
+.plate::after{content:"";position:absolute;inset:6px;border:3px solid #FFF4DC;border-radius:9px;pointer-events:none;opacity:.9}
+.plate.mari{background:#FFB000;color:#1D1147} .plate.mari::after{border-color:#1D1147;opacity:.35}
+.plate.cream{background:#FFF4DC;color:#1D1147} .plate.cream::after{border-color:#1D1147;opacity:.3}
+.plate.rani{background:#E4147E;color:#FFF4DC}
+.plate.saff{background:#FF6A13;color:#1D1147} .plate.saff::after{border-color:#1D1147;opacity:.35}
+.plate.ink{background:#1D1147;color:#FFF4DC;box-shadow:8px 8px 0 #E4147E}
+.card{background:#fff;border:6px solid #1D1147;border-radius:28px;box-shadow:12px 12px 0 #1D1147}
+.pill{display:inline-flex;align-items:center;justify-content:center;gap:12px;border:5px solid #1D1147;border-radius:999px;font-weight:800;line-height:1;white-space:nowrap}
+.tilt-l{transform:rotate(-3deg)} .tilt-r{transform:rotate(3deg)}
+
+html,body{width:1080px;height:1920px}
+.cv{width:1080px;height:1920px;background:#FF6A13}
+
+.foot{position:absolute;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:20px;padding:12px 30px 12px 20px;border-radius:999px;border:5px solid #1D1147;white-space:nowrap}
+.foot.on-light{background:#1D1147;box-shadow:6px 6px 0 rgba(29,17,71,.35)}
+.foot.on-dark{background:#FFF4DC;box-shadow:6px 6px 0 #E4147E}
+.foot__rule{width:4px;height:44px;border-radius:4px;background:currentColor;opacity:.35}
+.foot__txt{font-weight:800;font-size:27px;letter-spacing:.06em;text-transform:uppercase}
+.foot.on-light{color:#FFF4DC} .foot.on-dark{color:#1D1147}
+.hl{position:absolute;left:0;right:0;top:268px;text-align:center;font-size:150px;color:#FFF4DC;text-shadow:6.6px -0.7px 0 #1D1147,6.2px -2.2px 0 #1D1147,5.6px -3.5px 0 #1D1147,4.7px -4.7px 0 #1D1147,3.5px -5.6px 0 #1D1147,2.2px -6.2px 0 #1D1147,0.7px -6.6px 0 #1D1147,-0.7px -6.6px 0 #1D1147,-2.2px -6.2px 0 #1D1147,-3.5px -5.6px 0 #1D1147,-4.7px -4.7px 0 #1D1147,-5.6px -3.5px 0 #1D1147,-6.2px -2.2px 0 #1D1147,-6.6px -0.7px 0 #1D1147,-6.6px 0.7px 0 #1D1147,-6.2px 2.2px 0 #1D1147,-5.6px 3.5px 0 #1D1147,-4.7px 4.7px 0 #1D1147,-3.5px 5.6px 0 #1D1147,-2.2px 6.2px 0 #1D1147,-0.7px 6.6px 0 #1D1147,0.7px 6.6px 0 #1D1147,2.2px 6.2px 0 #1D1147,3.5px 5.6px 0 #1D1147,4.7px 4.7px 0 #1D1147,5.6px 3.5px 0 #1D1147,6.2px 2.2px 0 #1D1147,6.6px 0.7px 0 #1D1147,10.7px -2.4px 0 #1D1147,9.9px -4.8px 0 #1D1147,8.6px -6.9px 0 #1D1147,6.9px -8.6px 0 #1D1147,4.8px -9.9px 0 #1D1147,2.4px -10.7px 0 #1D1147,-0.0px -11.0px 0 #1D1147,-2.4px -10.7px 0 #1D1147,-4.8px -9.9px 0 #1D1147,-6.9px -8.6px 0 #1D1147,-8.6px -6.9px 0 #1D1147,-9.9px -4.8px 0 #1D1147,-10.7px -2.4px 0 #1D1147,-11.0px 0.0px 0 #1D1147,-10.7px 2.4px 0 #1D1147,-9.9px 4.8px 0 #1D1147,-8.6px 6.9px 0 #1D1147,-6.9px 8.6px 0 #1D1147,-4.8px 9.9px 0 #1D1147,-2.4px 10.7px 0 #1D1147,0.0px 11.0px 0 #1D1147,2.4px 10.7px 0 #1D1147,4.8px 9.9px 0 #1D1147,6.9px 8.6px 0 #1D1147,8.6px 6.9px 0 #1D1147,9.9px 4.8px 0 #1D1147,10.7px 2.4px 0 #1D1147,11.0px 0.0px 0 #1D1147,22.7px 9.6px 0 #1D1147,21.9px 7.2px 0 #1D1147,20.6px 5.1px 0 #1D1147,18.9px 3.4px 0 #1D1147,16.8px 2.1px 0 #1D1147,14.4px 1.3px 0 #1D1147,12.0px 1.0px 0 #1D1147,9.6px 1.3px 0 #1D1147,7.2px 2.1px 0 #1D1147,5.1px 3.4px 0 #1D1147,3.4px 5.1px 0 #1D1147,2.1px 7.2px 0 #1D1147,1.3px 9.6px 0 #1D1147,1.0px 12.0px 0 #1D1147,1.3px 14.4px 0 #1D1147,2.1px 16.8px 0 #1D1147,3.4px 18.9px 0 #1D1147,5.1px 20.6px 0 #1D1147,7.2px 21.9px 0 #1D1147,9.6px 22.7px 0 #1D1147,12.0px 23.0px 0 #1D1147,14.4px 22.7px 0 #1D1147,16.8px 21.9px 0 #1D1147,18.9px 20.6px 0 #1D1147,20.6px 18.9px 0 #1D1147,21.9px 16.8px 0 #1D1147,22.7px 14.4px 0 #1D1147,23.0px 12.0px 0 #1D1147;}
+   .gl{position:absolute;right:120px;top:560px;font-size:60px;color:#1D1147;transform:rotate(-5deg)}
+   .pol{position:absolute;left:160px;top:640px;width:760px;height:680px;background:#FFF4DC;border:7px solid #1D1147;border-radius:20px;box-shadow:16px 16px 0 #1D1147;transform:rotate(-2.5deg);padding:34px 34px 0}
+   .slot{height:530px;border-radius:10px;background:repeating-linear-gradient(135deg,#FFE7B8 0 22px,#FFDDA0 22px 44px);border:5px dashed #1D1147;display:flex;align-items:center;justify-content:center}
+   .ph{display:flex;flex-direction:column;align-items:center;gap:16px;opacity:.75}
+   .ph .hand{font-size:52px;color:#1D1147}
+   .cap{text-align:center;font-size:50px;color:#E4147E;margin-top:10px}
+   .tagus{position:absolute;left:84px;right:84px;top:1366px;text-align:center;background:#1D1147;color:#FFF4DC;border-radius:999px;padding:18px 24px;font-weight:800;font-size:36px;box-shadow:8px 8px 0 #E4147E;white-space:nowrap}</style></head><body><div class="cv" id="cv"><svg class="burst " style="" aria-hidden="true" viewBox="0 0 1080 1920" width="1080" height="1920" preserveAspectRatio="xMidYMid slice"><rect width="1080" height="1920" fill="#FF6A13"/><g class="rays" style="transform-origin:540px 1000px;transform:rotate(0deg)"><path d="M540 1000L540.0 -156.5L720.9 -142.2ZM540 1000L897.4 -99.9L1065.0 -30.4ZM540 1000L1219.8 64.4L1357.8 182.2ZM540 1000L1475.6 320.2L1570.4 475.0ZM540 1000L1639.9 642.6L1682.2 819.1ZM540 1000L1696.5 1000.0L1682.2 1180.9ZM540 1000L1639.9 1357.4L1570.4 1525.0ZM540 1000L1475.6 1679.8L1357.8 1817.8ZM540 1000L1219.8 1935.6L1065.0 2030.4ZM540 1000L897.4 2099.9L720.9 2142.2ZM540 1000L540.0 2156.5L359.1 2142.2ZM540 1000L182.6 2099.9L15.0 2030.4ZM540 1000L-139.8 1935.6L-277.8 1817.8ZM540 1000L-395.6 1679.8L-490.4 1525.0ZM540 1000L-559.9 1357.4L-602.2 1180.9ZM540 1000L-616.5 1000.0L-602.2 819.1ZM540 1000L-559.9 642.6L-490.4 475.0ZM540 1000L-395.6 320.2L-277.8 182.2ZM540 1000L-139.8 64.4L15.0 -30.4ZM540 1000L182.6 -99.9L359.1 -142.2Z" fill="#FFB000"/></g></svg>
+   <svg class="bunting" aria-hidden="true" width="1080" height="196" viewBox="0 0 1080 196"><path d="M-20.0 -10.0L81.8 19.8L183.6 43.6L285.5 61.4L387.3 73.3L489.1 79.3L590.9 79.3L692.7 73.3L794.5 61.4L896.4 43.6L998.2 19.8L1100.0 -10.0" fill="none" stroke="#1D1147" stroke-width="5"/><path d="M-10.6 -7.2L72.4 17.0L30.9 100.9Z" fill="#E4147E" stroke="#1D1147" stroke-width="5" stroke-linejoin="round"/><circle cx="30.9" cy="60.6" r="8.6" fill="#1D1147" opacity=".85"/><path d="M90.7 21.8L174.8 41.5L132.7 127.7Z" fill="#FFB000" stroke="#1D1147" stroke-width="5" stroke-linejoin="round"/><circle cx="132.7" cy="87.3" r="8.6" fill="#1D1147" opacity=".85"/><path d="M192.0 45.0L277.1 59.9L234.5 148.5Z" fill="#00A8A0" stroke="#1D1147" stroke-width="5" stroke-linejoin="round"/><circle cx="234.5" cy="108.2" r="8.6" fill="#1D1147" opacity=".85"/><path d="M293.5 62.3L379.3 72.4L336.4 163.4Z" fill="#FF6A13" stroke="#1D1147" stroke-width="5" stroke-linejoin="round"/><circle cx="336.4" cy="123.0" r="8.6" fill="#1D1147" opacity=".85"/><path d="M395.1 73.8L481.3 78.8L438.2 172.3Z" fill="#FFF4DC" stroke="#1D1147" stroke-width="5" stroke-linejoin="round"/><circle cx="438.2" cy="132.0" r="8.6" fill="#1D1147" opacity=".85"/><path d="M496.8 79.3L583.2 79.3L540.0 175.3Z" fill="#3FA34D" stroke="#1D1147" stroke-width="5" stroke-linejoin="round"/><circle cx="540.0" cy="134.9" r="8.6" fill="#1D1147" opacity=".85"/><path d="M598.7 78.8L684.9 73.8L641.8 172.3Z" fill="#E4147E" stroke="#1D1147" stroke-width="5" stroke-linejoin="round"/><circle cx="641.8" cy="132.0" r="8.6" fill="#1D1147" opacity=".85"/><path d="M700.7 72.4L786.5 62.3L743.6 163.4Z" fill="#FFB000" stroke="#1D1147" stroke-width="5" stroke-linejoin="round"/><circle cx="743.6" cy="123.0" r="8.6" fill="#1D1147" opacity=".85"/><path d="M802.9 59.9L888.0 45.0L845.5 148.5Z" fill="#00A8A0" stroke="#1D1147" stroke-width="5" stroke-linejoin="round"/><circle cx="845.5" cy="108.2" r="8.6" fill="#1D1147" opacity=".85"/><path d="M905.2 41.5L989.3 21.8L947.3 127.7Z" fill="#FF6A13" stroke="#1D1147" stroke-width="5" stroke-linejoin="round"/><circle cx="947.3" cy="87.3" r="8.6" fill="#1D1147" opacity=".85"/><path d="M1007.6 17.0L1090.6 -7.2L1049.1 100.9Z" fill="#FFF4DC" stroke="#1D1147" stroke-width="5" stroke-linejoin="round"/><circle cx="1049.1" cy="60.6" r="8.6" fill="#1D1147" opacity=".85"/></svg>
+   <h1 class="disp hl">Maza aa<br>gaya!</h1>
+   <div class="gl hand">(that was so good!)</div>
+   <div class="pol"><div class="slot"><div class="ph"><span class="ico " style="width:120px;height:120px"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#1D1147" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M32 55 C26 50 7 39 7 23 C7 15 13 9 20.5 9 C26 9 30 12 32 16 C34 12 38 9 43.5 9 C51 9 57 15 57 23 C57 39 38 50 32 55 Z" fill="#E4147E"/><path d="M13.5 22 C13.5 18 16 15 19.5 14.5" stroke="#FFFFFF" stroke-width="2.5"/></svg></span><span class="hand">guest photo goes here</span></div></div>
+     <div class="cap hand">@ your handle</div></div>
+   <div class="tagus">Tag us. We’ll share your plate (with your OK).</div>
+   <div class="foot on-light" style="bottom:340px">
+    <img class="logo " style="height:62px;width:auto" src="file:///home/user/playground/brand/logo/bazaar/colourways/wordmark-horizontal--reversed.svg" alt=""><span class="foot__rule"></span><span class="foot__txt">Indian Kitchen · Little Elm, TX</span></div></div></body></html>
