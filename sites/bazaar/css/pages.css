@@ -276,7 +276,8 @@ input[type="date"].pg-input { -webkit-appearance: none; appearance: none; }
 .pg-words > li:nth-child(3n) .pg-word { transform: rotate(-.5deg); }
 .pg-word__ico { position: absolute; top: 14px; right: 14px; width: 52px; height: 52px; }
 .pg-word__term { margin: 0; padding-right: 58px; font-family: var(--font-display); text-transform: uppercase; font-weight: 400;
-  font-size: clamp(1.75rem, 7.6vw, 2.15rem); line-height: .95; overflow-wrap: anywhere; }
+  font-size: clamp(1.7rem, 7.4vw, 2.15rem); line-height: .95; }
+@media (min-width: 640px) { .pg-word__term { font-size: clamp(1.55rem, 3.7vw, 2rem); padding-right: 54px; } }
 .pg-word__term span { background: linear-gradient(transparent 60%, var(--w-hl, var(--bz-pink-lt)) 60% 94%, transparent 94%); padding-inline: .06em; }
 .pg-word__pos { display: inline-block; margin: 4px 0 8px; font-family: var(--font-hand); font-weight: 700; font-size: 1.35rem; line-height: 1;
   color: var(--bz-rani-text); transform: rotate(-2deg); }
