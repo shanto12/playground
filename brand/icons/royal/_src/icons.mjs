@@ -323,7 +323,7 @@ add('heart', 'Heart', 'utility',
 
 {
   const sq = (x, y, s = 4.4) => R(x, y, s, s, 1.1, fillOnly('gold'));
-  const mods = [[30, 9.5], [30, 16], [36.5? 0 : 0, 0]].slice(0, 2);
+  const mods = [[30, 9.5], [30, 16]];
   add('qr-code', 'QR code', 'utility',
     R(9, 9, 16, 16, 4), R(39, 9, 16, 16, 4), R(9, 39, 16, 16, 4),
     R(14, 14, 6, 6, 1.6, fillOnly('gold')), R(44, 14, 6, 6, 1.6, fillOnly('gold')), R(14, 44, 6, 6, 1.6, fillOnly('gold')),

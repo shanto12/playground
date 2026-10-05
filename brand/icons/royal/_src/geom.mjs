@@ -6,7 +6,7 @@ function el(tag, a, o = {}) {
   return {
     tag, a: { ...a, ...(o.transform ? { transform: o.transform } : {}) },
     s: o.s === undefined ? 'line' : o.s,
-    f: o.f || null, dots: o.dots, sw: o.sw, rule: o.rule,
+    f: o.f || null, dots: o.dots, sw: o.sw, rule: o.rule, mono: o.mono,
   };
 }
 export const P = (d, o) => el('path', { d }, o);

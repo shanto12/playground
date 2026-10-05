@@ -20,7 +20,9 @@ export const PALETTE = {
   plate: '#FBF3E4',     // ivory backing plate (diet marks)
   veg: '#17834A',       // FSSAI-style veg green
   nonveg: '#7A3317',    // FSSAI-style non-veg brown
+  pin: '#A3173F',       // solid ruby (stays solid in mono)
 };
+const SPRITE_VAR = { pin: 'ruby' };
 const ACCENT = new Set(['emerald', 'ruby', 'peacock']);
 const MONO_ACCENT_OPACITY = 0.3;
 
@@ -47,6 +49,7 @@ function render(icon, mode) {
   const els = icon.els;
   const plate = [], accent = [], solid = [], strokes = [];
   for (const el of els) {
+    if (mode === 'mono' && el.mono === false) continue;
     if (el.f) {
       const base = { stroke: undefined };
       if (el.f === 'plate') { if (mode !== 'mono') plate.push({ el }); }
@@ -65,7 +68,7 @@ function render(icon, mode) {
     if (mode === 'sprite') {
       const v = r === 'gold' ? `var(--icon-line,${PALETTE.line})`
         : r === 'plate' ? `var(--icon-plate,${PALETTE.plate})`
-        : `var(--icon-${r},${PALETTE[r]})`;
+        : `var(--icon-${SPRITE_VAR[r] || r},${PALETTE[r]})`;
       a.style = `fill:${v}`; return a;
     }
     a.fill = r === 'gold' ? (mode === 'ivory' ? PALETTE.lineIvory : PALETTE.line) : PALETTE[r];
