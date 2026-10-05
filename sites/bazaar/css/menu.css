@@ -37,6 +37,7 @@ html { scroll-padding-top: calc(var(--header-h) + var(--zn-h) + 14px); }
   box-shadow: 2px 2px 0 var(--bz-ink); font-weight: 700; font-size: .86rem; }
 .mh__stats li:nth-child(even) { transform: rotate(2deg); } .mh__stats li:nth-child(odd) { transform: rotate(-1.5deg); }
 .mh__stats b { font-family: var(--font-display); font-weight: 400; }
+@media (max-width: 519px) { .mh__stats li:last-child { display: none; } .mh__lead { font-size: 1rem; } }
 .mh__stats li:last-child { background: var(--bz-ink); color: var(--bz-cream); box-shadow: 2px 2px 0 var(--bz-rani-text); }
 .mh__status { display: grid; justify-items: start; gap: 6px; margin-bottom: 20px; }
 .mh__status .small-print { color: #2E2160; }
@@ -91,11 +92,16 @@ html { scroll-padding-top: calc(var(--header-h) + var(--zn-h) + 14px); }
 .zn__stk.is-empty { background: var(--bz-cream); border-style: dashed; box-shadow: none; }
 .zn__stk.is-empty .ico { opacity: .45; }
 @media (min-width: 1100px) {
-  :root { --zn-h: 70px; }
-  .zn__list { justify-content: space-between; padding-right: 4px; -webkit-mask-image: none; mask-image: none; }
-  .zn__stk { font-size: .8rem; }
+  :root { --zn-h: 76px; }
+  .zn__filters { width: 52px; min-height: 52px; padding: 0; justify-content: center; }
+  .zn__filters .ico { width: 26px; height: 26px; }
+  .zn__filters-t { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .zn__list { justify-content: space-between; gap: 6px; padding: 12px 4px 10px 6px; overflow: visible; -webkit-mask-image: none; mask-image: none; }
+  .zn__stk { position: relative; min-height: 52px; padding: 4px 16px 4px 5px; font-size: .8rem; line-height: 1.05; white-space: normal; border-radius: 18px; }
+  .zn__name > span { display: block; }
+  .zn__count { position: absolute; top: -10px; right: -8px; min-width: 24px; height: 22px; font-size: .7rem; }
 }
-@media (min-width: 1240px) { .zn__stk { font-size: .86rem; padding-right: 8px; } }
+@media (min-width: 1240px) { .zn__stk { font-size: .86rem; padding-right: 20px; } .zn__list { gap: 10px; } }
 
 /* ---------- 3 · filter board ---------- */
 .mf { padding-block: 28px 8px; outline: none; }
@@ -173,10 +179,10 @@ html { scroll-padding-top: calc(var(--header-h) + var(--zn-h) + 14px); }
 
 .sets { display: flex; gap: 10px; overflow-x: auto; scrollbar-width: none; padding: 10px var(--gutter) 8px 2px; margin: -10px calc(-1 * var(--gutter)) 0 0; }
 .sets::-webkit-scrollbar { display: none; }
-.set { flex: none; display: inline-flex; align-items: center; gap: 7px; min-height: 48px; padding: 4px 32px 4px 8px; border-radius: 999px; white-space: nowrap; font-size: .88rem; }
+.set { flex: none; display: inline-flex; align-items: center; gap: 8px; min-height: 48px; padding: 4px 8px 4px 8px; border-radius: 999px; white-space: nowrap; font-size: .88rem; }
 .set .ico { width: 30px; height: 30px; padding: 2px; border-radius: 50%; background: var(--bz-sand); border: 2px solid var(--bz-ink); }
 .set[aria-pressed="true"] .ico { background: var(--bz-cream); }
-.set .seg__n { top: 50%; right: 5px; transform: translateY(-50%); }
+.set .seg__n { position: static; margin-left: 2px; }
 
 @media (min-width: 760px) {
   .mf__board { padding: 26px 26px 28px; }
@@ -185,13 +191,15 @@ html { scroll-padding-top: calc(var(--header-h) + var(--zn-h) + 14px); }
   .sets { flex-wrap: wrap; overflow: visible; margin: 0; padding: 4px 0 0; }
 }
 @media (min-width: 1100px) {
-  .mf__board { grid-template-columns: minmax(0, 1fr) minmax(0, 2.4fr); align-items: start; gap: 26px 34px; padding: 30px 32px 32px; }
-  .mf__head { grid-column: 1; flex-direction: column; gap: 6px; }
-  .mf__search { grid-column: 1; }
-  .mf__grid { grid-column: 2; grid-row: 1 / span 2; grid-template-columns: 1fr 1.15fr .95fr; }
+  .mf__board { grid-template-columns: auto minmax(0, 1fr); align-items: end; gap: 28px 48px; padding: 34px 34px 32px; }
+  .mf__head { flex-direction: column; gap: 4px; }
+  .mf__search { max-width: 640px; width: 100%; justify-self: end; }
+  .mf__grid { grid-column: 1 / -1; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr) minmax(0, 1fr); gap: 30px 36px;
+    padding-top: 26px; border-top: 2px dashed rgba(29,17,71,.25); }
   .mf__group--sets { grid-column: auto; }
-  .sets { flex-direction: column; align-items: stretch; }
-  .set { justify-content: flex-start; }
+  .sets { display: grid; grid-template-columns: 1fr; gap: 9px; }
+  .set { min-height: 46px; }
+  .set .seg__n { margin-left: auto; }
 }
 
 /* ---------- 4 · results bar, set banner, empty state ---------- */

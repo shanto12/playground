@@ -136,9 +136,11 @@ ${z.items.map((it) => dishHTML(it, z)).join('\n')}
 </section>`;
 }
 
+/* "Biryani Boulevard" → two spans, so wide screens can stack the street name on two lines */
+const twoLine = (name) => { const i = name.lastIndexOf(" "); return i < 0 ? esc(name) : `<span>${esc(name.slice(0, i))}</span> <span>${esc(name.slice(i + 1))}</span>`; };
 function zoneNavHTML() {
   return `    <ul class="zn__list" role="list">
-${zones.map((z) => `      <li><a class="zn__stk z-${z.id}" href="#${z.id}" data-zone-link="${z.id}">${ico(ZONE_ICON[z.id])}<span class="zn__name">${esc(z.name)}</span><span class="zn__count" data-zone-count="${z.id}"><span class="visually-hidden">, </span><span data-n>${z.items.length}</span><span class="visually-hidden"> dishes</span></span></a></li>`).join('\n')}
+${zones.map((z) => `      <li><a class="zn__stk z-${z.id}" href="#${z.id}" data-zone-link="${z.id}">${ico(ZONE_ICON[z.id])}<span class="zn__name">${twoLine(z.name)}</span><span class="zn__count" data-zone-count="${z.id}"><span class="visually-hidden">, </span><span data-n>${z.items.length}</span><span class="visually-hidden"> dishes</span></span></a></li>`).join('\n')}
     </ul>`;
 }
 
