@@ -343,3 +343,6 @@ html.js [data-reveal].is-in .au-plot__pos{transform:translateX(var(--x));opacity
   .hub .au-gap__note,.hub .au-today__go,.hub .au-wins__reset,[data-wins-copy]{display:none !important}
   .hub .au-faces,.hub .au-card-list,.hub .au-wins__list{grid-template-columns:1fr 1fr !important}
 }
+
+/* "Where the fixes show up": 4 tiles → avoid a 3+1 orphan on tablets */
+@media (min-width:700px) and (max-width:1059px){.hub .au-more .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}

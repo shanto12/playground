@@ -172,7 +172,7 @@
   "colourway": "midnight",
   "file": "07-spice-botanical-midnight.svg",
   "tile": 320,
-  "bytes": 9306,
+  "bytes": 9226,
   "bg": "#160B26"
  },
  {
@@ -180,7 +180,7 @@
   "colourway": "emerald",
   "file": "07-spice-botanical-emerald.svg",
   "tile": 320,
-  "bytes": 9305,
+  "bytes": 9225,
   "bg": "#0F4D3F"
  },
  {
@@ -188,7 +188,7 @@
   "colourway": "ivory",
   "file": "07-spice-botanical-ivory.svg",
   "tile": 320,
-  "bytes": 9303,
+  "bytes": 9223,
   "bg": "#FBF3E4"
  },
  {

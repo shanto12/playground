@@ -429,10 +429,11 @@ function spice(cw) {
   const defs = sprig + anise + pod + podOpen + pair + saffron + cumin + pep;
   // 3×3 toss grid; every row shifts a third of a step, so the repeat never reads as a grid
   const st = T / 3, sh = st / 3;
-  const slot = (r, c) => [st / 2 - 6 + c * st + r * sh, st / 2 + r * st];
+  const JIT = [[6, -14], [-8, 12], [10, -2], [-4, 10], [6, -16], [-10, 4], [8, -6], [-6, 14], [4, -10]]; // breaks row banding
+  const slot = (r, c) => { const [jx, jy] = JIT[r * 3 + c]; return [st / 2 - 6 + c * st + r * sh + jx, st / 2 + r * st + jy]; };
   const place = [
-    ['cl', ...slot(0, 0), 38, 70], ['sa', ...slot(0, 1), 8, 36], ['c2', ...slot(0, 2), -28, 34],
-    ['sf', ...slot(1, 0), -12, 32], ['cl', ...slot(1, 1), 118, 70], ['sa', ...slot(1, 2), 26, 36, .78],
+    ['cl', ...slot(0, 0), 44, 70], ['sa', ...slot(0, 1), 8, 36], ['c2', ...slot(0, 2), -28, 34],
+    ['sf', ...slot(1, 0), -12, 32], ['cl', ...slot(1, 1), -62, 70], ['sa', ...slot(1, 2), 26, 36, .78],
     ['c2', ...slot(2, 0), 32, 34], ['cp', ...slot(2, 1), -48, 30, 1.05], ['sf', ...slot(2, 2), 22, 32],
   ];
   const fill = [

@@ -293,14 +293,13 @@ a.card:hover, .card--lift:hover { transform: translate(-3px,-3px) rotate(0deg); 
 
 /* diet marks (Indian standard square + text label — never colour alone) */
 .diet { display: inline-flex; align-items: center; gap: .4em; font-weight: 700; font-size: .82rem; }
-.diet::before { content: ''; width: 15px; height: 15px; flex: none; border: 2px solid currentColor; border-radius: 3px;
+.diet::before { content: ''; width: 16px; height: 16px; flex: none; border: 2px solid currentColor; border-radius: 3px;
   background: radial-gradient(circle, currentColor 0 3.5px, transparent 4px); }
 .diet--veg { color: #23772F; } .diet--nonveg { color: #8A3B12; } .diet--egg { color: #8A3B12; }
-.diet--nonveg::before { background: conic-gradient(from -30deg at 50% 30%, transparent 0 0) , linear-gradient(transparent, transparent);
-  clip-path: none; }
-.diet--nonveg::before { background: radial-gradient(circle, transparent 0, transparent 0),
-  linear-gradient(currentColor, currentColor) center / 0 0 no-repeat; }
-.diet--nonveg::after { content: ''; position: absolute; }
+.diet--nonveg::before { padding: 3px 2.5px;   /* Indian non-veg mark: brown square + triangle */
+  background: linear-gradient(to top left, currentColor 50%, transparent 52%) left / 50% 100% no-repeat content-box,
+              linear-gradient(to top right, currentColor 50%, transparent 52%) right / 50% 100% no-repeat content-box; }
+.diet--egg::before { background: radial-gradient(3.2px 4.3px at 50% 52%, #E38B00 92%, transparent 100%); }
 .on-dark .diet--veg, .sec--ink .diet--veg { color: #86CF6E; }
 .on-dark .diet--nonveg, .sec--ink .diet--nonveg, .on-dark .diet--egg, .sec--ink .diet--egg { color: #FFA06A; }
 
