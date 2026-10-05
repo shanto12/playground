@@ -125,12 +125,8 @@ export function chaiSleeve(dir) {
     b += T(mid, py + 9.3, 'CURRY DISTRICT · CHAI & COOLERS', { font: FONT.dm(700), size: 3.1, fill: c.cream, ls: .45 });
     b += stickerText(mid, py + 25.5, 'CHAI-LO!', { size: 15.5, fill: c.marigold, shadow: c.ink, stroke: c.ink, sw: 1.5, dx: 1, dy: 1.1 });
     b += T(mid, py + 35.6, 'Garam chai. Zero rush.', { font: FONT.caveat(700), size: 7.2, fill: c.cream });
-    // left: emblem on a marigold badge
-    const lx = mid - 66;
-    b += `<circle cx="${f(lx + 1.2)}" cy="${f(H / 2 + 1.2)}" r="17" fill="${c.ink}"/><circle cx="${f(lx)}" cy="${f(H / 2)}" r="17" fill="${c.marigold}" stroke="${c.ink}" stroke-width="1"/>`;
-    b += placeC('logo/bazaar/emblem.svg', lx, H / 2 - .5, { h: 24 });
     // right: chai ticket (back-right)
-    const tx = mid + 52, tw = 50, th = 40, ty = H / 2 - th / 2;
+    const tw = 52, tx = mid + W / 3 - tw / 2, th = 40, ty = H / 2 - th / 2;
     const notch = (x, y) => `<circle cx="${f(x)}" cy="${f(y)}" r="3.2" fill="url(#pChai)"/>`;
     b += `<rect x="${f(tx + 1.4)}" y="${f(ty + 1.4)}" width="${tw}" height="${th}" rx="2.5" fill="${c.ink}"/>`;
     b += `<rect x="${f(tx)}" y="${f(ty)}" width="${tw}" height="${th}" rx="2.5" fill="${c.cream}" stroke="${c.ink}" stroke-width=".9"/>`;
@@ -141,10 +137,10 @@ export function chaiSleeve(dir) {
     b += T(tx + 31, ty + 23.5, 'means tea.', { font: FONT.caveat(700), size: 6, fill: c.ink });
     b += T(tx + 31, ty + 30.5, 'So “chai tea”', { font: FONT.caveat(600), size: 4.9, fill: c.muted });
     b += T(tx + 31, ty + 35.5, 'is tea tea.', { font: FONT.caveat(600), size: 4.9, fill: c.muted });
-    // back-left: wordmark on cream pill
-    const wx = 40;
-    b += `<rect x="${f(wx - 31 + 1.2)}" y="${f(H / 2 - 13 + 1.2)}" width="62" height="26" rx="13" fill="${c.ink}"/><rect x="${f(wx - 31)}" y="${f(H / 2 - 13)}" width="62" height="26" rx="13" fill="${c.cream}" stroke="${c.ink}" stroke-width=".9"/>`;
-    b += placeC('logo/bazaar/wordmark-stacked.svg', wx, H / 2, { h: 21 });
+    // left: stacked wordmark on a cream badge
+    const wx = mid - W / 3;
+    b += `<rect x="${f(wx - 27 + 1.4)}" y="${f(H / 2 - 21 + 1.4)}" width="54" height="42" rx="10" fill="${c.ink}"/><rect x="${f(wx - 27)}" y="${f(H / 2 - 21)}" width="54" height="42" rx="10" fill="${c.cream}" stroke="${c.ink}" stroke-width=".9"/>`;
+    b += placeC('logo/bazaar/wordmark-stacked.svg', wx, H / 2, { h: 35 });
     return { W, H, defs, body: b };
   }
   // ROYAL
@@ -166,18 +162,16 @@ export function chaiSleeve(dir) {
   b += T(mid, ab - 13.6, 'of chai.', { font: FONT.fr(500, true), size: 6.6, fill: c.goldLt });
   b += `<rect x="${f(mid - 8)}" y="${f(ab - 9.6)}" width="16" height=".3" fill="${c.gold}"/>`;
   b += T(mid, ab - 4.6, 'CURRY DISTRICT', { font: FONT.hk(600), size: 2.5, fill: c.gold, ls: .9 });
-  // left: seal medallion
-  b += placeC('logo/royal/seal.svg', mid - 64, H / 2, { h: 38 });
   // right: chai note on ivory card with arch top
-  const nx = mid + 64;
+  const nx = mid + W / 3;
   b += `<path d="${archPath(nx, H / 2 + 18, 46, 40)}" fill="${c.ivory}"/>`;
   b += `<path d="${archPath(nx, H / 2 + 16.6, 42.6, 37)}" fill="none" stroke="${c.goldDk}" stroke-width=".35"/>`;
   b += T(nx, H / 2 - 7.5, 'A NOTE ON CHAI', { font: FONT.hk(700), size: 2.6, fill: c.ruby, ls: .7 });
   b += T(nx, H / 2 + 1, '“Chai” simply', { font: FONT.fr(500, true), size: 5.4, fill: c.ink });
   b += T(nx, H / 2 + 7.4, 'means tea.', { font: FONT.fr(500, true), size: 5.4, fill: c.ink });
   b += T(nx, H / 2 + 13.6, 'Take your time with it.', { font: FONT.hk(500), size: 2.9, fill: c.muted });
-  // back: foil wordmark on midnight cartouche
-  const wx = 40;
+  // left: foil wordmark on midnight cartouche
+  const wx = mid - W / 3;
   b += `<rect x="${f(wx - 32)}" y="${f(H / 2 - 14)}" width="64" height="28" rx="14" fill="${c.ink}" stroke="url(#foilS)" stroke-width=".8"/>`;
   b += placeC('logo/royal/wordmark-horizontal.svg', wx, H / 2, { w: 52 });
   return { W, H, defs, body: b };

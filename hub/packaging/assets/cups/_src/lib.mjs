@@ -139,8 +139,9 @@ export function sectorWarp({ artId, W, H, L1, L2, Phi, N = 180, cx = 0, cy = 0 }
   for (let i = 0; i < N; i++) {
     const xa = i * W / N, xb = (i + 1) * W / N, xc = (xa + xb) / 2;
     const psi = -Phi / 2 + (i + 0.5) * dpsi;
-    defs += `<clipPath id="${artId}c${i}"><rect x="${f(xa - gap)}" y="-1" width="${f(xb - xa + 2 * gap)}" height="${f(H + 2)}"/></clipPath>`;
-    body += `<g transform="translate(${f(cx)} ${f(cy)}) rotate(${(deg(psi)).toFixed(4)}) translate(0 ${f(-L1)}) scale(${sx.toFixed(5)} ${k.toFixed(5)}) translate(${f(-xc)} 0)"><use href="#${artId}" clip-path="url(#${artId}c${i})"/></g>`;
+    // masks (not clip-paths): clip AA is applied per primitive in Chromium and leaks under-layers at seams
+    defs += `<mask id="${artId}c${i}" maskUnits="userSpaceOnUse" x="${f(-W)}" y="${f(-H)}" width="${f(3 * W)}" height="${f(3 * H)}"><rect x="${f(xa - gap)}" y="-1" width="${f(xb - xa + 2 * gap)}" height="${f(H + 2)}" fill="#fff"/></mask>`;
+    body += `<g transform="translate(${f(cx)} ${f(cy)}) rotate(${(deg(psi)).toFixed(4)}) translate(0 ${f(-L1)}) scale(${sx.toFixed(5)} ${k.toFixed(5)}) translate(${f(-xc)} 0)"><use href="#${artId}" mask="url(#${artId}c${i})"/></g>`;
   }
   return { defs, body };
 }
