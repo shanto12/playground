@@ -19,7 +19,7 @@
   const FOC = 'a[href],button,input,select,textarea,[tabindex]';
   const CLS = 'm-in m-off m-shrunk m-paused m-tilt m-active';
   const VARS = ['--m-delay', '--m-rx', '--m-ry', '--m-px', '--m-py', '--m-mx', '--m-my'];
-  const PT = { petals: [9000, 16, 38], spice: [2600, 45, 110], embers: [6000, 22, 56] }; // px² per particle, cap <640px, cap ≥640px
+  const PT = { petals: [9000, 16, 38], spice: [2600, 45, 110], embers: [4500, 26, 60] }; // px² per particle, cap <640px, cap ≥640px
 
   let C = [], booted = false, opts = {};
   let enterIO, liveIO, ro, mo;
@@ -216,10 +216,10 @@
   function spawn(s, init) {
     const t = s.type, H = s.h, p = { c: random() * 4 | 0, ph: rnd(0, 6.28), x: rnd(0, s.w), r: 0, vr: 0 };
     if (t === 'petals') {
-      Object.assign(p, { z: rnd(10, 18), y: init ? rnd(-20, H) : -24, vy: rnd(.35, .9), vx: rnd(-.25, .25), r: rnd(0, 6.28), vr: rnd(-.03, .03), vp: rnd(.02, .05) });
+      Object.assign(p, { z: rnd(12, 22), y: init ? rnd(-20, H) : -24, vy: rnd(.35, .9), vx: rnd(-.25, .25), r: rnd(0, 6.28), vr: rnd(-.03, .03), vp: rnd(.02, .05) });
     } else {
       const sp = t === 'spice';
-      Object.assign(p, { z: sp ? rnd(2, 5.5) : rnd(8, 22), y: init ? rnd(0, H) : H + 12, vy: sp ? rnd(.12, .45) : rnd(.35, 1), vx: rnd(-.2, .2), vp: sp ? rnd(.02, .06) : rnd(.04, .1) });
+      Object.assign(p, { z: sp ? rnd(2.5, 6) : rnd(10, 26), y: init ? rnd(0, H) : H + 12, vy: sp ? rnd(.12, .45) : rnd(.35, 1), vx: rnd(-.2, .2), vp: sp ? rnd(.02, .06) : rnd(.04, .1) });
     }
     return p;
   }

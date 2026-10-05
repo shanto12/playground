@@ -66,7 +66,7 @@ function logo(file, { cls = '', style = '' } = {}) {
 const patternUrl = (name) => furl(`${BRAND}/patterns/bazaar/${name}.svg`);
 
 // alternating-ray sunburst, as a standalone SVG string
-function sunburst({ w, h, cx = w / 2, cy = h / 2, n = 28, a = C.marigold, b = C.saffron, r, cls = '', style = '', patB = null, patScale = 1 }) {
+function sunburst({ w, h, cx = w / 2, cy = h / 2, n = 28, a = C.marigold, b = C.saffron, r, cls = '', style = '', patB = null, patScale = 1, patOpacity = .55, rot = 0 }) {
   r = r || Math.hypot(Math.max(cx, w - cx), Math.max(cy, h - cy)) + 20;
   const step = 360 / n; let rays = '';
   for (let i = 0; i < n; i += 2) {
@@ -75,8 +75,8 @@ function sunburst({ w, h, cx = w / 2, cy = h / 2, n = 28, a = C.marigold, b = C.
   }
   const pid = 'sbp' + (uid++);
   const defs = patB ? `<defs><pattern id="${pid}" patternUnits="userSpaceOnUse" width="${240 * patScale}" height="${240 * patScale}"><image href="${patternUrl(patB)}" width="${240 * patScale}" height="${240 * patScale}"/></pattern></defs>` : '';
-  const patLayer = patB ? `<path d="${rays}" fill="url(#${pid})"/>` : '';
-  return `<svg class="burst ${cls}" style="${style}" aria-hidden="true" viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" preserveAspectRatio="xMidYMid slice">${defs}<rect width="${w}" height="${h}" fill="${a}"/><path d="${rays}" fill="${b}"/>${patLayer}</svg>`;
+  const patLayer = patB ? `<path d="${rays}" fill="url(#${pid})" style="mix-blend-mode:multiply" opacity="${patOpacity}"/>` : '';
+  return `<svg class="burst ${cls}" style="${style}" aria-hidden="true" viewBox="0 0 ${w} ${h}" width="${w}" height="${h}" preserveAspectRatio="xMidYMid slice">${defs}<rect width="${w}" height="${h}" fill="${a}"/><g class="rays" style="transform-origin:${cx}px ${cy}px;transform:rotate(${rot}deg)"><path d="${rays}" fill="${b}"/>${patLayer}</g></svg>`;
 }
 
 // 4-point sparkle (matches the dish-art sparkles)
@@ -107,6 +107,16 @@ function stars(value, { size = 44, gap = 8, fill = C.marigold, empty = '#FFFFFF'
   const full = Math.floor(value), frac = value - full;
   const fw = full * (size + gap) + frac * size;
   return `<svg class="stars" aria-hidden="true" width="${w}" height="${size + 2}" viewBox="0 0 ${w} ${size + 2}"><defs><clipPath id="${id}"><rect x="0" y="0" width="${fw.toFixed(1)}" height="${size + 2}"/></clipPath></defs>${shapes}<g clip-path="url(#${id})">${fills}</g></svg>`;
+}
+
+// round outline + hard offset shadow for display text, built from text-shadows
+// (avoids the miter spikes -webkit-text-stroke draws on sharp glyph corners)
+function ol(r = 10, color = C.ink, sx = 10, sy = 10, sc = C.ink, steps = 28) {
+  const out = [];
+  if (sx || sy) for (let i = 0; i < steps; i++) { const a = i / steps * Math.PI * 2; out.push(`${(sx + r * Math.cos(a)).toFixed(1)}px ${(sy + r * Math.sin(a)).toFixed(1)}px 0 ${sc}`); }
+  for (let i = 0; i < steps; i++) { const a = i / steps * Math.PI * 2; out.push(`${(r * Math.cos(a)).toFixed(1)}px ${(r * Math.sin(a)).toFixed(1)}px 0 ${color}`); }
+  for (let i = 0; i < steps; i++) { const a = (i + .5) / steps * Math.PI * 2; out.push(`${(r * .6 * Math.cos(a)).toFixed(1)}px ${(r * .6 * Math.sin(a)).toFixed(1)}px 0 ${color}`); }
+  return 'text-shadow:' + out.reverse().join(',') + ';';
 }
 
 // deterministic PRNG
@@ -200,4 +210,4 @@ html,body{width:${w}px;height:${h}px}
 ${css}</style></head><body><div class="cv" id="cv">${body}</div></body></html>`;
 }
 
-module.exports = { PG, BRAND, KIT, SRC, C, furl, readSvg, dish, icon, logo, logoPath, patternUrl, sunburst, sparkle, stars, starPath, sampleQR, arrow, inlineArrow, bunting, page, rng, prefixIds };
+module.exports = { ol, PG, BRAND, KIT, SRC, C, furl, readSvg, dish, icon, logo, logoPath, patternUrl, sunburst, sparkle, stars, starPath, sampleQR, arrow, inlineArrow, bunting, page, rng, prefixIds };

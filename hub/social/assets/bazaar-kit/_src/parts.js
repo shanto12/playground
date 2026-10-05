@@ -21,7 +21,7 @@ function kicker(text, { cls = '', x = 72, y = 64, size = 34, rot = -2 } = {}) {
 }
 
 // scalloped stamp-style halo (echoes the District seal) as SVG
-function halo({ cx, cy, r, bumps = 40, ring = C.rani, disc = C.cream, shadow = C.ink, sw = 8, inner = true, dots = C.ink }) {
+function halo({ w = 1080, h = 1350, cx, cy, r, bumps = 40, ring = C.rani, disc = C.cream, shadow = C.ink, sw = 8, inner = true, dots = C.ink }) {
   const br = (2 * Math.PI * r) / bumps / 2 * 1.05; let circles = '';
   for (let i = 0; i < bumps; i++) {
     const a = (i / bumps) * Math.PI * 2;
@@ -32,8 +32,7 @@ function halo({ cx, cy, r, bumps = 40, ring = C.rani, disc = C.cream, shadow = C
     const n = Math.round(bumps * 1.6), rr = r - br * 2.6;
     for (let i = 0; i < n; i++) { const a = (i / n) * Math.PI * 2; dotRing += `<circle cx="${(cx + rr * Math.cos(a)).toFixed(1)}" cy="${(cy + rr * Math.sin(a)).toFixed(1)}" r="5" fill="${dots}" opacity=".55"/>`; }
   }
-  const W = cx * 2 + 40, H = cy * 2 + 40;
-  return `<svg class="halo" aria-hidden="true" style="position:absolute;left:0;top:0;overflow:visible" width="1" height="1">
+  return `<svg class="halo" aria-hidden="true" style="position:absolute;left:0;top:0" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">
     <g transform="translate(14 14)" fill="${shadow}" stroke="${shadow}" stroke-width="${sw * 2}"><circle cx="${cx}" cy="${cy}" r="${r}"/>${circles}</g>
     <g fill="${ring}" stroke="${C.ink}" stroke-width="${sw * 2}"><circle cx="${cx}" cy="${cy}" r="${r}"/>${circles}</g>
     <g fill="${ring}"><circle cx="${cx}" cy="${cy}" r="${r}"/>${circles}</g>
