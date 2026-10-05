@@ -3,3 +3,7 @@ _qa/
 _build/
 .DS_Store
 *.log
+frames/
+_frames/
+frame_*/
+*.tmp

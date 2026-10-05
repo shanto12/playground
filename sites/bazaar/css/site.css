@@ -404,6 +404,11 @@ a.rating:hover { transform: translate(-3px,-3px) rotate(0); box-shadow: 8px 8px 
 .bottom-bar a.is-primary { background: var(--bz-saffron); color: var(--bz-ink); border-color: var(--bz-ink);
   box-shadow: 3px 3px 0 var(--bz-marigold); font-family: var(--font-display); font-weight: 400; text-transform: uppercase; font-size: .92rem; }
 .bottom-bar .ico { width: 22px; height: 22px; }
+@media (max-width: 399px) {
+  .bottom-bar__in { grid-template-columns: 1.3fr 1fr 1fr; gap: 6px; }
+  .bottom-bar a:not(.is-primary) { flex-direction: column; gap: 1px; font-size: .74rem; padding: 2px 4px; }
+  .bottom-bar a:not(.is-primary) .ico { width: 20px; height: 20px; }
+}
 body.has-bar .site-footer { padding-bottom: calc(var(--bar-h) + var(--safe-b) + 12px); }
 body.bar-hidden .bottom-bar { transform: translate3d(0, calc(100% + 8px), 0); }
 @media (min-width: 960px) { .bottom-bar { display: none; } body.has-bar .site-footer { padding-bottom: 0; } }

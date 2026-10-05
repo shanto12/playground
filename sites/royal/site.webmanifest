@@ -1,0 +1,16 @@
+{
+  "name": "Curry District · Royal concept",
+  "short_name": "Curry District",
+  "description": "Design concept for Curry District, an Indian kitchen in Little Elm, TX.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#160B26",
+  "theme_color": "#160B26",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

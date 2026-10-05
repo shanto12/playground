@@ -1,7 +1,7 @@
 /* Curry District · A · BAZAAR — HOME ("The District Map") page styles. Loads after css/site.css. */
 
 /* ================= HERO ================= */
-.hero { position: relative; background: var(--bz-saffron); }
+.hero { position: relative; background: var(--bz-saffron); overflow-x: clip; }
 .hero__scene { position: relative; overflow: hidden; height: clamp(300px, 46svh, 430px);
   background: linear-gradient(180deg, #EE4F98 0%, #FF7A52 35%, #FFA23E 60%, #F2A46F 100%); }
 .scene { position: absolute; inset: 0; }
