@@ -314,7 +314,7 @@ html.js:not([data-dir="both"]) #compare{display:none}
 .ch__title{margin:0;line-height:.95}
 .ch__lede{margin:6px 0 0;max-width:56ch;font-size:clamp(1rem,2.5vw,1.1875rem);line-height:1.55;color:var(--s-muted)}
 .ch__aside{display:inline-block}
-.ch__sub{margin:clamp(30px,5vw,48px) 0 14px;font-weight:800;font-size:1.0625rem;letter-spacing:.01em}
+.bk-story .ch__sub{margin:clamp(30px,5vw,48px) 0 14px;font-weight:800;font-size:1.0625rem;letter-spacing:.01em}
 .bk-story[data-theme="bazaar"] .ch__time{padding:5px 12px;border-radius:999px;background:#1D1147;color:#FFF4DC;font:800 .8125rem/1 'DM Sans',sans-serif;letter-spacing:.04em}
 .bk-story[data-theme="bazaar"] .ch__title{font:400 clamp(2.4rem,10.5vw,4.6rem)/.92 'Bowlby One',sans-serif;text-transform:uppercase}
 .bk-story[data-theme="bazaar"] .ch__aside{font:700 clamp(1.4rem,4.6vw,1.9rem)/1 'Caveat',cursive;color:#B5126A;transform:rotate(-3deg);transform-origin:left center}

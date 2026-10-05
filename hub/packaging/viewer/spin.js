@@ -45,7 +45,9 @@
     if (spec.img) e.style.backgroundImage = 'url("' + spec.img + '")';
     e.style.backgroundSize = '100% 100%'; e.style.backgroundRepeat = 'no-repeat'; e.style.backgroundPosition = 'center';
     if (spec.art) {
-      e.appendChild(mk('i', 'sp-a', 'width:' + L(spec.art.w) + ';height:' + L(spec.art.h) + ';margin:' + L(-spec.art.h / 2) + ' 0 0 ' + L(-spec.art.w / 2) + ';background-image:url("' + spec.art.src + '")'));
+      var a = spec.art;
+      e.appendChild(mk('i', 'sp-a', 'width:' + L(a.w) + ';height:' + L(a.h) + ';margin:' + L(-a.h / 2) + ' 0 0 ' + L(-a.w / 2) + ';background-image:url("' + a.src + '")' +
+        (a.bgSize ? ';background-size:' + a.bgSize : '') + (a.bgPos ? ';background-position:' + a.bgPos : '') + (a.rot ? ';transform:rotate(180deg)' : '')));
     }
     var sh = mk('b', 'sp-sh'); e.appendChild(sh);
     return { el: e, sh: sh, n: inner ? [-g.n[0], -g.n[1], -g.n[2]] : g.n };
@@ -64,6 +66,33 @@
     return e;
   }
 
+  /* a cone / cylinder wrapped from N flat slices; u = 0.5 faces the viewer, seam at the back */
+  function frustum(fr, spin, faces) {
+    var N = fr.N || 40, slant = Math.hypot(fr.h, fr.rt - fr.rb), rm = (fr.rt + fr.rb) / 2;
+    var alpha = Math.atan2(fr.rt - fr.rb, fr.h), ca = Math.cos(alpha), sa = Math.sin(alpha), chord = 2 * rm * Math.sin(Math.PI / N) * 1.06;
+    for (var i = 0; i < N; i++) {
+      var phi = -Math.PI + (i + 0.5) * 2 * Math.PI / N;
+      var e = mk('div', 'sp-f', 'width:' + L(chord) + ';height:' + L(slant) + ';margin:' + L(fr.y - slant / 2) + ' 0 0 ' + L(-chord / 2) +
+        ';transform:rotateY(' + (phi * 180 / Math.PI).toFixed(3) + 'deg) translateZ(' + L(rm) + ') rotateX(' + (-alpha * 180 / Math.PI).toFixed(3) + 'deg)');
+      if (fr.img) { e.style.backgroundImage = 'url("' + fr.img + '")'; e.style.backgroundSize = (N * 100) + '% 100%'; e.style.backgroundPosition = (i / (N - 1) * 100).toFixed(3) + '% 0'; }
+      else e.style.background = fr.bg;
+      if (fr.bg && fr.img) e.style.backgroundColor = fr.bg;
+      if (fr.glass) { e.style.backfaceVisibility = 'visible'; e.style.webkitBackfaceVisibility = 'visible'; }
+      spin.appendChild(e);
+      if (!fr.glass) {
+        var sh = mk('b', 'sp-sh'); e.appendChild(sh);
+        faces.push({ el: e, sh: sh, n: [Math.sin(phi) * ca, -sa, Math.cos(phi) * ca] });
+      }
+    }
+  }
+  function disc(dc, spin, faces) {
+    var e = mk('div', 'sp-f', 'width:' + L(dc.r * 2) + ';height:' + L(dc.r * 2) + ';margin:' + L(-dc.r) + ' 0 0 ' + L(-dc.r) + ';border-radius:50%;background:' + dc.bg + ';transform:' +
+      (dc.down ? 'rotateX(-90deg) translateZ(' + L(dc.y) + ')' : 'rotateX(90deg) translateZ(' + L(-dc.y) + ')'));
+    if (dc.art) e.appendChild(mk('i', 'sp-a', 'width:' + L(dc.art.d) + ';height:' + L(dc.art.d) + ';margin:' + L(-dc.art.d / 2) + ' 0 0 ' + L(-dc.art.d / 2) + ';border-radius:50%;background-image:url("' + dc.art.src + '")'));
+    var sh = mk('b', 'sp-sh', 'border-radius:50%'); e.appendChild(sh);
+    spin.appendChild(e); faces.push({ el: e, sh: sh, n: dc.down ? [0, 1, 0] : [0, -1, 0] });
+  }
+
   function build(def) {
     var g = faceGeo(def.w, def.h, def.d);
     var spin = mk('div', 'sp-spin'), faces = [];
@@ -79,6 +108,8 @@
       });
       var fl = faceEl(g.bottom, { bg: o.inner }, true); spin.appendChild(fl.el); faces.push(fl);
     }
+    (def.frusta || []).forEach(function (fr) { frustum(fr, spin, faces); });
+    (def.discs || []).forEach(function (dc) { disc(dc, spin, faces); });
     if (def.handles) [1, -1].forEach(function (s) { spin.appendChild(handleEl(def, s)); });
     var size = Math.hypot(def.w, def.d) * 1.35;
     var ground = mk('div', 'sp-ground', 'width:' + L(size) + ';height:' + L(size) + ';margin:' + L(-size / 2) + ' 0 0 ' + L(-size / 2) + ';transform:rotateX(-90deg) translateZ(' + L(def.h / 2, 1) + ')');
@@ -144,6 +175,69 @@
           },
           views: boxViews, title: 'Two-compartment drawer tray', dims: '256 × 180 × 66 mm sleeve',
           info: 'A printed sleeve with a sliding tray. The drawer end faces the short sides.'
+        };
+      }
+    });
+    if (by.tub) out.push({
+      id: 'tub', label: 'Deli tub',
+      def: function (dir) {
+        var c = by.tub[dir] || by.tub.bazaar, G = c.geometry, Rt = G.top_d / 2, Rb = G.base_d / 2, H = G.height, y0 = G.sleeve_y[0], y1 = G.sleeve_y[1], side = art(c, 'side'), lid = art(c, 'lid');
+        function r(y) { return Rt + (Rb - Rt) * y / H; }
+        return {
+          w: G.lid_d, d: G.lid_d, h: H + 6,
+          frusta: [{ rt: Rt, rb: Rb, h: H, y: 0, bg: '#E9E6EF' }, { rt: r(y0) + 0.4, rb: r(y1) + 0.4, h: y1 - y0, y: (y0 + y1) / 2 - H / 2, img: side && side.src }],
+          discs: [{ r: G.lid_d / 2, y: -H / 2 - 3, bg: '#EDEAF3', art: lid && { src: lid.src, d: lid.w } }, { r: Rb, y: H / 2, bg: '#CFCBD8', down: true }],
+          views: [{ k: 'Front', ry: 0, rx: -8 }, { k: 'Side', ry: -90, rx: -8 }, { k: 'Back', ry: 180, rx: -8 }, { k: 'Lid', ry: 0, rx: -62 }],
+          title: 'Deli tub with wrap label and lid medallion', dims: '16 oz · 114 mm top · 76 mm tall', info: 'Plain stock tub, so the print lives on a wrap label and a round lid sticker.'
+        };
+      }
+    });
+    return out;
+  }
+
+  function cupObjects(man, base) {
+    var out = [], idx = {};
+    (man.faces || []).forEach(function (f) { idx[f.id] = f; });
+    function fileOf(id) { return idx[id] ? base + 'assets/cups/' + idx[id].file : null; }
+    function pick(name, dir) { return idx[name + '-' + dir] ? name + '-' + dir : name + '-bazaar'; }
+    var cupViews = [{ k: 'Front', ry: 0, rx: -8 }, { k: 'Side', ry: -90, rx: -8 }, { k: 'Back', ry: 180, rx: -8 }, { k: 'Top', ry: 0, rx: -62 }];
+    if (idx['chai-cup-wrap-bazaar']) out.push({
+      id: 'chai', label: 'Chai cup',
+      def: function (dir) {
+        var w = idx[pick('chai-cup-wrap', dir)], sl = idx[pick('chai-sleeve', dir)], F = w.frustum, S = sl.frustum;
+        return {
+          w: F.topDiameter, d: F.topDiameter, h: F.height,
+          frusta: [{ rt: F.topDiameter / 2, rb: F.bottomDiameter / 2, h: F.height, y: 0, img: fileOf(pick('chai-cup-wrap', dir)) },
+                   { rt: S.topDiameter / 2, rb: S.bottomDiameter / 2, h: S.height, y: (S.coversFromTop + S.coversToTop) / 2 - F.height / 2, img: fileOf(pick('chai-sleeve', dir)) }],
+          discs: [{ r: F.topDiameter / 2 + 1.5, y: -F.height / 2, bg: '#FBF3E4' }, { r: F.bottomDiameter / 2, y: F.height / 2, bg: '#1D1147', down: true }],
+          views: cupViews, title: 'Chai cup with sleeve', dims: w.object ? w.object : '12 oz hot paper cup', info: 'The sleeve is the free billboard: it can carry a chai ticket, a fun fact or a QR.'
+        };
+      }
+    });
+    if (idx['lassi-band-bazaar']) out.push({
+      id: 'lassi', label: 'Lassi cup',
+      def: function (dir) {
+        var b = idx[pick('lassi-band', dir)], F = b.frustum;
+        return {
+          w: 98, d: 98, h: 120,
+          frusta: [{ rt: 49, rb: 30, h: 120, y: 0, bg: 'rgba(255,255,255,.14)', glass: true },
+                   { rt: F.topDiameter / 2, rb: F.bottomDiameter / 2, h: F.height, y: (F.coversFromTop + F.coversToTop) / 2 - 60, img: fileOf(pick('lassi-band', dir)) }],
+          discs: [{ r: 30, y: 60, bg: 'rgba(255,255,255,.3)', down: true }],
+          views: cupViews, title: 'Lassi cup with printed band', dims: '16 oz clear cup · 98 mm top · 120 mm tall', info: 'A clear cup with one printed band, so the drink stays the star.'
+        };
+      }
+    });
+    if (idx['lunchbox-sleeve-bazaar']) out.push({
+      id: 'lunchbox', label: 'Lunchbox',
+      def: function (dir) {
+        var b = idx[pick('lunchbox-sleeve', dir)], X = b.box, P = b.panels, sw = b.face.w, sh = b.face.h, src = fileOf(pick('lunchbox-sleeve', dir));
+        function crop(p, rot) { return { src: src, w: sw, h: p.h, bgSize: '100% ' + (sh / p.h * 100).toFixed(3) + '%', bgPos: '0 ' + (p.y / (sh - p.h) * 100).toFixed(3) + '%', rot: rot }; }
+        return {
+          w: X.length, d: X.depth, h: X.height,
+          faces: { top: { bg: KRAFT, art: crop(P.top) }, front: { bg: KRAFT, art: crop(P.front) }, back: { bg: KRAFT, art: crop(P.back, P.back.rotated180) },
+                   bottom: { bg: KRAFT, art: crop(P.bottom) }, left: { bg: KRAFT }, right: { bg: KRAFT } },
+          views: [{ k: 'Lid', ry: 0, rx: -68 }, { k: 'Front', ry: 0, rx: -8 }, { k: 'End', ry: -90, rx: -8 }, { k: 'Back', ry: 180, rx: -8 }],
+          title: 'Lunchbox with printed sleeve', dims: '228 × 152 × 57 mm (9 × 6 × 2¼ in)', info: 'A plain carton wrapped by one printed sleeve that runs over the top, front and bottom.'
         };
       }
     });
@@ -314,9 +408,10 @@
     /* ---- load art manifests, then show ---- */
     function init() {
       if (inited) return; inited = true;
-      Promise.all([getJSON(base + 'assets/bags/art/manifest.json'), getJSON(base + 'assets/boxes/art/manifest.json')]).then(function (m) {
+      Promise.all([getJSON(base + 'assets/bags/art/manifest.json'), getJSON(base + 'assets/boxes/art/manifest.json'), getJSON(base + 'assets/cups/art/manifest.json')]).then(function (m) {
         if (m[0] && m[0].faces) objects.push(bagObject(m[0], base));
         if (m[1] && m[1].containers) objects = objects.concat(boxObjects(m[1], base));
+        if (m[2] && m[2].faces) objects = objects.concat(cupObjects(m[2], base));
         if (!objects.length) { loadMsg.textContent = 'The viewer could not load the artwork. Please try again.'; return; }
         loadMsg.hidden = true;
         rObj.textContent = '';

@@ -223,7 +223,7 @@
     }
     if (subEl) {
       if (!n) subEl.textContent = 'Tap “Add to my plan” on any idea';
-      else { var ph = phasesFor(plan).length; subEl.textContent = n + (n === 1 ? ' idea' : ' ideas') + ' · ' + ph + (ph === 1 ? ' phase' : ' phases') + ' · tap to see the order'; }
+      else { var ph = phasesFor(plan).length; subEl.textContent = n + (n === 1 ? ' idea' : ' ideas') + ' · ' + ph + (ph === 1 ? ' phase' : ' phases') + ' · in order'; }
     }
     if (sheet && sheet.classList.contains('is-open')) renderSheet();
   }
