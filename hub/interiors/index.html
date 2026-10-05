@@ -336,9 +336,12 @@
         <p class="sec-head__desc">Every render, spec sheet, swatch book and mural piece. Filter by direction or by type, tap to enlarge. All rooms are illustrative.</p>
         <div class="sec-head__action" data-dir-switch="full"></div>
       </div>
-      <div data-gallery
-           data-manifests="assets/rooms/manifest.json,assets/murals/manifest.json"
-           data-filter="direction,type,tags"></div>
+      <div class="ix-galwrap" data-galwrap data-collapsed>
+        <div data-gallery
+             data-manifests="assets/rooms/manifest.json,assets/murals/manifest.json"
+             data-filter="direction,type,tags"></div>
+      </div>
+      <button type="button" class="btn btn--cream btn--block ix-galmore" data-gal-more>Show the whole gallery</button>
     </div>
   </section>
 

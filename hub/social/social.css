@@ -188,3 +188,10 @@
 
 #links .tiles > li:last-child:nth-child(odd){grid-column:1 / -1}
 @media (min-width:600px){#links .tiles{grid-template-columns:repeat(3,minmax(0,1fr))}#links .tiles > li:last-child:nth-child(odd){grid-column:auto}}
+
+/* single-direction feed on wide screens: phone left, notes right */
+@media (min-width:900px){
+  html[data-dir="bazaar"] .feed-wrap,html[data-dir="royal"] .feed-wrap{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:clamp(32px,6vw,80px);align-items:center;justify-content:center}
+  html[data-dir="bazaar"] .feed-wrap .feed-notes,html[data-dir="royal"] .feed-wrap .feed-notes{grid-template-columns:1fr;margin-top:0}
+}
+.board{align-self:start}

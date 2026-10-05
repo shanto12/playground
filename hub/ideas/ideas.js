@@ -139,8 +139,8 @@
   ];
   var NOTES = {
     '1|1': 'Pick your direction first; everything else wears it',
-    '3|1': 'Start: bag-seal sticker + stuffer card',
-    '3|2': 'Then: printed bags, boxes & cups',
+    '3|1': 'Starts with the bag-seal sticker + stuffer card',
+    '3|2': 'Then printed bags, boxes & cups',
     '6|1': 'Photo day + rebuilt profile',
     '7|1': 'Templates + first reels',
     '2|2': 'Launch the site in your direction',
@@ -172,7 +172,7 @@
     var k = 0;
     phasesFor(plan).forEach(function (x) {
       lines.push(x.p.name.toUpperCase() + ' (' + x.p.when + ')');
-      x.items.forEach(function (id) { k++; var note = NOTES[id + '|' + x.p.n]; lines.push(k + '. ' + IDEAS[id].title + (note ? ': ' + note.toLowerCase() : '')); });
+      x.items.forEach(function (id) { k++; var note = NOTES[id + '|' + x.p.n]; lines.push(k + '. ' + IDEAS[id].title + (note ? ' (' + note.charAt(0).toLowerCase() + note.slice(1) + ')' : '')); });
       lines.push('');
     });
     if (!plan.length) lines.push('(No ideas picked yet)', '');

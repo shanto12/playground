@@ -539,7 +539,8 @@ html.js:not([data-dir="both"]) #compare{display:none}
 .vo-lines{display:grid;gap:14px;margin:0;padding:0;list-style:none}
 @media (min-width:700px){.vo-lines{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (min-width:1060px){.vo-lines{grid-template-columns:repeat(3,minmax(0,1fr))}}
-.vo-line{display:grid;align-content:space-between;gap:14px;min-height:150px;padding:18px 18px 16px}
+.vo-line{display:grid;align-content:space-between;gap:14px;padding:18px 18px 16px}
+@media (min-width:700px){.vo-line{min-height:150px}}
 .vo-line q{quotes:none;display:block;font-size:clamp(1.25rem,4.4vw,1.5rem);line-height:1.15}
 .vo-line__where{display:flex;align-items:center;gap:8px;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--s-muted)}
 .vo-line__gloss{display:block;margin-top:8px;font-size:.875rem;font-weight:500;color:var(--s-muted);letter-spacing:0;text-transform:none;line-height:1.35}
@@ -578,7 +579,7 @@ html.js:not([data-dir="both"]) #compare{display:none}
 .bk-story[data-theme="bazaar"] .mo-list i{background:#FFB000;border:2.5px solid #1D1147;color:#1D1147}
 .bk-story[data-theme="royal"] .mo-list i{border:1px solid rgba(233,166,58,.6);color:#F7D98A;font-family:'Fraunces',serif;font-style:italic;font-size:.875rem}
 .mo-stage{position:relative;aspect-ratio:4/3;border-radius:var(--s-radius);overflow:hidden;display:grid;place-items:center;isolation:isolate}
-.mo-play{position:absolute;right:12px;bottom:12px;z-index:5}
+.mo-play{position:absolute;right:12px;top:12px;z-index:5}
 .mo-cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
 /* Bazaar demo */
 .mo-stage--a{background:#FFB000 url(assets/patterns/bazaar/06-spice-confetti-sunset.svg) 0 0/220px;border:3px solid #1D1147;box-shadow:5px 5px 0 #1D1147}

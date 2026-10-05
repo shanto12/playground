@@ -93,7 +93,22 @@
     });
   });
 
-  /* ---------- 2 · copy-address button (visit) ---------- */
+  /* ---------- 2 · reveal safety net: if the motion kit hasn't revealed an on-screen block
+     within ~1.2 s (fast flings, slow devices), show it anyway so content is never stuck invisible ---------- */
+  safe(function () {
+    if (!('IntersectionObserver' in w)) return;
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var el = e.target;
+        setTimeout(function () { if (!el.classList.contains('m-in')) el.classList.add('m-in'); }, 1200);
+        io.unobserve(el);
+      });
+    });
+    $$('main [data-reveal], main [data-stagger] > *').forEach(function (el) { io.observe(el); });
+  });
+
+  /* ---------- 3 · copy-address button (visit) ---------- */
   safe(function () {
     var status = $('[data-copy-status]');
     function legacy(t) {
@@ -119,7 +134,7 @@
     });
   });
 
-  /* ---------- 3 · confetti burst (thanks) — Web Animations, transform/opacity only ---------- */
+  /* ---------- 4 · confetti burst (thanks) — Web Animations, transform/opacity only ---------- */
   safe(function () {
     var host = $('[data-confetti]');
     if (!host || reduced || !host.animate) return;

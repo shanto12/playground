@@ -43,6 +43,7 @@
     if (spec.bg) css += 'background:' + spec.bg + ';';
     e.style.cssText = css;
     if (spec.img) e.style.backgroundImage = 'url("' + spec.img + '")';
+    e.style.backgroundSize = '100% 100%'; e.style.backgroundRepeat = 'no-repeat'; e.style.backgroundPosition = 'center';
     if (spec.art) {
       e.appendChild(mk('i', 'sp-a', 'width:' + L(spec.art.w) + ';height:' + L(spec.art.h) + ';margin:' + L(-spec.art.h / 2) + ' 0 0 ' + L(-spec.art.w / 2) + ';background-image:url("' + spec.art.src + '")'));
     }

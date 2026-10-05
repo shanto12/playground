@@ -1,0 +1,373 @@
+{
+ "helper": "merch",
+ "items": [
+  {
+   "id": "flatlay-bazaar",
+   "title": "Flat-lay: the whole kit · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/merch/flatlay-bazaar.png",
+   "thumb": "assets/merch/flatlay-bazaar-thumb.jpg",
+   "w": 1200,
+   "h": 1500,
+   "caption": "Apron, tee, tote, cap, chai cup, stickers and pins laid out together: one loud, consistent system.",
+   "alt": "Flat-lay: the whole kit · Bazaar: Apron, tee, tote, cap, chai cup, stickers and pins laid out together: one loud, consistent system.",
+   "tags": [
+    "merch"
+   ],
+   "download": "assets/merch/flatlay-bazaar.svg"
+  },
+  {
+   "id": "flatlay-royal",
+   "title": "Flat-lay: the collection · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/merch/flatlay-royal.png",
+   "thumb": "assets/merch/flatlay-royal-thumb.jpg",
+   "w": 1200,
+   "h": 1500,
+   "caption": "Midnight, emerald and gold across every piece, so the set reads premium on a shelf or a server.",
+   "alt": "Flat-lay: the collection · Royal: Midnight, emerald and gold across every piece, so the set reads premium on a shelf or a server.",
+   "tags": [
+    "merch"
+   ],
+   "download": "assets/merch/flatlay-royal.svg"
+  },
+  {
+   "id": "apron-bazaar",
+   "title": "Staff apron · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/merch/apron-bazaar.png",
+   "thumb": "assets/merch/apron-bazaar-thumb.jpg",
+   "w": 1200,
+   "h": 1500,
+   "caption": "Indigo canvas bib apron, marigold webbing, stitched emblem, block-print pocket panel and a pen slot. A dark base hides kitchen splashes.",
+   "alt": "Staff apron · Bazaar: Indigo canvas bib apron, marigold webbing, stitched emblem, block-print pocket panel and a pen slot. A dark base hides kitchen splashes.",
+   "tags": [
+    "uniform"
+   ],
+   "download": "assets/merch/apron-bazaar.svg"
+  },
+  {
+   "id": "apron-royal",
+   "title": "Server apron · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/merch/apron-royal.png",
+   "thumb": "assets/merch/apron-royal-thumb.jpg",
+   "w": 1200,
+   "h": 1500,
+   "caption": "Midnight twill bib apron with cognac straps, brass rivets, gold-thread emblem and a jali-print pocket panel.",
+   "alt": "Server apron · Royal: Midnight twill bib apron with cognac straps, brass rivets, gold-thread emblem and a jali-print pocket panel.",
+   "tags": [
+    "uniform"
+   ],
+   "download": "assets/merch/apron-royal.svg"
+  },
+  {
+   "id": "tee-staff-bazaar",
+   "title": "Crew tee, front + back · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/merch/tee-staff-bazaar.png",
+   "thumb": "assets/merch/tee-staff-bazaar-thumb.jpg",
+   "w": 1200,
+   "h": 1500,
+   "caption": "Left-chest emblem up front; the back is a District signpost (Tandoor Quarter, Biryani Blvd…), so every walk to a table is a menu tour.",
+   "alt": "Crew tee, front + back · Bazaar: Left-chest emblem up front; the back is a District signpost (Tandoor Quarter, Biryani Blvd…), so every walk to a table is a menu tour.",
+   "tags": [
+    "uniform"
+   ],
+   "download": "assets/merch/tee-staff-bazaar.svg"
+  },
+  {
+   "id": "tee-staff-royal",
+   "title": "Crew tee, front + back · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/merch/tee-staff-royal.png",
+   "thumb": "assets/merch/tee-staff-royal-thumb.jpg",
+   "w": 1200,
+   "h": 1500,
+   "caption": "Midnight tee with a small gold emblem up front and the District Gate arch across the back in metallic gold ink.",
+   "alt": "Crew tee, front + back · Royal: Midnight tee with a small gold emblem up front and the District Gate arch across the back in metallic gold ink.",
+   "tags": [
+    "uniform"
+   ],
+   "download": "assets/merch/tee-staff-royal.svg"
+  },
+  {
+   "id": "cap-bazaar",
+   "title": "Cap · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/merch/cap-bazaar.png",
+   "thumb": "assets/merch/cap-bazaar-thumb.jpg",
+   "w": 1200,
+   "h": 1500,
+   "caption": "Six-panel cap with a raised-embroidery emblem and marigold brim; kitchen-cream version for back-of-house.",
+   "alt": "Cap · Bazaar: Six-panel cap with a raised-embroidery emblem and marigold brim; kitchen-cream version for back-of-house.",
+   "tags": [
+    "uniform"
+   ],
+   "download": "assets/merch/cap-bazaar.svg"
+  },
+  {
+   "id": "cap-royal",
+   "title": "Cap · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/merch/cap-royal.png",
+   "thumb": "assets/merch/cap-royal-thumb.jpg",
+   "w": 1200,
+   "h": 1500,
+   "caption": "Tonal midnight cap with a flat gold-thread emblem; emerald version for catering events.",
+   "alt": "Cap · Royal: Tonal midnight cap with a flat gold-thread emblem; emerald version for catering events.",
+   "tags": [
+    "uniform"
+   ],
+   "download": "assets/merch/cap-royal.svg"
+  },
+  {
+   "id": "vest-royal",
+   "title": "Server vest + kurta-collar shirt · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/merch/vest-royal.png",
+   "thumb": "assets/merch/vest-royal-thumb.jpg",
+   "w": 1200,
+   "h": 1500,
+   "caption": "Optional front-of-house set: emerald jacquard vest with gold piping and brass buttons over an ivory band-collar kurta shirt.",
+   "alt": "Server vest + kurta-collar shirt · Royal: Optional front-of-house set: emerald jacquard vest with gold piping and brass buttons over an ivory band-collar kurta shirt.",
+   "tags": [
+    "uniform"
+   ],
+   "download": "assets/merch/vest-royal.svg"
+  },
+  {
+   "id": "tote-bazaar",
+   "title": "Canvas tote · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/merch/tote-bazaar.png",
+   "thumb": "assets/merch/tote-bazaar-thumb.jpg",
+   "w": 1200,
+   "h": 1500,
+   "caption": "Natural canvas tote with the District stamp: “Every street leads to swaad” (swaad = flavor).",
+   "alt": "Canvas tote · Bazaar: Natural canvas tote with the District stamp: “Every street leads to swaad” (swaad = flavor).",
+   "tags": [
+    "merch"
+   ],
+   "download": "assets/merch/tote-bazaar.svg"
+  },
+  {
+   "id": "tote-royal",
+   "title": "Canvas tote · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/merch/tote-royal.png",
+   "thumb": "assets/merch/tote-royal-thumb.jpg",
+   "w": 1200,
+   "h": 1500,
+   "caption": "Midnight canvas tote with the gold District Gate and “Dinner, made an occasion.”",
+   "alt": "Canvas tote · Royal: Midnight canvas tote with the gold District Gate and “Dinner, made an occasion.”",
+   "tags": [
+    "merch"
+   ],
+   "download": "assets/merch/tote-royal.svg"
+  },
+  {
+   "id": "hoodie-bazaar",
+   "title": "Hoodie · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/merch/hoodie-bazaar.png",
+   "thumb": "assets/merch/hoodie-bazaar-thumb.jpg",
+   "w": 1200,
+   "h": 1500,
+   "caption": "Rani-pink pullover with a cream puff-print wordmark and a marigold-lined hood.",
+   "alt": "Hoodie · Bazaar: Rani-pink pullover with a cream puff-print wordmark and a marigold-lined hood.",
+   "tags": [
+    "merch"
+   ],
+   "download": "assets/merch/hoodie-bazaar.svg"
+  },
+  {
+   "id": "crewneck-royal",
+   "title": "Crewneck · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/merch/crewneck-royal.png",
+   "thumb": "assets/merch/crewneck-royal-thumb.jpg",
+   "w": 1200,
+   "h": 1500,
+   "caption": "Emerald crewneck with a small gold-thread seal: quiet, giftable, premium.",
+   "alt": "Crewneck · Royal: Emerald crewneck with a small gold-thread seal: quiet, giftable, premium.",
+   "tags": [
+    "merch"
+   ],
+   "download": "assets/merch/crewneck-royal.svg"
+  },
+  {
+   "id": "tee-district-hot-bazaar",
+   "title": "‘District Hot’ tee · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/merch/tee-district-hot-bazaar.png",
+   "thumb": "assets/merch/tee-district-hot-bazaar-thumb.jpg",
+   "w": 1200,
+   "h": 1500,
+   "caption": "Chili-red tee for level-five diners, with the five-step spice scale and “I asked for it.”",
+   "alt": "‘District Hot’ tee · Bazaar: Chili-red tee for level-five diners, with the five-step spice scale and “I asked for it.”",
+   "tags": [
+    "merch"
+   ],
+   "download": "assets/merch/tee-district-hot-bazaar.svg"
+  },
+  {
+   "id": "tee-slow-simmered-royal",
+   "title": "‘Slow-simmered’ tee · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/merch/tee-slow-simmered-royal.png",
+   "thumb": "assets/merch/tee-slow-simmered-royal-thumb.jpg",
+   "w": 1200,
+   "h": 1500,
+   "caption": "Ivory tee, plum italic “Slow-simmered.” over a gold handi line drawing.",
+   "alt": "‘Slow-simmered’ tee · Royal: Ivory tee, plum italic “Slow-simmered.” over a gold handi line drawing.",
+   "tags": [
+    "merch"
+   ],
+   "download": "assets/merch/tee-slow-simmered-royal.svg"
+  },
+  {
+   "id": "pins-bazaar",
+   "title": "Enamel pin set · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/merch/pins-bazaar.png",
+   "thumb": "assets/merch/pins-bazaar-thumb.jpg",
+   "w": 1200,
+   "h": 1500,
+   "caption": "Four hard-enamel pins (emblem, District Hot chili, chai cup, biryani handi) on a District Pin Club card.",
+   "alt": "Enamel pin set · Bazaar: Four hard-enamel pins (emblem, District Hot chili, chai cup, biryani handi) on a District Pin Club card.",
+   "tags": [
+    "merch"
+   ],
+   "download": "assets/merch/pins-bazaar.svg"
+  },
+  {
+   "id": "pins-royal",
+   "title": "Enamel pin set · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/merch/pins-royal.png",
+   "thumb": "assets/merch/pins-royal-thumb.jpg",
+   "w": 1200,
+   "h": 1500,
+   "caption": "Gate, chili, chai and handi pins in jewel enamel and gold plate on a foil-framed card.",
+   "alt": "Enamel pin set · Royal: Gate, chili, chai and handi pins in jewel enamel and gold plate on a foil-framed card.",
+   "tags": [
+    "merch"
+   ],
+   "download": "assets/merch/pins-royal.svg"
+  },
+  {
+   "id": "stickers-bazaar",
+   "title": "Sticker sheet · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/merch/stickers-bazaar.png",
+   "thumb": "assets/merch/stickers-bazaar-thumb.jpg",
+   "w": 1200,
+   "h": 1500,
+   "caption": "Eight die-cut stickers: District stamp, District Hot, “Bas, ek aur naan”, Biryani Blvd and more.",
+   "alt": "Sticker sheet · Bazaar: Eight die-cut stickers: District stamp, District Hot, “Bas, ek aur naan”, Biryani Blvd and more.",
+   "tags": [
+    "merch"
+   ],
+   "download": "assets/merch/stickers-bazaar.svg"
+  },
+  {
+   "id": "stickers-royal",
+   "title": "Sticker sheet · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/merch/stickers-royal.png",
+   "thumb": "assets/merch/stickers-royal-thumb.jpg",
+   "w": 1200,
+   "h": 1500,
+   "caption": "Eight keepsake stickers: seal, gate, “Slow-simmered.”, handi, paisley and “Made for sharing.”",
+   "alt": "Sticker sheet · Royal: Eight keepsake stickers: seal, gate, “Slow-simmered.”, handi, paisley and “Made for sharing.”",
+   "tags": [
+    "merch"
+   ],
+   "download": "assets/merch/stickers-royal.svg"
+  },
+  {
+   "id": "chai-cup-bazaar",
+   "title": "Kulhad-style chai cup · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/merch/chai-cup-bazaar.png",
+   "thumb": "assets/merch/chai-cup-bazaar-thumb.jpg",
+   "w": 1200,
+   "h": 1500,
+   "caption": "Handle-less stoneware cup shaped like a clay kulhad, with a truck-art band and “Chai & Coolers.”",
+   "alt": "Kulhad-style chai cup · Bazaar: Handle-less stoneware cup shaped like a clay kulhad, with a truck-art band and “Chai & Coolers.”",
+   "tags": [
+    "merch"
+   ],
+   "download": "assets/merch/chai-cup-bazaar.svg"
+  },
+  {
+   "id": "chai-cup-royal",
+   "title": "Chai cup + brass saucer · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/merch/chai-cup-royal.png",
+   "thumb": "assets/merch/chai-cup-royal-thumb.jpg",
+   "w": 1200,
+   "h": 1500,
+   "caption": "Midnight-glaze cup with a gold rim and emblem on a brass saucer: “Chai, unhurried.”",
+   "alt": "Chai cup + brass saucer · Royal: Midnight-glaze cup with a gold rim and emblem on a brass saucer: “Chai, unhurried.”",
+   "tags": [
+    "merch"
+   ],
+   "download": "assets/merch/chai-cup-royal.svg"
+  },
+  {
+   "id": "takehome-bazaar",
+   "title": "House chili oil + masala tin · Bazaar",
+   "direction": "bazaar",
+   "type": "image",
+   "src": "assets/merch/takehome-bazaar.png",
+   "thumb": "assets/merch/takehome-bazaar-thumb.jpg",
+   "w": 1200,
+   "h": 1500,
+   "caption": "Label concepts for a house chili-oil jar and masala tin. Placeholders only; labeling and Texas food rules to be checked before sale.",
+   "alt": "House chili oil + masala tin · Bazaar: Label concepts for a house chili-oil jar and masala tin. Placeholders only; labeling and Texas food rules to be checked before sale.",
+   "tags": [
+    "take-home"
+   ],
+   "download": "assets/merch/takehome-bazaar.svg"
+  },
+  {
+   "id": "takehome-royal",
+   "title": "House chili oil + masala tin · Royal",
+   "direction": "royal",
+   "type": "image",
+   "src": "assets/merch/takehome-royal.png",
+   "thumb": "assets/merch/takehome-royal-thumb.jpg",
+   "w": 1200,
+   "h": 1500,
+   "caption": "Midnight-and-foil chili-oil label and an emerald jali masala tin. Placeholders only; rules to be checked before sale.",
+   "alt": "House chili oil + masala tin · Royal: Midnight-and-foil chili-oil label and an emerald jali masala tin. Placeholders only; rules to be checked before sale.",
+   "tags": [
+    "take-home"
+   ],
+   "download": "assets/merch/takehome-royal.svg"
+  }
+ ]
+}

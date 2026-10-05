@@ -38,7 +38,8 @@
 
 /* ───────── 3 · Steps (arch-topped panels on a jewel room) ───────── */
 .pg-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.25rem; }
-@media (min-width: 860px) { .pg-steps { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; } }
+@media (min-width: 700px) { .pg-steps { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; } .pg-step { padding: 2.2rem 1.1rem 1.6rem; } }
+@media (min-width: 1000px) { .pg-steps { gap: 1.5rem; } .pg-step { padding: 2.5rem 1.5rem 1.8rem; } }
 .pg-step { position: relative; padding: 2.5rem 1.5rem 1.8rem; text-align: center;
   border-radius: 50% 50% var(--radius-l) var(--radius-l) / 92px 92px var(--radius-l) var(--radius-l);
   background: linear-gradient(180deg, rgba(14,6,25,.55), rgba(14,6,25,.28)); border: 1px solid rgba(233,166,58,.45); }
@@ -60,6 +61,7 @@
 .pg-medal svg { width: 32px; height: 32px; }
 @media (min-width: 1080px) { .pg-tile { grid-template-columns: 1fr; padding: 1.6rem 1.4rem; } .pg-medal { grid-row: auto; margin-bottom: .8rem; } }
 .pg-flag { display: inline-flex; align-items: center; gap: .4rem; justify-self: start; margin-top: .7rem; padding: .32rem .75rem; border-radius: 999px; background: var(--ry-ivory-2); border: 1px solid rgba(163,23,63,.35); color: var(--ry-ruby); font: 700 .68rem/1.25 var(--font-body); letter-spacing: .12em; text-transform: uppercase; }
+.pg-tile .pg-flag, .pg-faq__a .pg-flag { margin: .7rem 0 0; font-size: .68rem; line-height: 1.25; color: var(--ry-ruby); }
 .pg-flag::before { content: ""; width: 5px; height: 5px; background: currentColor; transform: rotate(45deg); }
 
 /* ───────── 5 · Catering plan + inquiry form ───────── */
@@ -144,6 +146,7 @@ textarea.pg-input { min-height: 132px; resize: vertical; }
   background: var(--ry-paper); color: var(--ry-ink); border-radius: var(--radius-l); border: 1.5px dashed rgba(163,23,63,.6); box-shadow: 0 0 0 8px rgba(255,251,243,.08), var(--shadow-soft); }
 .pg-letter__ribbon { position: absolute; top: 0; left: 50%; width: max-content; max-width: calc(100% - 2.5rem); transform: translate(-50%, -50%); padding: .6rem 1.15rem; border-radius: 999px; background: var(--ry-ruby); color: #fff; font: 700 .7rem/1.35 var(--font-body); letter-spacing: .13em; text-transform: uppercase; text-align: center; box-shadow: var(--shadow-pop); }
 .pg-letter .chapter-head { margin-bottom: 1.6rem; }
+@media (max-width: 520px) { .pg-letter__ribbon { font-size: .62rem; letter-spacing: .1em; padding: .5rem .95rem; } }
 .pg-letter p { font-size: 1.04rem; line-height: 1.75; }
 .pg-ph { padding: .05em .35em; border-radius: 6px; background: rgba(233,166,58,.24); border-bottom: 1px dashed var(--ry-gold-deep); color: var(--ry-ink); font-style: italic; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
 .pg-letter__sign { margin-top: 1.5rem; text-align: right; font: italic 500 1.25rem/1.3 var(--font-display); }

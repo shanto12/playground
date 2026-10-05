@@ -146,6 +146,14 @@
     load();
   }
 
-  function init() { initPick(); initCopyFeedback(); initTable(); initChecklist(); initMurals(); }
+  /* ───── 05 · gallery preview collapse ───── */
+  function initGallery() {
+    var wrap = $('[data-galwrap]'), btn = $('[data-gal-more]'); if (!wrap || !btn) return;
+    function open() { wrap.removeAttribute('data-collapsed'); }
+    btn.addEventListener('click', open);
+    wrap.addEventListener('click', function (e) { if (e.target.closest('.mg__bar .chip')) open(); });
+  }
+
+  function init() { initPick(); initCopyFeedback(); initTable(); initChecklist(); initMurals(); initGallery(); }
   if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', init); else init();
 })();

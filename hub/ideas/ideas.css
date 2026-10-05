@@ -20,7 +20,7 @@
 .ix-start__card{position:relative;display:grid;grid-template-rows:auto auto 1fr auto auto;gap:10px;padding:22px 20px 18px;border-radius:var(--hub-radius);background:linear-gradient(180deg,rgba(255,244,220,.06),rgba(255,244,220,.02));border:1px solid var(--hub-line);overflow:hidden}
 .ix-start__card::before{content:"";position:absolute;inset:0 0 auto;height:4px;background:var(--sg)}
 .ix-start__when{margin:0;font:italic 500 1.0625rem/1 var(--hub-font-display);background:var(--sg);-webkit-background-clip:text;background-clip:text;color:transparent;width:max-content}
-.ix-start__line{margin:0;font:700 clamp(1.4rem,5.4vw,1.75rem)/1.08 var(--hub-font-display);letter-spacing:-.02em}
+.ix-start .ix-start__line{margin:0;font:700 clamp(1.4rem,5.4vw,1.75rem)/1.08 var(--hub-font-display);letter-spacing:-.02em}
 .ix-start__desc{margin:0;color:var(--hub-soft);font-size:.9375rem}
 .ix-start__ids{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 0;padding:0;list-style:none}
 .ix-mini{display:inline-flex;align-items:center;gap:8px;min-height:36px;padding:4px 12px 4px 4px;border-radius:999px;background:rgba(255,244,220,.05);border:1px solid var(--hub-line);font-size:.8125rem;font-weight:600;color:var(--hub-soft) !important;text-decoration:none;line-height:1.2}
@@ -53,8 +53,8 @@ a.ix-mini:hover{background:rgba(255,244,220,.1);color:var(--hub-text) !important
 
 /* ───────── Idea cards ───────── */
 .ix-list{display:grid;gap:clamp(24px,4vw,40px);margin:0;padding:0;list-style:none}
-.ix{position:relative;border-radius:28px;overflow:hidden;background:linear-gradient(180deg,rgba(255,244,220,.055),rgba(255,244,220,.018));border:1px solid var(--hub-line);scroll-margin-top:calc(var(--ix-rail-h) + 14px);transition:border-color .4s,box-shadow .4s}
-@media (min-width:900px){.ix{scroll-margin-top:calc(var(--topbar-h) + var(--ix-rail-h) + 18px)}}
+.ix{position:relative;border-radius:28px;overflow:hidden;background:linear-gradient(180deg,rgba(255,244,220,.055),rgba(255,244,220,.018));border:1px solid var(--hub-line);scroll-margin-top:calc(var(--ix-rail-h) - 4px);transition:border-color .4s,box-shadow .4s}
+@media (min-width:900px){.ix{scroll-margin-top:calc(var(--topbar-h) + var(--ix-rail-h) - 2px)}}
 .ix:target{border-color:rgba(255,176,0,.75);box-shadow:0 0 0 3px rgba(255,176,0,.2),var(--hub-shadow)}
 .ix.is-plan{border-color:rgba(127,224,184,.5)}
 
@@ -64,7 +64,7 @@ a.ix-mini:hover{background:rgba(255,244,220,.1);color:var(--hub-text) !important
 .ix__num{display:block;margin:-2px 0 0 -2px;font:800 clamp(3.8rem,15vw,5.4rem)/.84 var(--hub-font-display);letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1.6px rgba(255,244,220,.95)}
 .ix__titles{grid-column:1/-1;align-self:end}
 .ix__kicker{margin:0 0 8px;font:700 .6875rem/1 var(--hub-font-body);letter-spacing:.15em;text-transform:uppercase;color:rgba(255,244,220,.9)}
-.ix__title{margin:0;font:700 clamp(1.65rem,6.6vw,2.4rem)/1.03 var(--hub-font-display);letter-spacing:-.025em;text-wrap:balance;text-shadow:0 2px 18px rgba(18,12,30,.35)}
+.ix .ix__title{margin:0;font:700 clamp(1.65rem,6.6vw,2.4rem)/1.03 var(--hub-font-display);letter-spacing:-.025em;text-wrap:balance;text-shadow:0 2px 18px rgba(18,12,30,.35)}
 .ix__blurb{margin:10px 0 0;font-size:.9375rem;line-height:1.45;color:#FFF4DC;max-width:56ch}
 .ix__blurb span{color:rgba(255,244,220,.82)}
 
@@ -154,7 +154,7 @@ a.ix-mini:hover{background:rgba(255,244,220,.1);color:var(--hub-text) !important
 .ix-dir__tag{margin:0;font:800 .75rem/1 var(--hub-font-body);letter-spacing:.14em;text-transform:uppercase}
 .ix-dir--a .ix-dir__tag{color:#B4005F}
 .ix-dir--b .ix-dir__tag{color:#F7D98A}
-.ix-dir__name{margin:0;font-family:var(--font-display);text-transform:var(--display-case);letter-spacing:var(--display-tracking);line-height:var(--display-leading)}
+.ix-dir .ix-dir__name{margin:0;font-family:var(--font-display);text-transform:var(--display-case);letter-spacing:var(--display-tracking);line-height:var(--display-leading)}
 .ix-dir--a .ix-dir__name{font-size:clamp(1.9rem,7.6vw,2.6rem);color:#1D1147}
 .ix-dir--b .ix-dir__name{font-size:clamp(2rem,8vw,2.8rem);font-weight:600}
 .ix-dir--b .ix-dir__name em{font-style:italic;background:linear-gradient(100deg,#B7791F,#F7D98A 45%,#E9A63A 70%,#F7D98A);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -185,7 +185,7 @@ a.ix-mini:hover{background:rgba(255,244,220,.1);color:var(--hub-text) !important
 /* ───────── Our concept, your call ───────── */
 .ix-concept{position:relative;padding:26px 22px 22px;border-radius:26px;border:1.5px solid transparent;background:linear-gradient(var(--hub-bg-2),var(--hub-bg-2)) padding-box,var(--g-both) border-box}
 .ix-concept__seal{width:52px;height:52px;color:var(--hub-t-emerald);margin-bottom:8px}
-.ix-concept__t{margin:0 0 14px;font:700 clamp(1.6rem,6vw,2.2rem)/1.05 var(--hub-font-display);letter-spacing:-.02em}
+.ix-concept .ix-concept__t{margin:0 0 14px;font:700 clamp(1.6rem,6vw,2.2rem)/1.05 var(--hub-font-display);letter-spacing:-.02em}
 .ix-concept__t em{font-style:italic;font-weight:400}
 .ix-concept ul{display:grid;gap:12px;margin:0;padding:0;list-style:none}
 .ix-concept li{padding-left:18px;border-left:2px solid var(--hub-line-2);color:var(--hub-soft);font-size:.9375rem;line-height:1.55}
