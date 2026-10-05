@@ -454,7 +454,7 @@ write('layers/manifest.json', JSON.stringify(manifest, null, 2));
   // normalise so the tip sits exactly at y = 0
   const segs = archSegs(a); const minY = Math.min(...sampleSegs(segs, 12).map(p => p[1])); const segsN = segs.map(s => ({ ...s, y: s.y - minY }));
   const d = pd(segsN, 1, w, 0) + 'Z';
-  write('arch-frame.svg', `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 ${Hh - minY}" width="400" height="${n1(Hh - minY)}" preserveAspectRatio="none"><path d="${d}" fill="#fff"/></svg>`);
+  write('arch-frame.svg', `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 ${n1(Hh - minY)}" width="400" height="${n1(Hh - minY)}" preserveAspectRatio="none"><path d="${d}" fill="#fff"/></svg>`);
   const vbH = Hh - minY;
   write('arch-frame-trim.svg', `<svg xmlns="http://www.w3.org/2000/svg" viewBox="-8 -8 416 ${n1(vbH + 16)}" width="416" height="${n1(vbH + 16)}" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${C.goldDk}"/><stop offset=".38" stop-color="${C.goldLt}"/><stop offset=".6" stop-color="${C.gold}"/><stop offset="1" stop-color="${C.goldDk}"/></linearGradient></defs><path d="${d}" fill="none" stroke="url(#g)" stroke-width="3" vector-effect="non-scaling-stroke"/><path d="${pd(archSegs({ ...a, w: w - 12, ys: a.ys + 6, ya: a.ya + 14, yf: Hh - 12 }).map(s => ({ ...s, y: s.y - minY })), 1, w, 0)}Z" fill="none" stroke="${C.goldLt}" stroke-opacity=".55" stroke-width="1.2" vector-effect="non-scaling-stroke"/></svg>`);
   const pts = sampleSegs(segsN, 10).map(([x, y]) => `${n2((w + x) / 400 * 100)}% ${n2(y / vbH * 100)}%`);
@@ -464,7 +464,7 @@ write('layers/manifest.json', JSON.stringify(manifest, null, 2));
    Option A (mask image, crisp at any size):   <div class="cd-arch"><img src="dish.jpg" alt="…"></div>
    Option B (pure CSS, no extra file):          add .cd-arch--clip instead of .cd-arch
    Option C (inline SVG clipPath):              see #cd-arch-clip below — clip-path:url(#cd-arch-clip)
-   Optional gold trim overlay: put arch-frame-trim.svg as ::after (see .cd-arch--trim). Aspect ratio = 400 / ${n1(vbH)}. */
+   Optional gold trim overlay: wrap in .cd-arch-frame (uses arch-frame-trim.svg). Aspect ratio = 400 / ${n1(vbH)}. */
 .cd-arch, .cd-arch--clip { position: relative; aspect-ratio: 400 / ${n1(vbH)}; overflow: hidden; }
 .cd-arch > img, .cd-arch--clip > img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .cd-arch {
@@ -474,8 +474,9 @@ write('layers/manifest.json', JSON.stringify(manifest, null, 2));
 .cd-arch--clip {
   clip-path: polygon(${pts.join(', ')});
 }
-.cd-arch--trim { position: relative; }
-.cd-arch--trim::after { content: ""; position: absolute; inset: -2%; background: url(arch-frame-trim.svg) center / 100% 100% no-repeat; pointer-events: none; }
+/* gold trim: wrap the window — <div class="cd-arch-frame"><div class="cd-arch">…</div></div> (a mask would clip a child overlay) */
+.cd-arch-frame { position: relative; }
+.cd-arch-frame::after { content: ""; position: absolute; inset: -2% -2%; background: url(arch-frame-trim.svg) center / 100% 100% no-repeat; pointer-events: none; }
 
 /* Option C — paste once into the page:
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><clipPath id="cd-arch-clip" clipPathUnits="objectBoundingBox"><path d="${obb}"/></clipPath></svg>

@@ -7,6 +7,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ICONS } from './icons.mjs';
+import { page } from './page.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const OUT = path.resolve(HERE, '..');
@@ -131,6 +132,7 @@ function build() {
   fs.writeFileSync(path.join(OUT, 'sprite.svg'), sprite);
   const manifest = ICONS.map(({ name, label, group }) => ({ name, label, group }));
   fs.writeFileSync(path.join(OUT, 'icons.json'), JSON.stringify(manifest, null, 2) + '\n');
+  fs.writeFileSync(path.join(OUT, 'index.html'), page({ icons: manifest, spriteInner: sym.join('') }));
   return { count: ICONS.length, spriteBytes: sprite.length };
 }
 

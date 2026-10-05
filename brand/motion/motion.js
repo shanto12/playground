@@ -1,4 +1,4 @@
-/*! Curry District Motion Kit 1.0 · motion.css + tokens.css */
+/*! Curry District Motion Kit 1.0 */
 /*
  * Everything is driven by data-attributes + CSS custom properties, so it re-skins when
  * <html data-theme="bazaar|royal"> (or a section's data-theme) changes. Auto-inits on
@@ -17,7 +17,7 @@
   const KEY = 'm-curtain';
   const LIVE = '[data-steam],[data-marquee],[data-wave],[data-particles],.shimmer' + ' wobble float pulse-ring bounce-in spin-slow flicker sway twinkle'.replace(/ /g, ',.m-');
   const FOC = 'a[href],button,input,select,textarea,[tabindex]';
-  const CLS = 'm-in m-off m-shrunk m-paused m-tilting m-active';
+  const CLS = 'm-in m-off m-shrunk m-paused m-tilt m-active';
   const VARS = ['--m-delay', '--m-rx', '--m-ry', '--m-px', '--m-py', '--m-mx', '--m-my'];
   const PT = { petals: [9000, 16, 38], spice: [2600, 45, 110], embers: [6000, 22, 56] }; // px² per particle, cap <640px, cap ≥640px
 
@@ -239,7 +239,7 @@
     populate(s);
   }
   function step(s, f) {
-    const x = s.ctx, r = s.r, W = s.w, H = s.h, t = s.type;
+    const x = s.ctx, r = s.r, W = s.w, H = s.h, t = s.type, sp = t === 'spice';
     x.setTransform(1, 0, 0, 1, 0, 0);
     x.clearRect(0, 0, s.cv.width, s.cv.height);
     x.globalCompositeOperation = t === 'embers' ? 'lighter' : 'source-over';
@@ -254,8 +254,8 @@
         if (p.y > H + 24) s.ps[i] = spawn(s);
       } else {                    // rise; spice twinkles, embers fade out near the top
         p.y -= p.vy * f;
-        p.x += (p.vx + sin(p.ph) * (t === 'spice' ? .25 : .45)) * f;
-        a = t === 'spice' ? .35 + .65 * abs(sin(p.ph * 1.3)) : min(1, p.y / H * 1.4) * (.7 + .3 * sin(p.ph * 3));
+        p.x += (p.vx + sin(p.ph) * (sp ? .25 : .45)) * f;
+        a = sp ? .35 + .65 * abs(sin(p.ph * 1.3)) : min(1, p.y / H * 1.4) * (.7 + .3 * sin(p.ph * 3));
         if (p.y < -24) s.ps[i] = spawn(s);
       }
       if (p.x < -24) p.x = W + 20; else if (p.x > W + 24) p.x = -20;
@@ -300,7 +300,7 @@
     for (let i = 0; i < n; i++) {
       const p = d.createElement('i'), z = rnd(8, 15), a = rnd(0, 6.283), v = rnd(70, 190);
       const dx = cos(a) * v, dy = sin(a) * v * .8 - 70, rt = rnd(-320, 320);
-      p.style.cssText = `left:${x - z / 2}px;top:${y - z / 2}px;width:${z}px;height:${z * 1.25}px;background:${cols[i % cols.length] || '#FFB000'};border-radius:${rad || '50%'}`;
+      p.style.cssText = `left:${x - z / 2}px;top:${y - z / 2}px;width:${z}px;height:${z * 1.25}px;background:${cols[i % cols.length]};border-radius:${rad || '50%'}`;
       layer.appendChild(p);
       p.animate([
         { transform: 'translate3d(0,0,0) rotate(0deg) scale(.3)', opacity: 1 },
@@ -325,11 +325,11 @@
       const gl = mk('span', 'm-glare', el);
       later(() => gl.remove());
     }
-    cl(el, 'm-tilting', 1);
+    cl(el, 'm-tilt', 1);
   }
   function rest(el) {
     if (!el) return;
-    cl(el, 'm-tilting m-active', 0);
+    cl(el, 'm-tilt m-active', 0);
     VARS.forEach(k => el.style.removeProperty(k));
     el._mx = el._my = 0;
   }
@@ -374,7 +374,6 @@
     }
   }
   const onUp = e => { if (e.pointerType === 'touch') { rest(tilt); tilt = null; } };
-  const onOut = e => { if (!e.relatedTarget) { rest(tilt); rest(mag); tilt = mag = null; } };
 
   /* ───────── 9 · sticky header shrink + progress bar ───────── */
   const measure = () => { maxS = max(de.scrollHeight - w.innerHeight, 0); onScroll(); };
@@ -471,7 +470,7 @@
     booted = true;
     cl(de, 'm-js', 1);
     if ('IntersectionObserver' in w) {
-      enterIO = new IntersectionObserver(onEnter, { rootMargin: '0px 0px -6% 0px', threshold: .1 });
+      enterIO = new IntersectionObserver(onEnter, { rootMargin: '0px 0px -6%', threshold: .1 });
       liveIO = new IntersectionObserver(es => {   // pause CSS loops + canvases when offscreen
         es.forEach(e => { const t = e.target; cl(t, 'm-off', !e.isIntersecting); if (t._mp) t._mp.on = e.isIntersecting; });
         run();
@@ -508,7 +507,6 @@
     on(d, 'pointermove', onMove, pas);
     on(d, 'pointerup', onUp, pas);
     on(d, 'pointercancel', onUp, pas);
-    on(d, 'pointerout', onOut, pas);
     on(w, 'scroll', onScroll, pas);
     on(d, 'visibilitychange', () => { if (d.hidden) { caf(tid); tid = 0; } else run(); });
     on(w, 'pageshow', e => {        // back/forward cache: never return to a covered page
@@ -548,7 +546,6 @@
   const api = {
     init,
     destroy,
-    refresh: root => (booted ? scan(root) : init(), api),
     burst,
     steam,
     particles,

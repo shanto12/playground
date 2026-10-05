@@ -58,9 +58,9 @@
 [data-tilt]{transform:perspective(var(--m-persp,800px)) rotateX(var(--m-rx,0deg)) rotateY(var(--m-ry,0deg));transition:transform .8s var(--m-ease)}
 [data-depth]{transform:translate3d(calc(var(--m-px,0)*var(--m-depth,10px)),calc(var(--m-py,0)*var(--m-depth,10px)),0);transition:transform .8s var(--m-ease)}
 [data-depth="2"]{--m-depth:20px}[data-depth="3"]{--m-depth:32px}
-.m-tilting,.m-tilting [data-depth]{transition:transform .18s linear}
+.m-tilt,.m-tilt [data-depth]{transition:transform .18s linear}
 .m-glare{position:absolute;inset:0;border-radius:inherit;overflow:hidden;pointer-events:none;opacity:0;transition:opacity .5s}
-.m-tilting>.m-glare{opacity:1}
+.m-tilt>.m-glare{opacity:1}
 .m-glare::before{content:'';position:absolute;left:-50%;top:-50%;width:200%;height:200%;background:radial-gradient(circle,var(--m-glare-c),transparent 42%);transform:translate3d(calc(var(--m-px,0)*25%),calc(var(--m-py,0)*25%),0)}
 
 /* 7 · magnetic, pressable, ripple */
