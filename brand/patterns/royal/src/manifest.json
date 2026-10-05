@@ -196,7 +196,7 @@
   "colourway": "midnight",
   "file": "08-brass-dots-diamonds-midnight.svg",
   "tile": 240,
-  "bytes": 7505,
+  "bytes": 7232,
   "bg": "#160B26"
  },
  {
@@ -204,7 +204,7 @@
   "colourway": "emerald",
   "file": "08-brass-dots-diamonds-emerald.svg",
   "tile": 240,
-  "bytes": 7504,
+  "bytes": 7231,
   "bg": "#0F4D3F"
  },
  {
@@ -212,7 +212,7 @@
   "colourway": "ivory",
   "file": "08-brass-dots-diamonds-ivory.svg",
   "tile": 240,
-  "bytes": 7501,
+  "bytes": 7228,
   "bg": "#FBF3E4"
  }
 ]

@@ -462,7 +462,7 @@ function brassDots(cw) {
   let body = `<path d="${dots}" stroke="${cw.dot}" stroke-width="1.15" stroke-linecap="round" opacity="${cw.dotOp}"/>`;
   for (const i of range(-1, 6)) for (const j of range(-1, 6)) {
     const x = i * u, y = j * u; if (x < -10 || x > T + 10 || y < -10 || y > T + 10) continue;
-    if ((i + j) % 2 === 0) { if ((i % 2 + 2) % 2 === 0) body += `<use xlink:href="#dm" x="${x}" y="${y}"/>`; else body += `<use xlink:href="#dm" x="${x}" y="${y}" transform="rotate(90 ${x} ${y})"/>`; }
+    if ((i + j) % 2 === 0) body += `<use xlink:href="#dm" x="${x}" y="${y}"/>`;
     else body += `<use xlink:href="#ss" x="${x}" y="${y}"/>`;
   }
   return { T, svg: doc(T, 'Brass Dots &amp; Diamonds — ' + cw.name, cw.bg, foil() + brass() + dia + stud, body) };
@@ -511,9 +511,9 @@ const PATTERNS = [
     ivory:    { name: 'Ivory', bg: C.ivory, line: C.emerald, leafFill: C.ivory, aniseFill: C.ivory, podFill: C.ivory, seed: C.goldDk, saffron: C.ruby, saffronStem: C.goldDk, pep: C.goldDk },
   } },
   { id: '08-brass-dots-diamonds', fn: brassDots, cws: {
-    midnight: { name: 'Midnight', bg: C.ink, dot: C.goldDk, dotOp: .75, dCore: C.ink },
+    midnight: { name: 'Midnight', bg: C.ink, dot: C.gold, dotOp: .55, dCore: C.ink },
     emerald:  { name: 'Emerald', bg: C.emerald, dot: C.gold, dotOp: .55, dCore: C.emerald },
-    ivory:    { name: 'Ivory', bg: C.ivory, dot: C.goldDk, dotOp: .6, dCore: C.ruby },
+    ivory:    { name: 'Ivory', bg: C.ivory, dot: C.goldDk, dotOp: .7, dCore: C.ruby },
   } },
 ];
 
