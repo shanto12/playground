@@ -46,6 +46,10 @@
     chat: '<path d="M4 20l1.4-4A8 8 0 1 1 8.5 19Z"/><path d="M9 10h6M9 13.5h4"/>',
     mail: '<rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/>',
     cal: '<rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/><circle cx="8.5" cy="14.5" r=".9" fill="currentColor"/><circle cx="12" cy="14.5" r=".9" fill="currentColor"/>',
+    download: '<path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M5 20h14"/>',
+    cursor: '<path d="M5 3l14 7-6 2-2 6Z"/>',
+    file: '<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8Z"/><path d="M14 3v5h5"/>',
+    ext: '<path d="M14 4h6v6M20 4l-9 9"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>',
     info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/>',
     /* area icons */
     search: '<circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/><path d="M8.5 11h5"/>',
@@ -322,6 +326,7 @@
     lb.className = 'lb'; lb.setAttribute('role', 'dialog'); lb.setAttribute('aria-modal', 'true'); lb.setAttribute('aria-label', 'Image viewer'); lb.hidden = true;
     lb.innerHTML =
       '<div class="lb__bar"><span class="lb__count" aria-live="polite"></span><div class="lb__tools">' +
+        '<a class="lb__btn" data-lb-dl href="#" download hidden aria-label="Download this file">' + icon('download') + '</a>' +
         '<button type="button" class="lb__btn" data-lb-zoom aria-label="Zoom in">' + icon('zoom') + '</button>' +
         '<button type="button" class="lb__btn" data-lb-close aria-label="Close viewer">' + icon('close') + '</button></div></div>' +
       '<div class="lb__stage"><div class="lb__track"></div>' +
@@ -343,7 +348,8 @@
     stage.addEventListener('pointerdown', function (e) {
       pts[e.pointerId] = true;
       if (Object.keys(pts).length > 1) { cancelDrag(); return; }
-      if (e.target.closest('button') || (currentSlide() && currentSlide().classList.contains('is-zoomed'))) return;
+      if (e.target.closest('button,a') || (currentSlide() && currentSlide().classList.contains('is-zoomed'))) return;
+      if (e.target.tagName === 'VIDEO') { var vr = e.target.getBoundingClientRect(); if (e.clientY > vr.bottom - 64) return; }
       startX = e.clientX; startY = e.clientY; dx = 0; dragging = true; startT = Date.now();
     });
     stage.addEventListener('pointermove', function (e) {
@@ -398,6 +404,7 @@
   function loadSlide(i) {
     var s = lb.querySelectorAll('.lb__slide')[i]; if (!s) return;
     var img = s.querySelector('img'); if (img && !img.getAttribute('src')) img.src = img.getAttribute('data-src');
+    var v = s.querySelector('video'); if (v && !v.getAttribute('src')) v.src = v.getAttribute('data-src');
   }
   function go(i) {
     i = Math.max(0, Math.min(lbItems.length - 1, i));
@@ -408,18 +415,25 @@
     [i - 1, i, i + 1].forEach(loadSlide);
     var it = lbItems[i];
     lb.querySelector('.lb__count').textContent = (i + 1) + ' / ' + lbItems.length;
-    lb.querySelector('.lb__cap').innerHTML = esc(it.caption || it.alt || '') + (lbItems.length > 1 && i === 0 ? '<span class="lb__hint">Swipe or use ← → · double-tap to zoom</span>' : '');
+    lb.querySelector('.lb__cap').innerHTML = (it.title ? '<b class="lb__title">' + esc(it.title) + '</b>' : '') + esc(it.caption || (it.title ? '' : it.alt) || '') + (lbItems.length > 1 && i === 0 ? '<span class="lb__hint">Swipe or use ← → · double-tap to zoom</span>' : '');
+    var dl = lb.querySelector('[data-lb-dl]');
+    if (it.download) { dl.hidden = false; dl.setAttribute('href', it.download); } else { dl.hidden = true; dl.removeAttribute('href'); }
+    lb.querySelector('[data-lb-zoom]').hidden = it.type === 'video';
+    lb.querySelectorAll('.lb__slide video').forEach(function (v, k) { if (v.closest('.lb__slide') !== currentSlide()) { try { v.pause(); } catch (e) {} } });
+    var cv = currentSlide() && currentSlide().querySelector('video');
+    if (cv && !reduceMQ.matches) { var pr = cv.play(); if (pr && pr.catch) pr.catch(function () {}); }
     lb.querySelector('[data-lb-prev]').disabled = i === 0;
     lb.querySelector('[data-lb-next]').disabled = i === lbItems.length - 1;
     lb.querySelector('[data-lb-zoom]').setAttribute('aria-label', 'Zoom in');
     lb.querySelectorAll('.lb__slide').forEach(function (s, k) { s.setAttribute('aria-hidden', String(k !== i)); });
   }
-  /* items: [{src, alt, caption}] */
+  /* items: [{src, alt, title, caption, type:'image'|'video', poster, download}] */
   function openLightbox(items, index, trigger) {
     if (!lb) buildLightbox();
     lbItems = items; lbLastFocus = trigger || d.activeElement;
     lb.querySelector('.lb__track').innerHTML = items.map(function (it) {
-      return '<div class="lb__slide" role="group" aria-roledescription="slide"><img data-src="' + esc(it.src) + '" alt="' + esc(it.alt || it.caption || '') + '" draggable="false" decoding="async"></div>';
+      if (it.type === 'video') return '<div class="lb__slide lb__slide--video" role="group" aria-roledescription="slide"><video data-src="' + esc(it.src) + '"' + (it.poster ? ' poster="' + esc(it.poster) + '"' : '') + ' controls playsinline muted loop preload="metadata" aria-label="' + esc(it.title || it.caption || 'Video') + '"></video></div>';
+      return '<div class="lb__slide" role="group" aria-roledescription="slide"><img data-src="' + esc(it.src) + '" alt="' + esc(it.alt || it.title || it.caption || '') + '" draggable="false" decoding="async"></div>';
     }).join('');
     lb.querySelector('.lb__track').style.transition = 'none';
     lb.hidden = false;
@@ -432,6 +446,7 @@
   function closeLightbox() {
     if (!lb || lb.hidden) return;
     lb.classList.remove('is-open'); setInert(lb, false); de.classList.remove('hub-locked');
+    lb.querySelectorAll('video').forEach(function (v) { try { v.pause(); } catch (e) {} });
     setTimeout(function () { lb.hidden = true; }, reduceMQ.matches ? 0 : 300);
     if (lbLastFocus && lbLastFocus.focus) lbLastFocus.focus({ preventScroll: true });
   }
@@ -559,6 +574,147 @@
     main.insertBefore(ph, main.firstChild);
   }
 
+
+  /* ═════════ Interactive frame sheet (full-screen iframe) ═════════ */
+  var frameSheet, frameLastFocus;
+  function openFrame(href, title, trigger) {
+    closeFrame(true);
+    frameLastFocus = trigger || d.activeElement;
+    frameSheet = d.createElement('div');
+    frameSheet.className = 'frame-sheet'; frameSheet.setAttribute('role', 'dialog'); frameSheet.setAttribute('aria-modal', 'true'); frameSheet.setAttribute('aria-label', title || 'Interactive preview');
+    frameSheet.innerHTML = '<div class="frame-sheet__bar"><span class="frame-sheet__title">' + esc(title || 'Interactive preview') + '</span>' +
+      '<a class="lb__btn" href="' + esc(href) + '" target="_blank" rel="noopener" aria-label="Open in a new tab">' + icon('ext') + '</a>' +
+      '<button type="button" class="lb__btn" data-frame-close aria-label="Close">' + icon('close') + '</button></div>' +
+      '<iframe class="frame-sheet__frame" src="' + esc(href) + '" title="' + esc(title || 'Interactive preview') + '" allow="fullscreen; autoplay"></iframe>';
+    body.appendChild(frameSheet);
+    setInert(frameSheet, true); de.classList.add('hub-locked');
+    frameSheet.querySelector('[data-frame-close]').focus({ preventScroll: true });
+  }
+  function closeFrame(instant) {
+    if (!frameSheet) return;
+    setInert(frameSheet, false); de.classList.remove('hub-locked');
+    frameSheet.remove(); frameSheet = null;
+    if (!instant && frameLastFocus && frameLastFocus.focus) frameLastFocus.focus({ preventScroll: true });
+  }
+
+  /* ═════════ Manifest-driven gallery ═════════
+     <section data-gallery data-manifests="assets/boxes/manifest.json,assets/bags/manifest.json" data-filter="direction,type,tags">
+     Paths in manifests are relative to the AREA folder (the page). Missing/404/invalid manifests are skipped silently.
+     Optional inline manifest for file:// testing: <script type="application/json" data-gallery-items>{ "items":[…] }</script> */
+  var TYPE_LABEL = { image: 'Images', video: 'Video', interactive: 'Interactive', pdf: 'PDF' };
+  function fetchManifest(url) {
+    if (!window.fetch) return Promise.resolve(null);
+    return fetch(url, { cache: 'no-cache' }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
+  }
+  function normItem(it, i) {
+    if (!it || !it.src) return null;
+    var dir = String(it.direction || 'both').toLowerCase(); if (dir !== 'bazaar' && dir !== 'royal') dir = 'both';
+    var type = String(it.type || 'image').toLowerCase(); if (!TYPE_LABEL[type]) type = 'image';
+    return { id: it.id || ('item-' + i), title: it.title || '', caption: it.caption || '', direction: dir, type: type, src: it.src,
+      thumb: it.thumb || (type === 'video' ? it.poster : null) || (type === 'image' ? it.src : null), poster: it.poster || '', w: +it.w || 0, h: +it.h || 0,
+      tags: Array.isArray(it.tags) ? it.tags.map(String) : [], download: it.download || '', href: it.href || '', alt: it.alt || it.title || '' };
+  }
+  function initManifestGalleries(scope) {
+    (scope || d).querySelectorAll('[data-gallery]').forEach(function (root) {
+      if (root.__mg) return; root.__mg = true;
+      var urls = (root.getAttribute('data-manifests') || '').split(',').map(function (s) { return s.trim(); }).filter(Boolean);
+      var inline = [];
+      root.querySelectorAll('script[type="application/json"][data-gallery-items]').forEach(function (sc) { try { inline.push(JSON.parse(sc.textContent)); } catch (e) { /* ignore */ } });
+      Promise.all(urls.map(fetchManifest)).then(function (mans) {
+        var seen = {}, items = [];
+        mans.concat(inline).forEach(function (m) {
+          var list = m && (Array.isArray(m) ? m : m.items); if (!Array.isArray(list)) return;
+          list.forEach(function (raw) { var it = normItem(raw, items.length); if (it && !seen[it.id]) { seen[it.id] = 1; items.push(it); } });
+        });
+        renderManifestGallery(root, items);
+      }).catch(function () { /* never throw */ });
+    });
+  }
+  function renderManifestGallery(root, items) {
+    root.__mgItems = items;
+    if (!items.length) { root.classList.add('mg--empty'); return; }
+    root.classList.remove('mg--empty');
+    var facets = (root.getAttribute('data-filter') || 'direction').split(/[\s,]+/);
+    var dirs = {}, types = {}, tags = {};
+    items.forEach(function (it) { dirs[it.direction] = 1; types[it.type] = 1; it.tags.forEach(function (t) { tags[t] = (tags[t] || 0) + 1; }); });
+    var state = { type: 'all', tag: 'all' };
+    var host = root.querySelector('[data-gallery-mount]');
+    if (!host) { host = d.createElement('div'); host.setAttribute('data-gallery-mount', ''); root.appendChild(host); }
+    var bars = '';
+    var hasA = dirs.bazaar, hasB = dirs.royal;
+    if (facets.indexOf('direction') > -1 && hasA && hasB) {
+      bars += '<div class="mg__bar" role="group" aria-label="Direction">' +
+        '<button type="button" class="chip" data-mg-dir="both">All</button>' +
+        '<button type="button" class="chip" data-mg-dir="bazaar"><span class="dirswitch__dot dirswitch__dot--a" aria-hidden="true"></span>Bazaar</button>' +
+        '<button type="button" class="chip" data-mg-dir="royal"><span class="dirswitch__dot dirswitch__dot--b" aria-hidden="true"></span>Royal</button></div>';
+    }
+    var typeKeys = Object.keys(types);
+    if (facets.indexOf('type') > -1 && typeKeys.length > 1) {
+      bars += '<div class="mg__bar" role="group" aria-label="Type"><button type="button" class="chip" data-mg-type="all">All types</button>' +
+        typeKeys.map(function (t) { return '<button type="button" class="chip" data-mg-type="' + t + '">' + TYPE_LABEL[t] + '</button>'; }).join('') + '</div>';
+    }
+    var tagKeys = Object.keys(tags).sort(function (a, b) { return tags[b] - tags[a]; }).slice(0, 14);
+    if (facets.indexOf('tags') > -1 && tagKeys.length > 1) {
+      bars += '<div class="mg__bar mg__bar--scroll" role="group" aria-label="Tags"><button type="button" class="chip" data-mg-tag="all">Everything</button>' +
+        tagKeys.map(function (t) { return '<button type="button" class="chip" data-mg-tag="' + esc(t) + '">' + esc(t) + '</button>'; }).join('') + '</div>';
+    }
+    host.innerHTML = (bars ? '<div class="mg__filters">' + bars + '</div>' : '') +
+      '<p class="mg__count muted" aria-live="polite"></p><div class="mg__grid"></div><p class="mg__empty" hidden>Nothing here for this direction yet. Try <button type="button" class="link-btn" data-dir-set="both">Both</button>.</p>';
+    var grid = host.querySelector('.mg__grid');
+    grid.innerHTML = items.map(function (it, i) {
+      var ar = it.w && it.h ? (it.w + ' / ' + it.h) : '4 / 5';
+      var badge = it.type === 'video' ? icon('play', 'mg__badge') : it.type === 'interactive' ? '<span class="mg__pill">' + icon('cursor') + 'Interactive</span>' : it.type === 'pdf' ? '<span class="mg__pill">' + icon('file') + 'PDF</span>' : '';
+      var attrs = it.type === 'pdf' ? ' href="' + esc(it.src) + '" target="_blank" rel="noopener"' : it.type === 'interactive' ? ' href="' + esc(it.href || it.src) + '"' : ' href="' + esc(it.src) + '"';
+      var ph = '<span class="mg__ph" aria-hidden="true">' + icon(it.type === 'video' ? 'play' : it.type === 'pdf' ? 'file' : it.type === 'interactive' ? 'cursor' : 'kit') + '</span>';
+      return '<a class="gallery__item mg__item" data-mg-i="' + i + '" data-dir="' + it.direction + '" data-type="' + it.type + '"' + attrs + ' style="--ar:' + ar + '">' + ph +
+        (it.thumb ? '<img src="' + esc(it.thumb) + '" alt="' + esc(it.alt) + '" loading="lazy" decoding="async"' + (it.w && it.h ? ' width="' + it.w + '" height="' + it.h + '"' : '') + '>' : '') +
+        badge + (it.title ? '<span class="gallery__cap">' + esc(it.title) + '</span>' : '') + '</a>';
+    }).join('');
+    function visible() {
+      var g = getDirection();
+      return items.map(function (it, i) { return i; }).filter(function (i) {
+        var it = items[i];
+        if (g !== 'both' && it.direction !== 'both' && it.direction !== g) return false;
+        if (state.type !== 'all' && it.type !== state.type) return false;
+        if (state.tag !== 'all' && it.tags.indexOf(state.tag) < 0) return false;
+        return true;
+      });
+    }
+    function apply() {
+      var vis = visible(), set = {}; vis.forEach(function (i) { set[i] = 1; });
+      grid.querySelectorAll('.mg__item').forEach(function (el) { el.hidden = !set[el.getAttribute('data-mg-i')]; });
+      host.querySelector('.mg__count').textContent = vis.length + (vis.length === 1 ? ' piece' : ' pieces');
+      host.querySelector('.mg__empty').hidden = vis.length > 0;
+      var g = getDirection();
+      host.querySelectorAll('[data-mg-dir]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-mg-dir') === g)); });
+      host.querySelectorAll('[data-mg-type]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-mg-type') === state.type)); });
+      host.querySelectorAll('[data-mg-tag]').forEach(function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-mg-tag') === state.tag)); });
+      root.__mgVisible = vis;
+    }
+    if (root.__mgOff) root.__mgOff();
+    function onClick(e) {
+      var b = e.target.closest('[data-mg-dir],[data-mg-type],[data-mg-tag]');
+      if (b) {
+        if (b.hasAttribute('data-mg-dir')) setDirection(b.getAttribute('data-mg-dir'));
+        if (b.hasAttribute('data-mg-type')) state.type = b.getAttribute('data-mg-type');
+        if (b.hasAttribute('data-mg-tag')) state.tag = b.getAttribute('data-mg-tag');
+        apply(); return;
+      }
+      var a = e.target.closest('.mg__item'); if (!a || e.metaKey || e.ctrlKey || e.shiftKey) return;
+      var it = items[+a.getAttribute('data-mg-i')];
+      if (it.type === 'pdf') return; /* native new-tab link */
+      e.preventDefault();
+      if (it.type === 'interactive') { openFrame(it.href || it.src, it.title, a); return; }
+      var lbSet = (root.__mgVisible || []).filter(function (i) { return items[i].type === 'image' || items[i].type === 'video'; });
+      openLightbox(lbSet.map(function (i) { return items[i]; }), Math.max(0, lbSet.indexOf(+a.getAttribute('data-mg-i'))), a);
+    }
+    host.addEventListener('click', onClick);
+    d.addEventListener('hub:direction', apply);
+    root.__mgOff = function () { host.removeEventListener('click', onClick); d.removeEventListener('hub:direction', apply); };
+    apply();
+    initReveal(host);
+  }
+
   /* ═════════ Global click delegation ═════════ */
   d.addEventListener('click', function (e) {
     var t = e.target.closest('[data-dir-set],[data-sheet-open],[data-sheet-close],[data-share],[data-print],[data-lightbox],[data-copy]');
@@ -574,13 +730,14 @@
       e.preventDefault(); var g = itemsForGroup(t); openLightbox(g.items, g.index, t);
     }
   });
-  d.addEventListener('keydown', function (e) { if (e.key === 'Escape' && sheet) closeSheet(); });
+  d.addEventListener('keydown', function (e) { if (e.key === 'Escape') { if (frameSheet) closeFrame(); else if (sheet) closeSheet(); } });
+  d.addEventListener('click', function (e) { if (e.target.closest('[data-frame-close]')) closeFrame(); });
   /* close the sheet when navigating to an in-page anchor */
   d.addEventListener('click', function (e) { var a = e.target.closest('.sheet a[href]'); if (a) setTimeout(function () { closeSheet(true); }, 0); });
 
   /* ═════════ Boot ═════════ */
   function refresh(scope) {
-    renderTiles(scope); renderDirSwitches(scope); applyConfig(scope); initTabs(scope); initBA(scope); initFrames(scope); initReveal(scope); initTilt(scope);
+    renderTiles(scope); renderDirSwitches(scope); initManifestGalleries(scope); applyConfig(scope); initTabs(scope); initBA(scope); initFrames(scope); initReveal(scope); initTilt(scope);
   }
   function boot() {
     var saved = sget(DIR_KEY); if (saved && !de.getAttribute('data-dir')) de.setAttribute('data-dir', saved);
@@ -592,7 +749,7 @@
     window.addEventListener('afterprint', function () { d.querySelectorAll('details[data-was-open]').forEach(function (x) { x.open = x.getAttribute('data-was-open') === '1'; x.removeAttribute('data-was-open'); }); });
   }
 
-  window.Hub = { AREAS: AREAS, URLS: URLS, icon: icon, setDirection: setDirection, getDirection: getDirection, openLightbox: openLightbox, closeLightbox: closeLightbox, toast: toast, share: share, refresh: refresh, openSheet: openSheet, closeSheet: closeSheet };
+  window.Hub = { AREAS: AREAS, URLS: URLS, icon: icon, setDirection: setDirection, getDirection: getDirection, openLightbox: openLightbox, closeLightbox: closeLightbox, toast: toast, share: share, refresh: refresh, openSheet: openSheet, closeSheet: closeSheet, openFrame: openFrame, closeFrame: closeFrame, renderGallery: function (el, items) { el.__mg = true; renderManifestGallery(el, (items || []).map(normItem).filter(Boolean)); } };
 
   if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', boot); else boot();
 })();

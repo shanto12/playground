@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1200" width="800" height="1200" class="cd-hero" role="img" aria-labelledby="cdP-title"><title id="cdP-title">The District at Golden Hour: sky layer (portrait)</title><style>.cd-hero .cloud{animation:cdh-drift 46s ease-in-out infinite alternate}
+.cd-hero .cloud:nth-child(2n){animation-duration:58s;animation-direction:alternate-reverse}
+.cd-hero .cloud:nth-child(3n){animation-duration:39s}
+.cd-hero .flag{transform-box:fill-box;transform-origin:50% 0;animation:cdh-flutter 2.6s ease-in-out infinite}
+.cd-hero .flag:nth-child(2n){animation-duration:3.1s;animation-delay:-1.1s}
+.cd-hero .flag:nth-child(3n){animation-duration:2.2s;animation-delay:-.5s}
+.cd-hero .lantern{transform-box:fill-box;transform-origin:50% 0;animation:cdh-sway 4.6s ease-in-out infinite}
+.cd-hero .lantern:nth-of-type(2n){animation-duration:5.4s;animation-delay:-1.8s}
+.cd-hero .steam{transform-box:fill-box;transform-origin:50% 100%;animation:cdh-rise 3.8s ease-out infinite}
+.cd-hero .sun-rays{transform-box:fill-box;transform-origin:50% 50%;animation:cdh-spin 140s linear infinite}
+.cd-hero .sun-glow{transform-box:fill-box;transform-origin:50% 50%;animation:cdh-pulse 7s ease-in-out infinite}
+@keyframes cdh-drift{from{transform:translateX(-34px)}to{transform:translateX(46px)}}
+@keyframes cdh-flutter{0%,100%{transform:rotate(-6deg) skewX(4deg)}50%{transform:rotate(6deg) skewX(-4deg)}}
+@keyframes cdh-sway{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
+@keyframes cdh-rise{0%{transform:translateY(16px) scale(.8);opacity:0}22%{opacity:.95}100%{transform:translateY(-54px) scale(1.18);opacity:0}}
+@keyframes cdh-spin{to{transform:rotate(360deg)}}
+@keyframes cdh-pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.06);opacity:.72}}
+.cd-hero.is-paused *,.cd-hero .is-paused *{animation-play-state:paused!important}
+@media (prefers-reduced-motion:reduce){.cd-hero *{animation:none!important}}</style><defs><linearGradient id="cdP-sky" x1="0" y1="0" x2="0" y2="1200" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#EE4F98"/><stop offset=".3" stop-color="#FF7A52"/><stop offset=".52" stop-color="#FFA23E"/><stop offset=".72" stop-color="#FFC857"/><stop offset="1" stop-color="#FFE4A6"/></linearGradient><radialGradient id="cdP-glow" cx=".5" cy=".82" r=".85"><stop offset="0" stop-color="#FFFBEA"/><stop offset=".45" stop-color="#FFE38E"/><stop offset="1" stop-color="#FFB000"/></radialGradient><radialGradient id="cdP-halo"><stop offset="0" stop-color="#FFE7A0" stop-opacity=".7"/><stop offset="1" stop-color="#FFE7A0" stop-opacity="0"/></radialGradient></defs><g id="sky" stroke="#1D1147" stroke-width="4.6" stroke-linejoin="round" stroke-linecap="round"><rect x="-50" y="-600" width="900" height="1900" fill="url(#cdP-sky)" stroke="none"/><g opacity="0.4" stroke="none"><rect x="40" y="564" width="240" height="10" fill="#FFF4DC" rx="5"/><rect x="496" y="516" width="256" height="10" fill="#FFF4DC" rx="5"/><rect x="96" y="624" width="144" height="7" fill="#FFF4DC" rx="3.5"/><rect x="560" y="600" width="160" height="7" fill="#FFF4DC" rx="3.5"/></g></g></svg>

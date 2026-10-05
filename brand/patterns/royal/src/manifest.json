@@ -4,7 +4,7 @@
   "colourway": "midnight",
   "file": "01-jali-lattice-midnight.svg",
   "tile": 240,
-  "bytes": 18880,
+  "bytes": 17921,
   "bg": "#160B26"
  },
  {
@@ -12,7 +12,7 @@
   "colourway": "emerald",
   "file": "01-jali-lattice-emerald.svg",
   "tile": 240,
-  "bytes": 18899,
+  "bytes": 17940,
   "bg": "#0F4D3F"
  },
  {
@@ -20,7 +20,7 @@
   "colourway": "ivory",
   "file": "01-jali-lattice-ivory.svg",
   "tile": 240,
-  "bytes": 18877,
+  "bytes": 17938,
   "bg": "#FBF3E4"
  },
  {
@@ -28,7 +28,7 @@
   "colourway": "midnight",
   "file": "02-mehrab-trellis-midnight.svg",
   "tile": 240,
-  "bytes": 5947,
+  "bytes": 5955,
   "bg": "#160B26"
  },
  {
@@ -36,7 +36,7 @@
   "colourway": "emerald",
   "file": "02-mehrab-trellis-emerald.svg",
   "tile": 240,
-  "bytes": 6032,
+  "bytes": 6040,
   "bg": "#0F4D3F"
  },
  {
@@ -44,7 +44,7 @@
   "colourway": "ivory",
   "file": "02-mehrab-trellis-ivory.svg",
   "tile": 240,
-  "bytes": 5944,
+  "bytes": 5952,
   "bg": "#FBF3E4"
  },
  {
@@ -52,7 +52,7 @@
   "colourway": "midnight",
   "file": "03-paisley-vine-midnight.svg",
   "tile": 320,
-  "bytes": 11458,
+  "bytes": 11538,
   "bg": "#160B26"
  },
  {
@@ -60,7 +60,7 @@
   "colourway": "emerald",
   "file": "03-paisley-vine-emerald.svg",
   "tile": 320,
-  "bytes": 11477,
+  "bytes": 11557,
   "bg": "#0F4D3F"
  },
  {
@@ -68,7 +68,7 @@
   "colourway": "ivory",
   "file": "03-paisley-vine-ivory.svg",
   "tile": 320,
-  "bytes": 11455,
+  "bytes": 11535,
   "bg": "#FBF3E4"
  },
  {
@@ -76,7 +76,7 @@
   "colourway": "ruby",
   "file": "03-paisley-vine-ruby.svg",
   "tile": 320,
-  "bytes": 11474,
+  "bytes": 11554,
   "bg": "#A3173F"
  },
  {
@@ -92,7 +92,7 @@
   "colourway": "emerald",
   "file": "04-marigold-damask-emerald.svg",
   "tile": 320,
-  "bytes": 26494,
+  "bytes": 26513,
   "bg": "#0F4D3F"
  },
  {
@@ -108,7 +108,7 @@
   "colourway": "ruby",
   "file": "04-marigold-damask-ruby.svg",
   "tile": 320,
-  "bytes": 26491,
+  "bytes": 26510,
   "bg": "#A3173F"
  },
  {
@@ -116,7 +116,7 @@
   "colourway": "midnight",
   "file": "05-peacock-eye-midnight.svg",
   "tile": 240,
-  "bytes": 3526,
+  "bytes": 3012,
   "bg": "#160B26"
  },
  {
@@ -124,7 +124,7 @@
   "colourway": "emerald",
   "file": "05-peacock-eye-emerald.svg",
   "tile": 240,
-  "bytes": 3524,
+  "bytes": 3010,
   "bg": "#0F4D3F"
  },
  {
@@ -132,7 +132,7 @@
   "colourway": "ivory",
   "file": "05-peacock-eye-ivory.svg",
   "tile": 240,
-  "bytes": 3523,
+  "bytes": 3009,
   "bg": "#FBF3E4"
  },
  {
@@ -140,7 +140,7 @@
   "colourway": "peacock",
   "file": "05-peacock-eye-peacock.svg",
   "tile": 240,
-  "bytes": 3524,
+  "bytes": 3010,
   "bg": "#117C86"
  },
  {
@@ -148,7 +148,7 @@
   "colourway": "midnight",
   "file": "06-star-tile-midnight.svg",
   "tile": 240,
-  "bytes": 6023,
+  "bytes": 6883,
   "bg": "#160B26"
  },
  {
@@ -156,7 +156,7 @@
   "colourway": "emerald",
   "file": "06-star-tile-emerald.svg",
   "tile": 240,
-  "bytes": 7047,
+  "bytes": 7071,
   "bg": "#160B26"
  },
  {
@@ -164,15 +164,15 @@
   "colourway": "ivory",
   "file": "06-star-tile-ivory.svg",
   "tile": 240,
-  "bytes": 6022,
-  "bg": "#B7791F"
+  "bytes": 7901,
+  "bg": "#F3E4C8"
  },
  {
   "pattern": "07-spice-botanical",
   "colourway": "midnight",
   "file": "07-spice-botanical-midnight.svg",
   "tile": 320,
-  "bytes": 6794,
+  "bytes": 9306,
   "bg": "#160B26"
  },
  {
@@ -180,7 +180,7 @@
   "colourway": "emerald",
   "file": "07-spice-botanical-emerald.svg",
   "tile": 320,
-  "bytes": 6793,
+  "bytes": 9305,
   "bg": "#0F4D3F"
  },
  {
@@ -188,7 +188,7 @@
   "colourway": "ivory",
   "file": "07-spice-botanical-ivory.svg",
   "tile": 320,
-  "bytes": 6791,
+  "bytes": 9303,
   "bg": "#FBF3E4"
  },
  {

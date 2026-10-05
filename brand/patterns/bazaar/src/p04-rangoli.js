@@ -19,16 +19,16 @@ const CW = {
 
 function medallion(m, line, shine) {
   const L = `stroke="${line}" stroke-width="2.4" stroke-linejoin="round"`;
-  let s = dots(24, 63, 2.7, 7.5, m.dot);
+  let s = dots(24, 64.5, 2.5, 7.5, m.dot);
   // 12 pointed outer petals
-  s += ring(petal(57, 12.5, 0.7), 12, 0, `fill="${m.p1}" ${L}`);
+  s += ring(petal(60, 14, 0.66), 12, 0, `fill="${m.p1}" ${L}`);
+  // 12 rounded inner petals offset by 15°
+  s += ring(rpetal(39, 10.5), 12, 15, `fill="${m.p2}" ${L}`);
   // painted shine stroke down each outer petal
   let sh = '';
-  for (let i = 0; i < 12; i++) sh += `<path d="M0 -30Q2.6 -40 0 -49" transform="rotate(${i * 30})"/>`;
+  for (let i = 0; i < 12; i++) sh += `<path d="M0 -41Q2.4 -47 0 -53" transform="rotate(${i * 30})"/><path d="M-2 -27Q-4.2 -31 -2.6 -35" transform="rotate(${i * 30 + 15})"/>`;
   s += `<g fill="none" stroke="${shine}" stroke-width="2.2" stroke-linecap="round" opacity=".9">${sh}</g>`;
-  // 12 rounded inner petals offset by 15°
-  s += ring(rpetal(42, 10.5), 12, 15, `fill="${m.p2}" ${L}`);
-  s += dots(12, 34, 2, 15, line);
+  s += dots(12, 31.5, 1.9, 15, line);
   // disc with dotted ring
   s += `<circle r="24" fill="${m.disc}" ${L}/>`;
   s += dots(16, 19.5, 1.7, 0, m.ring);
@@ -58,8 +58,8 @@ module.exports = function p04(T, cwName) {
   T.def('tri', `<circle cy="-5" r="2.6" fill="${c.gap[0]}"/><circle cx="-4.6" cy="3" r="2.6" fill="${c.gap[1]}"/><circle cx="4.6" cy="3" r="2.6" fill="${c.gap[1]}"/>`);
   T.use('mA', 0, 0, { r: 70 });
   T.use('mB', 120, 120, { r: 70, rot: 15 });
-  T.use('sm', 120, 0, { r: 42 });
-  T.use('sm', 0, 120, { r: 42, rot: 22.5 });
+  T.use('sm', 120, 0, { r: 50, s: 1.2 });
+  T.use('sm', 0, 120, { r: 50, s: 1.2, rot: 22.5 });
   for (const [x, y, r] of [[60, 60, 45], [180, 60, 135], [60, 180, -45], [180, 180, 45]]) T.use('tri', x, y, { r: 10, rot: r });
   return { S, bg: c.bg };
 };

@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Curry District · Royal — logo system</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/fraunces-roman.woff2) format('woff2')}
+@font-face{font-family:'Fraunces';font-style:italic;font-weight:100 900;font-display:swap;src:url(fonts/fraunces-italic.woff2) format('woff2')}
+@font-face{font-family:'Hanken Grotesk';font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/hanken-grotesk.woff2) format('woff2')}
+:root{--ink:#160B26;--plum:#4B1D52;--emerald:#0F4D3F;--peacock:#117C86;--ruby:#A3173F;--gold:#E9A63A;--gold-lt:#F7D98A;--gold-dk:#B7791F;--ivory:#FBF3E4;--blush:#F4C9BB;
+--foil:linear-gradient(135deg,#B7791F 0%,#F7D98A 38%,#E9A63A 58%,#B7791F 100%);--r:28px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ivory);color:var(--ink);font:400 16px/1.55 'Hanken Grotesk',system-ui,sans-serif}
+.wrap{max-width:1360px;margin:0 auto;padding:0 16px}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:600;letter-spacing:-.01em;line-height:1.05;margin:0}
+.eyebrow{font:600 12px/1 'Hanken Grotesk',sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-dk);margin:0 0 12px}
+.foil{background:var(--foil);-webkit-background-clip:text;background-clip:text;color:transparent}
+/* hero */
+.hero{background:radial-gradient(120% 90% at 30% 20%,#3A1650 0%,#1E0E33 45%,var(--ink) 80%);color:var(--ivory);position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1fr;gap:40px;align-items:center;padding-top:56px;padding-bottom:56px;position:relative}
+.hero .lock{display:grid;place-items:center}
+.hero .lock img{width:min(420px,78vw);height:auto;filter:drop-shadow(0 18px 40px rgba(0,0,0,.45))}
+.hero h1{font-size:clamp(34px,5vw,60px)}
+.hero h1 em{font-style:italic;font-weight:400}
+.hero .eyebrow{color:var(--gold-lt)}
+.hero p.lede{font-family:'Fraunces',serif;font-size:19px;line-height:1.5;max-width:56ch;color:#EADFCB;margin:18px 0 0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chip{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(233,166,58,.45);border-radius:999px;padding:6px 12px;font-size:13px;color:var(--gold-lt)}
+.chip i{width:14px;height:14px;border-radius:50%;display:inline-block;border:1px solid rgba(255,255,255,.25)}
+@media(min-width:900px){.hero .wrap{grid-template-columns:5fr 6fr}}
+section{padding:56px 0 8px}
+section>.wrap>header{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:12px;margin-bottom:22px}
+section h2{font-size:clamp(28px,3.4vw,40px)}
+section header p{margin:0;max-width:60ch;color:#6B5A73}
+/* primary */
+.primary{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.tile{border-radius:var(--r);display:grid;place-items:center;padding:40px 24px 64px;min-height:300px;position:relative;background:var(--ink)}
+@media(min-width:1000px){.primary{grid-template-columns:repeat(3,1fr)}}
+.tile figcaption,.cell figcaption{font-size:12px;letter-spacing:.14em;text-transform:uppercase;opacity:.7;margin-top:14px;text-align:center}
+.tile figcaption{position:absolute;left:0;right:0;bottom:16px;color:var(--gold-lt)}
+.tile img{max-width:100%}
+.tile.wide{grid-column:1/-1;min-height:260px}
+figure{margin:0}
+/* grounds */
+.ground,.cw{border-radius:var(--r);padding:22px 22px 26px;margin-bottom:14px;overflow:hidden}
+.glabel{margin:0 0 14px;font:600 12px/1.2 'Hanken Grotesk',sans-serif;letter-spacing:.2em;text-transform:uppercase;color:inherit;display:flex;gap:12px;flex-wrap:wrap;justify-content:space-between}
+.glabel span{font-weight:400;letter-spacing:.04em;text-transform:none;opacity:.7}
+.ground[data-g="ivory"],.cw.light{box-shadow:inset 0 0 0 1px #E6D5B5}
+.row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px 20px}
+.cell{display:flex;flex-direction:column;align-items:center;max-width:100%}
+.cell figcaption{color:inherit}
+.row img{max-width:100%;height:auto;display:block}
+.m-emblem{width:90px}.m-wordmark-stacked{width:160px}.m-wordmark-horizontal{width:210px}.m-wordmark-text-only{width:150px}
+.m-lockup-tagline-stacked{width:170px}.m-lockup-tagline-horizontal{width:230px}.m-seal{width:140px}
+.cw .m-emblem{width:110px}.cw .m-wordmark-stacked{width:190px}.cw .m-wordmark-horizontal{width:270px}.cw .m-wordmark-text-only{width:200px}.cw .m-seal{width:160px}
+@media(max-width:700px){.row{display:grid;grid-template-columns:1fr 1fr;justify-items:center;gap:26px 14px}.row .cell.seal,.row .cell.wordmark-horizontal,.row .cell.lockup-tagline-horizontal{grid-column:span 1}}
+/* marks */
+.marks{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+@media(min-width:1000px){.marks{grid-template-columns:repeat(3,1fr)}}
+.mark{border-radius:var(--r);padding:28px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;min-height:320px;background:#F3E4C8}
+.mark p{margin:0;font-size:13px;color:#6B5A73;text-align:center}
+.mark strong{font-family:'Fraunces',serif;font-weight:600;font-size:18px;color:var(--ink);display:block}
+.avatar{position:relative;width:240px;height:240px}
+.avatar img{width:100%;height:100%;border-radius:50%;display:block}
+.avatar::after{content:"";position:absolute;inset:0;border-radius:50%;box-shadow:0 0 0 1px rgba(22,11,38,.15)}
+.phone{width:220px;border-radius:24px;padding:14px;background:linear-gradient(160deg,#5b3a6e,#1d2f4a 60%,#0F4D3F);display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.phone span{aspect-ratio:1;border-radius:14px;background:rgba(255,255,255,.16)}
+.phone img{width:100%;border-radius:22%;box-shadow:0 6px 16px rgba(0,0,0,.35)}
+.tab{display:flex;align-items:center;gap:8px;background:#fff;border-radius:10px 10px 0 0;padding:9px 14px;font-size:13px;box-shadow:0 1px 0 #e7dccb;width:230px}
+.tab.dark{background:#2b2733;color:#eee}
+.seals{display:grid;grid-template-columns:repeat(2,minmax(0,130px));gap:14px;justify-content:center}
+.seals img{width:100%;height:auto;display:block}
+.waxcard{background:linear-gradient(160deg,#F3E4C8,#E8D3AE);border-radius:var(--r);padding:30px;display:grid;place-items:center}
+/* sizes */
+.sizes{border-radius:var(--r);padding:22px;margin-bottom:12px;display:grid;gap:18px}
+.sz{display:flex;flex-wrap:wrap;align-items:center;gap:22px}
+.px{font:600 11px/1 'Hanken Grotesk',sans-serif;letter-spacing:.16em;width:42px;color:#9a8f9f}
+/* rules */
+.rules{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.card{background:#fff;border-radius:var(--r);padding:28px;box-shadow:0 18px 40px -28px rgba(22,11,38,.45)}
+.card h3{font-size:24px;margin-bottom:10px}
+.card table{width:100%;border-collapse:collapse;font-size:14px}
+.card td{padding:8px 0;border-bottom:1px solid #EFE3CF;vertical-align:top}
+.card td:last-child{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;padding-left:12px}
+.clear{position:relative;display:inline-block;padding:34px;border:1px dashed var(--gold-dk);border-radius:6px;background:repeating-linear-gradient(45deg,rgba(183,121,31,.06) 0 8px,transparent 8px 16px)}
+.clear img{display:block;height:170px;background:var(--ivory)}
+.clear b{position:absolute;font:600 11px 'Hanken Grotesk';color:var(--gold-dk);letter-spacing:.1em}
+.dont{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-top:8px}
+.dont div{background:var(--ivory);border-radius:16px;padding:14px;text-align:center;font-size:12px;color:#6B5A73;overflow:hidden}
+.dont img{height:60px;display:block;margin:0 auto 8px}
+footer{margin-top:56px;background:var(--ink);color:#CDBFD6;padding:28px 0;font-size:13px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;align-items:center}
+footer img{height:42px}
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="wrap">
+    <div class="lock"><img src="lockup-tagline-stacked.svg" alt="Curry District — Indian Kitchen · Little Elm, TX"></div>
+    <div>
+      <p class="eyebrow">Brand Glow-Up · Direction B · Royal</p>
+      <h1>The <em class="foil">District Gate</em> logo system</h1>
+      <p class="lede">A Mughal pointed arch — the gateway into the neighbourhood’s flavour quarter — frames a brass handi breathing three ribbons of steam.
+      Its cusped inner arch, pearl beading and the tiny arcade engraved round the pot are drawn like jali and brasswork, so the mark feels carved, not clip-art.
+      “Curry” is set in Fraunces with hand-tuned kerning over a widely-spaced DISTRICT bracketed by the gate’s lamp-glint lozenges.
+      Everything is outlined vector, built for saffron-gold foil on midnight, yet holds up as a one-colour stamp, a wax seal and a 24px favicon.</p>
+      <div class="chips">
+        <span class="chip"><i style="background:var(--foil)"></i>Saffron-gold foil</span>
+        <span class="chip"><i style="background:var(--ink)"></i>Midnight #160B26</span>
+        <span class="chip"><i style="background:var(--emerald)"></i>Emerald #0F4D3F</span>
+        <span class="chip"><i style="background:var(--ruby)"></i>Ruby #A3173F</span>
+        <span class="chip"><i style="background:var(--ivory)"></i>Ivory #FBF3E4</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section><div class="wrap">
+  <header><div><p class="eyebrow">01 · Primary marks</p><h2>Gold foil on midnight</h2></div>
+  <p>The hero colourway. Foil sweeps 135° across each whole lockup, matching the site’s <code>--grad-foil</code>.</p></header>
+  <div class="primary">
+    <figure class="tile"><img src="wordmark-stacked.svg" style="height:230px" alt="Stacked lockup"><figcaption>wordmark-stacked.svg</figcaption></figure>
+    <figure class="tile"><img src="emblem.svg" style="height:230px" alt="Emblem"><figcaption>emblem.svg</figcaption></figure>
+    <figure class="tile"><img src="wordmark-text-only.svg" style="width:min(300px,100%)" alt="Text-only wordmark"><figcaption>wordmark-text-only.svg</figcaption></figure>
+    <figure class="tile wide"><img src="wordmark-horizontal.svg" style="width:min(560px,100%)" alt="Horizontal lockup"><figcaption>wordmark-horizontal.svg</figcaption></figure>
+    <figure class="tile wide"><img src="lockup-tagline-horizontal.svg" style="width:min(620px,100%)" alt="Horizontal lockup with tagline"><figcaption>lockup-tagline-horizontal.svg</figcaption></figure>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <header><div><p class="eyebrow">02 · Five grounds</p><h2>Every lockup on every brand ground</h2></div>
+  <p>Ivory, midnight, emerald, ruby and the royal gradient — each with the colourway that belongs on it.</p></header>
+  <div class="ground" style="background:var(--ivory);color:var(--ink)" data-g="ivory"><p class="glabel">Ivory · midnight + antique gold</p><div class="row"><figure class="cell emblem"><img class="m-emblem" src="colourways/emblem--ivory.svg" alt="Curry District logo" loading="lazy"><figcaption>Emblem</figcaption></figure><figure class="cell wordmark-stacked"><img class="m-wordmark-stacked" src="colourways/wordmark-stacked--ivory.svg" alt="Curry District logo" loading="lazy"><figcaption>Stacked</figcaption></figure><figure class="cell wordmark-horizontal"><img class="m-wordmark-horizontal" src="colourways/wordmark-horizontal--ivory.svg" alt="Curry District logo" loading="lazy"><figcaption>Horizontal</figcaption></figure><figure class="cell wordmark-text-only"><img class="m-wordmark-text-only" src="colourways/wordmark-text-only--ivory.svg" alt="Curry District logo" loading="lazy"><figcaption>Text only</figcaption></figure><figure class="cell lockup-tagline-stacked"><img class="m-lockup-tagline-stacked" src="colourways/lockup-tagline-stacked--ivory.svg" alt="Curry District logo" loading="lazy"><figcaption>Tagline · stacked</figcaption></figure><figure class="cell lockup-tagline-horizontal"><img class="m-lockup-tagline-horizontal" src="colourways/lockup-tagline-horizontal--ivory.svg" alt="Curry District logo" loading="lazy"><figcaption>Tagline · horizontal</figcaption></figure><figure class="cell seal"><img class="m-seal" src="colourways/seal--ivory.svg" alt="Curry District logo" loading="lazy"><figcaption>Seal</figcaption></figure></div></div><div class="ground" style="background:var(--ink);color:var(--ivory)" data-g="midnight"><p class="glabel">Midnight · gold foil</p><div class="row"><figure class="cell emblem"><img class="m-emblem" src="colourways/emblem--foil.svg" alt="Curry District logo" loading="lazy"><figcaption>Emblem</figcaption></figure><figure class="cell wordmark-stacked"><img class="m-wordmark-stacked" src="colourways/wordmark-stacked--foil.svg" alt="Curry District logo" loading="lazy"><figcaption>Stacked</figcaption></figure><figure class="cell wordmark-horizontal"><img class="m-wordmark-horizontal" src="colourways/wordmark-horizontal--foil.svg" alt="Curry District logo" loading="lazy"><figcaption>Horizontal</figcaption></figure><figure class="cell wordmark-text-only"><img class="m-wordmark-text-only" src="colourways/wordmark-text-only--foil.svg" alt="Curry District logo" loading="lazy"><figcaption>Text only</figcaption></figure><figure class="cell lockup-tagline-stacked"><img class="m-lockup-tagline-stacked" src="colourways/lockup-tagline-stacked--foil.svg" alt="Curry District logo" loading="lazy"><figcaption>Tagline · stacked</figcaption></figure><figure class="cell lockup-tagline-horizontal"><img class="m-lockup-tagline-horizontal" src="colourways/lockup-tagline-horizontal--foil.svg" alt="Curry District logo" loading="lazy"><figcaption>Tagline · horizontal</figcaption></figure><figure class="cell seal"><img class="m-seal" src="colourways/seal--foil.svg" alt="Curry District logo" loading="lazy"><figcaption>Seal</figcaption></figure></div></div><div class="ground" style="background:var(--emerald);color:var(--ivory)" data-g="emerald"><p class="glabel">Emerald · ivory + gold</p><div class="row"><figure class="cell emblem"><img class="m-emblem" src="colourways/emblem--emerald.svg" alt="Curry District logo" loading="lazy"><figcaption>Emblem</figcaption></figure><figure class="cell wordmark-stacked"><img class="m-wordmark-stacked" src="colourways/wordmark-stacked--emerald.svg" alt="Curry District logo" loading="lazy"><figcaption>Stacked</figcaption></figure><figure class="cell wordmark-horizontal"><img class="m-wordmark-horizontal" src="colourways/wordmark-horizontal--emerald.svg" alt="Curry District logo" loading="lazy"><figcaption>Horizontal</figcaption></figure><figure class="cell wordmark-text-only"><img class="m-wordmark-text-only" src="colourways/wordmark-text-only--emerald.svg" alt="Curry District logo" loading="lazy"><figcaption>Text only</figcaption></figure><figure class="cell lockup-tagline-stacked"><img class="m-lockup-tagline-stacked" src="colourways/lockup-tagline-stacked--emerald.svg" alt="Curry District logo" loading="lazy"><figcaption>Tagline · stacked</figcaption></figure><figure class="cell lockup-tagline-horizontal"><img class="m-lockup-tagline-horizontal" src="colourways/lockup-tagline-horizontal--emerald.svg" alt="Curry District logo" loading="lazy"><figcaption>Tagline · horizontal</figcaption></figure><figure class="cell seal"><img class="m-seal" src="colourways/seal--emerald.svg" alt="Curry District logo" loading="lazy"><figcaption>Seal</figcaption></figure></div></div><div class="ground" style="background:var(--ruby);color:var(--ivory)" data-g="ruby"><p class="glabel">Ruby · one-colour ivory</p><div class="row"><figure class="cell emblem"><img class="m-emblem" src="colourways/emblem--mono-ivory.svg" alt="Curry District logo" loading="lazy"><figcaption>Emblem</figcaption></figure><figure class="cell wordmark-stacked"><img class="m-wordmark-stacked" src="colourways/wordmark-stacked--mono-ivory.svg" alt="Curry District logo" loading="lazy"><figcaption>Stacked</figcaption></figure><figure class="cell wordmark-horizontal"><img class="m-wordmark-horizontal" src="colourways/wordmark-horizontal--mono-ivory.svg" alt="Curry District logo" loading="lazy"><figcaption>Horizontal</figcaption></figure><figure class="cell wordmark-text-only"><img class="m-wordmark-text-only" src="colourways/wordmark-text-only--mono-ivory.svg" alt="Curry District logo" loading="lazy"><figcaption>Text only</figcaption></figure><figure class="cell lockup-tagline-stacked"><img class="m-lockup-tagline-stacked" src="colourways/lockup-tagline-stacked--mono-ivory.svg" alt="Curry District logo" loading="lazy"><figcaption>Tagline · stacked</figcaption></figure><figure class="cell lockup-tagline-horizontal"><img class="m-lockup-tagline-horizontal" src="colourways/lockup-tagline-horizontal--mono-ivory.svg" alt="Curry District logo" loading="lazy"><figcaption>Tagline · horizontal</figcaption></figure><figure class="cell seal"><img class="m-seal" src="colourways/seal--mono-ivory.svg" alt="Curry District logo" loading="lazy"><figcaption>Seal</figcaption></figure></div></div><div class="ground" style="background:linear-gradient(160deg,#160B26 0%,#4B1D52 50%,#0F4D3F 120%);color:var(--ivory)" data-g="gradient"><p class="glabel">Royal gradient · gold foil</p><div class="row"><figure class="cell emblem"><img class="m-emblem" src="colourways/emblem--foil.svg" alt="Curry District logo" loading="lazy"><figcaption>Emblem</figcaption></figure><figure class="cell wordmark-stacked"><img class="m-wordmark-stacked" src="colourways/wordmark-stacked--foil.svg" alt="Curry District logo" loading="lazy"><figcaption>Stacked</figcaption></figure><figure class="cell wordmark-horizontal"><img class="m-wordmark-horizontal" src="colourways/wordmark-horizontal--foil.svg" alt="Curry District logo" loading="lazy"><figcaption>Horizontal</figcaption></figure><figure class="cell wordmark-text-only"><img class="m-wordmark-text-only" src="colourways/wordmark-text-only--foil.svg" alt="Curry District logo" loading="lazy"><figcaption>Text only</figcaption></figure><figure class="cell lockup-tagline-stacked"><img class="m-lockup-tagline-stacked" src="colourways/lockup-tagline-stacked--foil.svg" alt="Curry District logo" loading="lazy"><figcaption>Tagline · stacked</figcaption></figure><figure class="cell lockup-tagline-horizontal"><img class="m-lockup-tagline-horizontal" src="colourways/lockup-tagline-horizontal--foil.svg" alt="Curry District logo" loading="lazy"><figcaption>Tagline · horizontal</figcaption></figure><figure class="cell seal"><img class="m-seal" src="colourways/seal--foil.svg" alt="Curry District logo" loading="lazy"><figcaption>Seal</figcaption></figure></div></div>
+</div></section>
+
+<section><div class="wrap">
+  <header><div><p class="eyebrow">03 · Colourways</p><h2>Six colourways, one drawing</h2></div>
+  <p>Two-colour sets for print &amp; screen; one-colour gold, ivory and ink for foil blocks, embossing, embroidery, rubber stamps and laser-etching. All files are transparent.</p></header>
+  <div class="cw" style="background:#160B26;color:var(--ivory)"><p class="glabel">Gold foil · on midnight<span>colourways/*--foil.svg</span></p><div class="row"><figure class="cell emblem"><img class="m-emblem" src="colourways/emblem--foil.svg" alt="Curry District logo" loading="lazy"></figure><figure class="cell wordmark-stacked"><img class="m-wordmark-stacked" src="colourways/wordmark-stacked--foil.svg" alt="Curry District logo" loading="lazy"></figure><figure class="cell wordmark-horizontal"><img class="m-wordmark-horizontal" src="colourways/wordmark-horizontal--foil.svg" alt="Curry District logo" loading="lazy"></figure><figure class="cell wordmark-text-only"><img class="m-wordmark-text-only" src="colourways/wordmark-text-only--foil.svg" alt="Curry District logo" loading="lazy"></figure><figure class="cell seal"><img class="m-seal" src="colourways/seal--foil.svg" alt="Curry District logo" loading="lazy"></figure></div></div><div class="cw" style="background:#0F4D3F;color:var(--ivory)"><p class="glabel">Ivory + gold · on emerald<span>colourways/*--emerald.svg</span></p><div class="row"><figure class="cell emblem"><img class="m-emblem" src="colourways/emblem--emerald.svg" alt="Curry District logo" loading="lazy"></figure><figure class="cell wordmark-stacked"><img class="m-wordmark-stacked" src="colourways/wordmark-stacked--emerald.svg" alt="Curry District logo" loading="lazy"></figure><figure class="cell wordmark-horizontal"><img class="m-wordmark-horizontal" src="colourways/wordmark-horizontal--emerald.svg" alt="Curry District logo" loading="lazy"></figure><figure class="cell wordmark-text-only"><img class="m-wordmark-text-only" src="colourways/wordmark-text-only--emerald.svg" alt="Curry District logo" loading="lazy"></figure><figure class="cell seal"><img class="m-seal" src="colourways/seal--emerald.svg" alt="Curry District logo" loading="lazy"></figure></div></div><div class="cw light" style="background:#FBF3E4;color:var(--ink)"><p class="glabel">Midnight + antique gold · on ivory<span>colourways/*--ivory.svg</span></p><div class="row"><figure class="cell emblem"><img class="m-emblem" src="colourways/emblem--ivory.svg" alt="Curry District logo" loading="lazy"></figure><figure class="cell wordmark-stacked"><img class="m-wordmark-stacked" src="colourways/wordmark-stacked--ivory.svg" alt="Curry District logo" loading="lazy"></figure><figure class="cell wordmark-horizontal"><img class="m-wordmark-horizontal" src="colourways/wordmark-horizontal--ivory.svg" alt="Curry District logo" loading="lazy"></figure><figure class="cell wordmark-text-only"><img class="m-wordmark-text-only" src="colourways/wordmark-text-only--ivory.svg" alt="Curry District logo" loading="lazy"></figure><figure class="cell seal"><img class="m-seal" src="colourways/seal--ivory.svg" alt="Curry District logo" loading="lazy"></figure></div></div><div class="cw" style="background:#160B26;color:var(--ivory)"><p class="glabel">One-colour gold<span>colourways/*--mono-gold.svg</span></p><div class="row"><figure class="cell emblem"><img class="m-emblem" src="colourways/emblem--mono-gold.svg" alt="Curry District logo" loading="lazy"></figure><figure class="cell wordmark-stacked"><img class="m-wordmark-stacked" src="colourways/wordmark-stacked--mono-gold.svg" alt="Curry District logo" loading="lazy"></figure><figure class="cell wordmark-horizontal"><img class="m-wordmark-horizontal" src="colourways/wordmark-horizontal--mono-gold.svg" alt="Curry District logo" loading="lazy"></figure><figure class="cell wordmark-text-only"><img class="m-wordmark-text-only" src="colourways/wordmark-text-only--mono-gold.svg" alt="Curry District logo" loading="lazy"></figure><figure class="cell seal"><img class="m-seal" src="colourways/seal--mono-gold.svg" alt="Curry District logo" loading="lazy"></figure></div></div><div class="cw" style="background:#A3173F;color:var(--ivory)"><p class="glabel">One-colour ivory<span>colourways/*--mono-ivory.svg</span></p><div class="row"><figure class="cell emblem"><img class="m-emblem" src="colourways/emblem--mono-ivory.svg" alt="Curry District logo" loading="lazy"></figure><figure class="cell wordmark-stacked"><img class="m-wordmark-stacked" src="colourways/wordmark-stacked--mono-ivory.svg" alt="Curry District logo" loading="lazy"></figure><figure class="cell wordmark-horizontal"><img class="m-wordmark-horizontal" src="colourways/wordmark-horizontal--mono-ivory.svg" alt="Curry District logo" loading="lazy"></figure><figure class="cell wordmark-text-only"><img class="m-wordmark-text-only" src="colourways/wordmark-text-only--mono-ivory.svg" alt="Curry District logo" loading="lazy"></figure><figure class="cell seal"><img class="m-seal" src="colourways/seal--mono-ivory.svg" alt="Curry District logo" loading="lazy"></figure></div></div><div class="cw light" style="background:#FBF3E4;color:var(--ink)"><p class="glabel">One-colour ink<span>colourways/*--mono-ink.svg</span></p><div class="row"><figure class="cell emblem"><img class="m-emblem" src="colourways/emblem--mono-ink.svg" alt="Curry District logo" loading="lazy"></figure><figure class="cell wordmark-stacked"><img class="m-wordmark-stacked" src="colourways/wordmark-stacked--mono-ink.svg" alt="Curry District logo" loading="lazy"></figure><figure class="cell wordmark-horizontal"><img class="m-wordmark-horizontal" src="colourways/wordmark-horizontal--mono-ink.svg" alt="Curry District logo" loading="lazy"></figure><figure class="cell wordmark-text-only"><img class="m-wordmark-text-only" src="colourways/wordmark-text-only--mono-ink.svg" alt="Curry District logo" loading="lazy"></figure><figure class="cell seal"><img class="m-seal" src="colourways/seal--mono-ink.svg" alt="Curry District logo" loading="lazy"></figure></div></div>
+</div></section>
+
+<section><div class="wrap">
+  <header><div><p class="eyebrow">04 · App, social &amp; seals</p><h2>Marks that travel</h2></div>
+  <p>Simplified small-size emblem for tabs and tiny UI; a circle-safe avatar; a text-ring seal for stickers, wax and stamps.</p></header>
+  <div class="marks">
+    <div class="mark"><div class="tab"><img src="favicon.svg" width="16" height="16" alt="">Curry District · Menu</div><div class="tab dark"><img src="favicon.svg" width="16" height="16" alt="">Curry District · Order</div><img src="favicon.svg" width="96" height="96" alt="Favicon"><p><strong>favicon.svg</strong>hand-tuned 32-unit grid · arch, handi, one steam curl</p></div>
+    <div class="mark"><img src="app-icon-512.svg" width="190" height="190" alt="App icon" style="filter:drop-shadow(0 12px 22px rgba(22,11,38,.35))"><div class="phone"><span></span><span></span><img src="app-icon-512.svg" alt=""><span></span></div><p><strong>app-icon-512.svg</strong>rounded square · jali lattice · candle glow</p></div>
+    <div class="mark"><div class="avatar"><img src="social-avatar-1080.svg" alt="Social avatar"></div><p><strong>social-avatar-1080.svg</strong>full-bleed square; all artwork inside the circle crop</p></div>
+    <div class="mark" style="background:var(--ink)"><img src="seal.svg" style="width:250px;max-width:100%" alt="Seal"><p style="color:#CDBFD6"><strong style="color:var(--gold-lt)">seal.svg</strong>“CURRY DISTRICT · LITTLE ELM TEXAS ·” outlined on the ring</p></div>
+    <div class="mark"><div class="seals"><img src="colourways/seal--emerald.svg" alt="Emerald seal"><img src="colourways/seal--ivory.svg" alt="Ivory seal"><img src="colourways/seal--mono-ink.svg" alt="Ink stamp"><img src="colourways/seal--mono-gold.svg" style="background:var(--ink);border-radius:50%" alt="Gold stamp"></div><p><strong>seal colourways</strong>sticker discs (emerald, ivory) · stamp &amp; foil (one-colour)</p></div>
+    <div class="mark waxcard"><img src="seal-wax.svg" style="width:250px;max-width:100%" alt="Wax seal"><p><strong>seal-wax.svg</strong>ruby wax tag for takeaway bags &amp; gift boxes</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <header><div><p class="eyebrow">05 · Size tests</p><h2>24px and 48px</h2></div>
+  <p>Left to right: favicon · small emblem · detailed emblem · horizontal · text-only · stacked (at 2×). Below 48px use the small emblem — the detailed one’s beading turns to haze.</p></header>
+  <div class="sizes" style="background:var(--ink)"><div class="sz"><span class="px">24px</span><img src="favicon.svg" width="24" height="24" alt="favicon 24px"><img src="colourways/emblem-small--foil.svg" style="height:24px" alt="small emblem 24px"><img src="colourways/emblem--foil.svg" style="height:24px" alt="detailed emblem 24px"><img src="colourways/wordmark-horizontal--foil.svg" style="height:24px" alt="horizontal 24px"><img src="colourways/wordmark-text-only--foil.svg" style="height:24px" alt="text only 24px"><img src="colourways/wordmark-stacked--foil.svg" style="height:48px" alt="stacked 48px"></div><div class="sz"><span class="px">48px</span><img src="favicon.svg" width="48" height="48" alt="favicon 48px"><img src="colourways/emblem-small--foil.svg" style="height:48px" alt="small emblem 48px"><img src="colourways/emblem--foil.svg" style="height:48px" alt="detailed emblem 48px"><img src="colourways/wordmark-horizontal--foil.svg" style="height:48px" alt="horizontal 48px"><img src="colourways/wordmark-text-only--foil.svg" style="height:48px" alt="text only 48px"><img src="colourways/wordmark-stacked--foil.svg" style="height:96px" alt="stacked 96px"></div></div><div class="sizes" style="background:var(--ivory)"><div class="sz"><span class="px">24px</span><img src="favicon.svg" width="24" height="24" alt="favicon 24px"><img src="colourways/emblem-small--mono-ink.svg" style="height:24px" alt="small emblem 24px"><img src="colourways/emblem--mono-ink.svg" style="height:24px" alt="detailed emblem 24px"><img src="colourways/wordmark-horizontal--mono-ink.svg" style="height:24px" alt="horizontal 24px"><img src="colourways/wordmark-text-only--mono-ink.svg" style="height:24px" alt="text only 24px"><img src="colourways/wordmark-stacked--mono-ink.svg" style="height:48px" alt="stacked 48px"></div><div class="sz"><span class="px">48px</span><img src="favicon.svg" width="48" height="48" alt="favicon 48px"><img src="colourways/emblem-small--mono-ink.svg" style="height:48px" alt="small emblem 48px"><img src="colourways/emblem--mono-ink.svg" style="height:48px" alt="detailed emblem 48px"><img src="colourways/wordmark-horizontal--mono-ink.svg" style="height:48px" alt="horizontal 48px"><img src="colourways/wordmark-text-only--mono-ink.svg" style="height:48px" alt="text only 48px"><img src="colourways/wordmark-stacked--mono-ink.svg" style="height:96px" alt="stacked 96px"></div></div><div class="sizes" style="background:var(--emerald)"><div class="sz"><span class="px">24px</span><img src="colourways/emblem-small--emerald.svg" style="height:24px" alt="small emblem 24px"><img src="colourways/emblem--emerald.svg" style="height:24px" alt="detailed emblem 24px"><img src="colourways/wordmark-horizontal--emerald.svg" style="height:24px" alt="horizontal 24px"><img src="colourways/wordmark-text-only--emerald.svg" style="height:24px" alt="text only 24px"><img src="colourways/wordmark-stacked--emerald.svg" style="height:48px" alt="stacked 48px"></div><div class="sz"><span class="px">48px</span><img src="colourways/emblem-small--emerald.svg" style="height:48px" alt="small emblem 48px"><img src="colourways/emblem--emerald.svg" style="height:48px" alt="detailed emblem 48px"><img src="colourways/wordmark-horizontal--emerald.svg" style="height:48px" alt="horizontal 48px"><img src="colourways/wordmark-text-only--emerald.svg" style="height:48px" alt="text only 48px"><img src="colourways/wordmark-stacked--emerald.svg" style="height:96px" alt="stacked 96px"></div></div><div class="sizes" style="background:var(--ruby)"><div class="sz"><span class="px">24px</span><img src="colourways/emblem-small--mono-ivory.svg" style="height:24px" alt="small emblem 24px"><img src="colourways/emblem--mono-ivory.svg" style="height:24px" alt="detailed emblem 24px"><img src="colourways/wordmark-horizontal--mono-ivory.svg" style="height:24px" alt="horizontal 24px"><img src="colourways/wordmark-text-only--mono-ivory.svg" style="height:24px" alt="text only 24px"><img src="colourways/wordmark-stacked--mono-ivory.svg" style="height:48px" alt="stacked 48px"></div><div class="sz"><span class="px">48px</span><img src="colourways/emblem-small--mono-ivory.svg" style="height:48px" alt="small emblem 48px"><img src="colourways/emblem--mono-ivory.svg" style="height:48px" alt="detailed emblem 48px"><img src="colourways/wordmark-horizontal--mono-ivory.svg" style="height:48px" alt="horizontal 48px"><img src="colourways/wordmark-text-only--mono-ivory.svg" style="height:48px" alt="text only 48px"><img src="colourways/wordmark-stacked--mono-ivory.svg" style="height:96px" alt="stacked 96px"></div></div>
+</div></section>
+
+<section><div class="wrap">
+  <header><div><p class="eyebrow">06 · Usage</p><h2>Clear space &amp; minimum sizes</h2></div></header>
+  <div class="rules">
+    <div class="card"><h3>Clear space</h3>
+      <p style="margin-top:0;color:#6B5A73">X = cap height of <b>DISTRICT</b>. Keep 2X clear on every side of any lockup. For the emblem or seal alone, keep ¼ of the mark’s width clear.</p>
+      <div style="display:grid;place-items:center;padding:8px 0"><div class="clear"><img src="colourways/wordmark-stacked--ivory.svg" alt="Clear space diagram"><b style="top:10px;left:50%;transform:translateX(-50%)">2X</b><b style="bottom:10px;left:50%;transform:translateX(-50%)">2X</b><b style="left:6px;top:50%">2X</b><b style="right:6px;top:50%">2X</b></div></div>
+    </div>
+    <div class="card"><h3>Minimum sizes</h3><table>
+      <tr><td>Emblem · detailed (foil / emboss ≥ 25 mm)</td><td>64 px · 20 mm tall</td></tr>
+      <tr><td>Emblem · small &amp; favicon</td><td>16 px · 6 mm tall</td></tr>
+      <tr><td>Stacked lockup</td><td>110 px · 30 mm wide</td></tr>
+      <tr><td>Horizontal lockup</td><td>160 px · 40 mm wide</td></tr>
+      <tr><td>Text-only wordmark</td><td>90 px · 24 mm wide</td></tr>
+      <tr><td>Tagline lockups</td><td>220 px · 55 mm wide</td></tr>
+      <tr><td>Seal (ring text legible)</td><td>120 px · 30 mm Ø</td></tr>
+    </table></div>
+    <div class="card"><h3>Please don’t</h3>
+      <div class="dont">
+        <div><img src="colourways/emblem--foil.svg" style="filter:hue-rotate(160deg)" alt="">Recolour outside the six colourways</div>
+        <div><img src="colourways/wordmark-text-only--ivory.svg" style="transform:scaleX(1.35)" alt="">Stretch or condense</div>
+        <div style="background:var(--peacock)"><img src="colourways/wordmark-text-only--ivory.svg" alt="">Midnight text on mid-tone grounds</div>
+        <div><img src="colourways/emblem--ivory.svg" style="transform:rotate(-12deg)" alt="">Rotate or tilt the gate</div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap"><img src="colourways/wordmark-horizontal--foil.svg" alt="Curry District">
+<span>Independent design concept prepared as a proposal — not the official Curry District website.</span></div></footer>
+</body>
+</html>

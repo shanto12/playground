@@ -102,6 +102,45 @@ The thumbnail slot shows `--idea-g` when there is no image. Use `<a class="idea"
 - Viewer controls: swipe (touch, pen or mouse drag); pinch (native); double-tap or double-click to zoom and pan; ← → keys; Esc or the close button. Focus moves to Close and the rest of the page is `inert` while open.
 - From JS: `Hub.openLightbox([{src, alt, caption}], startIndex)`.
 
+## 8b. Manifest-driven gallery ★ (drop assets in, no HTML edits)
+```html
+<section class="section" aria-labelledby="g1"><div class="wrap">
+  <div class="sec-head"><h2 class="sec-head__title" id="g1">Boxes &amp; bags</h2></div>
+  <div data-gallery
+       data-manifests="assets/boxes/manifest.json,assets/bags/manifest.json"
+       data-filter="direction,type,tags"></div>
+</div></section>
+```
+**Manifest** (`hub/<area>/assets/boxes/manifest.json`). **All paths are relative to the AREA folder** (the folder holding the page), not to the manifest:
+```json
+{ "helper": "boxes",
+  "items": [
+    { "id": "pail-bazaar", "title": "Takeout pail — Bazaar", "direction": "bazaar",
+      "type": "image", "src": "assets/boxes/pail-bazaar.png", "thumb": "assets/boxes/pail-bazaar-thumb.jpg",
+      "w": 1600, "h": 1200, "caption": "One-line why it works", "tags": ["box", "takeout"],
+      "download": "assets/boxes/pail-bazaar.svg" },
+    { "id": "reel-1", "title": "Biryani reel", "direction": "royal", "type": "video",
+      "src": "assets/reels/biryani.mp4", "poster": "assets/reels/biryani.jpg", "w": 1080, "h": 1920 },
+    { "id": "box-3d", "title": "Spin the box", "direction": "both", "type": "interactive",
+      "src": "assets/boxes/box-3d-thumb.jpg", "thumb": "assets/boxes/box-3d-thumb.jpg", "href": "viewer/index.html" },
+    { "id": "spec", "title": "Print spec", "direction": "both", "type": "pdf",
+      "src": "assets/boxes/spec.pdf", "thumb": "assets/boxes/spec-thumb.jpg" }
+  ] }
+```
+- **Fields.** `direction` is `bazaar`, `royal` or `both` (default both). `type` is `image` (default), `video`, `interactive` or `pdf`. Only `src` is required. Give `w` and `h` so the masonry tile has the right shape before loading (default 4:5). `thumb` falls back to `src` for images and to `poster` for video.
+- **Rendering.** Lazy-loaded masonry: 2, 3 or 4 columns at 0, 768 and 1100px. Each tile shows its title, plus a ▶ badge on video and an "Interactive" or "PDF" pill.
+- **Filter chips.** `data-filter` lists which facets to offer.
+  - Direction chips appear only if the items include both Bazaar and Royal. They drive the **global** A/B switch, and the gallery always respects the global switch.
+  - Type chips appear only if there is more than one type.
+  - Tag chips appear only if there is more than one tag, showing the 14 most common.
+- **Clicking.**
+  - `image` and `video` open the lightbox. Video plays there with `controls playsinline muted loop`. A **Download** button appears when the item has `download`. Swiping moves through the currently filtered images and videos.
+  - `interactive` opens `href` in a full-screen iframe sheet, with close (also Esc) and open-in-new-tab.
+  - `pdf` opens in a new tab.
+- **Missing files.** Missing or 404 manifests and broken thumbnails are skipped silently, and a broken thumbnail shows a gradient placeholder. Duplicate `id`s are merged.
+- **Testing.** `fetch()` is blocked on `file://`. Serve with `npx http-server /home/user/playground/hub -p 8080 -s` and open `http://127.0.0.1:8080/<area>/`. For a quick `file://` check you can also add an inline manifest inside the element: `<script type="application/json" data-gallery-items>{"items":[…]}</script>`.
+- **JS.** `Hub.renderGallery(el, items)` renders manifest-style items directly (no fetch). `Hub.openFrame(href, title)` opens the iframe sheet.
+
 ## 9. Before / after slider
 ```html
 <div class="ba" style="--ar:4/3">

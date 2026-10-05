@@ -2,7 +2,7 @@
 // Roles: s:'line' = gold stroke · f: 'emerald'|'ruby'|'peacock' = jewel accent fill (tinted in mono)
 //        f:'gold'|'pin'|'veg'|'nonveg' = solid fill (solid in mono) · f:'plate' = ivory backing (dropped in mono)
 import {
-  P, C, E, R, L, T, fillOnly, visibleArcs, insideCircle, below, polar, fmt, samplePath, r2,
+  P, C, E, R, L, T, fillOnly, visibleArcs, visiblePath, insideCircle, insidePath, below, polar, fmt, samplePath, r2,
 } from './geom.mjs';
 
 export const ICONS = [];
@@ -21,34 +21,61 @@ function mapPath(d, f) {
 }
 const scaled = (d, s, ox = 0) => mapPath(d, (x, y) => [(x + ox) * s, y * s]);
 
-// ───────────────────────── SPICE SCALE · "chili rosette" ─────────────────────────
-// N chilies radiating from a gold medallion: 1 · 2 · 3 · 4 · 5 → line, bar, Y, X, star silhouettes.
-function chiliPetal(s, o) {
-  return [
-    P(scaled('M9.4 -4.5C15 -5.2 22.5 -3.6 28.6 3.4C21 2.6 14.6 4.9 9.4 4.5Z', s, o), fillOnly('ruby')),
-    P(scaled('M10.6 -4.9C8.2 -5 6.6 -2.6 6.6 0C6.6 2.6 8.2 5 10.6 4.9C9.6 2.2 9.6 -2.2 10.6 -4.9Z', s, o), { f: 'emerald' }),
-    P(scaled('M10.5 -4.75C15.5 -5.2 22.5 -3.6 28.6 3.4C21 2.6 15 4.9 10.5 4.75', s, o)),
-    P(scaled('M13.4 -2C17.6 -2.5 21.2 -1.6 24 0.4', s, o)),
-    P(`M3.3 0L${r2((6.6 + o) * s)} 0`),
-  ];
+// ───────────────────────── SPICE SCALE · "chili gauge" ─────────────────────────
+// The hero chili, laid lower, fills with ruby from stem to tip like a gauge (1/5 … 5/5),
+// over a row of five gem pips (solid = lit). Double-coded: reads by colour AND by count, in colour or mono.
+const CHILI = {
+  body: 'M15.6 18.5C25 14 36 20 41 31C45 40 48 47 55 53.5C44.5 54.5 35 49 29 42C22.5 34.5 16 28 14.3 22.6C13.8 21 14.3 19.3 15.6 18.5Z',
+  calyx: 'M12 21.5C11.5 16 16.5 11.8 23 13.5C21.8 16.2 20.2 17.6 18 18C17.8 20.4 15.6 22.2 12 21.5Z',
+  outline: 'M21 16.4C29.5 16.5 37 22.5 41 31C45 40 48 47 55 53.5C44.5 54.5 35 49 29 42C22.5 34.5 17.5 28.5 14.6 21.8',
+  stem: 'M17.4 13.8C16.4 9.6 13.4 7.6 9.4 8',
+  shine: 'M24.5 21.5C30.5 23 35 28 38 34.5',
+};
+function chiliXf(deg, box) { // rotate about origin, then scale+translate to fit box [x0,y0,x1,y1]
+  const a = (deg * Math.PI) / 180, ca = Math.cos(a), sa = Math.sin(a);
+  const rot = (x, y) => [x * ca - y * sa, x * sa + y * ca];
+  const all = [...samplePath(CHILI.body), ...samplePath(CHILI.calyx), ...samplePath(CHILI.stem)].map(([x, y]) => rot(x, y));
+  const xs = all.map((p) => p[0]), ys = all.map((p) => p[1]);
+  const bx0 = Math.min(...xs), bx1 = Math.max(...xs), by0 = Math.min(...ys), by1 = Math.max(...ys);
+  const k = Math.min((box[2] - box[0]) / (bx1 - bx0), (box[3] - box[1]) / (by1 - by0));
+  const ox = box[0] + ((box[2] - box[0]) - (bx1 - bx0) * k) / 2 - bx0 * k;
+  const oy = box[1] + ((box[3] - box[1]) - (by1 - by0) * k) / 2 - by0 * k;
+  return (x, y) => { const [rx, ry] = rot(x, y); return [rx * k + ox, ry * k + oy]; };
 }
-function rosette(n) {
-  const cfg = {
-    1: { angles: [42], s: 1.28, o: 0.6, hub: [17.5, 19] },
-    2: { angles: [-138, 42], s: 0.98, o: 1.2, hub: [32, 32] },
-    3: { angles: [-90, 30, 150], s: 0.9, o: 1.2, hub: [32, 33.5] },
-    4: { angles: [-135, -45, 45, 135], s: 0.92, o: 1.2, hub: [32, 32] },
-    5: { angles: [-90, -18, 54, 126, 198], s: 0.9, o: 1.4, hub: [32, 33] },
-  }[n];
-  const [hx, hy] = cfg.hub;
+function clipHalf(poly, inside, cut) { // Sutherland–Hodgman against a half-plane
+  const out = [];
+  for (let i = 0; i < poly.length; i++) {
+    const a = poly[i], b = poly[(i + 1) % poly.length];
+    const ia = inside(a), ib = inside(b);
+    if (ia) out.push(a);
+    if (ia !== ib) out.push(cut(a, b));
+  }
+  return out;
+}
+function gauge(level) {
+  const f = chiliXf(-24, [7, 6.5, 57, 41]);
+  const tp = (d) => mapPath(d, f);
+  // gauge axis: from calyx shoulder to tip (in transformed space)
+  const A = f(16.5, 19.5), B = f(55, 53.5);
+  const ax = B[0] - A[0], ay = B[1] - A[1], len = Math.hypot(ax, ay), ux = ax / len, uy = ay / len;
+  const proj = (p) => (p[0] - A[0]) * ux + (p[1] - A[1]) * uy;
+  const lim = level >= 5 ? 1e9 : (len * level) / 5 * 0.96;
+  const poly = samplePath(CHILI.body, 40).map(([x, y]) => f(x, y));
+  const fill = fmt(clipHalf(poly, (p) => proj(p) <= lim, (a, b) => { const pa = proj(a), pb = proj(b), t = (lim - pa) / (pb - pa); return [a[0] + t * (b[0] - a[0]), a[1] + t * (b[1] - a[1])]; })) + 'Z';
+  const pipX = [13, 22.5, 32, 41.5, 51];
+  const pips = pipX.map((x, i) => (i < level
+    ? P(`M${x} 46.6L${x + 4.2} 50.8L${x} 55L${x - 4.2} 50.8Z`, { f: 'pin' })
+    : C(x, 50.8, 1.5, fillOnly('gold'))));
   return [
-    ...cfg.angles.map((a) => T(`translate(${hx} ${hy}) rotate(${a})`, chiliPetal(cfg.s, cfg.o))),
-    C(hx, hy, 3.2, n === 5 ? { f: 'ruby' } : {}),
-    gold(hx, hy, 1.1),
+    P(fill, fillOnly('ruby')),
+    P(tp(CHILI.calyx), { f: 'emerald' }),
+    P(tp(CHILI.outline)),
+    P(tp(CHILI.stem)),
+    pips,
   ];
 }
 const SPICE = ['Mild', 'Medium', 'Hot', 'Extra-Hot', 'District Hot'];
-for (let i = 1; i <= 5; i++) add(`chili-${i}`, `Spice ${i} · ${SPICE[i - 1]}`, 'spice', rosette(i));
+for (let i = 1; i <= 5; i++) add(`chili-${i}`, `Spice ${i} · ${SPICE[i - 1]}`, 'spice', gauge(i));
 
 // ───────────────────────── DIET MARKS (FSSAI-style) ─────────────────────────
 const plate = () => [R(8, 8, 48, 48, 8, fillOnly('plate')), R(8, 8, 48, 48, 8, { mono: false })];
@@ -96,22 +123,30 @@ add('curry-bowl', 'Curry bowl', 'food',
   );
 }
 
-add('naan', 'Naan', 'food',
-  P('M19.5 54.5C10.5 51 7.5 39.5 13.5 29C21 16 38.5 9.5 54.5 9C55 22.5 47 38.5 35 48.5C30 52.5 25 55.5 19.5 54.5Z'),
-  E(23.5, 42, 3.6, 2.3, { transform: 'rotate(-38 23.5 42)' }),
-  C(31, 31.5, 2.7),
-  E(42, 22.5, 3, 2, { transform: 'rotate(-38 42 22.5)' }),
-  C(19, 33, 1.5),
-  gold(29.5, 45.5, 1.3), gold(38.5, 32, 1.5), gold(47.5, 18.5, 1.2), gold(25, 25.5, 1.2), gold(37, 40.5, 1.1),
-);
+{
+  const front = 'M11.5 51C5.6 44.4 7.4 34.4 15.6 29C23.6 23.4 34.6 15.4 45.4 12.4C50.6 11 54.4 14 52.4 18.8C49 27 40.6 35.6 32.8 42.4C26.4 48.2 19.6 56.6 11.5 51Z';
+  const back = 'M19.6 41C13.6 34.4 15.4 25.4 23.6 20C31.6 14.4 41.6 7.4 51.4 5.6C56.6 4.6 59.4 8 57.6 12.4C54.2 20.6 47.6 27 40.8 33.4C34.4 39.2 27.6 46.6 19.6 41Z';
+  add('naan', 'Naan', 'food',
+    P(visiblePath(back, [insidePath(front)], 80)),
+    P(front),
+    E(19.5, 44.5, 3.6, 2.3, { transform: 'rotate(-40 19.5 44.5)' }),
+    C(27, 35.6, 2.7),
+    E(39.6, 25, 3, 2, { transform: 'rotate(-40 39.6 25)' }),
+    C(16.4, 37, 1.5), C(33.8, 31.6, 1.4),
+    gold(26.8, 45.4, 1.3), gold(31.6, 38.6, 1.1), gold(45.6, 18.6, 1.2), gold(22.6, 30.4, 1.1), gold(13.6, 47.6, 1),
+  );
+}
 
-add('samosa', 'Samosa', 'food',
-  P('M31 8.5L8.5 46Q22.5 51.5 37.5 55Q48 49.5 55.5 44.5Z'),
-  P('M31 8.5L37.5 55'),
-  P('M34.6 15.5L40.4 49.5', { dots: 3.8 }),
-  gold(19.5, 40, 1.3), gold(25.5, 30, 1.1), gold(28.5, 45, 1.2), gold(24.5, 38.5, 0.9),
-);
-
+{
+  add('samosa', 'Samosa', 'food',
+    E(49.5, 49, 8.4, 2.6, { f: 'emerald' }),
+    P('M41.1 49C41.6 54.6 57.4 54.6 57.9 49'),
+    P('M24 9.6C17.2 19.6 10.2 32 7.2 41.6Q6 45.4 9.6 46.6C16 49.4 22 51.6 27.6 53Q30 53.6 32 52.4C36.4 49.2 40.2 45.6 43.4 42.4Q45.4 40.4 44 38C38.4 28.4 31.4 18 26.4 10.4Q25.2 8.8 24 9.6Z'),
+    P('M25 10.6C26.8 24.6 28.6 38.6 29.8 52.4'),
+    P('M28.6 15.6C32.4 23.4 36.6 31 40.6 38.6', { dots: 3.6 }),
+    gold(16.6, 38.4, 1.3), gold(21.6, 29.4, 1.1), gold(22.4, 44.2, 1.2), gold(35.2, 41.4, 1.1),
+  );
+}
 add('kebab-skewer', 'Kebab skewer', 'food',
   T('rotate(-40 32 32)', [
     R(26, 26, 5, 12, 2.5, { f: 'ruby' }),
@@ -151,7 +186,6 @@ add('lassi-glass', 'Lassi glass', 'food',
   P('M19.4 19.5C17.8 15 21.4 12 25.6 13.4C27.6 9.8 33.6 9.4 36.2 12.9C39.8 10.8 45.2 13 44.6 19.5'),
   P('M40.2 11.4L47.5 4'),
   P('M24.2 48.5H39.8', { dots: 3.9 }),
-  P('M29 25V41'),
 );
 
 {
@@ -185,23 +219,24 @@ add('lassi-glass', 'Lassi glass', 'food',
 }
 
 {
-  const heap = 'M13 44.5C13 35 19 28.5 25 26.8L23.5 19.5L30.6 25.4C32.8 25 35 25 37 25.4L42.5 18L41.5 27.8C46.5 30.5 51 36 51 44.5C46 49 18 49 13 44.5Z';
+  const A = [20.6, 37.6, 9], B = [41.4, 37.6, 9], Cc = [31, 28.4, 8.4];
+  const plateBack = visibleArcs(32, 45, 26, 8.4, [insideCircle(...A), insideCircle(...B), insideCircle(...Cc), ([x, y]) => y > 45]);
   add('chaat-plate', 'Chaat plate', 'food',
-    P(heap),
-    P('M16.5 38C20 33.5 23 41.5 27 36.5C31 31.5 33 40.5 37 35.5C41 30.5 44 39.5 47.5 35'),
-    C(21, 42.4, 1.7, fillOnly('ruby')), C(31.5, 43.6, 1.7, fillOnly('ruby')), C(42, 42.2, 1.7, fillOnly('ruby')),
-    gold(26, 31, 0.9), gold(35, 30, 0.9), gold(44, 33.2, 0.9),
-    P('M8.5 42.6C4.6 44.2 5 48.6 13 51C24 54 40 54 51 51C59 48.6 59.4 44.2 55.5 42.6'),
-    P('M17 52.6L16 56M47 52.6L48 56'),
+    E(18.6, 33.6, 4.6, 2.5, { f: 'ruby', transform: 'rotate(-12 18.6 33.6)' }),
+    E(43.4, 33.6, 4.6, 2.5, { f: 'emerald', transform: 'rotate(12 43.4 33.6)' }),
+    P(visibleArcs(Cc[0], Cc[1], Cc[2], Cc[2], [insideCircle(...A), insideCircle(...B)])),
+    P(visibleArcs(A[0], A[1], A[2], A[2], [])),
+    P(visibleArcs(B[0], B[1], B[2], B[2], [])),
+    P(plateBack),
+    P('M6 45C6 49.6 17.6 53.4 32 53.4C46.4 53.4 58 49.6 58 45'),
+    gold(24.6, 42.6, 1), gold(15.6, 41, 0.9), gold(45.4, 42.6, 1), gold(37.4, 41.2, 0.9), gold(31, 24.4, 0.9), gold(27.4, 30.2, 0.8), gold(34.6, 29.6, 0.8),
   );
 }
 
 add('chili', 'Chili', 'food',
-  P('M15.6 18.5C25 14 36 20 41 31C45 40 48 47 55 53.5C44.5 54.5 35 49 29 42C22.5 34.5 16 28 14.3 22.6C13.8 21 14.3 19.3 15.6 18.5Z', fillOnly('ruby')),
-  P('M12 21.5C11.5 16 16.5 11.8 23 13.5C21.8 16.2 20.2 17.6 18 18C17.8 20.4 15.6 22.2 12 21.5Z', { f: 'emerald' }),
-  P('M21 16.4C29.5 16.5 37 22.5 41 31C45 40 48 47 55 53.5C44.5 54.5 35 49 29 42C22.5 34.5 17.5 28.5 14.6 21.8'),
-  P('M17.4 13.8C16.4 9.6 13.4 7.6 9.4 8'),
-  P('M24.5 21.5C30.5 23 35 28 38 34.5'),
+  P(CHILI.body, fillOnly('ruby')),
+  P(CHILI.calyx, { f: 'emerald' }),
+  P(CHILI.outline), P(CHILI.stem), P(CHILI.shine),
 );
 
 {
@@ -218,8 +253,8 @@ add('chili', 'Chili', 'food',
 
 {
   const leaf = (s) => [
-    P(scaled('M0 0C-3 -1 -7 -3 -7 -7C-9.5 -9 -7.5 -13.5 -4 -12.5C-3 -15.5 3 -15.5 4 -12.5C7.5 -13.5 9.5 -9 7 -7C7 -3 3 -1 0 0Z', s), { f: 'emerald' }),
-    P(scaled('M0 -1.2L0 -10.5', s)),
+    P(scaled('M0 0C-2 -1 -4.5 -2 -5 -3.6C-8.8 -3.4 -10 -8.6 -6.6 -10C-5.6 -10.4 -4 -10 -2.8 -9.2C-4 -13 -2 -15.6 0 -15.6C2 -15.6 4 -13 2.8 -9.2C4 -10 5.6 -10.4 6.6 -10C10 -8.6 8.8 -3.4 5 -3.6C4.5 -2 2 -1 0 0Z', s), { f: 'emerald' }),
+    P(scaled('M0 -1.2L0 -11.6M0 -4L-4.6 -7.2M0 -4L4.6 -7.2', s)),
   ];
   add('cilantro', 'Cilantro', 'food',
     P('M31 58C31 48 31.5 36 33 25'),
@@ -299,10 +334,10 @@ add('delivery-scooter', 'Delivery scooter', 'utility',
 
 {
   const pts = []; for (let k = 0; k < 10; k++) pts.push(polar(32, 33.5, k % 2 ? 10.4 : 24, -90 + k * 36));
-  const bevel = [1, 3, 5, 7, 9].map((k) => fmt([[32, 33.5], polar(32, 33.5, 10.4 * 0.62, -90 + k * 36)])).join('');
+  const inner = []; for (let k = 0; k < 10; k++) inner.push(polar(32, 33.5, k % 2 ? 6.2 : 14.2, -90 + k * 36));
   add('star', 'Star', 'utility',
     P(fmt(pts) + 'Z'),
-    P(bevel),
+    P(fmt(inner) + 'Z', { dots: 3.2 }),
   );
 }
 

@@ -1,1 +1,377 @@
-<!doctype html><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>Curry District — concept hub (loading)</title><body style="font-family:system-ui;display:grid;place-items:center;height:100vh;background:#1b0f2e;color:#ffb703"><h1>Curry District concept hub — deploying…</h1></body>
+<!doctype html>
+<html lang="en" data-dir="both">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Curry District — Brand Glow-Up</title>
+<meta name="description" content="Two ways to look as good as you taste: two new website concepts, ten ideas and a full sample kit for Curry District, Little Elm.">
+<meta name="theme-color" content="#120C1E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Curry District · Brand Glow-Up">
+<meta property="og:title" content="Curry District — Brand Glow-Up">
+<meta property="og:description" content="Two ways to look as good as you taste. Two website concepts, ten ideas, one sample kit.">
+<meta property="og:url" content="https://curry-district-pitch.netlify.app/">
+<meta property="og:image" content="https://curry-district-pitch.netlify.app/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/hub.css">
+<script>try{var d=localStorage.getItem('cd-hub-dir');if(d)document.documentElement.setAttribute('data-dir',d)}catch(e){}document.documentElement.classList.add('js')</script>
+<script src="assets/config.js" defer></script>
+<script src="assets/hub.js" defer></script>
+<style>
+/* ── home-only styles ── */
+.hero__grid{display:grid;gap:clamp(36px,7vw,64px);align-items:center}
+@media (min-width:960px){.hero__grid{grid-template-columns:1.15fr .85fr}}
+.hero__title .grad-text{display:inline-block;padding-bottom:.06em}
+.duo{position:relative;height:clamp(250px,66vw,420px);max-width:520px;width:100%;margin-inline:auto}
+.duo__card{position:absolute;display:flex;flex-direction:column;justify-content:space-between;width:68%;aspect-ratio:4/5;padding:clamp(14px,3.6vw,24px);text-decoration:none;transition:transform .6s var(--hub-ease),box-shadow .6s var(--hub-ease)}
+.duo__card--a{left:0;top:4%;z-index:2;background:#FFF4DC;color:#1D1147 !important;border:3px solid #1D1147;border-radius:22px;box-shadow:7px 7px 0 #1D1147,0 30px 60px -30px rgba(0,0,0,.8);transform:rotate(-5deg);animation:duoA 7s ease-in-out infinite alternate}
+.duo__card--b{right:0;top:0;z-index:1;background:radial-gradient(120% 80% at 50% 0%,#4B1D52 0%,#160B26 65%);color:#FBF3E4 !important;border:1px solid rgba(233,166,58,.6);border-radius:28px;box-shadow:0 30px 70px -26px rgba(0,0,0,.9),inset 0 0 0 6px #160B26,inset 0 0 0 7px rgba(233,166,58,.45);transform:rotate(4deg) translateY(10%);animation:duoB 8s ease-in-out infinite alternate}
+.duo__card:hover,.duo__card:focus-visible{z-index:3}
+.duo__card--a:hover{transform:rotate(-2deg) translateY(-4px) scale(1.02)}
+.duo__card--b:hover{transform:rotate(1.5deg) translateY(6%) scale(1.02)}
+.duo__tag{font:700 .6875rem/1 var(--hub-font-body);letter-spacing:.14em;text-transform:uppercase}
+.duo__card--a .duo__tag{display:inline-block;align-self:flex-start;padding:6px 10px;border-radius:999px;background:#1D1147;color:#FFF4DC}
+.duo__card--b .duo__tag{color:#F7D98A;align-self:flex-end}
+.duo__word--a{font:400 clamp(1.7rem,7.8vw,2.9rem)/.9 'Bowlby One','Arial Black',sans-serif;text-transform:uppercase;letter-spacing:.005em}
+.duo__word--a span{color:#E4147E;display:block}
+.duo__word--b{font:600 clamp(1.7rem,7.6vw,2.8rem)/.98 var(--hub-font-display);letter-spacing:-.02em;text-align:right}
+.duo__word--b em{display:block;font-weight:400;background:linear-gradient(135deg,#B7791F 0%,#F7D98A 38%,#E9A63A 58%,#B7791F 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.duo__line{font:600 clamp(.75rem,2.6vw,.9375rem)/1.3 var(--hub-font-body);margin:0}
+.duo__card--b .duo__line{font:italic 400 clamp(.8125rem,2.8vw,1rem)/1.3 var(--hub-font-display);color:#F4C9BB;text-align:right}
+.duo__dots{display:flex;gap:6px}
+.duo__card--b .duo__dots{justify-content:flex-end}
+.duo__dots i{width:clamp(14px,3.6vw,20px);aspect-ratio:1;border-radius:50%}
+.duo__card--a .duo__dots i{border:2px solid #1D1147}
+.duo__sun{position:absolute;right:14px;top:14px;width:clamp(44px,12vw,70px);height:auto}
+.duo__arch{position:absolute;left:16px;top:16px;width:clamp(36px,10vw,58px);height:auto;opacity:.9}
+@keyframes duoA{to{transform:rotate(-3deg) translateY(-8px)}}
+@keyframes duoB{to{transform:rotate(5.5deg) translateY(12%)}}
+
+.marquee{margin-top:clamp(44px,8vw,80px);border-block:1px solid var(--hub-line);overflow:hidden;white-space:nowrap;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marquee__track{display:inline-flex;gap:0;padding-block:14px;animation:marq 48s linear infinite}
+.marquee__track span{font:italic 400 clamp(1.125rem,3.6vw,1.5rem)/1 var(--hub-font-display);color:var(--hub-soft);padding-inline:18px;display:inline-flex;align-items:center;gap:36px}
+.marquee__track span::after{content:"";width:8px;height:8px;border-radius:50%;background:var(--g-bazaar);flex:none}
+.marquee__track span:nth-child(3n+2)::after{background:var(--g-gold)}
+.marquee__track span:nth-child(3n)::after{background:#00A8A0}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+.found__grid{display:grid;gap:14px}
+@media (min-width:768px){.found__grid{grid-template-columns:repeat(3,1fr)}}
+.gap-card{margin-top:14px;display:grid;gap:14px;align-items:center}
+.gap-card__big{font:700 clamp(1.5rem,5.4vw,2.25rem)/1.1 var(--hub-font-display);letter-spacing:-.02em;margin:0}
+.gap-card__big em{font-weight:400}
+.gap-meter{display:grid;gap:10px;margin:4px 0 0}
+.gap-meter__row{display:grid;grid-template-columns:7.5rem 1fr 2.6rem;align-items:center;gap:10px;font-size:.875rem;color:var(--hub-soft)}
+.gap-meter__bar{height:10px;border-radius:10px;background:rgba(255,244,220,.08);overflow:hidden}
+.gap-meter__bar i{display:block;height:100%;border-radius:inherit;width:var(--v);background:var(--g);transform-origin:left;transition:transform 1.2s var(--hub-ease) .2s}
+html.js .gap-meter:not(.is-in) .gap-meter__bar i{transform:scaleX(0)}
+.gap-meter__row b{font-variant-numeric:tabular-nums;color:var(--hub-text);text-align:right}
+@media (min-width:900px){.gap-card{grid-template-columns:1fr 1.1fr auto;gap:32px}}
+
+.site-card{display:grid;gap:22px;align-content:start;padding:clamp(18px,4vw,28px);border-radius:28px;background:linear-gradient(180deg,rgba(255,244,220,.06),rgba(255,244,220,.02));border:1px solid var(--hub-line);position:relative;overflow:hidden;isolation:isolate}
+.site-card::before{content:"";position:absolute;z-index:-1;left:50%;top:-10%;width:120%;aspect-ratio:1;translate:-50% 0;border-radius:50%;background:radial-gradient(closest-side,var(--glow),transparent);opacity:.55}
+.site-card--a{--glow:rgba(255,106,19,.45)}
+.site-card--b{--glow:rgba(233,166,58,.38)}
+.site-card .phone{--w:268px}
+.site-card__name{font:700 clamp(2rem,7vw,2.75rem)/1 var(--hub-font-display);letter-spacing:-.03em;margin:8px 0 8px}
+.site-card__desc{color:var(--hub-soft);margin:0 0 14px;max-width:40ch}
+.site-card__swatch{display:flex;gap:6px;margin-bottom:18px}
+.site-card__swatch i{width:26px;height:26px;border-radius:50%;box-shadow:0 0 0 2px rgba(255,244,220,.2)}
+.site-card__row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.site-card__btns{display:grid;gap:10px;flex:1 1 160px}
+@media (min-width:768px){html:not([data-dir="both"]) .site-card{grid-template-columns:auto 1fr;align-items:center;gap:40px}html:not([data-dir="both"]) .site-card .phone{--w:300px}}
+.ph-a{background:#FFF4DC;color:#1D1147}
+.ph-a .ph-band{position:absolute;left:0;right:0;top:0;height:52%;background:linear-gradient(160deg,#FFB000 0%,#FF6A13 55%,#E4147E 110%)}
+.ph-a b{position:relative;font:400 1.75rem/.92 'Bowlby One','Arial Black',sans-serif;text-transform:uppercase;color:#1D1147}
+.ph-b{background:radial-gradient(120% 70% at 50% 0%,#4B1D52,#160B26 70%);color:#FBF3E4}
+.ph-b b{font:600 1.9rem/1 var(--hub-font-display);background:linear-gradient(135deg,#B7791F,#F7D98A 40%,#E9A63A 60%,#B7791F);-webkit-background-clip:text;background-clip:text;color:transparent}
+.screen-ph span{position:relative}
+
+.top10{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+@media (min-width:768px){.top10{grid-template-columns:repeat(2,1fr);gap:12px}}
+.idea__blurb{margin:0;font-size:.875rem;color:var(--hub-muted);line-height:1.35}
+
+.chains{display:grid;gap:24px;padding:clamp(22px,5vw,48px);border-radius:32px}
+.chains__moves{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.chains__moves li{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;padding:14px 16px;border-radius:18px;background:rgba(255,244,220,.05);border:1px solid var(--hub-line);color:var(--hub-soft);font-size:.9375rem}
+.chains__moves b{display:block;color:var(--hub-text);font:600 1.0625rem/1.25 var(--hub-font-display)}
+.chains__moves .n{font:italic 600 1.25rem/1 var(--hub-font-display);color:var(--hub-t-gold);padding-top:2px}
+@media (min-width:900px){.chains{grid-template-columns:1fr 1fr;align-items:center;gap:48px}}
+
+.cta-final{position:relative;overflow:hidden;isolation:isolate;padding:clamp(28px,6vw,64px);border-radius:32px;background:radial-gradient(90% 120% at 0% 0%,rgba(255,176,0,.22),transparent 55%),radial-gradient(90% 120% at 100% 100%,rgba(17,124,134,.35),transparent 55%),radial-gradient(60% 80% at 100% 0%,rgba(228,20,126,.22),transparent 60%),var(--hub-bg-2);border:1px solid var(--hub-line-2)}
+.cta-final__grid{display:grid;gap:28px;align-items:center}
+@media (min-width:900px){.cta-final__grid{grid-template-columns:1fr auto}}
+.cta-final h2{font-size:clamp(2.1rem,7.4vw,4rem);letter-spacing:-.035em;line-height:1;max-width:14ch}
+.cta-final h2 em{font-weight:400}
+.cta-final__keep{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.cta-final__aside{display:grid;justify-items:start;gap:12px}
+@media (min-width:900px){.cta-final__aside{justify-items:center}}
+@media (prefers-reduced-motion:reduce){.duo__card,.marquee__track{animation:none !important}}
+@media print{.marquee,.duo{display:none !important}.site-card{break-inside:avoid;background:#fff !important;border:1px solid #DDD3C6 !important}.cta-final{background:#fff !important;border:1px solid #DDD3C6}.hero__grid{grid-template-columns:1fr !important}}
+</style>
+</head>
+<body class="hub" data-root="./" data-area="home">
+<div data-hub-nav></div>
+
+<main id="main" class="main">
+
+  <!-- ═════ HERO ═════ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__orbs" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+    <div class="wrap hero__grid">
+      <div>
+        <p class="eyebrow hero__kicker anim-rise" style="--i:0">A proposal for Little Elm’s flavour capital</p>
+        <h1 class="hero__title anim-rise" id="hero-title" style="--i:1">Curry District <span class="grad-text grad-text--live">Brand Glow&#8209;Up</span></h1>
+        <p class="hero__sub anim-rise" style="--i:2">Two ways to look as good as you taste.</p>
+        <div class="hero__actions anim-rise" style="--i:3">
+          <a class="btn btn--primary" href="#websites">See the two websites</a>
+          <a class="btn btn--ghost" href="#top10">Top 10 ideas</a>
+        </div>
+      </div>
+
+      <div class="duo anim-rise" style="--i:4" role="group" aria-label="The two directions — tap one to preview it">
+        <a class="duo__card duo__card--b" href="#websites" data-dir-set="royal" aria-label="Direction B, Royal: jewel tones and gold. Show only Royal.">
+          <svg class="duo__arch" viewBox="0 0 60 70" fill="none" stroke="#E9A63A" stroke-width="2" aria-hidden="true"><path d="M5 68V30C5 15 30 3 30 3s25 12 25 27v38"/><path d="M14 68V34c0-9 16-18 16-18s16 9 16 18v34"/><path d="M30 26v42M14 47h32" stroke-width="1" opacity=".6"/></svg>
+          <span class="duo__tag">B · Royal</span>
+          <span class="duo__word--b">Curry <em>District</em></span>
+          <p class="duo__line">Slow-simmered. Tandoor-fired. Made for sharing.</p>
+          <span class="duo__dots" aria-hidden="true"><i style="background:#0F4D3F"></i><i style="background:#A3173F"></i><i style="background:#117C86"></i><i style="background:#E9A63A"></i><i style="background:#F4C9BB"></i></span>
+        </a>
+        <a class="duo__card duo__card--a" href="#websites" data-dir-set="bazaar" aria-label="Direction A, Bazaar: loud, joyful colour. Show only Bazaar.">
+          <svg class="duo__sun" viewBox="0 0 80 80" aria-hidden="true"><g fill="#FFB000" stroke="#1D1147" stroke-width="2.5"><circle cx="40" cy="40" r="22"/></g><g stroke="#1D1147" stroke-width="3" stroke-linecap="round"><path d="M40 6v8M40 66v8M6 40h8M66 40h8M16 16l6 6M58 58l6 6M64 16l-6 6M22 58l-6 6"/></g><path d="M26 42h28a14 14 0 0 1-28 0Z" fill="#1D1147"/><path d="M34 36c0-3 3-3 3-6M43 36c0-3 3-3 3-6" stroke="#1D1147" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg>
+          <span class="duo__tag">A · Bazaar</span>
+          <span class="duo__word--a">Curry <span>District</span></span>
+          <p class="duo__line">Butter chicken so good it needs its own zip code.</p>
+          <span class="duo__dots" aria-hidden="true"><i style="background:#FFB000"></i><i style="background:#FF6A13"></i><i style="background:#E4147E"></i><i style="background:#00A8A0"></i><i style="background:#3FA34D"></i></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Butter Chicken</span><span>Goat Dum Biryani</span><span>Garlic Naan</span><span>Chicken 65</span><span>Gobi Manchurian</span><span>Tandoori Chicken</span><span>Gongura Mutton Pulav</span><span>Chicken Tikka Masala</span><span>Chilli Paneer</span><span>Karampodi Chicken</span>
+        <span>Butter Chicken</span><span>Goat Dum Biryani</span><span>Garlic Naan</span><span>Chicken 65</span><span>Gobi Manchurian</span><span>Tandoori Chicken</span><span>Gongura Mutton Pulav</span><span>Chicken Tikka Masala</span><span>Chilli Paneer</span><span>Karampodi Chicken</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════ 01 · WHAT WE FOUND ═════ -->
+  <section class="section" id="found" aria-labelledby="found-title">
+    <div class="wrap">
+      <div class="sec-head sec-head--split" data-reveal>
+        <p class="sec-head__num">01 · What we found</p>
+        <h2 class="sec-head__title" id="found-title">Loved by diners. <em>Under-dressed online.</em></h2>
+        <p class="sec-head__desc">People clearly love the food. The brand and online look just don’t show it yet. <span class="muted">Ratings as listed publicly, Oct 2026.</span></p>
+        <a class="sec-head__action link-arrow" href="audit/">Full audit</a>
+      </div>
+
+      <div class="found__grid" data-stagger>
+        <article class="stat" style="--stat-g:linear-gradient(90deg,#FFB000,#FF6A13)">
+          <p class="stat__source">Google</p>
+          <p class="stat__value">≈<span data-count="4.2" data-decimals="1">4.2</span><small>★</small></p>
+          <p class="stat__label">~1,000 reviews</p>
+          <p class="stat__note">As listed publicly, Oct 2026 · via review mirrors</p>
+          <div class="chips"><span class="chip chip--dot" data-tone="gold">likely</span></div>
+        </article>
+        <article class="stat" style="--stat-g:linear-gradient(90deg,#E4147E,#7B5CFF)">
+          <p class="stat__source">Uber Eats</p>
+          <p class="stat__value">≈<span data-count="4.5" data-decimals="1">4.5</span><small>★</small></p>
+          <p class="stat__label">2,000+ ratings</p>
+          <p class="stat__note">As listed publicly, Oct 2026</p>
+          <div class="chips"><span class="chip chip--dot" data-tone="gold">likely</span></div>
+        </article>
+        <article class="stat" style="--stat-g:linear-gradient(90deg,#00A8A0,#E9A63A)">
+          <p class="stat__source">Yelp</p>
+          <p class="stat__value"><span data-count="4.0" data-decimals="1">4.0</span><small>★</small></p>
+          <p class="stat__label">120 reviews</p>
+          <p class="stat__note">As listed publicly, Oct 2026</p>
+          <div class="chips"><span class="chip chip--dot" data-tone="emerald">listed</span></div>
+        </article>
+      </div>
+
+      <div class="card gap-card" data-reveal>
+        <p class="gap-card__big">The food earns a 4+. <em class="grad-text">The look doesn’t match it.</em></p>
+        <div class="gap-meter" data-reveal="fade" aria-label="Our audit scores out of 10">
+          <div class="gap-meter__row"><span>Brand consistency</span><span class="gap-meter__bar"><i style="--v:30%;--g:var(--g-bazaar)"></i></span><b>3/10</b></div>
+          <div class="gap-meter__row"><span>Website look</span><span class="gap-meter__bar"><i style="--v:30%;--g:var(--g-bazaar)"></i></span><b>3/10</b></div>
+          <div class="gap-meter__row"><span>Photos</span><span class="gap-meter__bar"><i style="--v:40%;--g:var(--g-gold)"></i></span><b>4/10</b></div>
+          <div class="gap-meter__row"><span>Social activity</span><span class="gap-meter__bar"><i style="--v:30%;--g:var(--g-gold)"></i></span><b>3/10</b></div>
+        </div>
+        <p class="muted" style="margin:0;font-size:.875rem;max-width:30ch">Our read of public listings, not an official score. The good news: every one of these is fixable.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════ 02 · TWO NEW WEBSITES ═════ -->
+  <section class="section" id="websites" aria-labelledby="web-title">
+    <div class="wrap">
+      <div class="sec-head sec-head--split" data-reveal>
+        <p class="sec-head__num">02 · Two new websites</p>
+        <h2 class="sec-head__title" id="web-title">Two new websites. <em>Pick a mood.</em></h2>
+        <p class="sec-head__desc">Both are live right now. Open one on your phone, or let someone at the table scan it.</p>
+        <div class="sec-head__action" data-dir-switch="full"></div>
+      </div>
+
+      <div class="dir-pair">
+        <article class="site-card site-card--a" data-preview="bazaar" data-theme="bazaar" data-reveal>
+          <div class="phone" data-tilt="5">
+            <div class="phone__screen">
+              <div class="screen-ph ph-a" aria-hidden="true"><span class="ph-band"></span><b>Curry<br>District</b><span>A · Bazaar</span></div>
+              <img src="assets/shots/bazaar-home.jpg" alt="Home screen of the Bazaar website concept on a phone" loading="lazy" decoding="async" onerror="this.hidden=true">
+            </div>
+            <span class="phone__glare" aria-hidden="true"></span>
+          </div>
+          <div>
+            <span class="dir-tag dir-tag--a">Direction A</span>
+            <h3 class="site-card__name">Bazaar</h3>
+            <p class="site-card__desc">Loud, joyful, festival-street colour. Built for families, delivery-app regulars and anyone holding a phone at lunch rush.</p>
+            <div class="site-card__swatch" aria-hidden="true"><i style="background:#FFB000"></i><i style="background:#FF6A13"></i><i style="background:#E4147E"></i><i style="background:#00A8A0"></i><i style="background:#1D1147"></i></div>
+            <div class="site-card__row">
+              <figure class="qr" style="--qr:112px;margin:0"><img src="assets/qr/bazaar.svg" alt="QR code to open the Bazaar website concept" width="112" height="112"><figcaption class="qr__label">Scan to open</figcaption></figure>
+              <div class="site-card__btns">
+                <a class="btn btn--primary" href="https://curry-district-bazaar.netlify.app/" target="_blank" rel="noopener">Open site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                <button type="button" class="btn btn--ghost btn--sm" data-share data-share-url="https://curry-district-bazaar.netlify.app/" data-share-title="Curry District · Bazaar concept">Send the link</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="site-card site-card--b" data-preview="royal" data-theme="royal" data-reveal>
+          <div class="phone" data-tilt="5">
+            <div class="phone__screen">
+              <div class="screen-ph ph-b" aria-hidden="true"><b>Curry<br><i style="font-weight:400">District</i></b><span>B · Royal</span></div>
+              <img src="assets/shots/royal-home.jpg" alt="Home screen of the Royal website concept on a phone" loading="lazy" decoding="async" onerror="this.hidden=true">
+            </div>
+            <span class="phone__glare" aria-hidden="true"></span>
+          </div>
+          <div>
+            <span class="dir-tag dir-tag--b">Direction B</span>
+            <h3 class="site-card__name">Royal</h3>
+            <p class="site-card__desc">Jewel tones, brass and candlelight. Premium but still colourful, made for date nights, celebrations and catering.</p>
+            <div class="site-card__swatch" aria-hidden="true"><i style="background:#160B26"></i><i style="background:#4B1D52"></i><i style="background:#0F4D3F"></i><i style="background:#A3173F"></i><i style="background:#E9A63A"></i></div>
+            <div class="site-card__row">
+              <figure class="qr" style="--qr:112px;margin:0"><img src="assets/qr/royal.svg" alt="QR code to open the Royal website concept" width="112" height="112"><figcaption class="qr__label">Scan to open</figcaption></figure>
+              <div class="site-card__btns">
+                <a class="btn btn--gold" href="https://curry-district-royal.netlify.app/" target="_blank" rel="noopener">Open site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+                <button type="button" class="btn btn--ghost btn--sm" data-share data-share-url="https://curry-district-royal.netlify.app/" data-share-title="Curry District · Royal concept">Send the link</button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════ 03 · TOP 10 ═════ -->
+  <section class="section" id="top10" aria-labelledby="top10-title">
+    <div class="wrap">
+      <div class="sec-head sec-head--split" data-reveal>
+        <p class="sec-head__num">03 · The plan</p>
+        <h2 class="sec-head__title" id="top10-title">Top 10 things <em>we can do together</em></h2>
+        <p class="sec-head__desc">Start anywhere. Each one stands on its own, and together they add up to a brand people remember.</p>
+        <a class="sec-head__action link-arrow" href="ideas/">All ideas</a>
+      </div>
+      <ol class="top10" data-stagger>
+        <li><a class="idea idea--row" href="ideas/#1" style="--idea-g:linear-gradient(140deg,#FFB000,#FF6A13 55%,#E4147E)"><span class="idea__num">1</span><span class="idea__body"><span class="idea__title">Brand refresh &amp; logo</span><span class="idea__blurb">One confident look, everywhere you show up.</span></span><svg class="idea__go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></a></li>
+        <li><a class="idea idea--row" href="ideas/#2" style="--idea-g:linear-gradient(140deg,#E4147E,#7B5CFF)"><span class="idea__num">2</span><span class="idea__body"><span class="idea__title">New website &amp; ordering</span><span class="idea__blurb">Menu-first, phone-first, one big Order button.</span></span><svg class="idea__go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></a></li>
+        <li><a class="idea idea--row" href="ideas/#3" style="--idea-g:linear-gradient(140deg,#FF6A13,#D62839)"><span class="idea__num">3</span><span class="idea__body"><span class="idea__title">Takeout packaging system</span><span class="idea__blurb">Every bag rides home as a little billboard.</span></span><svg class="idea__go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></a></li>
+        <li><a class="idea idea--row" href="ideas/#4" style="--idea-g:linear-gradient(140deg,#117C86,#0F4D3F)"><span class="idea__num">4</span><span class="idea__body"><span class="idea__title">Feature-wall wallpaper &amp; murals</span><span class="idea__blurb">The photo spot guests can’t help posting.</span></span><svg class="idea__go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></a></li>
+        <li><a class="idea idea--row" href="ideas/#5" style="--idea-g:linear-gradient(140deg,#E9A63A,#A3173F)"><span class="idea__num">5</span><span class="idea__body"><span class="idea__title">Menu &amp; table design</span><span class="idea__blurb">Menu “districts”, a spice scale, easy first picks.</span></span><svg class="idea__go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></a></li>
+        <li><a class="idea idea--row" href="ideas/#6" style="--idea-g:linear-gradient(140deg,#3FA34D,#0F4D3F)"><span class="idea__num">6</span><span class="idea__body"><span class="idea__title">Google Business &amp; photo makeover</span><span class="idea__blurb">Where most hungry people meet you first.</span></span><svg class="idea__go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></a></li>
+        <li><a class="idea idea--row" href="ideas/#7" style="--idea-g:linear-gradient(140deg,#E4147E,#FF6A13)"><span class="idea__num">7</span><span class="idea__body"><span class="idea__title">Social kit &amp; reels</span><span class="idea__blurb">Ready-made templates that make posting easy.</span></span><svg class="idea__go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></a></li>
+        <li><a class="idea idea--row" href="ideas/#8" style="--idea-g:linear-gradient(140deg,#7B5CFF,#E4147E)"><span class="idea__num">8</span><span class="idea__body"><span class="idea__title">Signage, storefront &amp; neon</span><span class="idea__blurb">Be impossible to miss from FM 423.</span></span><svg class="idea__go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></a></li>
+        <li><a class="idea idea--row" href="ideas/#9" style="--idea-g:linear-gradient(140deg,#E9A63A,#FF6A13)"><span class="idea__num">9</span><span class="idea__body"><span class="idea__title">Loyalty, catering &amp; party-tray branding</span><span class="idea__blurb">Bring regulars back. Win the office party.</span></span><svg class="idea__go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></a></li>
+        <li><a class="idea idea--row" href="ideas/#10" style="--idea-g:linear-gradient(140deg,#A3173F,#4B1D52)"><span class="idea__num">10</span><span class="idea__body"><span class="idea__title">Festival campaigns calendar</span><span class="idea__blurb">Diwali, Holi, game days. A reason to visit every month.</span></span><svg class="idea__go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></a></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ═════ 04 · TOUR THE SAMPLES ═════ -->
+  <section class="section" id="tour" aria-labelledby="tour-title">
+    <div class="wrap">
+      <div class="sec-head" data-reveal>
+        <p class="sec-head__num">04 · The sample kit</p>
+        <h2 class="sec-head__title" id="tour-title">Tour the <em>samples</em></h2>
+        <p class="sec-head__desc">Real designs for real touchpoints, each shown in both directions. Tap in anywhere.</p>
+      </div>
+      <div data-area-tiles="tour"></div>
+      <noscript>
+        <ul class="cluster" style="list-style:none;padding:0">
+          <li><a class="chip" href="brand/">Brand &amp; logo</a></li><li><a class="chip" href="packaging/">Packaging</a></li><li><a class="chip" href="interiors/">Walls &amp; murals</a></li><li><a class="chip" href="menu-design/">Menu &amp; table</a></li><li><a class="chip" href="social/">Social kit</a></li><li><a class="chip" href="signage/">Signage</a></li><li><a class="chip" href="merch/">Merch</a></li><li><a class="chip" href="loyalty/">Loyalty</a></li><li><a class="chip" href="motion/">Motion</a></li><li><a class="chip" href="gbp/">Google profile</a></li><li><a class="chip" href="thali/">Thali</a></li><li><a class="chip" href="calendar/">Calendar</a></li><li><a class="chip" href="audit/">Audit</a></li><li><a class="chip" href="benchmarks/">Benchmarks</a></li>
+        </ul>
+      </noscript>
+    </div>
+  </section>
+
+  <!-- ═════ 05 · HOW THE BIG CHAINS DO IT ═════ -->
+  <section class="section" id="chains" aria-labelledby="chains-title">
+    <div class="wrap">
+      <div class="card card--glow chains" style="--card-g:linear-gradient(135deg,#E9A63A,#117C86 50%,#E4147E)" data-reveal>
+        <div>
+          <p class="eyebrow eyebrow--gold">05 · How the big chains do it</p>
+          <h2 class="sec-head__title" id="chains-title">Big-brand moves, <em>sized for one great restaurant.</em></h2>
+          <p class="soft" style="margin:14px 0 22px;max-width:44ch">We studied how national chains use packaging, walls, colour and loyalty to stay memorable, then kept only the moves a single location can afford.</p>
+          <a class="btn btn--gold" href="benchmarks/">See the playbook</a>
+        </div>
+        <ul class="chains__moves">
+          <li><span class="n">i</span><span><b>Make the bag worth reading</b>One chain printed short stories on its cups and bags.</span></li>
+          <li><span class="n">ii</span><span><b>Let the food be the colour</b>Simple bowls inside, the brand pattern on the outside.</span></li>
+          <li><span class="n">iii</span><span><b>Paint one local wall</b>A burger chain hires local artists for one mural per store.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═════ 06 · LET'S DO IT ═════ -->
+  <section class="section" id="next" aria-labelledby="next-title">
+    <div class="wrap">
+      <div class="cta-final" data-reveal>
+        <div class="cta-final__grid">
+          <div class="contact">
+            <p class="eyebrow">06 · Next steps</p>
+            <h2 id="next-title">Let’s make it look <em class="grad-text">as good as it tastes.</em></h2>
+            <p class="soft" style="max-width:46ch;margin:0 0 8px">Pick a direction, or mix the best of both. We can start small with menus, packaging or Google photos, and grow from there.</p>
+            <div class="contact__btns" data-config="phone,whatsapp,email,calendarLink">
+              <a class="btn btn--primary" data-config="phone" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>Call</a>
+              <a class="btn btn--ghost" data-config="whatsapp" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20l1.4-4A8 8 0 1 1 8.5 19Z"/><path d="M9 10h6M9 13.5h4"/></svg>WhatsApp</a>
+              <a class="btn btn--ghost" data-config="email" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>Email</a>
+              <a class="btn btn--ghost" data-config="calendarLink" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>Book a time</a>
+            </div>
+            <p class="contact__fallback" data-config-none>Ask your designer for the next step. They’re right here with you.</p>
+          </div>
+          <div class="cta-final__aside">
+            <figure class="qr" style="--qr:132px;margin:0"><img src="assets/qr/hub.svg" alt="QR code to open this pitch hub" width="132" height="132"><figcaption class="qr__label">Keep this on your phone</figcaption><span class="qr__url">curry-district-pitch.netlify.app</span></figure>
+            <div class="cluster">
+              <button type="button" class="btn btn--ghost btn--sm" data-share data-share-url="https://curry-district-pitch.netlify.app/" data-share-title="Curry District — Brand Glow-Up"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M8 7l4-4 4 4"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg>Share</button>
+              <button type="button" class="btn btn--ghost btn--sm" data-print><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 9V3h10v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M7 14h10v7H7z"/></svg>Save PDF</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <aside class="next-cta" aria-label="Next steps">
+    <p class="next-cta__txt" style="margin:0">Two looks, one great kitchen.<small>Ready when you are</small></p>
+    <a class="btn btn--primary btn--sm" href="#next">Next steps</a>
+  </aside>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap site-foot__grid">
+    <div>
+      <p class="site-foot__brand">Curry District · Brand Glow-Up</p>
+      <p class="site-foot__disclaimer">Independent design concept prepared as a proposal — not the official Curry District website.</p>
+      <p class="site-foot__disclaimer" data-config="studio" style="margin-top:6px">Prepared by <span data-config-text="studio"></span></p>
+    </div>
+    <nav class="site-foot__links" aria-label="Footer">
+      <a href="ideas/">Ideas</a><a href="audit/">Audit</a><a href="benchmarks/">Chains</a><a href="#tour">Samples</a>
+      <a href="#" data-print>Save as PDF</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

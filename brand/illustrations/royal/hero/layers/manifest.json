@@ -1,0 +1,147 @@
+{
+  "scene": "Royal · The Palace Dining Room at Dusk",
+  "order": "back-to-front",
+  "formats": {
+    "landscape": {
+      "viewBox": "0 0 1600 1000",
+      "layers": [
+        {
+          "id": "sky",
+          "file": "layers/landscape/01-sky.svg",
+          "depth": 0.02
+        },
+        {
+          "id": "stars",
+          "file": "layers/landscape/02-stars.svg",
+          "depth": 0.03
+        },
+        {
+          "id": "orb",
+          "file": "layers/landscape/03-orb.svg",
+          "depth": 0.04
+        },
+        {
+          "id": "floor",
+          "file": "layers/landscape/04-floor.svg",
+          "depth": 0.1
+        },
+        {
+          "id": "arches-far",
+          "file": "layers/landscape/05-arches-far.svg",
+          "depth": 0.12
+        },
+        {
+          "id": "arches-mid",
+          "file": "layers/landscape/06-arches-mid.svg",
+          "depth": 0.28
+        },
+        {
+          "id": "jali",
+          "file": "layers/landscape/07-jali.svg",
+          "depth": 0.3
+        },
+        {
+          "id": "arches-near",
+          "file": "layers/landscape/08-arches-near.svg",
+          "depth": 0.55
+        },
+        {
+          "id": "table",
+          "file": "layers/landscape/09-table.svg",
+          "depth": 0.62
+        },
+        {
+          "id": "steam",
+          "file": "layers/landscape/10-steam.svg",
+          "depth": 0.66
+        },
+        {
+          "id": "lanterns",
+          "file": "layers/landscape/11-lanterns.svg",
+          "depth": 0.8
+        },
+        {
+          "id": "embers",
+          "file": "layers/landscape/12-embers.svg",
+          "depth": 1
+        }
+      ],
+      "overlay": {
+        "id": "grain",
+        "file": "layers/landscape/13-grain.svg",
+        "note": "optional anti-banding dither, place on top, no parallax"
+      }
+    },
+    "portrait": {
+      "viewBox": "0 0 800 1200",
+      "layers": [
+        {
+          "id": "sky",
+          "file": "layers/portrait/01-sky.svg",
+          "depth": 0.02
+        },
+        {
+          "id": "stars",
+          "file": "layers/portrait/02-stars.svg",
+          "depth": 0.03
+        },
+        {
+          "id": "orb",
+          "file": "layers/portrait/03-orb.svg",
+          "depth": 0.04
+        },
+        {
+          "id": "floor",
+          "file": "layers/portrait/04-floor.svg",
+          "depth": 0.1
+        },
+        {
+          "id": "arches-far",
+          "file": "layers/portrait/05-arches-far.svg",
+          "depth": 0.12
+        },
+        {
+          "id": "arches-mid",
+          "file": "layers/portrait/06-arches-mid.svg",
+          "depth": 0.28
+        },
+        {
+          "id": "jali",
+          "file": "layers/portrait/07-jali.svg",
+          "depth": 0.3
+        },
+        {
+          "id": "arches-near",
+          "file": "layers/portrait/08-arches-near.svg",
+          "depth": 0.55
+        },
+        {
+          "id": "table",
+          "file": "layers/portrait/09-table.svg",
+          "depth": 0.62
+        },
+        {
+          "id": "steam",
+          "file": "layers/portrait/10-steam.svg",
+          "depth": 0.66
+        },
+        {
+          "id": "lanterns",
+          "file": "layers/portrait/11-lanterns.svg",
+          "depth": 0.8
+        },
+        {
+          "id": "embers",
+          "file": "layers/portrait/12-embers.svg",
+          "depth": 1
+        }
+      ],
+      "overlay": {
+        "id": "grain",
+        "file": "layers/portrait/13-grain.svg",
+        "note": "optional anti-banding dither, place on top, no parallax"
+      }
+    }
+  },
+  "parallax": "translate each layer by depth × pointer/scroll offset (0 = static sky, 1 = foreground embers); keep max shift ≈ 1.5% of width"
+}
